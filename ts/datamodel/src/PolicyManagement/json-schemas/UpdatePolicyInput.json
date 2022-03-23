@@ -1,0 +1,22 @@
+{
+  "$id": "https://dfns.app/defs/schemas#UpdatePolicyInput",
+  "type": "object",
+  "properties": {
+    "description": { "type": "string" },
+    "controlIds": {
+      "type": "array",
+      "items": [{ "type": "string" }],
+      "minItems": 0,
+      "additionalItems": true
+    },
+    "ruleIds": {
+      "type": "array",
+      "items": [{ "type": "string" }],
+      "minItems": 0,
+      "additionalItems": true
+    },
+    "status": { "type": "string", "enum": ["Enabled", "Disabled", "Archived"] }
+  },
+  "required": [],
+  "additionalProperties": false
+}

@@ -1,0 +1,19 @@
+{
+  "$id": "https://dfns.app/defs/schemas#CreatePublicKeyInput",
+  "type": "object",
+  "properties": {
+    "externalId": { "type": "string" },
+    "assetAccountId": { "type": "string" },
+    "groupThreshold": { "type": "integer" },
+    "groupSize": { "type": "integer" },
+    "isEddsa": { "type": "boolean" },
+    "tags": {
+      "type": "array",
+      "items": [{ "type": "string" }],
+      "minItems": 0,
+      "additionalItems": true
+    }
+  },
+  "required": ["assetAccountId", "groupThreshold", "groupSize", "isEddsa"],
+  "additionalProperties": false
+}

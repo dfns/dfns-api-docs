@@ -1,0 +1,11 @@
+{
+  "$id": "https://dfns.app/defs/schemas#CreateWalletTxInput",
+  "type": "object",
+  "properties": {
+    "to": { "type": "string" },
+    "amount": { "type": "string" },
+    "asset": { "type": "string" }
+  },
+  "required": ["to", "amount", "asset"],
+  "additionalProperties": false
+}

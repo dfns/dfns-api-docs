@@ -1,0 +1,57 @@
+{
+  "$id": "https://dfns.app/defs/schemas#CreatePolicyControlInput",
+  "type": "object",
+  "properties": {
+    "description": { "type": "string" },
+    "name": { "type": "string" },
+    "configuration": {
+      "oneOf": [
+        {
+          "title": "CreateRequestApprovalPcConf",
+          "type": "object",
+          "properties": {
+            "kind": { "type": "string", "const": "RequestApproval" },
+            "approverUsernames": {
+              "type": "array",
+              "items": [{ "type": "string" }],
+              "minItems": 0,
+              "additionalItems": true
+            },
+            "approverGroups": {
+              "type": "array",
+              "items": [{ "type": "string" }],
+              "minItems": 0,
+              "additionalItems": true
+            },
+            "timeoutInMinutes": { "type": "integer" },
+            "canInitiatorApprove": { "type": "boolean" },
+            "numApprovals": { "type": "integer" }
+          },
+          "required": ["kind", "canInitiatorApprove", "numApprovals"]
+        },
+        {
+          "title": "CreateNotifyAndAuditPcConf",
+          "type": "object",
+          "properties": {
+            "kind": { "type": "string", "const": "NotifyAndAudit" },
+            "usernames": {
+              "type": "array",
+              "items": [{ "type": "string" }],
+              "minItems": 0,
+              "additionalItems": true
+            },
+            "groups": {
+              "type": "array",
+              "items": [{ "type": "string" }],
+              "minItems": 0,
+              "additionalItems": true
+            }
+          },
+          "required": ["kind"]
+        }
+      ]
+    }
+  },
+  "required": ["configuration"],
+  "additionalProperties": false
+}

@@ -1,0 +1,421 @@
+{
+  "$id": "https://dfns.app/defs/schemas#CreatePolicyRuleInput",
+  "type": "object",
+  "properties": {
+    "description": { "type": "string" },
+    "name": { "type": "string" },
+    "configuration": {
+      "oneOf": [
+        {
+          "title": "CreateAmountLimitPrConf",
+          "type": "object",
+          "properties": {
+            "kind": { "type": "string", "const": "PaymentAmountLimit" },
+            "limit": { "type": "string" },
+            "assetSymbol": {
+              "type": "string",
+              "enum": [
+                "ADA",
+                "ALGO",
+                "BCH",
+                "BTC",
+                "BSV",
+                "DOGE",
+                "DOT",
+                "ETH",
+                "EOS",
+                "LTC",
+                "1INCH.ETH",
+                "DAI.ETH",
+                "USDT.ETH",
+                "USDC.ETH",
+                "JEUR.ETH",
+                "JCHF.ETH",
+                "JGBP.ETH",
+                "WBTC.ETH",
+                "AAVE.ETH",
+                "BAT.ETH",
+                "COMP.ETH",
+                "LINK.ETH",
+                "MKR.ETH",
+                "SUSHI.ETH",
+                "UNI.ETH",
+                "KSM",
+                "XLM",
+                "XRP",
+                "BNB.BSC",
+                "MATIC",
+                "XTZ",
+                "SOL",
+                "POLYX",
+                "EURL.XTZ",
+                "EUR",
+                "USD",
+                "GBP",
+                "CHF"
+              ]
+            },
+            "shouldIgnoreAssetsWithoutMarketValue": { "type": "boolean" },
+            "assetAccountSelectors": {
+              "title": "AssetAccountSelector",
+              "type": "object",
+              "properties": {
+                "assetAccountIds": {
+                  "type": "array",
+                  "items": [{ "type": "string" }],
+                  "minItems": 0,
+                  "additionalItems": true
+                },
+                "tags": {
+                  "type": "array",
+                  "items": [{ "type": "string" }],
+                  "minItems": 0,
+                  "additionalItems": true
+                },
+                "assetSymbols": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "ADA",
+                        "ALGO",
+                        "BCH",
+                        "BTC",
+                        "BSV",
+                        "DOGE",
+                        "DOT",
+                        "ETH",
+                        "EOS",
+                        "LTC",
+                        "1INCH.ETH",
+                        "DAI.ETH",
+                        "USDT.ETH",
+                        "USDC.ETH",
+                        "JEUR.ETH",
+                        "JCHF.ETH",
+                        "JGBP.ETH",
+                        "WBTC.ETH",
+                        "AAVE.ETH",
+                        "BAT.ETH",
+                        "COMP.ETH",
+                        "LINK.ETH",
+                        "MKR.ETH",
+                        "SUSHI.ETH",
+                        "UNI.ETH",
+                        "KSM",
+                        "XLM",
+                        "XRP",
+                        "BNB.BSC",
+                        "MATIC",
+                        "XTZ",
+                        "SOL",
+                        "POLYX",
+                        "EURL.XTZ",
+                        "EUR",
+                        "USD",
+                        "GBP",
+                        "CHF"
+                      ]
+                    }
+                  ],
+                  "minItems": 0,
+                  "additionalItems": true
+                }
+              },
+              "required": []
+            }
+          },
+          "required": [
+            "kind",
+            "limit",
+            "assetSymbol",
+            "shouldIgnoreAssetsWithoutMarketValue"
+          ]
+        },
+        {
+          "title": "CreateOutgoingVelocityPrConf",
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "PaymentAmountOutgoingVelocity"
+            },
+            "velocity": { "type": "string" },
+            "assetSymbol": {
+              "type": "string",
+              "enum": [
+                "ADA",
+                "ALGO",
+                "BCH",
+                "BTC",
+                "BSV",
+                "DOGE",
+                "DOT",
+                "ETH",
+                "EOS",
+                "LTC",
+                "1INCH.ETH",
+                "DAI.ETH",
+                "USDT.ETH",
+                "USDC.ETH",
+                "JEUR.ETH",
+                "JCHF.ETH",
+                "JGBP.ETH",
+                "WBTC.ETH",
+                "AAVE.ETH",
+                "BAT.ETH",
+                "COMP.ETH",
+                "LINK.ETH",
+                "MKR.ETH",
+                "SUSHI.ETH",
+                "UNI.ETH",
+                "KSM",
+                "XLM",
+                "XRP",
+                "BNB.BSC",
+                "MATIC",
+                "XTZ",
+                "SOL",
+                "POLYX",
+                "EURL.XTZ",
+                "EUR",
+                "USD",
+                "GBP",
+                "CHF"
+              ]
+            },
+            "intervalInMinutes": { "type": "integer" },
+            "shouldIgnoreAssetsWithoutMarketValue": { "type": "boolean" },
+            "assetAccountSelectors": {
+              "title": "AssetAccountSelector",
+              "type": "object",
+              "properties": {
+                "assetAccountIds": {
+                  "type": "array",
+                  "items": [{ "type": "string" }],
+                  "minItems": 0,
+                  "additionalItems": true
+                },
+                "tags": {
+                  "type": "array",
+                  "items": [{ "type": "string" }],
+                  "minItems": 0,
+                  "additionalItems": true
+                },
+                "assetSymbols": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "ADA",
+                        "ALGO",
+                        "BCH",
+                        "BTC",
+                        "BSV",
+                        "DOGE",
+                        "DOT",
+                        "ETH",
+                        "EOS",
+                        "LTC",
+                        "1INCH.ETH",
+                        "DAI.ETH",
+                        "USDT.ETH",
+                        "USDC.ETH",
+                        "JEUR.ETH",
+                        "JCHF.ETH",
+                        "JGBP.ETH",
+                        "WBTC.ETH",
+                        "AAVE.ETH",
+                        "BAT.ETH",
+                        "COMP.ETH",
+                        "LINK.ETH",
+                        "MKR.ETH",
+                        "SUSHI.ETH",
+                        "UNI.ETH",
+                        "KSM",
+                        "XLM",
+                        "XRP",
+                        "BNB.BSC",
+                        "MATIC",
+                        "XTZ",
+                        "SOL",
+                        "POLYX",
+                        "EURL.XTZ",
+                        "EUR",
+                        "USD",
+                        "GBP",
+                        "CHF"
+                      ]
+                    }
+                  ],
+                  "minItems": 0,
+                  "additionalItems": true
+                }
+              },
+              "required": []
+            }
+          },
+          "required": [
+            "kind",
+            "velocity",
+            "assetSymbol",
+            "intervalInMinutes",
+            "shouldIgnoreAssetsWithoutMarketValue"
+          ]
+        },
+        {
+          "title": "CreateSiphoningPrConf",
+          "type": "object",
+          "properties": {
+            "kind": { "type": "string", "const": "Siphoning" },
+            "maxTxCount": { "type": "integer" },
+            "intervalInMinutes": { "type": "integer" },
+            "assetAcountSelectors": {
+              "title": "AssetAccountSelector",
+              "type": "object",
+              "properties": {
+                "assetAccountIds": {
+                  "type": "array",
+                  "items": [{ "type": "string" }],
+                  "minItems": 0,
+                  "additionalItems": true
+                },
+                "tags": {
+                  "type": "array",
+                  "items": [{ "type": "string" }],
+                  "minItems": 0,
+                  "additionalItems": true
+                },
+                "assetSymbols": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "ADA",
+                        "ALGO",
+                        "BCH",
+                        "BTC",
+                        "BSV",
+                        "DOGE",
+                        "DOT",
+                        "ETH",
+                        "EOS",
+                        "LTC",
+                        "1INCH.ETH",
+                        "DAI.ETH",
+                        "USDT.ETH",
+                        "USDC.ETH",
+                        "JEUR.ETH",
+                        "JCHF.ETH",
+                        "JGBP.ETH",
+                        "WBTC.ETH",
+                        "AAVE.ETH",
+                        "BAT.ETH",
+                        "COMP.ETH",
+                        "LINK.ETH",
+                        "MKR.ETH",
+                        "SUSHI.ETH",
+                        "UNI.ETH",
+                        "KSM",
+                        "XLM",
+                        "XRP",
+                        "BNB.BSC",
+                        "MATIC",
+                        "XTZ",
+                        "SOL",
+                        "POLYX",
+                        "EURL.XTZ",
+                        "EUR",
+                        "USD",
+                        "GBP",
+                        "CHF"
+                      ]
+                    }
+                  ],
+                  "minItems": 0,
+                  "additionalItems": true
+                }
+              },
+              "required": []
+            }
+          },
+          "required": ["kind", "maxTxCount", "intervalInMinutes"]
+        }
+      ]
+    },
+    "assetAccountSelector": {
+      "title": "AssetAccountSelector",
+      "type": "object",
+      "properties": {
+        "assetAccountIds": {
+          "type": "array",
+          "items": [{ "type": "string" }],
+          "minItems": 0,
+          "additionalItems": true
+        },
+        "tags": {
+          "type": "array",
+          "items": [{ "type": "string" }],
+          "minItems": 0,
+          "additionalItems": true
+        },
+        "assetSymbols": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "enum": [
+                "ADA",
+                "ALGO",
+                "BCH",
+                "BTC",
+                "BSV",
+                "DOGE",
+                "DOT",
+                "ETH",
+                "EOS",
+                "LTC",
+                "1INCH.ETH",
+                "DAI.ETH",
+                "USDT.ETH",
+                "USDC.ETH",
+                "JEUR.ETH",
+                "JCHF.ETH",
+                "JGBP.ETH",
+                "WBTC.ETH",
+                "AAVE.ETH",
+                "BAT.ETH",
+                "COMP.ETH",
+                "LINK.ETH",
+                "MKR.ETH",
+                "SUSHI.ETH",
+                "UNI.ETH",
+                "KSM",
+                "XLM",
+                "XRP",
+                "BNB.BSC",
+                "MATIC",
+                "XTZ",
+                "SOL",
+                "POLYX",
+                "EURL.XTZ",
+                "EUR",
+                "USD",
+                "GBP",
+                "CHF"
+              ]
+            }
+          ],
+          "minItems": 0,
+          "additionalItems": true
+        }
+      },
+      "required": []
+    }
+  },
+  "required": ["configuration"],
+  "additionalProperties": false
+}

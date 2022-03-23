@@ -1,0 +1,13 @@
+{
+  "$id": "https://dfns.app/defs/schemas#CreateEmployee",
+  "type": "object",
+  "properties": {
+    "username": { "type": "string" },
+    "email": { "type": "string" },
+    "issuer": { "type": "string" },
+    "fullName": { "type": "string" },
+    "dateOfBirth": { "type": "string" }
+  },
+  "required": ["username", "email", "fullName", "dateOfBirth"],
+  "additionalProperties": false
+}

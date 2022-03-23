@@ -1,0 +1,11 @@
+{
+  "$id": "https://dfns.app/defs/schemas#CreateKeychainAttempt",
+  "type": "object",
+  "properties": {
+    "parties": { "type": "number" },
+    "threshold": { "type": "number" },
+    "accountId": { "type": "string" }
+  },
+  "required": ["parties", "threshold", "accountId"],
+  "additionalProperties": false
+}
