@@ -1,7 +1,0 @@
-{
-  "$id": "https://dfns.app/defs/schemas#CreateSignatureInput",
-  "type": "object",
-  "properties": { "hash": { "type": "string" } },
-  "required": ["hash"],
-  "additionalProperties": false
-}
