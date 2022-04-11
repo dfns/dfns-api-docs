@@ -1,0 +1,2964 @@
+{
+  "openapi": "3.0.1",
+  "info": { "title": "Dfns API", "version": "2.12.0" },
+  "servers": [
+    {
+      "description": "Ninja (Staging-Testnet)",
+      "url": "https://api.dfns.ninja"
+    },
+    {
+      "description": "WTF (Development-Testnet)",
+      "url": "https://api.dfns.wtf"
+    }
+  ],
+  "paths": {
+    "/mpc/public-keys/{publicKey}": {
+      "get": {
+        "tags": ["PublicKeys"],
+        "operationId": "ReadPublicKey",
+        "description": "Retrieves accounts by public key.",
+        "parameters": [
+          {
+            "name": "publicKey",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": {
+                      "$ref": "#/components/schemas/PublicKeyRecord"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mpc/public-keys": {
+      "post": {
+        "tags": ["PublicKeys"],
+        "operationId": "CreatePublicKey",
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePublicKeyInput" }
+            }
+          }
+        },
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": {
+                      "$ref": "#/components/schemas/PublicKeyRecord"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mpc/public-keys/{publicKeyId}/signatures": {
+      "post": {
+        "tags": ["PublicKeys"],
+        "operationId": "CreateSignature",
+        "description": "Operation accepts a message, and uses Dfns MPC network to create signature against it.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateSignatureInput" }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "publicKeyId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Signature" }
+                  }
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/PaymentRequiredError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mpc/networks/{network}/wallets/{walletId}/balances": {
+      "get": {
+        "tags": ["PublicKeys"],
+        "operationId": "ReadWalletBalances",
+        "description": "",
+        "parameters": [
+          {
+            "name": "network",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "asset",
+            "in": "query",
+            "description": "Asset symbol that is being retrieved.\n\n - If this is a native currency (such as BTC on BTC network) it will be duplicated.\n - If this is an ERC20 (or analog on other networks, such as FA 1.2) then it will indicate particular coin. This can be either supported by Dfns asset, or supported by a given customer.",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "walletId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/WalletBalance" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Either invalid network or invalid asset",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Wallet with a provided id is not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mpc/networks/{network}/wallets/{walletId}/address": {
+      "get": {
+        "tags": ["PublicKeys"],
+        "operationId": "ReadWalletAddress",
+        "description": "",
+        "parameters": [
+          {
+            "name": "network",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "asset",
+            "in": "query",
+            "description": "Asset symbol that is being retrieved.\n\n - If this is a native currency (such as BTC on BTC network) it will be duplicated.\n - If this is an ERC20 (or analog on other networks, such as FA 1.2) then it will indicate particular coin. This can be either supported by Dfns asset, or supported by a given customer.",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "walletId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/WalletAddress" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Either invalid network or invalid asset",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Wallet with a provided id is not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mpc/networks/{network}/wallets/{walletId}/transactions": {
+      "get": {
+        "tags": ["PublicKeys"],
+        "operationId": "ReadWalletTransactions",
+        "description": "",
+        "parameters": [
+          {
+            "name": "network",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "assets",
+            "in": "query",
+            "description": "Asset symbol that is being retrieved.\n\n - If this is a native currency (such as BTC on BTC network) it will be duplicated.\n - If this is an ERC20 (or analog on other networks, such as FA 1.2) then it will indicate particular coin. This can be either supported by Dfns asset, or supported by a given customer.",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "walletId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/WalletTx" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Either invalid network or invalid asset",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Wallet with a provided id is not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["PublicKeys"],
+        "operationId": "CreateWalletTransaction",
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateWalletTxInput" }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "network",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "walletId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/WalletTx" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Either invalid network or invalid asset",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Wallet with a provided id is not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/asset-accounts/{accountId}/payments": {
+      "post": {
+        "tags": ["Assets"],
+        "operationId": "InitiatePayment",
+        "description": "Operations trigger payment initiation. This will instruct funds to be transfered from one wallet to another within same network and same asset.\n\nThis operation will trigger PolicyEngine.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePaymentInput" }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Payment" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Payment initiation payload is invalid, and missing parameters. See `description` field for additional details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "GasStation requires additional top-up.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/PaymentRequiredError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Asset Account doesn't have sufficient funds to process payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/InsufficientFunds"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/asset-accounts": {
+      "post": {
+        "tags": ["Assets"],
+        "operationId": "CreateAssetAccount",
+        "description": "Creates new `AssetAccount` entity. If `publicKey` is provided then `AssetAccount` will be added to the existing public-key (SigningGroup). ",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAssetAccountInput"
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/AssetAccount" }
+                  }
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/PaymentRequiredError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Assets"],
+        "operationId": "ListAssetAccounts",
+        "description": "Returns list of `AssetAccount` items. Additional filters can be provided, see list of parameters for the operation.",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["Creating", "Enabled", "Failed"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/AssetAccount" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/asset-accounts/{id}": {
+      "get": {
+        "tags": ["Assets"],
+        "operationId": "ReadAssetAccountById",
+        "description": "Reads and returns an instance of `AssetAccount` by `id`.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/AssetAccount" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Assets"],
+        "operationId": "ArchiveAssetAccount",
+        "description": "Operation marks `AssetAccount` as `Archived` which deactivates account.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/AssetAccount" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/policies/policies": {
+      "post": {
+        "tags": ["PolicyManagement"],
+        "operationId": "CreatePolicy",
+        "description": "Creates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePolicyInput" }
+            }
+          }
+        },
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Policy" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Payload is invalid. Please see `causes` field to see details and reasons.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["PolicyManagement"],
+        "operationId": "ListPolicies",
+        "description": "Lists all available `Policy` items. List can be further filtered using using additional parameters below.",
+        "parameters": [
+          {
+            "name": "dateCreated",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "dateUpdated",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "activityKind",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "PaymentInitiation",
+                "EmployeeAdded",
+                "EmployeeDetailsUpdated",
+                "EmployeeRemoved"
+              ]
+            }
+          },
+          {
+            "name": "isEnabled",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "isDisabled",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "isArchived",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "boolean" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Policy" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/policies/policies/{policyId}": {
+      "put": {
+        "tags": ["PolicyManagement"],
+        "operationId": "UpdatePolicy",
+        "description": "Updates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdatePolicyInput" }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Policy" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Payload is invalid. Please see `causes` field to see details and reasons.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Policy with provided Id doesn't exist. Please see `causes` for additional information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["PolicyManagement"],
+        "operationId": "ReadyPolicyById",
+        "description": "Retrieves single `Policy` item by it’s `id`.",
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Policy" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Policy with provided Id doesn't exist. Please see `causes` for additional information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["PolicyManagement"],
+        "operationId": "ArchivePolicy",
+        "description": "",
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Policy" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Policy with provided Id doesn't exist. Please see `causes` for additional information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/policies/policy-controls": {
+      "post": {
+        "tags": ["PolicyManagement"],
+        "operationId": "CreatePolicyControl",
+        "description": "Creates new `PolicyControl` item. ",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePolicyControlInput"
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/PolicyControl" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Payload is invalid. Please see `causes` field to see details and reasons.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["PolicyManagement"],
+        "operationId": "ListPolicyControls",
+        "description": "Lists all available `PolicyControl` items. List can be further filtered using using additional parameters below.",
+        "parameters": [
+          {
+            "name": "dateCreated",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "dateUpdated",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "policyControlKind",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["NotifyAndAudit", "RequestApproval"]
+            }
+          },
+          {
+            "name": "isEnabled",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "isDisabled",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "isArchived",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "boolean" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/PolicyControl" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/policies/policy-controls/{policyControlId}": {
+      "put": {
+        "tags": ["PolicyManagement"],
+        "operationId": "UpdatePolicyControl",
+        "description": "Updates existing policy control, this operation will create new `PolicyControl` with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePolicyControlInput"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "policyControlId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/PolicyControl" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Policy with provided Id doesn't exist. Please see `causes` for additional information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["PolicyManagement"],
+        "operationId": "ReadyPolicyControlById",
+        "description": "Lists all available `PolicyControl` items. List can be further filtered using using additional parameters below.",
+        "parameters": [
+          {
+            "name": "policyControlId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/PolicyControl" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Policy with provided Id doesn't exist. Please see `causes` for additional information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["PolicyManagement"],
+        "operationId": "ArchivePolicyControl",
+        "description": "",
+        "parameters": [
+          {
+            "name": "policyControlId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/PolicyControl" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Policy with provided Id doesn't exist. Please see `causes` for additional information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/policies/policy-rules": {
+      "post": {
+        "tags": ["PolicyManagement"],
+        "operationId": "CreatePolicyRule",
+        "description": "Creates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePolicyInput" }
+            }
+          }
+        },
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Policy" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Payload is invalid. Please see `causes` field to see details and reasons.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["PolicyManagement"],
+        "operationId": "ListPolicyRules",
+        "description": "Lists all available `Policy` items. List can be further filtered using using additional parameters below.",
+        "parameters": [
+          {
+            "name": "dateCreated",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "dateUpdated",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "activityKind",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "PaymentInitiation",
+                "EmployeeAdded",
+                "EmployeeDetailsUpdated",
+                "EmployeeRemoved"
+              ]
+            }
+          },
+          {
+            "name": "isEnabled",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "isDisabled",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "isArchived",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "boolean" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Policy" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/policies/policy-rules/{policyRuleId}": {
+      "put": {
+        "tags": ["PolicyManagement"],
+        "operationId": "UpdatePolicyRule",
+        "description": "Updates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdatePolicyInput" }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "policyRuleId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Policy" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Payload is invalid. Please see `causes` field to see details and reasons.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Policy with provided Id doesn't exist. Please see `causes` for additional information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["PolicyManagement"],
+        "operationId": "ReadyPolicyRuleById",
+        "description": "Retrieves single `Policy` item by it’s `id`.",
+        "parameters": [
+          {
+            "name": "policyRuleId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Policy" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Policy with provided Id doesn't exist. Please see `causes` for additional information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["PolicyManagement"],
+        "operationId": "ArchivePolicyRule",
+        "description": "",
+        "parameters": [
+          {
+            "name": "policyRuleId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/Policy" }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Policy with provided Id doesn't exist. Please see `causes` for additional information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/policies/execution-certificates/{policyCertificate}": {
+      "get": {
+        "tags": ["PolicyExecution"],
+        "operationId": "ReadPolicyCertificateByHash",
+        "description": "",
+        "parameters": [
+          {
+            "name": "policyCertificate",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": {
+                      "$ref": "#/components/schemas/ExecutionCertificate"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apikeys/apikeys": {
+      "post": {
+        "tags": ["ApiKeys"],
+        "operationId": "CreateApiKey",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/ApiKeyRecord" }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": false },
+                    "error": {
+                      "$ref": "#/components/schemas/ApiKeyActionNotAllowed"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["ApiKeys"],
+        "operationId": "RetrieveActiveApiKeys",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/ApiKeyRecord" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apikeys/apikeys/{apiKeyId}": {
+      "delete": {
+        "tags": ["ApiKeys"],
+        "operationId": "RevokeApiKey",
+        "description": "",
+        "parameters": [
+          {
+            "name": "apiKeyId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSuccess": { "type": "boolean", "default": true },
+                    "response": { "$ref": "#/components/schemas/ApiKeyRecord" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AssetPairPrice": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "pair": { "description": "", "type": "string" },
+          "dateUpdated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "base": { "$ref": "#/components/schemas/AssetSymbol" },
+          "counter": { "$ref": "#/components/schemas/AssetSymbol" },
+          "amount": { "$ref": "#/components/schemas/Amount" },
+          "id": { "$ref": "#/components/schemas/EntityId" }
+        }
+      },
+      "EmployeeInitiator": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/InitiatorKind" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "employeeId": { "$ref": "#/components/schemas/EntityId" }
+        }
+      },
+      "DfnsStaffInitiator": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/InitiatorKind" },
+          "maintainerId": { "$ref": "#/components/schemas/EntityId" },
+          "country": { "$ref": "#/components/schemas/Countries" }
+        }
+      },
+      "DfnsCustomerServiceInitiator": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/InitiatorKind" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "apiKeyId": { "$ref": "#/components/schemas/EntityId" }
+        }
+      },
+      "IsoDate": {
+        "description": "Representation of [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date as a string. This datatype used to capture date-only in `yyyy-mm-dd` format.",
+        "type": "string"
+      },
+      "IsoDatetime": {
+        "description": "Representation of [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date as a string. This datatype used to capture full date and time with optional timezone component.",
+        "type": "string"
+      },
+      "Amount": {
+        "description": "Represents monetary amount. When transported  the type should be serialised as string to avoid IEEE/Float errors. When parsed within application logic, `Bid Decimal` or similar high-precision types should be used.",
+        "type": "string"
+      },
+      "EntityId": {
+        "description": "Represents ids, such as indices, foreign keys, etc. In most cases should be string.",
+        "type": "string"
+      },
+      "Username": {
+        "description": "Represents usernames within the platform. This should be used highlight the higher-than-usual risk type of the transported or stored value.",
+        "type": "string"
+      },
+      "GroupOrPermission": {
+        "description": "Represents individual permissions, groups, or role within the platform. This should be used highlight the higher-than-usual risk type of the transported or stored value.",
+        "type": "string"
+      },
+      "DocumentSnapshot": {
+        "description": "Represents snapshot of documents. Usually this means that this is a serialised form of a data-object, using XML, JSON, or other readable by both machine and human datasets.\n\nThis should be used highlight the higher-than-usual risk type of the transported or stored value.\n",
+        "type": "string"
+      },
+      "Tag": {
+        "description": "Represents tags within a system, that can be used by customers to mark up and organise various items. For example – they could tag employees, api-keys, and accounts to separate them in groups by department.",
+        "type": "string"
+      },
+      "PublicKey": {
+        "description": "Represents public key entities.\n\nThis should be used highlight the higher-than-usual risk type of the transported or stored value.\n",
+        "type": "string"
+      },
+      "DfnsCertificate": {
+        "description": "Represents a certificate that can be issued by various systems such as PolicyEngine, StrategyEngine or DefenceEngine to acknowledge that certain operation passed them.\n",
+        "type": "string"
+      },
+      "Epoch": { "description": "", "type": "integer" },
+      "BlockchainAddress": { "description": "", "type": "string" },
+      "EntityNotFoundError": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "serviceName": { "description": "", "type": "string" },
+          "message": { "description": "", "type": "string" },
+          "causes": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
+          "isDfnsError": { "description": "", "type": "boolean" },
+          "httpStatus": { "description": "", "type": "integer" },
+          "errorName": { "description": "", "type": "string" }
+        }
+      },
+      "EntityExpiredError": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "serviceName": { "description": "", "type": "string" },
+          "message": { "description": "", "type": "string" },
+          "causes": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
+          "isDfnsError": { "description": "", "type": "boolean" },
+          "httpStatus": { "description": "", "type": "integer" },
+          "errorName": { "description": "", "type": "string" }
+        }
+      },
+      "BadRequestError": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "serviceName": { "description": "", "type": "string" },
+          "message": { "description": "", "type": "string" },
+          "causes": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
+          "isDfnsError": { "description": "", "type": "boolean" },
+          "httpStatus": { "description": "", "type": "integer" },
+          "errorName": { "description": "", "type": "string" }
+        }
+      },
+      "DuplicateError": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "serviceName": { "description": "", "type": "string" },
+          "message": { "description": "", "type": "string" },
+          "causes": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
+          "isDfnsError": { "description": "", "type": "boolean" },
+          "httpStatus": { "description": "", "type": "integer" },
+          "errorName": { "description": "", "type": "string" }
+        }
+      },
+      "PaymentRequiredError": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "serviceName": { "description": "", "type": "string" },
+          "message": { "description": "", "type": "string" },
+          "causes": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
+          "isDfnsError": { "description": "", "type": "boolean" },
+          "httpStatus": { "description": "", "type": "integer" },
+          "errorName": { "description": "", "type": "string" }
+        }
+      },
+      "DfnsError": {
+        "type": "object",
+        "description": "Foundational type for the errors, defining everything that any error within Dfns product needs.",
+        "properties": {
+          "serviceName": { "description": "", "type": "string" },
+          "message": { "description": "", "type": "string" },
+          "causes": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
+          "isDfnsError": { "description": "", "type": "boolean" }
+        }
+      },
+      "Initiator": {
+        "oneOf": [
+          { "$ref": "#/components/schemas/EmployeeInitiator" },
+          { "$ref": "#/components/schemas/DfnsStaffInitiator" },
+          { "$ref": "#/components/schemas/DfnsCustomerServiceInitiator" }
+        ]
+      },
+      "Countries": {
+        "type": "string",
+        "description": "",
+        "enum": ["DE", "GB", "FR", "US"]
+      },
+      "AssetSymbol": {
+        "type": "string",
+        "description": "",
+        "enum": [
+          "ADA.ADA",
+          "ALGO",
+          "BCH",
+          "BTC",
+          "BSV",
+          "DOGE",
+          "DOT",
+          "ETH",
+          "EOS",
+          "LTC",
+          "1INCH.ETH",
+          "DAI.ETH",
+          "USDT.ETH",
+          "USDC.ETH",
+          "JEUR.ETH",
+          "JCHF.ETH",
+          "JGBP.ETH",
+          "WBTC.ETH",
+          "AAVE.ETH",
+          "BAT.ETH",
+          "COMP.ETH",
+          "LINK.ETH",
+          "MKR.ETH",
+          "SUSHI.ETH",
+          "UNI.ETH",
+          "KSM",
+          "XLM",
+          "XRP",
+          "XTZ",
+          "SOL",
+          "POLYX",
+          "EURL.XTZ"
+        ]
+      },
+      "InitiatorKind": {
+        "type": "string",
+        "description": "",
+        "enum": ["Employee", "DfnsCustomerService", "DfnsStaff"]
+      },
+      "Org": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "legalName": { "description": "", "type": "string" },
+          "tradingName": { "description": "", "type": "string" },
+          "country": { "$ref": "#/components/schemas/Countries" },
+          "dateOfIncorporation": { "$ref": "#/components/schemas/IsoDate" },
+          "dateOnboarded": { "$ref": "#/components/schemas/IsoDatetime" },
+          "status": { "$ref": "#/components/schemas/OrgStatus" },
+          "employees": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/OrgEmployee" }
+          },
+          "groups": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/EmployeeGroup" }
+          }
+        }
+      },
+      "OrgEmployee": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "status": { "$ref": "#/components/schemas/OrgEmployeeStatus" },
+          "orgId": { "description": "", "type": "string" },
+          "username": { "description": "", "type": "string" },
+          "email": { "description": "", "type": "string" },
+          "issuer": { "description": "", "type": "string" },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "dateUpdated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "fullName": { "description": "", "type": "string" },
+          "dateOfBirth": { "$ref": "#/components/schemas/IsoDate" },
+          "groups": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/EmployeeGroup" }
+          }
+        }
+      },
+      "ProductAvailabilityReport": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "product": { "$ref": "#/components/schemas/ProductKind" },
+          "isAvailable": { "description": "", "type": "boolean" },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" }
+        }
+      },
+      "EmployeeGroup": {
+        "type": "object",
+        "description": "",
+        "properties": { "name": { "description": "", "type": "string" } }
+      },
+      "CreateEmployee": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "username": { "description": "", "type": "string" },
+          "email": { "description": "", "type": "string" },
+          "issuer": { "description": "", "type": "string" },
+          "fullName": { "description": "", "type": "string" },
+          "dateOfBirth": { "$ref": "#/components/schemas/IsoDate" }
+        }
+      },
+      "UpdateEmployee": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "fullName": { "description": "", "type": "string" },
+          "dateOfBirth": { "$ref": "#/components/schemas/IsoDate" },
+          "email": { "description": "", "type": "string" },
+          "name": { "description": "", "type": "string" },
+          "status": { "$ref": "#/components/schemas/OrgEmployeeStatus" }
+        }
+      },
+      "UpdateOrg": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "legalName": { "description": "", "type": "string" },
+          "tradingName": { "description": "", "type": "string" },
+          "dateOfIncorporation": { "$ref": "#/components/schemas/IsoDate" },
+          "companyNumber": { "description": "", "type": "string" },
+          "taxId": { "description": "", "type": "string" }
+        }
+      },
+      "OrgStatus": {
+        "type": "string",
+        "description": "Indicates customer’s status within a lifecycle.",
+        "enum": ["Archived", "Disabled", "Enabled", "Creating", "Approved"]
+      },
+      "OrgEmployeeStatus": {
+        "type": "string",
+        "description": "",
+        "enum": ["Enabled", "Disabled", "Archived"]
+      },
+      "ProductKind": {
+        "type": "string",
+        "description": "",
+        "enum": ["AssetAccountManagement", "PaymentInitiation", "PolicyEngine"]
+      },
+      "Signature": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "r": { "description": "", "type": "string" },
+          "s": { "description": "", "type": "string" },
+          "recid": { "description": "", "type": "string" },
+          "publicKey": { "$ref": "#/components/schemas/PublicKey" },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" }
+        }
+      },
+      "PublicKeyRecord": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "publicKey": { "$ref": "#/components/schemas/PublicKey" },
+          "signerIds": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "groupThreshold": { "description": "", "type": "number" },
+          "groupSize": { "description": "", "type": "number" },
+          "tags": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Tag" }
+          }
+        }
+      },
+      "WalletBalance": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "walletId": { "description": "", "type": "string" },
+          "asset": { "description": "", "type": "string" },
+          "balance": { "$ref": "#/components/schemas/Amount" },
+          "timestamp": { "$ref": "#/components/schemas/Epoch" }
+        }
+      },
+      "WalletAddress": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "walletId": { "description": "", "type": "string" },
+          "asset": { "description": "", "type": "string" },
+          "address": { "$ref": "#/components/schemas/BlockchainAddress" }
+        }
+      },
+      "WalletTx": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "from": { "$ref": "#/components/schemas/BlockchainAddress" },
+          "to": { "$ref": "#/components/schemas/BlockchainAddress" },
+          "amount": { "$ref": "#/components/schemas/Amount" },
+          "asset": { "description": "", "type": "string" },
+          "txHash": { "description": "", "type": "string" },
+          "timestamp": { "$ref": "#/components/schemas/Epoch" },
+          "status": { "description": "", "type": "string" },
+          "blockHash": { "description": "", "type": "string" },
+          "blockHeight": { "description": "", "type": "string" },
+          "confirmations": { "description": "", "type": "integer" }
+        }
+      },
+      "CreateSignatureInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "body": { "description": "", "type": "string" },
+          "externalId": { "description": "", "type": "string" }
+        }
+      },
+      "CreatePublicKeyInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "externalId": { "description": "", "type": "string" },
+          "groupSize": { "description": "", "type": "number" },
+          "groupThreshold": { "description": "", "type": "number" },
+          "isEddsa": { "description": "", "type": "boolean" }
+        }
+      },
+      "CreateWalletTxInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "to": { "$ref": "#/components/schemas/BlockchainAddress" },
+          "amount": { "$ref": "#/components/schemas/Amount" },
+          "asset": { "description": "", "type": "string" }
+        }
+      },
+      "PublicKeyStatus": {
+        "type": "string",
+        "description": "",
+        "enum": ["Active", "Disabled", "Compromised"]
+      },
+      "PaymentInitiation": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "paymentId": { "$ref": "#/components/schemas/EntityId" },
+          "externalId": { "$ref": "#/components/schemas/EntityId" },
+          "status": { "$ref": "#/components/schemas/PaymentInitiationStatus" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "initiator": { "$ref": "#/components/schemas/Initiator" },
+          "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
+          "amount": { "$ref": "#/components/schemas/Amount" },
+          "sender": { "$ref": "#/components/schemas/DfnsAssetAccount" },
+          "receiver": { "$ref": "#/components/schemas/PaymentInstrument" },
+          "dateInitiated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "rejectionReason": {
+            "description": "In case payment initiation is rejected by the system, this field will contain information about it.\n",
+            "type": "string"
+          }
+        }
+      },
+      "BlockchainWalletAddress": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/PaymentInstrumentKind" },
+          "address": { "description": "", "type": "string" }
+        }
+      },
+      "DfnsAssetAccount": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/PaymentInstrumentKind" },
+          "id": { "$ref": "#/components/schemas/EntityId" }
+        }
+      },
+      "AssetAccount": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "externalId": { "$ref": "#/components/schemas/EntityId" },
+          "tags": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Tag" }
+          },
+          "status": { "$ref": "#/components/schemas/AssetAccountStatus" },
+          "address": { "description": "", "type": "string" },
+          "publicKey": { "description": "", "type": "string" },
+          "publicKeyId": { "$ref": "#/components/schemas/EntityId" },
+          "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
+          "name": { "description": "", "type": "string" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "dateUpdate": { "$ref": "#/components/schemas/IsoDatetime" },
+          "groupSize": { "description": "", "type": "number" },
+          "groupThreshold": { "description": "", "type": "number" },
+          "authorizations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetAccountAuthorization"
+            }
+          }
+        }
+      },
+      "Payment": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "externalId": { "$ref": "#/components/schemas/EntityId" },
+          "status": { "$ref": "#/components/schemas/PaymentStatus" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "initiator": { "$ref": "#/components/schemas/Initiator" },
+          "assetAccountId": { "$ref": "#/components/schemas/EntityId" },
+          "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
+          "amount": { "$ref": "#/components/schemas/Amount" },
+          "sender": { "$ref": "#/components/schemas/DfnsAssetAccount" },
+          "receiver": { "$ref": "#/components/schemas/PaymentInstrument" },
+          "narrative": {
+            "description": "SWIFT (MT, ISO15022) field. Represents additional information about payment.\n",
+            "type": "string"
+          },
+          "note": { "description": "", "type": "string" },
+          "receiverAddress": { "description": "", "type": "string" },
+          "policyCertificate": {
+            "$ref": "#/components/schemas/DfnsCertificate"
+          },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "dateUpdated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "dateExecuted": { "$ref": "#/components/schemas/IsoDatetime" },
+          "dateBroadcasted": { "$ref": "#/components/schemas/IsoDatetime" },
+          "dateFirstConfirmed": { "$ref": "#/components/schemas/IsoDatetime" },
+          "dateConfirmed": { "$ref": "#/components/schemas/IsoDatetime" },
+          "dateSettled": { "$ref": "#/components/schemas/IsoDatetime" },
+          "txHash": { "description": "", "type": "string" },
+          "blockHeight": { "description": "", "type": "integer" }
+        }
+      },
+      "AssetAccountAuthorization": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/AssetAccountAuthorizationKind"
+          },
+          "entityId": { "$ref": "#/components/schemas/EntityId" },
+          "permission": {
+            "$ref": "#/components/schemas/AssetAccountPermissions"
+          }
+        }
+      },
+      "UpdateAssetAccountPayload": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "status": { "$ref": "#/components/schemas/AssetAccountStatus" },
+          "address": { "description": "", "type": "string" },
+          "publicKey": { "description": "", "type": "string" },
+          "uniqueName": { "description": "", "type": "string" }
+        }
+      },
+      "CreateAssetAccountInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
+          "groupSize": { "description": "", "type": "integer" },
+          "groupThreshold": { "description": "", "type": "integer" },
+          "publicKey": { "$ref": "#/components/schemas/PublicKey" },
+          "externalId": { "description": "", "type": "string" },
+          "tags": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Tag" }
+          }
+        }
+      },
+      "CreatePaymentInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "externalId": { "description": "", "type": "string" },
+          "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
+          "amount": { "$ref": "#/components/schemas/Amount" },
+          "receiver": { "$ref": "#/components/schemas/PaymentInstrument" },
+          "note": { "description": "", "type": "string" },
+          "narrative": { "description": "", "type": "string" }
+        }
+      },
+      "InsufficientFunds": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "serviceName": { "description": "", "type": "string" },
+          "message": { "description": "", "type": "string" },
+          "causes": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
+          "isDfnsError": { "description": "", "type": "boolean" },
+          "httpStatus": { "description": "", "type": "integer" },
+          "errorName": { "description": "", "type": "string" }
+        }
+      },
+      "PaymentInstrument": {
+        "oneOf": [
+          { "$ref": "#/components/schemas/BlockchainWalletAddress" },
+          { "$ref": "#/components/schemas/DfnsAssetAccount" }
+        ]
+      },
+      "PaymentInstrumentKind": {
+        "type": "string",
+        "description": "",
+        "enum": ["DfnsAssetAccount", "BlockchainWalletAddress"]
+      },
+      "PaymentInitiationStatus": {
+        "type": "string",
+        "description": "",
+        "enum": ["Initiated", "Canceled", "Rejected"]
+      },
+      "AssetAccountStatus": {
+        "type": "string",
+        "description": "",
+        "enum": ["Creating", "Enabled", "Failed"]
+      },
+      "PaymentStatus": {
+        "type": "string",
+        "description": "",
+        "enum": [
+          "Initiated",
+          "Declined",
+          "Approved",
+          "Executed",
+          "Rejected",
+          "Broadcasted",
+          "Confirmed",
+          "Settled"
+        ]
+      },
+      "AssetAccountAuthorizationKind": {
+        "type": "string",
+        "description": "",
+        "enum": ["Employee", "Group", "ApiKey"]
+      },
+      "AssetAccountPermissions": {
+        "type": "string",
+        "description": "",
+        "enum": ["InitiatePayments", "ReadBalance", "ReadPublicKey"]
+      },
+      "Policy": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "version": { "description": "", "type": "string" },
+          "activityKind": { "$ref": "#/components/schemas/PolicyActivityKind" },
+          "tags": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Tag" }
+          },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "isImmutable": { "description": "", "type": "boolean" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "description": { "description": "", "type": "string" },
+          "author": { "$ref": "#/components/schemas/Username" },
+          "name": { "description": "", "type": "string" },
+          "status": { "$ref": "#/components/schemas/PolicyStatus" },
+          "controlIds": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/EntityId" }
+          },
+          "ruleIds": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/EntityId" }
+          }
+        }
+      },
+      "NotifyAndAuditPolicyControl": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/PolicyControlKind" },
+          "usernames": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "groups": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "RequestApprovalPolicyControl": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/PolicyControlKind" },
+          "approverGroups": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "approverUsernames": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "numApprovals": { "description": "", "type": "integer" },
+          "timeoutInSeconds": { "description": "", "type": "integer" }
+        }
+      },
+      "PolicyRule": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "version": { "description": "", "type": "string" },
+          "kind": { "$ref": "#/components/schemas/PolicyRuleKind" },
+          "tags": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Tag" }
+          },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "isImmutable": { "description": "", "type": "boolean" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "author": { "$ref": "#/components/schemas/Username" },
+          "description": { "description": "", "type": "string" },
+          "name": { "description": "", "type": "string" },
+          "configuration": {
+            "$ref": "#/components/schemas/PolicyRuleConfiguration"
+          }
+        }
+      },
+      "PolicyControl": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "version": { "description": "", "type": "string" },
+          "kind": { "$ref": "#/components/schemas/PolicyControlKind" },
+          "tags": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Tag" }
+          },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "isImmutable": { "description": "", "type": "boolean" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "author": { "$ref": "#/components/schemas/Username" },
+          "description": { "description": "", "type": "string" },
+          "name": { "description": "", "type": "string" },
+          "shouldMergeWithSameControl": {
+            "description": "Indicates whether control should merge with same one (compared by values).\nThis property should not be set to true, unless outcomes are understood. For example: Let's say we have 3 policies: \n\n1. policy to require approval for payments over €5000\n1. policy to require approval for payments done out of office hours\n1. policy to require approval for payments done out of Geofence. \n\nIn this case policies will require 3 approvals combined, which might not be an intent, and only one approval is required.",
+            "type": "boolean"
+          }
+        }
+      },
+      "CreateAmountLimitPrConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/PolicyRuleKind" },
+          "limit": { "$ref": "#/components/schemas/Amount" },
+          "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
+          "shouldIgnoreAssetsWithoutMarketValue": {
+            "description": "",
+            "type": "boolean"
+          },
+          "assetAccountSelectors": {
+            "$ref": "#/components/schemas/AssetAccountSelector"
+          }
+        }
+      },
+      "UpdateAmountLimitPrConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "limit": { "$ref": "#/components/schemas/Amount" },
+          "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
+          "shouldIgnoreAssetsWithoutMarketValue": {
+            "description": "",
+            "type": "boolean"
+          },
+          "assetAccountSelectors": {
+            "$ref": "#/components/schemas/AssetAccountSelector"
+          }
+        }
+      },
+      "CreateOutgoingVelocityPrConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/PolicyRuleKind" },
+          "velocity": { "$ref": "#/components/schemas/Amount" },
+          "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
+          "intervalInMinutes": { "description": "", "type": "integer" },
+          "shouldIgnoreAssetsWithoutMarketValue": {
+            "description": "",
+            "type": "boolean"
+          },
+          "assetAccountSelectors": {
+            "$ref": "#/components/schemas/AssetAccountSelector"
+          }
+        }
+      },
+      "CreateSiphoningPrConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/PolicyRuleKind" },
+          "maxTxCount": { "description": "", "type": "integer" },
+          "intervalInMinutes": { "description": "", "type": "integer" },
+          "assetAcountSelectors": {
+            "$ref": "#/components/schemas/AssetAccountSelector"
+          }
+        }
+      },
+      "SiphoningPrConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "maxTxCount": { "description": "", "type": "integer" },
+          "intervalInMinutes": { "description": "", "type": "integer" }
+        }
+      },
+      "UpdateSiphonPrConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "maxTxCount": { "description": "", "type": "integer" },
+          "intervalInMinutes": { "description": "", "type": "integer" },
+          "assetAccountSelectors": {
+            "$ref": "#/components/schemas/AssetAccountSelector"
+          }
+        }
+      },
+      "AmountLimitPrConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "limit": { "$ref": "#/components/schemas/Amount" },
+          "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
+          "shouldIgnoreAssetsWithoutMarketValue": {
+            "description": "",
+            "type": "boolean"
+          }
+        }
+      },
+      "UpdateOutgoingVelocityPrConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "velocity": { "$ref": "#/components/schemas/Amount" },
+          "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
+          "intervalInMinutes": { "description": "", "type": "integer" },
+          "shouldIgnoreAssetsWithoutMarketValue": {
+            "description": "",
+            "type": "boolean"
+          },
+          "assetAccountSelectors": {
+            "$ref": "#/components/schemas/AssetAccountSelector"
+          }
+        }
+      },
+      "OutgoingVelocityPrConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "velocity": { "$ref": "#/components/schemas/Amount" },
+          "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
+          "intervalInMinutes": { "description": "", "type": "integer" },
+          "shouldIgnoreAssetsWithoutMarketValue": {
+            "description": "",
+            "type": "boolean"
+          }
+        }
+      },
+      "CreateRequestApprovalPcConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/PolicyControlKind" },
+          "approverUsernames": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "approverGroups": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "timeoutInMinutes": { "description": "", "type": "integer" },
+          "canInitiatorApprove": { "description": "", "type": "boolean" },
+          "numApprovals": { "description": "", "type": "integer" }
+        }
+      },
+      "UpdateRequestApprovalPcConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "approverUsernames": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "approverGroups": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "timeoutInMinutes": { "description": "", "type": "integer" },
+          "canInitiatorApprove": { "description": "", "type": "boolean" },
+          "numApprovals": { "description": "", "type": "integer" }
+        }
+      },
+      "CreateNotifyAndAuditPcConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "kind": { "$ref": "#/components/schemas/PolicyControlKind" },
+          "usernames": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "groups": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "UpdateNotifyAndAuditPcConf": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "groups": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "usernames": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "AssetAccountSelector": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "assetAccountIds": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/EntityId" }
+          },
+          "tags": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Tag" }
+          },
+          "assetSymbols": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/AssetSymbol" }
+          }
+        }
+      },
+      "PolicyManagementPreferences": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "policyRuleAssetSymbol": {
+            "description": "Sets default `AssetSymbol` for the policy rules that use it, such as Limit, Velocity, Siphoning, and others.",
+            "type": "boolean"
+          },
+          "policyRuleVelocityIntervalInMinutes": {
+            "description": "Sets default interval in minutes for policy rules that use intervals, such as Velocity and Siphoning. \n\nThis setting does not update existing rules. This will only impact rules that are created  after this setting is set.",
+            "type": "integer"
+          }
+        }
+      },
+      "Create": { "type": "object", "description": "", "properties": {} },
+      "UpdatePolicyRuleInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "description": { "description": "", "type": "string" },
+          "name": { "description": "", "type": "string" },
+          "configuration": {
+            "$ref": "#/components/schemas/UpdatePolicyRuleConfiguration"
+          },
+          "assetAccountSelector": {
+            "$ref": "#/components/schemas/AssetAccountSelector"
+          }
+        }
+      },
+      "CreatePolicyInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "activityKind": { "$ref": "#/components/schemas/PolicyActivityKind" },
+          "isImmutable": { "description": "", "type": "boolean" },
+          "description": { "description": "", "type": "string" },
+          "name": { "description": "", "type": "string" },
+          "controlIds": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/EntityId" }
+          },
+          "ruleIds": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/EntityId" }
+          },
+          "status": { "$ref": "#/components/schemas/PolicyStatus" }
+        }
+      },
+      "UpdatePolicyInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "description": { "description": "", "type": "string" },
+          "controlIds": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/EntityId" }
+          },
+          "ruleIds": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/EntityId" }
+          },
+          "status": { "$ref": "#/components/schemas/PolicyStatus" }
+        }
+      },
+      "CreatePolicyControlInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "description": { "description": "", "type": "string" },
+          "name": { "description": "", "type": "string" },
+          "configuration": {
+            "$ref": "#/components/schemas/CreatePolicyControlConfiguration"
+          }
+        }
+      },
+      "UpdatePolicyControlInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "description": { "description": "", "type": "string" },
+          "name": { "description": "", "type": "string" },
+          "configuration": {
+            "$ref": "#/components/schemas/UpdatePolicyControlConfiguration"
+          }
+        }
+      },
+      "CreatePolicyRuleInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "description": { "description": "", "type": "string" },
+          "name": { "description": "", "type": "string" },
+          "configuration": {
+            "$ref": "#/components/schemas/CreatePolicyRuleConfiguration"
+          },
+          "assetAccountSelector": {
+            "$ref": "#/components/schemas/AssetAccountSelector"
+          }
+        }
+      },
+      "CreatePolicyRuleConfiguration": {
+        "oneOf": [
+          { "$ref": "#/components/schemas/CreateAmountLimitPrConf" },
+          { "$ref": "#/components/schemas/CreateOutgoingVelocityPrConf" },
+          { "$ref": "#/components/schemas/CreateSiphoningPrConf" }
+        ]
+      },
+      "UpdatePolicyRuleConfiguration": {
+        "oneOf": [
+          { "$ref": "#/components/schemas/UpdateAmountLimitPrConf" },
+          { "$ref": "#/components/schemas/UpdateSiphonPrConf" },
+          { "$ref": "#/components/schemas/UpdateOutgoingVelocityPrConf" }
+        ]
+      },
+      "UpdatePolicyControlConfiguration": {
+        "oneOf": [
+          { "$ref": "#/components/schemas/UpdateRequestApprovalPcConf" },
+          { "$ref": "#/components/schemas/UpdateNotifyAndAuditPcConf" }
+        ]
+      },
+      "CreatePolicyControlConfiguration": {
+        "oneOf": [
+          { "$ref": "#/components/schemas/CreateRequestApprovalPcConf" },
+          { "$ref": "#/components/schemas/CreateNotifyAndAuditPcConf" }
+        ]
+      },
+      "PolicyRuleConfiguration": {
+        "oneOf": [
+          { "$ref": "#/components/schemas/SiphoningPrConf" },
+          { "$ref": "#/components/schemas/AmountLimitPrConf" },
+          { "$ref": "#/components/schemas/OutgoingVelocityPrConf" },
+          { "$ref": "#/components/schemas/OutgoingVelocityPrConf" }
+        ]
+      },
+      "PolicyActivityKind": {
+        "type": "string",
+        "description": "",
+        "enum": [
+          "PaymentInitiation",
+          "EmployeeAdded",
+          "EmployeeDetailsUpdated",
+          "EmployeeRemoved"
+        ]
+      },
+      "PolicyStatus": {
+        "type": "string",
+        "description": "",
+        "enum": ["Enabled", "Disabled", "Archived"]
+      },
+      "PolicyControlKind": {
+        "type": "string",
+        "description": "",
+        "enum": ["NotifyAndAudit", "RequestApproval"]
+      },
+      "PolicyRuleKind": {
+        "type": "string",
+        "description": "",
+        "enum": [
+          "PaymentAmountLimit",
+          "PaymentAmountOutgoingVelocity",
+          "EmployeeAdded",
+          "EmployeeDetailsUpdated",
+          "OutgoingPaymentVelocity",
+          "Siphoning"
+        ]
+      },
+      "PolicyExecution": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "kind": { "$ref": "#/components/schemas/PolicyActivityKind" },
+          "status": { "$ref": "#/components/schemas/ExecutionStatus" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "initiatorKind": { "$ref": "#/components/schemas/InitiatorKind" },
+          "initiatingEventId": { "$ref": "#/components/schemas/EntityId" },
+          "documentedPolicies": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/DocumentSnapshot" }
+          },
+          "documentedActivity": {
+            "$ref": "#/components/schemas/DocumentSnapshot"
+          },
+          "controlExecutions": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/PolicyControlExecution" }
+          },
+          "policyId": { "$ref": "#/components/schemas/EntityId" }
+        }
+      },
+      "PolicyControlExecution": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "status": { "$ref": "#/components/schemas/ExecutionStatus" },
+          "controlId": { "$ref": "#/components/schemas/EntityId" },
+          "dateExecuted": { "$ref": "#/components/schemas/IsoDatetime" },
+          "dateFullfiled": { "$ref": "#/components/schemas/IsoDatetime" },
+          "policyExecutionId": { "$ref": "#/components/schemas/EntityId" }
+        }
+      },
+      "ExecutionCertificate": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "checksum": { "description": "", "type": "string" },
+          "initiatingEventId": { "$ref": "#/components/schemas/EntityId" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "appliedPolicies": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Policy" }
+          }
+        }
+      },
+      "AppraisableActivity": {
+        "type": "object",
+        "description": "",
+        "properties": {}
+      },
+      "ExecutionStatus": {
+        "type": "string",
+        "description": "",
+        "enum": ["Awaiting", "Passed", "Failed", "Timedout"]
+      },
+      "CreateKeychainAttempt": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "parties": { "description": "", "type": "number" },
+          "threshold": { "description": "", "type": "number" },
+          "accountId": { "$ref": "#/components/schemas/EntityId" }
+        }
+      },
+      "CreateKeychainStatus": {
+        "type": "string",
+        "description": "",
+        "enum": ["Success", "Failed"]
+      },
+      "SignersGroup": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "threshold": { "description": "", "type": "integer" },
+          "publicKey": { "description": "", "type": "string" },
+          "participantPublicKeys": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "ApiKeyRecord": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "status": { "$ref": "#/components/schemas/ApiKeyStatus" },
+          "externalId": { "description": "", "type": "string" },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "name": { "description": "", "type": "string" },
+          "authorId": { "$ref": "#/components/schemas/EntityId" },
+          "apiKey": { "description": "", "type": "string" },
+          "scopes": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "ApiKeyActionNotAllowed": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "httpStatus": { "description": "", "type": "integer" },
+          "errorName": { "description": "", "type": "string" }
+        }
+      },
+      "ApiKeyStatus": {
+        "type": "string",
+        "description": "",
+        "enum": ["Active", "Archived"]
+      },
+      "DefaultAssetSymbolRouting": {
+        "type": "string",
+        "description": "",
+        "enum": ["USDC"]
+      }
+    },
+    "securitySchemes": {
+      "EmployeeAuth": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "http://login.dfns.ninja",
+            "scopes": {
+              "payments:write": "execute payments",
+              "payments:read": "read payments"
+            }
+          }
+        }
+      },
+      "ApiKeyAuth": { "type": "apiKey", "name": "api_key", "in": "header" }
+    }
+  }
+}
