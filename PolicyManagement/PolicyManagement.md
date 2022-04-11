@@ -7,7 +7,7 @@
 
 Creates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policies" method="post" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policies" method="post" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -17,7 +17,7 @@ Creates new policy. This will bind list of `PolicyRule` entities with `PolicyCon
 
 Updates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policies/{policyId}" method="put" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policies/{policyId}" method="put" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -27,7 +27,7 @@ Updates existing policy, this operation will create new policy with same `id` bu
 
 Retrieves single `Policy` item by it’s `id`.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policies/{policyId}" method="get" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policies/{policyId}" method="get" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -37,7 +37,7 @@ Retrieves single `Policy` item by it’s `id`.
 
 Lists all available `Policy` items. List can be further filtered using using additional parameters below.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policies" method="get" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policies" method="get" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -47,7 +47,7 @@ Lists all available `Policy` items. List can be further filtered using using add
 
 
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policies/{policyId}" method="delete" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policies/{policyId}" method="delete" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -57,7 +57,7 @@ Lists all available `Policy` items. List can be further filtered using using add
 
 Creates new `PolicyControl` item. 
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policy-controls" method="post" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policy-controls" method="post" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -67,7 +67,7 @@ Creates new `PolicyControl` item.
 
 Updates existing policy control, this operation will create new `PolicyControl` with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policy-controls/{policyControlId}" method="put" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policy-controls/{policyControlId}" method="put" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -77,7 +77,7 @@ Updates existing policy control, this operation will create new `PolicyControl` 
 
 Lists all available `PolicyControl` items. List can be further filtered using using additional parameters below.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policy-controls/{policyControlId}" method="get" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policy-controls/{policyControlId}" method="get" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -87,7 +87,7 @@ Lists all available `PolicyControl` items. List can be further filtered using us
 
 Lists all available `PolicyControl` items. List can be further filtered using using additional parameters below.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policy-controls" method="get" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policy-controls" method="get" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -97,7 +97,7 @@ Lists all available `PolicyControl` items. List can be further filtered using us
 
 
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policy-controls/{policyControlId}" method="delete" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policy-controls/{policyControlId}" method="delete" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -107,7 +107,7 @@ Lists all available `PolicyControl` items. List can be further filtered using us
 
 Creates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policy-rules" method="post" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policy-rules" method="post" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -117,7 +117,7 @@ Creates new policy. This will bind list of `PolicyRule` entities with `PolicyCon
 
 Updates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policy-rules/{policyRuleId}" method="put" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policy-rules/{policyRuleId}" method="put" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -127,7 +127,7 @@ Updates existing policy, this operation will create new policy with same `id` bu
 
 Retrieves single `Policy` item by it’s `id`.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policy-rules/{policyRuleId}" method="get" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policy-rules/{policyRuleId}" method="get" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -137,7 +137,7 @@ Retrieves single `Policy` item by it’s `id`.
 
 Lists all available `Policy` items. List can be further filtered using using additional parameters below.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policy-rules" method="get" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policy-rules" method="get" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -147,7 +147,7 @@ Lists all available `Policy` items. List can be further filtered using using add
 
 
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="policies/policy-rules/{policyRuleId}" method="delete" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/policies/policy-rules/{policyRuleId}" method="delete" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 

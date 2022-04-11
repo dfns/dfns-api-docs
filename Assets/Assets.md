@@ -9,7 +9,7 @@ Operations trigger payment initiation. This will instruct funds to be transfered
 
 This operation will trigger PolicyEngine.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="assets/asset-accounts/{accountId}/payments" method="post" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/assets/asset-accounts/{accountId}/payments" method="post" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -19,7 +19,7 @@ This operation will trigger PolicyEngine.
 
 Creates new `AssetAccount` entity. If `publicKey` is provided then `AssetAccount` will be added to the existing public-key (SigningGroup). 
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="assets/asset-accounts" method="post" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/assets/asset-accounts" method="post" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -29,7 +29,7 @@ Creates new `AssetAccount` entity. If `publicKey` is provided then `AssetAccount
 
 Reads and returns an instance of `AssetAccount` by `id`.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="assets/asset-accounts/{id}" method="get" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/assets/asset-accounts/{id}" method="get" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -39,7 +39,7 @@ Reads and returns an instance of `AssetAccount` by `id`.
 
 Returns list of `AssetAccount` items. Additional filters can be provided, see list of parameters for the operation.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="assets/asset-accounts" method="get" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/assets/asset-accounts" method="get" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
@@ -49,7 +49,7 @@ Returns list of `AssetAccount` items. Additional filters can be provided, see li
 
 Operation marks `AssetAccount` as `Archived` which deactivates account.
 
-{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="assets/asset-accounts/{id}" method="delete" %}
+{% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/assets/asset-accounts/{id}" method="delete" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
 
