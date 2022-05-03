@@ -7,3 +7,11 @@ Returns list of `AssetAccount` items. Additional filters can be provided, see li
 {% swagger src="../.gitbook/assets/dfns-api-openapi.json" path="/assets/asset-accounts" method="get" %}
 [dfns-api-openapi.json](../.gitbook/assets/dfns-api-openapi.json)
 {% endswagger %}
+
+{% swagger src="../../.gitbook/assets/dfns-api-openapi.json" path="/assets/asset-accounts" method="get" %}
+[dfns-api-openapi.json](../../.gitbook/assets/dfns-api-openapi.json)
+{% endswagger %}
+
+{% swagger src="../../../.gitbook/assets/dfns-api-openapi.json" path="/assets/asset-accounts" method="get" %}
+[dfns-api-openapi.json](../../../.gitbook/assets/dfns-api-openapi.json)
+{% endswagger %}
