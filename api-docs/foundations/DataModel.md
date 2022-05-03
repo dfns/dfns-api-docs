@@ -1,1 +1,0 @@
-Foundations contain data types and operations that shared and can be used by any domain. Reusable errors, types, aliases should be stored in this domain.
