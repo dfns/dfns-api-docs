@@ -6,8 +6,7 @@
 ## API Docs 
 
 * PublicKeys
-  * [PublicKeys Data Model](api-docs/public-keys/README.md.md)
-
+  * [PublicKeys Overview](api-docs/public-keys/README.md)
   * [ReadPublicKey](api-docs/public-keys/ReadPublicKey.md)
   * [CreatePublicKey](api-docs/public-keys/CreatePublicKey.md)
   * [CreateSignature](api-docs/public-keys/CreateSignature.md)
@@ -17,8 +16,7 @@
   * [CreateWalletTransaction](api-docs/public-keys/CreateWalletTransaction.md)
 
 * Assets
-  * [Assets Data Model](api-docs/assets/README.md.md)
-
+  * [Assets Overview](api-docs/assets/README.md)
   * [InitiatePayment](api-docs/assets/InitiatePayment.md)
   * [CreateAssetAccount](api-docs/assets/CreateAssetAccount.md)
   * [ReadAssetAccountById](api-docs/assets/ReadAssetAccountById.md)
