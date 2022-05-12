@@ -1,4 +1,2 @@
-
-    Dfns API
-    ===
-    
+Welcome to Dfns Documentation
+===

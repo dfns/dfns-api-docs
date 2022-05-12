@@ -2,10 +2,6 @@
 ## Assets Data Models   
 
 
-### AssetAccount
- 
-    
-
 ### PaymentInitiation
  
     
@@ -15,6 +11,10 @@
     
 
 ### DfnsAssetAccount
+ 
+    
+
+### AssetAccount
  
     
 

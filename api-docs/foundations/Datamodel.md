@@ -112,3 +112,7 @@ Foundational type for the errors, defining everything that any error within Dfns
 ### InitiatorKind
  
     
+
+### IdentityIssuer
+ 
+    

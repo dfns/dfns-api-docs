@@ -6,11 +6,11 @@
  
     
 
-### NotifyAndAuditPolicyControl
+### NotifyAndAuditPcConf
  
     
 
-### RequestApprovalPolicyControl
+### RequestApprovalPcConf
  
     
 
@@ -90,6 +90,18 @@
  
     
 
+### EmptyConfiguration
+ 
+    
+
+### CreateAlwaysActivatedPrConf
+ 
+    
+
+### UpdateAlwaysActivatedPrConf
+ 
+    
+
 ### CreatePolicyInput
  
     
@@ -127,6 +139,10 @@
     
 
 ### PolicyRuleConfiguration
+ 
+    
+
+### PolicyControlConfiguration
  
     
 

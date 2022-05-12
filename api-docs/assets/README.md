@@ -1,6 +1,3 @@
-Assets Accounts
-===
-
 Assets domain responsibilities are:
 - to represent blockchain wallets, payments, and other necessary data to Dfns products. 
 - to allow customers to use the datasets in both crypto-native and in traditional-payment ways.

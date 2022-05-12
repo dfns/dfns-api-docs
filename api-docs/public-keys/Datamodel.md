@@ -2,7 +2,7 @@
 ## PublicKeys Data Models   
 
 
-### Signature
+### SignatureResponse
  
     
 
@@ -22,6 +22,10 @@
  
     
 
+### Signature
+ 
+    
+
 ### CreateSignatureInput
  
     
@@ -35,5 +39,9 @@
     
 
 ### PublicKeyStatus
+ 
+    
+
+### SignatureStatus
  
     
