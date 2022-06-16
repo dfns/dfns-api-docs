@@ -1,8 +1,0 @@
-
-## SignersNetwork Data Models   
-
-
-### SignersGroup
- 
-    
-

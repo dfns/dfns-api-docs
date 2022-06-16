@@ -65,6 +65,10 @@ Represents a certificate that can be issued by various systems such as PolicyEng
  
     
 
+### Email
+String as email format 
+    
+
 ### Epoch
  
     
@@ -114,5 +118,9 @@ Foundational type for the errors, defining everything that any error within Dfns
     
 
 ### IdentityIssuer
+ 
+    
+
+### ProductKind
  
     

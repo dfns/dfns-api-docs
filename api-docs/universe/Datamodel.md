@@ -1,5 +1,0 @@
-
-## Universe Data Models   
-
-
-
