@@ -6,7 +6,8 @@
 * [Getting Started](getting-started/GettingStarted.md)
 
 ## Use Cases
-* [Create Asset Account](use-cases/CreateAssetAccount.md)
+* [Asset Accounts](use-cases/Asset Accounts/README.md)
+  * [Asset Accounts/Create Asset Account](use-cases/Asset Accounts/CreateAssetAccount.md)
 
 ## API Docs
 * PublicKeys

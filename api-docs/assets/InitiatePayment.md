@@ -6,6 +6,6 @@ Operations trigger payment initiation. This will instruct funds to be transfered
 
 This operation will trigger PolicyEngine.
 
-{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/assets/asset-accounts/{accountId}/payments" method="post" %}
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="//assets/asset-accounts/{accountId}/payments" method="post" %}
 [production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

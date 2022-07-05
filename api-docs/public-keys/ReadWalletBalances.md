@@ -4,6 +4,6 @@
 
 
 
-{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/mpc/networks/{network}/wallets/{walletId}/balances" method="get" %}
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="//mpc/networks/{network}/wallets/{walletId}/balances" method="get" %}
 [production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}
