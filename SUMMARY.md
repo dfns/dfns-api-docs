@@ -7,7 +7,7 @@
 
 ## Use Cases
 * [Asset Accounts](use-cases/Asset Accounts/README.md)
-  * [Asset Accounts/Create Asset Account](use-cases/Asset Accounts/CreateAssetAccount.md)
+  * [Create Asset Account](use-cases/Asset Accounts/CreateAssetAccount.md)
 
 ## API Docs
 * PublicKeys
