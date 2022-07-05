@@ -3,11 +3,11 @@
 * [Welcome](README.md)
 
 ## Getting Started
-* [Getting Started](getting-started/GettingStarted.md)
+* [Getting Started](<getting-started/GettingStarted.md>)
 
 ## Use Cases
-* [Asset Accounts](use-cases/Asset Accounts/README.md)
-  * [Create Asset Account](use-cases/Asset Accounts/CreateAssetAccount.md)
+* [Asset Accounts](<use-cases/Asset Accounts/README.md>)
+  * [Create Asset Account](<use-cases/Asset Accounts/CreateAssetAccount.md>)
 
 ## API Docs
 * PublicKeys
