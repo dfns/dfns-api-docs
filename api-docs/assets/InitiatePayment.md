@@ -41,10 +41,6 @@ If successful, the response contains, among other things, a **date stamp** and a
 
 When the payment is in the process of being initiated, its `status` is `Initiated`. Once complete, the payment's `status` changes from `Initiated` to `Executed`. To confirm that this has occurred, you can use the [`GetPaymentById` method](GetPaymentById.md).
 
-{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/assets/asset-accounts/{accountId}/payments" method="post" %}
-[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
-{% endswagger %}
-
 
 
 ### Input Query Parameters

@@ -3,15 +3,6 @@
 `RESTful Endpoint: get /mpc/networks/{network}/wallets/{walletId}/address`
 
 
-## ReadWalletAddress
-`/mpc/networks/{network}/wallets/{walletId}/address`
-
-
-
-{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/mpc/networks/{network}/wallets/{walletId}/address" method="get" %}
-[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
-{% endswagger %}
-
 
 ### Input Query Parameters
 * Path parameter `network`: `String`. ,* Query parameter `asset`: `String`. Asset symbol that is being retrieved.
