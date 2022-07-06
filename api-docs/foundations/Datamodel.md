@@ -101,6 +101,10 @@ String as email format
 Foundational type for the errors, defining everything that any error within Dfns product needs. 
     
 
+### OperationNotImplementedError
+ 
+    
+
 ### Initiator
  
     

@@ -2,7 +2,17 @@
 ## CreatePolicyRule
 `RESTful Endpoint: post /policies/policy-rules`
 
+
+## CreatePolicyRule
+`/policies/policy-rules`
+
 Creates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.
+
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/policies/policy-rules" method="post" %}
+[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
+{% endswagger %}
+
+
 
 ### Input Body Parameters
 * activityKind: `PolicyActivityKind` 
@@ -12,10 +22,11 @@ Creates new policy. This will bind list of `PolicyRule` entities with `PolicyCon
 * controlIds: `EntityId[]` 
 * ruleIds: `EntityId[]` 
 * status: `PolicyStatus` 
+* filter: `PolicyObjectFilter` [_Optional_] 
 
 _Please consult OpenAPI file full breakdown and including nested properties._
 
 
-{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/policies/policy-rules" method="post" %}
-[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
+{% swagger src="../../.gitbook/assets/${ProductionOpenApiFileName}" path="/policies/policy-rules" method="post" %}
+[${ProductionOpenApiFileName}](../../.gitbook/assets/${ProductionOpenApiFileName})
 {% endswagger %}

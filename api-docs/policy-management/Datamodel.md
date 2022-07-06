@@ -42,7 +42,7 @@
  
     
 
-### UpdateSiphonPrConf
+### UpdateSiphoningPrConf
  
     
 
@@ -74,19 +74,11 @@
  
     
 
-### AssetAccountSelector
- 
-    
-
 ### PolicyManagementPreferences
  
     
 
 ### Create
- 
-    
-
-### UpdatePolicyRuleInput
  
     
 
@@ -99,6 +91,10 @@
     
 
 ### UpdateAlwaysActivatedPrConf
+ 
+    
+
+### AssetAccountFilter
  
     
 
@@ -143,6 +139,10 @@
     
 
 ### PolicyControlConfiguration
+ 
+    
+
+### PolicyObjectFilter
  
     
 

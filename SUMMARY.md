@@ -8,6 +8,12 @@
 ## Use Cases
 * [Asset Accounts](<use-cases/Asset Accounts/README.md>)
   * [Create Asset Account](<use-cases/Asset Accounts/CreateAssetAccount.md>)
+  * [Get Account By Id](<use-cases/Asset Accounts/GetAccountById.md>)
+  * [Get Balance](<use-cases/Asset Accounts/GetBalance.md>)
+* [Payments](<use-cases/Payments/README.md>)
+  * [Get Payment By Id](<use-cases/Payments/GetPaymentById.md>)
+  * [Initiate Payment](<use-cases/Payments/InitiatePayment.md>)
+  * [No Policy Scenario](<use-cases/Payments/NoPolicySimplePaymentScenario.md>)
 
 ## API Docs
 * PublicKeys
@@ -16,7 +22,6 @@
   * [ReadPublicKey](api-docs/public-keys/ReadPublicKey.md)
   * [CreatePublicKey](api-docs/public-keys/CreatePublicKey.md)
   * [CreateSignature](api-docs/public-keys/CreateSignature.md)
-  * [ReadWalletBalances](api-docs/public-keys/ReadWalletBalances.md)
   * [ReadWalletAddress](api-docs/public-keys/ReadWalletAddress.md)
   * [ReadWalletTransactions](api-docs/public-keys/ReadWalletTransactions.md)
   * [CreateWalletTransaction](api-docs/public-keys/CreateWalletTransaction.md)
@@ -51,3 +56,9 @@
   * [PolicyExecution Overview](api-docs/policy-execution/README.md)
   * [PolicyExecution Data Model](api-docs/policy-execution/Datamodel.md)
   * [ReadPolicyCertificateByHash](api-docs/policy-execution/ReadPolicyCertificateByHash.md)
+* ApiKeys
+  * [ApiKeys Overview](api-docs/api-keys/README.md)
+  * [ApiKeys Data Model](api-docs/api-keys/Datamodel.md)
+  * [CreateApiKey](api-docs/api-keys/CreateApiKey.md)
+  * [RetrieveActiveApiKeys](api-docs/api-keys/RetrieveActiveApiKeys.md)
+  * [RevokeApiKey](api-docs/api-keys/RevokeApiKey.md)

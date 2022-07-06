@@ -1,6 +1,6 @@
 {
   "openapi": "3.0.1",
-  "info": { "title": "Dfns API", "version": "3.4.4" },
+  "info": { "title": "Dfns API", "version": "3.5.2" },
   "servers": [
     {
       "description": "Ninja (Staging-Testnet)",
@@ -16,7 +16,7 @@
       "get": {
         "tags": ["PublicKeys"],
         "operationId": "ReadPublicKey",
-        "description": "Retrieves accounts by public key.",
+        "description": "\n## ReadPublicKey\n`/mpc/public-keys/{publicKey}`\n\nRetrieves accounts by public key.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/public-keys/{publicKey}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "publicKey",
@@ -57,7 +57,7 @@
       "post": {
         "tags": ["PublicKeys"],
         "operationId": "CreatePublicKey",
-        "description": "",
+        "description": "\n## CreatePublicKey\n`/mpc/public-keys`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/public-keys\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -82,7 +82,7 @@
       "post": {
         "tags": ["PublicKeys"],
         "operationId": "CreateSignature",
-        "description": "Operation accepts a message, and uses Dfns MPC network to create signature against it.",
+        "description": "\n## CreateSignature\n`/mpc/public-keys/{publicKeyId}/signatures`\n\nOperation accepts a message, and uses Dfns MPC network to create signature against it.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/public-keys/{publicKeyId}/signatures\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -141,89 +141,11 @@
         }
       }
     },
-    "/mpc/networks/{network}/wallets/{walletId}/balances": {
-      "get": {
-        "tags": ["PublicKeys"],
-        "operationId": "ReadWalletBalances",
-        "description": "",
-        "parameters": [
-          {
-            "name": "network",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "asset",
-            "in": "query",
-            "description": "Asset symbol that is being retrieved.\n\n - If this is a native currency (such as BTC on BTC network) it will be duplicated.\n - If this is an ERC20 (or analog on other networks, such as FA 1.2) then it will indicate particular coin. This can be either supported by Dfns asset, or supported by a given customer.",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "walletId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "items": {
-                      "items": {
-                        "type": "array",
-                        "$ref": "#/components/schemas/WalletBalance"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Either invalid network or invalid asset",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": { "$ref": "#/components/schemas/BadRequestError" }
-                  }
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Wallet with a provided id is not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "$ref": "#/components/schemas/EntityNotFoundError"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/mpc/networks/{network}/wallets/{walletId}/address": {
       "get": {
         "tags": ["PublicKeys"],
         "operationId": "ReadWalletAddress",
-        "description": "",
+        "description": "\n## ReadWalletAddress\n`/mpc/networks/{network}/wallets/{walletId}/address`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/networks/{network}/wallets/{walletId}/address\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "network",
@@ -291,7 +213,7 @@
       "get": {
         "tags": ["PublicKeys"],
         "operationId": "ReadWalletTransactions",
-        "description": "",
+        "description": "\n## ReadWalletTransactions\n`/mpc/networks/{network}/wallets/{walletId}/transactions`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/networks/{network}/wallets/{walletId}/transactions\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "network",
@@ -367,7 +289,7 @@
       "post": {
         "tags": ["PublicKeys"],
         "operationId": "CreateWalletTransaction",
-        "description": "",
+        "description": "\n## CreateWalletTransaction\n`/mpc/networks/{network}/wallets/{walletId}/transactions`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/networks/{network}/wallets/{walletId}/transactions\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -445,7 +367,7 @@
       "post": {
         "tags": ["Assets"],
         "operationId": "InitiatePayment",
-        "description": "Operations trigger payment initiation. This will instruct funds to be transfered from one wallet to another within same network and same asset.\n\nThis operation will trigger PolicyEngine.",
+        "description": "\n## InitiatePayment\n` POST /assets/asset-accounts/{accountId}/payments`\n\nInitiates payment in provided `AssetSymbol`, instructing funds to be transfered from one wallet to another within same network and same asset.\n\n> **Note**: InitiatePayment triggers PolicyEngine.\n\nTo initiate a payment to an asset account, send a `POST` request to the  endpoint. Incldue an asset account identifier as a path parameter, and in the request body send the amount and type of funds as well as the receiver's kind and address:\n\n```http\nPOST /assets/asset-accounts/:assetAccountId/payments\n```\n\n```json\n{\n    \"receiver\": \n    {\n        \"kind\": \"BlockchainWalletAddress\",\n        \"address\": \"0x....\"\n    }\n    \"assetSymbol\":  \"ETH\",\n    \"amount\": \"0.0001\"\n}\n```\n\nIf successful, the response contains, among other things, a **date stamp** and a **new payment ID**, confirming that a new payment of the correct **amount** and **type** is being **initiated**:\n\n```json\n{ \n    \"status\": \"Initiated\",\n    \"assetSymbol\": \"ETH\",\n    \"id\": aa-five-blue-caab30165c\"\n    \"dateCreated\": \"2022-06-20t09:45:15.017Z\"\n}\n```\n\nWhen the payment is in the process of being initiated, its `status` is `Initiated`. Once complete, the payment's `status` changes from `Initiated` to `Executed`. To confirm that this has occurred, you can use the [`GetPaymentById` method](GetPaymentById.md).\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts/{accountId}/payments\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -521,7 +443,7 @@
       "post": {
         "tags": ["Assets"],
         "operationId": "CreateAssetAccount",
-        "description": "Creates new `AssetAccount` entity. If `publicKey` is provided then `AssetAccount` will be added to the existing public-key (SigningGroup). ",
+        "description": "\n## CreateAssetAccount\n`/assets/asset-accounts`\n\nCreates new `AssetAccount` entity. If `publicKey` is provided then `AssetAccount` will be added to the existing public-key (SigningGroup). \n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -541,6 +463,19 @@
               }
             }
           },
+          "400": {
+            "description": "Unable to create asset account entity with provided configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
           "402": {
             "description": "",
             "content": {
@@ -555,13 +490,28 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Unable to find `publicKey` provided in request body.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
       "get": {
         "tags": ["Assets"],
         "operationId": "ListAssetAccounts",
-        "description": "Returns list of `AssetAccount` items. Additional filters can be provided, see list of parameters for the operation.",
+        "description": "\n## ListAssetAccounts\n`/assets/asset-accounts`\n\nReturns list of `AssetAccount` items. Additional filters can be provided, see list of parameters for the operation.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "status",
@@ -600,7 +550,7 @@
       "get": {
         "tags": ["Assets"],
         "operationId": "ReadAssetAccountById",
-        "description": "Reads and returns an instance of `AssetAccount` by `id`.",
+        "description": "\n## ReadAssetAccountById\n`/assets/asset-accounts/{id}`\n\nReads and returns an instance of `AssetAccount` by `id`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts/{id}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "id",
@@ -624,7 +574,7 @@
       "delete": {
         "tags": ["Assets"],
         "operationId": "ArchiveAssetAccount",
-        "description": "Operation marks `AssetAccount` as `Archived` which deactivates account.",
+        "description": "\n## ArchiveAssetAccount\n`/assets/asset-accounts/{id}`\n\nOperation marks `AssetAccount` as `Archived` which deactivates account.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts/{id}\" method=\"delete\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "id",
@@ -665,7 +615,7 @@
       "get": {
         "tags": ["Assets"],
         "operationId": "ReadAssetAccountBalanceById",
-        "description": "Get the balance of the `AssetAccount` with its `id`. Returns an instance of `AssetAccountBalance`.",
+        "description": "\n## ReadAssetAccountBalanceById\n`/assets/asset-accounts/{id}/balance`\n\nGet the balance of the `AssetAccount` with its `id`. Returns an instance of `AssetAccountBalance`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts/{id}/balance\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "id",
@@ -691,7 +641,7 @@
       "post": {
         "tags": ["PolicyManagement"],
         "operationId": "CreatePolicy",
-        "description": "Creates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.",
+        "description": "\n## CreatePolicy\n`/policies/policies`\n\nCreates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policies\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -727,7 +677,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ListPolicies",
-        "description": "Lists all available `Policy` items. List can be further filtered using using additional parameters below.",
+        "description": "\n## ListPolicies\n`/policies/policies`\n\nLists all available `Policy` items. List can be further filtered using using additional parameters below.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policies\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "dateCreated",
@@ -807,7 +757,7 @@
       "put": {
         "tags": ["PolicyManagement"],
         "operationId": "UpdatePolicy",
-        "description": "Updates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.",
+        "description": "\n## UpdatePolicy\n`/policies/policies/{policyId}`\n\nUpdates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policies/{policyId}\" method=\"put\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -866,7 +816,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ReadyPolicyById",
-        "description": "Retrieves single `Policy` item by it’s `id`.",
+        "description": "\n## ReadyPolicyById\n`/policies/policies/{policyId}`\n\nRetrieves single `Policy` item by it’s `id`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policies/{policyId}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "policyId",
@@ -905,7 +855,7 @@
       "delete": {
         "tags": ["PolicyManagement"],
         "operationId": "ArchivePolicy",
-        "description": "",
+        "description": "\n## ArchivePolicy\n`/policies/policies/{policyId}`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policies/{policyId}\" method=\"delete\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "policyId",
@@ -946,7 +896,7 @@
       "post": {
         "tags": ["PolicyManagement"],
         "operationId": "CreatePolicyControl",
-        "description": "Creates new `PolicyControl` item. ",
+        "description": "\n## CreatePolicyControl\n`/policies/policy-controls`\n\nCreates new `PolicyControl` item. \n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-controls\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -984,7 +934,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ListPolicyControls",
-        "description": "Lists all available `PolicyControl` items. List can be further filtered using using additional parameters below.",
+        "description": "\n## ListPolicyControls\n`/policies/policy-controls`\n\nLists all available `PolicyControl` items. List can be further filtered using using additional parameters below.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-controls\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "dateCreated",
@@ -1058,7 +1008,7 @@
       "put": {
         "tags": ["PolicyManagement"],
         "operationId": "UpdatePolicyControl",
-        "description": "Updates existing policy control, this operation will create new `PolicyControl` with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.",
+        "description": "\n## UpdatePolicyControl\n`/policies/policy-controls/{policyControlId}`\n\nUpdates existing policy control, this operation will create new `PolicyControl` with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-controls/{policyControlId}\" method=\"put\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1119,7 +1069,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ReadyPolicyControlById",
-        "description": "Lists all available `PolicyControl` items. List can be further filtered using using additional parameters below.",
+        "description": "\n## ReadyPolicyControlById\n`/policies/policy-controls/{policyControlId}`\n\nLists all available `PolicyControl` items. List can be further filtered using using additional parameters below.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-controls/{policyControlId}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "policyControlId",
@@ -1158,7 +1108,7 @@
       "delete": {
         "tags": ["PolicyManagement"],
         "operationId": "ArchivePolicyControl",
-        "description": "",
+        "description": "\n## ArchivePolicyControl\n`/policies/policy-controls/{policyControlId}`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-controls/{policyControlId}\" method=\"delete\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "policyControlId",
@@ -1199,7 +1149,7 @@
       "post": {
         "tags": ["PolicyManagement"],
         "operationId": "CreatePolicyRule",
-        "description": "Creates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.",
+        "description": "\n## CreatePolicyRule\n`/policies/policy-rules`\n\nCreates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-rules\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1235,7 +1185,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ListPolicyRules",
-        "description": "Lists all available `Policy` items. List can be further filtered using using additional parameters below.",
+        "description": "\n## ListPolicyRules\n`/policies/policy-rules`\n\nLists all available `Policy` items. List can be further filtered using using additional parameters below.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-rules\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "dateCreated",
@@ -1315,7 +1265,7 @@
       "put": {
         "tags": ["PolicyManagement"],
         "operationId": "UpdatePolicyRule",
-        "description": "Updates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.",
+        "description": "\n## UpdatePolicyRule\n`/policies/policy-rules/{policyRuleId}`\n\nUpdates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-rules/{policyRuleId}\" method=\"put\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1374,7 +1324,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ReadyPolicyRuleById",
-        "description": "Retrieves single `Policy` item by it’s `id`.",
+        "description": "\n## ReadyPolicyRuleById\n`/policies/policy-rules/{policyRuleId}`\n\nRetrieves single `Policy` item by it’s `id`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-rules/{policyRuleId}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "policyRuleId",
@@ -1413,7 +1363,7 @@
       "delete": {
         "tags": ["PolicyManagement"],
         "operationId": "ArchivePolicyRule",
-        "description": "",
+        "description": "\n## ArchivePolicyRule\n`/policies/policy-rules/{policyRuleId}`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-rules/{policyRuleId}\" method=\"delete\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "policyRuleId",
@@ -1454,7 +1404,7 @@
       "get": {
         "tags": ["PolicyExecution"],
         "operationId": "ReadPolicyCertificateByHash",
-        "description": "",
+        "description": "\n## ReadPolicyCertificateByHash\n`/policies/execution-certificates/{policyCertificate}`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/execution-certificates/{policyCertificate}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
         "parameters": [
           {
             "name": "policyCertificate",
@@ -1474,6 +1424,130 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/EntityExpiredError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api-keys": {
+      "post": {
+        "tags": ["ApiKeys"],
+        "operationId": "CreateApiKey",
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateApiKeyInput" }
+            }
+          }
+        },
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyRecordWithToken"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/ApiKeyActionNotAllowed"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["ApiKeys"],
+        "operationId": "RetrieveActiveApiKeys",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "items": {
+                        "type": "array",
+                        "$ref": "#/components/schemas/ApiKeyRecord"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api-keys/{apiKeyId}": {
+      "delete": {
+        "tags": ["ApiKeys"],
+        "operationId": "RevokeApiKey",
+        "description": "",
+        "parameters": [
+          {
+            "name": "apiKeyId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ApiKeyRecord" }
+              }
+            }
           }
         }
       }
@@ -1486,8 +1560,11 @@
         "description": "",
         "properties": {
           "id": { "$ref": "#/components/schemas/EntityId" },
-          "legalName": { "description": "", "type": "string" },
-          "tradingName": { "description": "", "type": "string" },
+          "legalName": { "description": "`String` ", "type": "string" },
+          "tradingName": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "country": { "$ref": "#/components/schemas/Countries" },
           "dateOfIncorporation": { "$ref": "#/components/schemas/IsoDate" },
           "dateOnboarded": { "$ref": "#/components/schemas/IsoDatetime" },
@@ -1508,13 +1585,13 @@
         "properties": {
           "id": { "$ref": "#/components/schemas/EntityId" },
           "status": { "$ref": "#/components/schemas/OrgEmployeeStatus" },
-          "orgId": { "description": "", "type": "string" },
-          "username": { "description": "", "type": "string" },
+          "orgId": { "description": "`String` ", "type": "string" },
+          "username": { "description": "`String` ", "type": "string" },
           "email": { "$ref": "#/components/schemas/Email" },
           "issuer": { "$ref": "#/components/schemas/IdentityIssuer" },
           "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
           "dateUpdated": { "$ref": "#/components/schemas/IsoDatetime" },
-          "fullName": { "description": "", "type": "string" },
+          "fullName": { "description": "`String` ", "type": "string" },
           "dateOfBirth": { "$ref": "#/components/schemas/IsoDate" },
           "groups": {
             "type": "array",
@@ -1525,16 +1602,21 @@
       "EmployeeGroup": {
         "type": "object",
         "description": "",
-        "properties": { "name": { "description": "", "type": "string" } }
+        "properties": {
+          "name": { "description": "`String` ", "type": "string" }
+        }
       },
       "CreateOrgEmployeePayload": {
         "type": "object",
         "description": "",
         "properties": {
-          "username": { "description": "", "type": "string" },
+          "username": { "description": "`String` ", "type": "string" },
           "email": { "$ref": "#/components/schemas/Email" },
-          "issuer": { "description": "", "type": "string" },
-          "fullName": { "description": "", "type": "string" },
+          "issuer": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "fullName": { "description": "`String` ", "type": "string" },
           "dateOfBirth": { "$ref": "#/components/schemas/IsoDate" }
         }
       },
@@ -1542,10 +1624,13 @@
         "type": "object",
         "description": "",
         "properties": {
-          "username": { "description": "", "type": "string" },
+          "username": { "description": "`String` ", "type": "string" },
           "email": { "$ref": "#/components/schemas/Email" },
-          "issuer": { "description": "", "type": "string" },
-          "fullName": { "description": "", "type": "string" },
+          "issuer": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "fullName": { "description": "`String` ", "type": "string" },
           "dateOfBirth": { "$ref": "#/components/schemas/IsoDate" }
         }
       },
@@ -1553,10 +1638,13 @@
         "type": "object",
         "description": "",
         "properties": {
-          "fullName": { "description": "", "type": "string" },
+          "fullName": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "dateOfBirth": { "$ref": "#/components/schemas/IsoDate" },
           "email": { "$ref": "#/components/schemas/Email" },
-          "name": { "description": "", "type": "string" },
+          "name": { "description": "`String` [_Optional_] ", "type": "string" },
           "status": { "$ref": "#/components/schemas/OrgEmployeeStatus" }
         }
       },
@@ -1564,8 +1652,14 @@
         "type": "object",
         "description": "",
         "properties": {
-          "legalName": { "description": "", "type": "string" },
-          "tradingName": { "description": "", "type": "string" },
+          "legalName": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "tradingName": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "dateOfIncorporation": { "$ref": "#/components/schemas/IsoDate" },
           "country": { "$ref": "#/components/schemas/Countries" },
           "dateOnboarded": { "$ref": "#/components/schemas/IsoDate" }
@@ -1575,8 +1669,8 @@
         "type": "object",
         "description": "",
         "properties": {
-          "legalName": { "description": "", "type": "string" },
-          "tradingName": { "description": "", "type": "string" },
+          "legalName": { "description": "`String` ", "type": "string" },
+          "tradingName": { "description": "`String` ", "type": "string" },
           "dateOfIncorporation": { "$ref": "#/components/schemas/IsoDate" },
           "country": { "$ref": "#/components/schemas/Countries" },
           "dateOnboarded": { "$ref": "#/components/schemas/IsoDate" },
@@ -1600,9 +1694,9 @@
         "type": "object",
         "description": "",
         "properties": {
-          "r": { "description": "", "type": "string" },
-          "s": { "description": "", "type": "string" },
-          "recid": { "description": "", "type": "integer" }
+          "r": { "description": "`String` ", "type": "string" },
+          "s": { "description": "`String` ", "type": "string" },
+          "recid": { "description": "`Integer` ", "type": "integer" }
         }
       },
       "PublicKeyRecord": {
@@ -1610,21 +1704,24 @@
         "description": "",
         "properties": {
           "id": { "$ref": "#/components/schemas/EntityId" },
-          "externalId": { "description": "", "type": "string" },
+          "externalId": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "orgId": { "$ref": "#/components/schemas/EntityId" },
           "publicKey": { "$ref": "#/components/schemas/PublicKey" },
           "signerIds": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` ",
             "items": { "type": "string" }
           },
-          "groupThreshold": { "description": "", "type": "integer" },
-          "groupSize": { "description": "", "type": "integer" },
+          "groupThreshold": { "description": "`Integer` ", "type": "integer" },
+          "groupSize": { "description": "`Integer` ", "type": "integer" },
           "tags": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/Tag" }
           },
-          "isEddsa": { "description": "", "type": "boolean" },
+          "isEddsa": { "description": "`Bool` ", "type": "boolean" },
           "allowedProducts": { "$ref": "#/components/schemas/ProductKind" }
         }
       },
@@ -1632,8 +1729,8 @@
         "type": "object",
         "description": "",
         "properties": {
-          "walletId": { "description": "", "type": "string" },
-          "asset": { "description": "", "type": "string" },
+          "walletId": { "description": "`String` ", "type": "string" },
+          "asset": { "description": "`String` ", "type": "string" },
           "balance": { "$ref": "#/components/schemas/Amount" },
           "timestamp": { "$ref": "#/components/schemas/Epoch" }
         }
@@ -1642,8 +1739,8 @@
         "type": "object",
         "description": "",
         "properties": {
-          "walletId": { "description": "", "type": "string" },
-          "asset": { "description": "", "type": "string" },
+          "walletId": { "description": "`String` ", "type": "string" },
+          "asset": { "description": "`String` ", "type": "string" },
           "address": { "$ref": "#/components/schemas/BlockchainAddress" }
         }
       },
@@ -1654,13 +1751,16 @@
           "from": { "$ref": "#/components/schemas/BlockchainAddress" },
           "to": { "$ref": "#/components/schemas/BlockchainAddress" },
           "amount": { "$ref": "#/components/schemas/Amount" },
-          "asset": { "description": "", "type": "string" },
-          "txHash": { "description": "", "type": "string" },
+          "asset": { "description": "`String` ", "type": "string" },
+          "txHash": { "description": "`String` ", "type": "string" },
           "timestamp": { "$ref": "#/components/schemas/Epoch" },
-          "status": { "description": "", "type": "string" },
-          "blockHash": { "description": "", "type": "string" },
-          "blockHeight": { "description": "", "type": "string" },
-          "confirmations": { "description": "", "type": "integer" }
+          "status": { "description": "`String` ", "type": "string" },
+          "blockHash": { "description": "`String` ", "type": "string" },
+          "blockHeight": { "description": "`String` ", "type": "string" },
+          "confirmations": {
+            "description": "`Integer` [_Optional_] ",
+            "type": "integer"
+          }
         }
       },
       "Signature": {
@@ -1669,11 +1769,11 @@
         "properties": {
           "id": { "$ref": "#/components/schemas/EntityId" },
           "orgId": { "$ref": "#/components/schemas/EntityId" },
-          "publicKeyId": { "description": "", "type": "string" },
-          "hash": { "description": "", "type": "string" },
-          "r": { "description": "", "type": "string" },
-          "s": { "description": "", "type": "string" },
-          "recid": { "description": "", "type": "integer" },
+          "publicKeyId": { "description": "`String` ", "type": "string" },
+          "hash": { "description": "`String` ", "type": "string" },
+          "r": { "description": "`String` ", "type": "string" },
+          "s": { "description": "`String` ", "type": "string" },
+          "recid": { "description": "`Integer` ", "type": "integer" },
           "status": { "$ref": "#/components/schemas/SignatureStatus" },
           "initiator": { "$ref": "#/components/schemas/Initiator" }
         }
@@ -1681,17 +1781,22 @@
       "CreateSignatureInput": {
         "type": "object",
         "description": "",
-        "properties": { "hash": { "description": "", "type": "string" } }
+        "properties": {
+          "hash": { "description": "`String` ", "type": "string" }
+        }
       },
       "CreatePublicKeyInput": {
         "type": "object",
         "description": "",
         "properties": {
-          "externalId": { "description": "", "type": "string" },
+          "externalId": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "assetAccountId": { "$ref": "#/components/schemas/EntityId" },
-          "groupThreshold": { "description": "", "type": "integer" },
-          "groupSize": { "description": "", "type": "integer" },
-          "isEddsa": { "description": "", "type": "boolean" },
+          "groupThreshold": { "description": "`Integer` ", "type": "integer" },
+          "groupSize": { "description": "`Integer` ", "type": "integer" },
+          "isEddsa": { "description": "`Bool` ", "type": "boolean" },
           "tags": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/Tag" }
@@ -1704,7 +1809,7 @@
         "properties": {
           "to": { "$ref": "#/components/schemas/BlockchainAddress" },
           "amount": { "$ref": "#/components/schemas/Amount" },
-          "asset": { "description": "", "type": "string" }
+          "asset": { "description": "`String` ", "type": "string" }
         }
       },
       "PublicKeyStatus": {
@@ -1733,7 +1838,7 @@
           "receiver": { "$ref": "#/components/schemas/PaymentInstrument" },
           "dateInitiated": { "$ref": "#/components/schemas/IsoDatetime" },
           "rejectionReason": {
-            "description": "In case payment initiation is rejected by the system, this field will contain information about it.\n",
+            "description": "`String` [_Optional_] In case payment initiation is rejected by the system, this field will contain information about it.\n",
             "type": "string"
           }
         }
@@ -1743,7 +1848,7 @@
         "description": "",
         "properties": {
           "kind": { "$ref": "#/components/schemas/PaymentInstrumentKind" },
-          "address": { "description": "", "type": "string" }
+          "address": { "description": "`String` ", "type": "string" }
         }
       },
       "DfnsAssetAccount": {
@@ -1765,16 +1870,22 @@
             "items": { "$ref": "#/components/schemas/Tag" }
           },
           "status": { "$ref": "#/components/schemas/AssetAccountStatus" },
-          "address": { "description": "", "type": "string" },
-          "publicKey": { "description": "", "type": "string" },
+          "address": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "publicKey": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "publicKeyId": { "$ref": "#/components/schemas/EntityId" },
           "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
-          "name": { "description": "", "type": "string" },
+          "name": { "description": "`String` ", "type": "string" },
           "orgId": { "$ref": "#/components/schemas/EntityId" },
           "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
           "dateUpdate": { "$ref": "#/components/schemas/IsoDatetime" },
-          "groupSize": { "description": "", "type": "number" },
-          "groupThreshold": { "description": "", "type": "number" },
+          "groupSize": { "description": "`Decimal` ", "type": "number" },
+          "groupThreshold": { "description": "`Decimal` ", "type": "number" },
           "authorizations": {
             "type": "array",
             "items": {
@@ -1798,11 +1909,11 @@
           "sender": { "$ref": "#/components/schemas/DfnsAssetAccount" },
           "receiver": { "$ref": "#/components/schemas/PaymentInstrument" },
           "narrative": {
-            "description": "SWIFT (MT, ISO15022) field. Represents additional information about payment.\n",
+            "description": "`String` [_Optional_] SWIFT (MT, ISO15022) field. Represents additional information about payment.\n",
             "type": "string"
           },
-          "note": { "description": "", "type": "string" },
-          "receiverAddress": { "description": "", "type": "string" },
+          "note": { "description": "`String` [_Optional_] ", "type": "string" },
+          "receiverAddress": { "description": "`String` ", "type": "string" },
           "policyCertificate": {
             "$ref": "#/components/schemas/DfnsCertificate"
           },
@@ -1813,8 +1924,14 @@
           "dateFirstConfirmed": { "$ref": "#/components/schemas/IsoDatetime" },
           "dateConfirmed": { "$ref": "#/components/schemas/IsoDatetime" },
           "dateSettled": { "$ref": "#/components/schemas/IsoDatetime" },
-          "txHash": { "description": "", "type": "string" },
-          "blockHeight": { "description": "", "type": "integer" }
+          "txHash": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "blockHeight": {
+            "description": "`Integer` [_Optional_] ",
+            "type": "integer"
+          }
         }
       },
       "AssetAccountAuthorization": {
@@ -1844,9 +1961,18 @@
         "description": "",
         "properties": {
           "status": { "$ref": "#/components/schemas/AssetAccountStatus" },
-          "address": { "description": "", "type": "string" },
-          "publicKey": { "description": "", "type": "string" },
-          "uniqueName": { "description": "", "type": "string" }
+          "address": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "publicKey": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "uniqueName": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          }
         }
       },
       "CreateAssetAccountInput": {
@@ -1854,16 +1980,25 @@
         "description": "",
         "properties": {
           "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
-          "groupSize": { "description": "", "type": "integer" },
-          "groupThreshold": { "description": "", "type": "integer" },
+          "groupSize": {
+            "description": "`Integer` [_Optional_] ",
+            "type": "integer"
+          },
+          "groupThreshold": {
+            "description": "`Integer` [_Optional_] ",
+            "type": "integer"
+          },
           "publicKey": { "$ref": "#/components/schemas/PublicKey" },
-          "externalId": { "description": "", "type": "string" },
+          "externalId": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "tags": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/Tag" }
           },
           "name": {
-            "description": "Name chosen for the Asset Account",
+            "description": "`String` [_Optional_] Name chosen for the Asset Account",
             "type": "string"
           }
         }
@@ -1872,29 +2007,38 @@
         "type": "object",
         "description": "",
         "properties": {
-          "externalId": { "description": "", "type": "string" },
+          "externalId": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
           "amount": { "$ref": "#/components/schemas/Amount" },
           "receiver": { "$ref": "#/components/schemas/PaymentInstrument" },
-          "note": { "description": "", "type": "string" },
-          "narrative": { "description": "", "type": "string" }
+          "note": { "description": "`String` [_Optional_] ", "type": "string" },
+          "narrative": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          }
         }
       },
       "InsufficientFunds": {
         "type": "object",
         "description": "",
         "properties": {
-          "serviceName": { "description": "", "type": "string" },
-          "message": { "description": "", "type": "string" },
+          "serviceName": { "description": "`String` ", "type": "string" },
+          "message": { "description": "`String` ", "type": "string" },
           "causes": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
-          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
-          "isDfnsError": { "description": "", "type": "boolean" },
-          "httpStatus": { "description": "", "type": "integer" },
-          "errorName": { "description": "", "type": "string" }
+          "shouldTriggerInvestigaton": {
+            "description": "`Bool` ",
+            "type": "boolean"
+          },
+          "isDfnsError": { "description": "`Bool` ", "type": "boolean" },
+          "httpStatus": { "description": "`Integer` ", "type": "integer" },
+          "errorName": { "description": "`String` ", "type": "string" }
         }
       },
       "PaymentInstrument": {
@@ -1947,18 +2091,21 @@
         "description": "",
         "properties": {
           "id": { "$ref": "#/components/schemas/EntityId" },
-          "version": { "description": "", "type": "string" },
+          "version": { "description": "`String` ", "type": "string" },
           "activityKind": { "$ref": "#/components/schemas/PolicyActivityKind" },
           "tags": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/Tag" }
           },
           "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
-          "isImmutable": { "description": "", "type": "boolean" },
+          "isImmutable": { "description": "`Bool` ", "type": "boolean" },
           "orgId": { "$ref": "#/components/schemas/EntityId" },
-          "description": { "description": "", "type": "string" },
+          "description": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "author": { "$ref": "#/components/schemas/Username" },
-          "name": { "description": "", "type": "string" },
+          "name": { "description": "`String` [_Optional_] ", "type": "string" },
           "status": { "$ref": "#/components/schemas/PolicyStatus" },
           "controlIds": {
             "type": "array",
@@ -1967,7 +2114,8 @@
           "ruleIds": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/EntityId" }
-          }
+          },
+          "filter": { "$ref": "#/components/schemas/PolicyObjectFilter" }
         }
       },
       "NotifyAndAuditPcConf": {
@@ -1977,12 +2125,12 @@
           "kind": { "$ref": "#/components/schemas/PolicyControlKind" },
           "usernames": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
           "groups": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           }
         }
@@ -1994,16 +2142,16 @@
           "kind": { "$ref": "#/components/schemas/PolicyControlKind" },
           "approverGroups": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
           "approverUsernames": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
-          "numApprovals": { "description": "", "type": "integer" },
-          "timeoutInSeconds": { "description": "", "type": "integer" }
+          "numApprovals": { "description": "`Integer` ", "type": "integer" },
+          "timeoutInSeconds": { "description": "`Integer` ", "type": "integer" }
         }
       },
       "PolicyRule": {
@@ -2011,18 +2159,21 @@
         "description": "",
         "properties": {
           "id": { "$ref": "#/components/schemas/EntityId" },
-          "version": { "description": "", "type": "string" },
+          "version": { "description": "`String` ", "type": "string" },
           "kind": { "$ref": "#/components/schemas/PolicyRuleKind" },
           "tags": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/Tag" }
           },
           "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
-          "isImmutable": { "description": "", "type": "boolean" },
+          "isImmutable": { "description": "`Bool` ", "type": "boolean" },
           "orgId": { "$ref": "#/components/schemas/EntityId" },
           "author": { "$ref": "#/components/schemas/Username" },
-          "description": { "description": "", "type": "string" },
-          "name": { "description": "", "type": "string" },
+          "description": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "name": { "description": "`String` [_Optional_] ", "type": "string" },
           "configuration": {
             "$ref": "#/components/schemas/PolicyRuleConfiguration"
           },
@@ -2034,20 +2185,23 @@
         "description": "",
         "properties": {
           "id": { "$ref": "#/components/schemas/EntityId" },
-          "version": { "description": "", "type": "string" },
+          "version": { "description": "`String` ", "type": "string" },
           "kind": { "$ref": "#/components/schemas/PolicyControlKind" },
           "tags": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/Tag" }
           },
           "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
-          "isImmutable": { "description": "", "type": "boolean" },
+          "isImmutable": { "description": "`Bool` ", "type": "boolean" },
           "orgId": { "$ref": "#/components/schemas/EntityId" },
           "author": { "$ref": "#/components/schemas/Username" },
-          "description": { "description": "", "type": "string" },
-          "name": { "description": "", "type": "string" },
+          "description": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "name": { "description": "`String` [_Optional_] ", "type": "string" },
           "shouldMergeWithSameControl": {
-            "description": "Indicates whether control should merge with same one (compared by values).\nThis property should not be set to true, unless outcomes are understood. For example: Let's say we have 3 policies: \n\n1. policy to require approval for payments over €5000\n1. policy to require approval for payments done out of office hours\n1. policy to require approval for payments done out of Geofence. \n\nIn this case policies will require 3 approvals combined, which might not be an intent, and only one approval is required.",
+            "description": "`Bool` Indicates whether control should merge with same one (compared by values).\nThis property should not be set to true, unless outcomes are understood. For example: Let's say we have 3 policies: \n\n1. policy to require approval for payments over €5000\n1. policy to require approval for payments done out of office hours\n1. policy to require approval for payments done out of Geofence. \n\nIn this case policies will require 3 approvals combined, which might not be an intent, and only one approval is required.",
             "type": "boolean"
           },
           "configuration": {
@@ -2064,11 +2218,8 @@
           "limit": { "$ref": "#/components/schemas/Amount" },
           "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
           "shouldIgnoreAssetsWithoutMarketValue": {
-            "description": "",
+            "description": "`Bool` ",
             "type": "boolean"
-          },
-          "assetAccountSelectors": {
-            "$ref": "#/components/schemas/AssetAccountSelector"
           }
         }
       },
@@ -2079,11 +2230,8 @@
           "limit": { "$ref": "#/components/schemas/Amount" },
           "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
           "shouldIgnoreAssetsWithoutMarketValue": {
-            "description": "",
+            "description": "`Bool` [_Optional_] ",
             "type": "boolean"
-          },
-          "assetAccountSelectors": {
-            "$ref": "#/components/schemas/AssetAccountSelector"
           }
         }
       },
@@ -2094,13 +2242,13 @@
           "kind": { "$ref": "#/components/schemas/PolicyRuleKind" },
           "velocity": { "$ref": "#/components/schemas/Amount" },
           "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
-          "intervalInMinutes": { "description": "", "type": "integer" },
-          "shouldIgnoreAssetsWithoutMarketValue": {
-            "description": "",
-            "type": "boolean"
+          "intervalInMinutes": {
+            "description": "`Integer` ",
+            "type": "integer"
           },
-          "assetAccountSelectors": {
-            "$ref": "#/components/schemas/AssetAccountSelector"
+          "shouldIgnoreAssetsWithoutMarketValue": {
+            "description": "`Bool` ",
+            "type": "boolean"
           }
         }
       },
@@ -2109,10 +2257,10 @@
         "description": "",
         "properties": {
           "kind": { "$ref": "#/components/schemas/PolicyRuleKind" },
-          "maxTxCount": { "description": "", "type": "integer" },
-          "intervalInMinutes": { "description": "", "type": "integer" },
-          "assetAcountSelectors": {
-            "$ref": "#/components/schemas/AssetAccountSelector"
+          "maxTxCount": { "description": "`Integer` ", "type": "integer" },
+          "intervalInMinutes": {
+            "description": "`Integer` ",
+            "type": "integer"
           }
         }
       },
@@ -2120,18 +2268,24 @@
         "type": "object",
         "description": "",
         "properties": {
-          "maxTxCount": { "description": "", "type": "integer" },
-          "intervalInMinutes": { "description": "", "type": "integer" }
+          "maxTxCount": { "description": "`Integer` ", "type": "integer" },
+          "intervalInMinutes": {
+            "description": "`Integer` ",
+            "type": "integer"
+          }
         }
       },
-      "UpdateSiphonPrConf": {
+      "UpdateSiphoningPrConf": {
         "type": "object",
         "description": "",
         "properties": {
-          "maxTxCount": { "description": "", "type": "integer" },
-          "intervalInMinutes": { "description": "", "type": "integer" },
-          "assetAccountSelectors": {
-            "$ref": "#/components/schemas/AssetAccountSelector"
+          "maxTxCount": {
+            "description": "`Integer` [_Optional_] ",
+            "type": "integer"
+          },
+          "intervalInMinutes": {
+            "description": "`Integer` [_Optional_] ",
+            "type": "integer"
           }
         }
       },
@@ -2142,7 +2296,7 @@
           "limit": { "$ref": "#/components/schemas/Amount" },
           "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
           "shouldIgnoreAssetsWithoutMarketValue": {
-            "description": "",
+            "description": "`Bool` ",
             "type": "boolean"
           }
         }
@@ -2153,13 +2307,13 @@
         "properties": {
           "velocity": { "$ref": "#/components/schemas/Amount" },
           "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
-          "intervalInMinutes": { "description": "", "type": "integer" },
-          "shouldIgnoreAssetsWithoutMarketValue": {
-            "description": "",
-            "type": "boolean"
+          "intervalInMinutes": {
+            "description": "`Integer` [_Optional_] ",
+            "type": "integer"
           },
-          "assetAccountSelectors": {
-            "$ref": "#/components/schemas/AssetAccountSelector"
+          "shouldIgnoreAssetsWithoutMarketValue": {
+            "description": "`Bool` [_Optional_] ",
+            "type": "boolean"
           }
         }
       },
@@ -2169,9 +2323,12 @@
         "properties": {
           "velocity": { "$ref": "#/components/schemas/Amount" },
           "assetSymbol": { "$ref": "#/components/schemas/AssetSymbol" },
-          "intervalInMinutes": { "description": "", "type": "integer" },
+          "intervalInMinutes": {
+            "description": "`Integer` ",
+            "type": "integer"
+          },
           "shouldIgnoreAssetsWithoutMarketValue": {
-            "description": "",
+            "description": "`Bool` ",
             "type": "boolean"
           }
         }
@@ -2183,17 +2340,23 @@
           "kind": { "$ref": "#/components/schemas/PolicyControlKind" },
           "approverUsernames": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
           "approverGroups": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
-          "timeoutInMinutes": { "description": "", "type": "integer" },
-          "canInitiatorApprove": { "description": "", "type": "boolean" },
-          "numApprovals": { "description": "", "type": "integer" }
+          "timeoutInMinutes": {
+            "description": "`Integer` [_Optional_] ",
+            "type": "integer"
+          },
+          "canInitiatorApprove": {
+            "description": "`Bool` ",
+            "type": "boolean"
+          },
+          "numApprovals": { "description": "`Integer` ", "type": "integer" }
         }
       },
       "UpdateRequestApprovalPcConf": {
@@ -2202,17 +2365,26 @@
         "properties": {
           "approverUsernames": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
           "approverGroups": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
-          "timeoutInMinutes": { "description": "", "type": "integer" },
-          "canInitiatorApprove": { "description": "", "type": "boolean" },
-          "numApprovals": { "description": "", "type": "integer" }
+          "timeoutInMinutes": {
+            "description": "`Integer` [_Optional_] ",
+            "type": "integer"
+          },
+          "canInitiatorApprove": {
+            "description": "`Bool` [_Optional_] ",
+            "type": "boolean"
+          },
+          "numApprovals": {
+            "description": "`Integer` [_Optional_] ",
+            "type": "integer"
+          }
         }
       },
       "CreateNotifyAndAuditPcConf": {
@@ -2222,12 +2394,12 @@
           "kind": { "$ref": "#/components/schemas/PolicyControlKind" },
           "usernames": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
           "groups": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           }
         }
@@ -2238,31 +2410,13 @@
         "properties": {
           "groups": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
           "usernames": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
-          }
-        }
-      },
-      "AssetAccountSelector": {
-        "type": "object",
-        "description": "",
-        "properties": {
-          "assetAccountIds": {
-            "type": "array",
-            "items": { "$ref": "#/components/schemas/EntityId" }
-          },
-          "tags": {
-            "type": "array",
-            "items": { "$ref": "#/components/schemas/Tag" }
-          },
-          "assetSymbols": {
-            "type": "array",
-            "items": { "$ref": "#/components/schemas/AssetSymbol" }
           }
         }
       },
@@ -2271,31 +2425,16 @@
         "description": "",
         "properties": {
           "policyRuleAssetSymbol": {
-            "description": "Sets default `AssetSymbol` for the policy rules that use it, such as Limit, Velocity, Siphoning, and others.",
+            "description": "`Bool` [_Optional_] Sets default `AssetSymbol` for the policy rules that use it, such as Limit, Velocity, Siphoning, and others.",
             "type": "boolean"
           },
           "policyRuleVelocityIntervalInMinutes": {
-            "description": "Sets default interval in minutes for policy rules that use intervals, such as Velocity and Siphoning. \n\nThis setting does not update existing rules. This will only impact rules that are created  after this setting is set.",
+            "description": "`Integer` [_Optional_] Sets default interval in minutes for policy rules that use intervals, such as Velocity and Siphoning. \n\nThis setting does not update existing rules. This will only impact rules that are created  after this setting is set.",
             "type": "integer"
           }
         }
       },
       "Create": { "type": "object", "description": "", "properties": {} },
-      "UpdatePolicyRuleInput": {
-        "type": "object",
-        "description": "",
-        "properties": {
-          "id": { "$ref": "#/components/schemas/EntityId" },
-          "description": { "description": "", "type": "string" },
-          "name": { "description": "", "type": "string" },
-          "configuration": {
-            "$ref": "#/components/schemas/UpdatePolicyRuleConfiguration"
-          },
-          "assetAccountSelector": {
-            "$ref": "#/components/schemas/AssetAccountSelector"
-          }
-        }
-      },
       "EmptyConfiguration": {
         "type": "object",
         "description": "",
@@ -2313,14 +2452,33 @@
         "description": "",
         "properties": {}
       },
+      "AssetAccountFilter": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "assetAccountIds": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/EntityId" }
+          },
+          "tags": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Tag" }
+          },
+          "assetSymbols": {
+            "type": "array",
+            "description": "`String[]` [_Optional_] ",
+            "items": { "type": "string" }
+          }
+        }
+      },
       "CreatePolicyInput": {
         "type": "object",
         "description": "",
         "properties": {
           "activityKind": { "$ref": "#/components/schemas/PolicyActivityKind" },
-          "isImmutable": { "description": "", "type": "boolean" },
-          "description": { "description": "", "type": "string" },
-          "name": { "description": "", "type": "string" },
+          "isImmutable": { "description": "`Bool` ", "type": "boolean" },
+          "description": { "description": "`String` ", "type": "string" },
+          "name": { "description": "`String` [_Optional_] ", "type": "string" },
           "controlIds": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/EntityId" }
@@ -2329,14 +2487,18 @@
             "type": "array",
             "items": { "$ref": "#/components/schemas/EntityId" }
           },
-          "status": { "$ref": "#/components/schemas/PolicyStatus" }
+          "status": { "$ref": "#/components/schemas/PolicyStatus" },
+          "filter": { "$ref": "#/components/schemas/PolicyObjectFilter" }
         }
       },
       "UpdatePolicyInput": {
         "type": "object",
         "description": "",
         "properties": {
-          "description": { "description": "", "type": "string" },
+          "description": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "controlIds": {
             "type": "array",
             "items": { "$ref": "#/components/schemas/EntityId" }
@@ -2345,15 +2507,19 @@
             "type": "array",
             "items": { "$ref": "#/components/schemas/EntityId" }
           },
-          "status": { "$ref": "#/components/schemas/PolicyStatus" }
+          "status": { "$ref": "#/components/schemas/PolicyStatus" },
+          "filter": { "$ref": "#/components/schemas/PolicyObjectFilter" }
         }
       },
       "CreatePolicyControlInput": {
         "type": "object",
         "description": "",
         "properties": {
-          "description": { "description": "", "type": "string" },
-          "name": { "description": "", "type": "string" },
+          "description": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "name": { "description": "`String` [_Optional_] ", "type": "string" },
           "configuration": {
             "$ref": "#/components/schemas/CreatePolicyControlConfiguration"
           }
@@ -2363,8 +2529,11 @@
         "type": "object",
         "description": "",
         "properties": {
-          "description": { "description": "", "type": "string" },
-          "name": { "description": "", "type": "string" },
+          "description": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "name": { "description": "`String` [_Optional_] ", "type": "string" },
           "configuration": {
             "$ref": "#/components/schemas/UpdatePolicyControlConfiguration"
           }
@@ -2374,13 +2543,13 @@
         "type": "object",
         "description": "",
         "properties": {
-          "description": { "description": "", "type": "string" },
-          "name": { "description": "", "type": "string" },
+          "description": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "name": { "description": "`String` [_Optional_] ", "type": "string" },
           "configuration": {
             "$ref": "#/components/schemas/CreatePolicyRuleConfiguration"
-          },
-          "assetAccountSelector": {
-            "$ref": "#/components/schemas/AssetAccountSelector"
           }
         }
       },
@@ -2395,7 +2564,7 @@
       "UpdatePolicyRuleConfiguration": {
         "oneOf": [
           { "$ref": "#/components/schemas/UpdateAmountLimitPrConf" },
-          { "$ref": "#/components/schemas/UpdateSiphonPrConf" },
+          { "$ref": "#/components/schemas/UpdateSiphoningPrConf" },
           { "$ref": "#/components/schemas/UpdateOutgoingVelocityPrConf" },
           { "$ref": "#/components/schemas/UpdateAlwaysActivatedPrConf" }
         ]
@@ -2427,6 +2596,9 @@
           { "$ref": "#/components/schemas/RequestApprovalPcConf" }
         ]
       },
+      "PolicyObjectFilter": {
+        "oneOf": [{ "$ref": "#/components/schemas/AssetAccountFilter" }]
+      },
       "PolicyActivityKind": {
         "type": "string",
         "description": "",
@@ -2453,12 +2625,11 @@
         "description": "",
         "enum": [
           "PaymentAmountLimit",
-          "PaymentAmountOutgoingVelocity",
           "EmployeeAdded",
           "EmployeeDetailsUpdated",
-          "OutgoingPaymentVelocity",
           "Siphoning",
-          "AlwaysActivated"
+          "AlwaysActivated",
+          "PaymentAmountOutgoingVelocity"
         ]
       },
       "PolicyControlStatus": {
@@ -2508,7 +2679,7 @@
           "policyExecutionId": { "$ref": "#/components/schemas/EntityId" },
           "approvals": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           }
         }
@@ -2518,7 +2689,7 @@
         "description": "",
         "properties": {
           "id": { "$ref": "#/components/schemas/EntityId" },
-          "checksum": { "description": "", "type": "string" },
+          "checksum": { "description": "`String` ", "type": "string" },
           "initiatingEventId": { "$ref": "#/components/schemas/EntityId" },
           "orgId": { "$ref": "#/components/schemas/EntityId" },
           "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
@@ -2537,17 +2708,20 @@
         "type": "object",
         "description": "",
         "properties": {
-          "serviceName": { "description": "", "type": "string" },
-          "message": { "description": "", "type": "string" },
+          "serviceName": { "description": "`String` ", "type": "string" },
+          "message": { "description": "`String` ", "type": "string" },
           "causes": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
-          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
-          "isDfnsError": { "description": "", "type": "boolean" },
-          "httpStatus": { "description": "", "type": "integer" },
-          "errorName": { "description": "", "type": "string" }
+          "shouldTriggerInvestigaton": {
+            "description": "`Bool` ",
+            "type": "boolean"
+          },
+          "isDfnsError": { "description": "`Bool` ", "type": "boolean" },
+          "httpStatus": { "description": "`Integer` ", "type": "integer" },
+          "errorName": { "description": "`String` ", "type": "string" }
         }
       },
       "ExecutionStatus": {
@@ -2561,25 +2735,66 @@
         "properties": {
           "id": { "$ref": "#/components/schemas/EntityId" },
           "status": { "$ref": "#/components/schemas/ApiKeyStatus" },
-          "externalId": { "description": "", "type": "string" },
+          "externalId": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "orgId": { "$ref": "#/components/schemas/EntityId" },
           "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
-          "name": { "description": "", "type": "string" },
+          "name": { "description": "`String` [_Optional_] ", "type": "string" },
           "authorId": { "$ref": "#/components/schemas/EntityId" },
-          "apiKey": { "description": "", "type": "string" },
           "scopes": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` ",
             "items": { "type": "string" }
           }
+        }
+      },
+      "ApiKeyRecordWithToken": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "$ref": "#/components/schemas/EntityId" },
+          "status": { "$ref": "#/components/schemas/ApiKeyStatus" },
+          "externalId": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "orgId": { "$ref": "#/components/schemas/EntityId" },
+          "dateCreated": { "$ref": "#/components/schemas/IsoDatetime" },
+          "name": { "description": "`String` [_Optional_] ", "type": "string" },
+          "authorId": { "$ref": "#/components/schemas/EntityId" },
+          "scopes": {
+            "type": "array",
+            "description": "`String[]` ",
+            "items": { "type": "string" }
+          },
+          "token": { "$ref": "#/components/schemas/ApiKeyValue" }
+        }
+      },
+      "ApiKeyValue": { "description": "", "type": "string" },
+      "CreateApiKeyInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "scopes": {
+            "type": "array",
+            "description": "`String[]` ",
+            "items": { "type": "string" }
+          },
+          "externalId": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "name": { "description": "`String` ", "type": "string" }
         }
       },
       "ApiKeyActionNotAllowed": {
         "type": "object",
         "description": "",
         "properties": {
-          "httpStatus": { "description": "", "type": "integer" },
-          "errorName": { "description": "", "type": "string" }
+          "httpStatus": { "description": "`Integer` ", "type": "integer" },
+          "errorName": { "description": "`String` ", "type": "string" }
         }
       },
       "ApiKeyStatus": {
@@ -2593,7 +2808,10 @@
         "properties": {
           "id": { "$ref": "#/components/schemas/EntityId" },
           "orgId": { "$ref": "#/components/schemas/EntityId" },
-          "externalId": { "description": "", "type": "string" },
+          "externalId": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "callbackSubscriptionId": { "$ref": "#/components/schemas/EntityId" },
           "kind": { "$ref": "#/components/schemas/CallbackEventKind" },
           "documentSnapshot": {
@@ -2609,10 +2827,13 @@
         "properties": {
           "id": { "$ref": "#/components/schemas/EntityId" },
           "orgId": { "$ref": "#/components/schemas/EntityId" },
-          "externalId": { "description": "", "type": "string" },
+          "externalId": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "eventKind": { "$ref": "#/components/schemas/CallbackEventKind" },
           "eventSelector": { "$ref": "#/components/schemas/EventSelector" },
-          "url": { "description": "", "type": "string" },
+          "url": { "description": "`String` ", "type": "string" },
           "status": {
             "$ref": "#/components/schemas/CallbackSubscriptionStatus"
           },
@@ -2623,17 +2844,26 @@
         "type": "object",
         "description": "",
         "properties": {
-          "statusFilter": { "description": "", "type": "string" },
-          "tagsFilter": { "description": "", "type": "string" }
+          "statusFilter": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
+          "tagsFilter": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          }
         }
       },
       "CreateCallbackSubscriptionInput": {
         "type": "object",
         "description": "",
         "properties": {
-          "externalId": { "description": "", "type": "string" },
+          "externalId": {
+            "description": "`String` [_Optional_] ",
+            "type": "string"
+          },
           "eventKind": { "$ref": "#/components/schemas/CallbackEventKind" },
-          "url": { "description": "", "type": "string" },
+          "url": { "description": "`String` ", "type": "string" },
           "eventSelector": { "$ref": "#/components/schemas/EventSelector" }
         }
       },
@@ -2656,7 +2886,7 @@
         "type": "object",
         "description": "",
         "properties": {
-          "pair": { "description": "", "type": "string" },
+          "pair": { "description": "`String` ", "type": "string" },
           "dateUpdated": { "$ref": "#/components/schemas/IsoDatetime" },
           "base": { "$ref": "#/components/schemas/AssetSymbol" },
           "counter": { "$ref": "#/components/schemas/AssetSymbol" },
@@ -2738,100 +2968,138 @@
         "type": "object",
         "description": "",
         "properties": {
-          "serviceName": { "description": "", "type": "string" },
-          "message": { "description": "", "type": "string" },
+          "serviceName": { "description": "`String` ", "type": "string" },
+          "message": { "description": "`String` ", "type": "string" },
           "causes": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
-          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
-          "isDfnsError": { "description": "", "type": "boolean" },
-          "httpStatus": { "description": "", "type": "integer" },
-          "errorName": { "description": "", "type": "string" }
+          "shouldTriggerInvestigaton": {
+            "description": "`Bool` ",
+            "type": "boolean"
+          },
+          "isDfnsError": { "description": "`Bool` ", "type": "boolean" },
+          "httpStatus": { "description": "`Integer` ", "type": "integer" },
+          "errorName": { "description": "`String` ", "type": "string" }
         }
       },
       "EntityExpiredError": {
         "type": "object",
         "description": "",
         "properties": {
-          "serviceName": { "description": "", "type": "string" },
-          "message": { "description": "", "type": "string" },
+          "serviceName": { "description": "`String` ", "type": "string" },
+          "message": { "description": "`String` ", "type": "string" },
           "causes": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
-          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
-          "isDfnsError": { "description": "", "type": "boolean" },
-          "httpStatus": { "description": "", "type": "integer" },
-          "errorName": { "description": "", "type": "string" }
+          "shouldTriggerInvestigaton": {
+            "description": "`Bool` ",
+            "type": "boolean"
+          },
+          "isDfnsError": { "description": "`Bool` ", "type": "boolean" },
+          "httpStatus": { "description": "`Integer` ", "type": "integer" },
+          "errorName": { "description": "`String` ", "type": "string" }
         }
       },
       "BadRequestError": {
         "type": "object",
         "description": "",
         "properties": {
-          "serviceName": { "description": "", "type": "string" },
-          "message": { "description": "", "type": "string" },
+          "serviceName": { "description": "`String` ", "type": "string" },
+          "message": { "description": "`String` ", "type": "string" },
           "causes": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
-          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
-          "isDfnsError": { "description": "", "type": "boolean" },
-          "httpStatus": { "description": "", "type": "integer" },
-          "errorName": { "description": "", "type": "string" }
+          "shouldTriggerInvestigaton": {
+            "description": "`Bool` ",
+            "type": "boolean"
+          },
+          "isDfnsError": { "description": "`Bool` ", "type": "boolean" },
+          "httpStatus": { "description": "`Integer` ", "type": "integer" },
+          "errorName": { "description": "`String` ", "type": "string" }
         }
       },
       "DuplicateError": {
         "type": "object",
         "description": "",
         "properties": {
-          "serviceName": { "description": "", "type": "string" },
-          "message": { "description": "", "type": "string" },
+          "serviceName": { "description": "`String` ", "type": "string" },
+          "message": { "description": "`String` ", "type": "string" },
           "causes": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
-          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
-          "isDfnsError": { "description": "", "type": "boolean" },
-          "httpStatus": { "description": "", "type": "integer" },
-          "errorName": { "description": "", "type": "string" }
+          "shouldTriggerInvestigaton": {
+            "description": "`Bool` ",
+            "type": "boolean"
+          },
+          "isDfnsError": { "description": "`Bool` ", "type": "boolean" },
+          "httpStatus": { "description": "`Integer` ", "type": "integer" },
+          "errorName": { "description": "`String` ", "type": "string" }
         }
       },
       "PaymentRequiredError": {
         "type": "object",
         "description": "",
         "properties": {
-          "serviceName": { "description": "", "type": "string" },
-          "message": { "description": "", "type": "string" },
+          "serviceName": { "description": "`String` ", "type": "string" },
+          "message": { "description": "`String` ", "type": "string" },
           "causes": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
-          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
-          "isDfnsError": { "description": "", "type": "boolean" },
-          "httpStatus": { "description": "", "type": "integer" },
-          "errorName": { "description": "", "type": "string" }
+          "shouldTriggerInvestigaton": {
+            "description": "`Bool` ",
+            "type": "boolean"
+          },
+          "isDfnsError": { "description": "`Bool` ", "type": "boolean" },
+          "httpStatus": { "description": "`Integer` ", "type": "integer" },
+          "errorName": { "description": "`String` ", "type": "string" }
         }
       },
       "DfnsError": {
         "type": "object",
         "description": "Foundational type for the errors, defining everything that any error within Dfns product needs.",
         "properties": {
-          "serviceName": { "description": "", "type": "string" },
-          "message": { "description": "", "type": "string" },
+          "serviceName": { "description": "`String` ", "type": "string" },
+          "message": { "description": "`String` ", "type": "string" },
           "causes": {
             "type": "array",
-            "description": "",
+            "description": "`String[]` [_Optional_] ",
             "items": { "type": "string" }
           },
-          "shouldTriggerInvestigaton": { "description": "", "type": "boolean" },
-          "isDfnsError": { "description": "", "type": "boolean" }
+          "shouldTriggerInvestigaton": {
+            "description": "`Bool` ",
+            "type": "boolean"
+          },
+          "isDfnsError": { "description": "`Bool` ", "type": "boolean" }
+        }
+      },
+      "OperationNotImplementedError": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "serviceName": { "description": "`String` ", "type": "string" },
+          "message": { "description": "`String` ", "type": "string" },
+          "causes": {
+            "type": "array",
+            "description": "`String[]` [_Optional_] ",
+            "items": { "type": "string" }
+          },
+          "shouldTriggerInvestigaton": {
+            "description": "`Bool` ",
+            "type": "boolean"
+          },
+          "isDfnsError": { "description": "`Bool` ", "type": "boolean" },
+          "httpStatus": { "description": "`Integer` ", "type": "integer" },
+          "errorName": { "description": "`String` ", "type": "string" }
         }
       },
       "Initiator": {

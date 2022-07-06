@@ -2,7 +2,17 @@
 ## CreateAssetAccount
 `RESTful Endpoint: post /assets/asset-accounts`
 
+
+## CreateAssetAccount
+`/assets/asset-accounts`
+
 Creates new `AssetAccount` entity. If `publicKey` is provided then `AssetAccount` will be added to the existing public-key (SigningGroup). 
+
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/assets/asset-accounts" method="post" %}
+[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
+{% endswagger %}
+
+
 
 ### Input Body Parameters
 * assetSymbol: `AssetSymbol` 
@@ -16,6 +26,6 @@ Creates new `AssetAccount` entity. If `publicKey` is provided then `AssetAccount
 _Please consult OpenAPI file full breakdown and including nested properties._
 
 
-{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/assets/asset-accounts" method="post" %}
-[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
+{% swagger src="../../.gitbook/assets/${ProductionOpenApiFileName}" path="/assets/asset-accounts" method="post" %}
+[${ProductionOpenApiFileName}](../../.gitbook/assets/${ProductionOpenApiFileName})
 {% endswagger %}
