@@ -4,8 +4,8 @@
 
 ## Getting Started
 * [Getting Started](<getting-started/GettingStarted.md>)
-  * [Data Model Concepts](<getting-started/DataModelConcepts.md>)
-  * [Policy Engine](<getting-started/PolicyEngineIntro.md>)
+* [Data Model Concepts](<getting-started/DataModelConcepts.md>)
+* [Policy Engine](<getting-started/PolicyEngineIntro.md>)
 
 ## Use Cases
 * [Asset Accounts](<use-cases/Asset Accounts/README.md>)
