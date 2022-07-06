@@ -2,10 +2,6 @@
 ## InitiatePayment
 `RESTful Endpoint: post /assets/asset-accounts/{accountId}/payments`
 
-
-## InitiatePayment
-` POST /assets/asset-accounts/{accountId}/payments`
-
 Initiates payment in provided `AssetSymbol`, instructing funds to be transfered from one wallet to another within same network and same asset.
 
 > **Note**: InitiatePayment triggers PolicyEngine.
