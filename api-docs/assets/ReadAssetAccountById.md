@@ -11,6 +11,6 @@ Reads and returns an instance of `AssetAccount` by `id`.
   
 
 
-{% swagger src="../../.gitbook/assets/${ProductionOpenApiFileName}" path="/assets/asset-accounts/{id}" method="get" %}
-[${ProductionOpenApiFileName}](../../.gitbook/assets/${ProductionOpenApiFileName})
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/assets/asset-accounts/{id}" method="get" %}
+[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

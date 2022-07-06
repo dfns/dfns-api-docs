@@ -2,21 +2,6 @@
 ## Foundations Data Models   
 
 
-### AssetPairPrice
- 
-    
-
-### EmployeeInitiator
- 
-    
-
-### DfnsStaffInitiator
- 
-    
-
-### DfnsCustomerServiceInitiator
- 
-    
 
 ### IsoDate
 Representation of [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date as a string. This datatype used to capture date-only in `yyyy-mm-dd` format. 
@@ -69,62 +54,6 @@ Represents a certificate that can be issued by various systems such as PolicyEng
 String as email format 
     
 
-### Epoch
- 
-    
-
-### BlockchainAddress
- 
-    
-
-### EntityNotFoundError
- 
-    
-
-### EntityExpiredError
- 
-    
-
-### BadRequestError
- 
-    
-
-### DuplicateError
- 
-    
-
-### PaymentRequiredError
- 
-    
-
 ### DfnsError
 Foundational type for the errors, defining everything that any error within Dfns product needs. 
-    
-
-### OperationNotImplementedError
- 
-    
-
-### Initiator
- 
-    
-
-### Countries
- 
-    
-
-### AssetSymbol
- 
-    
-
-### InitiatorKind
- 
-    
-
-### IdentityIssuer
- 
-    
-
-### ProductKind
- 
     

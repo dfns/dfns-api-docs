@@ -9,6 +9,6 @@ Lists all available `PolicyControl` items. List can be further filtered using us
   
 
 
-{% swagger src="../../.gitbook/assets/${ProductionOpenApiFileName}" path="/policies/policy-controls/{policyControlId}" method="get" %}
-[${ProductionOpenApiFileName}](../../.gitbook/assets/${ProductionOpenApiFileName})
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/policies/policy-controls/{policyControlId}" method="get" %}
+[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

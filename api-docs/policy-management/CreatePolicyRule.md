@@ -18,6 +18,6 @@ Creates new policy. This will bind list of `PolicyRule` entities with `PolicyCon
 _Please consult OpenAPI file full breakdown and including nested properties._
 
 
-{% swagger src="../../.gitbook/assets/${ProductionOpenApiFileName}" path="/policies/policy-rules" method="post" %}
-[${ProductionOpenApiFileName}](../../.gitbook/assets/${ProductionOpenApiFileName})
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/policies/policy-rules" method="post" %}
+[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

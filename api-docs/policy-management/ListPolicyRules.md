@@ -10,6 +10,6 @@ Lists all available `Policy` items. List can be further filtered using using add
   
 
 
-{% swagger src="../../.gitbook/assets/${ProductionOpenApiFileName}" path="/policies/policy-rules" method="get" %}
-[${ProductionOpenApiFileName}](../../.gitbook/assets/${ProductionOpenApiFileName})
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/policies/policy-rules" method="get" %}
+[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

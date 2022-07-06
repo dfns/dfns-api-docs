@@ -58,6 +58,6 @@ When the payment is in the process of being initiated, its `status` is `Initiate
 _Please consult OpenAPI file full breakdown and including nested properties._
 
 
-{% swagger src="../../.gitbook/assets/${ProductionOpenApiFileName}" path="/assets/asset-accounts/{accountId}/payments" method="post" %}
-[${ProductionOpenApiFileName}](../../.gitbook/assets/${ProductionOpenApiFileName})
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/assets/asset-accounts/{accountId}/payments" method="post" %}
+[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

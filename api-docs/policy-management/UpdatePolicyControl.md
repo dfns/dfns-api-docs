@@ -18,6 +18,6 @@ Updates existing policy control, this operation will create new `PolicyControl` 
 _Please consult OpenAPI file full breakdown and including nested properties._
 
 
-{% swagger src="../../.gitbook/assets/${ProductionOpenApiFileName}" path="/policies/policy-controls/{policyControlId}" method="put" %}
-[${ProductionOpenApiFileName}](../../.gitbook/assets/${ProductionOpenApiFileName})
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/policies/policy-controls/{policyControlId}" method="put" %}
+[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

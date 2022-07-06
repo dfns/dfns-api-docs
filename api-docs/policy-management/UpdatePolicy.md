@@ -19,6 +19,6 @@ Updates existing policy, this operation will create new policy with same `id` bu
 _Please consult OpenAPI file full breakdown and including nested properties._
 
 
-{% swagger src="../../.gitbook/assets/${ProductionOpenApiFileName}" path="/policies/policies/{policyId}" method="put" %}
-[${ProductionOpenApiFileName}](../../.gitbook/assets/${ProductionOpenApiFileName})
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/policies/policies/{policyId}" method="put" %}
+[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

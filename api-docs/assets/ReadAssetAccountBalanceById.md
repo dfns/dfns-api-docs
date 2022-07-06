@@ -11,6 +11,6 @@ Get the balance of the `AssetAccount` with its `id`. Returns an instance of `Ass
   
 
 
-{% swagger src="../../.gitbook/assets/${ProductionOpenApiFileName}" path="/assets/asset-accounts/{id}/balance" method="get" %}
-[${ProductionOpenApiFileName}](../../.gitbook/assets/${ProductionOpenApiFileName})
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/assets/asset-accounts/{id}/balance" method="get" %}
+[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

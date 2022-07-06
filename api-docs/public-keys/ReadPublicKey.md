@@ -9,6 +9,6 @@ Retrieves public key details by it’s `id`.
   
 
 
-{% swagger src="../../.gitbook/assets/${ProductionOpenApiFileName}" path="/mpc/public-keys/{publicKey}" method="get" %}
-[${ProductionOpenApiFileName}](../../.gitbook/assets/${ProductionOpenApiFileName})
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/mpc/public-keys/{publicKey}" method="get" %}
+[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

@@ -22,9 +22,6 @@
   * [ReadPublicKey](api-docs/public-keys/ReadPublicKey.md)
   * [CreatePublicKey](api-docs/public-keys/CreatePublicKey.md)
   * [CreateSignature](api-docs/public-keys/CreateSignature.md)
-  * [ReadWalletAddress](api-docs/public-keys/ReadWalletAddress.md)
-  * [ReadWalletTransactions](api-docs/public-keys/ReadWalletTransactions.md)
-  * [CreateWalletTransaction](api-docs/public-keys/CreateWalletTransaction.md)
 * Assets
   * [Assets Overview](api-docs/assets/README.md)
   * [Assets Data Model](api-docs/assets/Datamodel.md)
