@@ -1,12 +1,12 @@
+# InitiatePayment
 
-## InitiatePayment
-`RESTful Endpoint: post /assets/asset-accounts/{assetAccountId}/payments`
+`RESTful Endpoint: POST /assets/asset-accounts/{assetAccountId}/payments`
 
 Initiates payment in provided `AssetSymbol`, instructing funds to be transfered from one wallet to another within same network and same asset.
 
 > **Note**: InitiatePayment triggers PolicyEngine.
 
-To initiate a payment to an asset account, send a `POST` request to the  endpoint. Incldue an asset account identifier as a path parameter, and in the request body send the amount and type of funds as well as the receiver's kind and address:
+To initiate a payment to an asset account, send a `POST` request to the endpoint. Incldue an asset account identifier as a path parameter, and in the request body send the amount and type of funds as well as the receiver's kind and address:
 
 ```http
 POST /assets/asset-accounts/:assetAccountId/payments
@@ -37,22 +37,20 @@ If successful, the response contains, among other things, a **date stamp** and a
 
 When the payment is in the process of being initiated, its `status` is `Initiated`. Once complete, the payment's `status` changes from `Initiated` to `Executed`. To confirm that this has occurred, you can use the [`GetPaymentById` method](GetPaymentById.md).
 
+## Input Query Parameters
 
+* Path parameter `assetAccountId`: `String`.
 
-### Input Query Parameters
-* Path parameter `assetAccountId`: `String`.  
-  
+## Input Body Parameters
 
-### Input Body Parameters
-* externalId: `String` [_Optional_] 
-* assetSymbol: `AssetSymbol` 
-* amount: `Amount` 
-* receiver: `PaymentInstrument` 
-* note: `String` [_Optional_] 
-* narrative: `String` [_Optional_] 
+* externalId: `String` \[_Optional_]
+* assetSymbol: `AssetSymbol`
+* amount: `Amount`
+* receiver: `PaymentInstrument`
+* note: `String` \[_Optional_]
+* narrative: `String` \[_Optional_]
 
 _Please consult OpenAPI file full breakdown and including nested properties._
-
 
 {% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/assets/asset-accounts/{assetAccountId}/payments" method="post" %}
 [production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)

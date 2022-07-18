@@ -1,30 +1,33 @@
-
 # Table of contents
+
 * [Welcome](README.md)
 
 ## Getting Started
-* [Getting Started](<getting-started/GettingStarted.md>)
-* [Data Model Concepts](<getting-started/DataModelConcepts.md>)
-* [Policy Engine](<getting-started/PolicyEngineIntro.md>)
+
+* [Getting Started](getting-started/GettingStarted.md)
+* [Data Model Concepts](getting-started/DataModelConcepts.md)
+* [Policy Engine](getting-started/PolicyEngineIntro.md)
 
 ## Use Cases
+
 * [Asset Accounts](<use-cases/Asset Accounts/README.md>)
   * [Create Asset Account](<use-cases/Asset Accounts/CreateAssetAccount.md>)
   * [Get Account By Id](<use-cases/Asset Accounts/GetAccountById.md>)
   * [Get Balance](<use-cases/Asset Accounts/GetBalance.md>)
-* [Payments](<use-cases/Payments/README.md>)
-  * [Get Payment By Id](<use-cases/Payments/GetPaymentById.md>)
-  * [Initiate Payment](<use-cases/Payments/InitiatePayment.md>)
-  * [No Policy Scenario](<use-cases/Payments/NoPolicySimplePaymentScenario.md>)
+* [Payments](use-cases/Payments/README.md)
+  * [Get Payment By Id](use-cases/Payments/GetPaymentById.md)
+  * [Initiate Payment](use-cases/Payments/InitiatePayment.md)
+  * [No Policy Scenario](use-cases/Payments/NoPolicySimplePaymentScenario.md)
 
 ## API Docs
-* PublicKeys
+
+* [PublicKeys](api-docs/publickeys/README.md)
   * [PublicKeys Overview](api-docs/public-keys/README.md)
   * [PublicKeys Data Model](api-docs/public-keys/Datamodel.md)
   * [ReadPublicKey](api-docs/public-keys/ReadPublicKey.md)
   * [CreatePublicKey](api-docs/public-keys/CreatePublicKey.md)
   * [CreateSignature](api-docs/public-keys/CreateSignature.md)
-* Assets
+* [Assets](<api-docs/assets/README (1).md>)
   * [Assets Overview](api-docs/assets/README.md)
   * [Assets Data Model](api-docs/assets/Datamodel.md)
   * [InitiatePayment](api-docs/assets/InitiatePayment.md)
@@ -32,7 +35,7 @@
   * [ReadAssetAccountById](api-docs/assets/ReadAssetAccountById.md)
   * [ListAssetAccounts](api-docs/assets/ListAssetAccounts.md)
   * [ReadAssetAccountBalanceById](api-docs/assets/ReadAssetAccountBalanceById.md)
-* PolicyManagement
+* [PolicyManagement](api-docs/policymanagement/README.md)
   * [PolicyManagement Overview](api-docs/policy-management/README.md)
   * [PolicyManagement Data Model](api-docs/policy-management/Datamodel.md)
   * [CreatePolicy](api-docs/policy-management/CreatePolicy.md)
@@ -50,11 +53,11 @@
   * [ReadyPolicyRuleById](api-docs/policy-management/ReadyPolicyRuleById.md)
   * [ListPolicyRules](api-docs/policy-management/ListPolicyRules.md)
   * [ArchivePolicyRule](api-docs/policy-management/ArchivePolicyRule.md)
-* PolicyExecution
+* [PolicyExecution](api-docs/policyexecution/README.md)
   * [PolicyExecution Overview](api-docs/policy-execution/README.md)
   * [PolicyExecution Data Model](api-docs/policy-execution/Datamodel.md)
   * [ReadPolicyCertificateByHash](api-docs/policy-execution/ReadPolicyCertificateByHash.md)
-* ApiKeys
+* [ApiKeys](api-docs/apikeys/README.md)
   * [ApiKeys Overview](api-docs/api-keys/README.md)
   * [ApiKeys Data Model](api-docs/api-keys/Datamodel.md)
   * [CreateApiKey](api-docs/api-keys/CreateApiKey.md)
