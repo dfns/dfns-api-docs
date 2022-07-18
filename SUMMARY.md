@@ -31,7 +31,6 @@
   * [CreateAssetAccount](api-docs/assets/CreateAssetAccount.md)
   * [ReadAssetAccountById](api-docs/assets/ReadAssetAccountById.md)
   * [ListAssetAccounts](api-docs/assets/ListAssetAccounts.md)
-  * [ArchiveAssetAccount](api-docs/assets/ArchiveAssetAccount.md)
   * [ReadAssetAccountBalanceById](api-docs/assets/ReadAssetAccountBalanceById.md)
 * PolicyManagement
   * [PolicyManagement Overview](api-docs/policy-management/README.md)

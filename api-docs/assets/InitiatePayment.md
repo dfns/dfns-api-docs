@@ -1,6 +1,6 @@
 
 ## InitiatePayment
-`RESTful Endpoint: post /assets/asset-accounts/{accountId}/payments`
+`RESTful Endpoint: post /assets/asset-accounts/{assetAccountId}/payments`
 
 Initiates payment in provided `AssetSymbol`, instructing funds to be transfered from one wallet to another within same network and same asset.
 
@@ -40,7 +40,7 @@ When the payment is in the process of being initiated, its `status` is `Initiate
 
 
 ### Input Query Parameters
-* Path parameter `accountId`: `String`.  
+* Path parameter `assetAccountId`: `String`.  
   
 
 ### Input Body Parameters
@@ -54,6 +54,6 @@ When the payment is in the process of being initiated, its `status` is `Initiate
 _Please consult OpenAPI file full breakdown and including nested properties._
 
 
-{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/assets/asset-accounts/{accountId}/payments" method="post" %}
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/assets/asset-accounts/{assetAccountId}/payments" method="post" %}
 [production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

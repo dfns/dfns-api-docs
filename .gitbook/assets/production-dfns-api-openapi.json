@@ -1,6 +1,6 @@
 {
   "openapi": "3.0.1",
-  "info": { "title": "Dfns API", "version": "3.5.2" },
+  "info": { "title": "Dfns API", "version": "3.5.6" },
   "servers": [
     {
       "description": "Ninja (Staging-Testnet)",
@@ -16,7 +16,7 @@
       "get": {
         "tags": ["PublicKeys"],
         "operationId": "ReadPublicKey",
-        "description": "\n## ReadPublicKey\n`/mpc/public-keys/{publicKey}`\n\nRetrieves accounts by public key.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/public-keys/{publicKey}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Retrieves public key details by it’s `id`.",
         "parameters": [
           {
             "name": "publicKey",
@@ -57,7 +57,7 @@
       "post": {
         "tags": ["PublicKeys"],
         "operationId": "CreatePublicKey",
-        "description": "\n## CreatePublicKey\n`/mpc/public-keys`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/public-keys\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "",
         "requestBody": {
           "content": {
             "application/json": {
@@ -82,7 +82,7 @@
       "post": {
         "tags": ["PublicKeys"],
         "operationId": "CreateSignature",
-        "description": "\n## CreateSignature\n`/mpc/public-keys/{publicKeyId}/signatures`\n\nOperation accepts a message, and uses Dfns MPC network to create signature against it.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/public-keys/{publicKeyId}/signatures\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Operation accepts a message, and uses Dfns MPC network to create signature against it.\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -141,233 +141,11 @@
         }
       }
     },
-    "/mpc/networks/{network}/wallets/{walletId}/address": {
-      "get": {
-        "tags": ["PublicKeys"],
-        "operationId": "ReadWalletAddress",
-        "description": "\n## ReadWalletAddress\n`/mpc/networks/{network}/wallets/{walletId}/address`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/networks/{network}/wallets/{walletId}/address\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
-        "parameters": [
-          {
-            "name": "network",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "asset",
-            "in": "query",
-            "description": "Asset symbol that is being retrieved.\n\n - If this is a native currency (such as BTC on BTC network) it will be duplicated.\n - If this is an ERC20 (or analog on other networks, such as FA 1.2) then it will indicate particular coin. This can be either supported by Dfns asset, or supported by a given customer.",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "walletId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": { "$ref": "#/components/schemas/WalletAddress" }
-              }
-            }
-          },
-          "400": {
-            "description": "Either invalid network or invalid asset",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": { "$ref": "#/components/schemas/BadRequestError" }
-                  }
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Wallet with a provided id is not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "$ref": "#/components/schemas/EntityNotFoundError"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/mpc/networks/{network}/wallets/{walletId}/transactions": {
-      "get": {
-        "tags": ["PublicKeys"],
-        "operationId": "ReadWalletTransactions",
-        "description": "\n## ReadWalletTransactions\n`/mpc/networks/{network}/wallets/{walletId}/transactions`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/networks/{network}/wallets/{walletId}/transactions\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
-        "parameters": [
-          {
-            "name": "network",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "assets",
-            "in": "query",
-            "description": "Asset symbol that is being retrieved.\n\n - If this is a native currency (such as BTC on BTC network) it will be duplicated.\n - If this is an ERC20 (or analog on other networks, such as FA 1.2) then it will indicate particular coin. This can be either supported by Dfns asset, or supported by a given customer.",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "walletId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "items": {
-                      "items": {
-                        "type": "array",
-                        "$ref": "#/components/schemas/WalletTx"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Either invalid network or invalid asset",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": { "$ref": "#/components/schemas/BadRequestError" }
-                  }
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Wallet with a provided id is not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "$ref": "#/components/schemas/EntityNotFoundError"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": ["PublicKeys"],
-        "operationId": "CreateWalletTransaction",
-        "description": "\n## CreateWalletTransaction\n`/mpc/networks/{network}/wallets/{walletId}/transactions`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/mpc/networks/{network}/wallets/{walletId}/transactions\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateWalletTxInput" }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "network",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "walletId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "items": {
-                      "items": {
-                        "type": "array",
-                        "$ref": "#/components/schemas/WalletTx"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Either invalid network or invalid asset",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": { "$ref": "#/components/schemas/BadRequestError" }
-                  }
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Wallet with a provided id is not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "$ref": "#/components/schemas/EntityNotFoundError"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/assets/asset-accounts/{accountId}/payments": {
+    "/assets/asset-accounts/{assetAccountId}/payments": {
       "post": {
         "tags": ["Assets"],
         "operationId": "InitiatePayment",
-        "description": "\n## InitiatePayment\n` POST /assets/asset-accounts/{accountId}/payments`\n\nInitiates payment in provided `AssetSymbol`, instructing funds to be transfered from one wallet to another within same network and same asset.\n\n> **Note**: InitiatePayment triggers PolicyEngine.\n\nTo initiate a payment to an asset account, send a `POST` request to the  endpoint. Incldue an asset account identifier as a path parameter, and in the request body send the amount and type of funds as well as the receiver's kind and address:\n\n```http\nPOST /assets/asset-accounts/:assetAccountId/payments\n```\n\n```json\n{\n    \"receiver\": \n    {\n        \"kind\": \"BlockchainWalletAddress\",\n        \"address\": \"0x....\"\n    }\n    \"assetSymbol\":  \"ETH\",\n    \"amount\": \"0.0001\"\n}\n```\n\nIf successful, the response contains, among other things, a **date stamp** and a **new payment ID**, confirming that a new payment of the correct **amount** and **type** is being **initiated**:\n\n```json\n{ \n    \"status\": \"Initiated\",\n    \"assetSymbol\": \"ETH\",\n    \"id\": aa-five-blue-caab30165c\"\n    \"dateCreated\": \"2022-06-20t09:45:15.017Z\"\n}\n```\n\nWhen the payment is in the process of being initiated, its `status` is `Initiated`. Once complete, the payment's `status` changes from `Initiated` to `Executed`. To confirm that this has occurred, you can use the [`GetPaymentById` method](GetPaymentById.md).\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts/{accountId}/payments\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n\n",
+        "description": "Initiates payment in provided `AssetSymbol`, instructing funds to be transfered from one wallet to another within same network and same asset.\n\n> **Note**: InitiatePayment triggers PolicyEngine.\n\nTo initiate a payment to an asset account, send a `POST` request to the  endpoint. Incldue an asset account identifier as a path parameter, and in the request body send the amount and type of funds as well as the receiver's kind and address:\n\n```http\nPOST /assets/asset-accounts/:assetAccountId/payments\n```\n\n```json\n{\n    \"receiver\": \n    {\n        \"kind\": \"BlockchainWalletAddress\",\n        \"address\": \"0x....\"\n    }\n    \"assetSymbol\":  \"ETH\",\n    \"amount\": \"0.0001\"\n}\n```\n\nIf successful, the response contains, among other things, a **date stamp** and a **new payment ID**, confirming that a new payment of the correct **amount** and **type** is being **initiated**:\n\n```json\n{ \n    \"status\": \"Initiated\",\n    \"assetSymbol\": \"ETH\",\n    \"id\": aa-five-blue-caab30165c\"\n    \"dateCreated\": \"2022-06-20t09:45:15.017Z\"\n}\n```\n\nWhen the payment is in the process of being initiated, its `status` is `Initiated`. Once complete, the payment's `status` changes from `Initiated` to `Executed`. To confirm that this has occurred, you can use the [`GetPaymentById` method](GetPaymentById.md).\n\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -377,7 +155,7 @@
         },
         "parameters": [
           {
-            "name": "accountId",
+            "name": "assetAccountId",
             "in": "path",
             "description": "",
             "required": true,
@@ -443,7 +221,7 @@
       "post": {
         "tags": ["Assets"],
         "operationId": "CreateAssetAccount",
-        "description": "\n## CreateAssetAccount\n`/assets/asset-accounts`\n\nCreates new `AssetAccount` entity. If `publicKey` is provided then `AssetAccount` will be added to the existing public-key (SigningGroup). \n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Creates new `AssetAccount` entity. If `publicKey` is provided then `AssetAccount` will be added to the existing public-key (SigningGroup). \n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -511,7 +289,7 @@
       "get": {
         "tags": ["Assets"],
         "operationId": "ListAssetAccounts",
-        "description": "\n## ListAssetAccounts\n`/assets/asset-accounts`\n\nReturns list of `AssetAccount` items. Additional filters can be provided, see list of parameters for the operation.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Returns list of `AssetAccount` items. Additional filters can be provided, see list of parameters for the operation.\n\n",
         "parameters": [
           {
             "name": "status",
@@ -546,14 +324,14 @@
         }
       }
     },
-    "/assets/asset-accounts/{id}": {
+    "/assets/asset-accounts/{assetAccountId}": {
       "get": {
         "tags": ["Assets"],
         "operationId": "ReadAssetAccountById",
-        "description": "\n## ReadAssetAccountById\n`/assets/asset-accounts/{id}`\n\nReads and returns an instance of `AssetAccount` by `id`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts/{id}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Reads and returns an instance of `AssetAccount` by `id`.\n\n",
         "parameters": [
           {
-            "name": "id",
+            "name": "assetAccountId",
             "in": "path",
             "description": "",
             "required": true,
@@ -566,59 +344,20 @@
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/AssetAccount" }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": ["Assets"],
-        "operationId": "ArchiveAssetAccount",
-        "description": "\n## ArchiveAssetAccount\n`/assets/asset-accounts/{id}`\n\nOperation marks `AssetAccount` as `Archived` which deactivates account.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts/{id}\" method=\"delete\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": { "$ref": "#/components/schemas/AssetAccount" }
-              }
-            }
-          },
-          "404": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "$ref": "#/components/schemas/EntityNotFoundError"
-                    }
-                  }
-                }
               }
             }
           }
         }
       }
     },
-    "/assets/asset-accounts/{id}/balance": {
+    "/assets/asset-accounts/{assetAccountId}/balance": {
       "get": {
         "tags": ["Assets"],
         "operationId": "ReadAssetAccountBalanceById",
-        "description": "\n## ReadAssetAccountBalanceById\n`/assets/asset-accounts/{id}/balance`\n\nGet the balance of the `AssetAccount` with its `id`. Returns an instance of `AssetAccountBalance`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/assets/asset-accounts/{id}/balance\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Get the balance of the `AssetAccount` with its `id`. Returns an instance of `AssetAccountBalance`.\n\n",
         "parameters": [
           {
-            "name": "id",
+            "name": "assetAccountId",
             "in": "path",
             "description": "",
             "required": true,
@@ -641,7 +380,7 @@
       "post": {
         "tags": ["PolicyManagement"],
         "operationId": "CreatePolicy",
-        "description": "\n## CreatePolicy\n`/policies/policies`\n\nCreates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policies\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Creates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -677,7 +416,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ListPolicies",
-        "description": "\n## ListPolicies\n`/policies/policies`\n\nLists all available `Policy` items. List can be further filtered using using additional parameters below.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policies\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Lists all available `Policy` items. List can be further filtered using using additional parameters below.\n",
         "parameters": [
           {
             "name": "dateCreated",
@@ -757,7 +496,7 @@
       "put": {
         "tags": ["PolicyManagement"],
         "operationId": "UpdatePolicy",
-        "description": "\n## UpdatePolicy\n`/policies/policies/{policyId}`\n\nUpdates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policies/{policyId}\" method=\"put\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Updates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -816,7 +555,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ReadyPolicyById",
-        "description": "\n## ReadyPolicyById\n`/policies/policies/{policyId}`\n\nRetrieves single `Policy` item by it’s `id`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policies/{policyId}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Retrieves single `Policy` item by it’s `id`.\n",
         "parameters": [
           {
             "name": "policyId",
@@ -855,7 +594,7 @@
       "delete": {
         "tags": ["PolicyManagement"],
         "operationId": "ArchivePolicy",
-        "description": "\n## ArchivePolicy\n`/policies/policies/{policyId}`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policies/{policyId}\" method=\"delete\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "",
         "parameters": [
           {
             "name": "policyId",
@@ -896,7 +635,7 @@
       "post": {
         "tags": ["PolicyManagement"],
         "operationId": "CreatePolicyControl",
-        "description": "\n## CreatePolicyControl\n`/policies/policy-controls`\n\nCreates new `PolicyControl` item. \n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-controls\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Creates new `PolicyControl` item. \n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -934,7 +673,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ListPolicyControls",
-        "description": "\n## ListPolicyControls\n`/policies/policy-controls`\n\nLists all available `PolicyControl` items. List can be further filtered using using additional parameters below.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-controls\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Lists all available `PolicyControl` items. List can be further filtered using using additional parameters below.\n",
         "parameters": [
           {
             "name": "dateCreated",
@@ -1008,7 +747,7 @@
       "put": {
         "tags": ["PolicyManagement"],
         "operationId": "UpdatePolicyControl",
-        "description": "\n## UpdatePolicyControl\n`/policies/policy-controls/{policyControlId}`\n\nUpdates existing policy control, this operation will create new `PolicyControl` with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-controls/{policyControlId}\" method=\"put\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "\nUpdates existing policy control, this operation will create new `PolicyControl` with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1069,7 +808,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ReadyPolicyControlById",
-        "description": "\n## ReadyPolicyControlById\n`/policies/policy-controls/{policyControlId}`\n\nLists all available `PolicyControl` items. List can be further filtered using using additional parameters below.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-controls/{policyControlId}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Lists all available `PolicyControl` items. List can be further filtered using using additional parameters below.",
         "parameters": [
           {
             "name": "policyControlId",
@@ -1108,7 +847,7 @@
       "delete": {
         "tags": ["PolicyManagement"],
         "operationId": "ArchivePolicyControl",
-        "description": "\n## ArchivePolicyControl\n`/policies/policy-controls/{policyControlId}`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-controls/{policyControlId}\" method=\"delete\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "",
         "parameters": [
           {
             "name": "policyControlId",
@@ -1149,7 +888,7 @@
       "post": {
         "tags": ["PolicyManagement"],
         "operationId": "CreatePolicyRule",
-        "description": "\n## CreatePolicyRule\n`/policies/policy-rules`\n\nCreates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-rules\" method=\"post\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Creates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1185,7 +924,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ListPolicyRules",
-        "description": "\n## ListPolicyRules\n`/policies/policy-rules`\n\nLists all available `Policy` items. List can be further filtered using using additional parameters below.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-rules\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Lists all available `Policy` items. List can be further filtered using using additional parameters below.\n",
         "parameters": [
           {
             "name": "dateCreated",
@@ -1265,7 +1004,7 @@
       "put": {
         "tags": ["PolicyManagement"],
         "operationId": "UpdatePolicyRule",
-        "description": "\n## UpdatePolicyRule\n`/policies/policy-rules/{policyRuleId}`\n\nUpdates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-rules/{policyRuleId}\" method=\"put\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Updates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1324,7 +1063,7 @@
       "get": {
         "tags": ["PolicyManagement"],
         "operationId": "ReadyPolicyRuleById",
-        "description": "\n## ReadyPolicyRuleById\n`/policies/policy-rules/{policyRuleId}`\n\nRetrieves single `Policy` item by it’s `id`.\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-rules/{policyRuleId}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "Retrieves single `Policy` item by it’s `id`.",
         "parameters": [
           {
             "name": "policyRuleId",
@@ -1363,7 +1102,7 @@
       "delete": {
         "tags": ["PolicyManagement"],
         "operationId": "ArchivePolicyRule",
-        "description": "\n## ArchivePolicyRule\n`/policies/policy-rules/{policyRuleId}`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/policy-rules/{policyRuleId}\" method=\"delete\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "",
         "parameters": [
           {
             "name": "policyRuleId",
@@ -1404,7 +1143,7 @@
       "get": {
         "tags": ["PolicyExecution"],
         "operationId": "ReadPolicyCertificateByHash",
-        "description": "\n## ReadPolicyCertificateByHash\n`/policies/execution-certificates/{policyCertificate}`\n\n\n\n{% swagger src=\"../../.gitbook/assets/production-dfns-api-openapi.json\" path=\"/policies/execution-certificates/{policyCertificate}\" method=\"get\" %}\n[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)\n{% endswagger %}\n",
+        "description": "",
         "parameters": [
           {
             "name": "policyCertificate",
