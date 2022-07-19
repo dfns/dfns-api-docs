@@ -1,11 +1,11 @@
 # Data Model Concepts
 
-### Tags and External Ids
+### Tags and External IDs
 
-Many entities in the DFNS data model provide `tags and` `externalId` fields which allow customers to mark items and link them to external databases.
+Many entities in the DFNS data model provide `tags and` `externalID` fields which allow customers to mark items and link them to external databases.
 
 * `tags`: Tags can be used as to specify groups or categories. They allow customers to mark entities by jurisdiction, department, seniority, business-function, or other classification criteria.
-* `externalId`: Is useful when an entity is generated first within a customer’s database. For example `Payment`, policy, or a `PublicKey`. The `externalId` of the database record can be provided and later used as a "foreign key" to retrieve data using the id from customer’s database.
+* `externalId`:  Useful when an entity is generated first within a customer’s database. For example `Payment`, policy, or a `PublicKey`. The `externalID` of the database record can be provided and later used as a "foreign key" to retrieve data using the id from customer’s database.
 
 ### Dfns Id
 
