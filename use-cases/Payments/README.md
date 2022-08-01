@@ -4,5 +4,5 @@ Payments are an abstraction over blockchain value transfer transactions.  Paymen
 
 Payments functionality includes:
 
-*
+* [Initiating a payment](InitiatePayment.md)
 * [Getting a payment by its ID](GetPaymentById.md)
