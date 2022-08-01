@@ -4,7 +4,7 @@ Welcome to the Dfns API!  Dfns provides custody-as-a-service that enables crypto
 
 
 
-If you’re just getting started with Dfns, read our Getting Started guide to learn about our nomenclature and API conventions. If you need details on a specific API signature, go straight to our API reference section for details on headers, query parameters, body parameters, response types, etc.
+If you’re just getting started with Dfns, read our [Getting Started](getting-started/GettingStarted.md) guide to learn about our nomenclature and API conventions. If you need details on a specific API signature, go straight to our API Docs reference section for details on headers, query parameters, body parameters, response types, etc.
 
 
 
