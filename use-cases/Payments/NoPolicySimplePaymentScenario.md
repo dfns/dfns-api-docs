@@ -1,15 +1,12 @@
-# No Policy Simple Payment Scenario
+# Fun with Payments!
 
-Make an asset account without policies and try transferring money between it and other accounts in various ways, verifying the freshly performed action at each step. 
+Let's dig into payments together.  Start by making an `Asset Account` without `Policies` and try transferring money between it and other accounts in various ways.  Verify the outcome of the action at each step.
 
-* [Create asset account](/solution-architecture/data/gitbook/api-docs/assets/CreateAssetAccount.md)
-* Get account ([ReadAssetAccountById](/solution-architecture/data/gitbook/api-docs/assets/ReadAssetAccountById.md))
-* Try transferring money despite having a zero account balance in source asset account ([Initiate payment](/solution-architecture/data/gitbook/api-docs/assets/InitiatePayment.md))
-* Transfer funds from Faucet to a specified asset account ([Initiate payment](/solution-architecture/data/gitbook/api-docs/assets/InitiatePayment.md) with payment details in the body) 
-* Transfer funds from Faucet — payload not valid ([Initiate payment](/solution-architecture/data/gitbook/api-docs/assets/InitiatePayment.md))
-* Verify funds transfered correctly ([ReadAssetAccountBalanceById](/solution-architecture/data/gitbook/api-docs/assets/ReadAssetAccountBalanceById.md)]
-* Transfer money back to Faucet ([Initiate payment](/solution-architecture/data/gitbook/api-docs/assets/InitiatePayment.md) `POST` with payment details in the body)
-* Get payment by ID ([GetPaymentById](/solution-architecture/data/gitbook/use-cases/Payments/GetPaymentById.md))
-* Get payment by ID — Error 404 ID does not exist ([GetPaymentById](/solution-architecture/data/gitbook/use-cases/Payments/GetPaymentById.md))
-* List payments ([Initiate payment](/solution-architecture/data/gitbook/api-docs/assets/InitiatePayment.md) `GET`)
-
+* Start by [creating an Asset Account](<../Asset Accounts/CreateAssetAccount.md>) on a testnet&#x20;
+* [Get the account using the ID](<../Asset Accounts/GetAccountById.md>)
+* Try [transferring money](InitiatePayment.md) despite having a zero account balance
+* Transfer funds from a public faucet to your asset account&#x20;
+* Verify the funds transferred successfully by [getting your account balance](<../Asset Accounts/GetBalance.md>)
+* [Transfer money](InitiatePayment.md) back to the faucet or to another address
+* [Get information on your payment](GetPaymentById.md)&#x20;
+* Try again, but this time pass an invalid ID to see what happens!

@@ -17,7 +17,7 @@
 * [Payments](use-cases/Payments/README.md)
   * [Get Payment By Id](use-cases/Payments/GetPaymentById.md)
   * [Initiate Payment](use-cases/Payments/InitiatePayment.md)
-  * [No Policy Scenario](use-cases/Payments/NoPolicySimplePaymentScenario.md)
+  * [Fun with Payments!](use-cases/Payments/NoPolicySimplePaymentScenario.md)
 
 ## API Docs
 
