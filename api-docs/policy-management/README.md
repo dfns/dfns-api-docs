@@ -1,6 +1,3 @@
-Policy Management domain responsibilities are:
+# PolicyManagement Overview
 
- - To allow customers to create, update, and read the policies they've created.
- - To ensure that policy updates are stored appropriately and in compliant way.
- 
- 
+Policies enable businesses to enforce rules and controls on top of actions taken using the Dfns API.  For a broad overview, see the [policy engine description](../../getting-started/PolicyEngineIntro.md) in the [getting started](broken-reference) section.&#x20;
