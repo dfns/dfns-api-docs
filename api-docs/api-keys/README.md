@@ -1,4 +1,3 @@
-ApiKeys domain responsibilities are:
+# ApiKeys Overview
 
- - To allow customers to delegate and automate functionality, by granting authorization tokens to machines.
- - To allow customers to manage, revoke, and review their authorization tokens.
+Api Keys allow Dfns customers to delegate and automate functionality by granting authorization tokens to machines or to end users.  These endpoints allow customers to create, manage, revoke, and review their authorization tokens.
