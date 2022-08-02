@@ -30,7 +30,7 @@ If successful, the response contains, among other things, a **date stamp** and a
 { 
     "status": "Initiated",
     "assetSymbol": "ETH",
-    "id": aa-five-blue-caab30165c"
+    "id": pa-five-blue-caab30165c"
     "dateCreated": "2022-06-20t09:45:15.017Z"
 }
 ```
