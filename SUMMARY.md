@@ -21,12 +21,6 @@
 
 ## API Docs
 
-* [PublicKeys](api-docs/publickeys/README.md)
-  * [PublicKeys Overview](api-docs/public-keys/README.md)
-  * [PublicKeys Data Model](api-docs/public-keys/Datamodel.md)
-  * [ReadPublicKey](api-docs/public-keys/ReadPublicKey.md)
-  * [CreatePublicKey](api-docs/public-keys/CreatePublicKey.md)
-  * [CreateSignature](api-docs/public-keys/CreateSignature.md)
 * [Assets](<api-docs/assets/README (1).md>)
   * [Assets Overview](api-docs/assets/README.md)
   * [Assets Data Model](api-docs/assets/Datamodel.md)
@@ -57,6 +51,12 @@
   * [PolicyExecution Overview](api-docs/policy-execution/README.md)
   * [PolicyExecution Data Model](api-docs/policy-execution/Datamodel.md)
   * [ReadPolicyCertificateByHash](api-docs/policy-execution/ReadPolicyCertificateByHash.md)
+* [PublicKeys](api-docs/publickeys/README.md)
+  * [PublicKeys Overview](api-docs/public-keys/README.md)
+  * [PublicKeys Data Model](api-docs/public-keys/Datamodel.md)
+  * [ReadPublicKey](api-docs/public-keys/ReadPublicKey.md)
+  * [CreatePublicKey](api-docs/public-keys/CreatePublicKey.md)
+  * [CreateSignature](api-docs/public-keys/CreateSignature.md)
 * [ApiKeys](api-docs/apikeys/README.md)
   * [ApiKeys Overview](api-docs/api-keys/README.md)
   * [ApiKeys Data Model](api-docs/api-keys/Datamodel.md)
