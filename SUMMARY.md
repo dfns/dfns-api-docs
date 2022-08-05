@@ -25,6 +25,7 @@
   * [Assets Overview](api-docs/assets/README.md)
   * [Assets Data Model](api-docs/assets/Datamodel.md)
   * [InitiatePayment](api-docs/assets/InitiatePayment.md)
+  * [InitiatePayment v. 2](api-docs/assets/initiatepayment-1.md)
   * [CreateAssetAccount](api-docs/assets/CreateAssetAccount.md)
   * [ReadAssetAccountById](api-docs/assets/ReadAssetAccountById.md)
   * [ListAssetAccounts](api-docs/assets/ListAssetAccounts.md)
