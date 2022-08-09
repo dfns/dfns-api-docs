@@ -4,7 +4,7 @@ description: Test page
 
 # InitiatePayment verion 2
 
-`InitiatePayment page`
+`InitiatePayment page.`
 
 __
 
