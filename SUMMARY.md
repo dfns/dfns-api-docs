@@ -5,6 +5,7 @@
 ## Getting Started
 
 * [Getting Started](getting-started/GettingStarted.md)
+* [Authentication/Authorization](getting-started/authentication-authorization.md)
 * [Data Model Concepts](getting-started/DataModelConcepts.md)
 * [Policy Engine](getting-started/PolicyEngineIntro.md)
 
