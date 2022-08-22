@@ -1,8 +1,8 @@
 
-## ReadyPolicyControlById
+## GetPolicyControlById
 `RESTful Endpoint: get /policies/policy-controls/{policyControlId}`
 
-Lists all available `PolicyControl` items. List can be further filtered using using additional parameters below.
+Lists all available `PolicyControl` entities. List can be further filtered using using additional parameters below.
 
 ### Input Query Parameters
 * Path parameter `policyControlId`: `String`.  

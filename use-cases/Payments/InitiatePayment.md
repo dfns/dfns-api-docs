@@ -1,6 +1,11 @@
-# Initiate Payment
+Initiate payment
+===
 
-To initiate a payment to an asset account, send a `POST` request to the `payments` endpoint. Include an asset account identifier as a path parameter, and in the request body send the amount and type of funds as well as the receiver kind and address:
+```http
+POST /assets/asset-accounts/:assetAccountId/payments
+```
+
+To initiate a payment to an asset account, send a `POST` request to the  endpoint. Incldue an asset account identifier as a path parameter, and in the request body send the amount and type of funds as well as the receiver's kind and address:
 
 ```http
 POST /assets/asset-accounts/:assetAccountId/payments
@@ -18,7 +23,7 @@ POST /assets/asset-accounts/:assetAccountId/payments
 }
 ```
 
-If successful, the response contains, among other things, a **new payment ID**, confirming that a new payment of the correct **amount** and **type** has been **initiated**:
+If successful, the response contains, among other things, a **date stamp** and a **new payment ID**, confirming that a new payment of the correct **amount** and **type** is being **initiated**:
 
 ```json
 { 
@@ -30,3 +35,4 @@ If successful, the response contains, among other things, a **new payment ID**, 
 ```
 
 When the payment is being initiated, its `status` is `Initiated`. Once complete, the payment's `status` changes from `Initiated` to `Executed`. To confirm that this has occurred, you can use the [`GetPaymentById` method](GetPaymentById.md).
+

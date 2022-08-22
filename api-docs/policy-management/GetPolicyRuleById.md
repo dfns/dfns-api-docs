@@ -1,8 +1,8 @@
 
-## ReadyPolicyRuleById
+## GetPolicyRuleById
 `RESTful Endpoint: get /policies/policy-rules/{policyRuleId}`
 
-Retrieves single `Policy` item by it’s `id`.
+Retrieves single `Policy` item by its `id`.
 
 ### Input Query Parameters
 * Path parameter `policyRuleId`: `String`.  

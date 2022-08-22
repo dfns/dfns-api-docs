@@ -2,8 +2,6 @@
 ## ReadAssetAccountBalanceById
 `RESTful Endpoint: get /assets/asset-accounts/{assetAccountId}/balance`
 
-Get the balance of the `AssetAccount` with its `id`. Returns an instance of `AssetAccountBalance`.
-
 
 
 ### Input Query Parameters

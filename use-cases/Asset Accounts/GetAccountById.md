@@ -1,4 +1,13 @@
-# Get Account By Id
+Get Account by ID
+===
+
+```http
+GET /assets/asset-accounts/:assetAccountId
+```
+
+When the account is in the process of being created, its `status` is `Creating`. Once created, the account's `status` changes from `Creating` to `Enabled`. To confirm that this has occurred, you can use the `GetAccountById` method.
+
+## Get account by ID
 
 To retrieve an asset account by its ID, send a `GET` request to the `/assets/asset-accounts` endpoint including the account identifier as a path parameter:
 
@@ -19,3 +28,4 @@ A successful response means that the public and private key shares were created 
     "dateUpdated": "2022-06-20t09:45:15.017Z"
 }
 ```
+

@@ -2,7 +2,8 @@
 ## CreatePolicyRule
 `RESTful Endpoint: post /policies/policy-rules`
 
-Creates new policy. This will bind list of `PolicyRule` entities with `PolicyControl` entities to a given `ActivityKind`.
+Creates new `PolicyRule` entity. 
+
 
 
 ### Input Body Parameters

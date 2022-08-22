@@ -2,9 +2,9 @@
 ## ListAssetAccounts
 `RESTful Endpoint: get /assets/asset-accounts`
 
-Returns list of `AssetAccount` items. Additional filters can be provided, see list of parameters for the operation.
+Returns list of all `AssetAccount` entities belonging to the same organization as the caller. Additional filters can be provided; see list of parameters for the operation.
 
-
+<!--  -->
 
 ### Input Query Parameters
 * Query parameter `status`: `Enumeration`: [`Creating`, `Enabled`, `Failed`].  

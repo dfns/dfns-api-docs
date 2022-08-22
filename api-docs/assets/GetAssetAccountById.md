@@ -1,10 +1,15 @@
 
-## ReadAssetAccountById
+## GetAssetAccountById
 `RESTful Endpoint: get /assets/asset-accounts/{assetAccountId}`
 
-Reads and returns an instance of `AssetAccount` by `id`.
+Retrieves a particular instance of `AssetAccount` by its `id`. If not found, returns `EntityNotFoundError` with a message indicating which table from which it's missing.
 
+> **Notes**  
+>   
+>   
+> `address` is derived from the `publicKey` via a blockchain-specific function.
 
+<!--  -->
 
 ### Input Query Parameters
 * Path parameter `assetAccountId`: `String`.  

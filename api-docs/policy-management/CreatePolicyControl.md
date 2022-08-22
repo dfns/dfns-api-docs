@@ -2,7 +2,7 @@
 ## CreatePolicyControl
 `RESTful Endpoint: post /policies/policy-controls`
 
-Creates new `PolicyControl` item. 
+Creates new `PolicyControl` entity. 
 
 
 

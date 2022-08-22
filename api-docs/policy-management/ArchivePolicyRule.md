@@ -2,7 +2,7 @@
 ## ArchivePolicyRule
 `RESTful Endpoint: delete /policies/policy-rules/{policyRuleId}`
 
-
+Deactivates a specific `PolicyRule` entity by its `PolicyRuleId` and marks its `status` as `Archived`.
 
 ### Input Query Parameters
 * Path parameter `policyRuleId`: `String`.  
