@@ -1,8 +1,8 @@
 
 ## UpdatePolicy
-`RESTful Endpoint: put /policies/policies/{policyId}`
+`RESTful Endpoint: put /policies/{policyId}`
 
-Updates existing policy, this operation will create new policy with same `id` but different `version`. Old policy will be marked as `Archived` and no longer available for execution, but can be reviewed and audited.
+Updates existing policy, creating a new policy with same `id` but different `version`. Old policy is marked as `Archived` and no longer available for execution, but can be reviewed and audited.
 
 
 ### Input Query Parameters
@@ -19,6 +19,6 @@ Updates existing policy, this operation will create new policy with same `id` bu
 _Please consult OpenAPI file full breakdown and including nested properties._
 
 
-{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/policies/policies/{policyId}" method="put" %}
+{% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/policies/{policyId}" method="put" %}
 [production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
 {% endswagger %}

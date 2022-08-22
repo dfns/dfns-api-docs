@@ -3,6 +3,12 @@
 `RESTful Endpoint: post /api-keys`
 
 
+## CreateApiKey
+
+Instantiates a JWT token for a machine/service account, which must be securely persisted and passed in the request headers as a bearer token. The token is subject to policy engine controls, and you must provide scopes for it.
+
+
+
 
 
 ### Input Body Parameters

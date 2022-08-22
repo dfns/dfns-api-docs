@@ -3,6 +3,9 @@
 `RESTful Endpoint: delete /api-keys/{apiKeyId}`
 
 
+## RevokeApiKey
+
+Deactivates a specific `ApiKey` entity by its `ApiKeyId` and marks its `status` as `Archived`.
 
 ### Input Query Parameters
 * Path parameter `apiKeyId`: `String`.  
