@@ -1,12 +1,11 @@
-# Assets Overview
+Assets domain responsibilities are:
+- to represent blockchain wallets, payments, and other necessary data to Dfns products. 
+- to allow customers to use the datasets in both crypto-native and in traditional-payment ways.
 
-Assets encompasses both [Asset Accounts](../../use-cases/Asset%20Accounts/README.md) and [Payments](../../use-cases/Payments/README.md).   These are the core entities of the Dfns API.  They represent, respectively, blockchain wallets and the transfer of both native and ERC20 tokens.
 
-## Payment Lifecycle
-
-The following diagram illustrates the phases of the payment lifecycle:
-
+Payment Lifecycle
 ```
+
                   
                   
                   ┌───────────┐
@@ -33,18 +32,16 @@ The following diagram illustrates the phases of the payment lifecycle:
          │ Failed (Blockchain Error) ◄─────────┘
          └───────────────────────────┘
 
+
 ```
-## Payment phases
 
-Payments have 3 phases:
+Payments have 3 notable stages:
 
-1. `Initiated`: When a payment is first created, it is first validated and then routed through the policy engine. This can trigger approvals or other actions as defined by `Policies`.
-2. `Executed`: Once the payment is verified, it will go into the execution phase, where it will be published to the blockchain.
-3. `Settled`: Payment are settled once the transfer is confirmed on the blockchain.  Dfns defines "settled" as the transaction having a minimum of six block confirmations.
-
-## Payment failure modes
+1. `Initiated`: is when payment is first created. This will pass data validation, and go through the policy engine. This can trigger additional approvals, audits, and other steps as defined by policies.
+1. `Executed`: once payment is verified, it will go into the execution phase, where it will be published on the blockchain.
+1. `Settled`: finally, payment will be settled once the transfer is confirmed on the blockchain.
 
 There are two failure modes in the payment lifecycle:
 
-1. `Declined`:  This occurs when a payment doesn't pass initiation validation, data is incorrect, balance is insufficient, or policy approvals fail. See the error response for a list of failed parameters.
-2. `Failed`: This is when payment failed on the blockchain.  Errors differ depending on the given blockchain network. See the response for a list of errors.
+1. `Declined`: Is when payment didn't pass initiation validation, either data is incorrect, balance is insufficient, or it didn’t pass policies. See error body for list of failed parameters.
+1. `Failed`: This is when payment failed on the blockchain. An error can depend on a given blockchain network. See body for list of errors.

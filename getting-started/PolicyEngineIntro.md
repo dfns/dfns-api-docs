@@ -1,6 +1,6 @@
-## Dfns `Policy Engine`
+# Policy Engine
 
-`Policy Engine` allows our customers (and their customers in multi-tenancy mode) to add rules and controls, and to create policies out of them. Let's take the following example:
+Policy Engine allows you to create `PolicyRules`, `PolicyControls`, and then use them to create `Policies`.  Take the following example:
 
 Clare, the customer's compliance officer, has to implement 4 new policies:
 1. When a new employee is added, notify the Managing Directors.
@@ -12,31 +12,29 @@ To do that Clare will have to create the following `PolicyRules`, `PolicyControl
 
 ###  `PolicyRules`
 * **Onboarded Employee**: `EmployeeAdded`, with the default configuration.
-* **Medium Payment**:  `PaymentAmountLimit` with amount value of 50,000 in GBP.
-* **Large Payment**: `PaymentAmountLimit` with amount value of 100,000 in GBP.
-* **Very Large Payment**: `PaymentAmountLimit` with amount value of 250,000 in GBP.
+* **Medium Payment**: `PaymentAmountLimit` with amount value of $50,000.
+* **Large Payment**: `PaymentAmountLimit` with amount value of $100,000.
+* **Very Large Payment**: `PaymentAmountLimit` with amount value of $250,000.
+
 
 ### `PolicyControls`:
-* Notify Vice Presidents: `NotifyOverEmail` scoped to `VicePresident` group or permission.
-* Notify Managing Directors: `NotifyOverEmail` scoped to `ManagingDirector` group or permission.
-* Vice President Approval:  `RequestApproval` scoped to `VicePresident` group.
-* Managing Director Approval: `RequestApproval` scoped to `ManagingDirector` group.
+* Notify Vice Presidents: `NotifyOverEmail` scoped to VicePresident group.
+* Notify Managing Directors: `NotifyOverEmail` scoped to ManagingDirector group.
+* Vice President Approval: `RequestApproval` scoped to VicePresident group.
+* Managing Director Approval: `RequestApproval` scoped to ManagingDirector group.
 
 ### `Policies`:
 
-* New Employee Added `Policy` with the following
+* New Employee Added `Policy` with:
   * Rules: Onboarded Employee
   * Controls: Notify Managing Directors
-
-* Medium Payment `Policy` with the following
+* Medium Payment `Policy` with:
   * Rules: Medium Payment
   * Controls: Notify Vice Presidents, Notify Managing Directors.
-
-* Large Payment `Policy` with the following
+* Large Payment `Policy` with:
   * Rules: Large Payment
   * Controls: Vice President Approval
-
-* Very Large Payment `Policy` with the following
+* Very Large Payment `Policy` with:
   * Rules: Very Large Payment
   * Controls: Vice President Approval, Managing Director Approval
 

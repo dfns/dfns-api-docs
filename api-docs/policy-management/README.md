@@ -1,5 +1,6 @@
- Policies enable businesses to enforce rules and controls on top of actions taken using the Dfns API.  
+Policy Management domain responsibilities are:
 
- Specifically, Policy Engine allows you to create `PolicyRules` and `PolicyControls`, and then use them together to create `Policies`.
+ - To allow customers to create, update, and read the policies they've created.
+ - To ensure that policy updates are stored appropriately and in compliant way.
  
- For a broad overview including examples, see the [Policy Engine description](../../getting-started/PolicyEngineIntro.md) in the [Getting Started](../../getting-started/GettingStarted.md) section.
+ 

@@ -18,3 +18,4 @@ However, before diving into the API we recommend taking a moment to [read about 
 <!--- You can explore the API reference documentation, or dive into one of our procedural guides to help you perform a task or address a use case. --->
  
 <!--  -->
+However before diving into the API, we recommend taking a moment to [read about some basic concepts of our data model](DataModelConcepts.md).&#x20;
