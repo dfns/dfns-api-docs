@@ -13,6 +13,10 @@ Scopes:
 
 .
 
+*** 
+
+.
+
 Retrieves public key details by its `id`.
 
 ## Input Query Parameters
