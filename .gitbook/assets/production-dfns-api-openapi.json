@@ -16,7 +16,7 @@
       "get": {
         "tags": ["PublicKeys"],
         "operationId": "GetPublicKeyById",
-        "description": "\n\n---\n\nRetrieves public key details by its `id`.",
+        "description": "## Description\n\nRetrieves public key details by its `id`.",
         "parameters": [
           {
             "name": "publicKey",
