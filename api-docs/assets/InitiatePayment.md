@@ -1,6 +1,10 @@
 
 ## InitiatePayment
-`RESTful Endpoint: post /assets/asset-accounts/{assetAccountId}/payments`
+`RESTful Endpoint: POST /assets/asset-accounts/{assetAccountId}/payments`
+
+Scopes:
+ * as Employee Auth: payments:write
+ * as API Key: payments:write
 
 Initiates payment in provided `AssetSymbol`, instructing funds to be transferred from one wallet to another within same network and same kind of asset (currency or otherwise). Response either confirms initiation of payment process (success) or gives reason why it’s not possible (failure).
 
@@ -13,19 +17,77 @@ Initiates payment in provided `AssetSymbol`, instructing funds to be transferred
 <!--  -->
 
 ### Input Query Parameters
-* Path parameter `assetAccountId`: `String`.  
+* Path parameter `assetAccountId`: undefined  
   
 
 ### Input Body Parameters
-* externalId: `String` [_Optional_] 
-* assetSymbol: `AssetSymbol` 
-* amount: `Amount` 
-* receiver: `PaymentInstrument` 
-* note: `String` [_Optional_] 
-* narrative: `String` [_Optional_] 
+* externalId: 
+* assetSymbol: 
+* amount: 
+* receiver: 
+* note: 
+* narrative: 
 
 _Please consult OpenAPI file full breakdown and including nested properties._
 
+### Successful Response
+* tags: `Tag[]`. Multiple tags can be attached to an entity to categorise or otherwise mark it. For example tags could indicate risk (High, Medium, Low), departments (Trading, Sales, IT), purpose (Treasury, Hot, Deposits), and jurisdictions (US, EU, DE).
+
+Multiple tags can be attached to same entity.
+* externalId: `String`. Field can be used if entity is created in external (customer’s) system first. This way the external id can be attached to identify entity from Dfns’s data store.
+* orgId: `EntityId`. Indicates id of the Organisation, such as usually a customer, or sub-devision, sub-tenant, and others.
+* id: `EntityId`. 
+* status: `PaymentStatus`. 
+* initiator: `Initiator`. 
+* assetAccountId: `EntityId`. 
+* assetSymbol: `AssetSymbol`. 
+* amount: `Amount`. 
+* sender: `DfnsAssetAccount`. 
+* receiver: `PaymentInstrument`. 
+* narrative: `String`. SWIFT (MT, ISO15022) field. Represents additional information about payment.
+* note: `String`. 
+* receiverAddress: `String`. 
+* policyCertificate: `DfnsCertificate`. 
+* dateCreated: `IsoDatetime`. 
+* dateUpdated: `IsoDatetime`. 
+* dateExecuted: `IsoDatetime`. 
+* dateBroadcasted: `IsoDatetime`. 
+* dateFirstConfirmed: `IsoDatetime`. 
+* dateConfirmed: `IsoDatetime`. 
+* dateSettled: `IsoDatetime`. 
+* txHash: `String`. 
+* blockHeight: `Integer`. 
+
+### Error Responses
+#### `400` **badPaymentInitiation** 
+Payment initiation payload is invalid, and missing parameters. See `description` field for additional details.
+* serviceName: `String`. 
+* message: `String`. 
+* causes: `String[]`. 
+* shouldTriggerInvestigaton: `Bool`. 
+* isDfnsError: `Bool`. 
+* httpStatus: `Integer`. 
+* errorName: `String`. 
+
+#### `402` **paymentRequired** 
+GasStation requires additional top-up.
+* serviceName: `String`. 
+* message: `String`. 
+* causes: `String[]`. 
+* shouldTriggerInvestigaton: `Bool`. 
+* isDfnsError: `Bool`. 
+* httpStatus: `Integer`. 
+* errorName: `String`. 
+
+#### `422` **InsufficientFunds** 
+Asset Account doesn't have sufficient funds to process payment
+* serviceName: `String`. 
+* message: `String`. 
+* causes: `String[]`. 
+* shouldTriggerInvestigaton: `Bool`. 
+* isDfnsError: `Bool`. 
+* httpStatus: `Integer`. 
+* errorName: `String`. 
 
 {% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/assets/asset-accounts/{assetAccountId}/payments" method="post" %}
 [production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)

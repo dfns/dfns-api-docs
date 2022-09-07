@@ -1,6 +1,10 @@
 
 ## ListScopes
-`RESTful Endpoint: get /api-keys/scopes`
+`RESTful Endpoint: GET /api-keys/scopes`
+
+Scopes:
+ * as Employee Auth: scopes:read
+ * as API Key: scopes:read
 
 
 ## ListScopes
@@ -10,6 +14,18 @@ Lists all available scopes that can be used to restrict access to specific entit
 
  
 
+
+### Successful Response
+* id: `EntityId`. 
+* status: `ApiKeyStatus`. 
+* externalId: `String`. 
+* orgId: `EntityId`. 
+* dateCreated: `IsoDatetime`. 
+* name: `String`. 
+* authorId: `EntityId`. 
+* scopes: `String[]`. 
+
+### Error Responses
 
 
 {% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/api-keys/scopes" method="get" %}

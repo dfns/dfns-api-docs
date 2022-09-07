@@ -30,8 +30,3 @@ Represents a certificate that can be issued by various systems such as PolicyEng
  
 ### Email
 String as email format 
-### DfnsError
-Foundational type for the errors, defining everything that any error within Dfns product needs. 
-### AccessToResourceNotAllowedError
-Error is thrown when user (Employee, ApiKey, etc) doesn't have specific permission to access resource. Please talk to your administrator to grant the resource permission.
- 
