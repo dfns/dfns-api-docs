@@ -7,11 +7,11 @@ Scopes:
 * as Employee Auth: public\_keys:read
 * as API Key: public\_keys:read
 
-\---
-
-
+.
 
 ---
+
+.
 
 Retrieves public key details by its `id`.
 
