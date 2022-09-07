@@ -6,6 +6,10 @@ Scopes:
  * as Employee Auth: public_keys:read
  * as API Key: public_keys:read
 
+
+
+---
+
 Retrieves public key details by its `id`.
 
 ### Input Query Parameters
