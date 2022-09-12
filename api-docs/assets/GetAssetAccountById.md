@@ -8,10 +8,7 @@ Scopes:
 
 Retrieves a particular instance of `AssetAccount` by its `id`. If not found, returns `EntityNotFoundError` with a message indicating which table from which it's missing.
 
-> **Notes**  
->   
->   
-> `address` is derived from the `publicKey` via a blockchain-specific function.
+> **Note**: `address` is derived from the `publicKey` via a blockchain-specific function.
 
 <!--  -->
 

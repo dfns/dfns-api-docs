@@ -16,7 +16,7 @@
       "get": {
         "tags": ["PublicKeys"],
         "operationId": "GetPublicKeyById",
-        "description": "## Description\n\nRetrieves public key details by its `id`.",
+        "description": "Retrieves public key details by its `id`.",
         "parameters": [
           {
             "name": "publicKey",
@@ -58,7 +58,7 @@
       "post": {
         "tags": ["PublicKeys"],
         "operationId": "CreatePublicKey",
-        "description": "Creates a public key invoking key shares to create signatures and sign any arbitrary message.\n\nTo create a public key, you have to specify only the following:\n\n*   Signature algorithm used to generate the key (currently [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) or [EdDSA](https://en.wikipedia.org/wiki/EdDSA))\n*   Group size for the number of key shares\n*   Group threshold for the minimum number of key shares required to execute the MPC/TSS ceremony\n  \n## Notes\n\nSome keys do not exist on the blockchain until transactions are actually sent. In those cases, trying to get the balance right after creation might result in the `404: Address not found on blockchain` error.",
+        "description": "Creates a public key invoking key shares to create signatures and sign any arbitrary message.\n\nTo create a public key, you have to specify only the following:\n\n*   Signature algorithm used to generate the key (currently [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) or [EdDSA](https://en.wikipedia.org/wiki/EdDSA))\n*   Group size for the number of key shares\n*   Group threshold for the minimum number of key shares required to execute the MPC/TSS ceremony\n  \n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -361,7 +361,7 @@
       "get": {
         "tags": ["Assets"],
         "operationId": "ListPayments",
-        "description": "",
+        "description": "Returns list of all `Payment` entities belonging to the same organization as the caller. Additional filters can be provided; see list of parameters for the operation.",
         "parameters": [
           {
             "name": "assetAccountId",
@@ -452,7 +452,7 @@
       "post": {
         "tags": ["Assets"],
         "operationId": "CreateAssetAccount",
-        "description": "Creates new `AssetAccount` entity associated with a specific `assetSymbol` (such as `ETH`). Returns new asset ID.\n\n## Notes\n\n1.  If `publicKey` is provided then `AssetAccount` will be added to the existing public-key (SigningGroup).    \n    \n2.  Some accounts do not exist on the blockchain until transactions are actually sent. In those cases, trying to get the balance right after creation might result in the `404: Address not found on blockchain` error.\n\n3.  Error `groupThreshold/groupSize cannot be empty` happens if the default values of `3/7` for `groupThreshold` or `groupSize` respectively didn't get applied server-side. In the rare case that this happens, add those values to the request body in production (and `3/5` on testnets).  \n    \n4.  Error `parties is larger than the available number of peers` happens whenever you set `groupSize` or `groupThreshold` higher than the number of nodes provisioned by the system (`7/3` on production, `5/3` on testnets).        \n    \n5.  This operation is asynchronous. We create a record in the database with a `Creating` status and return a response with an asset account ID (starting with `aa-`). In the background, we generate a new public key. When this is done, the record in database is updated with additional information and the status is set to `Enabled`.  \n    If it were synchronous, then the response would have to contain all the information about the created asset account, such as public key. This would mean a significant delay on the initial response, up to the key generation time (10, 15, even 30+ seconds).\n\n<!--  -->",
+        "description": "Creates new `AssetAccount` entity associated with a specific `assetSymbol` (such as `ETH`). Returns new asset ID.\n\n## Notes\n\n1.  If `publicKey` is provided then `AssetAccount` will be added to the existing public-key (SigningGroup).    \n    \n2.  Error `groupThreshold/groupSize cannot be empty` happens if the default values of `3/7` for `groupThreshold` or `groupSize` respectively didn't get applied server-side. In the rare case that this happens, add those values to the request body in production (and `3/5` on testnets).  \n    \n3.  Error `parties is larger than the available number of peers` happens whenever you set `groupThreshold` or `groupSize` higher than the number of nodes provisioned by the system (`3/7` on production, `3/5` on testnets).        \n    \n4.  This operation is asynchronous. We create a record in the database with a `Creating` status and return a response with an asset account ID (starting with `aa-`). In the background, we generate a new public key. When this is done, the record in database is updated with additional information and the status is set to `Enabled`.  \n    If it were synchronous, then the response would have to contain all the information about the created asset account, such as public key. This would mean a significant delay on the initial response, up to the key generation time (10, 15, even 30+ seconds).\n\n<!--  -->",
         "requestBody": {
           "content": {
             "application/json": {
@@ -562,7 +562,7 @@
       "get": {
         "tags": ["Assets"],
         "operationId": "GetAssetAccountById",
-        "description": "Retrieves a particular instance of `AssetAccount` by its `id`. If not found, returns `EntityNotFoundError` with a message indicating which table from which it's missing.\n\n> **Notes**  \n>   \n>   \n> `address` is derived from the `publicKey` via a blockchain-specific function.\n\n<!--  -->",
+        "description": "Retrieves a particular instance of `AssetAccount` by its `id`. If not found, returns `EntityNotFoundError` with a message indicating which table from which it's missing.\n\n> **Note**: `address` is derived from the `publicKey` via a blockchain-specific function.\n\n<!--  -->",
         "parameters": [
           {
             "name": "assetAccountId",
@@ -588,7 +588,7 @@
       "get": {
         "tags": ["Assets"],
         "operationId": "ReadAssetAccountBalanceById",
-        "description": "Get the balance of the `AssetAccount` with its `assetAccountId`. Returns an instance of `AssetAccountBalance`.",
+        "description": "Retrieves the balance of the `AssetAccount` by its `id`. Returns an instance of `AssetAccountBalance`.",
         "parameters": [
           {
             "name": "assetAccountId",
@@ -1509,7 +1509,7 @@
       "post": {
         "tags": ["ApiKeys"],
         "operationId": "CreateApiKey",
-        "description": "\n## CreateApiKey\n\nInstantiates a JWT token for a machine/service account, which must be securely persisted and passed in the request headers as a bearer token. The token is subject to policy engine controls, and you must provide scopes for it.\n\n\n",
+        "description": "\n## CreateApiKey\n\nInstantiates a JWT token for a machine/service account, which must be securely persisted and passed in the request headers as a bearer token. The token is subject to policy engine controls, and you must provide scopes for it.\n\n\n> ❗ **Warning**: Dfns does not keep the actual token you receive in the `token` field, so you must save it securely on your side. You will not be able to get this token again from the Dfns API.\n\n\n\n\n\n\n\n\n\n\n\n",
         "requestBody": {
           "content": {
             "application/json": {

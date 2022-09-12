@@ -6,7 +6,7 @@ Scopes:
  * as Employee Auth: payments:read
  * as API Key: payments:read
 
-
+Returns list of all `Payment` entities belonging to the same organization as the caller. Additional filters can be provided; see list of parameters for the operation.
 
 ### Input Query Parameters
 * Path parameter `assetAccountId`: undefined  

@@ -14,9 +14,7 @@ To create a public key, you have to specify only the following:
 *   Group size for the number of key shares
 *   Group threshold for the minimum number of key shares required to execute the MPC/TSS ceremony
   
-## Notes
 
-Some keys do not exist on the blockchain until transactions are actually sent. In those cases, trying to get the balance right after creation might result in the `404: Address not found on blockchain` error.
 
 
 ### Input Body Parameters

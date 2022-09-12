@@ -6,7 +6,7 @@ Scopes:
  * as API Key: asset_accounts:get_balance
  * as Employee Auth: asset_accounts:get_balance
 
-Get the balance of the `AssetAccount` with its `assetAccountId`. Returns an instance of `AssetAccountBalance`.
+Retrieves the balance of the `AssetAccount` by its `id`. Returns an instance of `AssetAccountBalance`.
 
 ### Input Query Parameters
 * Path parameter `assetAccountId`: undefined  

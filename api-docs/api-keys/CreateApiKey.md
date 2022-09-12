@@ -12,6 +12,18 @@ Scopes:
 Instantiates a JWT token for a machine/service account, which must be securely persisted and passed in the request headers as a bearer token. The token is subject to policy engine controls, and you must provide scopes for it.
 
 
+> ❗ **Warning**: Dfns does not keep the actual token you receive in the `token` field, so you must save it securely on your side. You will not be able to get this token again from the Dfns API.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
