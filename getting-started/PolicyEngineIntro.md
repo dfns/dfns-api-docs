@@ -1,12 +1,14 @@
 # Policy Engine
 
-Policy Engine allows you to create `PolicyRules`, `PolicyControls`, and then use them to create `Policies`.  Take the following example:
+Policies are used as part of risk management, information security, or other compliance functions. They intercept activities and execute controls to reduce the risk or to cancel activity altogether.
 
-Clare, the customer's compliance officer, has to implement 4 new policies:
+Policy Engine allows you to create `PolicyRules` and `PolicyControls`, and then put them together to create `Policies`.  Take the following example:
+
+Clare, the customer's compliance officer, has to implement four new policies:
 1. When a new employee is added, notify the Managing Directors.
-2. When payment above £50,000 is initiated, notify senior management.
-3. For payments over £100,000, request approval from a Vice President and notify Managing Directors.
-4. For payments over £250,000, request approval from both a Vice President and a Managing Director.
+2. When payment above $50,000 is initiated, notify senior management.
+3. For payments over $100,000, request approval from a Vice President and notify Managing Directors.
+4. For payments over $250,000, request approval from both a Vice President and a Managing Director.
 
 To do that Clare will have to create the following `PolicyRules`, `PolicyControls`, and `Policies`.
 
