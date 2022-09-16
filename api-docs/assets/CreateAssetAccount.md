@@ -6,6 +6,20 @@ Scopes:
  * as API Key: asset_accounts:write
  * as Employee Auth: asset_accounts:write
 
+
+---
+
+# 
+
+---
+
+# &nbsp;
+
+---
+
+# ---
+
+
 Creates new `AssetAccount` entity associated with a specific `assetSymbol` (such as `ETH`). Returns new asset ID.
 
 ## Notes
