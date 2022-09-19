@@ -4,4 +4,4 @@ Higher-level abstractions like asset accounts and payment initiation hide the de
 
 Lower-level APIs like Public Keys and Create Signature represent the foundational primitives for interacting with blockchains, but require significantly more programming effort to format transactions and broadcast them to validator nodes.  Additionally, as transaction metadata is hashed, using these APIs limits governance capabilities via Policy Engine. 
 
-![dfns-api-abstraction-levels](../../gitbook/.gitbook/assets/dfns-api-abstraction-levels.png)
+![dfns-api-abstraction-levels](../.gitbook/assets/dfns-api-abstraction-levels.png)
