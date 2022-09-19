@@ -38,7 +38,7 @@ The following diagram illustrates the phases of the payment lifecycle:
 
 Payments have 3 phases:
 
-1. `Initiated`: When a payment is first created, it is first validated and then routed through the policy engine. This can trigger approvals or other actions as defined by `Policies`.
+1. `Initiated`: When a payment is first created, it is first validated and then routed through the policy engine. This can trigger the execution of approvals or other actions as defined by `Policies`.
 2. `Executed`: Once the payment is verified, it will go into the execution phase, where it will be published to the blockchain.
 3. `Settled`: Payment are settled once the transfer is confirmed on the blockchain.  Dfns defines "settled" as the transaction having a minimum of six block confirmations.
 

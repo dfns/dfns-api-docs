@@ -19,6 +19,11 @@ Creates new `AssetAccount` entity associated with a specific `assetSymbol` (such
 4.  This operation is asynchronous. We create a record in the database with a `Creating` status and return a response with an asset account ID (starting with `aa-`). In the background, we generate a new public key. When this is done, the record in database is updated with additional information and the status is set to `Enabled`.  
     If it were synchronous, then the response would have to contain all the information about the created asset account, such as public key. This would mean a significant delay on the initial response, up to the key generation time (10, 15, even 30+ seconds).
 
+5. Each ECDSA public key requires the generation of a primes in order to get a Pallier encryption key. On the current deployment, which is Fargate ECS 1024 CPU units and 512 MB, with two threads and 100% CPU utilisation, it takes 17 seconds to generate one Pallier encryption key. If you anticipate a higher key generation throughput, please reach out to us.
+
+
+
+
 <!--  -->
 
 
