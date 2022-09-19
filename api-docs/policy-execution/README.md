@@ -3,7 +3,7 @@
 Based on `ActivityKind`, a `Policy` is activated and its `PolicyRule` is evaluated. This creates a `PolicyExecution` entity recording this activation.
 
 
-`PolicyExecution` entities are a response to certain actions performed using the Dfns API.  For example, every time a payment is initiated, a policy of the kind `PolicyActivityKind: PaymentInitiation` will trigger.
+`PolicyExecution` entities serve as an audit log of executed Policies.For example, every time a payment is initiated, a policy of the kind `PolicyActivityKind: PaymentInitiation` will get executed.
 
 
 It's the responsibility of your internal control applications to monitor these executions and to notify the relevant parties when approvals are required.  Approvals can be submitted by updating the `PolicyControlExecution` status.&#x20;
