@@ -1,29 +1,26 @@
-# Table of contents
 
+# Table of contents
 * [Welcome](README.md)
 
 ## Getting Started
-
-* [Getting Started](getting-started/GettingStarted.md)
-* [Data Model Concepts](getting-started/DataModelConcepts.md)
-* [API Levels of Abstraction](getting-started/DfnsAPIAbstractionLevels.md)
-* [Policy Engine](getting-started/PolicyEngineIntro.md)
-* [Auth](getting-started/authentication-authorization.md)
+* [Getting Started](<getting-started/GettingStarted.md>)
+* [Data Model Concepts](<getting-started/DataModelConcepts.md>)
+* [API Levels of Abstraction](<getting-started/DfnsAPIAbstractionLevels.md>)
+* [Policy Engine](<getting-started/PolicyEngineIntro.md>)
+* [Auth](<getting-started/authentication-authorization.md>)
 
 ## Use Cases
-
 * [Asset Accounts](<use-cases/Asset Accounts/README.md>)
   * [Create Asset Account](<use-cases/Asset Accounts/CreateAssetAccount.md>)
   * [Get Account By Id](<use-cases/Asset Accounts/GetAccountById.md>)
   * [Get Balance](<use-cases/Asset Accounts/GetBalance.md>)
-* [Payments](use-cases/Payments/README.md)
-  * [Get Payment By Id](use-cases/Payments/GetPaymentById.md)
-  * [Initiate Payment](use-cases/Payments/InitiatePayment.md)
-  * [No Policy Scenario](use-cases/Payments/NoPolicySimplePaymentScenario.md)
+* [Payments](<use-cases/Payments/README.md>)
+  * [Get Payment By Id](<use-cases/Payments/GetPaymentById.md>)
+  * [Initiate Payment](<use-cases/Payments/InitiatePayment.md>)
+  * [No Policy Scenario](<use-cases/Payments/NoPolicySimplePaymentScenario.md>)
 
 ## API Docs
-
-* [PublicKeys](api-docs/publickeys/README.md)
+* PublicKeys
   * [PublicKeys Overview](api-docs/public-keys/README.md)
   * [PublicKeys Data Model](api-docs/public-keys/Datamodel.md)
   * [GetPublicKeyById](api-docs/public-keys/GetPublicKeyById.md)
@@ -32,7 +29,7 @@
   * [CreateSignature](api-docs/public-keys/CreateSignature.md)
   * [GetSignatureById](api-docs/public-keys/GetSignatureById.md)
   * [GetTransactionById](api-docs/public-keys/GetTransactionById.md)
-* [Assets](<api-docs/assets/README (1).md>)
+* Assets
   * [Assets Overview](api-docs/assets/README.md)
   * [Assets Data Model](api-docs/assets/Datamodel.md)
   * [InitiatePayment](api-docs/assets/InitiatePayment.md)
@@ -42,7 +39,7 @@
   * [GetAssetAccountById](api-docs/assets/GetAssetAccountById.md)
   * [ListAssetAccounts](api-docs/assets/ListAssetAccounts.md)
   * [ReadAssetAccountBalanceById](api-docs/assets/ReadAssetAccountBalanceById.md)
-* [PolicyManagement](api-docs/policymanagement/README.md)
+* PolicyManagement
   * [PolicyManagement Overview](api-docs/policy-management/README.md)
   * [PolicyManagement Data Model](api-docs/policy-management/Datamodel.md)
   * [CreatePolicy](api-docs/policy-management/CreatePolicy.md)
@@ -60,13 +57,13 @@
   * [GetPolicyRuleById](api-docs/policy-management/GetPolicyRuleById.md)
   * [ListPolicyRules](api-docs/policy-management/ListPolicyRules.md)
   * [ArchivePolicyRule](api-docs/policy-management/ArchivePolicyRule.md)
-* [PolicyExecution](api-docs/policyexecution/README.md)
+* PolicyExecution
   * [PolicyExecution Overview](api-docs/policy-execution/README.md)
   * [PolicyExecution Data Model](api-docs/policy-execution/Datamodel.md)
   * [ListPolicyControlExecutions](api-docs/policy-execution/ListPolicyControlExecutions.md)
   * [GetPolicyControlExecutionById](api-docs/policy-execution/GetPolicyControlExecutionById.md)
   * [UpdatePolicyControlExecution](api-docs/policy-execution/UpdatePolicyControlExecution.md)
-* [ApiKeys](api-docs/apikeys/README.md)
+* ApiKeys
   * [ApiKeys Overview](api-docs/api-keys/README.md)
   * [ApiKeys Data Model](api-docs/api-keys/Datamodel.md)
   * [CreateApiKey](api-docs/api-keys/CreateApiKey.md)
@@ -74,7 +71,7 @@
   * [RevokeApiKey](api-docs/api-keys/RevokeApiKey.md)
   * [GetApiKeyById](api-docs/api-keys/GetApiKeyById.md)
   * [ListScopes](api-docs/api-keys/ListScopes.md)
-* [Callbacks](<api-docs/callbacks/README (1).md>)
+* Callbacks
   * [Callbacks Overview](api-docs/callbacks/README.md)
   * [Callbacks Data Model](api-docs/callbacks/Datamodel.md)
   * [CreateCallbackSubscription](api-docs/callbacks/CreateCallbackSubscription.md)
