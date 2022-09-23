@@ -3640,7 +3640,7 @@
       },
       "PolicyControlKind": {
         "type": "string",
-        "description": "",
+        "description": "enumm: \n* NotifyAndAudit\n* RequestApproval",
         "enum": ["NotifyAndAudit", "RequestApproval"]
       },
       "PolicyRuleKind": {
