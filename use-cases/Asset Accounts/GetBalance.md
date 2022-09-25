@@ -16,4 +16,4 @@ A successful response returns a status of 200 and a JSON object representing the
 }
 ```
 
-> **Note**: For ETH, balance is in WEI units. 1 ETH = 10^18 WEI
+\> **Note**: For ETH, balance is in WEI units. 1 ETH = 10^18 WEI
