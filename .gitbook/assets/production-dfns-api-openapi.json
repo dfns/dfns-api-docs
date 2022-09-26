@@ -58,7 +58,7 @@
       "post": {
         "tags": ["PublicKeys"],
         "operationId": "CreatePublicKey",
-        "description": "Creates a public key invoking key shares to create signatures and sign any arbitrary message.\n\n## Notes\n  \nTo create a public key, you have to specify only the following:\n\n*   Group size for the number of key shares\n*   Group threshold for the minimum number of key shares required to execute the MPC/TSS ceremony    \n*   Signature algorithm used to generate the key (currently [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) or [EdDSA](https://en.wikipedia.org/wiki/EdDSA))\n\n## Notes\n\nOur MPC threshold signature protocol requires computationally heavy setup for [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) key generation. With our current deployment, this process takes on average half a minute. If you anticipate a higher key generation throughput, please reach out to us.\n",
+        "description": "Creates a public key invoking key shares to create signatures and sign any arbitrary message.\n\n## Notes\n  \n1. To create a public key, you have to specify only the following:\n\n   *   Group size for the number of key shares\n   *   Group threshold for the minimum number of key shares required to execute the MPC/TSS ceremony    \n   *   Signature algorithm used to generate the key (currently [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) or [EdDSA](https://en.wikipedia.org/wiki/EdDSA))\n\n\n2. Our MPC threshold signature protocol requires computationally heavy setup for [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) key generation. With our current deployment, this process takes on average half a minute. If you anticipate a higher key generation throughput, please reach out to us.\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2699,7 +2699,7 @@
             "$ref": "#/components/schemas/EntityId"
           },
           "assetSymbol": {
-            "description": "Asset symbol indicating which asset this account is managing. Such as BTC or ETH. In case of coins (ERC20 and alike) use `COIN.BLOCKCHAIN` syntax, such as USDC.ETH or USDC.SOL to indicate that USDC on Ethereum or USDC on Solana is required.",
+            "description": "# [ENUM]\n\nAsset symbol indicating which asset this account is managing. BTC or ETH are obvious examples, but there are thousands of possible symbols. In case of coins (ERC20 and alike) use `COIN.BLOCKCHAIN` syntax, such as USDC.ETH or USDC.SOL to indicate that USDC on Ethereum or USDC on Solana is required. To get a list of all allowed values, send a `CreateAssetAccount` request with the `assetSymbol` field empty.",
             "$ref": "#/components/schemas/AssetSymbol"
           },
           "name": {
@@ -2876,7 +2876,7 @@
         "description": "",
         "properties": {
           "assetSymbol": {
-            "description": "Asset symbol indicating which asset this account is managing. Such as BTC or ETH. In case of coins (ERC20 and alike) use `COIN.BLOCKCHAIN` syntax, such as USDC.ETH or USDC.SOL to indicate that USDC on Ethereum or USDC on Solana is required.",
+            "description": "# [ENUM]\n\nAsset symbol indicating which asset this account is managing. BTC or ETH are obvious examples, but there are thousands of possible symbols. In case of coins (ERC20 and alike) use `COIN.BLOCKCHAIN` syntax, such as USDC.ETH or USDC.SOL to indicate that USDC on Ethereum or USDC on Solana is required. To get a list of all allowed values, send a `CreateAssetAccount` request with the `assetSymbol` field empty.",
             "$ref": "#/components/schemas/AssetSymbol"
           },
           "groupSize": { "type": "integer", "description": "" },
