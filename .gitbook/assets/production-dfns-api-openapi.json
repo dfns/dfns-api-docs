@@ -58,7 +58,7 @@
       "post": {
         "tags": ["PublicKeys"],
         "operationId": "CreatePublicKey",
-        "description": "Creates a public key invoking key shares to create signatures and sign any arbitrary message.\n\n## Notes\n  \nTo create a public key, you have to specify only the following:\n\n*   Group size for the number of key shares\n*   Group threshold for the minimum number of key shares required to execute the MPC/TSS ceremony    \n*   Signature algorithm used to generate the key (currently [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) or [EdDSA](https://en.wikipedia.org/wiki/EdDSA))\n\n\\> **Note**: Our MPC threshold signature protocol requires computationally heavy setup for [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) key generation. With our current deployment, this process takes on average half a minute. If you anticipate a higher key generation throughput, please reach out to us.\n",
+        "description": "Creates a public key invoking key shares to create signatures and sign any arbitrary message.\n\n## Notes\n  \nTo create a public key, you have to specify only the following:\n\n*   Group size for the number of key shares\n*   Group threshold for the minimum number of key shares required to execute the MPC/TSS ceremony    \n*   Signature algorithm used to generate the key (currently [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) or [EdDSA](https://en.wikipedia.org/wiki/EdDSA))\n\n## Notes\n\nOur MPC threshold signature protocol requires computationally heavy setup for [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) key generation. With our current deployment, this process takes on average half a minute. If you anticipate a higher key generation throughput, please reach out to us.\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -562,7 +562,7 @@
       "get": {
         "tags": ["Assets"],
         "operationId": "GetAssetAccountById",
-        "description": "Retrieves a particular instance of `AssetAccount` by its `id`. If not found, returns `EntityNotFoundError` with a message indicating which table from which it's missing.\n\n\\> **Note**: `address` is derived from the `publicKey` via a blockchain-specific function.\n\n<!--  -->",
+        "description": "Retrieves a particular instance of `AssetAccount` by its `id`. If not found, returns `EntityNotFoundError` with a message indicating which table from which it's missing.\n\n## Notes\n\n`address` is derived from the `publicKey` via a blockchain-specific function.\n\n<!--  -->",
         "parameters": [
           {
             "name": "assetAccountId",
@@ -1509,7 +1509,7 @@
       "post": {
         "tags": ["ApiKeys"],
         "operationId": "CreateApiKey",
-        "description": "\n## CreateApiKey\n\nInstantiates a JWT token for a machine/service account, which must be securely persisted and passed in the request headers as a bearer token. The token is subject to policy engine controls, and you must provide scopes for it.\n\n\n\\> ❗ **Warning**: Dfns does not keep the actual token you receive in the `token` field, so you must save it securely on your side. You will not be able to get this token again from the Dfns API.\n\n \n\n\n\n\n\n\n\n\n",
+        "description": "\n## CreateApiKey\n\nInstantiates a JWT token for a machine/service account, which must be securely persisted and passed in the request headers as a bearer token. The token is subject to policy engine controls, and you must provide scopes for it.\n\n\n❗ **Caution**: Dfns does not keep the actual token you receive in the `token` field, so you must save it securely on your side. You will not be able to get this token again from the Dfns API.\n\n \n\n\n\n\n\n\n\n\n",
         "requestBody": {
           "content": {
             "application/json": {

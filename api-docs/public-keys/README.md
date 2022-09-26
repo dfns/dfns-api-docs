@@ -2,7 +2,7 @@ The Dfns `PublicKey` endpoints expose a low-level interface into our wallet infr
 
 A single public-key created with [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) can be used to transact across all blockchains supporting this encryption scheme including [Bitcoin, Ethereum, XRP, and many others](http://ethanfast.com/top-crypto.html).
 
-\> **Note**: Dfns doesn't maintain the page above. It is an independent reference table that maps cryptographic schemes to specific chains.
+⭑ **Note**: Dfns doesn't maintain the page above. It is an independent reference table that maps cryptographic schemes to specific chains.
 
 Once you have a public key and authorization rights to key shares (which are protected by the MPC network), then at the lowest level, you can use the public key to invoke the key shares to create a signature and sign any arbitrary message (generally a transaction hash) via our [Signing API](../../api-docs/public-keys/CreateSignature.md).
 
