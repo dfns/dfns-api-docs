@@ -8,6 +8,7 @@
 * [API Levels of Abstraction](<getting-started/DfnsAPIAbstractionLevels.md>)
 * [Policy Engine](<getting-started/PolicyEngineIntro.md>)
 * [Auth](<getting-started/authentication-authorization.md>)
+* [Videos](<api-docs/Videos.md>)
 
 ## Use Cases
 * [Asset Accounts](<use-cases/Asset Accounts/README.md>)
