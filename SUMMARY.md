@@ -22,6 +22,9 @@
   * [Signing Transactions](<use-cases/Payments/NoPolicySignatureScenario.md>)
 
 ## API Docs
+* [Overview](<api-docs/README.md>)
+
+## API Docs
 * PublicKeys
   * [PublicKeys Overview](api-docs/public-keys/README.md)
   * [PublicKeys Data Model](api-docs/public-keys/Datamodel.md)
