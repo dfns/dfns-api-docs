@@ -8,7 +8,7 @@
 * [API Levels of Abstraction](<getting-started/DfnsAPIAbstractionLevels.md>)
 * [Policy Engine](<getting-started/PolicyEngineIntro.md>)
 * [Auth](<getting-started/authentication-authorization.md>)
-* [Videos](<api-docs/Videos.md>)
+* [Videos](<getting-started/Videos.md>)
 
 ## Use Cases
 * [Asset Accounts](<use-cases/Asset Accounts/README.md>)
@@ -19,6 +19,7 @@
   * [Get Payment By Id](<use-cases/Payments/GetPaymentById.md>)
   * [Initiate Payment](<use-cases/Payments/InitiatePayment.md>)
   * [Fun with Payments!](<use-cases/Payments/NoPolicySimplePaymentScenario.md>)
+  * [Signing Transactions](<use-cases/Payments/NoPolicySignatureScenario.md>)
 
 ## API Docs
 * PublicKeys

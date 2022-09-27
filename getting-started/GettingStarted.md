@@ -11,7 +11,7 @@ The easiest way to get started with Dfns APIs is to [create an Asset Account](<.
 
 However before diving into the API, we recommend taking a moment to [read about some basic concepts of our data model](DataModelConcepts.md).
 
-And for the visual learners, we've put together a few videos outlining the basics on our [Videos page](../api-docs/Videos.md).
+And for the visual learners, we've put together a few videos outlining the basics on our [Videos page](Videos.md).
 
 <!--- You can explore the API reference documentation, or dive into one of our procedural guides to help you perform a task or address a use case. --->
  
