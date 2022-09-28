@@ -21,8 +21,8 @@
   * [Fun with Payments!](<use-cases/Payments/NoPolicySimplePaymentScenario.md>)
   * [Signing Transactions](<use-cases/Payments/NoPolicySignatureScenario.md>)
 
-## API Docs
-* [Overview](<api-docs/README.md>)
+## API Reference
+* [Introduction](<api-docs/README.md>)
 
 ## API Docs
 * PublicKeys
