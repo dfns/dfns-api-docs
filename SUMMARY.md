@@ -25,12 +25,26 @@
 * [Introduction](<api-docs/README.md>)
 
 ## API Docs
+* Permissions
+  * [Permissions Overview](api-docs/permissions/README.md)
+  * [Permissions Data Model](api-docs/permissions/Datamodel.md)
+  * [CreatePermission](api-docs/permissions/CreatePermission.md)
+  * [UpdatePermission](api-docs/permissions/UpdatePermission.md)
+  * [ArchivePermission](api-docs/permissions/ArchivePermission.md)
+  * [GetPermissionById](api-docs/permissions/GetPermissionById.md)
+  * [ListPermissions](api-docs/permissions/ListPermissions.md)
+  * [CreatePermissionPredicate](api-docs/permissions/CreatePermissionPredicate.md)
+  * [UpdatePermissionPredicate](api-docs/permissions/UpdatePermissionPredicate.md)
+  * [ArchivePermissionPredicate](api-docs/permissions/ArchivePermissionPredicate.md)
+  * [ListPermissionPredicates](api-docs/permissions/ListPermissionPredicates.md)
+  * [VerifyAuthorization](api-docs/permissions/VerifyAuthorization.md)
 * PublicKeys
   * [PublicKeys Overview](api-docs/public-keys/README.md)
   * [PublicKeys Data Model](api-docs/public-keys/Datamodel.md)
   * [GetPublicKeyById](api-docs/public-keys/GetPublicKeyById.md)
   * [CreatePublicKey](api-docs/public-keys/CreatePublicKey.md)
   * [ListPublicKeys](api-docs/public-keys/ListPublicKeys.md)
+  * [GetAddressForNetwork](api-docs/public-keys/GetAddressForNetwork.md)
   * [CreateSignature](api-docs/public-keys/CreateSignature.md)
   * [GetSignatureById](api-docs/public-keys/GetSignatureById.md)
   * [GetTransactionById](api-docs/public-keys/GetTransactionById.md)
@@ -43,7 +57,7 @@
   * [CreateAssetAccount](api-docs/assets/CreateAssetAccount.md)
   * [GetAssetAccountById](api-docs/assets/GetAssetAccountById.md)
   * [ListAssetAccounts](api-docs/assets/ListAssetAccounts.md)
-  * [ReadAssetAccountBalanceById](api-docs/assets/ReadAssetAccountBalanceById.md)
+  * [GetAssetAccountBalanceById](api-docs/assets/GetAssetAccountBalanceById.md)
 * PolicyManagement
   * [PolicyManagement Overview](api-docs/policy-management/README.md)
   * [PolicyManagement Data Model](api-docs/policy-management/Datamodel.md)

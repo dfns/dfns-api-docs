@@ -1,5 +1,0 @@
-Approve Policy
-===
-
-/* placeholder */
-
