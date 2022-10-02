@@ -1,1 +1,0 @@
-Deactivates a specific `AssetAccount` entity by its `AssetAccountId` and marks its `status` as `Archived`.

@@ -1,6 +1,6 @@
 {
   "openapi": "3.0.1",
-  "info": { "title": "Dfns API", "version": "4.5.1" },
+  "info": { "title": "Dfns API", "version": "5.1.1" },
   "servers": [
     {
       "description": "Ninja (Staging-Testnet)",
@@ -12,6 +12,681 @@
     }
   ],
   "paths": {
+    "/permissions": {
+      "post": {
+        "tags": ["Permissions"],
+        "operationId": "CreatePermission",
+        "description": "Creates new permission. The permissionName needs to be unique for each organization. Returns error if the user is not authorized to create permissions for the organization or a permission with the same name exists.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePermissionInput" }
+            }
+          }
+        },
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Permission" }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/AccessToOperationNotAllowedError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": { "$ref": "#/components/schemas/DuplicateError" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Permissions"],
+        "operationId": "ListPermissions",
+        "description": "Returns all permissions of the caller’s organization. Returns error if the user is not authorized to retrieve permissions.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/Permission" }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/AccessToOperationNotAllowedError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/permissions/{permissionId}": {
+      "put": {
+        "tags": ["Permissions"],
+        "operationId": "UpdatePermission",
+        "description": "Updates permission. Only fields that are populated will be updated. Returns error if the user is not authorized to update the permission or the permission does not exist.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdatePermissionInput" }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "permissionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string", "description": "" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Permission" }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/AccessToOperationNotAllowedError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": { "$ref": "#/components/schemas/DuplicateError" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Permissions"],
+        "operationId": "GetPermissionById",
+        "description": "Retrieves a specific permission given a permission id for the caller's organization. Returns error if the user is not authorized to retrieve the permission or the permission does not exist.",
+        "parameters": [
+          {
+            "name": "permissionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string", "description": "" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Permission" }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/AccessToOperationNotAllowedError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/permissions/{permissionId}/archive": {
+      "put": {
+        "tags": ["Permissions"],
+        "operationId": "ArchivePermission",
+        "description": "Archives or unarchives a permission, along with all associated predicates. Returns error if the user is not authorized to archive the permission or the permission does not exist.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ArchivePermissionInput"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "permissionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string", "description": "" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Permission" }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/AccessToOperationNotAllowedError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/permissions/{permissionId}/predicates": {
+      "post": {
+        "tags": ["Permissions"],
+        "operationId": "CreatePermissionPredicate",
+        "description": "Creates new predicate. The permissionId path variable must correspond to an existing permission. Returns error if the user is not authorized to create predicates for the organization.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePermissionPredicateInput"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "permissionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string", "description": "" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/PermissionPredicate" }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/AccessToOperationNotAllowedError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": { "$ref": "#/components/schemas/DuplicateError" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Permissions"],
+        "operationId": "ListPermissionPredicates",
+        "description": "Returns all predicates belonging to a specific permission. Returns error if the user is not authorized to retrieve predicates.",
+        "parameters": [
+          {
+            "name": "permissionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string", "description": "" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PermissionPredicate"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/AccessToOperationNotAllowedError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/permissions/{permissionId}/predicates/{predicateId}": {
+      "put": {
+        "tags": ["Permissions"],
+        "operationId": "UpdatePermissionPredicate",
+        "description": "Updates permission predicate. Only fields that are populated will be updated. Returns error if the user is not authorized to update the predicate or the predicate does not exist.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePermissionPredicateInput"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "permissionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string", "description": "" }
+          },
+          {
+            "name": "predicateId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string", "description": "" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/PermissionPredicate" }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/AccessToOperationNotAllowedError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/permissions/{permissionId}/predicates/{predicateId}/archive": {
+      "put": {
+        "tags": ["Permissions"],
+        "operationId": "ArchivePermissionPredicate",
+        "description": "Archives or unarchives a permission predicate. Returns error if the user is not authorized to archive the predicate or the predicate does not exist.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ArchivePermissionPredicateInput"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "permissionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string", "description": "" }
+          },
+          {
+            "name": "predicateId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string", "description": "" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/PermissionPredicate" }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/AccessToOperationNotAllowedError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/authorization-verification": {
+      "get": {
+        "tags": ["Permissions"],
+        "operationId": "VerifyAuthorization",
+        "description": "Temporary endpoint. Verifies whether an identity is allowed to perform a certain operation.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyAuthorizationInput"
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/AuthorizationStatus" }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/AccessToOperationNotAllowedError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/public-keys/{publicKey}": {
       "get": {
         "tags": ["PublicKeys"],
@@ -98,6 +773,69 @@
                         "$ref": "#/components/schemas/PublicKeyRecord"
                       }
                     }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": {
+                      "$ref": "#/components/schemas/EntityNotFoundError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public-keys/{publicKey}/address": {
+      "get": {
+        "tags": ["PublicKeys"],
+        "operationId": "GetAddressForNetwork",
+        "description": "Returns the `publicKey`'s address on a given `network`.",
+        "parameters": [
+          {
+            "name": "publicKey",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string", "description": "" }
+          },
+          {
+            "name": "network",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": { "type": "string", "description": "" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WalletAddress" }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "error": { "$ref": "#/components/schemas/BadRequestError" }
                   }
                 }
               }
@@ -587,8 +1325,8 @@
     "/assets/asset-accounts/{assetAccountId}/balance": {
       "get": {
         "tags": ["Assets"],
-        "operationId": "ReadAssetAccountBalanceById",
-        "description": "Retrieves the balance of the `AssetAccount` by its `id`. Returns an instance of `AssetAccountBalance`.",
+        "operationId": "GetAssetAccountBalanceById",
+        "description": "Retrieves the balance of the `AssetAccount` by its `id`. Returns an instance of `AssetAccountBalance`.\n\n<!--  -->",
         "parameters": [
           {
             "name": "assetAccountId",
@@ -1946,11 +2684,6 @@
             "type": "array",
             "description": "",
             "items": { "$ref": "#/components/schemas/EmployeeGroup" }
-          },
-          "permissionNames": {
-            "type": "array",
-            "description": "",
-            "items": { "type": "string" }
           }
         }
       },
@@ -1984,88 +2717,7 @@
           "orgId": {
             "description": "",
             "$ref": "#/components/schemas/EntityId"
-          },
-          "permissionNames": {
-            "type": "array",
-            "description": "",
-            "items": { "type": "string" }
           }
-        }
-      },
-      "ResourcePermission": {
-        "type": "object",
-        "description": "",
-        "properties": {
-          "id": { "description": "", "$ref": "#/components/schemas/EntityId" },
-          "orgId": {
-            "description": "",
-            "$ref": "#/components/schemas/EntityId"
-          },
-          "permissionName": { "type": "string", "description": "" },
-          "resourceKinds": {
-            "type": "array",
-            "description": "",
-            "items": { "$ref": "#/components/schemas/ResourceKind" }
-          },
-          "operations": {
-            "type": "array",
-            "description": "",
-            "items": { "$ref": "#/components/schemas/AllowedResourceOperation" }
-          },
-          "status": {
-            "description": "",
-            "$ref": "#/components/schemas/PermissionStatus"
-          },
-          "isImmutable": { "type": "boolean", "description": "" },
-          "predicates": {
-            "type": "array",
-            "description": "",
-            "items": { "$ref": "#/components/schemas/PermissionPredicate" }
-          },
-          "dateCreated": {
-            "description": "",
-            "$ref": "#/components/schemas/IsoDatetime"
-          },
-          "dateUpdated": {
-            "description": "",
-            "$ref": "#/components/schemas/IsoDatetime"
-          },
-          "isArchived": { "type": "boolean", "description": "" }
-        }
-      },
-      "PermissionPredicate": {
-        "type": "object",
-        "description": "",
-        "properties": {
-          "id": { "description": "", "$ref": "#/components/schemas/EntityId" },
-          "orgId": {
-            "description": "",
-            "$ref": "#/components/schemas/EntityId"
-          },
-          "resourcePermissionId": {
-            "description": "",
-            "$ref": "#/components/schemas/EntityId"
-          },
-          "fieldName": { "type": "string", "description": "" },
-          "evaluatorKind": {
-            "description": "",
-            "$ref": "#/components/schemas/FieldEvaluatorKind"
-          },
-          "parameters": {
-            "type": "array",
-            "description": "",
-            "items": { "type": "string" }
-          },
-          "isImmutable": { "type": "boolean", "description": "" },
-          "dateCreated": {
-            "description": "",
-            "$ref": "#/components/schemas/IsoDatetime"
-          },
-          "dateUpdated": {
-            "description": "",
-            "$ref": "#/components/schemas/IsoDatetime"
-          },
-          "isArchived": { "type": "boolean", "description": "" }
         }
       },
       "CreateEmployee": {
@@ -2144,82 +2796,6 @@
           }
         }
       },
-      "CreatePermissionInput": {
-        "type": "object",
-        "description": "",
-        "properties": {
-          "permissionName": { "type": "string", "description": "" },
-          "resourceKinds": {
-            "type": "array",
-            "description": "",
-            "items": { "$ref": "#/components/schemas/ResourceKind" }
-          },
-          "operations": {
-            "type": "array",
-            "description": "",
-            "items": { "$ref": "#/components/schemas/AllowedResourceOperation" }
-          }
-        }
-      },
-      "UpdatePermissionInput": {
-        "type": "object",
-        "description": "",
-        "properties": {
-          "permissionName": { "type": "string", "description": "" },
-          "resourceKinds": {
-            "type": "array",
-            "description": "",
-            "items": { "$ref": "#/components/schemas/ResourceKind" }
-          },
-          "operations": {
-            "type": "array",
-            "description": "",
-            "items": { "$ref": "#/components/schemas/AllowedResourceOperation" }
-          }
-        }
-      },
-      "ArchivePermissionInput": {
-        "type": "object",
-        "description": "",
-        "properties": { "isArchived": { "type": "boolean", "description": "" } }
-      },
-      "CreatePredicateInput": {
-        "type": "object",
-        "description": "",
-        "properties": {
-          "fieldName": { "type": "string", "description": "" },
-          "evaluatorKind": {
-            "description": "",
-            "$ref": "#/components/schemas/FieldEvaluatorKind"
-          },
-          "parameters": {
-            "type": "array",
-            "description": "",
-            "items": { "type": "string" }
-          }
-        }
-      },
-      "UpdatePredicateInput": {
-        "type": "object",
-        "description": "",
-        "properties": {
-          "fieldName": { "type": "string", "description": "" },
-          "evaluatorKind": {
-            "description": "",
-            "$ref": "#/components/schemas/FieldEvaluatorKind"
-          },
-          "parameters": {
-            "type": "array",
-            "description": "",
-            "items": { "type": "string" }
-          }
-        }
-      },
-      "ArchivePredicateInput": {
-        "type": "object",
-        "description": "",
-        "properties": { "isArchived": { "type": "boolean", "description": "" } }
-      },
       "OrgStatus": {
         "type": "string",
         "description": "Indicates customer’s status within a lifecycle.",
@@ -2230,42 +2806,241 @@
         "description": "",
         "enum": ["Enabled", "Disabled", "Archived"]
       },
-      "AllowedResourceOperation": {
-        "type": "string",
+      "Permission": {
+        "type": "object",
         "description": "",
-        "enum": ["Read", "Write", "Transact"]
+        "properties": {
+          "id": { "description": "", "$ref": "#/components/schemas/EntityId" },
+          "orgId": {
+            "description": "",
+            "$ref": "#/components/schemas/EntityId"
+          },
+          "permissionName": { "type": "string", "description": "" },
+          "operations": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "status": {
+            "description": "",
+            "$ref": "#/components/schemas/PermissionStatus"
+          },
+          "isImmutable": { "type": "boolean", "description": "" },
+          "predicates": {
+            "type": "array",
+            "description": "",
+            "items": { "$ref": "#/components/schemas/PermissionPredicate" }
+          },
+          "dateCreated": {
+            "description": "",
+            "$ref": "#/components/schemas/IsoDatetime"
+          },
+          "dateUpdated": {
+            "description": "",
+            "$ref": "#/components/schemas/IsoDatetime"
+          },
+          "isArchived": { "type": "boolean", "description": "" }
+        }
       },
-      "ResourceKind": {
-        "type": "string",
+      "PermissionPredicate": {
+        "type": "object",
         "description": "",
-        "enum": [
-          "All",
-          "AssetAccount",
-          "NftAccount",
-          "Employee",
-          "ResourcePermission"
-        ]
+        "properties": {
+          "id": { "description": "", "$ref": "#/components/schemas/EntityId" },
+          "orgId": {
+            "description": "",
+            "$ref": "#/components/schemas/EntityId"
+          },
+          "permissionId": {
+            "description": "",
+            "$ref": "#/components/schemas/EntityId"
+          },
+          "fieldName": { "type": "string", "description": "" },
+          "evaluatorKind": {
+            "description": "",
+            "$ref": "#/components/schemas/FieldEvaluatorKind"
+          },
+          "parameters": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          },
+          "isImmutable": { "type": "boolean", "description": "" },
+          "dateCreated": {
+            "description": "",
+            "$ref": "#/components/schemas/IsoDatetime"
+          },
+          "dateUpdated": {
+            "description": "",
+            "$ref": "#/components/schemas/IsoDatetime"
+          },
+          "isArchived": { "type": "boolean", "description": "" }
+        }
+      },
+      "PermissionAssignment": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": { "description": "", "$ref": "#/components/schemas/EntityId" },
+          "orgId": {
+            "description": "",
+            "$ref": "#/components/schemas/EntityId"
+          },
+          "permissionName": { "type": "string", "description": "" },
+          "identityId": {
+            "description": "",
+            "$ref": "#/components/schemas/EntityId"
+          },
+          "identityKind": {
+            "description": "",
+            "$ref": "#/components/schemas/IdentityKind"
+          },
+          "dateCreated": {
+            "description": "",
+            "$ref": "#/components/schemas/IsoDatetime"
+          },
+          "dateUpdated": {
+            "description": "",
+            "$ref": "#/components/schemas/IsoDatetime"
+          }
+        }
+      },
+      "AuthorizationParameter": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "fieldName": { "type": "string", "description": "" },
+          "value": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "AuthorizationStatus": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "isAuthorized": { "type": "boolean", "description": "" }
+        }
+      },
+      "CreatePermissionInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "permissionName": { "type": "string", "description": "" },
+          "operations": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "UpdatePermissionInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "permissionName": { "type": "string", "description": "" },
+          "operations": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "ArchivePermissionInput": {
+        "type": "object",
+        "description": "",
+        "properties": { "isArchived": { "type": "boolean", "description": "" } }
+      },
+      "CreatePermissionPredicateInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "fieldName": { "type": "string", "description": "" },
+          "evaluatorKind": {
+            "description": "",
+            "$ref": "#/components/schemas/FieldEvaluatorKind"
+          },
+          "parameters": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "UpdatePermissionPredicateInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "fieldName": { "type": "string", "description": "" },
+          "evaluatorKind": {
+            "description": "",
+            "$ref": "#/components/schemas/FieldEvaluatorKind"
+          },
+          "parameters": {
+            "type": "array",
+            "description": "",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "ArchivePermissionPredicateInput": {
+        "type": "object",
+        "description": "",
+        "properties": { "isArchived": { "type": "boolean", "description": "" } }
+      },
+      "CreatePermissionAssignmentInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "permissionName": { "type": "string", "description": "" },
+          "identityId": { "type": "string", "description": "" },
+          "identityKind": {
+            "description": "",
+            "$ref": "#/components/schemas/IdentityKind"
+          }
+        }
+      },
+      "VerifyAuthorizationInput": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "identityId": { "type": "string", "description": "" },
+          "identityKind": {
+            "description": "",
+            "$ref": "#/components/schemas/IdentityKind"
+          },
+          "operation": { "type": "string", "description": "" },
+          "parameters": {
+            "type": "array",
+            "description": "",
+            "items": { "$ref": "#/components/schemas/AuthorizationParameter" }
+          }
+        }
       },
       "FieldEvaluatorKind": {
         "type": "string",
         "description": "",
         "enum": [
-          "AllAllowed",
           "ContainsAll",
           "ContainsOneOf",
           "CreatedAfter",
           "CreatedBefore",
-          "CreatedWithin",
           "Is",
           "ValueGreaterThan",
-          "ValueLessThan",
-          "ValueWithin"
+          "ValueLessThan"
         ]
       },
       "PermissionStatus": {
         "type": "string",
         "description": "",
         "enum": ["Active"]
+      },
+      "IdentityKind": {
+        "type": "string",
+        "description": "",
+        "enum": ["Employee", "ApiKey"]
       },
       "SignatureResponse": {
         "type": "object",
@@ -2329,8 +3104,9 @@
         "type": "object",
         "description": "",
         "properties": {
-          "walletId": { "type": "string", "description": "" },
+          "publicKeyid": { "type": "string", "description": "" },
           "asset": { "type": "string", "description": "" },
+          "network": { "type": "string", "description": "" },
           "address": {
             "description": "",
             "$ref": "#/components/schemas/BlockchainAddress"
@@ -4232,9 +5008,9 @@
           "isDfnsError": { "type": "boolean", "description": "" }
         }
       },
-      "AccessToResourceNotAllowedError": {
+      "AccessToOperationNotAllowedError": {
         "type": "object",
-        "description": "Error is thrown when user (Employee, ApiKey, etc) doesn't have specific permission to access resource. Please talk to your administrator to grant the resource permission.\n",
+        "description": "Error is thrown when user (Employee, ApiKey, etc.) does not have a specific permission to access an operation. Please talk to your administrator to grant the operation permission.\n",
         "properties": {
           "serviceName": { "type": "string", "description": "" },
           "message": { "type": "string", "description": "" },
