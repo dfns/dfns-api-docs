@@ -1,3 +1,0 @@
-## Permissions Data Models   
-
-

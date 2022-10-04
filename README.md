@@ -1,7 +1,11 @@
 # Welcome
 
-Welcome to the Dfns APIs!  Dfns provides custody-as-a-service that enables crypto developers of all kinds to delegate private key management so they can focus on building what matters most - their applications.  We’ve hired teams of cryptography PhDs to build the industry’s leading MPC/TSS implementation so you don’t have to.
+Welcome to the Dfns APIs!  Dfns provides custody-as-a-service that enables crypto developers of all kinds to get rid of private key management so they can focus on building what matters most — their applications.  We’ve hired teams of cryptography PhDs to build the industry’s leading *Secure Multi-Party Computation*-based *Threshold Signature Scheme* ([MPC](https://en.wikipedia.org/wiki/Secure_multi-party_computation)/[TSS](https://en.wikipedia.org/wiki/Threshold_cryptosystem)) implementation so that you don’t have to.
 
-If you’re just getting started with Dfns, read our [Getting Started](getting-started/GettingStarted.md) guide to learn about our nomenclature and API conventions. If you need details on a specific API signature, go straight to our API Docs reference section for details on headers, query parameters, body parameters, response types, etc.
+If you’re just getting started with Dfns APIs, head to our **GETTING STARTED** section to learn about our nomenclature and API conventions. 
 
-If you have any questions about the APIs or find any issues with our documentation, don’t hesitate to contact us: [docs@dfns.co](mailto:docs@dfns.co). Thanks!
+If you need details on a specific API endpoint, peruse our **API DOCS** reference section for details on headers, query parameters, body parameters, response types, errors, etc.
+
+Don’t hesitate to [contact us](mailto:docs@dfns.co) if you have any questions about the APIs. Also, this documentation portal is always a humble work in progress, and your constructive feedback is always appreciated. Shoot us an email, we'll be glad to read it.
+
+Thanks!
