@@ -1,6 +1,6 @@
 # Fiat On/Offboarding
 
-The Dfns APIs seamlessly interoperate with most fiat on/off boarding providers. &#x20;
+The Dfns APIs seamlessly interoperate with most fiat on/offboarding providers. &#x20;
 
 ### Mt Pelerin
 
@@ -14,7 +14,7 @@ Mt Pelerin offers flexibility in how their widget is integrated [on the web](htt
 
 
 
-In order to offboard from crypto to fiat, Mt Pelerin provides end users with an address to transfer funds to in order to facilitate the conversion process.  Customers can easily facilitate payments to these addresses using the Dfns [payment APIs](../api-docs/high-level-api-asset-accounts-and-payments/payments/initiatepayment.md).&#x20;
+In order to offboard from crypto to fiat, Mt Pelerin provides end users with an address to transfer funds to that facilitates the conversion process.  Customers can easily initiate payments to these addresses using the Dfns [payment APIs](../api-docs/high-level-api-asset-accounts-and-payments/payments/initiatepayment.md).&#x20;
 
 
 
