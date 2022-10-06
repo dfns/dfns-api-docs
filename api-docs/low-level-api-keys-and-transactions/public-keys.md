@@ -8,6 +8,6 @@ A single public-key created with [ECDSA](https://en.wikipedia.org/wiki/Elliptic\
 
 Once you have a public key and authorization rights to key shares (which are protected by the MPC network), then at the lowest level, you can use the public key to invoke the key shares to create a signature and sign any arbitrary message (generally a transaction hash) via our [Signing API](broken-reference).
 
-One level higher up the stack, you can construct a Blockchain transaction and we will broadcast it on your behalf using the [transaction broadcast API](BroadcastTransaction.md).
+One level higher up the stack, you can construct a Blockchain transaction and we will broadcast it on your behalf using the [transaction broadcast API](../public-keys/BroadcastTransaction.md).
 
 This is all done without being tied to specific assets or Blockchains.
