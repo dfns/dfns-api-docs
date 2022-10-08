@@ -1,5 +1,31 @@
-Expand each arrow-head (">") for more details about this endpoint, including nested properties.  
 
- {% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/authorization-verification" method="get" %}
-[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
-{% endswagger %}
+## VerifyAuthorization
+`RESTful Endpoint: POST /permissions/authorizations`
+
+Scopes:
+ * as API Key: Permissions:Authorizations
+ * as Employee Auth: Permissions:Authorizations
+
+Temporary endpoint. Verifies whether an identity is allowed to perform a certain operation.
+
+### Input Body Parameters
+* identityId: 
+* identityKind: 
+* operation: 
+* parameters: 
+
+_Please consult OpenAPI file full breakdown and including nested properties._
+### Successful Response
+* isAuthorized: `Bool`.
+### Error Responses
+#### `400` **invalidVerificationPayload** 
+
+* serviceName: `String`. 
+* message: `String`. 
+* causes: `String[]`. 
+* shouldTriggerInvestigaton: `Bool`. 
+* isDfnsError: `Bool`. 
+* httpStatus: `Integer`. 
+* errorName: `String`.
+
+

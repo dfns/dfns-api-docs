@@ -1,5 +1,23 @@
-Expand each arrow-head (">") for more details about this endpoint, including nested properties.  
 
- {% swagger src="../../.gitbook/assets/production-dfns-api-openapi.json" path="/callback-subscriptions" method="get" %}
-[production-dfns-api-openapi.json](../../.gitbook/assets/production-dfns-api-openapi.json)
-{% endswagger %}
+## ListCallbackSubscriptions
+`RESTful Endpoint: GET /callback-subscriptions`
+
+Scopes:
+ * as Employee Auth: Callbacks:ListCallbackSubscriptions
+ * as API Key: Callbacks:ListCallbackSubscriptions
+
+
+
+
+### Successful Response
+* id: `EntityId`. 
+* orgId: `EntityId`. 
+* externalId: `String`. 
+* eventKind: `CallbackEventKind`. 
+* eventSelector: `EventSelector`. 
+* url: `String`. 
+* status: `CallbackSubscriptionStatus`. 
+* dateCreated: `IsoDatetime`.
+
+
+
