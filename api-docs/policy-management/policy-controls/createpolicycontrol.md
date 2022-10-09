@@ -9,11 +9,11 @@ Policy Controls determine how Policy Executions are handled.   The type of polic
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-PolicyRules:CreatePolicyControl
+PolicyControls:CreatePolicyControl
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
-The following fields are common to all kinds of Policy Rules:
+The following fields are common to all kinds of Policy Controls:
 
 | Request body fields | Required/Optional | Description                                           | Type   |
 | ------------------- | ----------------- | ----------------------------------------------------- | ------ |
