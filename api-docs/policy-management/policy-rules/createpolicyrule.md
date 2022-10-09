@@ -9,7 +9,7 @@ Policy Rules determine when Policy Executions are created.   The type of policy 
 * `Siphoning`: Trigger the policy if more than a given limit of transactions have been initiated within a given time window.
 * `AlwaysActivatedRule`: Always trigger the policy.
 
-### Required Operations <a href="#scopes" id="scopes"></a>
+### Required Permissions <a href="#scopes" id="scopes"></a>
 
 PolicyRules:CreatePolicyRule
 
@@ -51,7 +51,7 @@ Example Body:
 
 #### Amount Velocity Rule
 
-Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of funds have been transferred within a given time window.:
+Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of funds have been transferred within a given time window:
 
 | Request body fields | Required/Optional | Description                                                                  | Type                     |
 | ------------------- | ----------------- | ---------------------------------------------------------------------------- | ------------------------ |
@@ -59,8 +59,6 @@ Use the following fields in the nested `configuration` object to create a Policy
 | `velocity`          | Required          | The amount over which the policy should trigger - specified as a string      | String                   |
 | `assetSymbol`       | Required          | The currency used to denominate the limit field - one of "USD", "EUR", "ETH" | String                   |
 | `intervalInMinutes` | Required          | The time window in minutes in which to watch for outgoing payments           | Integer                  |
-
-
 
 Example Body:
 
@@ -73,14 +71,52 @@ Example Body:
         "velocity": "1",
         "assetSymbol": "ETH",
         "intervalInMinutes": 60,
-    }
-}
-
+    
 ```
 
-### &#x20;<a href="#request-example.1" id="request-example.1"></a>
+#### Siphoning Rule
 
-### &#x20;<a href="#request-example.1" id="request-example.1"></a>
+Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of transactions have been initiated within a given time window:
+
+| Request body fields | Required/Optional | Description                                                        | Type                     |
+| ------------------- | ----------------- | ------------------------------------------------------------------ | ------------------------ |
+| `kind`              | Required          | Specify: "Siphoning"                                               | Enumerated Type (String) |
+| `maxTxCount`        | Required          | The amount of transactions over which the policy should trigger    | Integer                  |
+| `intervalInMinutes` | Required          | The time window in minutes in which to watch for outgoing payments | Integer                  |
+
+Example Body:
+
+```json
+{
+    "description": "Siphoning", 
+    "name": "poliy rule no.1",
+    "configuration": {
+        "kind": "Siphoning",
+        "maxTxCount": 10,
+        "intervalInMinutes": 60
+    }
+}
+```
+
+#### Always Activated Rule
+
+Use the following fields in the nested `configuration` object to create a Policy Rule which always triggers:
+
+| Request body fields | Required/Optional | Description                    | Type                     |
+| ------------------- | ----------------- | ------------------------------ | ------------------------ |
+| `kind`              | Required          | Specify: "AlwaysActivatedRule" | Enumerated Type (String) |
+
+Example Body:
+
+```json
+{
+    "description": "AlwaysActivatedRule", 
+    "name": "poliy rule no.1",
+    "configuration": {
+        "kind": "AlwaysActivated"
+    }
+}
+```
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
