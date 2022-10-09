@@ -70,8 +70,9 @@ Example Body:
         "kind": "PaymentAmountOutgoingVelocity",
         "velocity": "1",
         "assetSymbol": "ETH",
-        "intervalInMinutes": 60,
-    
+        "intervalInMinutes": 60
+    }
+}   
 ```
 
 #### Siphoning Rule
@@ -123,7 +124,10 @@ Example Body:
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl -X POST "/assets/asset-accounts/{assetAccountId}/payments"
+curl -X POST "/policies/policy-rules" \
+-H "Content-Type: application/json" \
+-H "Bearer: <TOKEN>" \
+-d '{"description": "PaymentAmountLimit", "name": "poliy rule no.1", "configuration": {"kind": "PaymentAmountLimit","limit": "0.0005","assetSymbol": "ETH",}}'
 
 ```
 
@@ -131,67 +135,26 @@ curl -X POST "/assets/asset-accounts/{assetAccountId}/payments"
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-If successful, the response contains, among other things, a **date stamp** and a **new payment ID**, confirming that a new payment of the correct **amount** and **type** is being **initiated**:
+If successful, the response contains, among other things, a status indicating whether the rule has been enabled:
 
 ```json
-// Some codeo
+{
+   "id": "pr-tennessee-artist-f2078ea085",
+   "version": "f1b1me4kd",
+   "kind": "PaymentAmountLimit",
+   "orgId": "cu-purple-pip-1b417b958500",
+   "author": "oe-nine-artist-9de60fef6963",
+   "description": "Test Rule 1 PaymentAmountLimit",
+   "name": "Test Rule 1",
+   "configuration": {
+       "kind": "PaymentAmountLimit",
+       "limit": "0.5",
+       "assetSymbol": "ETH"
+   },
+   "tags": [],
+   "dateCreated": "2022-07-14T21:22:54.829Z",
+   "isImmutable": false,
+   "status": "Enabled"
+}
 ```
 
-### Notes <a href="#notes" id="notes"></a>
-
-When the payment is in the process of being initiated, its `status` is `Initiated`. Once complete, the payment's `status` changes from `Initiated` to `Executed`. To confirm that this has occurred, you can use the `GetPaymentById` method.
-
-``
-
-`RESTful Endpoint: POST /policies/policy-rules`
-
-Scopes:
-
-* as API Key:&#x20;
-* as Employee Auth: PolicyRules:CreatePolicyRule
-
-Creates new `PolicyRule` entity.
-
-## Input Body Parameters
-
-* activityKind:
-* isImmutable:
-* description:
-* name:
-* controlIds:
-* ruleIds:
-* status:
-* filter:
-
-_Please consult OpenAPI file full breakdown and including nested properties._
-
-## Successful Response
-
-* id: `EntityId`.
-* version: `String`.
-* activityKind: `PolicyActivityKind`.
-* tags: `Tag[]`.
-* dateCreated: `IsoDatetime`.
-* isImmutable: `Bool`.
-* orgId: `EntityId`.
-* description: `String`.
-* author: `Username`.
-* name: `String`.
-* status: `PolicyStatus`.
-* controlIds: `EntityId[]`.
-* ruleIds: `EntityId[]`.
-* filter: `PolicyObjectFilter`.
-
-## Error Responses
-
-### `400` **invalidPolicyPayload**
-
-Payload is invalid. Please see `causes` field to see details and reasons.
-
-* serviceName: `String`.
-* message: `String`.
-* causes: `String[]`.
-* shouldTriggerInvestigaton: `Bool`.
-* isDfnsError: `Bool`.
-* httpStatus: `Integer`.
-* errorName: `String`.
