@@ -2,7 +2,12 @@
 
 `POST /policies/policy-rules`
 
-Policy Rules determine when Policy Executions are created.   The type of policy rule applied is determined by the `kind` field in the nested `configuration` object.  See all possible options below.&#x20;
+Policy Rules determine when Policy Executions are created.   The type of policy rule applied is determined by the `kind` field in the nested `configuration` object.  These are the supported kinds:
+
+* `PaymentAmountLimit`: Trigger the policy if the payment is over a given limit.
+* `PaymentAmountOutgoingVelocity`: Trigger the policy if more than a given limit of funds have been transferred within a given time window.
+* `Siphoning`: Trigger the policy if more than a given limit of transactions have been initiated within a given time window.
+* `AlwaysActivatedRule`: Always trigger the policy.
 
 ### Required Operations <a href="#scopes" id="scopes"></a>
 
@@ -20,19 +25,66 @@ The following fields are common to all kinds of Policy Rules:
 | `description`       | Required          | A description for the rule                            | String |
 | `configuration`     | Required          | A nested object specifying details of the Policy Rule | Object |
 
-#### Amount Limit Rule
+#### Amount Velocity Rule
 
-Use following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if the Payment amount is over the specified amount:
+Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if the Payment amount is over the specified amount:
 
 | Request body fields | Required/Optional | Description                                                                  | Type                     |
 | ------------------- | ----------------- | ---------------------------------------------------------------------------- | ------------------------ |
-| `kind`              | Required          | "PaymentAmountLimit"                                                         | Enumerated Type (String) |
+| `kind`              | Required          | Specify: "PaymentAmountLimit"                                                | Enumerated Type (String) |
 | `limit`             | Required          | The amount over which the policy should trigger - specified as a string      | String                   |
 | `assetSymbol`       | Required          | The currency used to denominate the limit field - one of "USD", "EUR", "ETH" | String                   |
 
+
+
+Example Body:
+
+```json
+{
+    "description": "PaymentAmountLimit", 
+    "name": "poliy rule no.1",
+    "configuration": {
+        "kind": "PaymentAmountLimit",
+        "limit": "0.0005",
+        "assetSymbol": "ETH",
+    }
+}
+```
+
+#### Amount Limit Rule
+
+Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of funds have been transferred within a given time window.:
+
+| Request body fields | Required/Optional | Description                                                                  | Type                     |
+| ------------------- | ----------------- | ---------------------------------------------------------------------------- | ------------------------ |
+| `kind`              | Required          | Specify: "PaymentAmountOutgoingVelocity"                                     | Enumerated Type (String) |
+| `velocity`          | Required          | The amount over which the policy should trigger - specified as a string      | String                   |
+| `assetSymbol`       | Required          | The currency used to denominate the limit field - one of "USD", "EUR", "ETH" | String                   |
+| `intervalInMinutes` | Required          | The time window in minutes in which to watch for outgoing payments           | Integer                  |
+
+
+
+Example Body:
+
+```json
+{
+    "description": "OutgoingPaymentVelocity testing", 
+    "name": "poliy rule no.1",
+    "configuration": {
+        "kind": "PaymentAmountOutgoingVelocity",
+        "velocity": "1",
+        "assetSymbol": "ETH",
+        "intervalInMinutes": 60,
+    }
+}
+
+```
+
 ### &#x20;<a href="#request-example.1" id="request-example.1"></a>
 
-### Request example <a href="#request-example.1" id="request-example.1"></a>
+### &#x20;<a href="#request-example.1" id="request-example.1"></a>
+
+### Requestexample <a href="#request-example.1" id="request-example.1"></a>
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
