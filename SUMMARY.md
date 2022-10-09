@@ -26,6 +26,7 @@
 ## API Reference
 
 * [Introduction](api-docs/README.md)
+* [API Endpoint Template](api-reference/api-endpoint-template.md)
 
 ## API Docs
 
@@ -54,7 +55,7 @@
     * [GetSignatureById](api-docs/low-level-api-keys-and-transactions/transaction-execution/getsignaturebyid.md)
     * [GetTransactionById](api-docs/low-level-api-keys-and-transactions/transaction-execution/gettransactionbyid.md)
 * [Policy Management](api-docs/policy-management/README.md)
-  * [PolicyManagement Overview](api-docs/policy-management/policy-management.md)
+  * [PolicyManagement Overview](api-docs/policy-management/policymanagement-overview.md)
   * [PolicyManagement Data Model](api-docs/policy-management/datamodel.md)
   * [CreatePolicy](api-docs/policy-management/createpolicy.md)
   * [UpdatePolicy](api-docs/policy-management/updatepolicy.md)
@@ -72,8 +73,8 @@
   * [ListPolicyRules](api-docs/policy-management/listpolicyrules.md)
   * [ArchivePolicyRule](api-docs/policy-management/archivepolicyrule.md)
   * [PolicyExecution](api-docs/policy-management/policyexecution/README.md)
-    * [PolicyExecution Overview](api-docs/policy-management/policyexecution/policy-execution.md)
-    * [PolicyExecution Data Model](api-docs/policy-management/policyexecution/datamodel.md)
+    * [PolicyExecution Overview](api-docs/policy-management/policyexecution/policyexecution-overview.md)
+    * [PolicyExecution Data Model](api-docs/policy-management/policyexecution/policyexecution-data-model.md)
     * [ListPolicyControlExecutions](api-docs/policy-management/policyexecution/listpolicycontrolexecutions.md)
     * [GetPolicyControlExecutionById](api-docs/policy-management/policyexecution/getpolicycontrolexecutionbyid.md)
     * [UpdatePolicyControlExecution](api-docs/policy-management/policyexecution/updatepolicycontrolexecution.md)
