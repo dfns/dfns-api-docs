@@ -5,6 +5,7 @@
 Policies join [Policy Rules](../policy-rules/createpolicyrule.md) and [Policy Controls ](../policy-controls/createpolicycontrol.md)with an `activityKind` that determines which actions on the API may trigger a Policy Execution.   These are the supported `activityKinds`:
 
 * `PaymentInitiation`: Examine Policy Rules when the [InitiatePayment](../../high-level-api-asset-accounts-and-payments/payments/initiatepayment.md) API is called.
+* CreatingSignature: Examine Policy Rules when the [CreateSignature](../../low-level-api-keys-and-transactions/transaction-execution/createsignature.md) API is called.
 * More policy kinds coming soon...
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
@@ -21,7 +22,7 @@ Policies:CreatePolicy
 | `ruleIds`           | Required          | Array of Policy Rule IDs to evaluate                                                            | Array of Strings         |
 | `controlIds`        | Required          | Array of Policy Control IDs to apply                                                            | Array of Strings         |
 | `status`            | Required          | "Enabled", "Disabled"                                                                           | Enumerated Type (String) |
-| `filter`            | Optional          |                                                                                                 | Object                   |
+| `filter`            | Optional          | Specify a list of entities to scope the policy to (eg. wallets)                                 | Object                   |
 
 #### Filter Object
 
