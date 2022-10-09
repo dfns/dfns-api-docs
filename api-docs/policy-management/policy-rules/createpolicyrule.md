@@ -13,19 +13,17 @@ Policy Rules determine when Policy Executions are created.   The type of policy 
 
 PolicyRules:CreatePolicyRule
 
-
-
 ### Request body <a href="#request-body" id="request-body"></a>
 
 The following fields are common to all kinds of Policy Rules:
 
 | Request body fields | Required/Optional | Description                                           | Type   |
 | ------------------- | ----------------- | ----------------------------------------------------- | ------ |
-| name                | Required          | A name for the rule                                   | String |
+| `name`              | Required          | A name for the rule                                   | String |
 | `description`       | Required          | A description for the rule                            | String |
 | `configuration`     | Required          | A nested object specifying details of the Policy Rule | Object |
 
-#### Amount Velocity Rule
+#### Amount Limit Rule
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if the Payment amount is over the specified amount:
 
@@ -51,7 +49,7 @@ Example Body:
 }
 ```
 
-#### Amount Limit Rule
+#### Amount Velocity Rule
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of funds have been transferred within a given time window.:
 
@@ -84,7 +82,7 @@ Example Body:
 
 ### &#x20;<a href="#request-example.1" id="request-example.1"></a>
 
-### Requestexample <a href="#request-example.1" id="request-example.1"></a>
+### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
