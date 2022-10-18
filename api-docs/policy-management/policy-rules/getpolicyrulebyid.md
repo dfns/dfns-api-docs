@@ -1,57 +1,39 @@
-# GetPolicyRuleById
 
-`GET /policies/policy-rules/{policyRuleId}`
+## GetPolicyRuleById
+`RESTful Endpoint: GET /policies/policy-rules/{policyRuleId}`
 
-Retrieves a `PolicyRule` by its `id`.
+Scopes:
+ * as API Key: PolicyRules:GetPolicyRule
+ * as Employee Auth: PolicyRules:GetPolicyRule
 
-### Required Permissions
+Retrieves single `Policy` item by its `id`.
+### Input Query Parameters
+* Path parameter `policyRuleId`: undefined
 
-PolicyRules:GetPolicyRule
-
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
-
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
-
-| Path parameter | Description                                                                                          |
-| -------------- | ---------------------------------------------------------------------------------------------------- |
-| `policyRuleId` | <p>Unique identifier of the policy rule like:<br><br><code>pr-orange-magnesium-a0606d08b2</code></p> |
-
-### Request Example <a href="#request-example.1" id="request-example.1"></a>
-
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl "/policies/policy-rules/pr-orange-magnesium-a0606d08b2" \
--H "Content-Type: application/json" \
--H "Bearer: <TOKEN>"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
-
-If successful, the response contains, among other things, a status indicating whether the rule has been enabled:
-
-```json
-{
-   "id": "pr-tennessee-artist-f2078ea085",
-   "version": "f1b1me4kd",
-   "kind": "PaymentAmountLimit",
-   "orgId": "cu-purple-pip-1b417b958500",
-   "author": "oe-nine-artist-9de60fef6963",
-   "description": "Test Rule 1 PaymentAmountLimit",
-   "name": "Test Rule 1",
-   "configuration": {
-       "kind": "PaymentAmountLimit",
-       "limit": "0.5",
-       "assetSymbol": "ETH"
-   },
-   "tags": [],
-   "dateCreated": "2022-07-14T21:22:54.829Z",
-   "isImmutable": false,
-   "status": "Enabled"
-}
-```
-
+### Successful Response
+* id: `EntityId`. 
+* version: `String`. 
+* activityKind: `PolicyActivityKind`. 
+* tags: `Tag[]`. 
+* dateCreated: `IsoDatetime`. 
+* isImmutable: `Bool`. 
+* orgId: `EntityId`. 
+* description: `String`. 
+* author: `Username`. 
+* name: `String`. 
+* status: `PolicyStatus`. 
+* controlIds: `EntityId[]`. 
+* ruleIds: `EntityId[]`. 
+* filter: `PolicyObjectFilter`.
+### Error Responses
+#### `404` **policyNotFound** 
+Policy with provided Id doesn't exist. Please see `causes` for additional information.
+* serviceName: `String`. 
+* message: `String`. 
+* causes: `String[]`. 
+* shouldTriggerInvestigaton: `Bool`. 
+* isDfnsError: `Bool`. 
+* httpStatus: `Integer`. 
+* errorName: `String`.
 
 
