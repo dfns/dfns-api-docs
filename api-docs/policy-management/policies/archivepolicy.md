@@ -30,8 +30,29 @@ curl -X DELETE "/policies/policies/pl-orange-magnesium-a0606d08b2" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
+Note the status is now set to `Archived`:
+
 ```json
-TODO
+{
+    "activityKind": "CreatingSignature",
+    "archivedDate": "2022-10-18T20:05:55.270Z",
+    "author": "oe-nine-artist-9de60fef6963",
+    "controlIds": [
+        "pc-ohio-queen-ae133b2477"
+    ],
+    "dateCreated": "2022-10-18T20:05:26.858Z",
+    "description": "Test AlwaysActive",
+    "id": "pl-seven-nuts-66fda0f94a",
+    "isImmutable": false,
+    "name": "Anti Theft Policy",
+    "orgId": "cu-purple-pip-1b417b958500",
+    "ruleIds": [
+        "pr-jig-timing-09c7892d48"
+    ],
+    "status": "Archived",
+    "version": "f36b0dnb2",
+    "versionedId": "pl-seven-nuts-66fda0f94a@f36b0dnb2"
+}
 ```
 
 
