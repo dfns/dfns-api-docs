@@ -71,7 +71,6 @@
     * [ArchivePolicy](api-docs/policy-management/policies/archivepolicy.md)
   * [PolicyExecution](api-docs/policy-management/policyexecution/README.md)
     * [PolicyExecution Overview](api-docs/policy-management/policyexecution/policyexecution-overview.md)
-    * [PolicyExecution Data Model](api-docs/policy-management/policyexecution/policyexecution-data-model.md)
     * [ListPolicyControlExecutions](api-docs/policy-management/policyexecution/listpolicycontrolexecutions.md)
     * [GetPolicyControlExecutionById](api-docs/policy-management/policyexecution/getpolicycontrolexecutionbyid.md)
     * [Approve / Reject Policy Execution](api-docs/policy-management/policyexecution/approve-reject-policy-execution.md)
