@@ -1,39 +1,38 @@
+# ArchivePolicy
 
-## ArchivePolicy
-`RESTful Endpoint: DELETE /policies/{policyId}`
+`DELETE /policies/{policyId}`
 
-Scopes:
- * as Employee Auth: Policies:ArchivePolicy
- * as API Key: Policies:ArchivePolicy
+Archives a `Policy` by its `id`.  Archived policies will no longer be enforced.
 
-Deactivates a specific `Policy` entity by its `PolicyId` and marks its `status` as `Archived`.
-### Input Query Parameters
-* Path parameter `policyId`: undefined
+### Required Permissions
 
-### Successful Response
-* id: `EntityId`. 
-* version: `String`. 
-* activityKind: `PolicyActivityKind`. 
-* tags: `Tag[]`. 
-* dateCreated: `IsoDatetime`. 
-* isImmutable: `Bool`. 
-* orgId: `EntityId`. 
-* description: `String`. 
-* author: `Username`. 
-* name: `String`. 
-* status: `PolicyStatus`. 
-* controlIds: `EntityId[]`. 
-* ruleIds: `EntityId[]`. 
-* filter: `PolicyObjectFilter`.
-### Error Responses
-#### `404` **policyNotFound** 
-Policy with provided Id doesn't exist. Please see `causes` for additional information.
-* serviceName: `String`. 
-* message: `String`. 
-* causes: `String[]`. 
-* shouldTriggerInvestigaton: `Bool`. 
-* isDfnsError: `Bool`. 
-* httpStatus: `Integer`. 
-* errorName: `String`.
+Policies:ArchivePolicy
+
+### Parameters <a href="#parameters.1" id="parameters.1"></a>
+
+#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+
+| Path parameter | Description                                                                                     |
+| -------------- | ----------------------------------------------------------------------------------------------- |
+| `policyId`     | <p>Unique identifier of the policy like:<br><br><code>pl-orange-magnesium-a0606d08b2</code></p> |
+
+### Request Example <a href="#request-example.1" id="request-example.1"></a>
+
+#### Sample request <a href="#sample-request" id="sample-request"></a>
+
+```shell
+curl -X DELETE "/policies/policies/pl-orange-magnesium-a0606d08b2" \
+-H "Content-Type: application/json" \
+-H "Bearer: <TOKEN>"
+```
+
+### Response <a href="#response" id="response"></a>
+
+#### Response example <a href="#response-example" id="response-example"></a>
+
+```json
+TODO
+```
+
 
 
