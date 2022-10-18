@@ -1,7 +1,9 @@
-Dfns APIs are designed to expose multiple levels of abstraction when communicating with blockchains.  Depending on your target use case, you can integrate with Dfns at the level that makes the most sense for your business.
+# API Levels of Abstraction
 
-Higher-level abstractions like asset accounts and payment initiation hide the details of the transaction body and signature process. Additionally, they enable the most granular application of policy rules. 
+Dfns APIs are designed to expose multiple levels of abstraction when communicating with blockchains. Depending on your target use case, you can integrate with Dfns at the level that makes the most sense for your business.
 
-Lower-level APIs like Public Keys and Create Signature represent the foundational primitives for interacting with blockchains, but require significantly more programming effort to format transactions and broadcast them to validator nodes.  Additionally, as transaction metadata is hashed, using these APIs limits governance capabilities via Policy Engine. 
+Higher-level abstractions like asset accounts and payment initiation hide the details of the transaction body and signature process. Additionally, they enable the most granular application of policy rules.
 
-![dfns-api-abstraction-levels](../.gitbook/assets/dfns-api-abstraction-levels.png)
+Lower-level APIs like Public Keys and Create Signature represent the foundational primitives for interacting with blockchains, but require significantly more programming effort to format transactions and broadcast them to validator nodes. Additionally, as transaction metadata is hashed, using these APIs limits governance capabilities via Policy Engine.
+
+<figure><img src="../.gitbook/assets/Screen Shot 2022-10-18 at 5.37.04 PM.png" alt=""><figcaption><p>Dfns API Levels Diagram</p></figcaption></figure>
