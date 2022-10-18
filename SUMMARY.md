@@ -8,7 +8,7 @@
 * [Data Model Concepts](getting-started/DataModelConcepts.md)
 * [API Levels of Abstraction](getting-started/DfnsAPIAbstractionLevels.md)
 * [Policy Engine](getting-started/PolicyEngineIntro.md)
-* [Auth](getting-started/authentication-authorization.md)
+* [API Authentication](getting-started/authentication-authorization.md)
 * [Videos](getting-started/Videos.md)
 
 ## Use Cases
@@ -24,7 +24,7 @@
 
 ## API Docs
 
-* [Introduction](api-docs/api-docs.md)
+* [Introduction](api-docs/README.md)
 * [High Level API: Asset Accounts & Payments](api-docs/high-level-api-asset-accounts-and-payments/README.md)
   * [Assets Overview](api-docs/high-level-api-asset-accounts-and-payments/assets.md)
   * [Assets Data Model](api-docs/high-level-api-asset-accounts-and-payments/datamodel.md)
@@ -99,7 +99,7 @@
   * [ArchivePermissionPredicate](api-docs/permissions/ArchivePermissionPredicate.md)
   * [ListPermissionPredicates](api-docs/permissions/ListPermissionPredicates.md)
   * [VerifyAuthorization](api-docs/permissions/VerifyAuthorization.md)
-* [API Endpoint Template](api-docs/api-endpoint-template.md)
+* [API Endpoint Template](api-reference/api-endpoint-template.md)
 
 ## Integrations
 

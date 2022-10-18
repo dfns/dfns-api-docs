@@ -4,7 +4,7 @@ Welcome to the Dfns APIs! Dfns provides wallet-as-a-service that enables crypto 
 
 If you’re just getting started with Dfns APIs, head to our [**Getting Started**](getting-started/GettingStarted.md) section to learn about our nomenclature and API conventions.
 
-If you need details on a specific API endpoint, peruse our [API Docs](api-docs/api-docs.md) reference section for details on headers, query parameters, body parameters, response types, errors, etc.
+If you need details on a specific API endpoint, peruse our [API Docs](api-docs/) reference section for details on headers, query parameters, body parameters, response types, errors, etc.
 
 Don’t hesitate to [contact us](mailto:docs@dfns.co) if you have any questions about the APIs. Also, this documentation portal is always a humble work in progress, and your constructive feedback is always appreciated. Shoot us an email, we'll be glad to read it.
 
