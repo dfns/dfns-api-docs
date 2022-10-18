@@ -1,39 +1,58 @@
+# GetPolicyById
 
-## GetPolicyById
-`RESTful Endpoint: GET /policies/{policyId}`
+`GET /policies/policies/{policyId}`
 
-Scopes:
- * as Employee Auth: Policies:GetPolicy
- * as API Key: Policies:GetPolicy
+Retrieves a `Policy` by its `id`.
 
-Retrieves single `Policy` item by its `id`.
-### Input Query Parameters
-* Path parameter `policyId`: undefined
+### Required Permissions
 
-### Successful Response
-* id: `EntityId`. 
-* version: `String`. 
-* activityKind: `PolicyActivityKind`. 
-* tags: `Tag[]`. 
-* dateCreated: `IsoDatetime`. 
-* isImmutable: `Bool`. 
-* orgId: `EntityId`. 
-* description: `String`. 
-* author: `Username`. 
-* name: `String`. 
-* status: `PolicyStatus`. 
-* controlIds: `EntityId[]`. 
-* ruleIds: `EntityId[]`. 
-* filter: `PolicyObjectFilter`.
-### Error Responses
-#### `404` **policyNotFound** 
-Policy with provided Id doesn't exist. Please see `causes` for additional information.
-* serviceName: `String`. 
-* message: `String`. 
-* causes: `String[]`. 
-* shouldTriggerInvestigaton: `Bool`. 
-* isDfnsError: `Bool`. 
-* httpStatus: `Integer`. 
-* errorName: `String`.
+Policies:GetPolicy
+
+### Parameters <a href="#parameters.1" id="parameters.1"></a>
+
+#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+
+| Path parameter | Description                                                                                     |
+| -------------- | ----------------------------------------------------------------------------------------------- |
+| `policyId`     | <p>Unique identifier of the policy like:<br><br><code>pl-orange-magnesium-a0606d08b2</code></p> |
+
+### Request Example <a href="#request-example.1" id="request-example.1"></a>
+
+#### Sample request <a href="#sample-request" id="sample-request"></a>
+
+```shell
+curl "/policies/policies/pl-orange-magnesium-a0606d08b2" \
+-H "Content-Type: application/json" \
+-H "Bearer: <TOKEN>"
+```
+
+### Response <a href="#response" id="response"></a>
+
+#### Response example <a href="#response-example" id="response-example"></a>
+
+If successful, the response contains, among other things, a status indicating whether the rule has been enabled:
+
+```json
+{
+   "controlIds": [
+       "pc-table-pennsylvania-269c9cfee9"
+   ],
+   "author": "oe-nine-artist-9de60fef6963",
+   "versionedId": "pl-mockingbird-seventeen-c14e223d70@f1d7d94gm",
+   "description": "Test AlwaysActive",
+   "version": "f1d7d94gm",
+   "orgId": "cu-purple-pip-1b417b958500",
+   "activityKind": "CreatingSignature",
+   "ruleIds": [
+       "pr-nebraska-november-finch-4e10e32a0d"
+   ],
+   "dateCreated": "2022-07-19T19:58:21.334Z",
+   "isImmutable": false,
+   "name": "Anti Theft Policy",
+   "id": "pl-mockingbird-seventeen-c14e223d70",
+   "status": "Enabled"
+}
+```
+
 
 
