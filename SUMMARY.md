@@ -21,15 +21,10 @@
   * [Get Payment By Id](use-cases/Payments/GetPaymentById.md)
   * [Initiate Payment](use-cases/Payments/InitiatePayment.md)
   * [Fun with Payments!](use-cases/Payments/NoPolicySimplePaymentScenario.md)
-  * [Signing Transactions](use-cases/Payments/NoPolicySignatureScenario.md)
-
-## API Reference
-
-* [Introduction](api-docs/README.md)
-* [API Endpoint Template](api-reference/api-endpoint-template.md)
 
 ## API Docs
 
+* [Introduction](api-docs/api-docs.md)
 * [High Level API: Asset Accounts & Payments](api-docs/high-level-api-asset-accounts-and-payments/README.md)
   * [Assets Overview](api-docs/high-level-api-asset-accounts-and-payments/assets.md)
   * [Assets Data Model](api-docs/high-level-api-asset-accounts-and-payments/datamodel.md)
@@ -104,6 +99,7 @@
   * [ArchivePermissionPredicate](api-docs/permissions/ArchivePermissionPredicate.md)
   * [ListPermissionPredicates](api-docs/permissions/ListPermissionPredicates.md)
   * [VerifyAuthorization](api-docs/permissions/VerifyAuthorization.md)
+* [API Endpoint Template](api-docs/api-endpoint-template.md)
 
 ## Integrations
 
