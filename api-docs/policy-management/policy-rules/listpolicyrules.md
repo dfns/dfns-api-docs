@@ -1,6 +1,6 @@
 # ListPolicyRules
 
-`GET /policies/policy-rules/{policyRuleId}`
+`GET /policies/policy-rules/`
 
 Lists all `PolicyRules` belonging to an Org.
 
@@ -14,7 +14,7 @@ PolicyRules:ListPolicyRule
 
 | Path parameter | Description |
 | -------------- | ----------- |
-| ``             |             |
+| `TODO`         |             |
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
@@ -33,27 +33,29 @@ curl "/policies/policy-rules/" \
 If successful, the response contains, among other things, a status indicating whether the rule has been enabled:
 
 ```json
-[
 {
-   "id": "pr-tennessee-artist-f2078ea085",
-   "version": "f1b1me4kd",
-   "kind": "PaymentAmountLimit",
-   "orgId": "cu-purple-pip-1b417b958500",
-   "author": "oe-nine-artist-9de60fef6963",
-   "description": "Test Rule 1 PaymentAmountLimit",
-   "name": "Test Rule 1",
-   "configuration": {
-       "kind": "PaymentAmountLimit",
-       "limit": "0.5",
-       "assetSymbol": "ETH"
-   },
-   "tags": [],
-   "dateCreated": "2022-07-14T21:22:54.829Z",
-   "isImmutable": false,
-   "status": "Enabled"
-}, 
+   "items": [
+      {
+         "id": "pr-tennessee-artist-f2078ea085",
+         "version": "f1b1me4kd",
+         "kind": "PaymentAmountLimit",
+         "orgId": "cu-purple-pip-1b417b958500",
+         "author": "oe-nine-artist-9de60fef6963",
+         "description": "Test Rule 1 PaymentAmountLimit",
+         "name": "Test Rule 1",
+         "configuration": {
+             "kind": "PaymentAmountLimit",
+             "limit": "0.5",
+             "assetSymbol": "ETH"
+         },
+         "tags": [],
+         "dateCreated": "2022-07-14T21:22:54.829Z",
+         "isImmutable": false,
+         "status": "Enabled"
+      }, 
 ...
-]
+   ]
+}
 ```
 
 

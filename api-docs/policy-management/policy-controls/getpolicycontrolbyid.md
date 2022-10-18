@@ -1,45 +1,61 @@
+# GetPolicyControlById
 
-## GetPolicyControlById
-`RESTful Endpoint: GET /policies/policy-controls/{policyControlId}`
+`GET /policies/policy-controls/{policyControlId}`
 
-Scopes:
- * as Employee Auth: PolicyControls:GetPolicyControl
- * as API Key: PolicyControls:GetPolicyControl
+Retrieves a `PolicyControl` by its `id`.
 
-Lists all available `PolicyControl` entities. List can be further filtered using using additional parameters below.
-### Input Query Parameters
-* Path parameter `policyControlId`: undefined
+### Required Permissions
 
-### Successful Response
-* id: `EntityId`. 
-* version: `String`. 
-* kind: `PolicyControlKind`. 
-* tags: `Tag[]`. 
-* dateCreated: `IsoDatetime`. 
-* isImmutable: `Bool`. 
-* orgId: `EntityId`. 
-* author: `Username`. 
-* description: `String`. 
-* name: `String`. 
-* shouldMergeWithSameControl: `Bool`. Indicates whether control should merge with same one (compared by values).
-This property should not be set to true, unless outcomes are understood. For example: Let's say we have 3 policies: 
+PolicyControls:GetPolicyControl
 
-1. policy to require approval for payments over €5000
-1. policy to require approval for payments done out of office hours
-1. policy to require approval for payments done out of Geofence. 
+### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
-In this case policies will require 3 approvals combined, which might not be an intent, and only one approval is required.
-* configuration: `PolicyControlConfiguration`. 
-* status: `PolicyControlStatus`.
-### Error Responses
-#### `404` **policyNotFound** 
-Policy with provided Id doesn't exist. Please see `causes` for additional information.
-* serviceName: `String`. 
-* message: `String`. 
-* causes: `String[]`. 
-* shouldTriggerInvestigaton: `Bool`. 
-* isDfnsError: `Bool`. 
-* httpStatus: `Integer`. 
-* errorName: `String`.
+#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+
+| Path parameter    | Description                                                                                             |
+| ----------------- | ------------------------------------------------------------------------------------------------------- |
+| `policyControlId` | <p>Unique identifier of the policy control like:<br><br><code>pc-orange-magnesium-a0606d08b2</code></p> |
+
+### Request Example <a href="#request-example.1" id="request-example.1"></a>
+
+#### Sample request <a href="#sample-request" id="sample-request"></a>
+
+```shell
+curl "/policies/policy-controls/pc-orange-magnesium-a0606d08b2" \
+-H "Content-Type: application/json" \
+-H "Bearer: <TOKEN>"
+```
+
+### Response <a href="#response" id="response"></a>
+
+#### Response example <a href="#response-example" id="response-example"></a>
+
+If successful, the response contains, among other things, a status indicating whether the rule has been enabled:
+
+```json
+{
+   "configuration": {
+       "timeoutInMinutes": 10,
+       "canInitiatorApprove": true,
+       "approverUsernames": ["bob@example.com", "seth@example.com"],
+       "numApprovals": 1,
+       "kind": "RequestApproval"
+   },
+   "kind": "RequestApproval",
+   "author": "oe-nine-artist-9de60fef6963",
+   "description": "Test policy control",
+   "version": "f1b2121lm",
+   "orgId": "cu-purple-pip-1b417b958500",
+   "tags": [],
+   "dateCreated": "2022-07-14T21:36:42.574Z",
+   "isImmutable": false,
+   "shouldMergeWithSameControl": false,
+   "name": "Test",
+   "id": "pc-foxtrot-harry-ae42882af3",
+   "status": "Enabled"
+}
+
+```
+
 
 
