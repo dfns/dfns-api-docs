@@ -30,7 +30,7 @@ curl "/policies/policies/pl-orange-magnesium-a0606d08b2" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-If successful, the response contains, among other things, a status indicating whether the rule has been enabled:
+If successful, the response contains, among other things, a status indicating whether the policy has been enabled:
 
 ```json
 {

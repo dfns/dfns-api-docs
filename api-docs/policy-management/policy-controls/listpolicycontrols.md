@@ -30,7 +30,7 @@ curl "/policies/policy-controls/" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-If successful, the response contains, among other things, a status indicating whether the rule has been enabled:
+If successful, the response contains a list of policy controls:
 
 ```json
 {
