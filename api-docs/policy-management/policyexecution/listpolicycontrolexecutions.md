@@ -8,12 +8,21 @@ Lists all `PolicyControlExecutions` belonging to an Org.
 
 PolicyControlExecutions:ListPolicyControlExecutions
 
-### Request Example <a href="#request-example.1" id="request-example.1"></a>
+### Parameters <a href="#request-example.1" id="request-example.1"></a>
+
+#### Query parameters <a href="#query-parameters" id="query-parameters"></a>
+
+| Query string parameter   | Required/Optional | Description                                                                                                        |
+| ------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `onlyMyPendingApprovals` | Optional          | Returns only those policy control executions awaiting approval by the user sending the API request.                |
+| `onlyInitiatedByMe`      | Optional          | Returns only those policy control executions initiated by a transaction sent by the user sending the API request.  |
+
+### Request Example <a href="#request-body" id="request-body"></a>
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl "/policies/policy-control-executions/" \
+curl "/policies/policy-control-executions/?onlyMyPendingApprovals" \
 -H "Content-Type: application/json" \
 -H "Bearer: <TOKEN>"
 ```
@@ -22,7 +31,7 @@ curl "/policies/policy-control-executions/" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-If successful, the response contains a list of policy controls:
+If successful, the response contains a list of policy control executions:
 
 ```json
 {
