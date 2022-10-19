@@ -2,7 +2,7 @@
 
 `GET /policies/policy-control-executions/`
 
-Lists all `PolicyControlExecutions` belonging to an Org.
+Lists all `PolicyControlExecutions` belonging to an Org.  Can be filtered by the query string parameters listed below.&#x20;
 
 ### Required Permissions
 
@@ -12,17 +12,17 @@ PolicyControlExecutions:ListPolicyControlExecutions
 
 #### Query parameters <a href="#query-parameters" id="query-parameters"></a>
 
-| Query string parameter   | Required/Optional | Description                                                                                                        |
-| ------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `onlyMyPendingApprovals` | Optional          | Returns only those policy control executions awaiting approval by the user sending the API request.                |
-| `onlyInitiatedByMe`      | Optional          | Returns only those policy control executions initiated by a transaction sent by the user sending the API request.  |
+| Query string parameter        | Required/Optional | Description                                                                                                        |
+| ----------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `onlyMyPendingApprovals=true` | Optional          | Returns only those policy control executions awaiting approval by the user sending the API request.                |
+| `onlyInitiatedByMe=true`      | Optional          | Returns only those policy control executions initiated by a transaction sent by the user sending the API request.  |
 
 ### Request Example <a href="#request-body" id="request-body"></a>
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl "/policies/policy-control-executions/?onlyMyPendingApprovals" \
+curl "/policies/policy-control-executions/?onlyMyPendingApprovals=true" \
 -H "Content-Type: application/json" \
 -H "Bearer: <TOKEN>"
 ```
