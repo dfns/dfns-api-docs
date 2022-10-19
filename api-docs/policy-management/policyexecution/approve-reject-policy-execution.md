@@ -38,28 +38,8 @@ curl -X PUT "/policies/policy-control-executions/pce-fanta-twelve-333cb3fe31" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-If successful, the response contains, among other things, a status indicating whether the rule has been enabled:
+
 
 ```json
-{
-   "activityKind": "CreatingSignature",
-   "isImmutable": false,
-   "description": "Test AlwaysActive",
-   "name": "Anti Theft Policy",
-   "ruleIds": [
-       "pr-nebraska-november-finch-4e10e32a0d"
-   ],
-   "controlIds": [
-       "pc-table-pennsylvania-269c9cfee9"
-   ],
-   "status": "Enabled",
-   "id": "pl-mockingbird-seventeen-c14e223d70",
-   "version": "f1d7d94gm",
-   "versionedId": "pl-mockingbird-seventeen-c14e223d70@f1d7d94gm",
-   "orgId": "cu-purple-pip-1b417b958500",
-   "author": "oe-nine-artist-9de60fef6963",
-   "dateCreated": "2022-07-19T19:58:21.334Z"
-}
-
+TODO: Getting 401s...
 ```
-
