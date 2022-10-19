@@ -8,14 +8,6 @@ Lists all `PolicyControls` belonging to an Org.
 
 PolicyControls:ListPolicyControls
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
-
-#### Query parameters <a href="#path-parameters" id="path-parameters"></a>
-
-| Path parameter | Description |
-| -------------- | ----------- |
-| `TODO`         |             |
-
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>
