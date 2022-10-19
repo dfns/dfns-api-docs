@@ -25,13 +25,12 @@ The following fields are common to all kinds of Policy Controls:
 
 Use the following fields in the nested `configuration` object to create a Policy Control which requires a specified number of approvals from a list of `Users:`
 
-| Request body fields   | Required/Optional | Description                                                                                              | Type                     |
-| --------------------- | ----------------- | -------------------------------------------------------------------------------------------------------- | ------------------------ |
-| `kind`                | Required          | Specify: "RequestApproval"                                                                               | Enumerated Type (String) |
-| `approverUsernames`   | Required          | The email addresses of the designated approvers as specified in their User records.                      | Array of Strings         |
-| `timeoutInMinutes`    | Required          | The amount of time in minutes after which the policy execution can no longer be approved.                | Integer                  |
-| `numApprovals`        | Required          | The number of required approvals.  Must be less than or equal to the `approverUsernames array length.`   | Integer                  |
-| `canInitiatorApprove` | Optional          | Flag designating whether the requestor of the transaction can approve in the `approverUsernames array.`  | Boolean                  |
+| Request body fields | Required/Optional | Description                                                                                            | Type                     |
+| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------ | ------------------------ |
+| `kind`              | Required          | Specify: "RequestApproval"                                                                             | Enumerated Type (String) |
+| `approverUsernames` | Required          | The email addresses of the designated approvers as specified in their User records.                    | Array of Strings         |
+| `timeoutInMinutes`  | Required          | The amount of time in minutes after which the policy execution can no longer be approved.              | Integer                  |
+| `numApprovals`      | Required          | The number of required approvals.  Must be less than or equal to the `approverUsernames array length.` | Integer                  |
 
 
 
