@@ -50,7 +50,7 @@
     * [GetSignatureById](api-docs/low-level-api-keys-and-transactions/transaction-execution/getsignaturebyid.md)
     * [GetTransactionById](api-docs/low-level-api-keys-and-transactions/transaction-execution/gettransactionbyid.md)
 * [Policy Engine](api-docs/policy-management/README.md)
-  * [Policy Engine Data Model](api-docs/policy-management/datamodel.md)
+  * [Policy Engine Overview](api-docs/policy-management/datamodel.md)
   * [Policy Rules](api-docs/policy-management/policy-rules/README.md)
     * [CreatePolicyRule](api-docs/policy-management/policy-rules/createpolicyrule.md)
     * [GetPolicyRuleById](api-docs/policy-management/policy-rules/getpolicyrulebyid.md)
