@@ -44,7 +44,6 @@ Example Body:
         "kind": "RequestApproval",
         "approverUsernames": ["bob@example.com", "dan@example.com"],
         "timeoutInMinutes": 60,
-        "canInitiatorApprove": true,
         "numApprovals": 1
     }
 }
@@ -58,7 +57,7 @@ Example Body:
 curl -X POST "/policies/policy-controls" \
 -H "Content-Type: application/json" \
 -H "Bearer: <TOKEN>" \
--d '{     "description": "My policy control",     "name": "policy-control-back-office-01",     "configuration": {  "kind": "RequestApproval",  "approverUsernames": ["bob@example.com", "dan@example.com"],  "timeoutInMinutes": 60,  "canInitiatorApprove": true,  "numApprovals": 1     } }'
+-d '{     "description": "My policy control",     "name": "policy-control-back-office-01",     "configuration": {  "kind": "RequestApproval",  "approverUsernames": ["bob@example.com", "dan@example.com"],  "timeoutInMinutes": 60,  "numApprovals": 1     } }'
 
 ```
 
@@ -79,15 +78,12 @@ If successful, the response contains, among other things, a status indicating wh
    "name": "Test 1",
    "configuration": {
        "kind": "RequestApproval",
-       "approverUsernames": [],
+       "approverUsernames": ["bob@example.com"],
        "timeoutInMinutes": 10,
-       "canInitiatorApprove": true,
        "numApprovals": 1
    },
    "dateCreated": "2022-07-14T21:36:42.574Z",
    "tags": [],
-   "shouldMergeWithSameControl": false,
-   "isImmutable": false,
    "status": "Enabled"
 }
 ```

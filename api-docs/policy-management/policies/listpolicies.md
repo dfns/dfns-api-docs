@@ -41,7 +41,6 @@ If successful, the response contains a list of policies:
                "pr-nebraska-november-finch-4e10e32a0d"
            ],
            "dateCreated": "2022-07-19T19:58:21.334Z",
-           "isImmutable": false,
            "name": "Anti Theft Policy",
            "id": "pl-mockingbird-seventeen-c14e223d70",
            "status": "Enabled"

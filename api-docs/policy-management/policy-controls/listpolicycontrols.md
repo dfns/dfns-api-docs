@@ -30,7 +30,6 @@ If successful, the response contains a list of policy controls:
       {
        "configuration": {
            "timeoutInMinutes": 10,
-           "canInitiatorApprove": true,
            "approverUsernames": ["bob@example.com", "seth@example.com"],
            "numApprovals": 1,
            "kind": "RequestApproval"
@@ -42,8 +41,6 @@ If successful, the response contains a list of policy controls:
        "orgId": "cu-purple-pip-1b417b958500",
        "tags": [],
        "dateCreated": "2022-07-14T21:36:42.574Z",
-       "isImmutable": false,
-       "shouldMergeWithSameControl": false,
        "name": "Test",
        "id": "pc-foxtrot-harry-ae42882af3",
        "status": "Enabled"

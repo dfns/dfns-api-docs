@@ -153,7 +153,6 @@ If successful, the response contains, among other things, a status indicating wh
    },
    "tags": [],
    "dateCreated": "2022-07-14T21:22:54.829Z",
-   "isImmutable": false,
    "status": "Enabled"
 }
 ```

@@ -48,7 +48,6 @@ Note the status is now set to `Archived`:
    },
    "tags": [],
    "dateCreated": "2022-07-14T21:22:54.829Z",
-   "isImmutable": false,
    "status": "Archived"
 }
 ```

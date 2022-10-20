@@ -25,7 +25,6 @@ If successful, the response contains, among other things, a status indicating wh
 ```json
 {
    "activityKind": "CreatingSignature",
-   "isImmutable": false,
    "description": "Test AlwaysActive",
    "name": "Anti Theft Policy",
    "ruleIds": [

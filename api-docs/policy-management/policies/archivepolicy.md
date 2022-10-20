@@ -43,7 +43,6 @@ Note the status is now set to `Archived`:
     "dateCreated": "2022-10-18T20:05:26.858Z",
     "description": "Test AlwaysActive",
     "id": "pl-seven-nuts-66fda0f94a",
-    "isImmutable": false,
     "name": "Anti Theft Policy",
     "orgId": "cu-purple-pip-1b417b958500",
     "ruleIds": [

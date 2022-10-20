@@ -42,7 +42,6 @@ If successful, the response contains a list of policy rules:
          },
          "tags": [],
          "dateCreated": "2022-07-14T21:22:54.829Z",
-         "isImmutable": false,
          "status": "Enabled"
       }, 
 ...
