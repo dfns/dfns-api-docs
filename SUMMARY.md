@@ -31,7 +31,7 @@
     * [CreateAssetAccount](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/createassetaccount.md)
     * [GetAssetAccountById](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbyid.md)
     * [ListAssetAccounts](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/listassetaccounts.md)
-    * [GetAssetAccountBalanceById](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbalancebyid.md)
+    * [GetBalance](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbalancebyid.md)
   * [Payments](api-docs/high-level-api-asset-accounts-and-payments/payments/README.md)
     * [InitiatePayment](api-docs/high-level-api-asset-accounts-and-payments/payments/initiatepayment.md)
     * [GetPaymentById](api-docs/high-level-api-asset-accounts-and-payments/payments/getpaymentbyid.md)
