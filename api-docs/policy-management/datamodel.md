@@ -14,7 +14,7 @@ Syntax:
 * When a Policy Rule being checked against “is transgressed” -> we say the Policy is <mark style="background-color:purple;">activated</mark> or <mark style="background-color:purple;">breached</mark>&#x20;
 {% endhint %}
 
-### Policy Activity Kind
+
 
 A Policy is executed following a specific activity happening, like a specific API request.
 
