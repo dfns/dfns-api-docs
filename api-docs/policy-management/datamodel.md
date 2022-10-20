@@ -14,11 +14,9 @@ Syntax:
 * When a Policy Rule being checked against “is transgressed” -> we say the Policy is <mark style="background-color:purple;">activated</mark> or <mark style="background-color:purple;">breached</mark>&#x20;
 {% endhint %}
 
+A Policy is executed in reaction to a specific activity happening, such as a specific API request.
 
-
-A Policy is executed following a specific activity happening, like a specific API request.
-
-The  `PolicyActivityKind` attached to the Policy defines for which activity it's going to get executed (eg a policy of `activityKind`  `"PaymentInitiation"` will be evaluated when an `InitiatePayment` API request is received)
+The  `PolicyActivityKind` attached to the Policy on creation, defines which activity is going to trigger its evaluation. Eg. a policy of `activityKind`  `"PaymentInitiation"` will be evaluated when an `InitiatePayment` API request is received.
 
 
 
