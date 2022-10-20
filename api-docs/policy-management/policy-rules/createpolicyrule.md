@@ -27,11 +27,11 @@ The following fields are common to all kinds of Policy Rules:
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if the Payment amount is over the specified amount:
 
-| Request body fields | Required/Optional | Description                                                                  | Type                     |
-| ------------------- | ----------------- | ---------------------------------------------------------------------------- | ------------------------ |
-| `kind`              | Required          | Specify: "PaymentAmountLimit"                                                | Enumerated Type (String) |
-| `limit`             | Required          | The amount over which the policy should trigger - specified as a string      | String                   |
-| `assetSymbol`       | Required          | The currency used to denominate the limit field - one of "USD", "EUR", "ETH" | String                   |
+| Request body fields | Required/Optional | Description                                                                  | Type            |
+| ------------------- | ----------------- | ---------------------------------------------------------------------------- | --------------- |
+| `kind`              | Required          | Specify: "PaymentAmountLimit"                                                | Enumerated Type |
+| `limit`             | Required          | The amount over which the policy should trigger - specified as a string      | String          |
+| `assetSymbol`       | Required          | The currency used to denominate the limit field - one of "USD", "EUR", "ETH" | String          |
 
 
 
@@ -53,12 +53,12 @@ Example Body:
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of funds have been transferred within a given time window:
 
-| Request body fields | Required/Optional | Description                                                                  | Type                     |
-| ------------------- | ----------------- | ---------------------------------------------------------------------------- | ------------------------ |
-| `kind`              | Required          | Specify: "PaymentAmountOutgoingVelocity"                                     | Enumerated Type (String) |
-| `velocity`          | Required          | The amount over which the policy should trigger - specified as a string      | String                   |
-| `assetSymbol`       | Required          | The currency used to denominate the limit field - one of "USD", "EUR", "ETH" | String                   |
-| `intervalInMinutes` | Required          | The time window in minutes in which to watch for outgoing payments           | Integer                  |
+| Request body fields | Required/Optional | Description                                                                  | Type            |
+| ------------------- | ----------------- | ---------------------------------------------------------------------------- | --------------- |
+| `kind`              | Required          | Specify: "PaymentAmountOutgoingVelocity"                                     | Enumerated Type |
+| `velocity`          | Required          | The amount over which the policy should trigger - specified as a string      | String          |
+| `assetSymbol`       | Required          | The currency used to denominate the limit field - one of "USD", "EUR", "ETH" | String          |
+| `intervalInMinutes` | Required          | The time window in minutes in which to watch for outgoing payments           | Integer         |
 
 Example Body:
 
@@ -79,11 +79,11 @@ Example Body:
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of transactions have been initiated within a given time window:
 
-| Request body fields | Required/Optional | Description                                                        | Type                     |
-| ------------------- | ----------------- | ------------------------------------------------------------------ | ------------------------ |
-| `kind`              | Required          | Specify: "Siphoning"                                               | Enumerated Type (String) |
-| `maxTxCount`        | Required          | The amount of transactions over which the policy should trigger    | Integer                  |
-| `intervalInMinutes` | Required          | The time window in minutes in which to watch for outgoing payments | Integer                  |
+| Request body fields | Required/Optional | Description                                                        | Type             |
+| ------------------- | ----------------- | ------------------------------------------------------------------ | ---------------- |
+| `kind`              | Required          | Specify: "Siphoning"                                               | Enumerated Type  |
+| `maxTxCount`        | Required          | The amount of transactions over which the policy should trigger    | Integer          |
+| `intervalInMinutes` | Required          | The time window in minutes in which to watch for outgoing payments | Integer          |
 
 Example Body:
 
@@ -103,9 +103,9 @@ Example Body:
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which always triggers:
 
-| Request body fields | Required/Optional | Description                    | Type                     |
-| ------------------- | ----------------- | ------------------------------ | ------------------------ |
-| `kind`              | Required          | Specify: "AlwaysActivatedRule" | Enumerated Type (String) |
+| Request body fields | Required/Optional | Description                    | Type            |
+| ------------------- | ----------------- | ------------------------------ | --------------- |
+| `kind`              | Required          | Specify: "AlwaysActivatedRule" | Enumerated Type |
 
 Example Body:
 

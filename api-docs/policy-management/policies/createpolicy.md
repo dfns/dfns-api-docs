@@ -14,24 +14,24 @@ Policies:CreatePolicy
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                                                     | Type                     |
-| ------------------- | ----------------- | ----------------------------------------------------------------------------------------------- | ------------------------ |
-| `name`              | Required          | A name for the rule                                                                             | String                   |
-| `description`       | Required          | A description for the rule                                                                      | String                   |
-| `activityKind`      | Required          | Determines which actions on the API may trigger a Policy Execution. See supported values above. | Enumerated Type (String) |
-| `ruleIds`           | Required          | Array of Policy Rule IDs to evaluate                                                            | Array of Strings         |
-| `controlIds`        | Required          | Array of Policy Control IDs to apply                                                            | Array of Strings         |
-| `status`            | Required          | "Enabled", "Disabled"                                                                           | Enumerated Type (String) |
-| `filter`            | Optional          | Specify a list of entities to scope the policy to (eg. wallets)                                 | Object                   |
+| Request body fields | Required/Optional | Description                                                                                     | Type             |
+| ------------------- | ----------------- | ----------------------------------------------------------------------------------------------- | ---------------- |
+| `name`              | Required          | A name for the rule                                                                             | String           |
+| `description`       | Required          | A description for the rule                                                                      | String           |
+| `activityKind`      | Required          | Determines which actions on the API may trigger a Policy Execution. See supported values above. | Enumerated Type  |
+| `ruleIds`           | Required          | Array of Policy Rule IDs to evaluate                                                            | Array of Strings |
+| `controlIds`        | Required          | Array of Policy Control IDs to apply                                                            | Array of Strings |
+| `status`            | Required          | "Enabled", "Disabled"                                                                           | Enumerated Type  |
+| `filter`            | Optional          | Specify a list of entities to scope the policy to (eg. wallets)                                 | Object           |
 
 #### Filter Object
 
 Use the following fields in the nested `filter` object to scope the policy to a specific entity`:`
 
-| Request body fields | Required/Optional | Description                                              | Type                     |
-| ------------------- | ----------------- | -------------------------------------------------------- | ------------------------ |
-| `kind`              | Required          | Specify: "PublicKey"                                     | Enumerated Type (String) |
-| `publicKeyIds`      | Required          | IDs of public keys (wallets) the policy should apply to. | Array of Strings         |
+| Request body fields | Required/Optional | Description                                              | Type             |
+| ------------------- | ----------------- | -------------------------------------------------------- | ---------------- |
+| `kind`              | Required          | Specify: "PublicKey"                                     | Enumerated Type  |
+| `publicKeyIds`      | Required          | IDs of public keys (wallets) the policy should apply to. | Array of Strings |
 
 
 

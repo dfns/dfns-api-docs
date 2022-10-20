@@ -101,6 +101,7 @@
   * [ArchivePermissionPredicate](api-docs/permissions/ArchivePermissionPredicate.md)
   * [ListPermissionPredicates](api-docs/permissions/ListPermissionPredicates.md)
   * [VerifyAuthorization](api-docs/permissions/VerifyAuthorization.md)
+* [Dfns API Enumerated Types](api-docs/dfns-api-enumerated-types.md)
 * [API Endpoint Template](api-reference/api-endpoint-template.md)
 
 ## Integrations

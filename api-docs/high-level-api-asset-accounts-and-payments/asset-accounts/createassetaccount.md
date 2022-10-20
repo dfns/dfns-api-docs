@@ -30,7 +30,7 @@ curl -X POST "/assets/asset-accounts/" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-If successful, the response contains, among other things, a **date stamp** and a **new payment ID**, confirming that a new payment of the correct **amount** and **type** is being **initiated**:
+In most cases, the initial status should be set to "Creating".  Call [GetAssetAccountById](getassetaccountbyid.md) to check status of creation and get the associated blockchain address once complete.&#x20;
 
 ```json
 {
