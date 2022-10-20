@@ -4,9 +4,9 @@
 
 Initiates payment in provided `AssetSymbol`, instructing funds to be transferred from one wallet to another within same network and same asset (currency). Response either confirms initiation of payment process (success) or gives reason why it’s not possible (failure).
 
-### Required Operations <a href="#scopes" id="scopes"></a>
+### Required Permissions <a href="#scopes" id="scopes"></a>
 
-`the scopes for this operation`
+`the permissions for this operation`
 
 ### Triggers <a href="#triggers.1" id="triggers.1"></a>
 
@@ -42,8 +42,10 @@ In the **request body** send the **amount and type of funds** as well as the **r
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl -X POST "/assets/asset-accounts/{assetAccountId}/payments"
-
+curl -X POST "/policies/policy-controls" \
+-H "Content-Type: application/json" \
+-H "Bearer: <TOKEN>" \
+-d '{"description": "My policy control"}
 ```
 
 ### Response <a href="#response" id="response"></a>

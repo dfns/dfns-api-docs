@@ -27,7 +27,6 @@
 * [Introduction](api-docs/README.md)
 * [High Level API: Asset Accounts & Payments](api-docs/high-level-api-asset-accounts-and-payments/README.md)
   * [Assets Overview](api-docs/high-level-api-asset-accounts-and-payments/assets.md)
-  * [Assets Data Model](api-docs/high-level-api-asset-accounts-and-payments/datamodel.md)
   * [Asset Accounts](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/README.md)
     * [CreateAssetAccount](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/createassetaccount.md)
     * [GetAssetAccountById](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbyid.md)
