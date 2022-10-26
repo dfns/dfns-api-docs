@@ -4,7 +4,7 @@ Dfns uses a number of enumerated types throughout our API. Here is a comprehensi
 
 ## AssetSymbol
 
-Dfns supports over 9000 cryptocurrencies and ERC20 fungible asset types - far too many to list here! Please refer to this spreadsheet TODO for an up-to-date list of supported values.  Use the strings under the `Routing` column header when sending requests to APIs that require an asset symbol in the following format:&#x20;
+Dfns supports over 9000 cryptocurrencies and ERC20 fungible asset types - far too many to list here! Please refer to [this Github link](../AssetTickers.csv) for an up-to-date list of supported values.  Use the strings under the `Routing` column header when sending requests to APIs that require an asset symbol in the following format:&#x20;
 
 &#x20;\<SYMBOL>\[.\<NETWORK>]
 
