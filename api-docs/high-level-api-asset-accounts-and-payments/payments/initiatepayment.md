@@ -2,7 +2,7 @@
 
 `POST /assets/asset-accounts/{AssetAccountId}/payments`
 
-Initiates a payment in the provided `AssetSymbol`, instructing funds to be transferred from one wallet to another within same network and same kind of asset (native token or ERC20).  Payments support these `receiver` configurations:
+Initiates a payment in the provided `AssetSymbol`, instructing funds to be transferred from one wallet to another within the same network and the same kind of asset (native token or ERC20).  Payments support these `receiver` configurations:
 
 * `DfnsAssetAccount` - A payment to another Dfns wallet as specified by its id.&#x20;
 * `BlockchainWalletAddress` - A payment to any address supported by the target chain.
@@ -26,8 +26,8 @@ Payments:InitiatePayment
 | `assetSymbol`       | Required          | Currency symbol and network.  Format is \<SYMBOL>\[.\<NETWORK>].  See [Enumerated Types](../../dfns-api-enumerated-types.md) for a full list of valid values. | String  |
 | `amount`            | Required          | Amount to transfer specified in the largest denomination - eg. the native token for "ETH" or "SOL"                                                            | Integer |
 | `receiver`          | Required          | An object detailing the kind of the recipient (see below)                                                                                                     | Object  |
-| note                | Optional          |                                                                                                                                                               | String  |
-| narrative           | Optional          |                                                                                                                                                               | String  |
+| note                | Optional          | A short payment description                                                                                                                                   | String  |
+| narrative           | Optional          | Broader context on the payment for customer use                                                                                                               | String  |
 
 #### Dfns Asset Account Payment
 
