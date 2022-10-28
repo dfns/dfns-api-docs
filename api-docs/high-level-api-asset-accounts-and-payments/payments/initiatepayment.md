@@ -40,7 +40,7 @@ Use the following fields in the nested `receiver` object to initiate a payment t
 
 #### External Wallet Payment
 
-Use the following fields in the nested `receiver` object to any address supported by the target chain:
+Use the following fields in the nested `receiver` object to initiate a payment to any address supported by the target chain:
 
 | Request body fields | Required/Optional | Description                        | Type            |
 | ------------------- | ----------------- | ---------------------------------- | --------------- |
