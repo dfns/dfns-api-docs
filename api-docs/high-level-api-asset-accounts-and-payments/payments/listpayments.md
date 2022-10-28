@@ -30,7 +30,7 @@ curl "/assets/asset-accounts/aa-orange-magnesium-a0606d08b2/payments
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-If successful, the response contains a status indicating whether the Payment has been Initiated or Executed.  Once executed, it will also return the transaction hash:
+The response contains a list of Payments each with a status indicating whether the Payment has been Initiated or Executed.  Once executed, it will also return the transaction hash:
 
 ```json
 {
