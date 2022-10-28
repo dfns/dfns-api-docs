@@ -5,10 +5,11 @@
 ## Getting Started
 
 * [Getting Started](getting-started/GettingStarted.md)
-* [Data Model Concepts](getting-started/DataModelConcepts.md)
-* [API Levels of Abstraction](getting-started/DfnsAPIAbstractionLevels.md)
-* [Policy Engine](getting-started/PolicyEngineIntro.md)
 * [API Authentication](getting-started/authentication-authorization.md)
+* [Dfns Environments](getting-started/dfns-environments.md)
+* [API Levels of Abstraction](getting-started/DfnsAPIAbstractionLevels.md)
+* [Data Model Concepts](getting-started/DataModelConcepts.md)
+* [Policy Engine](getting-started/PolicyEngineIntro.md)
 * [Videos](getting-started/Videos.md)
 
 ## Use Cases
@@ -18,8 +19,8 @@
   * [Get Account By Id](<use-cases/Asset Accounts/GetAccountById.md>)
   * [Get Balance](<use-cases/Asset Accounts/GetBalance.md>)
 * [Payments](use-cases/Payments/README.md)
-  * [Get Payment By Id](use-cases/Payments/GetPaymentById.md)
   * [Initiate Payment](use-cases/Payments/InitiatePayment.md)
+  * [Get Payment By Id](use-cases/Payments/GetPaymentById.md)
   * [Fun with Payments!](use-cases/Payments/NoPolicySimplePaymentScenario.md)
 
 ## API Docs
