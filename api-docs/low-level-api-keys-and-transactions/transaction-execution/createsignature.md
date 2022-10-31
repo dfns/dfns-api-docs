@@ -2,7 +2,7 @@
 
 `POST /public-keys/{PublicKeyId}/signatures`
 
-Signs the message in the `hash` field corresponding to the specified `PublicKey`.  Note the request is asynchronous - call [GetSignatureById](getsignaturebyid.md) to check status and get the associated signature components once complete.&#x20;
+Signs the message in the `hash` field corresponding to the specified `PublicKey`.  Note the request may be asynchronous - call [GetSignatureById](getsignaturebyid.md) to check status and get the associated signature components once complete.&#x20;
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
@@ -37,7 +37,7 @@ curl -X POST "/public-keys/pk-orange-magnesium-a0606d08b2/signatures" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-Requests will normally return status Pending.  Call [GetSignatureById](getsignaturebyid.md) to check status and get the associated signature components (`r` and `s`) once complete (for a mathematical explanation of the signature components, see [Wikipedia](https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm)). &#x20;
+Requests will normally return status Pending.  Call [GetSignatureById](getsignaturebyid.md) to check status and get the associated signature components (`r` and `s`) once `Executed` (for a mathematical explanation of the signature components, see [Wikipedia](https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm)). &#x20;
 
 ```json
 {
