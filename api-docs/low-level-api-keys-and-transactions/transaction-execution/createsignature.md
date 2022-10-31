@@ -37,7 +37,7 @@ curl -X POST "/public-keys/pk-orange-magnesium-a0606d08b2/signatures" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-Requests will normally return status Pending.  Call [GetSignatureById](getsignaturebyid.md) to check status and get the associated signature components (`r` and `s`) once complete (for a mathematical explanation, see [Wikipedia](https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm)). &#x20;
+Requests will normally return status Pending.  Call [GetSignatureById](getsignaturebyid.md) to check status and get the associated signature components (`r` and `s`) once complete (for a mathematical explanation of the signature components, see [Wikipedia](https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm)). &#x20;
 
 ```json
 {
@@ -56,5 +56,4 @@ Requests will normally return status Pending.  Call [GetSignatureById](getsignat
    },
    "dateCreated": "2022-07-19T21:41:32.530Z"
 }
-
 ```
