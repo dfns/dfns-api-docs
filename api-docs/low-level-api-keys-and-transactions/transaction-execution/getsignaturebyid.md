@@ -31,6 +31,8 @@ curl "/public-keys/pk-orange-magnesium-a0606d08b2/signatures/si-sierra-green-f26
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
+For a mathematical explanation of the signature components r and `s`, see [Wikipedia](https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm).
+
 ```json
 {
     "dateCreated": "2022-10-31T17:46:29.312Z",

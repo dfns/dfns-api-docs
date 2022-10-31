@@ -47,6 +47,7 @@
   * [Transaction Execution](api-docs/low-level-api-keys-and-transactions/transaction-execution/README.md)
     * [CreateSignature](api-docs/low-level-api-keys-and-transactions/transaction-execution/createsignature.md)
     * [GetSignatureById](api-docs/low-level-api-keys-and-transactions/transaction-execution/getsignaturebyid.md)
+    * [BroadcastTransaction](api-docs/low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction.md)
     * [GetTransactionById](api-docs/low-level-api-keys-and-transactions/transaction-execution/gettransactionbyid.md)
 * [Policy Engine](api-docs/policy-management/README.md)
   * [Policy Engine Overview](api-docs/policy-management/datamodel.md)
