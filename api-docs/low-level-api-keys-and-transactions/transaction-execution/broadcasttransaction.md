@@ -4,7 +4,7 @@
 
 Broadcast transaction enables communication with any arbitrary smart contract by replicating the native transaction protocol fields in the body of the request.   It can be used to read from the chain, make native payments, call smart contract functions, and even deploy new smart contracts.&#x20;
 
-Currently, only EVM compatible chains are supported. We plan to add additional chain support in the future. Please don't hesitate to contact us if you need support for a Non-EVM chain.&#x20;
+Currently, only EVM compatible chains are supported. We plan to add additional chain support in the future. Please don't hesitate to contact us if you need support for a non-EVM chain.&#x20;
 
 ### Required Permissions
 
@@ -64,7 +64,7 @@ curl -X POST "/public-keys/transactions?read=false" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-Status beings as `Initiated` and changes to `Executed` once broadcast to the mempool.  Use [GetTransactionById](gettransactionbyid.md) to query for updated status.
+Status begins as `Initiated` and changes to `Executed` once broadcast to the mempool.  Use [GetTransactionById](gettransactionbyid.md) to query for updated status.
 
 ```json
 {
