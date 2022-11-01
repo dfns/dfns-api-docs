@@ -8,7 +8,7 @@ Our `CreateAPIKey` endpoint returns a JWT token which you can securely persist a
 
 ## Permissions
 
-Once an API key has been created, like users, it must be granted permissions to access various API endpoints. See the [permissions documentation](../permissions/) for more information.&#x20;
+Once an API key has been created, like users, it must be granted permissions to access various API endpoints. See the [permissions documentation](../../in-development/permissions/) for more information.&#x20;
 
 ## Policy Engine and revoking API Key
 
