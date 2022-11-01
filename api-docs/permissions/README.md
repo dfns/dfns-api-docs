@@ -1,3 +1,1 @@
-# Permissions
-
 The permissions domain encompasses access control management and validation for customers.
