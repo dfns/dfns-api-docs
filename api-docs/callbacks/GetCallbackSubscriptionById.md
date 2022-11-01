@@ -21,7 +21,7 @@ Callbacks:GetCallbackSubscription
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl "/api-keys/cs-orange-magnesium-a0606d08b2/" \
+curl "/callback-subscriptions/cs-orange-magnesium-a0606d08b2/" \
 -H "Content-Type: application/json" \
 -H "Bearer: <TOKEN>"
 ```

@@ -13,7 +13,7 @@ Callbacks:ListCallbackSubscription
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl "/api-keys/" \
+curl "/callback-subscriptions/" \
 -H "Content-Type: application/json" \
 -H "Bearer: <TOKEN>"
 ```
