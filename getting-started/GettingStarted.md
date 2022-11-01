@@ -7,9 +7,7 @@ Our documentation is currently composed of the following sections and pages:
   * An [API Authentication](authentication-authorization.md) page
   * An overview of the different [levels of abstraction of our APIs](DfnsAPIAbstractionLevels.md)
   * Some [intro videos](Videos.md) for the visual learners
-* Procedural how-tos and tutorials to address common [workflows and use cases](../use-cases/)
+* Procedural how-tos and tutorials to address common [use cases](broken-reference)
 * The [**API DOCS**](../api-docs/) reference section of all currently supported endpoints and their operations
 
 The easiest way to get started with Dfns APIs is to [create an Asset Account](<../use-cases/Asset Accounts/CreateAssetAccount.md>). It is the most common action performed with Dfns APIs, as it is a core component of many common customer scenarios such as [making a payment](../use-cases/Payments/InitiatePayment.md).
-
-⭑ **Note**: Before diving into the API, we recommend taking a moment to familiarize yourself with [some basic concepts of our data model](DataModelConcepts.md) to make the API requests and responses easier to understand.
