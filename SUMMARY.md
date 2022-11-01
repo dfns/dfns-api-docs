@@ -80,7 +80,6 @@
   * [RevokeApiKey](api-docs/api-keys/RevokeApiKey.md)
 * [Callbacks](<api-docs/callbacks/README (1).md>)
   * [Callbacks Overview](api-docs/callbacks/README.md)
-  * [Callbacks Data Model](api-docs/callbacks/Datamodel.md)
   * [CreateCallbackSubscription](api-docs/callbacks/CreateCallbackSubscription.md)
   * [GetCallbackSubscriptionById](api-docs/callbacks/GetCallbackSubscriptionById.md)
   * [ListCallbackSubscriptions](api-docs/callbacks/ListCallbackSubscriptions.md)
