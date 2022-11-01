@@ -1,25 +1,43 @@
-
-## ListApiKeys
-`RESTful Endpoint: GET /api-keys`
-
-Scopes:
- * as Employee Auth: ApiKeys:ListApiKeys
- * as API Key: ApiKeys:ListApiKeys
-
-## ListApiKeys
-
-Lists all `ApiKey` entities belonging to the same organization as the caller. Additional filters can be provided; see list of parameters for the operation.
-
-
-### Successful Response
-* id: `EntityId`. 
-* status: `ApiKeyStatus`. 
-* externalId: `String`. 
-* orgId: `EntityId`. 
-* dateCreated: `IsoDatetime`. 
-* name: `String`. 
-* authorId: `EntityId`. 
-* scopes: `String[]`.
+# ListApiKeys
 
 
 
+`GET /api-keys/`
+
+Retrieves all `APIKeys` in the org.
+
+### Required Permissions
+
+ApiKeys:ListApiKeys
+
+### Request Example <a href="#request-example.1" id="request-example.1"></a>
+
+#### Sample request <a href="#sample-request" id="sample-request"></a>
+
+```shell
+curl "/api-keys/" \
+-H "Content-Type: application/json" \
+-H "Bearer: <TOKEN>"
+```
+
+### Response <a href="#response" id="response"></a>
+
+#### Response example <a href="#response-example" id="response-example"></a>
+
+Note the token is only returned on the initial call to [CreateAPIKey](CreateApiKey.md).&#x20;
+
+```json
+{
+  "items": [
+    {
+      "id": "api-cat-freddie-a150fe2ce0",
+      "name": "My API Key",
+      "orgId": "cu-purple-pip-1b417b958500",
+      "status": "Active",
+      "authorId": "ce-finch-march-5b59fcbb571b",
+      "dateCreated": "2022-09-01T09:06:32.567Z"
+    },
+    ...
+  ]
+}
+```
