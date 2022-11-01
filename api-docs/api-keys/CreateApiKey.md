@@ -1,38 +1,46 @@
+# CreateApiKey
 
-## CreateApiKey
-`RESTful Endpoint: POST /api-keys`
+`POST /api-keys/`
 
-Scopes:
- * as Employee Auth: ApiKeys:CreateApiKey
- * as API Key: ApiKeys:CreateApiKey
+Instantiates a JWT token for a machine/service account, which must be securely persisted and passed in the request headers as a bearer token. The token is subject to policy engine controls, but can not approve policy control executions.&#x20;
 
-## CreateApiKey
+### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Instantiates a JWT token for a machine/service account, which must be securely persisted and passed in the request headers as a bearer token. The token is subject to policy engine controls, and you must provide scopes for it.
+ApiKeys:CreateApiKey
 
+### Parameters <a href="#request-body" id="request-body"></a>
 
-❗ **Caution**: Dfns does not keep the actual token you receive in the `token` field, so you must save it securely on your side. You will not be able to get this token again from the Dfns API.
+### Request body <a href="#request-example.1" id="request-example.1"></a>
 
-### Input Body Parameters
-* scopes: 
-* externalId: 
-* name: 
+| Request body fields | Required/Optional | Description            | Type   |
+| ------------------- | ----------------- | ---------------------- | ------ |
+| `name`              | Required          | A name for the API Key | String |
 
-_Please consult OpenAPI file full breakdown and including nested properties._
-### Successful Response
-* id: `EntityId`. 
-* status: `ApiKeyStatus`. 
-* externalId: `String`. 
-* orgId: `EntityId`. 
-* dateCreated: `IsoDatetime`. 
-* name: `String`. 
-* authorId: `EntityId`. 
-* scopes: `String[]`. 
-* token: `ApiKeyValue`.
-### Error Responses
-#### `403` **NotAllowed** 
+### Request example <a href="#request-example.1" id="request-example.1"></a>
 
-* httpStatus: `Integer`. 
-* errorName: `String`.
+#### Sample request <a href="#sample-request" id="sample-request"></a>
 
+```shell
+curl -X POST "/api-keys/" \
+-H "Content-Type: application/json" \
+-H "Bearer: <TOKEN>" \
+-d '{"name": "Server Key 3"}'
+```
 
+### Response <a href="#response" id="response"></a>
+
+#### Response example <a href="#response-example" id="response-example"></a>
+
+The response returns a `token`.  Note Dfns does not persist the token you receive, so you must save it securely.  You will not be able to get this token again from the Dfns API.
+
+```json
+{
+  "id": "api-cat-freddie-a150fe2ce0",
+  "name": "My API Key",
+  "orgId": "cu-purple-pip-1b417b958500",
+  "status": "Active",
+  "authorId": "ce-finch-march-5b59fcbb571b",
+  "dateCreated": "2022-09-01T09:06:32.567Z",
+  "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJoL2FwaS5kZm5ZiIsImlzcyI6Imh0dHBzOi8vYXBpa2V5cy5kZm5zLnd0Zi8iLCJzdWIiOiJjdS1wdXJwbGUtcGlwLTFiNDE3Yjk1ODUwMCIsImh0dHBzOi8vY3VzdG9tL29yZ0lkIjoiY3UtcHVycGxlLXBpcC0xYjQxN2I5NTg1MDAiLCJwZXJtaXNzaW9ucyI6WyJmdWxsOmFkbWluIl0sInNjb3BlIjoiZnVsbDphZG1pbiIsImp0aSI6ImFwaS1jYXQtZnJlZGRpZS1hMTUwZmUyY2UwIiwiaWF0IjoxNjYyMDIzMTkyLCJleHAiOjE2NjIxMDk1OTJ9.XXXXXXXXXXXXXXXXXXXXXXXX"
+}
+```

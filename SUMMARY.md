@@ -74,7 +74,6 @@
     * [Approve / Reject PolicyControlExecution](api-docs/policy-management/policyexecution/approve-reject-policy-execution.md)
 * [ApiKeys](api-docs/apikeys/README.md)
   * [ApiKeys Overview](api-docs/api-keys/README.md)
-  * [ApiKeys Data Model](api-docs/api-keys/Datamodel.md)
   * [CreateApiKey](api-docs/api-keys/CreateApiKey.md)
   * [ListApiKeys](api-docs/api-keys/ListApiKeys.md)
   * [RevokeApiKey](api-docs/api-keys/RevokeApiKey.md)
