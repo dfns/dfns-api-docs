@@ -38,8 +38,48 @@ Dfns supports 19 Blockchains today and we are adding more constantly. Here is th
 
 The Dfns Permissions model relies on the following operation enums:
 
-[Gaj Sinjeri](https://app.gitbook.com/u/sRYbQds4q6ay15HKgEbax9dt9gM2 "mention") to complete\
-
-
-
-
+* ApiKeys:Create
+* ApiKeys:Read
+* ApiKeys:Revoke
+* AssetAccounts:Archive
+* AssetAccounts:Create
+* AssetAccounts:Read
+* Balances:Read
+* CallbackEvents:Read
+* CallbackSubscriptions:Archive
+* CallbackSubscriptions:Create
+* CallbackSubscriptions:Read
+* Payments:Create
+* Payments:Read
+* PermissionAssignments:Create
+* PermissionAssignments:Delete
+* PermissionAssignments:Read
+* PermissionPredicates:Archive
+* PermissionPredicates:Create
+* PermissionPredicates:Read
+* PermissionPredicates:Update
+* Permissions:Archive
+* Permissions:Create
+* Permissions:Read
+* Permissions:Update
+* Policies:Archive
+* Policies:Create
+* Policies:Read
+* Policies:Update
+* PolicyControlExecutions:Read
+* PolicyControlExecutions:Update
+* PolicyControls:Archive
+* PolicyControls:Create
+* PolicyControls:Read
+* PolicyControls:Update
+* PolicyRules:Archive
+* PolicyRules:Create
+* PolicyRules:Read
+* PolicyRules:Update
+* PublicKeyAddresses:Read
+* PublicKeys:Create
+* PublicKeys:Read
+* Signatures:Create
+* Signatures:Read
+* Transactions:Create
+* Transactions:Read
