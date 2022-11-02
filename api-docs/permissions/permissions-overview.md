@@ -4,7 +4,7 @@ Security is always our top priority at Dfns. One key tenet of security is [the p
 
 The Dfns Permissions APIs put this principle into practice. Permissions enable you to control access to the API on a highly granular basis. For example, if you have an employee who needs to initiate payments but should not be able to manipulate policies, they can have the payment permission assigned but the policy permission excluded.
 
-Permissions rely on a list of [Operation enumerated types](../dfns-api-enumerated-types.md) that take the form:
+Permissions rely on a list of [Operation enumerated types](https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#permission-operations) that take the form:
 
 `Service:Action`
 
