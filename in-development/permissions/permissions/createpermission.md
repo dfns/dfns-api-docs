@@ -67,6 +67,6 @@ If successful, a reponse object similar to the following will be returned:
 
 ### Notes <a href="#notes" id="notes"></a>
 
-A permission name cannot be an empty string and a permission must have at least one operation specified. The list of supported operations can be found in XXYYZZ.
+A permission name cannot be an empty string and a permission must have at least one operation specified. The list of supported operations can be found [here](https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#permission-operations).
 
 A permission name is the unique identifier of a permission created in your organization. Therefore, multiple permissions with the same name cannot exist. If a permission has been archived, its name is still considered as taken.
