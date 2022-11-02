@@ -1,34 +1,66 @@
+# ListPermissions
 
-## ListPermissions
-`RESTful Endpoint: GET /permissions`
+`GET /permissions`
 
-Scopes:
- * as API Key: Permissions:ListPermissions
- * as Employee Auth: Permissions:ListPermissions
+Retrieves a list of permissions (success) or gives a reason why it's not possible (failure).
 
-Returns all permissions of the caller’s organization. Returns error if the user is not authorized to retrieve permissions.
+### Required Permissions <a href="#scopes" id="scopes"></a>
 
+The caller either needs to be an OrgOwner or they need to have a permission assigned to them that allows them to execute the operation `Permissions:Read`.
 
-### Successful Response
-* id: `EntityId`. 
-* orgId: `EntityId`. 
-* permissionName: `String`. 
-* operations: `String[]`. 
-* status: `PermissionStatus`. 
-* isImmutable: `Bool`. 
-* predicates: `PermissionPredicate[]`. 
-* dateCreated: `IsoDatetime`. 
-* dateUpdated: `IsoDatetime`. 
-* isArchived: `Bool`.
-### Error Responses
-#### `401` **notPermitted** 
+### Triggers <a href="#triggers.1" id="triggers.1"></a>
 
-* serviceName: `String`. 
-* message: `String`. 
-* causes: `String[]`. 
-* shouldTriggerInvestigaton: `Bool`. 
-* isDfnsError: `Bool`. 
-* httpStatus: `Integer`. 
-* errorName: `String`.
+`PermissionManagement`
 
+### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
+#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+
+N/A
+
+#### Query parameters <a href="#query-parameters" id="query-parameters"></a>
+
+N/A
+
+### Request body <a href="#request-body" id="request-body"></a>
+
+N/A
+
+### Request example <a href="#request-example.1" id="request-example.1"></a>
+
+#### Sample request <a href="#sample-request" id="sample-request"></a>
+
+```shell
+curl -X GET "/permissions" \
+-H "Content-Type: application/json" \
+-H "Bearer: <TOKEN>"}
+```
+
+### Response <a href="#response" id="response"></a>
+
+#### Response example <a href="#response-example" id="response-example"></a>
+
+If successful, the response contains a list of permission objects:
+
+```json
+[
+    {
+        "id": "pm-orange-apple-2b17a80613",
+        "orgId": "organization-id",
+        "permissionName": "US",
+        "operations": [
+            "AssetAccounts:Read"
+        ],
+        "status": "Active",
+        "predicateIds": [],
+        "isImmutable": false,
+        "dateCreated": "2022-10-26T08:30:25.348Z",
+        "dateUpdated": "2022-10-26T08:30:25.348Z",
+        "isArchived": false
+    }
+]
+```
+
+### Notes <a href="#notes" id="notes"></a>
+
+N/A

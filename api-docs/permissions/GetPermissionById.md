@@ -1,45 +1,66 @@
+# GetPermissionById
 
-## GetPermissionById
-`RESTful Endpoint: GET /permissions/{permissionId}`
+`GET /permissions/{permissionId}`
 
-Scopes:
- * as API Key: Permissions:GetPermission
- * as Employee Auth: Permissions:GetPermission
+Retrieves a specific permission (success) or gives a reason why it's not possible (failure).
 
-Retrieves a specific permission given a permission id for the caller's organization. Returns error if the user is not authorized to retrieve the permission or the permission does not exist.
-### Input Query Parameters
-* Path parameter `permissionId`: undefined
+### Required Permissions <a href="#scopes" id="scopes"></a>
 
-### Successful Response
-* id: `EntityId`. 
-* orgId: `EntityId`. 
-* permissionName: `String`. 
-* operations: `String[]`. 
-* status: `PermissionStatus`. 
-* isImmutable: `Bool`. 
-* predicates: `PermissionPredicate[]`. 
-* dateCreated: `IsoDatetime`. 
-* dateUpdated: `IsoDatetime`. 
-* isArchived: `Bool`.
-### Error Responses
-#### `404` **permissionNotFound** 
+The caller either needs to be an OrgOwner or they need to have a permission assigned to them that allows them to execute the operation `Permissions:Read`.
 
-* serviceName: `String`. 
-* message: `String`. 
-* causes: `String[]`. 
-* shouldTriggerInvestigaton: `Bool`. 
-* isDfnsError: `Bool`. 
-* httpStatus: `Integer`. 
-* errorName: `String`. 
+### Triggers <a href="#triggers.1" id="triggers.1"></a>
 
-#### `401` **notPermitted** 
+`PermissionManagement`
 
-* serviceName: `String`. 
-* message: `String`. 
-* causes: `String[]`. 
-* shouldTriggerInvestigaton: `Bool`. 
-* isDfnsError: `Bool`. 
-* httpStatus: `Integer`. 
-* errorName: `String`.
+### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
+#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
+| Path parameter | Description                                                                                                                                                                                                                           |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `permissionId` | <p>Unique identifier of the permission.<br><br>Permission IDs look like this:<br><code>pm-orange-apple-2b17a80613</code><br><br>They follow this format:<br><code>pb-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></p> |
+
+#### Query parameters <a href="#query-parameters" id="query-parameters"></a>
+
+N/A
+
+### Request body <a href="#request-body" id="request-body"></a>
+
+N/A
+
+### Request example <a href="#request-example.1" id="request-example.1"></a>
+
+#### Sample request <a href="#sample-request" id="sample-request"></a>
+
+```shell
+curl -X GET "/permissions/pm-orange-apple-2b17a80613" \
+-H "Content-Type: application/json" \
+-H "Bearer: <TOKEN>"}
+```
+
+### Response <a href="#response" id="response"></a>
+
+#### Response example <a href="#response-example" id="response-example"></a>
+
+If successful, the response contains the permission object:
+
+```json
+{
+    "id": "pm-orange-apple-2b17a80613",
+    "orgId": "organization-id",
+    "permissionName": "US",
+    "operations": [
+        "AssetAccounts:Read"
+    ],
+    "status": "Active",
+    "predicateIds": [],
+    "isImmutable": false,
+    "dateCreated": "2022-10-26T08:30:25.348Z",
+    "dateUpdated": "2022-10-26T08:30:25.348Z",
+    "isArchived": false
+}
+```
+
+### Notes <a href="#notes" id="notes"></a>
+
+N/A

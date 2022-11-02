@@ -1,58 +1,72 @@
+# CreatePermission
 
-## CreatePermission
-`RESTful Endpoint: POST /permissions`
+`POST /permissions`
 
-Scopes:
- * as API Key: Permissions:CreatePermission
- * as Employee Auth: Permissions:CreatePermission
+Creates a permission that allows certain specified operations to be executed. Response is either the permission object itself (success) or a reason why it was not possible to create the permission (failure).
 
-Creates new permission. The permissionName needs to be unique for each organization. Returns error if the user is not authorized to create permissions for the organization or a permission with the same name exists.
+### Required Permissions <a href="#scopes" id="scopes"></a>
 
-### Input Body Parameters
-* permissionName: 
-* operations: 
+The caller either needs to be an OrgOwner or they need to have a permission assigned to them that allows them to execute the operation `Permissions:Create`.
 
-_Please consult OpenAPI file full breakdown and including nested properties._
-### Successful Response
-* id: `EntityId`. 
-* orgId: `EntityId`. 
-* permissionName: `String`. 
-* operations: `String[]`. 
-* status: `PermissionStatus`. 
-* isImmutable: `Bool`. 
-* predicates: `PermissionPredicate[]`. 
-* dateCreated: `IsoDatetime`. 
-* dateUpdated: `IsoDatetime`. 
-* isArchived: `Bool`.
-### Error Responses
-#### `400` **invalidPermissionPayload** 
+### Triggers <a href="#triggers.1" id="triggers.1"></a>
 
-* serviceName: `String`. 
-* message: `String`. 
-* causes: `String[]`. 
-* shouldTriggerInvestigaton: `Bool`. 
-* isDfnsError: `Bool`. 
-* httpStatus: `Integer`. 
-* errorName: `String`. 
+`PermissionManagement`
 
-#### `409` **duplicatePermission** 
+### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
-* serviceName: `String`. 
-* message: `String`. 
-* causes: `String[]`. 
-* shouldTriggerInvestigaton: `Bool`. 
-* isDfnsError: `Bool`. 
-* httpStatus: `Integer`. 
-* errorName: `String`. 
+#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-#### `401` **notPermitted** 
+N/A
 
-* serviceName: `String`. 
-* message: `String`. 
-* causes: `String[]`. 
-* shouldTriggerInvestigaton: `Bool`. 
-* isDfnsError: `Bool`. 
-* httpStatus: `Integer`. 
-* errorName: `String`.
+#### Query parameters <a href="#query-parameters" id="query-parameters"></a>
 
+N/A
 
+### Request body <a href="#request-body" id="request-body"></a>
+
+In the **request body** specify the **permisison name**, as well as a list of **operations** that this permission will allow.
+
+| Request body fields | Required/Optional | Description                 | Type          |
+| ------------------- | ----------------- | --------------------------- | ------------- |
+| `permissionName`    | Required          | Name of the permission.     | String        |
+| `operations`        | Required          | List of allowed operations. | List (String) |
+
+### Request example <a href="#request-example.1" id="request-example.1"></a>
+
+#### Sample request <a href="#sample-request" id="sample-request"></a>
+
+```shell
+curl -X POST "/permissions" \
+-H "Content-Type: application/json" \
+-H "Bearer: <TOKEN>" \
+-d '{"permissionName": "US", "operations": "AssetAccounts:Read"}
+```
+
+### Response <a href="#response" id="response"></a>
+
+#### Response example <a href="#response-example" id="response-example"></a>
+
+If successful, a reponse object similar to the following will be returned:
+
+```json
+{
+    "id": "pm-orange-apple-2b17a80613",
+    "orgId": "organization-id",
+    "permissionName": "US",
+    "operations": [
+        "AssetAccounts:Read"
+    ],
+    "status": "Active",
+    "predicateIds": [],
+    "isImmutable": false,
+    "dateCreated": "2022-10-26T08:30:25.348Z",
+    "dateUpdated": "2022-10-26T08:30:25.348Z",
+    "isArchived": false
+}
+```
+
+### Notes <a href="#notes" id="notes"></a>
+
+A permission name cannot be an empty string and a permission must have at least one operation specified. The list of supported operations can be found in XXYYZZ.
+
+A permission name is the unique identifier of a permission created in your organization. Therefore, multiple permissions with the same name cannot exist. If a permission has been archived, its name is still considered as taken.
