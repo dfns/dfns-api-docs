@@ -11,7 +11,9 @@ Initiates a payment in the provided `AssetSymbol`, instructing funds to be trans
 
 Payments:InitiatePayment
 
-### Parameters <a href="#request-body" id="request-body"></a>
+### Triggers <a href="#request-body" id="request-body"></a>
+
+Policy Engine for [Policies](../../policy-management/policies/createpolicy.md) with a `PaymentInitiation` `activityKind`.&#x20;
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 

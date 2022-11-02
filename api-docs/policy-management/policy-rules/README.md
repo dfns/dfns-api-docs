@@ -1,3 +1,3 @@
 # Policy Rules
 
-Policy Rules determine when Policy Executions are created.  Policy Executions are then subject to the Policy Controls associated in the Policy.&#x20;
+Policy Rules model the different system limitations that the policy itself will encapsulate. If any condition of these rules is met, the Policy is Activated and its Policy Controls are Executed.&#x20;
