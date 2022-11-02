@@ -32,7 +32,13 @@ Dfns supports 19 Blockchains today and we are adding more constantly. Here is th
 * `POLYX` for Polymesh
 * `BNB` for Binance Smart Chain
 
-\
+
+
+## Permission Operations
+
+The Dfns Permissions model relies on the following operation enums:
+
+[Gaj Sinjeri](https://app.gitbook.com/u/sRYbQds4q6ay15HKgEbax9dt9gM2 "mention") to complete\
 
 
 
