@@ -6,7 +6,7 @@ Retrieves an `AssetAccount` by its `id`.
 
 ### Required Permissions
 
-AssetAccounts:GetAssetAccount
+AssetAccounts:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
@@ -14,7 +14,7 @@ AssetAccounts:GetAssetAccount
 
 | Path parameter   | Description                                                                                                        |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `AssetAccountId` | <p>Unique identifier of the <code>AssetAccount</code> like:<br><br>aa<code>-orange-magnesium-a0606d08b2</code></p> |
+| `AssetAccountId` | <p>Unique identifier of the <code>AssetAccount</code> like:<br><br><code>aa-orange-magnesium-a0606d08b2</code></p> |
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 

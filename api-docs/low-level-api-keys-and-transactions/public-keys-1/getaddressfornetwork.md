@@ -6,7 +6,7 @@ Retrieves a blockchain address for a specific public key and network combination
 
 ### Required Permissions
 
-PublicKeys:GetAddressForNetwork
+PublicKeyAddresses:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
@@ -14,7 +14,7 @@ PublicKeys:GetAddressForNetwork
 
 | Path parameter | Description                                                                                                     |
 | -------------- | --------------------------------------------------------------------------------------------------------------- |
-| `PublicKeyId`  | <p>Unique identifier of the <code>PublicKey</code> like:<br><br>pk<code>-orange-magnesium-a0606d08b2</code></p> |
+| `PublicKeyId`  | <p>Unique identifier of the <code>PublicKey</code> like:<br><br><code>pk-orange-magnesium-a0606d08b2</code></p> |
 
 #### Query string parameters <a href="#request-example.1" id="request-example.1"></a>
 
