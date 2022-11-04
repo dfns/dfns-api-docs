@@ -9,7 +9,7 @@ Policy Controls determine how Policy Executions are handled.   The type of polic
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-PolicyControls:Create
+PolicyControls:CreatePolicyControl
 
 ### Request body <a href="#request-body" id="request-body"></a>
 

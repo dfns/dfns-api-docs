@@ -6,7 +6,7 @@ Archives a `PolicyRule` its `id`.  Archived policy rules will no longer be enfor
 
 ### Required Permissions
 
-PolicyRules:Archive
+PolicyRules:ArchivePolicyRule
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

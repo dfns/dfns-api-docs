@@ -11,7 +11,7 @@ Policy Rules determine when Policy Executions are created.   The type of policy 
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-PolicyRules:Create
+PolicyRules:CreatePolicyRule
 
 ### Request body <a href="#request-body" id="request-body"></a>
 

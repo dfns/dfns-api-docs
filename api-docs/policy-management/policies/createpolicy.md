@@ -10,7 +10,7 @@ Policies join [Policy Rules](../policy-rules/createpolicyrule.md) and [Policy Co
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Policies:Create
+Policies:CreatePolicy
 
 ### Request body <a href="#request-body" id="request-body"></a>
 

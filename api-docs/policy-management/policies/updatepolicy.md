@@ -4,10 +4,6 @@
 
 Updates a `Policy` by its `id`.  See [CreatePolicy](createpolicy.md) for a full description of body fields to pass.&#x20;
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
-
-Policies:Update
-
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>

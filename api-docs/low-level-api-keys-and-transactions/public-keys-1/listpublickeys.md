@@ -8,7 +8,7 @@ Retrieves all `PublicKeys` in the org.
 
 ### Required Permissions
 
-PublicKeys:Read
+PublicKeys:ListPublicKeys
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
