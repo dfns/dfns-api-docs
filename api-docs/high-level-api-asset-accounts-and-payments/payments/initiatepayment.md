@@ -9,7 +9,7 @@ Initiates a payment in the provided `AssetSymbol`, instructing funds to be trans
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Payments:InitiatePayment
+Payments:Create
 
 ### Triggers <a href="#request-body" id="request-body"></a>
 

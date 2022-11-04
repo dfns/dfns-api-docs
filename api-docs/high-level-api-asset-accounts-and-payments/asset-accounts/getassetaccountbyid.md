@@ -6,7 +6,7 @@ Retrieves an `AssetAccount` by its `id`.
 
 ### Required Permissions
 
-AssetAccounts:GetAssetAccount
+AssetAccounts:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

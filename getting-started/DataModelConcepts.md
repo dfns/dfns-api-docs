@@ -1,6 +1,6 @@
 # Data Model Concepts
 
-## Dfns IDs
+## Dfns ID
 
 The majority of Dfns IDs are formed using the following standard:
 
@@ -10,7 +10,7 @@ For example:
 
 * `pr-montana-mango-2b17a80613` – This refers to `Policy Rule`, which can be seen by prefix `pr-`.
 * `pa-five-river-1e6242793d` – This refers to `Payment`, which can be seen by prefix `pa-`.
-* `aa-` stands for `Asset Account` and so forth
+* `aa` stands for `Asset Account` and so forth
 
 IDs are randomly generated. This allows clients to easily identify entities, talk about them, and discuss them without leaking any information.
 

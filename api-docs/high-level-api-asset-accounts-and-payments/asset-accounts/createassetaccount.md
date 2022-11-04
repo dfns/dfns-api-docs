@@ -6,7 +6,7 @@ Creates new `AssetAccount` entity associated with a specific `assetSymbol` (such
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-`AssetAccounts:CreateAssetAccount`
+AssetAccounts:Create
 
 ### Request body <a href="#request-body" id="request-body"></a>
 

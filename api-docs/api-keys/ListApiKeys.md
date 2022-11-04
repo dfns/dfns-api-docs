@@ -1,14 +1,12 @@
 # ListApiKeys
 
-
-
 `GET /api-keys/`
 
 Retrieves all `APIKeys` in the org.
 
 ### Required Permissions
 
-ApiKeys:ListApiKeys
+ApiKeys:Read
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
