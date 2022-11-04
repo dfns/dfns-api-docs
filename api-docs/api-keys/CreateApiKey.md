@@ -6,7 +6,7 @@ Instantiates a JWT token for a machine/service account, which must be securely p
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-ApiKeys:Create
+ApiKeys:CreateApiKey
 
 ### Parameters <a href="#request-body" id="request-body"></a>
 

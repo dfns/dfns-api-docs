@@ -6,7 +6,7 @@ Archives a `PolicyControl` its `id`.  Archived policy controls will no longer be
 
 ### Required Permissions
 
-PolicyControls:ArchivePolicyControl
+PolicyControls:Archive
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

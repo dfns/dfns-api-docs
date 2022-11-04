@@ -6,7 +6,7 @@ Retrieves a `Transaction` by its `id`.
 
 ### Required Permissions
 
-PublicKeys:GetTransaction
+Transactions:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

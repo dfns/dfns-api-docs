@@ -6,7 +6,7 @@ Signs the message in the `hash` field corresponding to the specified `PublicKey`
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Signatures:CreateSignature
+Signatures:Create
 
 ### Triggers <a href="#request-body" id="request-body"></a>
 

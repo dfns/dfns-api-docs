@@ -8,7 +8,7 @@ Revokes an `APIKey` by its `id`.
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-ApiKeys:Revoke
+ApiKeys:RevokeApiKey
 
 ### Parameters <a href="#request-body" id="request-body"></a>
 

@@ -6,7 +6,7 @@ Retrieves an `APIKey` by its `id`.
 
 ### Required Permissions
 
-ApiKeys:Read
+ApiKeys:GetApiKey
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

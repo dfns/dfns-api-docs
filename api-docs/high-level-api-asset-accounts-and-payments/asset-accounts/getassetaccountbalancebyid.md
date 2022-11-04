@@ -6,7 +6,7 @@ Gets the on chain balance of the assets associated with the specified `AssetAcco
 
 ### Required Permissions
 
-Balances:Read
+AssetAccounts:GetBalance
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

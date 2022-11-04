@@ -6,7 +6,7 @@ Retrieves an `PublicKey` by its `id`.
 
 ### Required Permissions
 
-PublicKeys:GetPublicKey
+PublicKeys:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

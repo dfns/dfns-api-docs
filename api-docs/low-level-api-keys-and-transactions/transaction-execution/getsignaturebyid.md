@@ -6,7 +6,7 @@ Retrieves a `Signature` by its corresponding `PublicKey` and its `id`.
 
 ### Required Permissions
 
-Signatures:GetSignature
+Signatures:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

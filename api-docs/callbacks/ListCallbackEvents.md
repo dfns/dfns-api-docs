@@ -6,7 +6,7 @@ Retrieves all `CallbackEvents` in the org.  A callback event is a record of a sp
 
 ### Required Permissions
 
-CallbackEvents:Read
+Callbacks:ListCallbackEvents
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
