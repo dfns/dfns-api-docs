@@ -9,7 +9,7 @@ Initiates a payment in the provided `AssetSymbol`, instructing funds to be trans
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Payments:InitiatePayment
+Payments:Create
 
 ### Triggers <a href="#request-body" id="request-body"></a>
 
@@ -28,8 +28,8 @@ Policy Engine for [Policies](../../policy-management/policies/createpolicy.md) w
 | `assetSymbol`       | Required          | Currency symbol and network.  Format is \<SYMBOL>\[.\<NETWORK>].  See [Enumerated Types](../../dfns-api-enumerated-types.md) for a full list of valid values. | String  |
 | `amount`            | Required          | Amount to transfer specified in the largest denomination - eg. the native token for "ETH" or "SOL"                                                            | Integer |
 | `receiver`          | Required          | An object detailing the kind of the recipient (see below)                                                                                                     | Object  |
-| note                | Optional          | A short payment description                                                                                                                                   | String  |
-| narrative           | Optional          | Broader context on the payment for customer use                                                                                                               | String  |
+| `note`              | Optional          | A short payment description                                                                                                                                   | String  |
+| `narrative`         | Optional          | Broader context on the payment for customer use                                                                                                               | String  |
 
 #### Dfns Asset Account Payment
 
