@@ -12,25 +12,30 @@ Dfns supports over 9000 cryptocurrencies and ERC20 fungible asset types - far to
 
 Dfns supports 19 Blockchains today and we are adding more constantly. Here is the valid list of values for `network` parameters:&#x20;
 
-* `ADA` for Cardano
-* `ALGO` for Algorand
-* `BTC` for Bitcoin
-* `DOGE` for Dogecoin
-* `DOT` for Polkadot
-* `CFG` for Centrifuge
-* `NEAR` for Near
-* `ETH` for Ethereum
-* `ARB` for Arbitrum
-* `LTC` for Litecoin
-* `KSM` for Kusama
-* `XLM` for Stellar
-* `XRP` for Ripple
-* `ATOM` for Cosmos
-* `MATIC` for Polygon
+* `ADA` for Cardano&#x20;
+* `ALGO` for Algorand&#x20;
+* `ARB` for Arbitrum&#x20;
+* `ATOM` for Cosmos&#x20;
+* `BNB` for Binance Smart Chain&#x20;
+* `BTC` for Bitcoin&#x20;
+* `CFG` for Centrifuge&#x20;
+* `DOGE` for Dogecoin&#x20;
+* `DOT` for Polkadot&#x20;
+* `ETH` for Ethereum&#x20;
+* `FTM` for Fantom&#x20;
+* `IMX` for ImmutableX&#x20;
+* `KSM` for Kusama&#x20;
+* `LTC` for Litecoin&#x20;
+* `MATIC` for Polygon&#x20;
+* `NEAR` for Near&#x20;
+* `OP` for Optimism&#x20;
+* `POLYX` for Polymesh&#x20;
+* `sFUEL` for SKALE (note lower case "s")
+* `SOL` for Solana&#x20;
+* `TRX` for Tron&#x20;
+* `XLM` for Stellar&#x20;
+* `XRP` for Ripple&#x20;
 * `XTZ` for Tezos
-* `SOL` for Solana
-* `POLYX` for Polymesh
-* `BNB` for Binance Smart Chain
 
 
 
