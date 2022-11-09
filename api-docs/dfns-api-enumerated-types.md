@@ -10,7 +10,7 @@ Dfns supports over 9000 cryptocurrencies and ERC20 fungible asset types - far to
 
 ## Network
 
-Dfns supports 19 Blockchains today and we are adding more constantly. Here is the valid list of values for `network` parameters:&#x20;
+Dfns supports 24 Blockchains today and we are adding more constantly. Here is the valid list of values for `network` parameters:&#x20;
 
 * `ADA` for Cardano&#x20;
 * `ALGO` for Algorand&#x20;
