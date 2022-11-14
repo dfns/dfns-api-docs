@@ -58,8 +58,8 @@ The Dfns Permissions model relies on the following operation enums:
 * Payments:Create
 * Payments:Read
 * PermissionAssignments:Create
-* PermissionAssignments:Delete
 * PermissionAssignments:Read
+* PermissionAssignments:Revoke
 * PermissionPredicates:Archive
 * PermissionPredicates:Create
 * PermissionPredicates:Read
