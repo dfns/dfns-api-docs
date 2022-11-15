@@ -6,7 +6,7 @@ Retrieves all `AssetAccounts` belonging to the Org.
 
 ### Required Permissions
 
-AssetAccounts:ListAssetAccounts
+AssetAccounts:Read
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 

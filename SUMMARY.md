@@ -107,4 +107,4 @@
   * [Permission Assignments](in-development/permissions/permission-assignments/README.md)
     * [CreateAssignment](in-development/permissions/permission-assignments/createassignment.md)
     * [ListAssignments](in-development/permissions/permission-assignments/listassignments.md)
-    * [DeleteAssignment](in-development/permissions/permission-assignments/deleteassignment.md)
+    * [RevokeAssignment](in-development/permissions/permission-assignments/revokeassignment.md)

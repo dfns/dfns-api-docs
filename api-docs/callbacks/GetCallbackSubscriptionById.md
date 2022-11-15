@@ -6,7 +6,7 @@ Retrieves a `CallbackSubscription` by its `id`.
 
 ### Required Permissions
 
-Callbacks:GetCallbackSubscription
+CallbackSubscriptions:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

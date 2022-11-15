@@ -6,7 +6,7 @@ Retrieves a `CallbackEvent` by it `id`.  A callback event is a record of a speci
 
 ### Required Permissions
 
-Callbacks:GetCallbackEvent
+CallbackEvents:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

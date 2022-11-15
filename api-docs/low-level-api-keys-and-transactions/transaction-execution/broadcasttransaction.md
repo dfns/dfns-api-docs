@@ -8,7 +8,7 @@ Currently, only EVM compatible chains are supported. We plan to add additional c
 
 ### Required Permissions
 
-PublicKeys:BroadcastTransaction
+Transactions:Create
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

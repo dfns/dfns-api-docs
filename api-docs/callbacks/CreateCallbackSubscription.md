@@ -12,7 +12,7 @@ This creates a callback subscription for the specific `eventKind`.   `eventKind`
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Callbacks:CreateCallbackSubscription
+CallbackSubscriptions:Create
 
 ### Parameters <a href="#request-body" id="request-body"></a>
 

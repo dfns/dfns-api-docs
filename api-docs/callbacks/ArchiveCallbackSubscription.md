@@ -6,7 +6,7 @@ Archives a `CallbackSubscription` by its `id`.
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Callbacks:ArchiveCallbackSubscription
+CallbackSubscriptions:Archive
 
 ### Parameters <a href="#request-body" id="request-body"></a>
 

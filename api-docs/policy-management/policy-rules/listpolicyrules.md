@@ -6,7 +6,7 @@ Lists all `PolicyRules` belonging to an Org.
 
 ### Required Permissions
 
-PolicyRules:ListPolicyRule
+PolicyRules:Read
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 

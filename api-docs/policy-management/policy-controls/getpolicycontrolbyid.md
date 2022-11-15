@@ -6,7 +6,7 @@ Retrieves a `PolicyControl` by its `id`.
 
 ### Required Permissions
 
-PolicyControls:GetPolicyControl
+PolicyControls:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

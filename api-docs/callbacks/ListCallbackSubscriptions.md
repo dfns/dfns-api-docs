@@ -6,7 +6,7 @@ Retrieves all `CallbackSubscriptions` in the org.
 
 ### Required Permissions
 
-Callbacks:ListCallbackSubscription
+CallbackSubscriptions:Read
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 

@@ -6,7 +6,7 @@ Retrieves a `PolicyRule` by its `id`.
 
 ### Required Permissions
 
-PolicyRules:GetPolicyRule
+PolicyRules:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 

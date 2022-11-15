@@ -6,7 +6,7 @@ Creates new `PublicKey` using the specified signature scheme.
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-PublicKeys:CreatePublicKey
+PublicKeys:Create
 
 ### Request body <a href="#request-body" id="request-body"></a>
 

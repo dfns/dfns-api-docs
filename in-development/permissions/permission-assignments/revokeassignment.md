@@ -1,12 +1,12 @@
-# DeleteAssignment
+# RevokeAssignment
 
 `DELETE /permissions/assignments/{assignmentId}`
 
-Deletes a permission assignment (success) or gives reason why it’s not possible (failure).
+Revokes a permission assignment (success) or gives reason why it’s not possible (failure).
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-The caller either needs to be an OrgOwner or they need to have a permission assigned to them that allows them to execute the operation `PermissionAssignments:Delete`.
+The caller either needs to be an OrgOwner or they need to have a permission assigned to them that allows them to execute the operation `PermissionAssignments:Revoke`.
 
 ### Triggers <a href="#triggers.1" id="triggers.1"></a>
 
