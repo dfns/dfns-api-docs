@@ -8,9 +8,13 @@ NEAR, NEAR, Near native currency, Near Blockchain,24
 DOT, DOT, Polkadot native currency, Polkadot,12
 CFG, CFG, Centrifuge native currency, Centrifuge,18
 ETH, ETH, Ethereum, Ethereum,18
+FTM, FTM, Fantom, Fantom,18
+OP, OP, Optimism, Optimism,18
+sFUEL, sFUEL, Skale, Skale,18
 ARB, ARB, Arbitrum, Arbitrum,18
 LTC, LTC, Lite Coin native currency, Litecoin,8
 KSM, KSM, Kusama – Polkadot’s Canary network, Kusama,10
+TRX, TRX, Tron native currency, Tron,6
 XLM, XLM, Stellar native coin., Stellar,7
 XRP, XRP, Ripple., Ripple,6
 ATOM, ATOM, Cosmos., Cosmos,6
@@ -9294,3 +9298,4 @@ POL_ETH,POL.ETH,Polars,Polars,18
 WAL_ETH,WAL.ETH,The Wasted Lands,The Wasted Lands,18
 PLY_ETH,PLY.ETH,PlayNity,PlayNity,6
 RMTX_ETH,RMTX.ETH,RematicEGC,RematicEGC,18
+USDT_TRX,USDT.TRX,Tether,Tether,6
