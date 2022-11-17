@@ -11,4 +11,4 @@ We offer access to **mainnets** and **testnets** through the following hosts/roo
 
 The most common action performed with Dfns is to [create an asset account](high-level-api-asset-accounts-and-payments/asset-accounts/createassetaccount.md).
 
-It is a core component of many of the most common customer scenarios, including [making a payment](../use-cases/Payments/NoPolicySimplePaymentScenario.md), and is also an easy way to get started with Dfns APIs.
+It is a core component of many of the most common customer scenarios, including [making a payment](broken-reference), and is also an easy way to get started with Dfns APIs.

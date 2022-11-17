@@ -1,6 +1,6 @@
 # Assets Overview
 
-Assets encompasses both [Asset Accounts](<../../use-cases/Asset Accounts/>) and [Payments](../../use-cases/Payments/). These are the core entities of the Dfns API. They represent, respectively, blockchain wallets and the transfer of both native and ERC20 tokens.
+Assets encompasses both [Asset Accounts](broken-reference) and [Payments](broken-reference). These are the core entities of the Dfns API. They represent, respectively, blockchain wallets and the transfer of both native and ERC20 tokens.
 
 ## Payment Lifecycle
 

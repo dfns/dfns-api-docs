@@ -12,17 +12,6 @@
 * [Policy Engine](getting-started/PolicyEngineIntro.md)
 * [Videos](getting-started/Videos.md)
 
-## Use Cases
-
-* [Asset Accounts](<use-cases/Asset Accounts/README.md>)
-  * [Create Asset Account](<use-cases/Asset Accounts/CreateAssetAccount.md>)
-  * [Get Account By Id](<use-cases/Asset Accounts/GetAccountById.md>)
-  * [Get Balance](<use-cases/Asset Accounts/GetBalance.md>)
-* [Payments](use-cases/Payments/README.md)
-  * [Initiate Payment](use-cases/Payments/InitiatePayment.md)
-  * [Get Payment By Id](use-cases/Payments/GetPaymentById.md)
-  * [Fun with Payments!](use-cases/Payments/NoPolicySimplePaymentScenario.md)
-
 ## API Docs
 
 * [Introduction](api-docs/README.md)
