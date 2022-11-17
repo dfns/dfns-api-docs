@@ -19,6 +19,7 @@
   * [Login](api-docs/authentication/login/README.md)
     * [InitLogin](api-docs/authentication/login/initlogin.md)
     * [Login](api-docs/authentication/login/login.md)
+  * [ListUsers](api-docs/authentication/listusers.md)
 * [High Level API: Asset Accounts & Payments](api-docs/high-level-api-asset-accounts-and-payments/README.md)
   * [Assets Overview](api-docs/high-level-api-asset-accounts-and-payments/assets.md)
   * [Asset Accounts](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/README.md)
