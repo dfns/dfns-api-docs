@@ -30,12 +30,13 @@ curl "/assets/asset-accounts/aa-orange-magnesium-a0606d08b2/balance" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-The balance is in the smallest unit of the asset type - eg. WEI for ETH, Satoshi for BTC, etc.  We plan to improve this in the future by providing balances in multiple units as well as providing the number of decimals of the smallest unit.&#x20;
+`balance` is denominated in the smallest unit of the asset type - eg. WEI for ETH, Satoshi for BTC, etc.  `maxUnitBalance` is denominated in the largest unit - eg. ETH or BTC.&#x20;
 
 ```json
 {
    "id": "aa-network-burger-21cb681b2c",
    "assetSymbol": "ETH",
-   "balance": "249979348805298000"
+   "balance": "249979348805298000", 
+   "maxUnitBalance": ".2499"
 }
 ```
