@@ -15,6 +15,7 @@
 ## API Docs
 
 * [Introduction](api-docs/README.md)
+* [Authentication](api-docs/authentication.md)
 * [High Level API: Asset Accounts & Payments](api-docs/high-level-api-asset-accounts-and-payments/README.md)
   * [Assets Overview](api-docs/high-level-api-asset-accounts-and-payments/assets.md)
   * [Asset Accounts](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/README.md)
