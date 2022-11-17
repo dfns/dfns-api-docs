@@ -1,6 +1,6 @@
 # Assets Overview
 
-Assets encompasses both [Asset Accounts](broken-reference) and [Payments](broken-reference). These are the core entities of the Dfns API. They represent, respectively, blockchain wallets and the transfer of both native and ERC20 tokens.
+Assets encompasses both [Asset Accounts](broken-reference/) and [Payments](broken-reference/). These are the core entities of the Dfns API. They represent, respectively, blockchain wallets and the transfer of both native and ERC20 tokens.
 
 ## Payment Lifecycle
 
@@ -40,10 +40,7 @@ Payments have 2 phases:
 
 1. `Initiated`: When a payment is first created, it is first validated and then routed through the policy engine. This can trigger the execution of approvals or other actions as defined by `Policies`.
 2. `Executed`: Once the payment is verified, it will go into the execution phase, where it will be published to the blockchain.
-
-
-
-1. ## Payment failure modes
+3. ### Payment failure modes
 
 There are two failure modes in the payment lifecycle:
 

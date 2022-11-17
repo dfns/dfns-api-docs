@@ -30,7 +30,7 @@ curl "/policies/policy-control-executions/pce-fanta-twelve-333cb3fe31" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-If successful, the response contains a status indicating whether the policy control execution has been Approved, Rejected, or is still Awaiting approval.    `documentedActivity` contains an escaped JSON object of the transaction data which initiated the policy execution.&#x20;
+If successful, the response contains a status indicating whether the policy control execution has been Approved, Rejected, or is still Awaiting approval. `documentedActivity` contains an escaped JSON object of the transaction data which initiated the policy execution.
 
 ```json
 {
@@ -49,8 +49,4 @@ If successful, the response contains a status indicating whether the policy cont
     "status": "Awaiting"
 }
 
-
 ```
-
-
-
