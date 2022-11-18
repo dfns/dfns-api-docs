@@ -83,7 +83,7 @@ curl -X POST "/auth/login/init" \
 
 * `kind` identifies the kind of credential in use (FIDO2, Key, or Password)
 * `challenge` is a random value used to uniquely identify the request. For FIDO2 and Key, this value will be included in the data that is signed and sent to the matching /auth/login call
-* `challengeIdentifier` is a temporary authentication token that is used to identify this login session with the matching call to [CompleteLogin](completeLogin)
+* `challengeIdentifier` is a temporary authentication token that is used to identify this login session with the matching call to [CompleteLogin](./completeLogin.md)
 * `authenticationCode` is a secret value that can be used to enable cross device login
 * `allowCredentials` is a list of credentials that the user can use to authenticate to the Dfns API. For FIDO2, this list will be passed to the user's WebAuthn client
 
