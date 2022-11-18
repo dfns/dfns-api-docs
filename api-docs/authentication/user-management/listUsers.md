@@ -37,13 +37,13 @@ curl "/auth/manage/users" \
 
 A list of users in the caller's organization. Each item in the list has the following fields:
 
-* `userId` is the globally unique ID that identifies the user in the DFNS API
+* `userId` is the globally unique ID that identifies the user in the Dfns API
 * `kind` is the kind of the user. Can be one of the following values:
   * `EndUser` indicates the user is a standard user in the application
   * `CustomerEmployee` indicates the user is a employee of the Dfns customer that owns the caller's organization
   * `DfnsStaff` indicates the user is a employee of Dfns
-* `credentialUuid` is the globally unique ID that identifies the credential registered to the user in the DFNS API
-* `orgId` is a globally unique ID that identifies the user's organization in the DFNS API
+* `credentialUuid` is the globally unique ID that identifies the credential registered to the user in the Dfns API
+* `orgId` is a globally unique ID that identifies the user's organization in the Dfns API
 * `permissions` is a list of permissions that are assigned to the user
 * `scopes` is a list of scopes that are assigned to the user
 * `isServiceAccount` a boolean value indicating if the user is a service account (non-human entity)
