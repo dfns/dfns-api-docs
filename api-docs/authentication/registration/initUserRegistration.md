@@ -85,9 +85,9 @@ curl -X POST "/auth/registration/init" \
 * `kind` identifies the kind of credential in use (FIDO2, Key, or Password)
 * `rp` is a [RelyingParty](#relying-party) object that identifies the application to the user
 * `user` is a [UserIdentifier](#user-identifier) object that identifies the user that is being logged into the Dfns API
-* `temporaryAuthenticationToken` is a temporary authentication token that is used to identify the registration session with the matching call to /auth/registration
+* `temporaryAuthenticationToken` is a temporary authentication token that is used to identify the registration session with the matching call to [CompleteRegistration](./completeUserRegistration.md)
 * Additional fields when `kind` is `FIDO2` or `Key`
-  * `challenge` is a random value used to uniquely identify the request. For FIDO2 and Key, this value will be included in the data that is signed and sent to the matching /auth/login call
+  * `challenge` is a random value used to uniquely identify the request. For FIDO2 and Key, this value will be included in the data that is signed and sent to the matching [CompleteRegistration](./completeUserRegistration.md) call
   * `pubKeyCredParam` is a list of [PublicKeyCredParam](#public-key-params) objects that identify the signing algorithms that are supported
   * `attestation` one of the [attestation](#attestation) types that identifies the information needed to verify the user's signing certificate
 * Additional fields when `kind` is `FIDO2`
