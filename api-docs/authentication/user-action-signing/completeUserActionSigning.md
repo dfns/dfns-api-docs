@@ -116,7 +116,7 @@ curl -X POST "/auth/action" \
 
 ### Response <a href="#response" id="response"></a>
 
-* `userAction` is a token that will be passed in the X-DFNS-USERACTION header when performing a change request. The DFNS API will be able to use the information in the token to verify the user initiated the action
+* `userAction` is a token that will be passed in the X-DFNS-USERACTION header when performing a change request. The Dfns API will be able to use the information in the token to verify the user initiated the action
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
