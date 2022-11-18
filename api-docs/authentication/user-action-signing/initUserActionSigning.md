@@ -36,7 +36,7 @@ curl -X POST "/auth/action/init" \
 -H "Content-Type: application/json" \
 -H "X-DFNS-NONCE: $nonce" \
 -H "X-DFNS-APPID: 312CE25E-A112-4D45-9965-6175E7C568DD" \
--H "Authorization: Bearer <UserAuthToken>" \
+-H "Authorization: Bearer <AUTH_TOKEN>" \
 -d '{"userAction": "Create ServiceAccount (ExampleCoUserManagement)."}'
 ```
 

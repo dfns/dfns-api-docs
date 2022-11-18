@@ -2,7 +2,7 @@
 
 `GET /auth/manage/users`
 
-Lists all users in the organization.&#x20;
+Lists all users in the caller's organization.
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
@@ -23,13 +23,31 @@ TODO
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
-```shell
+```bash
+currentTime=$( date -u +"%Y-%m-%dT%H:%M:%SZ" )
+nonce=$( echo "{\"datetime\":\"$currentTime\",\"nonce\":\"$(uuidgen)\"}" | base64 | tr '/+' '_-' | tr -d '=' )
 curl "/auth/manage/users" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>"
+-H "X-DFNS-NONCE: $nonce" \
+-H "X-DFNS-APPID: 312CE25E-A112-4D45-9965-6175E7C568DD" \
+-H "Authoriztion: Bearer <AUTH_TOKEN>"
 ```
 
 ### Response <a href="#response" id="response"></a>
+
+A list of users in the caller's organization. Each item in the list has the following fields:
+
+* `userId` is the globally unique ID that identifies the user in the DFNS API
+* `kind` is the kind of the user. Can be one of the following values:
+  * `EndUser` indicates the user is a standard user in the application
+  * `CustomerEmployee` indicates the user is a employee of the Dfns customer that owns the caller's organization
+  * `DfnsStaff` indicates the user is a employee of Dfns
+* `credentialUuid` is the globally unique ID that identifies the credential registered to the user in the DFNS API
+* `orgId` is a globally unique ID that identifies the user's organization in the DFNS API
+* `permissions` is a list of permissions that are assigned to the user
+* `scopes` is a list of scopes that are assigned to the user
+* `isServiceAccount` a boolean value indicating if the user is a service account (non-human entity)
+* `isActive` is a boolean value indicating if the user is active
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
@@ -39,9 +57,9 @@ curl "/auth/manage/users" \
     "items": [
         {
             "userId": "e78e2512-d9f3-438c-bd51-ba31fea7c0e1",
-            "type": "EndUser",
+            "kind": "EndUser",
             "credentialUuid": "",
-            "orgId": "1db4502f-d18c-48c5-b5d7-afb22d8e1b3b",
+            "orgId": "example-org-id",
             "permissions": [
                 ""
             ],
