@@ -33,7 +33,7 @@ Policy Engine for [Policies](../../policy-management/policies/createpolicy.md) w
 ```shell
 curl -X POST "/public-keys/pk-orange-magnesium-a0606d08b2/signatures" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{"hash": "0x561b555fac475c204fff5d709823f0ab4fcc826bd00900e4e8db26e7e5e328b2"}'
 ```
 

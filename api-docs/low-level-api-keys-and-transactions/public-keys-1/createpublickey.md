@@ -21,7 +21,7 @@ PublicKeys:Create
 ```shell
 curl -X POST "/public-keys/" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{"isEddsa": false}'
 ```
 

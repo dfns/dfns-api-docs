@@ -58,7 +58,7 @@ Use the following fields in the nested `receiver` object to initiate a payment t
 ```shell
 curl -X POST "/assets/asset-accounts/aa-orange-magnesium-a0606d08b2/payments" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{
         "receiver": {
             "kind": "BlockchainWalletAddress",

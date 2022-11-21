@@ -24,7 +24,7 @@ Signatures:Read
 ```shell
 curl "/public-keys/pk-orange-magnesium-a0606d08b2/signatures/si-sierra-green-f26c441f60" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>"
+-H "Authorization: Bearer <TOKEN>"
 ```
 
 ### Response <a href="#response" id="response"></a>

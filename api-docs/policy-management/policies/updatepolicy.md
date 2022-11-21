@@ -15,7 +15,7 @@ Policies:Update
 ```shell
 curl -X PUT "/policies/policy-controls/pl-orange-magnesium-a0606d08b2" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{  "activityKind": "PaymentInitiation",  "description": "Preventing theft",  "name": "Anti Theft Policy",  "ruleIds": ["pr-edward-shade-d887751054"],  "controlIds": ["pc-music-william-failed-54497df60b"],  "status": "Enabled",  "filter": {  "kind": "PublicKey",  "publicKeyIds": ["pk-...", "pk-..."]  }  }'
 
 ```

@@ -22,7 +22,7 @@ AssetAccounts:Create, PublicKeys:Create
 ```shell
 curl -X POST "/assets/asset-accounts/" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{"assetSymbol": "USDC.MATIC"}'
 ```
 

@@ -56,7 +56,7 @@ Example Body:
 ```shell
 curl -X POST "/policies/policy-controls" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{     "description": "My policy control",     "name": "policy-control-back-office-01",     "configuration": {  "kind": "RequestApproval",  "approverUsernames": ["bob@example.com", "dan@example.com"],  "timeoutInMinutes": 60,  "numApprovals": 1     } }'
 
 ```
