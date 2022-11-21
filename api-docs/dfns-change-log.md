@@ -6,12 +6,12 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Nov 22, 2022
 
-* Continuing the rolled out of our new authorization framework called permissions.  The rollout is intended to be silent and should have no customer facing impact.  Stay tuned for further announcements on the features & functionality.&#x20;
+* Continuing the roll out of our new authorization framework called Permissions.  The rollout is intended to be silent and should have no customer facing impact.  Stay tuned for further announcements on the features & functionality.&#x20;
 * Fixes to Polymesh blockchain network due to breaking changes in the protocol.&#x20;
 
 ### Nov 16, 2022
 
-* Rolled out a new authorization framework called permissions.  This is the first of two deployments and should have no customer-facing impact.&#x20;
+* Rolled out a new authorization framework called Permissions.  This is the first of two deployments and should have no customer-facing impact.&#x20;
 * Deployed changes to our internal gateways for routing internal API calls.&#x20;
 
 ### Nov 8, 2022
@@ -34,7 +34,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 * Added [GetAddressForNetwork endpoint](low-level-api-keys-and-transactions/public-keys-1/getaddressfornetwork.md)
 * Deployed internal changes around zero trust service to service communication&#x20;
-* Fixed testnet erc20 token address with Goerli addresses
+* Fixed testnet erc20 tokens with Goerli addresses
 * Bug fix adding asset symbol to chain validation&#x20;
 
 ### Aug 30, 2022
