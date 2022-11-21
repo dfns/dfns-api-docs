@@ -78,6 +78,7 @@
     * [ListCallbackEvents](api-docs/callbacks/ListCallbackEvents.md)
     * [GetCallbackEventById](api-docs/callbacks/GetCallbackEventById.md)
 * [Dfns API Enumerated Types](api-docs/dfns-api-enumerated-types.md)
+* [Dfns Change Log](api-docs/dfns-change-log.md)
 
 ## Integrations
 
