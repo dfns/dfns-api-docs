@@ -12,33 +12,32 @@ Dfns supports over 9000 cryptocurrencies and ERC20 fungible asset types - far to
 
 Dfns supports 24 Blockchains today and we are adding more constantly. Here is the valid list of values for `network` parameters:&#x20;
 
-| network Symbol | Network Name                | testnet RPC                                                                                            |
-| -------------- | --------------------------- | ------------------------------------------------------------------------------------------------------ |
-| ADA            | Cardano                     | [https://cardano-testnet.blockfrost.io/api/v0](https://cardano-testnet.blockfrost.io/api/v0)           |
-| ALGO           | Algorand                    | [https://testnet-algorand.api.purestake.io/ps2](https://testnet-algorand.api.purestake.io/ps2)         |
-| ARB            | Arbitrum                    | (only mainnet) [https://rpc.ankr.com/arbitrum](https://rpc.ankr.com/arbitrum)                          |
-| ATOM           | Cosmos                      | [https://rpc.testnet.cosmos.network:443](https://rpc.testnet.cosmos.network)                           |
-| AVAX-C         | Avalanche                   | [https://api.avax-test.network/ext/bc/C/rpc](https://api.avax-test.network/ext/bc/C/rpc)               |
-| BNB            | Binance Smart Chain         | [https://data-seed-prebsc-1-s1.binance.org:8545](https://data-seed-prebsc-1-s1.binance.org:8545)       |
-| BTC            | Bitcoin                     | [https://api.blockcypher.com/v1/btc/test3](https://api.blockcypher.com/v1/btc/test3)                   |
-| CFG            | Centrifuge                  | (only mainnet) wss://fullnode.parachain.centrifuge.io                                                  |
-| DOGE           | Dogecoin                    | (only mainnet) [https://api.blockcypher.com/v1/doge/main](https://api.blockcypher.com/v1/doge/main)    |
-| DOT            | Polkadot                    | [https://dot.getblock.io/testnet](https://dot.getblock.io/testnet)                                     |
-| ETH            | Ethereum                    | [https://rpc.ankr.com/eth\_goerli](https://rpc.ankr.com/eth\_goerli)                                   |
-| FTM            | Fantom                      | [https://rpc.ankr.com/fantom\_testnet](https://rpc.ankr.com/fantom\_testnet)                           |
-| IMX            | ImmutableX                  |                                                                                                        |
-| KSM            | Kusama                      | (only mainnet) [https://ksm.getblock.io/mainnet](https://ksm.getblock.io/mainnet)                      |
-| LTC            | Litecoin                    | (only mainnet) [https://api.blockcypher.com/v1/ltc/main](https://api.blockcypher.com/v1/ltc/main)      |
-| MATIC          | Polygon                     | [https://rpc.ankr.com/polygon\_mumbai](https://rpc.ankr.com/polygon\_mumbai)                           |
-| NEAR           | Near                        | [https://rpc.testnet.near.org](https://rpc.testnet.near.org)                                           |
-| OP             | Optimism                    | [https://rpc.ankr.com/optimism\_testnet](https://rpc.ankr.com/optimism\_testnet)                       |
-| POLYX          | Polymesh                    | wss://testnet-rpc.polymesh.live                                                                        |
-| sFUEL          | SKALE (note lower case "s") | [https://staging-v2.skalenodes.com/v1/fit-graffias](https://staging-v2.skalenodes.com/v1/fit-graffias) |
-| SOL            | Solana                      | [https://rpc.ankr.com/solana\_devnet](https://rpc.ankr.com/solana\_devnet)                             |
-| TRX            | Tron                        | [https://api.shasta.trongrid.io](https://api.shasta.trongrid.io)                                       |
-| XLM            | Stellar                     | [https://horizon-testnet.stellar.org](https://horizon-testnet.stellar.org)                             |
-| XRP            | Ripple                      | [s.altnet.rippletest.net:51233](http://s.altnet.rippletest.net:51233)                                  |
-| XTZ            | Tezos                       | [https://ghostnet.tezos.marigold.dev](https://ghostnet.tezos.marigold.dev)                             |
+* `ADA` for Cardano&#x20;
+* `ALGO` for Algorand&#x20;
+* `ARB` for Arbitrum&#x20;
+* `ATOM` for Cosmos&#x20;
+* `BNB` for Binance Smart Chain&#x20;
+* `BTC` for Bitcoin&#x20;
+* `CFG` for Centrifuge&#x20;
+* `DOGE` for Dogecoin&#x20;
+* `DOT` for Polkadot&#x20;
+* `ETH` for Ethereum&#x20;
+* `FTM` for Fantom&#x20;
+* `IMX` for ImmutableX&#x20;
+* `KSM` for Kusama&#x20;
+* `LTC` for Litecoin&#x20;
+* `MATIC` for Polygon&#x20;
+* `NEAR` for Near&#x20;
+* `OP` for Optimism&#x20;
+* `POLYX` for Polymesh&#x20;
+* `sFUEL` for SKALE (note lower case "s")
+* `SOL` for Solana&#x20;
+* `TRX` for Tron&#x20;
+* `XLM` for Stellar&#x20;
+* `XRP` for Ripple&#x20;
+* `XTZ` for Tezos
+
+
 
 ## Permission Operations
 

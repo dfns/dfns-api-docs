@@ -6,7 +6,7 @@ Update the status of a policy control execution to approve or reject.  Like a mu
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-PolicyControlExecutions:UpdatePolicyControlExecution
+PolicyControlExecutions:Update, Signatures:Create, PublicKeys:Read
 
 ### Request body <a href="#request-body" id="request-body"></a>
 

@@ -6,7 +6,7 @@ Retrieves a blockchain address for a specific public key and network combination
 
 ### Required Permissions
 
-PublicKeyAddresses:Read
+PublicKeyAddresses:Read, PublicKeys:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
