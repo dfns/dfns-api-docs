@@ -30,7 +30,7 @@ CallbackSubscriptions:Create
 ```shell
 curl -X POST "/callback-subscriptions/" \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" \
+-H "Bearer: <TOKEN>" \
 -d '{"eventKind": "PaymentInitiated", "url", "https://mycallback.com"}'
 ```
 

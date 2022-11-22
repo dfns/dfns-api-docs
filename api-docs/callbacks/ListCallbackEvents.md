@@ -15,7 +15,7 @@ CallbackEvents:Read
 ```shell
 curl "/callback-events/" \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
+-H "Bearer: <TOKEN>"
 ```
 
 ### Response <a href="#response" id="response"></a>

@@ -126,7 +126,7 @@ Example Body:
 ```shell
 curl -X POST "/policies/policy-rules" \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" \
+-H "Bearer: <TOKEN>" \
 -d '{"description": "PaymentAmountLimit", "name": "poliy rule no.1", "configuration": {"kind": "PaymentAmountLimit","limit": "0.0005","assetSymbol": "ETH",}}'
 
 ```

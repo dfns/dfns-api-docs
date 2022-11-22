@@ -7,7 +7,7 @@ The Dfns change log documents changes to our product functionality made by our r
 ### Nov 22, 2022
 
 * Continuing the roll out of our new authorization framework called Permissions.  The rollout is intended to be silent and should have no customer facing impact.  Stay tuned for further announcements on the features & functionality.&#x20;
-* Fixes to Polymesh blockchain network due to breaking changes in the protocol.&#x20;
+* Deprecated `AllowedProducts` internal restriction on API endpoint usage.  Now public keys created with the high level API can be used with the low level API and vice versa.&#x20;
 
 ### Nov 16, 2022
 

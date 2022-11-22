@@ -15,7 +15,7 @@ CallbackSubscriptions:Read
 ```shell
 curl "/callback-subscriptions/" \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
+-H "Bearer: <TOKEN>"
 ```
 
 ### Response <a href="#response" id="response"></a>

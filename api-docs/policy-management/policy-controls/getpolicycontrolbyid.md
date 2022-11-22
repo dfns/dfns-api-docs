@@ -23,7 +23,7 @@ PolicyControls:Read
 ```shell
 curl "/policies/policy-controls/pc-orange-magnesium-a0606d08b2" \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
+-H "Bearer: <TOKEN>"
 ```
 
 ### Response <a href="#response" id="response"></a>

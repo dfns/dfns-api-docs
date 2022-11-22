@@ -23,7 +23,7 @@ ApiKeys:Create
 ```shell
 curl -X POST "/api-keys/" \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" \
+-H "Bearer: <TOKEN>" \
 -d '{"name": "Server Key 3"}'
 ```
 

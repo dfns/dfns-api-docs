@@ -23,7 +23,7 @@ AssetAccounts:Read
 ```shell
 curl "/assets/asset-accounts/aa-orange-magnesium-a0606d08b2" \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
+-H "Bearer: <TOKEN>"
 ```
 
 ### Response <a href="#response" id="response"></a>

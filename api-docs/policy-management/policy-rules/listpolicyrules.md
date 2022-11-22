@@ -15,7 +15,7 @@ PolicyRules:Read
 ```shell
 curl "/policies/policy-rules/" \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
+-H "Bearer: <TOKEN>"
 ```
 
 ### Response <a href="#response" id="response"></a>
