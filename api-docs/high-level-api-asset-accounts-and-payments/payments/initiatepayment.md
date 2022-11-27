@@ -23,13 +23,13 @@ Policy Engine for [Policies](../../policy-management/policies/createpolicy.md) w
 
 ### Request body <a href="#request-example.1" id="request-example.1"></a>
 
-| Request body fields | Required/Optional | Description                                                                                                                                                   | Type    |
-| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| `assetSymbol`       | Required          | Currency symbol and network.  Format is \<SYMBOL>\[.\<NETWORK>].  See [Enumerated Types](../../dfns-api-enumerated-types.md) for a full list of valid values. | String  |
-| `amount`            | Required          | Amount to transfer specified in the largest denomination - eg. the native token for "ETH" or "SOL"                                                            | Integer |
-| `receiver`          | Required          | An object detailing the kind of the recipient (see below)                                                                                                     | Object  |
-| `note`              | Optional          | A short payment description                                                                                                                                   | String  |
-| `narrative`         | Optional          | Broader context on the payment for customer use                                                                                                               | String  |
+| Request body fields | Required/Optional | Description                                                                                                                                                   | Type                                              |
+| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| `assetSymbol`       | Required          | Currency symbol and network.  Format is \<SYMBOL>\[.\<NETWORK>].  See [Enumerated Types](../../dfns-api-enumerated-types.md) for a full list of valid values. | String                                            |
+| `amount`            | Required          | Amount to transfer specified in the largest denomination - eg. the native token for "ETH" or "SOL"                                                            | String (often specified as a float, eg. "0.0005") |
+| `receiver`          | Required          | An object detailing the kind of the recipient (see below)                                                                                                     | Object                                            |
+| `note`              | Optional          | A short payment description                                                                                                                                   | String                                            |
+| `narrative`         | Optional          | Broader context on the payment for customer use                                                                                                               | String                                            |
 
 #### Dfns Asset Account Payment
 
@@ -58,7 +58,7 @@ Use the following fields in the nested `receiver` object to initiate a payment t
 ```shell
 curl -X POST "/assets/asset-accounts/aa-orange-magnesium-a0606d08b2/payments" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{
         "receiver": {
             "kind": "BlockchainWalletAddress",
