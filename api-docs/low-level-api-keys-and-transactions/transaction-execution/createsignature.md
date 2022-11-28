@@ -33,7 +33,7 @@ Policy Engine for [Policies](../../policy-management/policies/createpolicy.md) w
 ```shell
 curl -X POST "/public-keys/pk-orange-magnesium-a0606d08b2/signatures" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{"hash": "0x561b555fac475c204fff5d709823f0ab4fcc826bd00900e4e8db26e7e5e328b2"}'
 ```
 
@@ -41,7 +41,7 @@ curl -X POST "/public-keys/pk-orange-magnesium-a0606d08b2/signatures" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-Requests will normally return status Pending.  Call [GetSignatureById](getsignaturebyid.md) to check status and get the associated signature components (`r` and `s`) once `Executed` (for a mathematical explanation of the signature components, see [Wikipedia](https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm)). &#x20;
+Requests will normally return status Pending.  Call [GetSignatureById](getsignaturebyid.md) to check status and get the associated signature components (`r` and `s`) once `Executed` (for a mathematical explanation of the signature components, see [Wikipedia](https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm)).  The `v` component of the signature is returned in the `recid`.&#x20;
 
 ```json
 {
