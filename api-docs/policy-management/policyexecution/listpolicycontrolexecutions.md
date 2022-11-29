@@ -24,7 +24,7 @@ PolicyControlExecutions:ListPolicyControlExecutions
 ```shell
 curl "/policies/policy-control-executions/?onlyMyPendingApprovals=true" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>"
+-H "Authorization: Bearer <TOKEN>"
 ```
 
 ### Response <a href="#response" id="response"></a>

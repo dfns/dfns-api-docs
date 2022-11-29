@@ -77,24 +77,21 @@
   * [Callback Events](api-docs/callbacks/callback-events/README.md)
     * [ListCallbackEvents](api-docs/callbacks/ListCallbackEvents.md)
     * [GetCallbackEventById](api-docs/callbacks/GetCallbackEventById.md)
+* [Permissions](api-docs/permissions/README.md)
+  * [Permissions Overview](api-docs/permissions/permissions-overview.md)
+  * [Permissions](api-docs/permissions/permissions/README.md)
+    * [CreatePermission](api-docs/permissions/permissions/createpermission.md)
+    * [UpdatePermission](api-docs/permissions/permissions/updatepermission.md)
+    * [GetPermissionById](api-docs/permissions/permissions/getpermissionbyid.md)
+    * [ListPermissions](api-docs/permissions/permissions/listpermissions.md)
+    * [ArchivePermission](api-docs/permissions/permissions/archivepermission.md)
+  * [Permission Assignments](api-docs/permissions/permission-assignments/README.md)
+    * [CreateAssignment](api-docs/permissions/permission-assignments/createassignment.md)
+    * [ListAssignments](api-docs/permissions/permission-assignments/listassignments.md)
+    * [RevokeAssignment](api-docs/permissions/permission-assignments/revokeassignment.md)
 * [Dfns API Enumerated Types](api-docs/dfns-api-enumerated-types.md)
 * [Dfns Change Log](api-docs/dfns-change-log.md)
 
 ## Integrations
 
 * [Fiat On/Offboarding](integrations/fiat-on-offboarding.md)
-
-## In Development
-
-* [Permissions](api-docs/permissions/README.md)
-  * [Permissions Overview](api-docs/permissions/permissions-overview.md)
-  * [Permissions](in-development/permissions/permissions/README.md)
-    * [CreatePermission](in-development/permissions/permissions/createpermission.md)
-    * [UpdatePermission](in-development/permissions/permissions/updatepermission.md)
-    * [GetPermissionById](in-development/permissions/permissions/getpermissionbyid.md)
-    * [ListPermissions](in-development/permissions/permissions/listpermissions.md)
-    * [ArchivePermission](in-development/permissions/permissions/archivepermission.md)
-  * [Permission Assignments](in-development/permissions/permission-assignments/README.md)
-    * [CreateAssignment](in-development/permissions/permission-assignments/createassignment.md)
-    * [ListAssignments](in-development/permissions/permission-assignments/listassignments.md)
-    * [RevokeAssignment](in-development/permissions/permission-assignments/revokeassignment.md)

@@ -51,7 +51,7 @@ For more on these fields, see the [official Ethereum documentation](https://ethe
 ```shell
 curl -X POST "/public-keys/transactions?read=false" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{
     "publicKeyId": "pk-orange-magnesium-a0606d08b2",
     "network": "ETH",

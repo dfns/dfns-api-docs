@@ -8,5 +8,5 @@ Permissions rely on a list of [Operation enumerated types](https://dfns.gitbook.
 
 `Service:Action`
 
-To use Permissions, [create a permission](../../in-development/permissions/permissions/createpermission.md) with the associated operations, give it a name, and then [create an assignment](../../in-development/permissions/permission-assignments/createassignment.md) to a user or API Key.&#x20;
+To use Permissions, [create a permission](permissions/createpermission.md) with the associated operations, give it a name, and then [create an assignment](permission-assignments/createassignment.md) to a user or API Key.&#x20;
 

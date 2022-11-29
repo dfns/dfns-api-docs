@@ -30,7 +30,7 @@ Example Body:
 ```shell
 curl -X PUT "/policies/policy-control-executions/pce-fanta-twelve-333cb3fe31" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{"status": "Passed"}'
 ```
 

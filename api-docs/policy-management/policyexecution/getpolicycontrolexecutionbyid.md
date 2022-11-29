@@ -23,7 +23,7 @@ PolicyControlExecutions:GetPolicyControlExecution
 ```shell
 curl "/policies/policy-control-executions/pce-fanta-twelve-333cb3fe31" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>"
+-H "Authorization: Bearer <TOKEN>"
 ```
 
 ### Response <a href="#response" id="response"></a>

@@ -23,7 +23,7 @@ Balances:Read, PublicKeys:Read
 ```shell
 curl "/assets/asset-accounts/aa-orange-magnesium-a0606d08b2/balance" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>"
+-H "Authorization: Bearer <TOKEN>"
 ```
 
 ### Response <a href="#response" id="response"></a>
