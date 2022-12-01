@@ -48,6 +48,7 @@ If successful, the response contains a status indicating whether the Payment has
    },
    "narrative": "some payment",
    "note": "testing",
+   "direction": "Outgoing",
    "orgId": "cu-purple-pip-1b417b958500",
    "receiver": {
        "kind": "BlockchainWalletAddress",

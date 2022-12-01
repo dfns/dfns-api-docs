@@ -49,6 +49,7 @@ The response contains a list of Payments each with a status indicating whether t
        },
        "narrative": "some payment",
        "note": "testing",
+       "direction": "Outgoing",
        "orgId": "cu-purple-pip-1b417b958500",
        "receiver": {
            "kind": "BlockchainWalletAddress",

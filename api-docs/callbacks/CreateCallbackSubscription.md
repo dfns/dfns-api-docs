@@ -6,6 +6,8 @@ This creates a callback subscription for the specific `eventKind`.   `eventKind`
 
 * `PaymentInitiated`: A payment request has been made via the InitiatePayment endpoint.&#x20;
 * `PaymentExecuted`: A payment request has been successfully broadcasted to the target chain via the InitiatePayment endpoint.&#x20;
+* `PaymentConfirmed`: The payment was mined as part of a block.
+* `PaymentReceived`: An incoming payment was received in your wallet.
 * `TransactionBroadcasted`: A transaction has been successfully broadcasted to the target chain via the BroadcastTransaction endpoint.
 * `WalletCreated`: An AssetAccount or Wallet has been successfully created.
 * `PolicyActivated`: A new Policy has been successfully activated.
