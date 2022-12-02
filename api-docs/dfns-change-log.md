@@ -4,6 +4,12 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Nov 30, 2022
+
+* Launched our new blockchain indexing microservice for Ethereum mainnet exposed via the new `direction` field on [payments](high-level-api-asset-accounts-and-payments/payments/listpayments.md) and the new `PaymentReceived and PaymentConfirmed` [callback eventKinds](callbacks/CreateCallbackSubscription.md).&#x20;
+* Enabled [Permissions](permissions/permissions/) on [callbacks](<callbacks/README (1).md>) and [pubic keys](low-level-api-keys-and-transactions/public-keys-1/)
+* Internal bug fixes wrt database pagination
+
 ### Nov 22, 2022
 
 * Continuing the roll out of our new authorization framework called Permissions.  The rollout is intended to be silent and should have no customer facing impact.  Stay tuned for further announcements on the features & functionality.&#x20;
