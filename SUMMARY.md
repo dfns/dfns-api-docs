@@ -89,6 +89,10 @@
     * [CreateAssignment](api-docs/permissions/permission-assignments/createassignment.md)
     * [ListAssignments](api-docs/permissions/permission-assignments/listassignments.md)
     * [RevokeAssignment](api-docs/permissions/permission-assignments/revokeassignment.md)
+* [Employees](api-docs/employees/README.md)
+  * [Employees Overview](api-docs/employees/employees-overview.md)
+  * [GetEmployeeById](api-docs/employees/getpermissionbyid.md)
+  * [ListEmployees](api-docs/employees/listpermissions.md)
 * [Dfns API Enumerated Types](api-docs/dfns-api-enumerated-types.md)
 * [Dfns Change Log](api-docs/dfns-change-log.md)
 
