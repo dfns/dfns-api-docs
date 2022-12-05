@@ -40,7 +40,7 @@ In the **request body** specify the **permission ID** and **identity ID.**
 curl -X POST "/permissions/assignments" \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <TOKEN>" \
--d '{"permissionId": "pm-orange-apple-2b17a80613", "identityId": "some-identity-id", "identityKind": "CustomerEmployee"}
+-d '{"permissionId": "pm-orange-apple-2b17a80613", "identityId": "some-identity-id"}
 ```
 
 ### Response <a href="#response" id="response"></a>

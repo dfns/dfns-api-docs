@@ -10,7 +10,7 @@ The caller either needs to be an OrgOwner or they need to have a permission assi
 
 ### Triggers <a href="#triggers.1" id="triggers.1"></a>
 
-`PermissionManagement`
+`OrgsManagement`
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
