@@ -18,7 +18,7 @@ The caller either needs to be an OrgOwner or they need to have a permission assi
 
 | Path parameter | Description                                                                                                                                                                                                                       |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `employeeId`   | <p>Unique identifier of the employee.<br><br>Employee IDs look like this:<br><code>ce-orange-apple-2b17a80613</code><br><br>They follow this format:<br><code>ce-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></p> |
+| `employeeId`   | <p>Unique identifier of the employee.<br><br>Employee IDs look like this:<br><code>oe-orange-apple-2b17a80613</code><br><br>They follow this format:<br><code>oe-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></p> |
 
 #### Query parameters <a href="#query-parameters" id="query-parameters"></a>
 
@@ -33,7 +33,7 @@ N/A
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl -X GET "/employees/ce-orange-apple-2b17a80613" \
+curl -X GET "/employees/oe-orange-apple-2b17a80613" \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <TOKEN>" 
 ```
@@ -46,7 +46,7 @@ If successful, the response contains the permission object:
 
 ```json
 {
-    "id": "ce-orange-apple-2b17a80613",
+    "id": "oe-orange-apple-2b17a80613",
     "username": "john@dfns.co",
     "email": "john@dfns.co",
     "fullName": "John Smith",

@@ -45,7 +45,7 @@ If successful, the response contains a list of permission objects:
 ```json
 [
     {
-        "id": "ce-orange-apple-2b17a80613",
+        "id": "oe-orange-apple-2b17a80613",
         "username": "john@dfns.co",
         "email": "john@dfns.co",
         "fullName": "John Smith",
