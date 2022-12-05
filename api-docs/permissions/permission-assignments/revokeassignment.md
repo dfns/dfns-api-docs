@@ -33,7 +33,7 @@ N/A
 ```shell
 curl -X DELETE "/permissions/assignments/as-stream-pizza-08edcfff93" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>"}
+-H "Authorization: Bearer <TOKEN>" 
 ```
 
 ### Response <a href="#response" id="response"></a>

@@ -30,7 +30,7 @@ In the **request body** specify the **permisison name** and/or a list of **opera
 
 | Request body fields | Required/Optional | Description                 | Type          |
 | ------------------- | ----------------- | --------------------------- | ------------- |
-| `permissionName`    | Optional          | Name of the permission.     | String        |
+| `name`              | Optional          | Name of the permission.     | String        |
 | `operations`        | Optional          | List of allowed operations. | String (List) |
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
@@ -40,8 +40,8 @@ In the **request body** specify the **permisison name** and/or a list of **opera
 ```shell
 curl -X PUT "/permissions/pm-orange-apple-2b17a80613" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
--d '{"permissionName": "US", "operations": "AssetAccounts:Read"}
+-H "Authorization: Bearer <TOKEN>" \
+-d '{"name": "US Perms", "operations": ["AssetAccounts:Read", "AssetAccounts:Create"]}
 ```
 
 ### Response <a href="#response" id="response"></a>
@@ -54,9 +54,10 @@ If successful, a response object of the updated permission will be returned:
 {
     "id": "pm-orange-apple-2b17a80613",
     "orgId": "organization-id",
-    "permissionName": "US",
+    "name": "US",
     "operations": [
-        "AssetAccounts:Read"
+        "AssetAccounts:Read",
+        "AssetAccounts:Create"
     ],
     "status": "Active",
     "predicateIds": [],

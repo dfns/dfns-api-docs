@@ -35,7 +35,7 @@ N/A
 ```shell
 curl -X GET "/permissions/pm-orange-apple-2b17a80613" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>"}
+-H "Authorization: Bearer <TOKEN>" 
 ```
 
 ### Response <a href="#response" id="response"></a>
@@ -48,7 +48,7 @@ If successful, the response contains the permission object:
 {
     "id": "pm-orange-apple-2b17a80613",
     "orgId": "organization-id",
-    "permissionName": "US",
+    "name": "US",
     "operations": [
         "AssetAccounts:Read"
     ],

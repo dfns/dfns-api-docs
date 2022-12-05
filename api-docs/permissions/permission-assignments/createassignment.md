@@ -38,7 +38,7 @@ In the **request body** specify the **permission ID** and **identity ID.**
 ```shell
 curl -X POST "/permissions/assignments" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{"permissionId": "pm-orange-apple-2b17a80613", "identityId": "some-identity-id"}
 ```
 

@@ -36,7 +36,7 @@ N/A
 ```shell
 curl -X GET "/permissions/assignments?permissionId=pm-orange-apple-2b17a80613&identityId=oe-louisiana-one-6cf5e80c205c" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>"}
+-H "Authorization: Bearer <TOKEN>" 
 ```
 
 ### Response <a href="#response" id="response"></a>

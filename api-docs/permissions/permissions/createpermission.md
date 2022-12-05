@@ -38,7 +38,7 @@ In the **request body** specify the **permisison name**, as well as a list of **
 ```shell
 curl -X POST "/permissions" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{"name": "US Perms", "operations": ["AssetAccounts:Read", "AssetAccounts:Create"]}
 ```
 

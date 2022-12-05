@@ -39,7 +39,7 @@ In the **request body** specify wheter the permission is to be **archived** or *
 ```shell
 curl -X PUT "/permissions/pm-orange-apple-2b17a80613/archive" \
 -H "Content-Type: application/json" \
--H "Bearer: <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>" \
 -d '{"isArchived": true}
 ```
 
@@ -53,7 +53,7 @@ If successful, a response object of the update permission will be returned:
 {
     "id": "pm-orange-apple-2b17a80613",
     "orgId": "organization-id",
-    "permissionName": "US",
+    "name": "US",
     "operations": [
         "AssetAccounts:Read"
     ],
