@@ -28,7 +28,7 @@ In the **request body** specify the **permisison name**, as well as a list of **
 
 | Request body fields | Required/Optional | Description                 | Type          |
 | ------------------- | ----------------- | --------------------------- | ------------- |
-| `permissionName`    | Required          | Name of the permission.     | String        |
+| `name`              | Required          | Name of the permission.     | String        |
 | `operations`        | Required          | List of allowed operations. | List (String) |
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
@@ -39,7 +39,7 @@ In the **request body** specify the **permisison name**, as well as a list of **
 curl -X POST "/permissions" \
 -H "Content-Type: application/json" \
 -H "Bearer: <TOKEN>" \
--d '{"permissionName": "US", "operations": "AssetAccounts:Read"}
+-d '{"name": "US Perms", "operations": ["AssetAccounts:Read", "AssetAccounts:Create"]}
 ```
 
 ### Response <a href="#response" id="response"></a>
@@ -52,9 +52,10 @@ If successful, a reponse object similar to the following will be returned:
 {
     "id": "pm-orange-apple-2b17a80613",
     "orgId": "organization-id",
-    "permissionName": "US",
+    "name": "US Perms",
     "operations": [
-        "AssetAccounts:Read"
+        "AssetAccounts:Read",
+        "AssetAccounts:Create"
     ],
     "status": "Active",
     "predicateIds": [],
