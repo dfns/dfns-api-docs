@@ -26,10 +26,11 @@ N/A
 
 In the **request body** specify the **permission ID** and **identity ID.**
 
-| Request body fields | Required/Optional | Description                                                 | Type   |
-| ------------------- | ----------------- | ----------------------------------------------------------- | ------ |
-| `permissionId`      | Required          | The ID of the permission to be assigned.                    | String |
-| `identityId`        | Required          | The ID of the identity the permission is being assigned to. | String |
+| Request body fields | Required/Optional | Description                                                 | Type             |
+| ------------------- | ----------------- | ----------------------------------------------------------- | ---------------- |
+| `permissionId`      | Required          | The ID of the permission to be assigned.                    | String           |
+| `identityId`        | Required          | The ID of the identity the permission is being assigned to. | String           |
+| `identityKind`      | Required          | Either CustomerEmployee, Application or EndUser.            | Enumerated Type  |
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
