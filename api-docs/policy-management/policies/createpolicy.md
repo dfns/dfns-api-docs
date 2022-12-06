@@ -6,6 +6,7 @@ Policies join [Policy Rules](../policy-rules/createpolicyrule.md) and [Policy Co
 
 * `PaymentInitiation`: Examine Policy Rules when the [InitiatePayment](../../high-level-api-asset-accounts-and-payments/payments/initiatepayment.md) API is called.
 * `CreatingSignature`: Examine Policy Rules when the [CreateSignature](../../low-level-api-keys-and-transactions/transaction-execution/createsignature.md) API is called.
+* `TransactionInitiation`: Examine Policy Rules when [BroadcastTransaction](../../low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction.md) API is called.
 * More policy kinds coming soon...
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
