@@ -45,6 +45,7 @@ curl "/public-keys/transactions/tx-orange-magnesium-a0606d08b2" \
     "publicKeyId": "pk-shade-wisconsin-c28c38b2e8",
     "snapshot": "{\"transaction\":{\"templateKind\":\"EvmGenericTx\",\"gasLimit\":\"100000000\",\"to\":\"0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7\",\"data\":\"0x095ea7b3000000000000000000000000bebc44782c7db0a1a60cb6fe97d0b483032ff1c7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\",\"publicKeyId\":\"pk-shade-wisconsin-c28c38b2e8\",\"network\":\"ETH\"},\"response\":\"Request failed with status code 400\"}",
     "status": "Executed",
+    "txHash": "0x7ded8fa5f4a82ddac94608e109eca9944bf98e30b8e6d7faf04f591e0b5769c6",
     "transaction": {
         "templateKind": "EvmGenericTx",
         "gasLimit": "100000000",

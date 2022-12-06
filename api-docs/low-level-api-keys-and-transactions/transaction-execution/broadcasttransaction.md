@@ -66,7 +66,7 @@ curl -X POST "/public-keys/transactions?read=false" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-Status begins as `Initiated` and changes to `Executed` once broadcast to the mempool.  Use [GetTransactionById](gettransactionbyid.md) to query for updated status.
+Status begins as `Initiated` and changes to `Executed` once broadcast to the mempool.  Use [GetTransactionById](gettransactionbyid.md) to query for updated status and to retrieve a blockchain transaction hash.
 
 ```json
 {
