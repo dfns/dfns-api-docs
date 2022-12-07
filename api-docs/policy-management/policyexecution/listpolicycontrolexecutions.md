@@ -6,7 +6,7 @@ Lists all `PolicyControlExecutions` belonging to an Org.  Can be filtered by the
 
 ### Required Permissions
 
-PolicyControlExecutions:ListPolicyControlExecutions
+PolicyControlExecutions:Read
 
 ### Parameters <a href="#request-example.1" id="request-example.1"></a>
 

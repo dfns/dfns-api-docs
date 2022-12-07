@@ -6,7 +6,7 @@ Retrieves a `PolicyControlExecution` by its `id`.
 
 ### Required Permissions
 
-PolicyControlExecutions:GetPolicyControlExecution
+PolicyControlExecutions:Read
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
