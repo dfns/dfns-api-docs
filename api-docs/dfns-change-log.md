@@ -4,6 +4,12 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Dec 7, 2022
+
+* Launched upgraded key storage persistence layer for wallet scalability
+* Launched indexing for ERC20s including USDT, USDC, MATIC, BNB so they are exposed in incoming transactions.&#x20;
+* Internal bug fixes for Binance Smart Chain.
+
 ### Nov 30, 2022
 
 * Launched our new blockchain indexing microservice for Ethereum mainnet exposed via the new `direction` field on [payments](high-level-api-asset-accounts-and-payments/payments/listpayments.md) and the new `PaymentReceived and PaymentConfirmed` [callback eventKinds](callbacks/CreateCallbackSubscription.md).&#x20;
