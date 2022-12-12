@@ -26,7 +26,6 @@ Dfns supports 24 Blockchains today and we are adding more constantly. Here is th
 | DOT            | Polkadot                    | [https://dot.getblock.io/testnet](https://dot.getblock.io/testnet)                                     |
 | ETH            | Ethereum                    | [https://rpc.ankr.com/eth\_goerli](https://rpc.ankr.com/eth\_goerli)                                   |
 | FTM            | Fantom                      | [https://rpc.ankr.com/fantom\_testnet](https://rpc.ankr.com/fantom\_testnet)                           |
-| IMX            | ImmutableX                  |                                                                                                        |
 | KSM            | Kusama                      | (only mainnet) [https://ksm.getblock.io/mainnet](https://ksm.getblock.io/mainnet)                      |
 | LTC            | Litecoin                    | (only mainnet) [https://api.blockcypher.com/v1/ltc/main](https://api.blockcypher.com/v1/ltc/main)      |
 | MATIC          | Polygon                     | [https://rpc.ankr.com/polygon\_mumbai](https://rpc.ankr.com/polygon\_mumbai)                           |
