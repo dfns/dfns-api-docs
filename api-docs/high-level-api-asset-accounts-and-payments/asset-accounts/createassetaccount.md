@@ -13,6 +13,7 @@ AssetAccounts:Create, PublicKeys:Create
 | Request body fields | Required/Optional | Description                                                                                                                                                   | Type   |
 | ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | `assetSymbol`       | Required          | Currency symbol and network.  Format is \<SYMBOL>\[.\<NETWORK>].  See [Enumerated Types](../../dfns-api-enumerated-types.md) for a full list of valid values. | String |
+| name                | Optional          | Human readable name for the asset account                                                                                                                     | String |
 | `publicKey`         | Optional          | You can associate more than one asset account with the same public key (starting with "xkeypub...") by passing it into this optional body parameter.          | String |
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
