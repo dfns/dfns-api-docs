@@ -18,17 +18,17 @@ Payments:Read
 
 #### Query parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Query parameter | Description                                                                                                                                         |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `direction`     | Filter results by one of the two directions: `Incoming`, `Outgoing`                                                                                 |
-| `status`        | Filter results by any of the [payment status enumerated types](https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#payment-status) |
+| Query parameter | Description                                       |
+| --------------- | ------------------------------------------------- |
+| `direction`     | One of the two directions: `Incoming`, `Outgoing` |
+| `status`        | One of the status enumerated type                 |
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl "/assets/asset-accounts/aa-orange-magnesium-a0606d08b2/payments?direction=Incoming"
+curl "/assets/asset-accounts/aa-orange-magnesium-a0606d08b2/payments"
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <TOKEN>"
 ```
