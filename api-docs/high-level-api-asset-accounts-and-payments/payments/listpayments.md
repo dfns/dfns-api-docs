@@ -12,9 +12,16 @@ Payments:Read
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter   | Description                                                                                                        |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `AssetAccountId` | <p>Unique identifier of the <code>AssetAccount</code> like:<br><br>aa<code>-orange-magnesium-a0606d08b2</code></p> |
+| Path parameter   | Description                                                                                                    |
+| ---------------- | -------------------------------------------------------------------------------------------------------------- |
+| `AssetAccountId` | <p>Unique identifier of the <code>AssetAccount</code> like:<br><code>aa-orange-magnesium-a0606d08b2</code></p> |
+
+#### Query parameters <a href="#path-parameters" id="path-parameters"></a>
+
+| Query parameter | Description                                       |
+| --------------- | ------------------------------------------------- |
+| `direction`     | One of the two directions: `Incoming`, `Outgoing` |
+| `status`        | One of the status enumerated type                 |
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
