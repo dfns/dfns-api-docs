@@ -106,7 +106,7 @@ Dfns supports 24 Blockchains today and we are adding more constantly. Here is th
 | sFUEL          | SKALE (note lower case "s")                 | [https://staging-v2.skalenodes.com/v1/fit-graffias](https://staging-v2.skalenodes.com/v1/fit-graffias) |
 | SOL            | Solana                                      | [https://rpc.ankr.com/solana\_devnet](https://rpc.ankr.com/solana\_devnet)                             |
 | TRX            | Tron                                        | [https://api.shasta.trongrid.io](https://api.shasta.trongrid.io)                                       |
-| XLM            | Stellar                                     | [https://horizon-testnet.stellar.org](https://horizon-testnet.stellar.org)                             |
+| XLM            | Stellar (Currently undergoing maintenance)  | [https://horizon-testnet.stellar.org](https://horizon-testnet.stellar.org)                             |
 | XRP            | Ripple                                      | [s.altnet.rippletest.net:51233](http://s.altnet.rippletest.net:51233)                                  |
 | XTZ            | Tezos                                       | [https://ghostnet.tezos.marigold.dev](https://ghostnet.tezos.marigold.dev)                             |
 
