@@ -4,6 +4,16 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Dec 19, 2022
+
+* Fixed a bug in [BroadcastTransaction](low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction.md) where the `value` parameter was being interpreted in ETH instead of WEI.&#x20;
+* Last push of the year!&#x20;
+
+### Dec 15, 2022
+
+* Launched new `direction` and `status` query parameters on [ListPayments](high-level-api-asset-accounts-and-payments/payments/listpayments.md)
+* Fixed a bug in the `timeoutInMinutes` implementation in [PolicyControls](policy-management/policy-controls/createpolicycontrol.md)
+
 ### Dec 7, 2022
 
 * Launched upgraded key storage persistence layer for wallet scalability
