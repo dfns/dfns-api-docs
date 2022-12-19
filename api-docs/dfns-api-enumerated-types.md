@@ -94,7 +94,7 @@ Dfns supports 24 Blockchains today and we are adding more constantly. Here is th
 | BTC            | Bitcoin                                     | [https://api.blockcypher.com/v1/btc/test3](https://api.blockcypher.com/v1/btc/test3)                   |
 | CFG            | Centrifuge                                  | (only mainnet) wss://fullnode.parachain.centrifuge.io                                                  |
 | DOGE           | Dogecoin                                    | (only mainnet) [https://api.blockcypher.com/v1/doge/main](https://api.blockcypher.com/v1/doge/main)    |
-| DOT            | Polkadot                                    | [https://dot.getblock.io/testnet](https://dot.getblock.io/testnet)                                     |
+| DOT            | Polkadot (Currently undergoing maintenance) | [https://dot.getblock.io/testnet](https://dot.getblock.io/testnet)                                     |
 | ETH            | Ethereum                                    | [https://rpc.ankr.com/eth\_goerli](https://rpc.ankr.com/eth\_goerli)                                   |
 | FTM            | Fantom                                      | [https://rpc.ankr.com/fantom\_testnet](https://rpc.ankr.com/fantom\_testnet)                           |
 | KSM            | Kusama (Currently undergoing maintenance)   | (only mainnet) [https://ksm.getblock.io/mainnet](https://ksm.getblock.io/mainnet)                      |
