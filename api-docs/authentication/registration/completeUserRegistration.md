@@ -1,4 +1,4 @@
-# CompleteUserRegistration
+# Create User Registration
 
 `POST /auth/registration`
 
@@ -12,44 +12,71 @@ Completes the registration process.
 
 ### Headers  <a href="#request-body" id="request-body"></a>
 
-| Name                | Required | Description                                                                                                                                                                                                                                                                    |
-| ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| X-DFNS-NONCE        | Required | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: &#x3C;random value> <br>datetime: &#x3C;The current time of the request in ISO String format, used to expire requests after a period of time></p> |
-| X-DFNS-APPID        | Required | ID of the application that was created in the Dfns dashboard                                                                                                                                                                                                                   |
-| X-DFNS-APPSECRET    | Optional | Secret associated with the application. Required for server-side application configurations.                                                                                                                                                                                   |
-| X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations.                                                                                                                                                                                            |
-| Authorization       | Required | `temporaryAuthenticationToken` returned from the [InitRegistration](initRegistration) call in Bearer format.                                                                                                                                                 |
+| Name | Required | Description |
+| ---- | -------- | ----------- |
+| X-DFNS-NONCE | Required | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: &#x3C;random value> <br>datetime: &#x3C;The current time of the request in ISO String format, used to expire requests after a period of time></p> |
+| X-DFNS-APPID | Required | ID of the application that was created in the Dfns dashboard |
+| X-DFNS-APPSECRET | Optional | Secret associated with the application. Required for server-side application configurations. |
+| X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations. |
+| Authorization | Required | `temporaryAuthenticationToken` returned from the [InitRegistration](initRegistration) call in Bearer format. |
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields   | Required/Optional | Description                                                                                                                                                        | Type   |
-| --------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
-| `kind`                | Required          | The kind of credential response the user has provided                                                                                                              | String |
-| `credentialInfo`      | Required          | A [KeyCredentialAssertion](#key-credential-assertion) object when `kind` is `Key` or a[Fido2CredentialAssertion](#fido2-credential-assertion) object when `kind` is `FIDO2` or a [PasswordCredentials](#password-creds) object when `kind` is `Password` | String |
+| Request body fields | Required/Optional | Description | Type |
+| ------------------- | ----------------- | ----------- | ---- |
+| `firstFactorCredential` | Required | An object that describes the first factor credential that the user is registering | [RegistrationFirstFactor](#registration-first-factor) |
+| `secondFactorCredential` | Optional | An object that describes the second factor credential that the user is registering | [RegistrationSecondFactor](#registration-second-factor) |
 
-#### KeyCredentialAssertion <a href="#key-credential-assertion" id="key-credential-assertion"></a>
+#### RegistrationFirstFactor <a href="#registration-first-factor" id="registration-first-factor"></a>
 
-| Fields              | Required/Optional | Description                                                                                                            | Type   |
-| ------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- | ------ |
-| `clientData`        | Required          | The base64url encoded [KeyClientData](#key-client-data) JSON string object that was signed with the user's private key | String |
-| `signature`         | Optional          | The base64url encoded signature generated by signing the clientData JSON string object                                 | String |
+| Fields | Required/Optional | Description | Type |
+| ------ | ----------------- | ----------- | ---- |
+| `credentialKind` | Required | The kind of credential being registered | String |
+| `credentialInfo` | Required | An object containing information about the credential being registered | <p> `credentialKind === Password`: [PasswordCredentialInformation](#password-credential-information)<br /><br />`credentialKind === Key or Fido2`: [CredentialAssertion](#credential-assertion)</p> |
+
+#### RegistrationSecondFactor <a href="#registration-second-factor" id="registration-second-factor"></a>
+
+| Fields | Required/Optional | Description | Type |
+| ------ | ----------------- | ----------- | ---- |
+| `credentialKind` | Required | The kind of credential being registered | String |
+| `credentialInfo` | Required | An object containing information about the credential being registered | <p> `credentialKind === Totp`: [TotpCredentialInformation](#totp-credential-information)<br /><br />`credentialKind === Key or Fido2`: [CredentialAssertion](#credential-assertion)</p> |
+
+#### CredentialAssertion <a href="#credential-assertion" id="credential-assertion"></a>
+
+| Fields | Required/Optional | Description | Type |
+| ------ | ----------------- | ----------- | ---- |
+| `credId` | Required | The base64url encoded id of the credential | String |
+| `clientData` | Required | The base64url encoded client data object. The underlying object is either the clientData object returned by the user's WebAuthn client, or a [KeyClientData](#key-client-data) JSON string object | String |
+| `attestationData` | Optional | The base64url encoded attestation data object. The underlying object is either the attestationData object returned by the user's WebAuthn client, or a [KeyAttestationData](#key-attestation-data) JSON string object | String |
 
 #### KeyClientData <a href="#key-client-data" id="key-client-data"></a>
 
-| Fields              | Required/Optional | Description                                                                                                                                                                                         | Type    |
-| ------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| `type`              | Required          | A string identifying the kind of client data this object represents. For registration, this must be set to `key.create`                                                                                       | String  |
-| `challenge`         | Required          | The challenge returned by the [InitRegistration](./initUserRegistration.md) call                                                                                                                                           | String  |
-| `origin`            | Required          | The origin in which the request was signed. This should match the origin you configured for your Dfns Application. For example, Dfns Dashboard logins would set this to `https://dashboard.dfns.io` | String  |
-| `crossOrigin`       | Required          | A flag indicating if the request was signed for a cross-origin request                                                                                                                              | Boolean |
+| Fields | Required/Optional | Description | Type |
+| ------ | ----------------- | ----------- | ---- |
+| `type` | Required | A string identifying the kind of client data this object represents. For registration, this must be set to `key.create` | String |
+| `challenge` | Required | The challenge returned by the [InitRegistration](./initUserRegistration.md) call | String |
+| `origin` | Required | The origin in which the request was signed. This should match the origin you configured for your Dfns Application. For example, Dfns Dashboard logins would set this to `https://dashboard.dfns.io` | String |
+| `crossOrigin` | Optional | A flag indicating if the request was signed for a cross-origin request | Boolean |
 
-#### Fido2CredentialAssertion <a href="#fido2-credential-assertion" id="fido2-credential-assertion"></a>
+### KeyAttestationData <a href="key-attestation-data" id="key-attestation-data"></a>
 
-| Fields              | Required/Optional | Description                                                                            | Type   |
-| ------------------- | ----------------- | -------------------------------------------------------------------------------------- | ------ |
-| `credId`            | Required          | The base64url encoded id of the credential returned by the user's WebAuthn client      | String |
-| `clientData`        | Required          | The base64url encoded client data object returned by the user's WebAuthn client        | String |
-| `attestationData`   | Optional          | The base64url encoded attestation data object returned by the user's WebAuthn client   | String |
+| Fields | Required/Optional | Description | Type |
+| ------ | ----------------- | ----------- | ---- |
+| `publicKey` | Required | A PEM encoded public key that can be used to verify the signature for the credential | String |
+| `signature` | Required | The signature produced by signing clientData with the credentials private key, using the algorithm specified in `algorithm`. Needs to be encoded as a hex string | String |
+| `algorithm` | Optional | <p>The algorithm/digest that the credential will use to sign data. If the algoritm is not specified the algorithm will be determined by the key. Can be one of the following choices:<br />`RSA-SHA256`<br />`SHA256`<br />`SHA512`</p> | String |
+
+### PasswordCredentialInformation <a href="password-credential-information" id="password-credential-information"></a>
+
+| Fields | Required/Optional | Description | Type |
+| ------ | ----------------- | ----------- | ---- |
+| `password` | Required | The user's provided password | String |
+
+### TotpCredentialInformation <a href="totp-credential-information" id="totp-credential-information"></a>
+
+| Fields | Required/Optional | Description | Type |
+| ------ | ----------------- | ----------- | ---- |
+| `otpCode` | Required | The 6 digit code generated by the user's Authenticator device. | String |
 
 
 ##### Typescript example using a browser's builtin WebAuthn client to request user registration and generate the CompleteRegistration RequestBody
@@ -102,7 +129,7 @@ curl -X POST "/auth/registration" \
 -H "X-DFNS-APPID: 312CE25E-A112-4D45-9965-6175E7C568DD" \
 -H "Authorization: Bearer e3Vd12...9bW3a10" \
 -d '{
-  "kind": "FIDO2",
+  "kind": "Fido2",
   "credentialInfo": {
     "credId": "dV9U2F...DO3dTlr",
     "clientData": "eyJ0eXBlIjoid2ViY...OfeSY",
@@ -115,7 +142,7 @@ curl -X POST "/auth/registration" \
 
 * `credential` is an object containing the following fields
   * `uuid` is a globally unique ID that identifies the user's credential in the Dfns APIs
-  * `kind` is the type of credential the user registered
+  * `kind` is the kind of credential the user registered
   * `name` is the name the user provided for this credential
 * `user` is an object containing the following fields
   * `id` is the globally unique ID that identifies the user in the Dfns APIs
@@ -128,7 +155,7 @@ curl -X POST "/auth/registration" \
 {
     "credential": {
         "uuid": "9db396af-47a8-4466-ae89-6ef47626b361",
-        "type": "FIDO2",
+        "kind": "Fido2",
         "name": ""
     },
     "user": {

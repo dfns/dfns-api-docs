@@ -1,4 +1,4 @@
-# InitUserRegistration
+# Create User Registration Challenge
 
 `POST /auth/registration/init`
 
@@ -12,20 +12,20 @@ Starts a user registration session, returning a challenge that will be used to v
 
 ### Headers  <a href="#request-body" id="request-body"></a>
 
-| Name                | Required/Optional | Description                                                                                                                                                                                                                                                                   |
-| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| X-DFNS-NONCE        | Required          | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: A globally unique value. <br>datetime: The current time of the request in ISO String format, used to expire requests after a period of time.</p> |
-| X-DFNS-APPID        | Required          | ID of the application that was created in the Dfns dashboard                                                                                                                                                                                                                  |
-| X-DFNS-APPSECRET    | Optional          | Secret associated with the application. Required for server-side application configurations.                                                                                                                                                                                  |
-| X-DFNS-APISIGNATURE | Optional          | Signature for the API request. Required for server-side application configurations.                                                                                                                                                                                           |
+| Name | Required/Optional | Description |
+| ---- | ----------------- | ------------
+| X-DFNS-NONCE | Required | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: A globally unique value. <br>datetime: The current time of the request in ISO String format, used to expire requests after a period of time.</p> |
+| X-DFNS-APPID | Required | ID of the application that was created in the Dfns dashboard |
+| X-DFNS-APPSECRET | Optional | Secret associated with the application. Required for server-side application configurations. |
+| X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations. |
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                         | Type   |
-| ------------------- | ----------------- | ------------------------------------------------------------------- | ------ |
-| `username`          | Required          | Email address of the user                                           | String |
-| `registrationCode`  | Required          | The secret value that the user received in their registration email | String |
-| `orgId`             | Required          | ID of the target Org                                                | String |
+| Request body fields | Required/Optional | Description | Type |
+| ------------------- | ----------------- | ----------- | ---- |
+| `username` | Required | Email address of the user | String |
+| `registrationCode` | Required | The secret value that the user received in their registration email | String |
+| `orgId` | Required | ID of the target Org | String |
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
@@ -63,7 +63,7 @@ signatureJwtPayload="{"\
 "\"h-x-dfns-appsecret\":\"$appSecret\","\
 "\"h-x-dfns-nonce\":\"$nonce\","\
 "\"h-x-dfns-useraction\":\"\","\
-"\"r-authority\":\"api.dfns.co\","\
+"\"r-authority\":\"api.dfns.io\","\
 "\"r-body\":\"$( echo -n $payload | base64 | tr '/+' '_-' | tr -d '=')\","\
 "\"r-method\":\"post\","\
 "\"r-path\":\"/auth/registration/init\","\
@@ -82,19 +82,17 @@ curl -X POST "/auth/registration/init" \
 
 ### Response <a href="#response" id="response"></a>
 
-* `kind` identifies the kind of credential in use (FIDO2, Key, or Password)
 * `rp` is a [RelyingParty](#relying-party) object that identifies the application to the user
 * `user` is a [UserIdentifier](#user-identifier) object that identifies the user that is being logged into the Dfns API
-* `temporaryAuthenticationToken` is a temporary authentication token that is used to identify the registration session with the matching call to [CompleteRegistration](./completeUserRegistration.md)
-* Additional fields when `kind` is `FIDO2` or `Key`
-  * `challenge` is a random value used to uniquely identify the request. For FIDO2 and Key, this value will be included in the data that is signed and sent to the matching [CompleteRegistration](./completeUserRegistration.md) call
-  * `pubKeyCredParam` is a list of [PublicKeyCredParam](#public-key-params) objects that identify the signing algorithms that are supported
-  * `attestation` one of the [attestation](#attestation) types that identifies the information needed to verify the user's signing certificate
-* Additional fields when `kind` is `FIDO2`
-  * `excludedCredentials` is a list of [PublicKeyCred](#public-key-cred) objects that identify credentials that the user's WebAuthn client should not use
-  * `authenticatorSelection` is a [AuthenticatorSelection](#authenticator-selection) object that identifies the criteria that the user's WebAuthn client should use when creating the credential
-* Additional fields when `kind` is `Password`
-  * `otpUrl` is the authenticator URL that contains the information needed to setup an authenticator for providing TOTP codes for a second factor authentication
+* `temporaryAuthenticationToken` is a temporary authentication token that is used to identify the registration session with the matching call to [Create User Registration](./completeUserRegistration.md)
+* `supportedCredentialKinds` is a [SupportedCredentialKinds](#supported-credential-kinds) object that contains the list of the kinds of credentials that the user can use when registering
+* `challenge` is a random value used to uniquely identify the request. For Fido2 and Key, this value will be included in the data that is signed and sent to the matching [Create User Registration](./completeUserRegistration.md) call
+* `pubKeyCredParam` is a list of [PublicKeyCredParam](#public-key-params) objects that identify the signing algorithms that are supported
+* `attestation` one of the [attestation](#attestation) types that identifies the information needed to verify the user's signing certificate
+* Additional fields when `kind` is `Fido2`
+* `excludeCredentials` is a list of [PublicKeyCred](#public-key-cred) objects that identify credentials that the user's WebAuthn client should not use
+* `authenticatorSelection` is a [AuthenticatorSelection](#authenticator-selection) object that identifies the criteria that the user's WebAuthn client should use when creating the credential
+* `otpUrl` is the authenticator URL that contains the information needed to setup an authenticator for providing TOTP codes for a second factor authentication
 
 #### RelyingParty <a href="#relying-party" id="relying-party"></a>
 
@@ -106,6 +104,10 @@ curl -X POST "/auth/registration/init" \
 * `id` is an id that ties the user to the credential created in the user's WebAuthn client 
 * `displayName` is the name that will be displayed to the user on the WebAuthn client's display
 * `name` is an additional value that will be displayed to the user on the WebAuthn client's display
+
+#### SupportedCredentialKinds <a href="#supported-credential-kinds" id="supported-credential-kinds"></a>
+* `firstFactor` a list of the credential kinds that are supported as a first factor credential
+* `secondFactor` a list of the credential kinds that are supported as a second factor credential
 
 #### PublicKeyCredParam <a href="#public-key-params" id="public-key-params"></a>
 
@@ -148,22 +150,39 @@ curl -X POST "/auth/registration/init" \
 
 ```json
 {
-    "kind": "FIDO2",
-    "challenge": "38af6e3e-5d91-4e84-953e-e6dc672f2b5e",
-    "challengeIdentifier": "eyJ0eXAiOiJKV1Q...X1bwCg35kbzsjA",
-    "authenticationCode": "YIbrSkqr3WnWzZ1TeqCoQgIg_qw",
-    "allowCredentials": [
-        {
-            "type": "public-key",
-            "id": "dV9U2F...DO3dTlr",
-            "transports": [
-                "usb",
-                "nfc",
-                "ble",
-                "internal"
-            ]
-        }
-    ]
+  "rp": {
+    "id": "dfns.io",
+    "name": "Dfns",
+  },
+  "user": {
+    "id": "4ace3f62-aa38-4583-a622-253cecddb347",
+    "name": "bob@example.co",
+    "displayName": "bob@example.co"
+  },
+  "temporaryAuthenticationToken": "eyJ0eXAiOiJKV1Q...X1bwCg35kbzsjA",
+  "supportedCredentialKinds": {
+    "firstFactor": ["Fido2", "Key", "Password"],
+    "secondFactor": ["Fido2", "Key", "Totp"]
+  },
+  "challenge": "38af6e3e-5d91-4e84-953e-e6dc672f2b5e",
+  "pubKeyCredParam": [
+    {
+      "type": "public-key",
+      "alg": -7
+    },
+    {
+      "type": "public-key",
+      "alg": -257
+    }
+  ],
+  "attestation": "direct",
+  "excludeCredentials": [],
+  "authenticatorSelection": {
+    "residentKey": "required",
+    "requireResidentKey": true,
+    "userVerification": "required"
+  },
+  "otpUrl": "otpauth://totp/dfns:bob@example.co?secret=JBSWY3DPEHPK3PXP&issuer=Dfns",
 }
 ```
 

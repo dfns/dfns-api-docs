@@ -18,7 +18,9 @@ The user authentication token can be used for read operations within the Dfns AP
 
 ```json
 {
-  "userAction": "Login <USER_ID>, without credentials."
+  "userActionPayload": "{\"userId\":\"<USER_ID>\"}",
+  "userActionHttpPath": "/auth/login/delegated",
+  "userActionHttpMethod": "POST"
 }
 ```
 
@@ -26,7 +28,9 @@ The user authentication token can be used for read operations within the Dfns AP
 
 ```json
 {
-  "userAction": "Login e78e2512-d9f3-438c-bd51-ba31fea7c0e1, without credentials."
+  "userActionPayload": "{\"userId\":\"e78e2512-d9f3-438c-bd51-ba31fea7c0e1\"}",
+  "userActionHttpPath": "/auth/login/delegated",
+  "userActionHttpMethod": "POST"
 }
 ```
 
@@ -34,19 +38,19 @@ The user authentication token can be used for read operations within the Dfns AP
 
 ### Headers  <a href="#request-body" id="request-body"></a>
 
-| Name                | Required | Description                                                                                                                                                                                                                                                                    |
-| ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| X-DFNS-NONCE        | Required | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: &#x3C;random value> <br>datetime: &#x3C;The current time of the request in ISO String format, used to expire requests after a period of time></p> |
-| X-DFNS-APPID        | Required | ID of the application that was created in the Dfns dashboard                                                                                                                                                                                                                   |
-| X-DFNS-APPSECRET    | Optional | Secret associated with the application. Required for server-side application configurations.                                                                                                                                                                                   |
-| X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations.                                                                                                                                                                                            |
-| X-DFNS-USERACTION   | Required | The user action signing token returned by the previous call to [CompleteUserActionSigning](../user-action-signing/completeUserActionSigning.md) |
+| Name | Required | Description |
+| ---- | -------- | ----------- |
+| X-DFNS-NONCE | Required | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: &#x3C;random value> <br>datetime: &#x3C;The current time of the request in ISO String format, used to expire requests after a period of time></p> |
+| X-DFNS-APPID | Required | ID of the application that was created in the Dfns dashboard |
+| X-DFNS-APPSECRET | Optional | Secret associated with the application. Required for server-side application configurations. |
+| X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations. |
+| X-DFNS-USERACTION | Required | The user action signing token returned by the previous call to [CompleteUserActionSigning](../user-action-signing/completeUserActionSigning.md) |
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields   | Required/Optional | Description                                                     | Type   |
-| --------------------- | ----------------- | --------------------------------------------------------------- | ------ |
-| `userId`              | Required          | The globally unique ID that identifies the user in the Dfns API | String |
+| Request body fields | Required/Optional | Description | Type |
+| ------------------- | ----------------- | ----------- | ---- |
+| `userId` | Required | The globally unique ID that identifies the user in the Dfns API | String |
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 

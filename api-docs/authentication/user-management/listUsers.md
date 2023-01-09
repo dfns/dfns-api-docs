@@ -12,12 +12,12 @@ TODO
 
 ### Headers  <a href="#request-body" id="request-body"></a>
 
-| Name                | Required | Description                                                                                                                                                                                                                                                                    |
-| ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| X-DFNS-NONCE        | Required | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: &#x3C;random value> <br>datetime: &#x3C;The current time of the request in ISO String format, used to expire requests after a period of time></p> |
-| X-DFNS-APPID        | Required | ID of the application that was created in the Dfns dashboard                                                                                                                                                                                                                   |
-| X-DFNS-APPSECRET    | Optional | Secret associated with the application. Required for server-side application configurations.                                                                                                                                                                                   |
-| X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations.                                                                                                                                                                                            |
+| Name | Required | Description |
+| ---- | -------- | ----------- |
+| X-DFNS-NONCE | Required | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: &#x3C;random value> <br>datetime: &#x3C;The current time of the request in ISO String format, used to expire requests after a period of time></p> |
+| X-DFNS-APPID | Required | ID of the application that was created in the Dfns dashboard |
+| X-DFNS-APPSECRET | Optional | Secret associated with the application. Required for server-side application configurations. |
+| X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations. |
 
 ### Request example <a href="#request-body" id="request-body"></a>
 
@@ -38,6 +38,7 @@ curl "/auth/manage/users" \
 A list of users in the caller's organization. Each item in the list has the following fields:
 
 * `userId` is the globally unique ID that identifies the user in the Dfns API
+* `username` is the username of the user
 * `kind` is the kind of the user. Can be one of the following values:
   * `EndUser` indicates the user is a standard user in the application
   * `CustomerEmployee` indicates the user is a employee of the Dfns customer that owns the caller's organization
@@ -48,6 +49,7 @@ A list of users in the caller's organization. Each item in the list has the foll
 * `scopes` is a list of scopes that are assigned to the user
 * `isServiceAccount` a boolean value indicating if the user is a service account (non-human entity)
 * `isActive` is a boolean value indicating if the user is active
+* `isRegistered` is a boolean value indicating if the user has successfully registered with the Dfns API.
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
@@ -57,6 +59,7 @@ A list of users in the caller's organization. Each item in the list has the foll
     "items": [
         {
             "userId": "e78e2512-d9f3-438c-bd51-ba31fea7c0e1",
+            "username": "bob@example.co",
             "kind": "EndUser",
             "credentialUuid": "",
             "orgId": "example-org-id",
@@ -67,7 +70,8 @@ A list of users in the caller's organization. Each item in the list has the foll
                 ""
             ],
             "isServiceAccount": false,
-            "isActive": true
+            "isActive": true,
+            "isRegistered": true
         },
         ...
     ]
