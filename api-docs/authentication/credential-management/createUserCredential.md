@@ -1,8 +1,8 @@
-# Create User Registration
+# Create User Credential
 
-`POST /auth/registration`
+`POST /auth/credentials`
 
-Completes the registration process.
+Adds a new credential to a user's account.
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
@@ -18,28 +18,16 @@ Completes the registration process.
 | X-DFNS-APPID | Required | ID of the application that was created in the Dfns dashboard |
 | X-DFNS-APPSECRET | Optional | Secret associated with the application. Required for server-side application configurations. |
 | X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations. |
-| Authorization | Required | `temporaryAuthenticationToken` returned from the [InitRegistration](initRegistration) call in Bearer format. |
+| Authorization | Required | `token` returned from the [Create User Login](../login/completeLogin.md) call, in Bearer format. |
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
 | Request body fields | Required/Optional | Description | Type |
 | ------------------- | ----------------- | ----------- | ---- |
-| `firstFactorCredential` | Required | An object that describes the first factor credential that the user is registering | [RegistrationFirstFactor](#registration-first-factor) |
-| `secondFactorCredential` | Optional | An object that describes the second factor credential that the user is registering | [RegistrationSecondFactor](#registration-second-factor) |
-
-#### RegistrationFirstFactor <a href="#registration-first-factor" id="registration-first-factor"></a>
-
-| Fields | Required/Optional | Description | Type |
-| ------ | ----------------- | ----------- | ---- |
+| `challengeIdentifier` | Required | The temporary authentication token returned by the [Create User Credential Challenge](./createUserCredentialChallenge.md) call | String |
+| `credentialName` | Required | The name the user is assigning to this credential | String |
 | `credentialKind` | Required | The kind of credential being registered | String |
-| `credentialInfo` | Required | An object containing information about the credential being registered | <p> `credentialKind === Password`: [PasswordCredentialInformation](#password-credential-information)<br /><br />`credentialKind === Key or Fido2`: [CredentialAssertion](#credential-assertion)</p> |
-
-#### RegistrationSecondFactor <a href="#registration-second-factor" id="registration-second-factor"></a>
-
-| Fields | Required/Optional | Description | Type |
-| ------ | ----------------- | ----------- | ---- |
-| `credentialKind` | Required | The kind of credential being registered | String |
-| `credentialInfo` | Required | An object containing information about the credential being registered | <p> `credentialKind === Totp`: [TotpCredentialInformation](#totp-credential-information)<br /><br />`credentialKind === Key or Fido2`: [CredentialAssertion](#credential-assertion)</p> |
+| `credentialInfo` | Required | An object containing information about the credential being registered | <p> `credentialKind === Password`: [PasswordCredentialInformation](#password-credential-information)<br /><br />`credentialKind === Totp`: [TotpCredentialInformation](#totp-credential-information)<br /><br />`credentialKind === Key or Fido2`: [CredentialAssertion](#credential-assertion)</p> |
 
 #### CredentialAssertion <a href="#credential-assertion" id="credential-assertion"></a>
 
@@ -125,7 +113,7 @@ const completeRegistrationRequestBody = {
 ```bash
 currentTime=$( date -u +"%Y-%m-%dT%H:%M:%SZ" )
 nonce=$( echo "{\"datetime\":\"$currentTime\",\"nonce\":\"$(uuidgen)\"}" | base64 | tr '/+' '_-' | tr -d '=' )
-curl -X POST "/auth/registration" \
+curl -X POST "/auth/credentials" \
 -H "Content-Type: application/json" \
 -H "X-DFNS-NONCE: $nonce" \
 -H "X-DFNS-APPID: 312CE25E-A112-4D45-9965-6175E7C568DD" \
@@ -144,29 +132,30 @@ curl -X POST "/auth/registration" \
 
 ### Response <a href="#response" id="response"></a>
 
-* `credential` is an object containing the following fields
-  * `uuid` is a globally unique ID that identifies the user's credential in the Dfns APIs
-  * `kind` is the kind of credential the user registered
-  * `name` is the name the user provided for this credential
-* `user` is an object containing the following fields
-  * `id` is the globally unique ID that identifies the user in the Dfns APIs
-  * `username` is the registered user's email address
-  * `orgId` is the globally unique ID of the org in which the user was registered
+Returns a CredentialInfo object with the following fields
+* `credentialId` is a device unique ID that identifies the new credential to the authenticator device
+* `credentialUuid` is a globally unique ID that identifies the new credential in the Dfns API
+* `dateCreated` the date and time, in ISO format, that the credential was created
+* `isActive` a boolean indicating if the credential is active. Will always be true
+* `kind` a `CredentialKind` value that identifies the type of credential that was created
+* `name` the name the user gave to the credential
+* `publicKey` is an optional value containing the SHA-256 fingerprint of the public key associated to the credential
+* `relyingPartyId` the relying party for which the credential was registered. For `Fido2` credentials this is the only relying party that can use the credential. It must be a base domain of origin
+* `origin` the origin for which the credential was registered. For `Fido2` credentials this is the only origin where the credential can be used
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {
-    "credential": {
-        "uuid": "9db396af-47a8-4466-ae89-6ef47626b361",
-        "kind": "Fido2",
-        "name": ""
-    },
-    "user": {
-        "id": "1eb4abc9-11ad-46fa-b591-a7f094df6f07",
-        "username": "bob@example.com",
-        "orgId": "82003306-583d-46e0-adfc-3d144b8971fd"
-    }
+  "credentialId": "DmoTYXPDdsrWIL7IgTQ3AahOMe4",
+  "credentialUuid": "9db396af-47a8-4466-ae89-6ef47626b361",
+  "dateCreated": "2023-01-11T19:05:06.773Z",
+  "isActive": true,
+  "kind": "Fido2",
+  "name": "My Yubikey",
+  "publicKey": "SHA256:E2a3ZQEb4...rPqc",
+  "relyingPartyId": "dfns.io",
+  "origin": "https://dashboard.dfns.io"
 }
 ```
 

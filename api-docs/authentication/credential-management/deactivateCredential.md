@@ -1,8 +1,8 @@
-# DeactivateUser
+# Deactivate Credential
 
-`PUT /auth/manage/users/deactivate`
+`PUT /auth/credentials/deactivate`
 
-Deactivates a user that was previously activated. If the user is already deactivated no action is taken
+Deactivates a credential that was previously activated. If the credential is already deactivated no action is taken
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
@@ -10,12 +10,12 @@ TODO
 
 ### User Action Signature Request Body <a href="#user-action-signature" id="user-action-signature"></a>
 
-* `USER_ID` is the ID of the user being deactivated
+* `CRED_UUID` is the ID of the credential being deactivated
 
 ```json
 {
-  "userActionPayload": "{\"userId\":\"<USER_ID>\"}",
-  "userActionHttpPath": "/auth/manage/users/deactivate",
+  "userActionPayload": "{\"credentialUuid\":\"<CRED_UUID>\"}",
+  "userActionHttpPath": "/auth/credentials/deactivate",
   "userActionHttpMethod": "PUT"
 }
 ```
@@ -24,8 +24,8 @@ TODO
 
 ```json
 {
-  "userActionPayload": "{\"userId\":\"e78e2512-d9f3-438c-bd51-ba31fea7c0e1\"}",
-  "userActionHttpPath": "/auth/manage/users/deactivate",
+  "userActionPayload": "{\"credentialUuid\":\"e78e2512-d9f3-438c-bd51-ba31fea7c0e1\"}",
+  "userActionHttpPath": "/auth/credentials/deactivate",
   "userActionHttpMethod": "PUT"
 }
 ```
@@ -47,7 +47,7 @@ TODO
 
 | Request body fields | Required/Optional | Description | Type |
 | ------------------- | ----------------- | ----------- | ---- |
-| `userId` | Required | The UUID of the user that is being deactivated | String |
+| `credentialUuid` | Required | The UUID of the credential that is being deactivated | String |
 
 ### Request example <a href="#request-body" id="request-body"></a>
 
@@ -56,13 +56,13 @@ TODO
 ```bash
 currentTime=$( date -u +"%Y-%m-%dT%H:%M:%SZ" )
 nonce=$( echo "{\"datetime\":\"$currentTime\",\"nonce\":\"$(uuidgen)\"}" | base64 | tr '/+' '_-' | tr -d '=' )
-curl -X PUT "/auth/manage/users/deactivate" \
+curl -X PUT "/auth/credentials/deactivate" \
 -H "Content-Type: application/json" \
 -H "X-DFNS-NONCE: $nonce" \
 -H "X-DFNS-APPID: 312CE25E-A112-4D45-9965-6175E7C568DD" \
 -H "Authoriztion: Bearer <AUTH_TOKEN>" \
 -H "X-DFNS-USERACTION: <USER_ACITON_TOKEN>" \
--d '{"userId": "e78e2512-d9f3-438c-bd51-ba31fea7c0e1"}'
+-d '{"credentialUuid": "e78e2512-d9f3-438c-bd51-ba31fea7c0e1"}'
 ```
 
 ### Response <a href="#response" id="response"></a>

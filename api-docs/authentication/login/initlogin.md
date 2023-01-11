@@ -1,4 +1,4 @@
-# InitLogin
+# Create User Login Challenge
 
 `POST /auth/login/init`
 
@@ -12,12 +12,12 @@ Starts a user login session, returning a challenge that will be used to verify t
 
 ### Headers  <a href="#request-body" id="request-body"></a>
 
-| Name                | Required/Optional | Description                                                                                                                                                                                                                                                                   |
-| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| X-DFNS-NONCE        | Required          | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: A globally unique value. <br>datetime: The current time of the request in ISO String format, used to expire requests after a period of time.</p> |
-| X-DFNS-APPID        | Required          | ID of the application that was created in the Dfns dashboard                                                                                                                                                                                                                  |
-| X-DFNS-APPSECRET    | Optional          | Secret associated with the application. Required for server-side application configurations.                                                                                                                                                                                  |
-| X-DFNS-APISIGNATURE | Optional          | Signature for the API request. Required for server-side application configurations.                                                                                                                                                                                           |
+| Name | Required/Optional | Description |
+| ---- | ----------------- | ----------- |
+| X-DFNS-NONCE | Required | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: A globally unique value. <br>datetime: The current time of the request in ISO String format, used to expire requests after a period of time.</p> |
+| X-DFNS-APPID | Required | ID of the application that was created in the Dfns dashboard |
+| X-DFNS-APPSECRET | Optional | Secret associated with the application. Required for server-side application configurations. |
+| X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations. |
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
@@ -62,7 +62,7 @@ signatureJwtPayload="{"\
 "\"h-x-dfns-appsecret\":\"$appSecret\","\
 "\"h-x-dfns-nonce\":\"$nonce\","\
 "\"h-x-dfns-useraction\":\"\","\
-"\"r-authority\":\"api.dfns.co\","\
+"\"r-authority\":\"api.dfns.io\","\
 "\"r-body\":\"$( echo -n $payload | base64 | tr '/+' '_-' | tr -d '=')\","\
 "\"r-method\":\"post\","\
 "\"r-path\":\"/auth/login/init\","\
@@ -81,32 +81,63 @@ curl -X POST "/auth/login/init" \
 
 ### Response <a href="#response" id="response"></a>
 
-* `kind` identifies the kind of credential in use (FIDO2, Key, or Password)
-* `challenge` is a random value used to uniquely identify the request. For FIDO2 and Key, this value will be included in the data that is signed and sent to the matching /auth/login call
-* `challengeIdentifier` is a temporary authentication token that is used to identify this login session with the matching call to [CompleteLogin](./completeLogin.md)
-* `authenticationCode` is a secret value that can be used to enable cross device login
-* `allowCredentials` is a list of credentials that the user can use to authenticate to the Dfns API. For FIDO2, this list will be passed to the user's WebAuthn client
+* `supportedCredentialKinds` identifies the kind of credentials that can be used to authenticate the user
+    * `kind` is the kind of credential
+    * `factor` is the factor for which the credential can be used
+        * `first` if the credential can be used as a first factor
+        * `second` if the credential can be used as a second factor
+        * `either` if the credential can be used for either first or second factor
+    * `requiresSecondFactor` when true indicates a second factor credential is required if the credential is used as a first factor
+* `challenge` is a random value used to uniquely identify the request. For Fido2 and Key, this value will be included in the data that is signed and sent to the matching /auth/login call
+* `challengeIdentifier` is a temporary authentication token that is used to identify this login session with the matching call to [CreateUserLogin](./completeLogin.md)
+* `externalAuthenticationUrl` is a url containing a secret value that can be used to enable cross device/origin login
+* `allowCredentials` is a list of credentials that the user can use to authenticate to the Dfns API
+    * `key` is the list of keys that the user can use to authenticate to the Dfns API
+    * `webauthn` is the list of WebAuthn credentials that can be used to authenticate to the Dfns API
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {
-    "kind": "FIDO2",
+    "supportedCredentialKinds": [
+        {
+            "kind": "fido2",
+            "factor": "either",
+            "requiresSecondFactor": false
+        },
+        {
+            "kind": "key",
+            "factor": "either",
+            "requiresSecondFactor": false
+        },
+        {
+            "kind": "totp",
+            "factor": "second",
+            "requiresSecondFactor": false
+        },
+        {
+            "kind": "password",
+            "factor": "first",
+            "requiresSecondFactor": true
+        },
+    ],
     "challenge": "38af6e3e-5d91-4e84-953e-e6dc672f2b5e",
     "challengeIdentifier": "eyJ0eXAiOiJKV1Q...X1bwCg35kbzsjA",
-    "authenticationCode": "YIbrSkqr3WnWzZ1TeqCoQgIg_qw",
-    "allowCredentials": [
-        {
-            "type": "public-key",
-            "id": "dV9U2F...DO3dTlr",
-            "transports": [
-                "usb",
-                "nfc",
-                "ble",
-                "internal"
-            ]
-        }
-    ]
+    "externalAuthenticationUrl": "https://dashboard.dfns.io/login?code=YIbrSkqr3WnWzZ1TeqCoQgIg_qw",
+    "allowCredentials": {
+        "key": [
+            {
+                "type": "public-key",
+                "id": "rTdE3...M92Dva"
+            }
+        ],
+        "webauthn": [
+            {
+                "type": "public-key",
+                "id": "dV9U2F...DO3dTlr"
+            }
+        ]
+    }
 }
 ```
 

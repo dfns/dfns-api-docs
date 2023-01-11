@@ -1,96 +1,69 @@
-# DelegatedRegistration
+# Create User Credential Challenge
 
-`POST /auth/registration/delegated`
+`POST /auth/credentials/init`
 
-Creates and registers a user in the caller's organization.
-
-For customers that want to use their own authentication system, while still taking advantage of Dfns' User Action Signing, customers can use `Delegated Registration` to register a user in the Dfns API without the user needing to receive an email from Dfns. This call is only callable by a `Service Account` registered in the organization, and the action needs to be signed by the `Service Account`. On successful creation, the user's registartion challenge will be returned.
+Starts a create user credential session, returning a challenge that will be used to verify the user's identity.
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-TODO
-
-### User Action Signature Request Body <a href="#user-action-signature" id="user-action-signature"></a>
-
-* `USER_KIND` is the kind of user being created. Can be `EndUser` for an application user or `CustomerEmployee` for an employee of Dfns customer that owns the caller's organization
-* `EMAIL` is the email address of the user being created. This is not required to be a valid email address, it just needs to be a unique value for the organization
-* `SCOPES` is the list of scopes that will be assigned to the user
-* `PERMISSIONS` is the list of permissions that will be assigned to the user
-
-```json
-{
-  "userActionPayload": "{\"email\":\"<EMAIL>\",\"kind\":\"<USER_KIND>\",\"scopes\":[<SCOPES>],\"permissions\":[<PERMISSIONS>]}",
-  "userActionHttpPath": "/auth/registration/delegated",
-  "userActionHttpMethod": "POST"
-}
-```
-
-#### Signing Request example <a href="#signing-requsst-example" id="signing-requsst-example"></a>
-
-```json
-{
-  "userActionPayload": "{\"email\":\"jane@example.co\",\"kind\":\"CustomerEmployee\",\"scopes\":[\"auth:users:read\"],\"permissions\":[]}",
-  "userActionHttpPath": "/auth/registration/delegated",
-  "userActionHttpMethod": "POST"
-}
-```
+`N/A`
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
 ### Headers  <a href="#request-body" id="request-body"></a>
 
-| Name | Required | Description |
-| ---- | -------- | ----------- |
+| Name | Required/Optional | Description |
+| ---- | ----------------- | ----------- |
 | X-DFNS-NONCE | Required | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: &#x3C;random value> <br>datetime: &#x3C;The current time of the request in ISO String format, used to expire requests after a period of time></p> |
 | X-DFNS-APPID | Required | ID of the application that was created in the Dfns dashboard |
 | X-DFNS-APPSECRET | Optional | Secret associated with the application. Required for server-side application configurations. |
 | X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations. |
-| X-DFNS-USERACTION | Required | The user action signing token returned by the previous call to [CompleteUserActionSigning](../user-action-signing/completeUserActionSigning.md) |
+| X-DFNS-USERACTION | Required | The user action signing token returned by the previous call to [Create User Action Signature](../user-action-signing/completeUserActionSigning.md) |
 | Authorization | Required | `token` returned from the [Create User Login](../login/completeLogin.md) call, in Bearer format. |
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
 | Request body fields | Required/Optional | Description | Type |
 | ------------------- | ----------------- | ----------- | ---- |
-| `email` | Required | The email of the user being created | String |
-| `kind` | Required | The kind of user being created. Can be `EndUser` for an application user or `CustomerEmployee` for an employee of Dfns customer that owns the caller's organization | String |
-| `publicKey` | Optional | The user's GPG public key used to encrypt the registration email | String |
-| `scopes` | Required | A list of scopes to assign to the user | String |
-| `permissions` | Required | A list of permissions to assign to the user | String |
+| `kind` | Required | The kind of credential being added to the user's account | [CredentialKind](#credential-kind) |
 
-### Request example <a href="#request-body" id="request-body"></a>
+#### CredentialKind <a href="#credential-kind" id="credential-kind"></a>
+| Value | Description |
+| ----- | ----------- |
+| Fido2 | The credential is a webauthn credential |
+| Key | The credential is a public private key pair |
+| Password | The credential is a password |
+| Totp | The credential is a code generation based authenticator compatible with the google authenticator standard. Totp credentials are only accepted as a second factor credential |
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
+### Request example <a href="#request-example.1" id="request-example.1"></a>
+
+#### Sample request (Client-Side Application) <a href="#sample-request" id="sample-request"></a>
 
 ```bash
 currentTime=$( date -u +"%Y-%m-%dT%H:%M:%SZ" )
 nonce=$( echo "{\"datetime\":\"$currentTime\",\"nonce\":\"$(uuidgen)\"}" | base64 | tr '/+' '_-' | tr -d '=' )
-userEmail='jane@example.co'
-kind='CustomerEmployee'
-scopes='["auth:users:read"]'
-permissions='[]'
-curl -X POST "/auth/manage/users" \
+curl -X POST "/auth/registration/init" \
 -H "Content-Type: application/json" \
 -H "X-DFNS-NONCE: $nonce" \
 -H "X-DFNS-APPID: 312CE25E-A112-4D45-9965-6175E7C568DD" \
--H "Authoriztion: Bearer <SERVICE_ACCOUNT_API_KEY>" \
--H "X-DFNS-USERACTION: <USER_ACITON_TOKEN>" \
--d "{\"email\":\"$userEmail\", \"kind\":\"$kind\", \"scopes\":$scopes, \"permissions\":$permissions }"
+-d '{"kind": "Fido2"}'
 ```
 
 ### Response <a href="#response" id="response"></a>
 
 * `rp` is a [RelyingParty](#relying-party) object that identifies the application to the user
 * `user` is a [UserIdentifier](#user-identifier) object that identifies the user that is being logged into the Dfns API
-* `temporaryAuthenticationToken` is a temporary authentication token that is used to identify the registration session with the matching call to [Create User Registration](./completeUserRegistration.md)
-* `supportedCredentialKinds` is a [SupportedCredentialKinds](#supported-credential-kinds) object that contains the list of the kinds of credentials that the user can use when registering
-* `challenge` is a random value used to uniquely identify the request. For Fido2 and Key, this value will be included in the data that is signed and sent to the matching [Create User Registration](./completeUserRegistration.md) call
-* `pubKeyCredParam` is a list of [PublicKeyCredParam](#public-key-params) objects that identify the signing algorithms that are supported
-* `attestation` one of the [attestation](#attestation) types that identifies the information needed to verify the user's signing certificate
+* `temporaryAuthenticationToken` is a challenge identifier token that is used to identify the create credential session with the matching call to [Create User Credential](./createUserCredential.md)
+* `kind` is the kind of credential being created
+* Additional fields when `kind` is `Fido2` or `Key`
+  * `challenge` is a random value used to uniquely identify the request. This value will be included in the data that is signed and sent to the matching [Create User Credential](./createUserCredential.md) call
+  * `pubKeyCredParams` is a list of [PublicKeyCredParam](#public-key-params) objects that identify the signing algorithms that are supported.
+  * `attestation` one of the [attestation](#attestation) types that identifies the information needed to verify the user's signing certificate
 * Additional fields when `kind` is `Fido2`
-* `excludeCredentials` is a list of [PublicKeyCred](#public-key-cred) objects that identify credentials that the user's WebAuthn client should not use
-* `authenticatorSelection` is a [AuthenticatorSelection](#authenticator-selection) object that identifies the criteria that the user's WebAuthn client should use when creating the credential
-* `otpUrl` is the authenticator URL that contains the information needed to setup an authenticator for providing TOTP codes for a second factor authentication
+  * `excludeCredentials` is a list of [PublicKeyCred](#public-key-cred) objects that identify credentials that the user's WebAuthn client should not use
+  * `authenticatorSelection` is a [AuthenticatorSelection](#authenticator-selection) object that identifies the criteria that the user's WebAuthn client should use when creating the credential
+* Additional fields when `kind` is `Totp`
+  * `otpUrl` is the authenticator URL that contains the information needed to setup an authenticator for providing TOTP codes for a second factor authentication
 
 #### RelyingParty <a href="#relying-party" id="relying-party"></a>
 
@@ -107,7 +80,7 @@ curl -X POST "/auth/manage/users" \
 * `firstFactor` a list of the credential kinds that are supported as a first factor credential
 * `secondFactor` a list of the credential kinds that are supported as a second factor credential
 
-#### PublicKeyCredParam <a href="#public-key-params" id="public-key-params"></a>
+#### PublicKeyCredParams <a href="#public-key-params" id="public-key-params"></a>
 
 * `type` will always be `public-key`
 * `alg` is an integer that identifies a signing algorithm. Can be either `-7` for ES256 or `-257` for RS256 
@@ -128,6 +101,7 @@ curl -X POST "/auth/manage/users" \
   * `nfc` for near field communication (NFC) support
   * `ble` for bluetooth support
   * `internal` for non-removable authenticators
+  * `hybrid` for support for multiple different transport types
 
 #### AuthenticatorSelection <a href="#authenticator-selection" id="authenticator-selection"></a>
 
@@ -154,14 +128,11 @@ curl -X POST "/auth/manage/users" \
   },
   "user": {
     "id": "4ace3f62-aa38-4583-a622-253cecddb347",
-    "name": "jane@example.co",
-    "displayName": "jane@example.co"
+    "name": "bob@example.co",
+    "displayName": "bob@example.co"
   },
   "temporaryAuthenticationToken": "eyJ0eXAiOiJKV1Q...X1bwCg35kbzsjA",
-  "supportedCredentialKinds": {
-    "firstFactor": ["Fido2", "Key", "Password"],
-    "secondFactor": ["Fido2", "Key", "Totp"]
-  },
+  "kind": "Fido2",
   "challenge": "38af6e3e-5d91-4e84-953e-e6dc672f2b5e",
   "pubKeyCredParam": [
     {
@@ -179,10 +150,8 @@ curl -X POST "/auth/manage/users" \
     "residentKey": "required",
     "requireResidentKey": true,
     "userVerification": "required"
-  },
-  "otpUrl": "otpauth://totp/dfns:jane@example.co?secret=JBSWY3DPEHPK3PXP&issuer=Dfns",
+  }
 }
-```
 ```
 
 ### Notes <a href="#notes" id="notes"></a>

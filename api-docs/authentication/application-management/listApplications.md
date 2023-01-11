@@ -12,12 +12,13 @@ TODO
 
 ### Headers  <a href="#request-body" id="request-body"></a>
 
-| Name                | Required | Description                                                                                                                                                                                                                                                                    |
-| ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| X-DFNS-NONCE        | Required | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: &#x3C;random value> <br>datetime: &#x3C;The current time of the request in ISO String format, used to expire requests after a period of time></p> |
-| X-DFNS-APPID        | Required | ID of the application that was created in the Dfns dashboard                                                                                                                                                                                                                   |
-| X-DFNS-APPSECRET    | Optional | Secret associated with the application. Required for server-side application configurations.                                                                                                                                                                                   |
-| X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations.                                                                                                                                                                                            |
+| Name | Required | Description |
+| ---- | -------- | ----------- |
+| X-DFNS-NONCE | Required | <p>Random value used to prevent replay attacks. Format is base64url encoded JSON string with the following fields: <br>uuid: &#x3C;random value> <br>datetime: &#x3C;The current time of the request in ISO String format, used to expire requests after a period of time></p> |
+| X-DFNS-APPID | Required | ID of the application that was created in the Dfns dashboard |
+| X-DFNS-APPSECRET | Optional | Secret associated with the application. Required for server-side application configurations. |
+| X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations. |
+| Authorization | Required | `token` returned from the [Create User Login](../login/completeLogin.md) call, in Bearer format. |
 
 ### Request example <a href="#request-body" id="request-body"></a>
 
@@ -48,6 +49,9 @@ A list of applications in the caller's organization. Each item in the list has t
 * `expectedOrigin` is the origin from which the application accepts authentication requests
 * `name` a user provided name that is used to easily identify the application
 * `isActive` is a boolean value indicating if the application is active
+* `credentialUuid` is the globally unique ID that identifies the credential that the application uses to sign API requests
+* `publicKey` is the SHA256 fingerprint of the public key that corresponds to the private key used by the application to sign API requests
+* `credId` is the user assigned ID of the applications key
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
@@ -68,7 +72,10 @@ A list of applications in the caller's organization. Each item in the list has t
             "expectedRpId": "example.io",
             "expectedOrigin": "https://dashboard.example.io",
             "name": "Example Dashboard",
-            "isActive": true
+            "isActive": true,
+            "credentialUuid": "763a8da1-9538-4cc3-a366-3f0101d4c8da",
+            "publicKey": "SHA256:E2a3ZQEb4gDJzWOjoXV8LEjrddnB/sfjHfr0DlyrPqc",
+            "credId": "foUKeF3UFQbp0_uduD8Yv8Xd-GU",
         },
         ...
     ]
