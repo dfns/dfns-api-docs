@@ -18,6 +18,7 @@ Starts a user action signing session, returning a challenge that will be used to
 | X-DFNS-APPID | Required | ID of the application that was created in the Dfns dashboard |
 | X-DFNS-APPSECRET | Optional | Secret associated with the application. Required for server-side application configurations. |
 | X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations. |
+| Authorization | Required | `token` returned from the [Create User Login](../login/completeLogin.md) call, in Bearer format. |
 
 ### Request body <a href="#request-body" id="request-body"></a>
 

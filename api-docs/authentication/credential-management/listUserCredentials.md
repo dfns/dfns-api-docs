@@ -1,8 +1,8 @@
-# ListUsers
+# List User Credentials
 
-`GET /auth/manage/users`
+`GET /auth/credentials`
 
-Lists all users in the caller's organization.
+Lists all credentials for a user.
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
@@ -27,7 +27,7 @@ TODO
 ```bash
 currentTime=$( date -u +"%Y-%m-%dT%H:%M:%SZ" )
 nonce=$( echo "{\"datetime\":\"$currentTime\",\"nonce\":\"$(uuidgen)\"}" | base64 | tr '/+' '_-' | tr -d '=' )
-curl "/auth/manage/users" \
+curl "/auth/credentials" \
 -H "Content-Type: application/json" \
 -H "X-DFNS-NONCE: $nonce" \
 -H "X-DFNS-APPID: 312CE25E-A112-4D45-9965-6175E7C568DD" \
@@ -36,21 +36,16 @@ curl "/auth/manage/users" \
 
 ### Response <a href="#response" id="response"></a>
 
-A list of users in the caller's organization. Each item in the list has the following fields:
-
-* `userId` is the globally unique ID that identifies the user in the Dfns API
-* `username` is the username of the user
-* `kind` is the kind of the user. Can be one of the following values:
-  * `EndUser` indicates the user is a standard user in the application
-  * `CustomerEmployee` indicates the user is a employee of the Dfns customer that owns the caller's organization
-  * `DfnsStaff` indicates the user is a employee of Dfns
-* `credentialUuid` is the globally unique ID that identifies the credential registered to the user in the Dfns API
-* `orgId` is a globally unique ID that identifies the user's organization in the Dfns API
-* `permissions` is a list of permissions that are assigned to the user
-* `scopes` is a list of scopes that are assigned to the user
-* `isServiceAccount` a boolean value indicating if the user is a service account (non-human entity)
-* `isActive` is a boolean value indicating if the user is active
-* `isRegistered` is a boolean value indicating if the user has successfully registered with the Dfns API.
+A list of credentials that are registered for the user. Each item in the list has the following fields:
+* `credentialId` is a device unique ID that identifies the new credential to the authenticator device
+* `credentialUuid` is a globally unique ID that identifies the new credential in the Dfns API
+* `dateCreated` the date and time, in ISO format, that the credential was created
+* `isActive` a boolean indicating if the credential is active. Will always be true
+* `kind` a `CredentialKind` value that identifies the type of credential that was created
+* `name` the name the user gave to the credential
+* `publicKey` is an optional value containing the SHA-256 fingerprint of the public key associated to the credential
+* `relyingPartyId` the relying party for which the credential was registered. For `Fido2` credentials this is the only relying party that can use the credential. It must be a base domain of origin
+* `origin` the origin for which the credential was registered. For `Fido2` credentials this is the only origin where the credential can be used
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
@@ -59,20 +54,15 @@ A list of users in the caller's organization. Each item in the list has the foll
 {
     "items": [
         {
-            "userId": "e78e2512-d9f3-438c-bd51-ba31fea7c0e1",
-            "username": "bob@example.co",
-            "kind": "EndUser",
-            "credentialUuid": "",
-            "orgId": "example-org-id",
-            "permissions": [
-                ""
-            ],
-            "scopes": [
-                ""
-            ],
-            "isServiceAccount": false,
-            "isActive": true,
-            "isRegistered": true
+          "credentialId": "DmoTYXPDdsrWIL7IgTQ3AahOMe4",
+          "credentialUuid": "9db396af-47a8-4466-ae89-6ef47626b361",
+          "dateCreated": "2023-01-11T19:05:06.773Z",
+          "isActive": true,
+          "kind": "Fido2",
+          "name": "My Yubikey",
+          "publicKey": "SHA256:E2a3ZQEb4...rPqc",
+          "relyingPartyId": "dfns.io",
+          "origin": "https://dashboard.dfns.io"
         },
         ...
     ]

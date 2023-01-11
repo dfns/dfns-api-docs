@@ -18,6 +18,7 @@ Completes the user action signing process and provides a signing token that can 
 | X-DFNS-APPID | Required | ID of the application that was created in the Dfns dashboard |
 | X-DFNS-APPSECRET | Optional | Secret associated with the application. Required for server-side application configurations. |
 | X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations. |
+| Authorization | Required | `token` returned from the [Create User Login](../login/completeLogin.md) call, in Bearer format. |
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
@@ -78,13 +79,11 @@ const credential: PublicKeyCredential = await navigator.credentials.get({
   mediation: 'required',
   publicKey: {
     challenge: Buffer.from(authOptions.challenge),
-    allowCredentials: [
-      {
-        id: base64UrlStringToBuffer(authOptions.allowCredentials[0].id),
-        type: 'public-key',
-        transports: authOptions.allowCredentials[0].transports as AuthenticatorTransport[]
-      }
-    ],
+    allowCredentials: authOptions.allowCredentials.webauthn.map((cred) => ({
+      id: base64UrlStringToBuffer(cred.id),
+      type: 'public-key',
+      transports: cred.transports as AuthenticatorTransport[],
+    })),
     rpId: this.options.server,
     userVerification: "required",
     timeout: 60000
@@ -93,14 +92,16 @@ const credential: PublicKeyCredential = await navigator.credentials.get({
 
 const response = credential.response as AuthenticatorAssertionResponse
 const completeUserActionSigningRequestBody = {
-  kind: 'Fido2',
   challengeIdentifier: authOptions.challengeIdentifier,
-  credentialAssertion: {
-    authenticatorData: arrayBufferToBase64UrlString(response.authenticatorData),
-    clientData: arrayBufferToBase64UrlString(response.clientDataJSON),
-    credId: credential.id,
-    signature: arrayBufferToBase64UrlString(response.signature),
-    userHandle: arrayBufferToBase64UrlString(response.userHandle),
+  firstFactor: {
+    kind: 'Fido2',
+    credentialAssertion: {
+      authenticatorData: arrayBufferToBase64UrlString(response.authenticatorData),
+      clientData: arrayBufferToBase64UrlString(response.clientDataJSON),
+      credId: credential.id,
+      signature: arrayBufferToBase64UrlString(response.signature),
+      userHandle: arrayBufferToBase64UrlString(response.userHandle),
+    }
   }
 }
 ```
@@ -119,12 +120,14 @@ curl -X POST "/auth/action" \
 -H "X-DFNS-APPID: 312CE25E-A112-4D45-9965-6175E7C568DD" \
 -H "Authorization: Bearer <UserAuthToken>" \
 -d '{
-  "kind": "Fido2",
   "challengeIdentifier": "eyJ0eXAiOiJKV1Q...X1bwCg35kbzsjA",
-  "credentialAssertion": {
-    "credId": "dV9U2F...DO3dTlr",
-    "clientData": "eyJ0eXBlIjoid2ViY...OfeSY",
-    "signature": "ZTVmM2...WVlMmE0"
+  "firstFactor": {
+    "kind": "Fido2",
+    "credentialAssertion": {
+      "credId": "dV9U2F...DO3dTlr",
+      "clientData": "eyJ0eXBlIjoid2ViY...OfeSY",
+      "signature": "ZTVmM2...WVlMmE0"
+    }
   }
 }'
 ```

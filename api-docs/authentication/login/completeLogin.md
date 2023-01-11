@@ -78,13 +78,11 @@ const credential: PublicKeyCredential = await navigator.credentials.get({
   mediation: 'required',
   publicKey: {
     challenge: Buffer.from(authOptions.challenge),
-    allowCredentials: [
-      {
-        id: base64UrlStringToBuffer(authOptions.allowCredentials[0].id),
-        type: 'public-key',
-        transports: authOptions.allowCredentials[0].transports as AuthenticatorTransport[]
-      }
-    ],
+    allowCredentials: authOptions.allowCredentials.webauthn.map((cred) => ({
+      id: base64UrlStringToBuffer(cred.id),
+      type: 'public-key',
+      transports: cred.transports as AuthenticatorTransport[],
+    })),
     rpId: this.options.server,
     userVerification: "required",
     timeout: 60000
@@ -93,14 +91,16 @@ const credential: PublicKeyCredential = await navigator.credentials.get({
 
 const response = credential.response as AuthenticatorAssertionResponse
 const completeLoginRequestBody = {
-  kind: 'Fido2',
   challengeIdentifier: authOptions.challengeIdentifier,
-  credentialAssertion: {
-    authenticatorData: arrayBufferToBase64UrlString(response.authenticatorData),
-    clientData: arrayBufferToBase64UrlString(response.clientDataJSON),
-    credId: credential.id,
-    signature: arrayBufferToBase64UrlString(response.signature),
-    userHandle: arrayBufferToBase64UrlString(response.userHandle),
+  firstFactor: {
+    kind: 'Fido2',
+    credentialAssertion: {
+      authenticatorData: arrayBufferToBase64UrlString(response.authenticatorData),
+      clientData: arrayBufferToBase64UrlString(response.clientDataJSON),
+      credId: credential.id,
+      signature: arrayBufferToBase64UrlString(response.signature),
+      userHandle: arrayBufferToBase64UrlString(response.userHandle),
+    }
   }
 }
 ```
@@ -118,12 +118,14 @@ curl -X POST "/auth/login" \
 -H "X-DFNS-NONCE: $nonce" \
 -H "X-DFNS-APPID: 312CE25E-A112-4D45-9965-6175E7C568DD" \
 -d '{
-  "kind": "Fido2",
   "challengeIdentifier": "eyJ0eXAiOiJKV1Q...X1bwCg35kbzsjA",
-  "credentialAssertion": {
-    "credId": "dV9U2F...DO3dTlr",
-    "clientData": "eyJ0eXBlIjoid2ViY...OfeSY",
-    "userHandle": "ZTVmM2...WVlMmE0"
+  "firstFactor": {
+    "kind": "Fido2",
+    "credentialAssertion": {
+      "credId": "dV9U2F...DO3dTlr",
+      "clientData": "eyJ0eXBlIjoid2ViY...OfeSY",
+      "userHandle": "ZTVmM2...WVlMmE0"
+    }
   }
 }'
 ```

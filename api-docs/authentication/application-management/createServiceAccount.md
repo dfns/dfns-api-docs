@@ -1,4 +1,4 @@
-# CreateApplication
+# Create Service Account
 
 `POST /auth/manage/apps`
 
@@ -39,6 +39,7 @@ TODO
 | X-DFNS-APPSECRET | Optional | Secret associated with the application. Required for server-side application configurations. |
 | X-DFNS-APISIGNATURE | Optional | Signature for the API request. Required for server-side application configurations. |
 | X-DFNS-USERACTION | Required | The user action signing token returned by the previous call to [CompleteUserActionSigning](../user-action-signing/completeUserActionSigning.md) |
+| Authorization | Required | `token` returned from the [Create User Login](../login/completeLogin.md) call, in Bearer format. |
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
