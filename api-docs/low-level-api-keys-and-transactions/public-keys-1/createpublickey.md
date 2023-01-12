@@ -10,9 +10,9 @@ PublicKeys:Create
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                              | Type    |
-| ------------------- | ----------------- | ------------------------------------------------------------------------ | ------- |
-| `isEddsa`           | Required          | Specify true for an EdDSA signature scheme or false for a  ECDSA scheme. | Boolean |
+| Request body fields | Required/Optional | Description                                                                                            | Type    |
+| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------ | ------- |
+| `isEddsa`           | Optional          | Specify true for an EdDSA signature scheme or false for a  ECDSA scheme. Defaults to ECDSA if omitted. | Boolean |
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
