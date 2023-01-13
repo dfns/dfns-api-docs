@@ -83,7 +83,7 @@ The Dfns Permissions model relies on the following operation enums:
 
 Dfns supports 24 Blockchains today and we are adding more constantly. Here is the valid list of values for `network` parameters:&#x20;
 
-| network Symbol | Network Name                                | testnet RPC                                                                                            |
+| Network Symbol | Network Name                                | Testnet RPC                                                                                            |
 | -------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | ADA            | Cardano (Currently undergoing maintenance)  | [https://cardano-testnet.blockfrost.io/api/v0](https://cardano-testnet.blockfrost.io/api/v0)           |
 | ALGO           | Algorand (Currently undergoing maintenance) | [https://testnet-algorand.api.purestake.io/ps2](https://testnet-algorand.api.purestake.io/ps2)         |
@@ -95,6 +95,7 @@ Dfns supports 24 Blockchains today and we are adding more constantly. Here is th
 | CFG            | Centrifuge                                  | (only mainnet) wss://fullnode.parachain.centrifuge.io                                                  |
 | DOGE           | Dogecoin                                    | (only mainnet) [https://api.blockcypher.com/v1/doge/main](https://api.blockcypher.com/v1/doge/main)    |
 | DOT            | Polkadot (Currently undergoing maintenance) | [https://dot.getblock.io/testnet](https://dot.getblock.io/testnet)                                     |
+| EGLD           | Elrond                                      | [https://testnet-api.elrond.com/](https://testnet-api.elrond.com/)                                     |
 | ETH            | Ethereum                                    | [https://rpc.ankr.com/eth\_goerli](https://rpc.ankr.com/eth\_goerli)                                   |
 | FTM            | Fantom                                      | [https://rpc.ankr.com/fantom\_testnet](https://rpc.ankr.com/fantom\_testnet)                           |
 | KSM            | Kusama (Currently undergoing maintenance)   | (only mainnet) [https://ksm.getblock.io/mainnet](https://ksm.getblock.io/mainnet)                      |

@@ -4,6 +4,12 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Jan 13, 2022
+
+* Released support for Elrond chain
+* Added indexing support for Polygon and Binance Smart Chain
+* Misc bug fixes
+
 ### Dec 19, 2022
 
 * Fixed a bug in [BroadcastTransaction](low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction.md) where the `value` parameter was being interpreted in ETH instead of WEI.&#x20;
