@@ -5,15 +5,16 @@ AVAX, AVAX, Avalanche, Avalanche,18
 BTC, BTC, Bitcoin. The first and the only., Bitcoin,8
 DOGE, DOGE, Elon’s favorite Dog., Dogecoin,8
 NEAR, NEAR, Near native currency, Near Blockchain,24
-DOT, DOT, Polkadot native currency, Polkadot,12
+DOT, DOT, Polkadot native currency, Polkadot,10
 CFG, CFG, Centrifuge native currency, Centrifuge,18
 ETH, ETH, Ethereum, Ethereum,18
+EGLD, EGLD, Elrond, Elrond,18
 FTM, FTM, Fantom, Fantom,18
 OP, OP, Optimism, Optimism,18
 sFUEL, sFUEL, Skale, Skale,18
 ARB, ARB, Arbitrum, Arbitrum,18
 LTC, LTC, Lite Coin native currency, Litecoin,8
-KSM, KSM, Kusama – Polkadot’s Canary network, Kusama,10
+KSM, KSM, Kusama – Polkadot’s Canary network, Kusama,12
 TRX, TRX, Tron native currency, Tron,6
 XLM, XLM, Stellar native coin., Stellar,7
 XRP, XRP, Ripple., Ripple,6
@@ -26,7 +27,7 @@ EUR, EUR, Euro, Euro,2
 USD, USD, US Dollar, US Dollar,2
 GBP, GBP, Pound sterling, Pound sterling,2
 CHF, CHF, Swiss franc, Swiss franc,2
-BNB, BNB, Binance Coin, Binance Coin,8
+BNB, BNB, Binance Coin, Binance Coin,18
 EURL_XTZ, EURL.XTZ, EURL token tezos,EURL token tezos,6
 WAVAX_AVAX, WAVAX.AVAX, Wrapped AVAX, Wrapped AVAX,18
 UNI_ETH, UNI.ETH, UniSwap token, Uniswap,18
