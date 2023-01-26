@@ -1,6 +1,6 @@
 # Table of contents
 
-* [👋 Welcome](WELCOME.md)
+* [👋 Welcome](README.md)
 
 ## Getting Started
 
@@ -100,6 +100,3 @@
 
 * [Fiat On/Offboarding](integrations/fiat-on-offboarding.md)
 
-## Details
-
-* [Readme](README.md)
