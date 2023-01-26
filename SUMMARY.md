@@ -100,6 +100,6 @@
 
 * [Fiat On/Offboarding](integrations/fiat-on-offboarding.md)
 
-##
+## Details
 
 * [Readme](README.md)
