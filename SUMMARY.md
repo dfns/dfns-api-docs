@@ -1,6 +1,6 @@
 # Table of contents
 
-* [👋 Welcome](README.md)
+* [Welcome](README.md)
 
 ## Getting Started
 
@@ -16,7 +16,6 @@
 
 * [Introduction](api-docs/README.md)
 * [High Level API: Asset Accounts & Payments](api-docs/high-level-api-asset-accounts-and-payments/README.md)
-  * [Assets Overview](api-docs/high-level-api-asset-accounts-and-payments/assets.md)
   * [Asset Accounts](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/README.md)
     * [CreateAssetAccount](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/createassetaccount.md)
     * [GetAssetAccountById](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbyid.md)
@@ -99,4 +98,3 @@
 ## Integrations
 
 * [Fiat On/Offboarding](integrations/fiat-on-offboarding.md)
-
