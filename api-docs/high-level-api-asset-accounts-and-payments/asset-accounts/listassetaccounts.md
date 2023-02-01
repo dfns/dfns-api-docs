@@ -31,8 +31,6 @@ curl "/assets/asset-accounts/" \
          "address": "0x1686658c32862B6A29174F5de7a0bB0d66774956",
          "dateUpdate": "2022-07-13T17:32:56.106Z",
          "name": "Test account",
-         "groupSize": 5,
-         "groupThreshold": 3,
          "id": "aa-iowa-washington-7a99aa2fd5",
          "publicKey": "xkeypub1addwnpepq2pqd7ethr4kn7yuj0z4ul80q0ml5jv6y8lgfzheltllu6y3e93j25we5nk",
          "orgId": "cu-purple-pip-1b417b958500",

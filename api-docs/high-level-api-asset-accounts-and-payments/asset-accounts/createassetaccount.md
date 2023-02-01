@@ -40,8 +40,6 @@ In most cases, the initial status should be set to "Creating".  Call [GetAssetAc
   "status": "Creating",
   "assetSymbol": "ETH",
   "name": "My ETH account",
-  "groupSize": 5,
-  "groupThreshold": 3,
   "dateCreated": "2022-08-04T14:44:21.278Z",
   "dateUpdate": "2022-08-04T14:44:21.278Z"
 }

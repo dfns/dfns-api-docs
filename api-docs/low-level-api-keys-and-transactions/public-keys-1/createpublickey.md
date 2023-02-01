@@ -33,7 +33,5 @@ curl -X POST "/public-keys/" \
 {
     "id": "pk-shade-wisconsin-c28c38b2e8",
     "publicKey": "03834ac098b2ce68f230940c3d30d85cb0a84623063f0fcba0e64dacf5a825e91c",
-    "groupSize": 3,
-    "groupThreshold": 2
 }
 ```
