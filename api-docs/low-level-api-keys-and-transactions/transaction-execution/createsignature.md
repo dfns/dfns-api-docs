@@ -26,7 +26,7 @@ Policy Engine for [Policies](../../policy-management/policies/createpolicy.md) w
 | ------------------- | ----------------- | ------------------------------------------------- | ------ |
 | `hash`              | Required          | Any message to sign.  Usually a transaction hash. | String |
 
-Note: Any size message can be signed.  For ECDSA signatures, first hash the message with SHA256 and then pass the result in the `hash` body parameter as exactly 32 bytes are required as input.  For EdDSA signatures, the original message is sent in the `hash` parameter regardless of length.&#x20;
+Note: Any size message can be signed.  For ECDSA signatures, first hash the message with SHA256 and then pass the result in the `hash` body parameter (exactly 32 bytes are required as input).  For EdDSA signatures, the original message is sent in the `hash` parameter and accepted regardless of length.&#x20;
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
