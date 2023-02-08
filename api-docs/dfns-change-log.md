@@ -4,7 +4,18 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
-### Jan 13, 2022
+### Feb 8, 2023
+
+* Added support for agEUR token on Polygon (AGEUR.MATIC `assetSymbol`)
+* Updated testnet for SKALE blockchain
+
+### Jan 30, 2023
+
+* Added support for Solana tokens
+* Deprecated `groupSize` and `groupThreshold` body paramters for key generation
+* Polygon payments fix for "transaction underpriced" error
+
+### Jan 13, 2023
 
 * Released support for Elrond chain
 * Added indexing support for Polygon and Binance Smart Chain
