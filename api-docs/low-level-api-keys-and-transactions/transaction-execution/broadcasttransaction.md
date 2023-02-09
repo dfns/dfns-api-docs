@@ -1,24 +1,14 @@
 # BroadcastTransaction
 
-`POST /public-keys/transactions?read=true/false`
+`POST /public-keys/transactions`
 
-Broadcast transaction enables communication with any arbitrary smart contract by replicating the native transaction protocol fields in the body of the request.   It can be used to read from the chain, make native payments, call smart contract functions, and even deploy new smart contracts.&#x20;
+Broadcast transaction enables communication with any arbitrary smart contract by replicating the native transaction protocol fields in the body of the request.   It can be used to make native payments, call smart contract functions, and even deploy new smart contracts.  Note reading from a "view" function requires a separate endpoint which will be released shortly. &#x20;
 
 Currently, only EVM compatible chains are supported. We plan to add additional chain support in the future. Please don't hesitate to contact us if you need support for a non-EVM chain.&#x20;
 
 ### Required Permissions
 
 Transactions:Create
-
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
-
-#### Query string parameters <a href="#request-example.1" id="request-example.1"></a>
-
-| Path parameter | Description                                                                                                                                                                    |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `read`         | Boolean indicating whether the request is read-only (ie. to a ["view" function](https://www.geeksforgeeks.org/solidity-view-and-pure-functions/)).  If omitted, assumed false. |
-
-
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
@@ -49,7 +39,7 @@ For more on these fields, see the [official Ethereum documentation](https://ethe
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl -X POST "/public-keys/transactions?read=false" \
+curl -X POST "/public-keys/transactions" \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <TOKEN>" \
 -d '{
@@ -57,8 +47,7 @@ curl -X POST "/public-keys/transactions?read=false" \
     "network": "ETH",
     "templateKind": "EvmGenericTx",
     "data": "0x368b87720000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000b48656c6c6f204d616a6964000000000000000000000000000000000000000000",
-    "to": "0xeE1C5C88026AA51c653155276dE578d7c02aDB0c",
-    "gasLimit": "1000000"
+    "to": "0xeE1C5C88026AA51c653155276dE578d7c02aDB0c"
 }'
 ```
 
