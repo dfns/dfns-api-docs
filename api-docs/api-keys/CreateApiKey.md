@@ -12,9 +12,10 @@ ApiKeys:Create
 
 ### Request body <a href="#request-example.1" id="request-example.1"></a>
 
-| Request body fields | Required/Optional | Description            | Type   |
-| ------------------- | ----------------- | ---------------------- | ------ |
-| `name`              | Required          | A name for the API Key | String |
+| Request body fields | Required/Optional | Description                                            | Type                     |
+| ------------------- | ----------------- | ------------------------------------------------------ | ------------------------ |
+| `name`              | Required          | A name for the API Key                                 | String                   |
+| `scopes`            | Required          | This field will soon be deprecated.  Please pass "{}". | Pass an empty object: {} |
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
