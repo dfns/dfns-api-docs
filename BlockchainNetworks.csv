@@ -1,20 +1,28 @@
 Ticker, Routing, Documentation, Label,Smallest unit Decimal (number)
 ADA, ADA, Cardano native currency, Cardano,6
 ALGO, ALGO, Algorand native currency, Algorand,6
+ARB, ARB, Arbitrum, Arbitrum,18
+ATOM, ATOM, Cosmos., Cosmos,6
+AVAX, AVAX, Avalanche, Avalanche,18
+BNB, BNB, Binance Coin, Binance Coin,18
 BTC, BTC, Bitcoin. The first and the only., Bitcoin,8
+CFG, CFG, Centrifuge native currency, Centrifuge,18
+DAG, Dag, Constellation native currency, Constellation,8
 DOGE, DOGE, Elon’s favorite Dog., Dogecoin,8
 DOT, DOT, Polkadot native currency, Polkadot,12
-CFG, CFG, Centrifuge native currency, Centrifuge,18
-NEAR, NEAR, Near native currency, Near Blockchain,24
 ETH, ETH, Ethereum, Ethereum,18
-ARB, ARB, Arbitrum, Arbitrum,18
-LTC, LTC, Lite Coin native currency, Litecoin,8
+FTM, FTM, Fantom, Fantom,18
 KSM, KSM, Kusama – Polkadot’s Canary network, Kusama,10
-XLM, XLM, Stellar native coin., Stellar,7
-XRP, XRP, Ripple., Ripple,6
-ATOM, ATOM, Cosmos., Cosmos,6
+LTC, LTC, Lite Coin native currency, Litecoin,8
 MATIC, MATIC, Polygon, Polygon,18
-XTZ, XTZ, Tezos native currency, Tezos,6
-SOL, SOL, Solana, Solana,9
+NEAR, NEAR, Near native currency, Near Blockchain,24
+OP, OP, Optimism, Optimism,18
 POLYX, POLYX, Polymesh, Polymesh,0
-BNB, BNB, Binance Coin, Binance Coin,8
+SOL, SOL, Solana, Solana,9
+TRX, TRX, Tron Coin, Tron Coin,6
+XLM, XLM, Stellar native coin, Stellar,7
+XRP, XRP, Ripple, Ripple,6
+XTZ, XTZ, Tezos native currency, Tezos,6
+sFUEL, sFUEL, Skale, Skale,18
+EGLD, EGLD, Elrond, Elrond,18
+AMB, AMB, AirDAO, AirDAO,18

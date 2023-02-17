@@ -5,6 +5,7 @@ AVAX, AVAX, Avalanche, Avalanche,18
 BTC, BTC, Bitcoin. The first and the only., Bitcoin,8
 DOGE, DOGE, Elon’s favorite Dog., Dogecoin,8
 NEAR, NEAR, Near native currency, Near Blockchain,24
+DAG, DAG, Constellation native currency, Constellation,8
 DOT, DOT, Polkadot native currency, Polkadot,10
 CFG, CFG, Centrifuge native currency, Centrifuge,18
 ETH, ETH, Ethereum, Ethereum,18
@@ -13,6 +14,7 @@ FTM, FTM, Fantom, Fantom,18
 OP, OP, Optimism, Optimism,18
 sFUEL, sFUEL, Skale, Skale,18
 ARB, ARB, Arbitrum, Arbitrum,18
+AMB, AMB, AirDAO native currency, AirDAO,18
 LTC, LTC, Lite Coin native currency, Litecoin,8
 KSM, KSM, Kusama – Polkadot’s Canary network, Kusama,12
 TRX, TRX, Tron native currency, Tron,6
@@ -32,6 +34,7 @@ EURL_XTZ, EURL.XTZ, EURL token tezos,EURL token tezos,6
 WAVAX_AVAX, WAVAX.AVAX, Wrapped AVAX, Wrapped AVAX,18
 UNI_ETH, UNI.ETH, UniSwap token, Uniswap,18
 AAVE_MATIC,AAVE.MATIC,Aave,Aave,18
+AGEUR_MATIC,AGEUR.MATIC,agEUR,agEUR,18
 AMP_MATIC,AMP.MATIC,Amp,Amp,18
 BAL_MATIC,BAL.MATIC,Balancer,Balancer,18
 BAND_MATIC,BAND.MATIC,Band Protocol,Band Protocol,18
@@ -9300,3 +9303,71 @@ WAL_ETH,WAL.ETH,The Wasted Lands,The Wasted Lands,18
 PLY_ETH,PLY.ETH,PlayNity,PlayNity,6
 RMTX_ETH,RMTX.ETH,RematicEGC,RematicEGC,18
 USDT_TRX,USDT.TRX,Tether,Tether,6
+ABR_SOL,ABR.SOL,Allbridge,Allbridge,9
+AKT_SOL,AKT.SOL,Alexey Kulikov Token,Alexey Kulikov Token,9
+ALEPH_SOL,ALEPH.SOL,tuALEPH,tuALEPH,6
+AR_SOL,AR.SOL,Raffa,Raffa,0
+ATLAS_SOL,ATLAS.SOL,Star Atlas,Star Atlas,8
+AUDIO_SOL,AUDIO.SOL,Audius (Portal),Audius (Portal),8
+AURY_SOL,AURY.SOL,Aurory,Aurory,9
+BAND_SOL,BAND.SOL,Band,Band,9
+BTC_SOL,BTC.SOL,Wrapped Bitcoin (Sollet),Wrapped Bitcoin (Sollet),6
+C98_SOL,C98.SOL,Coin98,Coin98,6
+CATO_SOL,CATO.SOL,CATO,CATO,9
+CHEEMS_SOL,CHEEMS.SOL,Cheems,Cheems,4
+COPE_SOL,COPE.SOL,COPE,COPE,6
+CRP_SOL,CRP.SOL,CropperFinance,CropperFinance,9
+CRWNY_SOL,CRWNY.SOL,Crowny token,Crowny token,6
+CVC_SOL,CVC.SOL,Civic,Civic,8
+CYS_SOL,CYS.SOL,Cykura,Cykura,6
+DFL_SOL,DFL.SOL,DeFi Land,DeFi Land,9
+DIA_SOL,DIA.SOL,Diamond for MOTS Game,Diamond for MOTS Game,0
+DXL_SOL,DXL.SOL,Dexlab,Dexlab,6
+FIDA_SOL,FIDA.SOL,Bonfida,Bonfida,6
+FRONT_SOL,FRONT.SOL,Frontier Token (Portal),Frontier Token (Portal),8
+GARI_SOL,GARI.SOL,Gari,Gari,9
+GRT_SOL,GRT.SOL,Graph Token (Portal),Graph Token (Portal),8
+HXRO_SOL,HXRO.SOL,Hxro (Portal),Hxro (Portal),8
+IVN_SOL,IVN.SOL,Investin Protocol,Investin Protocol,6
+JET_SOL,JET.SOL,Jet Protocol,Jet Protocol,9
+KIN_SOL,KIN.SOL,KIN,KIN,5
+LEONIDAS_SOL,LEONIDAS.SOL,Leonidas Token,Leonidas Token,9
+LIKE_SOL,LIKE.SOL,Only1 (LIKE),Only1 (LIKE),9
+LINK_SOL,LINK.SOL,ChainLink Token (Portal),ChainLink Token (Portal),8
+LIQ_SOL,LIQ.SOL,LIQ Protocol,LIQ Protocol,6
+MAPS_SOL,MAPS.SOL,MAPS,MAPS,6
+MBS_SOL,MBS.SOL,MonkeyBucks,MonkeyBucks,6
+MEDIA_SOL,MEDIA.SOL,Media Network,Media Network,6
+MNGO_SOL,MNGO.SOL,Mango,Mango,6
+MOLA_SOL,MOLA.SOL,MOONLANA,MOONLANA,9
+MSOL_SOL,MSOL.SOL,MetaSOL,MetaSOL,0
+ORCA_SOL,ORCA.SOL,Orca,Orca,6
+OXS_SOL,OXS.SOL,Oxbull Sol,Oxbull Sol,9
+OXY_SOL,OXY.SOL,Oxygen Protocol,Oxygen Protocol,6
+POLIS_SOL,POLIS.SOL,Star Atlas DAO,Star Atlas DAO,8
+PORT_SOL,PORT.SOL,Port Finance Token,Port Finance Token,6
+PRISM_SOL,PRISM.SOL,PRISM,PRISM,6
+RAY_SOL,RAY.SOL,Raydium,Raydium,6
+RIN_SOL,RIN.SOL,Aldrin,Aldrin,9
+ROPE_SOL,ROPE.SOL,Rope Token,Rope Token,9
+SAIL_SOL,SAIL.SOL,SAIL,SAIL,6
+SAMO_SOL,SAMO.SOL,Samoyed Coin,Samoyed Coin,9
+SAMU_SOL,SAMU.SOL,Samusky Token,Samusky Token,9
+SAO_SOL,SAO.SOL,Sator,Sator,6
+SBR_SOL,SBR.SOL,Saber Protocol Token,Saber Protocol Token,6
+SLIM_SOL,SLIM.SOL,Solanium,Solanium,6
+SLRS_SOL,SLRS.SOL,Solrise Finance,Solrise Finance,6
+SNY_SOL,SNY.SOL,Synthetify,Synthetify,6
+SOLAPE_SOL,SOLAPE.SOL,SolAPE Token,SolAPE Token,9
+SOL_SOL,SOL.SOL,Wrapped SOL,Wrapped SOL,9
+SPWN_SOL,SPWN.SOL,Bitspawn Token,Bitspawn Token,9
+SRM_SOL,SRM.SOL,Serum,Serum,6
+STEP_SOL,STEP.SOL,Step,Step,9
+TULIP_SOL,TULIP.SOL,Tulip,Tulip,6
+USDC_SOL,USDC.SOL,USD Coin,USD Coin,6
+USDT_SOL,USDT.SOL,USDT,USDT,6
+UXP_SOL,UXP.SOL,UXP Governance Token,UXP Governance Token,9
+WOOF_SOL,WOOF.SOL,WOOF,WOOF,6
+XTAG_SOL,XTAG.SOL,XTAG,XTAG,9
+YARD_SOL,YARD.SOL,SolYard Finance,SolYard Finance,9
+stSOL_SOL,stSOL.SOL,Lido Staked SOL,Lido Staked SOL,9
