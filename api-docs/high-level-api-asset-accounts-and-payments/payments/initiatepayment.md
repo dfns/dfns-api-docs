@@ -17,9 +17,9 @@ Policy Engine for [Policies](../../policy-management/policies/createpolicy.md) w
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter   | Description                                                                                                        |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `AssetAccountId` | <p>Unique identifier of the <code>AssetAccount</code> like:<br><br>aa<code>-orange-magnesium-a0606d08b2</code></p> |
+| Path parameter   | Description                                                                                                                                                                                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AssetAccountId` | <p>Unique identifier of the <code>AssetAccount</code> like:<br><br>aa<code>-orange-magnesium-a0606d08b2</code><br><code></code><br><code></code>This is the account that is sending the payment and will be charged any associated network fees (ie. gas). </p> |
 
 ### Request body <a href="#request-example.1" id="request-example.1"></a>
 
