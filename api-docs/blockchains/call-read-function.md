@@ -12,16 +12,16 @@ Blockchains:CallRead
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Description                                                                                                                                                                                                                                     |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `network`      | Enumerated type representing the Blockchain network from the list found [here](https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#network).  Currently EVM chains are supported: ETH, MATIC, BNB, AVAX-C, sFUEL, FTM, OP, AMB |
+| Path parameter | Description                                                                                                                                                                                                                                          |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `network`      | Enumerated type representing the Blockchain network from the list found [here](https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#network).  Currently EVM chains are supported: ETH, MATIC, BNB, AVAX-C, sFUEL, FTM, OP, ARB, AMB |
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                                                                                                                                                                                                                                                                                            | Type   |
-| ------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| `data`              | Required          | Encoded hex string indicating which function in the smart contract to call with which parameters. Can also be an entire encoded contract in the case of contract deployment. For more information, see the [encodeFunctionCall web3.js documentation](https://web3js.readthedocs.io/en/v1.2.11/web3-eth-abi.html#encodefunctioncall).  | String |
-| `contract`          | Required          | Address of the contract to call                                                                                                                                                                                                                                                                                                        | String |
+| Request body fields | Required/Optional | Description                                                                                                                                                                                                                                                  | Type   |
+| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
+| `data`              | Required          | Encoded hex string indicating which function in the smart contract to call with which parameters.  For more information, see the [encodeFunctionCall web3.js documentation](https://web3js.readthedocs.io/en/v1.2.11/web3-eth-abi.html#encodefunctioncall).  | String |
+| `contract`          | Required          | Address of the contract to call                                                                                                                                                                                                                              | String |
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
@@ -41,7 +41,7 @@ curl -X POST "/blockchains/ETH/call-read-function" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-Note responses are hex encoded.&#x20;
+Note the `data` field in the response is hex encoded.&#x20;
 
 ```json
 {
