@@ -4,6 +4,12 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Feb 17, 2023
+
+* Added a new endpoint to call `view` (aka read-only) contract methods
+* Deployed chain indexing on BTC and LTC
+* Deployed support for Constellation network (DAG) and Ambrosus network (AirDAO)
+
 ### Feb 8, 2023
 
 * Added support for agEUR token on Polygon (AGEUR.MATIC `assetSymbol`)
