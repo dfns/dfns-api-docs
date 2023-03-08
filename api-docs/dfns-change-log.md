@@ -4,6 +4,16 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Mar 8, 2023
+
+* Added `nonce` to BroadcastTransaction API responses
+* Payment note broadcasted as memo in XRP transactions
+
+### Feb 28, 2023
+
+* Added new ListTransactions endpoint
+* Throughput enhancements to our indexing pipeline
+
 ### Feb 17, 2023
 
 * Added a [new endpoint](https://dfns.gitbook.io/dfns-docs/api-docs/blockchains/call-read-function) to call `view` (aka read-only) contract methods
