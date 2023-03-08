@@ -37,6 +37,7 @@
     * [GetSignatureById](api-docs/low-level-api-keys-and-transactions/transaction-execution/getsignaturebyid.md)
     * [BroadcastTransaction](api-docs/low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction.md)
     * [GetTransactionById](api-docs/low-level-api-keys-and-transactions/transaction-execution/gettransactionbyid.md)
+    * [List Transactions](api-docs/low-level-api-keys-and-transactions/transaction-execution/list-transactions.md)
 * [Blockchains](api-docs/blockchains/README.md)
   * [Call Read Function](api-docs/blockchains/call-read-function.md)
 * [Policy Engine](api-docs/policy-management/README.md)

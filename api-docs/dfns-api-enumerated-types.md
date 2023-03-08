@@ -75,6 +75,7 @@ The Dfns Permissions model relies on the following operation enums:
 * `Approved` - Payment is approved to be executed, it will soon be broadcasted
 * `Rejected` - Payment was rejected by policy engine
 * `Executed` - Payment is executed and fed to a blockchain node
+* `Failed` - There was an error during broadcasting of the payment
 * `Confirmed` - Payment is considered Confirmed when it's part of a given block and contains block information
 
 </details>
