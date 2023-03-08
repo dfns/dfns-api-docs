@@ -11,7 +11,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Feb 28, 2023
 
-* Added new ListTransactions endpoint
+* Added new [ListTransactions endpoint](low-level-api-keys-and-transactions/transaction-execution/list-transactions.md)
 * Throughput enhancements to our indexing pipeline
 
 ### Feb 17, 2023
