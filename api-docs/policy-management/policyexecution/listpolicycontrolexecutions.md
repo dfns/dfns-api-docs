@@ -12,11 +12,11 @@ PolicyControlExecutions:Read
 
 #### Query parameters <a href="#query-parameters" id="query-parameters"></a>
 
-| Query string parameter        | Required/Optional | Description                                                                                                            |
-| ----------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `onlyMyPendingApprovals=true` | Optional          | Returns only those policy control executions awaiting approval by the user sending the API request.                    |
-| `onlyInitiatedByMe=true`      | Optional          | Returns only those policy control executions initiated by a transaction sent by the user sending the API request.      |
-| `activityId=pa-oven-arn-4k08` | Optional          | Returns policy control executions that are executed (and maybe need approval) as part of activity of id `activityId`.  |
+| Query string parameter        | Required/Optional | Description                                                                                                        |
+| ----------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `onlyMyPendingApprovals=true` | Optional          | Returns only those policy control executions awaiting approval by the user sending the API request.                |
+| `onlyInitiatedByMe=true`      | Optional          | Returns only those policy control executions initiated by a transaction sent by the user sending the API request.  |
+| `activityId=pa-oven-arn-4k08` | Optional          | Returns policy control executions triggered by the specified `activityId`.                                         |
 
 ### Request Example <a href="#request-body" id="request-body"></a>
 
