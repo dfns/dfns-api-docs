@@ -4,6 +4,11 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Mar 14, 2023
+
+* Added blockchain indexing for SOL and XRP
+* Added `activityId` query string param to [List policy control executions ](policy-management/policyexecution/listpolicycontrolexecutions.md)
+
 ### Mar 8, 2023
 
 * Added `nonce` to BroadcastTransaction API responses
