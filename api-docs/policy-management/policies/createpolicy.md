@@ -1,4 +1,4 @@
-# CreatePolicy
+# Create Policy
 
 `POST /policies/policies`
 
@@ -17,8 +17,8 @@ Policies:Create
 
 | Request body fields | Required/Optional | Description                                                                                     | Type             |
 | ------------------- | ----------------- | ----------------------------------------------------------------------------------------------- | ---------------- |
-| `name`              | Required          | A name for the rule                                                                             | String           |
-| `description`       | Required          | A description for the rule                                                                      | String           |
+| `name`              | Required          | A name for the Policy                                                                           | String           |
+| `description`       | Required          | A description for the Policy                                                                    | String           |
 | `activityKind`      | Required          | Determines which actions on the API may trigger a Policy Execution. See supported values above. | Enumerated Type  |
 | `ruleIds`           | Required          | Array of Policy Rule IDs to evaluate                                                            | Array of Strings |
 | `controlIds`        | Required          | Array of Policy Control IDs to apply                                                            | Array of Strings |
