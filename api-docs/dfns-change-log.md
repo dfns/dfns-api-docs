@@ -44,7 +44,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Dec 19, 2022
 
-* Fixed a bug in [BroadcastTransaction](low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction.md) where the `value` parameter was being interpreted in ETH instead of WEI.&#x20;
+* Fixed a bug in [BroadcastTransaction](low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction/) where the `value` parameter was being interpreted in ETH instead of WEI.&#x20;
 * Last push of the year!&#x20;
 
 ### Dec 15, 2022
