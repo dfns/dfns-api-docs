@@ -4,6 +4,13 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Mar 23, 2023
+
+* Deployed new authentication service to production (non-customer impacting)
+* Removed `isImmutable` field from policy creation
+* Fixed bug where rejected transactions are not reflecting the correct state
+* Changed payment note to write to XRP destination tag
+
 ### Mar 14, 2023
 
 * Added blockchain indexing for SOL and XRP
