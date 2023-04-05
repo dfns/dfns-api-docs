@@ -68,10 +68,27 @@ curl -X POST "/public-keys/transactions" \
     "network": "SOL",
     "templateKind": "SolanaGenericTx",
 
-    "instructions": "[]",
-    "recentBlockhash": "0x",
-    "lastValidBlockHeight": "0x",
-    "minNonceContextSlot": "0x",
+    "instructions": "[
+            {
+                "keys": [
+                    {
+                        "pubkey": "GWJSC8g5tK7UtfarC5TFaaRTKMvChMJMGYFdu6iGZxfY",
+                        "isSigner": true,
+                        "isWritable": true
+                    },
+                    {
+                        "pubkey": "4oWsG7HrnS7LcdHZSUYCyk5hfMyX57N9E5T3hSR4zrBy",
+                        "isSigner": true,
+                        "isWritable": true
+                    }
+                ],
+                "programId": "11111111111111111111111111111111",
+                "data": "00000000001716000000000050000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            }
+        ]",
+    "recentBlockhash": "",
+    "lastValidBlockHeight": "",
+    "minNonceContextSlot": "",
     "nonceInfo": "{}",
     "signatures": "[]"
 }'
@@ -89,10 +106,27 @@ Status begins as `Initiated` and changes to `Executed` once broadcast to the mem
         "publicKeyId": "pk-shade-wisconsin-c28c38b2e8",
         "network": "SOL",
         "templateKind": "SolanaGenericTx",
-        "instructions": "[]",
-        "recentBlockhash": "0x",
-        "lastValidBlockHeight": "0x",
-        "minNonceContextSlot": "0x",
+        "instructions": [
+            {
+                "keys": [
+                    {
+                        "pubkey": "GWJSC8g5tK7UtfarC5TFaaRTKMvChMJMGYFdu6iGZxfY",
+                        "isSigner": true,
+                        "isWritable": true
+                    },
+                    {
+                        "pubkey": "4oWsG7HrnS7LcdHZSUYCyk5hfMyX57N9E5T3hSR4zrBy",
+                        "isSigner": true,
+                        "isWritable": true
+                    }
+                ],
+                "programId": "11111111111111111111111111111111",
+                "data": "00000000001716000000000050000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            }
+        ],
+        "recentBlockhash": "",
+        "lastValidBlockHeight": "",
+        "minNonceContextSlot": "",
         "nonceInfo": {},
         "signatures": []
     },
