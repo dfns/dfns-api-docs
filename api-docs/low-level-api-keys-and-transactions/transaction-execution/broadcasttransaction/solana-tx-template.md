@@ -119,7 +119,7 @@ Status begins as `Initiated` and changes to `Executed` once broadcast to the mem
         "minNonceContextSlot": "",
         "nonceInfo": {},
     },
-    "snapshot": "{\"publicKeyId\":\"pk-shade-wisconsin-c28c38b2e8\",\"network\":\"SOL\",\"templateKind\":\"SolanaTx\",\"instructions\":\"[]\",\"recentBlockhash\":\"0x\",\"lastValidBlockHeight\":\"0x\",\"minNonceContextSlot\":\"0x\",\"nonceInfo\":\"{}\"\"}",
+    "snapshot": "{\"publicKeyId\":\"pk-shade-wisconsin-c28c38b2e8\",\"network\":\"SOL\",\"templateKind\":\"SolanaTx\",\"instructions\":\"[]\",\"recentBlockhash\":\"\",\"lastValidBlockHeight\":\"\",\"minNonceContextSlot\":\"\",\"nonceInfo\":\"{}\"\"}",
     "dateUpdated": "2022-10-31T19:10:02.228Z",
     "initiator": {
         "kind": "Employee",
