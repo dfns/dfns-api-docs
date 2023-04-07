@@ -57,7 +57,7 @@ curl -X POST "/public-keys/transactions" \
 -d '{
     "publicKeyId": "pk-orange-magnesium-a0606d08b2",
     "network": "SOL",
-    "templateKind": "SolanaGenericTx",
+    "templateKind": "SolanaTx",
 
     "instructions": "[
             {
@@ -81,7 +81,6 @@ curl -X POST "/public-keys/transactions" \
     "lastValidBlockHeight": "",
     "minNonceContextSlot": "",
     "nonceInfo": "{}",
-    "signatures": "[]"
 }'
 ```
 
@@ -96,7 +95,7 @@ Status begins as `Initiated` and changes to `Executed` once broadcast to the mem
     "transaction": {
         "publicKeyId": "pk-shade-wisconsin-c28c38b2e8",
         "network": "SOL",
-        "templateKind": "SolanaGenericTx",
+        "templateKind": "SolanaTx",
         "instructions": [
             {
                 "keys": [
@@ -119,9 +118,8 @@ Status begins as `Initiated` and changes to `Executed` once broadcast to the mem
         "lastValidBlockHeight": "",
         "minNonceContextSlot": "",
         "nonceInfo": {},
-        "signatures": []
     },
-    "snapshot": "{\"publicKeyId\":\"pk-shade-wisconsin-c28c38b2e8\",\"network\":\"SOL\",\"templateKind\":\"SolanaGenericTx\",\"instructions\":\"[]\",\"recentBlockhash\":\"0x\",\"lastValidBlockHeight\":\"0x\",\"minNonceContextSlot\":\"0x\",\"nonceInfo\":\"{}\",\"signatures\":\"[]\"}",
+    "snapshot": "{\"publicKeyId\":\"pk-shade-wisconsin-c28c38b2e8\",\"network\":\"SOL\",\"templateKind\":\"SolanaTx\",\"instructions\":\"[]\",\"recentBlockhash\":\"0x\",\"lastValidBlockHeight\":\"0x\",\"minNonceContextSlot\":\"0x\",\"nonceInfo\":\"{}\"\"}",
     "dateUpdated": "2022-10-31T19:10:02.228Z",
     "initiator": {
         "kind": "Employee",
