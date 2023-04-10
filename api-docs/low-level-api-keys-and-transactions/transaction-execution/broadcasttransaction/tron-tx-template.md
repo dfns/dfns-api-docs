@@ -53,7 +53,7 @@ curl -X POST "/public-keys/transactions" \
 -H "Authorization: Bearer <TOKEN>" \
 -d '{
     "publicKeyId": "pk-orange-magnesium-a0606d08b2",
-    "network": "SOL",
+    "network": "TRX",
     "templateKind": "TronTx",
 
     "instructions": "[
@@ -125,7 +125,7 @@ Status begins as `Initiated` and changes to `Executed` once broadcast to the mem
   },
   "orgId": "cu-purple-pip-1b417b958500",
   "publicKeyId": "pk-shade-wisconsin-c28c38b2e8",
-  "network": "SOL",
+  "network": "TRX",
   "status": "Initiated",
   "id": "tx-sierra-lima-272e2ce093",
   "dateCreated": "2022-10-31T19:10:02.229Z"
