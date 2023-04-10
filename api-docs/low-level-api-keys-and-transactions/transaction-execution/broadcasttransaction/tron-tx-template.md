@@ -1,4 +1,4 @@
-# SolanaTx Template
+# TronTx Template
 
 Use this template to broadcast to the Tron chain, and you can generate values for these parameters by executing the tronWeb javascript SDK method.
 
