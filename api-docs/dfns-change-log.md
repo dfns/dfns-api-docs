@@ -4,6 +4,17 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### April 20, 2023
+
+* Added Ethereum Sepolia testnet to blockchain indexing
+* Add Tezos & Solana support to BroadcastTransaction
+
+### April 5, 2023
+
+* Allow users to add permissions to API keys in the dashboard
+* Optimized API response latency via server-side changes
+* Additional dashboard security enahncements&#x20;
+
 ### Mar 23, 2023
 
 * Deployed new authentication service to production (non-customer impacting)
