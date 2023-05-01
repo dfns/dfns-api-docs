@@ -40,5 +40,7 @@ In order to offboard from crypto to fiat, Ramp provides end users with an addres
 
 
 
+## Sardine
 
+Sardine is another popular Fiat onboarding provider that enables a seamless integration using a URL format specified [here](https://docs.sardine.ai/docs/integrate-payments/5lz28jlqvuvg4-mobile-url-web-view#3-create-url).   Joint Dfns/Sardine customers can integrate the platforms by simply passing the destination Dfns wallet address obtained from either [addresses for asset accounts](../api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbyid.md) or [addresses derived from public keys](../api-docs/low-level-api-keys-and-transactions/public-keys-1/getaddressfornetwork.md) into the Sardine `address` query string parameter.   [Here](https://www.loom.com/share/8baba35d5eee406dbe872a6bf8965453) is an example video showing a POC integration.&#x20;
 
