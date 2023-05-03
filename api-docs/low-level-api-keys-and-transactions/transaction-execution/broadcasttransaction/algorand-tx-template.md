@@ -90,7 +90,7 @@ curl -X POST "/public-keys/transactions" \
 -H "Authorization: Bearer <TOKEN>" \
 -d '{
     "publicKeyId": "pk-orange-magnesium-a0606d08b2",
-    "network": "SOL",
+    "network": "ALGO",
     "templateKind": "AlgorandTx",
 
     "type": "applc",
@@ -125,7 +125,7 @@ Status begins as `Initiated` and changes to `Executed` once broadcast to the mem
         "numLocalInts": "1",
         "onComplete": "0",
     },
-    "snapshot": "{\"publicKeyId\":\"pk-shade-wisconsin-c28c38b2e8\",\"network\":\"SOL\",\"templateKind\":\"AlgorandTx\",\"type\":\"applc\",\"approvalProgram\":\"\",\"clearProgram\":\"\",\"numGlobalByteSlices\":\"1\",\"numGlobalInts\":\"1\",\"numLocalByteSlices\":\"1\",\"numLocalInts\":\"1\", \"onComplete\":\"0\"\"}",
+    "snapshot": "{\"publicKeyId\":\"pk-shade-wisconsin-c28c38b2e8\",\"network\":\"ALGO\",\"templateKind\":\"AlgorandTx\",\"type\":\"applc\",\"approvalProgram\":\"\",\"clearProgram\":\"\",\"numGlobalByteSlices\":\"1\",\"numGlobalInts\":\"1\",\"numLocalByteSlices\":\"1\",\"numLocalInts\":\"1\", \"onComplete\":\"0\"\"}",
     "dateUpdated": "2022-10-31T19:10:02.228Z",
     "initiator": {
         "kind": "Employee",
