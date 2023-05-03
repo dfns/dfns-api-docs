@@ -65,7 +65,21 @@ Use this template to broadcast to Algorand chain.  For more on these fields, see
 
 
 
+    const numGlobalByteSlices = '1'
+    const numGlobalInts = '1'
+    const numLocalByteSlices = '1'
+    const numLocalInts = '1'
 
+    const tx = await wallet.sendTx({
+      type: TransactionType.ApplicationCallCreate,
+      approvalProgram: Buffer.from(approvalProgram, 'utf8').toString('hex'),
+      clearProgram: Buffer.from(clearProgram, 'utf8').toString('hex'),
+      numGlobalByteSlices,
+      numGlobalInts,
+      numLocalByteSlices,
+      numLocalInts,
+      onComplete: `${algosdk.OnApplicationComplete.NoOpOC}`,
+    })
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>
@@ -77,32 +91,16 @@ curl -X POST "/public-keys/transactions" \
 -d '{
     "publicKeyId": "pk-orange-magnesium-a0606d08b2",
     "network": "SOL",
-    "templateKind": "SolanaTx",
+    "templateKind": "AlgorandTx",
 
-    "instructions": "[
-            {
-                "keys": [
-                    {
-                        "pubkey": "GWJSC8g5tK7UtfarC5TFaaRTKMvChMJMGYFdu6iGZxfY",
-                        "isSigner": true,
-                        "isWritable": true
-                    },
-                    {
-                        "pubkey": "4oWsG7HrnS7LcdHZSUYCyk5hfMyX57N9E5T3hSR4zrBy",
-                        "isSigner": true,
-                        "isWritable": true
-                    }
-                ],
-                "programId": "11111111111111111111111111111111",
-                "data": "00000000001716000000000050000000000000000000000000000000000000000000000000000000000000000000000000000000"
-            }
-        ]",
-    "feePayer": "",
-    "signatures": "[]",
-    "recentBlockhash": "",
-    "lastValidBlockHeight": "",
-    "minNonceContextSlot": "",
-    "nonceInfo": "{}",
+    "type": "applc",
+    "approvalProgram": "",,
+    "clearProgram": "",
+    "numGlobalByteSlices": "1",
+    "numGlobalInts": "1",
+    "numLocalByteSlices": "1",
+    "numLocalInts": "1",
+    "onComplete": "0",
 }'
 ```
 
@@ -116,34 +114,18 @@ Status begins as `Initiated` and changes to `Executed` once broadcast to the mem
 {
     "transaction": {
         "publicKeyId": "pk-shade-wisconsin-c28c38b2e8",
-        "network": "SOL",
-        "templateKind": "SolanaTx",
-        "instructions": [
-            {
-                "keys": [
-                    {
-                        "pubkey": "GWJSC8g5tK7UtfarC5TFaaRTKMvChMJMGYFdu6iGZxfY",
-                        "isSigner": true,
-                        "isWritable": true
-                    },
-                    {
-                        "pubkey": "4oWsG7HrnS7LcdHZSUYCyk5hfMyX57N9E5T3hSR4zrBy",
-                        "isSigner": true,
-                        "isWritable": true
-                    }
-                ],
-                "programId": "11111111111111111111111111111111",
-                "data": "00000000001716000000000050000000000000000000000000000000000000000000000000000000000000000000000000000000"
-            }
-        ],
-        "feePayer": "",
-        "signatures": [],
-        "recentBlockhash": "",
-        "lastValidBlockHeight": "",
-        "minNonceContextSlot": "",
-        "nonceInfo": {},
+        "network": "ALGO",
+        "templateKind": "AlgorandTx",
+        "type": "applc",
+        "approvalProgram": "",
+        "clearProgram": "",
+        "numGlobalByteSlices": "1",
+        "numGlobalInts": "1",
+        "numLocalByteSlices": "1",
+        "numLocalInts": "1",
+        "onComplete": "0",
     },
-    "snapshot": "{\"publicKeyId\":\"pk-shade-wisconsin-c28c38b2e8\",\"network\":\"SOL\",\"templateKind\":\"SolanaTx\",\"instructions\":\"[]\",\"signatures\":\"[]\",\"feePayer\":\"\",\"recentBlockhash\":\"\",\"lastValidBlockHeight\":\"\",\"minNonceContextSlot\":\"\",\"nonceInfo\":\"{}\"\"}",
+    "snapshot": "{\"publicKeyId\":\"pk-shade-wisconsin-c28c38b2e8\",\"network\":\"SOL\",\"templateKind\":\"AlgorandTx\",\"type\":\"applc\",\"approvalProgram\":\"\",\"clearProgram\":\"\",\"numGlobalByteSlices\":\"1\",\"numGlobalInts\":\"1\",\"numLocalByteSlices\":\"1\",\"numLocalInts\":\"1\", \"onComplete\":\"0\"\"}",
     "dateUpdated": "2022-10-31T19:10:02.228Z",
     "initiator": {
         "kind": "Employee",
@@ -152,7 +134,7 @@ Status begins as `Initiated` and changes to `Executed` once broadcast to the mem
     },
     "orgId": "cu-purple-pip-1b417b958500",
     "publicKeyId": "pk-shade-wisconsin-c28c38b2e8",
-    "network": "SOL",
+    "network": "ALGO",
     "status": "Initiated",
     "id": "tx-sierra-lima-272e2ce093",
     "dateCreated": "2022-10-31T19:10:02.229Z"
