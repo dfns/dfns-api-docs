@@ -53,7 +53,6 @@ Use this template to broadcast to Algorand chain.  For more on these fields, see
 | `appIndex`                   | Required for operations with application.                      | ID of the application being configured or empty if creating.                                                                                                                                                                                                                                                                                                  | String                                    |
 | `strictEmptyAddressChecking`                   | Optional                     | throw an error if any of manager, reserve, freeze, or clawback are undefined. optional, defaults to true.                                                                                                                                                                                                                                                                                                  | Boolean                                    |
 
-
 #### BoxReference fields <a href="#request-example.1" id="request-example.1"></a>
 
 
@@ -63,23 +62,6 @@ Use this template to broadcast to Algorand chain.  For more on these fields, see
 | `appIndex`                   | Required                     | App ID of box to be accessed.                                                                                                                                                                                                                                                                                                  | Array(AccountMeta)                                    |
 | `name`                   | Required                     | Name of box to be accessed.                                                                                                                                                                                                                                                                                                    | String                                    |
 
-
-
-    const numGlobalByteSlices = '1'
-    const numGlobalInts = '1'
-    const numLocalByteSlices = '1'
-    const numLocalInts = '1'
-
-    const tx = await wallet.sendTx({
-      type: TransactionType.ApplicationCallCreate,
-      approvalProgram: Buffer.from(approvalProgram, 'utf8').toString('hex'),
-      clearProgram: Buffer.from(clearProgram, 'utf8').toString('hex'),
-      numGlobalByteSlices,
-      numGlobalInts,
-      numLocalByteSlices,
-      numLocalInts,
-      onComplete: `${algosdk.OnApplicationComplete.NoOpOC}`,
-    })
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>
