@@ -1,8 +1,8 @@
-# Gas Station
+# Fee Estimation
 
-`GET /blockchains/{network}/gas?speed={speed}&historicalBlocks={historicalBlocks}`
+`GET /blockchains/{network}/fee?speed={speed}&historicalBlocks={historicalBlocks}`
 
-Gas Station gives gas estimates for EVM chains for four speed types:
+This endpoint gives gas estimates for EVM chains for four speed types:
 - default
 - safeLow
 - standard
@@ -16,7 +16,7 @@ The `default` speed type gives price by querying the RPC for `eth_maxPriorityFee
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Blockchains:Gas
+Blockchains:Fee
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
@@ -33,7 +33,7 @@ Blockchains:Gas
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl "/blockchains/ETH/gas?speed=standard&historicalBlocks=4" \
+curl "/blockchains/ETH/fee?speed=standard&historicalBlocks=4" \
 -H "Authorization: Bearer <TOKEN>"
 ```
 
