@@ -1,8 +1,8 @@
-# Generate signature
+# Generate Signature from Wallet
 
 `POST /wallets/{walletId}/signatures`
 
-Generate a signature with the wallet key.
+Request to generate a signature with the wallet key.
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
@@ -14,7 +14,7 @@ Wallets:GenerateSignature
 
 | Path parameter | Required/Optional | Description                                                        | Type   |
 | -------------- | ----------------- | ------------------------------------------------------------------ | ------ |
-| `walletId`     | Required          | Unique identifier of the wallet. `wa-1f04s-lqc9q-86l9l9n97hcos0ln` | Number |
+| `walletId`     | Required          | Unique identifier of the wallet. `wa-1f04s-lqc9q-86l9l9n97hcos0ln` | String |
 
 #### Hash signature request body parameters <a href="#hash-body-parameters" id="hash-body-parameters"></a>
 
@@ -62,7 +62,7 @@ curl -X POST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/signatures" \
 }'
 ```
 
-#### Sample hash request <a href="#sample-eip712-request" id="sample-eip712-request"></a>
+#### Sample EIP-712 request <a href="#sample-eip712-request" id="sample-eip712-request"></a>
 
 ```shell
 curl -X POST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/signatures" \
