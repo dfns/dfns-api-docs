@@ -22,7 +22,7 @@
   * [Get Wallet Assets](api-docs/beta-wallets-api-and-nfts/get-wallet-assets.md)
   * [Get Wallet NFTs](api-docs/beta-wallets-api-and-nfts/get-wallet-nfts.md)
   * [Get Wallet History](api-docs/beta-wallets-api-and-nfts/get-wallet-history.md)
-  * [Transfer Asset](api-docs/beta-wallets-api-and-nfts/transfer-asset.md)
+  * [Transfer Asset from Wallet](api-docs/beta-wallets-api-and-nfts/transfer-asset-from-wallet.md)
 * [High Level API: Asset Accounts & Payments](api-docs/high-level-api-asset-accounts-and-payments/README.md)
   * [Asset Accounts](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/README.md)
     * [Create Asset Account](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/createassetaccount.md)

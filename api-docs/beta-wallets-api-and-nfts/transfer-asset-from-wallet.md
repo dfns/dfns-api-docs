@@ -1,4 +1,4 @@
-# Transfer Asset
+# Transfer Asset from Wallet
 
 `POST /wallets/{WalletID}/transfers`
 
@@ -109,7 +109,7 @@ curl -XPOST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/transfers" -d
 }
 ```
 
-### NFT Transfers
+### ERC-721 NFT Transfers
 
 #### Request body <a href="#native-currency-request-body" id="native-currency-request-body"></a>
 
