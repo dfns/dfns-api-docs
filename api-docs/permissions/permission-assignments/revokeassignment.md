@@ -1,4 +1,4 @@
-# RevokeAssignment
+# Revoke Assignment
 
 `DELETE /permissions/assignments/{assignmentId}`
 
@@ -16,9 +16,7 @@ The caller either needs to be an OrgOwner or they need to have a permission assi
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Description                                                                                                                                                                                                                                                 |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `assignmentId` | <p>Unique identifier of the permission assignment.<br><br>Permission Assignment IDs look like this:<br><code>as-stream-pizza-08edcfff93</code><br><br>They follow this format:<br><code>as-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></p> |
+<table><thead><tr><th width="424">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>assignmentId</code></td><td>Unique identifier of the permission assignment.<br><br>Permission Assignment IDs look like this:<br><code>as-stream-pizza-08edcfff93</code><br><br>They follow this format:<br><code>as-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr></tbody></table>
 
 #### Query parameters <a href="#query-parameters" id="query-parameters"></a>
 

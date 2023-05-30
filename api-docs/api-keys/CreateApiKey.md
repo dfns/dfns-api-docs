@@ -1,4 +1,4 @@
-# CreateApiKey
+# Create API Key
 
 `POST /api-keys/`
 
@@ -12,10 +12,7 @@ ApiKeys:Create
 
 ### Request body <a href="#request-example.1" id="request-example.1"></a>
 
-| Request body fields | Required/Optional | Description                                            | Type                     |
-| ------------------- | ----------------- | ------------------------------------------------------ | ------------------------ |
-| `name`              | Required          | A name for the API Key                                 | String                   |
-| `scopes`            | Required          | This field will soon be deprecated.  Please pass "{}". | Pass an empty object: {} |
+<table><thead><tr><th width="173">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the API Key</td><td>String</td></tr><tr><td><code>scopes</code></td><td>Required</td><td>This field will soon be deprecated.  Please pass "{}".</td><td>Pass an empty object: {}</td></tr></tbody></table>
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 

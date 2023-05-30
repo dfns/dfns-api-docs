@@ -1,4 +1,4 @@
-# ArchiveCallbackSubscription
+# Archive Callback Subscription
 
 `DELETE /callback-subscriptions/{callbackSubscriptionId}`
 
@@ -12,9 +12,7 @@ CallbackSubscriptions:Archive
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter           | Description                                                                                                                |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `callbackSubscriptionId` | <p>Unique identifier of the <code>CallbackSubscription</code> like:<br><br><code>cs-orange-magnesium-a0606d08b2</code></p> |
+<table><thead><tr><th width="283">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>callbackSubscriptionId</code></td><td>Unique identifier of the <code>CallbackSubscription</code> like:<br><br><code>cs-orange-magnesium-a0606d08b2</code></td></tr></tbody></table>
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 

@@ -1,4 +1,4 @@
-# ListPayments
+# List Payments
 
 `GET /assets/asset-accounts/{AssetAccountId}/payments`
 
@@ -12,16 +12,11 @@ Payments:Read
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter   | Description                                                                                                    |
-| ---------------- | -------------------------------------------------------------------------------------------------------------- |
-| `AssetAccountId` | <p>Unique identifier of the <code>AssetAccount</code> like:<br><code>aa-orange-magnesium-a0606d08b2</code></p> |
+<table><thead><tr><th width="374">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>AssetAccountId</code></td><td>Unique identifier of the <code>AssetAccount</code> like:<br><code>aa-orange-magnesium-a0606d08b2</code></td></tr></tbody></table>
 
 #### Query parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Query parameter | Description                                                                                                                                         |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `direction`     | Filter results by one of the two directions: `Incoming`, `Outgoing`                                                                                 |
-| `status`        | Filter results by any of the [payment status enumerated types](https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#payment-status) |
+<table><thead><tr><th width="212">Query parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>direction</code></td><td>Filter results by one of the two directions: <code>Incoming</code>, <code>Outgoing</code></td></tr><tr><td><code>status</code></td><td>Filter results by any of the <a href="https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#payment-status">payment status enumerated types</a></td></tr></tbody></table>
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 

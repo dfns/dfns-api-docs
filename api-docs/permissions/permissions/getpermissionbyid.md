@@ -1,4 +1,4 @@
-# GetPermissionById
+# Get Permission By ID
 
 `GET /permissions/{permissionId}`
 
@@ -16,9 +16,7 @@ The caller either needs to be an OrgOwner or they need to have a permission assi
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Description                                                                                                                                                                                                                           |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `permissionId` | <p>Unique identifier of the permission.<br><br>Permission IDs look like this:<br><code>pm-orange-apple-2b17a80613</code><br><br>They follow this format:<br><code>pb-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></p> |
+<table><thead><tr><th width="424">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>permissionId</code></td><td>Unique identifier of the permission.<br><br>Permission IDs look like this:<br><code>pm-orange-apple-2b17a80613</code><br><br>They follow this format:<br><code>pb-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr></tbody></table>
 
 #### Query parameters <a href="#query-parameters" id="query-parameters"></a>
 

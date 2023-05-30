@@ -1,4 +1,4 @@
-# CreatePolicyRule
+# Create Policy Rule
 
 `POST /policies/policy-rules`
 
@@ -17,21 +17,13 @@ PolicyRules:Create
 
 The following fields are common to all kinds of Policy Rules:
 
-| Request body fields | Required/Optional | Description                                           | Type   |
-| ------------------- | ----------------- | ----------------------------------------------------- | ------ |
-| `name`              | Required          | A name for the rule                                   | String |
-| `description`       | Required          | A description for the rule                            | String |
-| `configuration`     | Required          | A nested object specifying details of the Policy Rule | Object |
+<table><thead><tr><th width="217">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the rule</td><td>String</td></tr><tr><td><code>description</code></td><td>Required</td><td>A description for the rule</td><td>String</td></tr><tr><td><code>configuration</code></td><td>Required</td><td>A nested object specifying details of the Policy Rule</td><td>Object</td></tr></tbody></table>
 
 #### Amount Limit Rule
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if the Payment amount is over the specified amount:
 
-| Request body fields | Required/Optional | Description                                                                  | Type            |
-| ------------------- | ----------------- | ---------------------------------------------------------------------------- | --------------- |
-| `kind`              | Required          | Specify: "PaymentAmountLimit"                                                | Enumerated Type |
-| `limit`             | Required          | The amount over which the policy should trigger - specified as a string      | String          |
-| `assetSymbol`       | Required          | The currency used to denominate the limit field - one of "USD", "EUR", "ETH" | String          |
+<table><thead><tr><th width="238">Request body fields</th><th width="113">Required/Optional</th><th width="240">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "PaymentAmountLimit"</td><td>Enumerated Type</td></tr><tr><td><code>limit</code></td><td>Required</td><td>The amount over which the policy should trigger - specified as a string</td><td>String</td></tr><tr><td><code>assetSymbol</code></td><td>Required</td><td>The currency used to denominate the limit field - one of "USD", "EUR", "ETH"</td><td>String</td></tr></tbody></table>
 
 
 
@@ -53,12 +45,7 @@ Example Body:
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of funds have been transferred within a given time window:
 
-| Request body fields | Required/Optional | Description                                                                  | Type            |
-| ------------------- | ----------------- | ---------------------------------------------------------------------------- | --------------- |
-| `kind`              | Required          | Specify: "PaymentAmountOutgoingVelocity"                                     | Enumerated Type |
-| `velocity`          | Required          | The amount over which the policy should trigger - specified as a string      | String          |
-| `assetSymbol`       | Required          | The currency used to denominate the limit field - one of "USD", "EUR", "ETH" | String          |
-| `intervalInMinutes` | Required          | The time window in minutes in which to watch for outgoing payments           | Integer         |
+<table><thead><tr><th width="220">Request body fields</th><th width="113">Required/Optional</th><th width="235">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "PaymentAmountOutgoingVelocity"</td><td>Enumerated Type</td></tr><tr><td><code>velocity</code></td><td>Required</td><td>The amount over which the policy should trigger - specified as a string</td><td>String</td></tr><tr><td><code>assetSymbol</code></td><td>Required</td><td>The currency used to denominate the limit field - one of "USD", "EUR", "ETH"</td><td>String</td></tr><tr><td><code>intervalInMinutes</code></td><td>Required</td><td>The time window in minutes in which to watch for outgoing payments</td><td>Integer</td></tr></tbody></table>
 
 Example Body:
 
@@ -79,11 +66,7 @@ Example Body:
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of transactions have been initiated within a given time window:
 
-| Request body fields | Required/Optional | Description                                                        | Type             |
-| ------------------- | ----------------- | ------------------------------------------------------------------ | ---------------- |
-| `kind`              | Required          | Specify: "Siphoning"                                               | Enumerated Type  |
-| `maxTxCount`        | Required          | The amount of transactions over which the policy should trigger    | Integer          |
-| `intervalInMinutes` | Required          | The time window in minutes in which to watch for outgoing payments | Integer          |
+<table><thead><tr><th width="220">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "Siphoning"</td><td>Enumerated Type </td></tr><tr><td><code>maxTxCount</code></td><td>Required</td><td>The amount of transactions over which the policy should trigger </td><td>Integer</td></tr><tr><td><code>intervalInMinutes</code></td><td>Required</td><td>The time window in minutes in which to watch for outgoing payments</td><td>Integer</td></tr></tbody></table>
 
 Example Body:
 
@@ -103,9 +86,7 @@ Example Body:
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which always triggers:
 
-| Request body fields | Required/Optional | Description                    | Type            |
-| ------------------- | ----------------- | ------------------------------ | --------------- |
-| `kind`              | Required          | Specify: "AlwaysActivatedRule" | Enumerated Type |
+<table><thead><tr><th width="220">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "AlwaysActivatedRule"</td><td>Enumerated Type</td></tr></tbody></table>
 
 Example Body:
 

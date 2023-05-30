@@ -1,4 +1,4 @@
-# ArchivePolicyRule
+# Archive Policy Rule
 
 `DELETE /policies/policy-rules/{policyRuleId}`
 
@@ -12,9 +12,7 @@ PolicyRules:Archive
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Description                                                                                          |
-| -------------- | ---------------------------------------------------------------------------------------------------- |
-| `policyRuleId` | <p>Unique identifier of the policy rule like:<br><br><code>pr-orange-magnesium-a0606d08b2</code></p> |
+<table><thead><tr><th width="248">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>policyRuleId</code></td><td>Unique identifier of the policy rule like:<br><br><code>pr-orange-magnesium-a0606d08b2</code></td></tr></tbody></table>
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 

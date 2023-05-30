@@ -15,24 +15,13 @@ Policies:Create
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                                                     | Type             |
-| ------------------- | ----------------- | ----------------------------------------------------------------------------------------------- | ---------------- |
-| `name`              | Required          | A name for the Policy                                                                           | String           |
-| `description`       | Required          | A description for the Policy                                                                    | String           |
-| `activityKind`      | Required          | Determines which actions on the API may trigger a Policy Execution. See supported values above. | Enumerated Type  |
-| `ruleIds`           | Required          | Array of Policy Rule IDs to evaluate                                                            | Array of Strings |
-| `controlIds`        | Required          | Array of Policy Control IDs to apply                                                            | Array of Strings |
-| `status`            | Required          | "Enabled", "Disabled"                                                                           | Enumerated Type  |
-| `filter`            | Optional          | Specify a list of entities to scope the policy to (eg. wallets)                                 | Object           |
+<table><thead><tr><th width="217">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the Policy</td><td>String</td></tr><tr><td><code>description</code></td><td>Required</td><td>A description for the Policy</td><td>String</td></tr><tr><td><code>activityKind</code></td><td>Required</td><td>Determines which actions on the API may trigger a Policy Execution. See supported values above.</td><td>Enumerated Type</td></tr><tr><td><code>ruleIds</code></td><td>Required</td><td>Array of Policy Rule IDs to evaluate</td><td>Array of Strings</td></tr><tr><td><code>controlIds</code></td><td>Required</td><td>Array of Policy Control IDs to apply</td><td>Array of Strings</td></tr><tr><td><code>status</code></td><td>Required</td><td>"Enabled", "Disabled"</td><td>Enumerated Type</td></tr><tr><td><code>filter</code></td><td>Optional</td><td>Specify a list of entities to scope the policy to (eg. wallets)</td><td>Object</td></tr></tbody></table>
 
 #### Filter Object
 
 Use the following fields in the nested `filter` object to scope the policy to a specific entity`:`
 
-| Request body fields | Required/Optional | Description                                              | Type             |
-| ------------------- | ----------------- | -------------------------------------------------------- | ---------------- |
-| `kind`              | Required          | Specify: "PublicKey"                                     | Enumerated Type  |
-| `publicKeyIds`      | Required          | IDs of public keys (wallets) the policy should apply to. | Array of Strings |
+<table><thead><tr><th width="254">Request body fields</th><th width="113">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "PublicKey"</td><td>Enumerated Type </td></tr><tr><td><code>publicKeyIds</code></td><td>Required</td><td>IDs of public keys (wallets) the policy should apply to.</td><td>Array of Strings</td></tr></tbody></table>
 
 
 

@@ -1,4 +1,4 @@
-# GetPolicyControlById
+# Get Policy Control By ID
 
 `GET /policies/policy-controls/{policyControlId}`
 
@@ -12,9 +12,7 @@ PolicyControls:Read
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter    | Description                                                                                             |
-| ----------------- | ------------------------------------------------------------------------------------------------------- |
-| `policyControlId` | <p>Unique identifier of the policy control like:<br><br><code>pc-orange-magnesium-a0606d08b2</code></p> |
+<table><thead><tr><th width="248">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>policyControlId</code></td><td>Unique identifier of the policy control like:<br><br><code>pc-orange-magnesium-a0606d08b2</code></td></tr></tbody></table>
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 

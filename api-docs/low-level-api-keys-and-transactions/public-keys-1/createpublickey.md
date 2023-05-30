@@ -1,4 +1,4 @@
-# CreatePublicKey
+# Create Public Key
 
 `POST /public-keys/`
 
@@ -10,9 +10,7 @@ PublicKeys:Create
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                                                            | Type    |
-| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------ | ------- |
-| `isEddsa`           | Optional          | Specify true for an EdDSA signature scheme or false for a  ECDSA scheme. Defaults to ECDSA if omitted. | Boolean |
+<table><thead><tr><th width="173">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>isEddsa</code></td><td>Optional</td><td>Specify true for an EdDSA signature scheme or false for a  ECDSA scheme. Defaults to ECDSA if omitted.</td><td>Boolean</td></tr></tbody></table>
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 

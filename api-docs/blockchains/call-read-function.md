@@ -12,16 +12,11 @@ Blockchains:CallRead
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Description                                                                                                                                                                                                                                          |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `network`      | Enumerated type representing the Blockchain network from the list found [here](https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#network).  Currently EVM chains are supported: ETH, MATIC, BNB, AVAX-C, sFUEL, FTM, OP, ARB, AMB |
+<table><thead><tr><th width="248">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>network</code></td><td>Enumerated type representing the Blockchain network from the list found <a href="https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#network">here</a>.  Currently EVM chains are supported: ETH, MATIC, BNB, AVAX-C, sFUEL, FTM, OP, ARB, AMB</td></tr></tbody></table>
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                                                                                                                                                                                                                  | Type   |
-| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
-| `data`              | Required          | Encoded hex string indicating which function in the smart contract to call with which parameters.  For more information, see the [encodeFunctionCall web3.js documentation](https://web3js.readthedocs.io/en/v1.2.11/web3-eth-abi.html#encodefunctioncall).  | String |
-| `contract`          | Required          | Address of the contract to call                                                                                                                                                                                                                              | String |
+<table><thead><tr><th width="173">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>data</code></td><td>Required</td><td>Encoded hex string indicating which function in the smart contract to call with which parameters.  For more information, see the <a href="https://web3js.readthedocs.io/en/v1.2.11/web3-eth-abi.html#encodefunctioncall">encodeFunctionCall web3.js documentation</a>. </td><td>String</td></tr><tr><td><code>contract</code></td><td>Required</td><td>Address of the contract to call</td><td>String</td></tr></tbody></table>
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 

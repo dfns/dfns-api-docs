@@ -14,11 +14,7 @@ Transactions:Create
 
 The following fields are common to all `templateKinds:`
 
-| Request body fields | Required/Optional | Description                                                                                                                                                               | Type            |
-| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| `publicKeyId`       | Required          | <p>Unique identifier of the <code>PublicKey</code> like:<br><br><code>pk-orange-magnesium-a0606d08b2</code></p>                                                           | String          |
-| `network`           | Required          | Enumerated type representing the Blockchain network from the list found [here](https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#network).             | Enumerated Type |
-| `templateKind`      | Required          | Enumerated type representing the Blockchain transaction template that dictates the remaining acceptable fields.  Currently, the only supported value is "`EvmGenericTx`". | Enumerated Type |
+<table><thead><tr><th width="173">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>publicKeyId</code></td><td>Required</td><td>Unique identifier of the <code>PublicKey</code> like:<br><br><code>pk-orange-magnesium-a0606d08b2</code></td><td>String</td></tr><tr><td><code>network</code></td><td>Required</td><td>Enumerated type representing the Blockchain network from the list found <a href="https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#network">here</a>. </td><td>Enumerated Type</td></tr><tr><td><code>templateKind</code></td><td>Required</td><td>Enumerated type representing the Blockchain transaction template that dictates the remaining acceptable fields.  Currently, the only supported value is "<code>EvmGenericTx</code>".</td><td>Enumerated Type</td></tr></tbody></table>
 
 For details on specific templateKinds, please see the chain specific sub pages underneath this article in the left hand navigation.&#x20;
 

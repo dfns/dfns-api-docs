@@ -1,4 +1,4 @@
-# GetPolicyControlExecutionById
+# Get Policy Control Execution By ID
 
 `GET /policies/policy-control-executions/{policyControlExecutionId}`
 
@@ -12,9 +12,7 @@ PolicyControlExecutions:Read
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter             | Description                                                                                                    |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `policyControlExecutionId` | <p>Unique identifier of the policy control execution like:<br><br><code>pce-fanta-twelve-333cb3fe31</code></p> |
+<table><thead><tr><th width="298">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>policyControlExecutionId</code></td><td>Unique identifier of the policy control execution like:<br><br><code>pce-fanta-twelve-333cb3fe31</code></td></tr></tbody></table>
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 

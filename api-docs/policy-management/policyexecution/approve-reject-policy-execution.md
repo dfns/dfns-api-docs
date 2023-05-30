@@ -1,4 +1,4 @@
-# Approve / Reject PolicyControlExecution
+# Approve / Reject Policy Control Execution
 
 `PUT /policies/policy-control-executions/{policyControlExecutionId}`
 
@@ -10,10 +10,7 @@ PolicyControlExecutions:Update, Signatures:Create, PublicKeys:Read
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description          | Type                     |
-| ------------------- | ----------------- | -------------------- | ------------------------ |
-| `name`              | Required          | A name for the rule  | String                   |
-| `status`            | Required          | "Passed" OR "Failed" | Enumerated Type (String) |
+<table><thead><tr><th width="217">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the rule</td><td>String</td></tr><tr><td><code>status</code></td><td>Required</td><td>"Passed" OR "Failed"</td><td>Enumerated Type (String)</td></tr></tbody></table>
 
 Example Body:
 

@@ -1,4 +1,4 @@
-# ListPolicyControlExecutions
+# List Policy Control Executions
 
 `GET /policies/policy-control-executions/`
 
@@ -12,11 +12,7 @@ PolicyControlExecutions:Read
 
 #### Query parameters <a href="#query-parameters" id="query-parameters"></a>
 
-| Query string parameter        | Required/Optional | Description                                                                                                        |
-| ----------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `onlyMyPendingApprovals=true` | Optional          | Returns only those policy control executions awaiting approval by the user sending the API request.                |
-| `onlyInitiatedByMe=true`      | Optional          | Returns only those policy control executions initiated by a transaction sent by the user sending the API request.  |
-| `activityId=pa-oven-arn-4k08` | Optional          | Returns policy control executions triggered by the specified `activityId`.                                         |
+<table><thead><tr><th>Query string parameter</th><th width="108.33333333333331">Required/Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>onlyMyPendingApprovals=true</code></td><td>Optional</td><td>Returns only those policy control executions awaiting approval by the user sending the API request. </td></tr><tr><td><code>onlyInitiatedByMe=true</code></td><td>Optional</td><td>Returns only those policy control executions initiated by a transaction sent by the user sending the API request. </td></tr><tr><td><code>activityId=pa-oven-arn-4k08</code></td><td>Optional</td><td>Returns policy control executions triggered by the specified <code>activityId</code>. </td></tr></tbody></table>
 
 ### Request Example <a href="#request-body" id="request-body"></a>
 

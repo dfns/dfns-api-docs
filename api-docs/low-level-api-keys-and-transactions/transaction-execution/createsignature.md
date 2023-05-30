@@ -1,4 +1,4 @@
-# CreateSignature
+# Create Signature
 
 `POST /public-keys/{PublicKeyId}/signatures`
 
@@ -16,15 +16,11 @@ Policy Engine for [Policies](../../policy-management/policies/createpolicy.md) w
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Description                                                                                                     |
-| -------------- | --------------------------------------------------------------------------------------------------------------- |
-| `PublicKeyId`  | <p>Unique identifier of the <code>PublicKey</code> like:<br><br><code>pk-orange-magnesium-a0606d08b2</code></p> |
+<table><thead><tr><th width="266">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>PublicKeyId</code></td><td>Unique identifier of the <code>PublicKey</code> like:<br><br><code>pk-orange-magnesium-a0606d08b2</code></td></tr></tbody></table>
 
 ### Request body <a href="#request-example.1" id="request-example.1"></a>
 
-| Request body fields | Required/Optional | Description                                       | Type   |
-| ------------------- | ----------------- | ------------------------------------------------- | ------ |
-| `hash`              | Required          | Any message to sign.  Usually a transaction hash. | String |
+<table><thead><tr><th width="173">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>hash</code></td><td>Required</td><td>Any message to sign.  Usually a transaction hash.</td><td>String</td></tr></tbody></table>
 
 Note: Any size message can be signed.  For ECDSA signatures, first hash the message with SHA256 and then pass the result in the `hash` body parameter (exactly 32 bytes are required as input).  For EdDSA signatures, the original message is sent in the `hash` parameter and accepted regardless of length.&#x20;
 

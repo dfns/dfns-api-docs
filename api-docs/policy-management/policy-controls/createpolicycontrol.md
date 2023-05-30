@@ -1,4 +1,4 @@
-# CreatePolicyControl
+# Create Policy Control
 
 `POST /policies/policy-controls`
 
@@ -15,22 +15,13 @@ PolicyControls:Create
 
 The following fields are common to all kinds of Policy Controls:
 
-| Request body fields | Required/Optional | Description                                           | Type   |
-| ------------------- | ----------------- | ----------------------------------------------------- | ------ |
-| `name`              | Required          | A name for the rule                                   | String |
-| `description`       | Required          | A description for the rule                            | String |
-| `configuration`     | Required          | A nested object specifying details of the Policy Rule | Object |
+<table><thead><tr><th width="217">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the rule</td><td>String</td></tr><tr><td><code>description</code></td><td>Required</td><td>A description for the rule</td><td>String</td></tr><tr><td><code>configuration</code></td><td>Required</td><td>A nested object specifying details of the Policy Rule</td><td>Object</td></tr></tbody></table>
 
 #### Approval Control
 
 Use the following fields in the nested `configuration` object to create a Policy Control which requires a specified number of approvals from a list of `Users:`
 
-| Request body fields | Required/Optional | Description                                                                                            | Type             |
-| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------ | ---------------- |
-| `kind`              | Required          | Specify: "RequestApproval"                                                                             | Enumerated Type  |
-| `approverUsernames` | Required          | The email addresses of the designated approvers as specified in their User records.                    | Array of Strings |
-| `timeoutInMinutes`  | Required          | The amount of time in minutes after which the policy execution can no longer be approved.              | Integer          |
-| `numApprovals`      | Required          | The number of required approvals.  Must be less than or equal to the `approverUsernames array length.` | Integer          |
+<table data-header-hidden><thead><tr><th width="254">Request body fields</th><th width="113">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td>Request body fields</td><td>Required/Optional</td><td>Description</td><td>Type</td></tr><tr><td><code>kind</code></td><td>Required</td><td>Specify: "RequestApproval"</td><td>Enumerated Type </td></tr><tr><td><code>approverUsernames</code></td><td>Required</td><td>The email addresses of the designated approvers as specified in their User records.</td><td>Array of Strings</td></tr><tr><td><code>timeoutInMinutes</code></td><td>Required</td><td>The amount of time in minutes after which the policy execution can no longer be approved.</td><td>Integer</td></tr><tr><td><code>numApprovals</code></td><td>Required</td><td>The number of required approvals.  Must be less than or equal to the <code>approverUsernames array length.</code></td><td>Integer</td></tr></tbody></table>
 
 
 

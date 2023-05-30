@@ -1,4 +1,4 @@
-# GetPolicyById
+# Get Policy By ID
 
 `GET /policies/policies/{policyId}`
 
@@ -12,9 +12,7 @@ Policies:Read
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Description                                                                                     |
-| -------------- | ----------------------------------------------------------------------------------------------- |
-| `policyId`     | <p>Unique identifier of the policy like:<br><br><code>pl-orange-magnesium-a0606d08b2</code></p> |
+<table><thead><tr><th width="248">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>policyId</code></td><td>Unique identifier of the policy like:<br><br><code>pl-orange-magnesium-a0606d08b2</code></td></tr></tbody></table>
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 

@@ -1,4 +1,4 @@
-# GetEmployeeById
+# Get Employee By ID
 
 `GET /employees/{employeeId}`
 
@@ -16,9 +16,7 @@ The caller either needs to be an OrgOwner or they need to have a permission assi
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Description                                                                                                                                                                                                                       |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `employeeId`   | <p>Unique identifier of the employee.<br><br>Employee IDs look like this:<br><code>oe-orange-apple-2b17a80613</code><br><br>They follow this format:<br><code>oe-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></p> |
+<table><thead><tr><th width="424">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>employeeId</code></td><td>Unique identifier of the employee.<br><br>Employee IDs look like this:<br><code>oe-orange-apple-2b17a80613</code><br><br>They follow this format:<br><code>oe-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr></tbody></table>
 
 #### Query parameters <a href="#query-parameters" id="query-parameters"></a>
 

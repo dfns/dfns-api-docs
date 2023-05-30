@@ -1,4 +1,4 @@
-# CreateCallbackSubscription
+# Create Callback Subscription
 
 `POST /callback-subscriptions/`
 
@@ -20,10 +20,7 @@ CallbackSubscriptions:Create
 
 ### Request body <a href="#request-example.1" id="request-example.1"></a>
 
-| Request body fields | Required/Optional | Description                                                 | Type            |
-| ------------------- | ----------------- | ----------------------------------------------------------- | --------------- |
-| `eventKind`         | Required          | The type of subscription to listen for from the list above. | Enumerated Type |
-| `url`               | Required          | The URL the callback will POST data to                      | String          |
+<table><thead><tr><th width="173">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>eventKind</code></td><td>Required</td><td>The type of subscription to listen for from the list above.</td><td>Enumerated Type</td></tr><tr><td><code>url</code></td><td>Required</td><td>The URL the callback will POST data to</td><td>String</td></tr></tbody></table>
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 

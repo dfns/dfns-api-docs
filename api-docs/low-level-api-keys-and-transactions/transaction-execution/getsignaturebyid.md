@@ -1,4 +1,4 @@
-# GetSignatureById
+# Get Signature By ID
 
 `GET /public-keys/{PublicKeyId}/signatures/{SignatureId}`
 
@@ -12,10 +12,7 @@ Signatures:Read
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Description                                                                                                     |
-| -------------- | --------------------------------------------------------------------------------------------------------------- |
-| `PublicKeyId`  | <p>Unique identifier of the <code>PublicKey</code> like:<br><br><code>pk-orange-magnesium-a0606d08b2</code></p> |
-| `SignatureId`  | <p>Unique identifier of the <code>Signature</code> like:<br><br><code>si-sierra-green-f26c441f60</code></p>     |
+<table><thead><tr><th width="266">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>PublicKeyId</code></td><td>Unique identifier of the <code>PublicKey</code> like:<br><br><code>pk-orange-magnesium-a0606d08b2</code></td></tr><tr><td><code>SignatureId</code></td><td>Unique identifier of the <code>Signature</code> like:<br><br><code>si-sierra-green-f26c441f60</code></td></tr></tbody></table>
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 

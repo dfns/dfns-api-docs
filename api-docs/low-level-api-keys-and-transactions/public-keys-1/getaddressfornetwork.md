@@ -1,4 +1,4 @@
-# GetAddressForNetwork
+# Get Address For Network
 
 `GET /public-keys/{PublicKeyId}/address?network={NetworkEnum}`
 
@@ -12,15 +12,11 @@ PublicKeyAddresses:Read, PublicKeys:Read
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Description                                                                                                     |
-| -------------- | --------------------------------------------------------------------------------------------------------------- |
-| `PublicKeyId`  | <p>Unique identifier of the <code>PublicKey</code> like:<br><br><code>pk-orange-magnesium-a0606d08b2</code></p> |
+<table><thead><tr><th width="248">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>PublicKeyId</code></td><td>Unique identifier of the <code>PublicKey</code> like:<br><br><code>pk-orange-magnesium-a0606d08b2</code></td></tr></tbody></table>
 
 #### Query string parameters <a href="#request-example.1" id="request-example.1"></a>
 
-| Path parameter | Description                                                                                                                                                    |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `NetworkEnum`  | Enumerated type representing the Blockchain network from the list found [here](https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#network).  |
+<table><thead><tr><th width="265">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>NetworkEnum</code></td><td>Enumerated type representing the Blockchain network from the list found <a href="https://dfns.gitbook.io/dfns-docs/api-docs/dfns-api-enumerated-types#network">here</a>. </td></tr></tbody></table>
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
