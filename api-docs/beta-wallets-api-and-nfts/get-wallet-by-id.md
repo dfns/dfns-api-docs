@@ -8,12 +8,18 @@ Retrieves a Wallet by it's ID.&#x20;
 
 Wallets:Read
 
+### Parameters <a href="#request-example.1" id="request-example.1"></a>
+
+#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+
+<table><thead><tr><th width="248">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>WalletID</code></td><td>Unique identifier of the <code>Wallet</code> like:<br><br><code>wa-orange-magnesium-a0606d08b2</code></td></tr></tbody></table>
+
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl "/wallets" \
+curl "/wallets/wa-kentucky-speaker-d80f55f2a4" \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <TOKEN>"
 ```
