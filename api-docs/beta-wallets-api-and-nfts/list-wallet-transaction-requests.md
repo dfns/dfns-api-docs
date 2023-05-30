@@ -2,7 +2,7 @@
 
 `GET /wallets/{WalletID}/transactions?paginationToken={token}`
 
-Retrieves a list of transactions for the specified wallet.&#x20;
+Retrieves a list of transactions requests for the specified wallet.&#x20;
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
