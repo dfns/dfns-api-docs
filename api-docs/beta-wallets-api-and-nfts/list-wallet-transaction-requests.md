@@ -1,12 +1,12 @@
-# List Wallet Transfer Requests
+# List Wallet Transaction Requests
 
-`GET /wallets/{WalletID}/transfers?paginationToken={token}`
+`GET /wallets/{WalletID}/transactions?paginationToken={token}`
 
-Retrieves a list of transfer requests for the specified wallet.&#x20;
+Retrieves a list of transactions for the specified wallet.&#x20;
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Wallets:ReadTransfer
+Wallets:ReadTransactions
 
 ### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
@@ -26,7 +26,7 @@ Wallets:ReadTransfer
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl "/wallets/wa-kentucky-speaker-d80f55f2a4/transfers" \
+curl "/wallets/wa-kentucky-speaker-d80f55f2a4/transactions" \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <TOKEN>"
 ```
@@ -37,11 +37,11 @@ curl "/wallets/wa-kentucky-speaker-d80f55f2a4/transfers" \
 
 ```json
 {
-    "walletId": "wa-39abb-e9kpk-87p9t6l2pbbdjb8o",
+    "walletId": "wa-6lbvd-hjdu1-9rtppq7p4c87cns7",
     "items": [
         {
-            "id": "tf-61bai-v6lao-9199i01reeo6s36n",
-            "walletId": "wa-39abb-e9kpk-87p9t6l2pbbdjb8o",
+            "id": "tx-214gn-efbru-91s8sunvok3jvt2i",
+            "walletId": "wa-6lbvd-hjdu1-9rtppq7p4c87cns7",
             "network": "ETH_SEPOLIA",
             "requester": {
                 "kind": "CustomerEmployee",
@@ -50,39 +50,16 @@ curl "/wallets/wa-kentucky-speaker-d80f55f2a4/transfers" \
                 "appId": "ap-C3H2-H7-3c762njr9t96l9qto6snl5ca4r"
             },
             "requestBody": {
-                "kind": "Native",
-                "to": "0xb282dc7cde21717f18337a596e91ded00b79b25f",
-                "amount": "1000000000"
+                "kind": "Evm",
+                "to": "0x00fb58432ef9d418bf6688bcf0a226d2fcaa18e2",
+                "data": "0x40d097c3000000000000000000000000d2f77f85a50cdd650ca562f3a180284e1d5b4934"
             },
             "status": "Confirmed",
-            "txHash": "0x4c94e7335efdb9a708f143b0f50f0130cff07271215042050bdd8ad429fa146f",
-            "fee": "31500000147000",
-            "dateRequested": "2023-05-09T22:39:33.198Z",
-            "dateBroadcasted": "2023-05-09T22:39:38.815Z",
-            "dateConfirmed": "2023-05-09T22:39:48.000Z"
-        },
-        {
-            "id": "tf-4n0dm-fqju5-8eu9pmv98jpma821",
-            "walletId": "wa-39abb-e9kpk-87p9t6l2pbbdjb8o",
-            "network": "ETH_SEPOLIA",
-            "requester": {
-                "kind": "CustomerEmployee",
-                "userId": "us-3v1ag-v6b36-9r0pjasaiqt1d3q7",
-                "tokenId": "to-7mkkj-c831n-9a7oj3kp8j5i5o9q",
-                "appId": "ap-C3H2-H7-3c762njr9t96l9qto6snl5ca4r"
-            },
-            "requestBody": {
-                "kind": "Erc721",
-                "contract": "0x00fb58432ef9d418bf6688bcf0a226d2fcaa18e2",
-                "to": "0xb282dc7cde21717f18337a596e91ded00b79b25f",
-                "tokenId": "1"
-            },
-            "status": "Confirmed",
-            "txHash": "0xcddf1167b53fcbe61c5360b50a2a075173049970c4c9dbea1e45db5ff9e41c15",
-            "fee": "95866500447377",
-            "dateRequested": "2023-05-08T18:10:43.521Z",
-            "dateBroadcasted": "2023-05-08T18:10:48.373Z",
-            "dateConfirmed": "2023-05-08T18:11:00.000Z"
+            "txHash": "0x192948dae1bb4cd5765f46417fbfbe500c413f9947dab89184ef3ecd16117640",
+            "fee": "93636000499392",
+            "dateRequested": "2023-05-10T22:23:44.742Z",
+            "dateBroadcasted": "2023-05-10T22:23:51.887Z",
+            "dateConfirmed": "2023-05-10T22:24:00.000Z"
         },
         ...
     ],
