@@ -6,7 +6,7 @@ Creates new `Wallet` associated with the given chain (such as `ETH or MATIC`). R
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Wallets:Create, PublicKeys:Create
+Wallets:Create
 
 ### Request body <a href="#request-body" id="request-body"></a>
 
@@ -27,7 +27,7 @@ curl -X POST "/wallets" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-In most cases, the initial status should be set to "Creating".  Call [GetAssetAccountById](../high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbyid.md) to check status of creation and get the associated blockchain address once complete.&#x20;
+In most cases, the initial status should be set to "Creating".  Call Get Wallet to check status of creation and get the associated blockchain address once complete.&#x20;
 
 ```json
 {
