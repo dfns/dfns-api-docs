@@ -6,7 +6,7 @@ Transfer an asset out of the specified wallet to a destination address.&#x20;
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Wallets:Read
+Wallets:TransferAsset
 
 ### Parameters <a href="#request-example.1" id="request-example.1"></a>
 
