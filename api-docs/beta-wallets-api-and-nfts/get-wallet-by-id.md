@@ -2,7 +2,7 @@
 
 `GET /wallets/{WalletID}`
 
-Retrieves a Wallet by it's ID.&#x20;
+Retrieves a Wallet by its ID.&#x20;
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
