@@ -19,6 +19,7 @@
   * [Create Wallet](api-docs/beta-wallets-api-and-nfts/create-wallet.md)
   * [Get Wallet by ID](api-docs/beta-wallets-api-and-nfts/get-wallet-by-id.md)
   * [List Wallets](api-docs/beta-wallets-api-and-nfts/list-wallets.md)
+  * [Get Wallet Assets](api-docs/beta-wallets-api-and-nfts/get-wallet-assets.md)
 * [High Level API: Asset Accounts & Payments](api-docs/high-level-api-asset-accounts-and-payments/README.md)
   * [Asset Accounts](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/README.md)
     * [Create Asset Account](api-docs/high-level-api-asset-accounts-and-payments/asset-accounts/createassetaccount.md)
