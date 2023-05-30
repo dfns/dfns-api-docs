@@ -1,4 +1,4 @@
-# List Transfer Requests
+# List Wallet Transfer Requests
 
 `GET /wallets/{WalletID}/transfers?paginationToken={token}`
 

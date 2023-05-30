@@ -1,6 +1,6 @@
 # Policy Engine Overview
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-10-20 at 15.04.32 (1).png" alt=""><figcaption><p>Policy Engine entities</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-20 at 15.04.32.png" alt=""><figcaption><p>Policy Engine entities</p></figcaption></figure>
 
 A Policy entity holds two types of entities.
 
