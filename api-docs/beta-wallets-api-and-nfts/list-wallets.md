@@ -29,7 +29,7 @@ curl "/wallets" \
 
 ### Response <a href="#response" id="response"></a>
 
-#### Response example <a href="#response-example" id="response-example"></a>
+#### 200 Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {

@@ -1,8 +1,8 @@
-# Get Wallet by ID
+# Get Wallet NFTs
 
-`GET /wallets/{WalletID}`
+`GET /wallets/{WalletID}/nfts`
 
-Retrieves a Wallet by it's ID.&#x20;
+Retrieves a list of NFTs owned by the specified Wallet.&#x20;
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
@@ -19,7 +19,7 @@ Wallets:Read
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl "/wallets/wa-kentucky-speaker-d80f55f2a4" \
+curl "/wallets/wa-kentucky-speaker-d80f55f2a4/nfts" \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <TOKEN>"
 ```
@@ -30,14 +30,21 @@ curl "/wallets/wa-kentucky-speaker-d80f55f2a4" \
 
 ```json
 {
-  "id": "wa-kentucky-speaker-d80f55f2a4",
-  "orgId": "cu-purple-pip-1b417b958500",
-  "status": "Creating",
-  "assetSymbol": "ETH",
-  "name": "My ETH account",
-  "address": "0x00e3495cf6af59008f22ffaf32d4c92ac33dac47",
-  "dateCreated": "2022-08-04T14:44:21.278Z",
-  "dateUpdate": "2022-08-04T14:44:21.278Z"
+    "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
+    "network": "ETH_SEPOLIA",
+    "nfts": [
+        {
+            "contract": "0x00fb58432ef9d418bf6688bcf0a226d2fcaa18e2",
+            "name": "Muppets",
+            "symbol": "MUPPETS",
+            "tokenIds": [
+                "0",
+                "1"
+            ],
+            "count": 2
+        }
+    ]
 }
+
 ```
 
