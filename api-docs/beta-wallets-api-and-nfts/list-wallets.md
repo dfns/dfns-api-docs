@@ -2,7 +2,7 @@
 
 `GET /wallets/?paginationToken={token}`
 
-Retrieves a list of wallets.&#x20;
+Retrieves a list of wallets.
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
@@ -22,9 +22,7 @@ Wallets:Read
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl "/wallets" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
+curl "/wallets"
 ```
 
 ### Response <a href="#response" id="response"></a>
@@ -33,19 +31,18 @@ curl "/wallets" \
 
 ```json
 {
-    "items": [
-        {
-            "id": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
-            "status": "Active",
-            "network": "ETH_SEPOLIA",
-            "address": "0x00e3495cf6af59008f22ffaf32d4c92ac33dac47",
-            "name": "my-wallet",
-            "tags": [],
-            "dateCreated": "2023-04-14T20:41:28.715Z"
-        },
-        ...
-    ],
-    "nextPageToken": "WszQXoENUIYyoBQjJm4DE6QhCk2sB7WAh9kykUMaTQcD25SToKbuXkgf3td8ZYb2LrtopPLo35u407gwwA1Sug=="
+  "items": [
+    {
+      "id": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
+      "status": "Active",
+      "network": "ETH_SEPOLIA",
+      "address": "0x00e3495cf6af59008f22ffaf32d4c92ac33dac47",
+      "name": "my-wallet",
+      "tags": [],
+      "dateCreated": "2023-04-14T20:41:28.715Z"
+    },
+    ...
+  ],
+  "nextPageToken": "WszQXoENUIYyoBQjJm4DE6QhCk2sB7WAh9kykUMaTQcD25SToKbuXkgf3td8ZYb2LrtopPLo35u407gwwA1Sug=="
 }
 ```
-
