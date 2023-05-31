@@ -12,10 +12,10 @@ Wallets:ReadSignature
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Required/Optional | Description                                                          | Type   |
-| -------------- | ----------------- | -------------------------------------------------------------------- | ------ |
-| `walletId`     | Required          | Unique identifier of the wallet. `wa-1f04s-lqc9q-86l9l9n97hcos0ln`   | String |
-| `signatureId`  | Required          | Unique identifier of the transfer. `sg-4tcfd-enph7-955qcvbki7vtaepl` | String |
+| Path parameter | Description                                                                       |
+| -------------- | --------------------------------------------------------------------------------- |
+| `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-86l9l9n97hcos0ln`          |
+| `signatureId`  | Unique identifier of the signature request. ex. `sg-4tcfd-enph7-955qcvbki7vtaepl` |
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 

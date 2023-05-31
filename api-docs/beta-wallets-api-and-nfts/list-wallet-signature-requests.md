@@ -1,6 +1,6 @@
 # List Wallet Signature Requests
 
-`GET /wallets/{walletId}/signatures`
+`GET /wallets/{walletId}/signatures?paginationToken={token}`
 
 List signature requests of a wallet.
 
@@ -12,9 +12,9 @@ Wallets:ReadSignature
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Required/Optional | Description                                                        | Type   |
-| -------------- | ----------------- | ------------------------------------------------------------------ | ------ |
-| `walletId`     | Required          | Unique identifier of the wallet. `wa-1f04s-lqc9q-86l9l9n97hcos0ln` | String |
+| Path parameter | Description                                                             |
+| -------------- | ----------------------------------------------------------------------- |
+| `walletId`     | Unique identifier of the `Wallet`. ex.`wa-1f04s-lqc9q-86l9l9n97hcos0ln` |
 
 #### Query parameters <a href="#query-parameters" id="query-parameters"></a>
 
