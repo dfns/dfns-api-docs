@@ -4,6 +4,21 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### June 1, 2023
+
+* Released the new Wallets and NFTs API Beta
+* Fixed bugs related to trailing slashes in URL paths
+
+### May 11, 2023
+
+* Added key-based recovery support to the Dfns Dashboard
+* Fixed bug in WalletConnect deployment
+
+### April 26, 2023
+
+* Added MVP signer multi-tenancy for ninja sandbox orgs
+* Updates to blockchain indexing pipeline
+
 ### April 20, 2023
 
 * Added Ethereum Sepolia testnet to blockchain indexing
