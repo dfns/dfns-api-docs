@@ -48,3 +48,34 @@ curl -X POST "/callback-subscriptions/" \
    "dateCreated": "2022-08-12T16:33:40.354Z"
 }
 ```
+
+### Callback Example <a href="#response" id="response"></a>
+
+#### `PaymentInitiated` example callback <a href="#response-example" id="response-example"></a>
+
+The following is an example body that will be posted to the endpoint specified in the callback `url`:&#x20;
+
+```json
+{
+  "note": "callbacks testing",
+  "amount": "0.0000000001",
+  "assetSymbol": "ETH",
+  "receiver": {
+    "kind": "DfnsAssetAccount",
+    "id": "aa-undress-india-0a2aa96fce"
+  },
+  "narrative": "some payment",
+  "initiator": {
+    "kind": "Employee",
+    "employeeId": "oe-nine-artist-9de60fef6963",
+    "orgId": "cu-purple-pip-1b417b958500"
+  },
+  "externalId": "1-2-3-4",
+  "orgId": "cu-purple-pip-1b417b958500",
+  "receiverAddress": "0xF7667d72812bc601F7f2aAdF354E192Fd069a3f2",
+  "dateCreated": "2022-08-29T20:53:05.630Z",
+  "assetAccountId": "aa-network-burger-21cb681b2c",
+  "id": "pa-pasta-kentucky-18e54f1f52",
+  "status": "Initiated"
+}
+```
