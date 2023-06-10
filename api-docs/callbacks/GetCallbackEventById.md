@@ -4,29 +4,26 @@
 
 Retrieves a `CallbackEvent` by it `id`.  A callback event is a record of a specific callback that was triggered.&#x20;
 
-### Required Permissions
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-CallbackEvents:Read
+## Required Permissions
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
+| Name                            | Conditions      |
+| ------------------------------- | --------------- |
+| `CallbackEvents:Read`           | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#parameters.1" id="parameters.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 <table><thead><tr><th width="283">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>callbackEventId</code></td><td>Unique identifier of the <code>CallbackEvent</code> like:<br><br><code>ce-orange-magnesium-a0606d08b2</code></td></tr></tbody></table>
 
-### Request Example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl "/callback-events/ce-tennis-london-1333ca3647" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 The `documentSnapshot` contains an escaped JSON object of callback event data.&#x20;
 

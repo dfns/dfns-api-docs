@@ -1,12 +1,19 @@
 
 ## ListAssetAccounts
-`RESTful Endpoint: GET /assets/asset-accounts`
-
-Scopes:
- * as API Key: AssetAccounts:ListAssetAccounts
- * as Employee Auth: AssetAccounts:ListAssetAccounts
+`GET /assets/asset-accounts`
 
 Returns list of all `AssetAccount` entities belonging to the same organization as the caller. Additional filters can be provided; see list of parameters for the operation.
+
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md "mention") for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
+
+### Required Permissions
+
+| Name                              | Conditions      |
+| --------------------------------- | --------------- |
+| `AssetAccounts:ListAssetAccounts` | Always Required |
 
 <!--  -->
 ### Input Query Parameters

@@ -1,5 +1,9 @@
 # Get API Key By ID
 
+{% hint style="danger" %}
+Endpoint deprecated.
+{% endhint %}
+
 `GET /api-keys/{APIKeyId}/`
 
 Retrieves an `APIKey` by its `id`.

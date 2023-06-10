@@ -1,44 +1,32 @@
 # Get Employee By ID
 
+{% hint style="danger" %}
+Endpoint deprecated.
+{% endhint %}
+
 `GET /employees/{employeeId}`
 
 Retrieves a specific employee (success) or gives a reason why it's not possible (failure).
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+## Required Permissions
 
-The caller either needs to be an OrgOwner or they need to have a permission assigned to them that allows them to execute the operation `Employees:Read`.
+| Name                           | Conditions      |
+| ------------------------------ | --------------- |
+| `Employees:Read`               | Always Required |
 
-### Triggers <a href="#triggers.1" id="triggers.1"></a>
+## Triggers <a href="#triggers.1" id="triggers.1"></a>
 
 `OrgsManagement`
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
+## Parameters <a href="#parameters.1" id="parameters.1"></a>
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 <table><thead><tr><th width="424">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>employeeId</code></td><td>Unique identifier of the employee.<br><br>Employee IDs look like this:<br><code>oe-orange-apple-2b17a80613</code><br><br>They follow this format:<br><code>oe-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr></tbody></table>
 
-#### Query parameters <a href="#query-parameters" id="query-parameters"></a>
+## Response <a href="#response" id="response"></a>
 
-N/A
-
-### Request body <a href="#request-body" id="request-body"></a>
-
-N/A
-
-### Request example <a href="#request-example.1" id="request-example.1"></a>
-
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl -X GET "/employees/oe-orange-apple-2b17a80613" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" 
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 If successful, the response contains the permission object:
 
@@ -57,7 +45,3 @@ If successful, the response contains the permission object:
     "isOrgOwner": false
 }
 ```
-
-### Notes <a href="#notes" id="notes"></a>
-
-N/A

@@ -2,13 +2,19 @@
 ## GetPaymentById
 `RESTful Endpoint: GET /assets/asset-accounts/{assetAccountId}/payments/{paymentId}`
 
-Scopes:
- * as Employee Auth: Payments:GetPayment
- * as API Key: Payments:GetPayment
-
-## GetPaymentById
-
 Given an `AssetAccountId` and `PaymentId`, returns a specific `Payment` entity.
+
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md "mention") for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
+
+### Required Permissions
+
+| Name                            | Conditions      |
+| ------------------------------- | --------------- |
+| `Payments:GetPayment`           | Always Required |
+
 ### Input Query Parameters
 * Path parameter `assetAccountId`: undefined ,* Path parameter `paymentId`: undefined
 

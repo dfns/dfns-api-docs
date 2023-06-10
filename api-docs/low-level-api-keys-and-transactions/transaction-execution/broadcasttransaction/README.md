@@ -6,11 +6,19 @@ Broadcast transaction enables communication with any arbitrary smart contract by
 
 Currently, only EVM compatible chains are supported. We plan to add additional chain support in the future. Please don't hesitate to contact us if you need support for a non-EVM chain.&#x20;
 
-### Required Permissions
+{% hint style="info" %}
+* User action signature required. See [User Action Signing](../../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-Transactions:Create
+## Required Permissions
 
-### Request body <a href="#request-body" id="request-body"></a>
+| Name                           | Conditions      |
+| ------------------------------ | --------------- |
+| `Transaction:Create`           | Always Required |
+
+## Request body <a href="#request-body" id="request-body"></a>
 
 The following fields are common to all `templateKinds:`
 
@@ -18,26 +26,21 @@ The following fields are common to all `templateKinds:`
 
 For details on specific templateKinds, please see the chain specific sub pages underneath this article in the left hand navigation.&#x20;
 
-### Request example <a href="#request-example.1" id="request-example.1"></a>
+## Request example <a href="#request-example.1" id="request-example.1"></a>
 
-#### Sample request using EvmGenericTx <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl -X POST "/public-keys/transactions" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" \
--d '{
-    "publicKeyId": "pk-orange-magnesium-a0606d08b2",
-    "network": "ETH",
-    "templateKind": "EvmGenericTx",
-    "data": "0x368b87720000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000b48656c6c6f204d616a6964000000000000000000000000000000000000000000",
-    "to": "0xeE1C5C88026AA51c653155276dE578d7c02aDB0c"
-}'
+```JSON
+{
+  "publicKeyId": "pk-orange-magnesium-a0606d08b2",
+  "network": "ETH",
+  "templateKind": "EvmGenericTx",
+  "data": "0x368b87720000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000b48656c6c6f204d616a6964000000000000000000000000000000000000000000",
+  "to": "0xeE1C5C88026AA51c653155276dE578d7c02aDB0c"
+}
 ```
 
-### Response <a href="#response" id="response"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 Status begins as `Initiated` and changes to `Executed` once broadcast to the mempool.  Use [GetTransactionById](../gettransactionbyid.md) to query for updated status and to retrieve a blockchain transaction hash.
 

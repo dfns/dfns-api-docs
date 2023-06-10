@@ -2,11 +2,18 @@
 ## GetAssetAccountById
 `RESTful Endpoint: GET /assets/asset-accounts/{assetAccountId}`
 
-Scopes:
- * as API Key: AssetAccounts:GetAssetAccount
- * as Employee Auth: AssetAccounts:GetAssetAccount
-
 Retrieves a particular instance of `AssetAccount` by its `id`. If not found, returns `EntityNotFoundError` with a message indicating which table from which it's missing.
+
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md "mention") for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
+
+### Required Permissions
+
+| Name                            | Conditions      |
+| ------------------------------- | --------------- |
+| `AssetAccounts:GetAssetAccount` | Always Required |
 
 ## Notes
 

@@ -4,29 +4,26 @@
 
 Retrieves a `Signature` by its corresponding `PublicKey` and its `id`.
 
-### Required Permissions
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-Signatures:Read
+## Required Permissions
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
+| Name                           | Conditions      |
+| ------------------------------ | --------------- |
+| `Signatures:Read`              | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#parameters.1" id="parameters.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 <table><thead><tr><th width="266">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>PublicKeyId</code></td><td>Unique identifier of the <code>PublicKey</code> like:<br><br><code>pk-orange-magnesium-a0606d08b2</code></td></tr><tr><td><code>SignatureId</code></td><td>Unique identifier of the <code>Signature</code> like:<br><br><code>si-sierra-green-f26c441f60</code></td></tr></tbody></table>
 
-### Request Example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl "/public-keys/pk-orange-magnesium-a0606d08b2/signatures/si-sierra-green-f26c441f60" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 For a mathematical explanation of the signature components r and `s`, see [Wikipedia](https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm).  The `v` component of the signature is returned in the `recid`.&#x20;
 

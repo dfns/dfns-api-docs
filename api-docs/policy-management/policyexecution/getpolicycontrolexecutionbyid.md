@@ -4,29 +4,26 @@
 
 Retrieves a `PolicyControlExecution` by its `id`.
 
-### Required Permissions
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-PolicyControlExecutions:Read
+## Required Permissions
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
+| Name                             | Conditions      |
+| -------------------------------- | --------------- |
+| `PolicyControlExecutions:Read`   | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#parameters.1" id="parameters.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 <table><thead><tr><th width="298">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>policyControlExecutionId</code></td><td>Unique identifier of the policy control execution like:<br><br><code>pce-fanta-twelve-333cb3fe31</code></td></tr></tbody></table>
 
-### Request Example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl "/policies/policy-control-executions/pce-fanta-twelve-333cb3fe31" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 If successful, the response contains a status indicating whether the policy control execution has been Approved, Rejected, or is still Awaiting approval.    `documentedActivity` contains an escaped JSON object of the transaction data which initiated the policy execution.&#x20;
 
@@ -49,6 +46,3 @@ If successful, the response contains a status indicating whether the policy cont
 
 
 ```
-
-
-

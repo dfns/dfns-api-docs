@@ -2,32 +2,31 @@
 
 `GET /wallets/{walletId}/transactions/{transactionId}`
 
-Retrieves a Wallet Transaction Request by its ID.&#x20;
+Retrieves a Wallet Transaction Request by its ID.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-Wallets:ReadTransaction
+## Required Permissions
 
-### Parameters <a href="#request-example.1" id="request-example.1"></a>
+| Name                      | Conditions      |
+| ------------------------- | --------------- |
+| `Wallets:ReadTransaction` | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#request-example.1" id="request-example.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 | Path parameter  | Description                                                                         |
 | --------------- | ----------------------------------------------------------------------------------- |
 | `walletId`      | Unique identifier of the `Wallet`. ex.`wa-6lbvd-hjdu1-9rtppq7p4c87cns7`             |
 | `transactionId` | Unique identifier of the transaction request. ex. `tx-1jbko-fmk8d-9iebm4la5m3c4j8v` |
 
-### Request example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl "/wallets/wa-6lbvd-hjdu1-9rtppq7p4c87cns7/transactions/tx-1jbko-fmk8d-9iebm4la5m3c4j8v"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### 200 Response example <a href="#response-example" id="response-example"></a>
+### 200 Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {

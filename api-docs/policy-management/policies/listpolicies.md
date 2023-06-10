@@ -4,23 +4,20 @@
 
 Lists all `Policies` belonging to an Org.
 
-### Required Permissions
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-Policies:Read
+## Required Permissions
 
-### Request Example <a href="#request-example.1" id="request-example.1"></a>
+| Name                           | Conditions      |
+| ------------------------------ | --------------- |
+| `Policies:Read`                | Always Required |
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
+## Response <a href="#response" id="response"></a>
 
-```shell
-curl "/policies/policies/" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 If successful, the response contains a list of policies:
 
@@ -49,6 +46,3 @@ If successful, the response contains a list of policies:
    ]
 }
 ```
-
-
-

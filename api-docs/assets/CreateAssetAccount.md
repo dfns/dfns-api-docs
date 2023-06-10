@@ -2,11 +2,18 @@
 ## CreateAssetAccount
 `RESTful Endpoint: POST /assets/asset-accounts`
 
-Scopes:
- * as API Key: AssetAccounts:CreateAssetAccount
- * as Employee Auth: AssetAccounts:CreateAssetAccount
-
 Creates new `AssetAccount` entity associated with a specific `assetSymbol` (such as `ETH`). Returns new asset ID.
+
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md "mention") for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
+
+### Required Permissions
+
+| Name                               | Conditions      |
+| ---------------------------------- | --------------- |
+| `AssetAccounts:CreateAssetAccount` | Always Required |
 
 ## Notes
 

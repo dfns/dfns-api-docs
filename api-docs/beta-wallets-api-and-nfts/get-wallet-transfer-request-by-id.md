@@ -4,30 +4,29 @@
 
 Retrieves a Wallet Transfer Request by its ID.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-Wallets:ReadTransfer
+## Required Permissions
 
-### Parameters <a href="#request-example.1" id="request-example.1"></a>
+| Name                   | Conditions      |
+| ---------------------- | --------------- |
+| `Wallets:ReadTransfer` | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#request-example.1" id="request-example.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 | Path parameter | Description                                                                      |
 | -------------- | -------------------------------------------------------------------------------- |
-| `walletId`       | Unique identifier of the `Wallet`. ex. `wa-39abb-e9kpk-87p9t6l2pbbdjb8o`         |
-| `transferId`     | Unique identifier of the transfer request. ex. `tf-2mq6c-iu1es-8ukqph8bt12khbkr` |
+| `walletId`     | Unique identifier of the `Wallet`. ex. `wa-39abb-e9kpk-87p9t6l2pbbdjb8o`         |
+| `transferId`   | Unique identifier of the transfer request. ex. `tf-2mq6c-iu1es-8ukqph8bt12khbkr` |
 
-### Request example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl "/wallets/wa-39abb-e9kpk-87p9t6l2pbbdjb8o/transfers/tf-2mq6c-iu1es-8ukqph8bt12khbkr"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### 200 Response example <a href="#response-example" id="response-example"></a>
+### 200 Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {

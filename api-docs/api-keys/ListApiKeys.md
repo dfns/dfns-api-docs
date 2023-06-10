@@ -1,5 +1,9 @@
 # ListApiKeys
 
+{% hint style="danger" %}
+Endpoint deprecated.
+{% endhint %}
+
 `GET /api-keys/`
 
 Retrieves all `APIKeys` in the org.

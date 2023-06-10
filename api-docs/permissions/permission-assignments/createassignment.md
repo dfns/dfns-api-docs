@@ -4,25 +4,23 @@
 
 Creates a permission assignment, effectively granting a permission to a specific Identity. Response confirms the assignment (success) or gives the reason why it's not possible (failure).
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-The caller either needs to be an OrgOwner or they need to have a permission assigned to them that allows them to execute the operation `PermissionAssignments:Create`.
+## Required Permissions
 
-### Triggers <a href="#triggers.1" id="triggers.1"></a>
+| Name                           | Conditions      |
+| ------------------------------ | --------------- |
+| `PermissionAssignments:Create` | Always Required |
+
+## Triggers <a href="#triggers.1" id="triggers.1"></a>
 
 `PermissionManagement`
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
-
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
-
-N/A
-
-#### Query parameters <a href="#query-parameters" id="query-parameters"></a>
-
-N/A
-
-### Request body <a href="#request-body" id="request-body"></a>
+## Request body <a href="#request-body" id="request-body"></a>
 
 In the **request body** specify the **permission ID** and **identity ID.**
 
@@ -32,20 +30,19 @@ In the **request body** specify the **permission ID** and **identity ID.**
 | `identityId`        | Required          | The ID of the identity the permission is being assigned to. | String           |
 | `identityKind`      | Required          | Either CustomerEmployee, Application or EndUser.            | Enumerated Type  |
 
-### Request example <a href="#request-example.1" id="request-example.1"></a>
+## Request example <a href="#request-example.1" id="request-example.1"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl -X POST "/permissions/assignments" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" \
--d '{"permissionId": "pm-orange-apple-2b17a80613", "identityId": "some-identity-id", "identityKind": "CustomerEmployee"}
+```JSON
+{
+  "permissionId": "pm-orange-apple-2b17a80613",
+  "identityId": "some-identity-id",
+  "identityKind": "CustomerEmployee"
+}
 ```
 
-### Response <a href="#response" id="response"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 If successful, the response will contain an assignment object similar to the one below:
 
@@ -61,6 +58,6 @@ If successful, the response will contain an assignment object similar to the one
 }
 ```
 
-### Notes <a href="#notes" id="notes"></a>
+## Notes <a href="#notes" id="notes"></a>
 
 Assignment IDs look like this: `as-stream-pizza-08edcfff93`. They follow this format: `as-<random-words>-<random-alphanumeric-string>`

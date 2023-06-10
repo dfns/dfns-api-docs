@@ -4,21 +4,29 @@
 
 Transfer an asset out of the specified wallet to a destination address.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-Wallets:TransferAsset
+## Required Permissions
 
-### Parameters <a href="#request-example.1" id="request-example.1"></a>
+| Name                    | Conditions      |
+| ----------------------- | --------------- |
+| `Wallets:TransferAsset` | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#request-example.1" id="request-example.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 | Path parameter | Description                                                              |
 | -------------- | ------------------------------------------------------------------------ |
 | `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-86l9l9n97hcos0ln` |
 
-### Native Cryptocurrencies <a href="#native-currency-request-body" id="native-currency-request-body"></a>
+## Native Cryptocurrencies <a href="#native-currency-request-body" id="native-currency-request-body"></a>
 
-#### Request body <a href="#native-currency-request-body" id="native-currency-request-body"></a>
+### Request body <a href="#native-currency-request-body" id="native-currency-request-body"></a>
 
 | Request body fields | Required/Optional | Description                                                     | Type   |
 | ------------------- | ----------------- | --------------------------------------------------------------- | ------ |
@@ -26,19 +34,17 @@ Wallets:TransferAsset
 | `to`                | Required          | The destination address.                                        | String |
 | `amount`            | Required          | The amount of native token to transfer in minimum denomination. | String |
 
-#### Sample request <a href="#sample-native-currency-request" id="sample-native-currency-request"></a>
+### Sample request body <a href="#sample-native-currency-request" id="sample-native-currency-request"></a>
 
 ```shell
-curl -XPOST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/transfers" \
--H "Content-Type: application/json" \
--d '{
+{
   "kind": "Native",
   "to": "0xb282dc7cde21717f18337a596e91ded00b79b25f",
   "amount": "1000000000"
-}'
+}
 ```
 
-#### 200 response example <a href="#native-currency-response-example" id="native-currency-response-example"></a>
+### 200 response example <a href="#native-currency-response-example" id="native-currency-response-example"></a>
 
 ```json
 {
@@ -61,9 +67,9 @@ curl -XPOST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/transfers" \
 }
 ```
 
-### ERC-20 Transfers <a href="#notes" id="notes"></a>
+## ERC-20 Transfers <a href="#notes" id="notes"></a>
 
-#### Request body <a href="#erc20-request-body" id="erc20-request-body"></a>
+### Request body <a href="#erc20-request-body" id="erc20-request-body"></a>
 
 | Request body fields | Required/Optional | Description                                               | Type   |
 | ------------------- | ----------------- | --------------------------------------------------------- | ------ |
@@ -72,20 +78,18 @@ curl -XPOST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/transfers" \
 | `to`                | Required          | The destination address.                                  | String |
 | `amount`            | Required          | The amount of tokens to transfer in minimum denomination. | String |
 
-#### Sample request <a href="#sample-erc20-request" id="sample-erc20-request"></a>
+### Sample request body <a href="#sample-erc20-request" id="sample-erc20-request"></a>
 
 ```shell
-curl -XPOST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/transfers" \
--H "Content-Type: application/json" \
--d '{
+{
   "kind": "Erc20",
   "contract": "0x779877a7b0d9e8603169ddbd7836e478b4624789",
   "to": "0xb282dc7cde21717f18337a596e91ded00b79b25f",
   "amount": "1000000000"
-}'
+}
 ```
 
-#### 200 response example <a href="#erc20-response-example" id="erc20-response-example"></a>
+### 200 response example <a href="#erc20-response-example" id="erc20-response-example"></a>
 
 ```json
 {
@@ -109,9 +113,9 @@ curl -XPOST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/transfers" \
 }
 ```
 
-### ERC-721 NFT Transfers
+## ERC-721 NFT Transfers
 
-#### Request body <a href="#erc721-request-body" id="erc721-request-body"></a>
+### Request body <a href="#erc721-request-body" id="erc721-request-body"></a>
 
 | Request body fields | Required/Optional | Description                  | Type   |
 | ------------------- | ----------------- | ---------------------------- | ------ |
@@ -120,20 +124,18 @@ curl -XPOST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/transfers" \
 | `to`                | Required          | The destination address.     | String |
 | `tokenId`           | Required          | The token to transfer.       | String |
 
-#### Sample request <a href="#sample-erc721-request" id="sample-erc721-request"></a>
+### Sample request body <a href="#sample-erc721-request" id="sample-erc721-request"></a>
 
 ```shell
-curl -XPOST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/transfers" \
--H "Content-Type: application/json" \
--d '{
+{
   "kind": "Erc721",
   "contract": "0x00fb58432ef9d418bf6688bcf0a226d2fcaa18e2",
   "to": "0xb282dc7cde21717f18337a596e91ded00b79b25f",
   "tokenId": "1"
-}'
+}
 ```
 
-#### 200 response example <a href="#erc721-response-example" id="erc721-response-example"></a>
+### 200 response example <a href="#erc721-response-example" id="erc721-response-example"></a>
 
 ```json
 {

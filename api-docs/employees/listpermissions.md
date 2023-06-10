@@ -1,44 +1,26 @@
 # ListEmployees
 
+{% hint style="danger" %}
+Endpoint deprecated.
+{% endhint %}
+
 `GET /employees`
 
 Retrieves a list of employees (success) or gives a reason why it's not possible (failure).
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+## Required Permissions
 
-The caller either needs to be an OrgOwner or they need to have a permission assigned to them that allows them to execute the operation `Employees:Read`.
+| Name                           | Conditions      |
+| ------------------------------ | --------------- |
+| `Employees:Read`               | Always Required |
 
-### Triggers <a href="#triggers.1" id="triggers.1"></a>
+## Triggers <a href="#triggers.1" id="triggers.1"></a>
 
 `OrgsManagement`
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
-
-N/A
-
-#### Query parameters <a href="#query-parameters" id="query-parameters"></a>
-
-N/A
-
-### Request body <a href="#request-body" id="request-body"></a>
-
-N/A
-
-### Request example <a href="#request-example.1" id="request-example.1"></a>
-
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl -X GET "/employees" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" 
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 If successful, the response contains a list of permission objects:
 
@@ -59,7 +41,3 @@ If successful, the response contains a list of permission objects:
     }
 ]
 ```
-
-### Notes <a href="#notes" id="notes"></a>
-
-N/A

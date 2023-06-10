@@ -1,5 +1,9 @@
 # Create API Key
 
+{% hint style="danger" %}
+Endpoint deprecated.
+{% endhint %}
+
 `POST /api-keys/`
 
 Instantiates a JWT token for a machine/service account, which must be securely persisted and passed in the request headers as a bearer token. The token is subject to policy engine controls, but can not approve policy control executions.&#x20;

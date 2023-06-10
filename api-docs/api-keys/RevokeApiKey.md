@@ -1,6 +1,8 @@
 # Revoke API Key
 
-
+{% hint style="danger" %}
+Endpoint deprecated.
+{% endhint %}
 
 `DELETE /api-keys/{APIKeyId}/`
 
