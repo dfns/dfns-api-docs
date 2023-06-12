@@ -123,6 +123,16 @@ Example:
   }
 }
 ```
+
+**The application being deactivated needs to be different then the application specified in `X-DFNS-APPID`**
+
+```JSON
+{
+  "error": {
+    "message": "application cannot modify its own state"
+  }
+}
+```
 {% endtab %}
 
 {% tab title="401" %}
@@ -143,7 +153,7 @@ Example:
 ```JSON
 {
   "error": {
-    "message": "CustomerEmployee us-24vwa-92s33-8tvqi1dg0a95megt is not authorized to perform operation (/auth/apps)"
+    "message": "CustomerEmployee us-24vwa-92s33-8tvqi1dg0a95megt is not authorized to perform operation (Auth:Apps:Update)"
   }
 }
 ```
@@ -154,6 +164,18 @@ Example:
 {
   "error": {
     "message": "user action signature is missing or invalid"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="404" %}
+**Application does not exist in the database**
+
+```JSON
+{
+  "error": {
+    "message": "application not found"
   }
 }
 ```

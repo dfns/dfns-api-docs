@@ -6,6 +6,7 @@
 
 * [Getting Started](getting-started/GettingStarted.md)
 * [Request Headers](getting-started/request-headers.md)
+* [API Errors](getting-started/errors.md)
 * [API Authentication](getting-started/authentication-authorization.md)
 * [Dfns Environments](getting-started/dfns-environments.md)
 * [API Levels of Abstraction](getting-started/DfnsAPIAbstractionLevels.md)
