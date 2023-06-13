@@ -84,9 +84,14 @@ Example:
 
 ## Responses
 
+{% hint style="info" %}
+* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
+* See [Credential Management Errors](../../../getting-started/errors.md#credential-management-errors) for credential management specific errors.
+{% endhint %}
+
 {% tabs %}
 {% tab title="200" %}
-**Success: an object describing the new credential**
+**Success** - an object describing the new credential
 
 ```JSON
 {
@@ -99,64 +104,6 @@ Example:
   "publicKey": "SHA256:E2a3ZQEb4...rPqc",
   "relyingPartyId": "dfns.ninja",
   "origin": "https://app.dfns.ninja"
-}
-```
-{% endtab %}
-
-{% tab title="400" %}
-**`X-DFNS-NONCE` header is missing or invalid**
-
-```JSON
-{
-  "error": {
-    "message": "request nonce is missing or invalid",
-  }
-}
-```
-
-**`X-DFNS-NONCE` already used**
-
-```JSON
-{
-  "error": {
-    "message": "request nonce has already been used"
-  }
-}
-```
-{% endtab %}
-
-{% tab title="401" %}
-**Caller not authenticated**
-
-```JSON
-{
-  "error": {
-    "message": "Not Authorized."
-  }
-}
-```
-{% endtab %}
-
-{% tab title="403" %}
-**Caller does not have access to the resource or endpoint**
-
-```JSON
-{
-  "error": {
-    "message": "CustomerEmployee us-24vwa-92s33-8tvqi1dg0a95megt is not authorized to perform operation (/auth/apps)"
-  }
-}
-```
-{% endtab %}
-
-{% tab title="500" %}
-**An error occurred on the server**
-
-```JSON
-{
-  "error": {
-    "message": "Internal Server Error"
-  }
 }
 ```
 {% endtab %}

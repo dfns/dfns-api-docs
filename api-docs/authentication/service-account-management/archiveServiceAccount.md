@@ -31,9 +31,14 @@ Example:
 
 ## Responses
 
+{% hint style="info" %}
+* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
+* See [Service Account Management Errors](../../../getting-started/errors.md#service-account-management-errors) for service account management specific errors.
+{% endhint %}
+
 {% tabs %}
 {% tab title="200" %}
-**Success**
+**Success** - The service account that was updated
 
 ```JSON
 {
@@ -45,90 +50,12 @@ Example:
     "orgId": "or-yanke-mars-6ulofamogg84s87v",
     "permissions": [],
     "scopes": [],
-    "isActive": true,
+    "isActive": false,
     "isServiceAccount": true,
     "isRegistered": true,
     "permissionAssignments": []
   },
   "accessTokens": []
-}
-```
-{% endtab %}
-
-{% tab title="400" %}
-**`X-DFNS-NONCE` header is missing or invalid**
-
-```JSON
-{
-  "error": {
-    "message": "request nonce is missing or invalid",
-  }
-}
-```
-
-**`X-DFNS-NONCE` already used**
-
-```JSON
-{
-  "error": {
-    "message": "request nonce has already been used"
-  }
-}
-```
-
-**`X-DFNS-USERACTION` already used**
-
-```JSON
-{
-  "error": {
-    "message": "user action has already been used"
-  }
-}
-```
-{% endtab %}
-
-{% tab title="401" %}
-**Caller not authenticated**
-
-```JSON
-{
-  "error": {
-    "message": "Not Authorized."
-  }
-}
-```
-{% endtab %}
-
-{% tab title="403" %}
-**Caller does not have access to the resource or endpoint**
-
-```JSON
-{
-  "error": {
-    "message": "CustomerEmployee us-24vwa-92s33-8tvqi1dg0a95megt is not authorized to perform operation (/auth/service-accounts/us-2q55i-g68v6-9etoie66crbdsh7k)"
-  }
-}
-```
-
-**`X-DFNS-USERACTION` is missing or invalid**
-
-```JSON
-{
-  "error": {
-    "message": "user action signature is missing or invalid"
-  }
-}
-```
-{% endtab %}
-
-{% tab title="500" %}
-**An error occurred on the server**
-
-```JSON
-{
-  "error": {
-    "message": "Internal Server Error"
-  }
 }
 ```
 {% endtab %}

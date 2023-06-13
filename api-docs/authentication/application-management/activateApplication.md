@@ -31,9 +31,14 @@ Example:
 
 ## Responses
 
+{% hint style="info" %}
+* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
+* See [Application Management Errors](../../../getting-started/errors.md#application-management-errors) for application management specific errors.
+{% endhint %}
+
 {% tabs %}
 {% tab title="200" %}
-**Success**
+**Success** - The application that was modified
 
 ```JSON
 {
@@ -42,7 +47,7 @@ Example:
   "orgId": "or-yanke-mars-6ulofamogg8fs87v",
   "expectedRpId": "localhost",
   "expectedOrigin": "http://localhost:3000",
-  "name": "Codys Localhost Server-Side App",
+  "name": "My Localhost Server-Side App",
   "isActive": true,
   "permissionAssignments": [
     {
@@ -82,113 +87,13 @@ Example:
       "kind": "Application",
       "linkedAppId": "ap-4s6se-e2t7n-89gfg50iaos73pm6",
       "linkedUserId": "",
-      "name": "Codys Localhost Server-Side App",
+      "name": "My Localhost Server-Side App",
       "orgId": "or-yanke-mars-6ulofamogg8fs87v",
       "permissionAssignments": [],
       "publicKey": "SHA256:lH6mAX/74SbWzSjwNBFapwJsUdccVQzA8yj7K8/R5eo",
       "tokenId": "to-3oona-vc575-9ueb17f2t4uq0m9b"
     }
   ]
-}
-```
-{% endtab %}
-
-{% tab title="400" %}
-**`X-DFNS-NONCE` header is missing or invalid**
-
-```JSON
-{
-  "error": {
-    "message": "request nonce is missing or invalid",
-  }
-}
-```
-
-**`X-DFNS-NONCE` already used**
-
-```JSON
-{
-  "error": {
-    "message": "request nonce has already been used"
-  }
-}
-```
-
-**`X-DFNS-USERACTION` already used**
-
-```JSON
-{
-  "error": {
-    "message": "user action has already been used"
-  }
-}
-```
-
-**The application being deactivated needs to be different then the application specified in `X-DFNS-APPID`**
-
-```JSON
-{
-  "error": {
-    "message": "application cannot modify its own state"
-  }
-}
-```
-{% endtab %}
-
-{% tab title="401" %}
-**Caller not authenticated**
-
-```JSON
-{
-  "error": {
-    "message": "Not Authorized."
-  }
-}
-```
-{% endtab %}
-
-{% tab title="403" %}
-**Caller does not have access to the resource or endpoint**
-
-```JSON
-{
-  "error": {
-    "message": "CustomerEmployee us-24vwa-92s33-8tvqi1dg0a95megt is not authorized to perform operation (Auth:Apps:Update)"
-  }
-}
-```
-
-**`X-DFNS-USERACTION` is missing or invalid**
-
-```JSON
-{
-  "error": {
-    "message": "user action signature is missing or invalid"
-  }
-}
-```
-{% endtab %}
-
-{% tab title="404" %}
-**Application does not exist in the database**
-
-```JSON
-{
-  "error": {
-    "message": "application not found"
-  }
-}
-```
-{% endtab %}
-
-{% tab title="500" %}
-**An error occurred on the server**
-
-```JSON
-{
-  "error": {
-    "message": "Internal Server Error"
-  }
 }
 ```
 {% endtab %}
