@@ -372,22 +372,4 @@ const generateUserActionSignature = async (
 ```
 {% endcode %}
 {% endtab %}
-
-{% tab title="Curl" %}
-{% code title="updateUser.sh" overflow="wrap" lineNumbers="true" %}
-```shell
-currentTime=$( date -u +"%Y-%m-%dT%H:%M:%SZ" )
-nonce=$( echo "{\"date\":\"$currentTime\",\"uuid\":\"$(uuidgen)\"}" | base64 | tr '/+' '_-' | tr -d '=' )
-
-externalId='My new external ID'
-curl -X PUT "/auth/users/us-2mhcm-9r90a-92ran47bjpl60hmv" \
--H "Content-Type: application/json" \
--H "X-DFNS-NONCE: $nonce" \
--H "X-DFNS-APPID: $DFNS_APP_ID" \
--H "Authoriztion: Bearer $DFNS_API_KEY" \
--H "X-DFNS-USERACTION: <USER_ACITON_TOKEN>" \
--d "{\"name\":\"$appName\"}"
-```
-{% endcode %}
-{% endtab %}
 {% endtabs %}
