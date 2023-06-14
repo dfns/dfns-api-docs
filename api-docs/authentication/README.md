@@ -1,6 +1,68 @@
 # 🆕 Beta: Authentication
 
-### Postman Pre-request Script to automate user action signing (using PAT / Service Account)
+## Postman Integration
+To use Postman we recommend using a [Personal Access Token](./personal-access-token-management/) or a [Service Account](./service-account-management/).
+
+### Setup
+To make calls within postman you need to:
+
+
+<details>
+
+<summary>1. Create a public / private key pair</summary>
+
+The public private key pair will be used to sign user actions within the Dfns API.
+
+```shell
+# Generate a ECDSA Private Key and the public key pair
+openssl ecparam -genkey -name prime256v1 -noout -out prime256v1.pem
+openssl pkey -in prime256v1.pem -pubout -out prime256v1.public.pem
+```
+
+</details>
+
+<details>
+
+<summary>2. Create a Personal Access Token or Service Account in the Dfns Dashboard</summary>
+
+Personal access tokens can be created in the Dfns dashboard under the Settings page.
+
+<figure><img src="../../.gitbook/assets/personal-access-token-dashboard.png" alt=""><figcaption><p>Dfns Dashboard - Personal Access Token list</p></figcaption></figure>
+
+When creating a new Personal Access Token, you will need to copy the public key (in `prime256v1.public.pem`) you create earlier into the Public Key.
+
+<figure><img src="../../.gitbook/assets/new-pat-dashboard.png" alt=""><figcaption><p>Dfns Dashboard - New Personal Access Token</p></figcaption></figure>
+
+Be sure to copy the JWT, after the Personal Access Token is created, as you will need it in the next step.
+
+</details>
+
+<details>
+
+<summary>3. Create and populate an environment in Postman</summary>
+
+In the environment you need to set the following variables:
+
+* `customerAccessToken` - The Personal Access Token JWT you copied ealier. This setting should be marked as Secret.
+* `customerAccessTokenPrivateKey` - The private key created earlier. Copy the key including all newlines into the variable. This setting should be marked as Secret.
+* `customerAppId` - The `App ID` of the Dfns application. This can be found in the Dfns dashboard under `Settings`->`Org Settings`->`Applications`.
+
+<figure><img src="../../.gitbook/assets/apps-dashboard.png" alt=""><figcaption><p>Dfns Dashboard - Application list</p></figcaption></figure>
+
+* `customerAppOrigin` - The `Expected Origin` from your Dfns Application. Also found on the Applications page on the Dfns Dashboard.
+* `useAuthV2` - Set to `true`.
+
+</details>
+
+<details>
+
+<summary>4. Add Pre-request Script to all calls in Postman</summary>
+
+In Postman, click on the folder that holds all the Dfns API calls. On the `Pre-request Scropt` tab paste the following script.
+
+This script will run before each API call, and will handle setting headers and performing `User Action Signing`.
+
+<figure><img src="../../.gitbook/assets/postman-script.png" alt=""><figcaption><p>Postman Pre-request Script</p></figcaption></figure>
 
 ```javascript
 // jsrsasign expects us to be in a browser, but they don't really use the values for anything.
@@ -139,3 +201,15 @@ if (pm.environment.get("useAuthV2") === "true") {
     }
 }
 ```
+
+</details>
+
+<details>
+
+<summary>5. Add header to all mutating calls</summary>
+
+Add a `X-DFNS-USERACTION` header to all calls that require User Action Signing (most `POST`, `PUT`, and `Delete` requests). Leave the value empty.
+
+<figure><img src="../../.gitbook/assets/postman-headers.png" alt=""><figcaption><p>Postman Add Header</p></figcaption></figure>
+
+</details>
