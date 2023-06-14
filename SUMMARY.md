@@ -46,7 +46,7 @@
   * [Generate Signature from Wallet](api-docs/beta-wallets-api-and-nfts/generate-signature-from-wallet.md)
   * [Get Wallet Signature Request by ID](api-docs/beta-wallets-api-and-nfts/get-wallet-signature-request-by-id.md)
   * [List Wallet Signature Requests](api-docs/beta-wallets-api-and-nfts/list-wallet-signature-requests.md)
-* [🆕 Beta: Authentication](api-docs/authentication.md)
+* [🆕 Beta: Authentication](api-docs/authentication/README.md)
   * [Delegated Authentication](api-docs/authentication/delegated-auth/README.md)
     * [Delegated Registration](api-docs/authentication/delegated-auth/delegatedregistration.md)
     * [Delegated Login](api-docs/authentication/delegated-auth/delegatedlogin.md)
