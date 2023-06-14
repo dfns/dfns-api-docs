@@ -102,4 +102,3 @@ Example:
 ## Examples
 
 {% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/application-management/activate-application.ts" %} Typescript Example {% endembed %}
-
