@@ -1,1 +1,1 @@
-Customers Domain is responsible for the storage and mapping of the customers and their organisations to Dfns products.
+Customers Domain is responsible for the storage and mapping of the customers and their organizations to Dfns products.

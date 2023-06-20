@@ -12,30 +12,34 @@ This creates a callback subscription for the specific `eventKind`.   `eventKind`
 * `WalletCreated`: An AssetAccount or Wallet has been successfully created.
 * `PolicyActivated`: A new Policy has been successfully activated.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-CallbackSubscriptions:Create
+## Required Permissions
 
-### Parameters <a href="#request-body" id="request-body"></a>
+| Name                            | Conditions      |
+| ------------------------------- | --------------- |
+| `CallbackSubscriptions:Create`  | Always Required |
 
-### Request body <a href="#request-example.1" id="request-example.1"></a>
+## Request body <a href="#request-example.1" id="request-example.1"></a>
 
 <table><thead><tr><th width="173">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>eventKind</code></td><td>Required</td><td>The type of subscription to listen for from the list above.</td><td>Enumerated Type</td></tr><tr><td><code>url</code></td><td>Required</td><td>The URL the callback will POST data to</td><td>String</td></tr></tbody></table>
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl -X POST "/callback-subscriptions/" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" \
--d '{"eventKind": "PaymentInitiated", "url", "https://mycallback.com"}'
+```JSON
+{
+  "eventKind": "PaymentInitiated",
+  "url": "https://mycallback.com"
+}
 ```
 
-### Response <a href="#response" id="response"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {
@@ -49,9 +53,9 @@ curl -X POST "/callback-subscriptions/" \
 }
 ```
 
-### Callback Example <a href="#response" id="response"></a>
+## Callback Example <a href="#response" id="response"></a>
 
-#### `PaymentInitiated` example callback <a href="#response-example" id="response-example"></a>
+### `PaymentInitiated` example callback <a href="#response-example" id="response-example"></a>
 
 The following is an example body that will be posted to the endpoint specified in the callback `url`:&#x20;
 

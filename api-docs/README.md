@@ -8,7 +8,3 @@ We offer access to **mainnets** and **testnets** through the following hosts/roo
 * `api.dfns.io` (mainnet)
 
 ⭑ **Note**: These environments are fully segregated — on two distinct TLDs. As such, entities and authorization can **NOT** be used cross-environment.
-
-The most common action performed with Dfns is to [create an asset account](high-level-api-asset-accounts-and-payments/asset-accounts/createassetaccount.md).
-
-It is a core component of many of the most common customer scenarios, including [making a payment](broken-reference), and is also an easy way to get started with Dfns APIs.

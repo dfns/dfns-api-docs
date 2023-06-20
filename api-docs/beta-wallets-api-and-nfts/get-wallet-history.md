@@ -4,36 +4,35 @@
 
 Retrieves a list of historical on chain activities for the specified wallet.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-Wallets:Read
+## Required Permissions
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
+| Name           | Conditions      |
+| -------------- | --------------- |
+| `Wallets:Read` | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#parameters.1" id="parameters.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 | Path parameter | Description                                                              |
 | -------------- | ------------------------------------------------------------------------ |
 | `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-86l9l9n97hcos0ln` |
 
-#### Query parameters <a href="#request-example.1" id="request-example.1"></a>
+### Query parameters <a href="#request-example.1" id="request-example.1"></a>
 
 | Query string parameter | Required/Optional | Description                                                                                         | Type   |
 | ---------------------- | ----------------- | --------------------------------------------------------------------------------------------------- | ------ |
 | `limit`                | Optional          | Maximum number of items to return. Default to 50.                                                   | Number |
 | `paginationToken`      | Optional          | Opaque token used to retrieve the next page. Returned as `nextPageToken` from the previous request. | String |
 
-### Request example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/history"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### 200 Response example <a href="#response-example" id="response-example"></a>
+### 200 Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {

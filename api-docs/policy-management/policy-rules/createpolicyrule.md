@@ -9,23 +9,29 @@ Policy Rules determine when Policy Executions are created.   The type of policy 
 * `Siphoning`: Trigger the policy if more than a given limit of transactions have been initiated within a given time window.
 * `AlwaysActivatedRule`: Always trigger the policy.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-PolicyRules:Create
+## Required Permissions
 
-### Request body <a href="#request-body" id="request-body"></a>
+| Name                           | Conditions      |
+| ------------------------------ | --------------- |
+| `PolicyRules:Create`           | Always Required |
+
+## Request body <a href="#request-body" id="request-body"></a>
 
 The following fields are common to all kinds of Policy Rules:
 
 <table><thead><tr><th width="217">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the rule</td><td>String</td></tr><tr><td><code>description</code></td><td>Required</td><td>A description for the rule</td><td>String</td></tr><tr><td><code>configuration</code></td><td>Required</td><td>A nested object specifying details of the Policy Rule</td><td>Object</td></tr></tbody></table>
 
-#### Amount Limit Rule
+### Amount Limit Rule
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if the Payment amount is over the specified amount:
 
 <table><thead><tr><th width="238">Request body fields</th><th width="113">Required/Optional</th><th width="240">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "PaymentAmountLimit"</td><td>Enumerated Type</td></tr><tr><td><code>limit</code></td><td>Required</td><td>The amount over which the policy should trigger - specified as a string</td><td>String</td></tr><tr><td><code>assetSymbol</code></td><td>Required</td><td>The currency used to denominate the limit field - one of "USD", "EUR", "ETH"</td><td>String</td></tr></tbody></table>
-
-
 
 Example Body:
 
@@ -41,7 +47,7 @@ Example Body:
 }
 ```
 
-#### Amount Velocity Rule
+### Amount Velocity Rule
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of funds have been transferred within a given time window:
 
@@ -62,7 +68,7 @@ Example Body:
 }   
 ```
 
-#### Siphoning Rule
+### Siphoning Rule
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of transactions have been initiated within a given time window:
 
@@ -82,7 +88,7 @@ Example Body:
 }
 ```
 
-#### Always Activated Rule
+### Always Activated Rule
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which always triggers:
 
@@ -100,21 +106,9 @@ Example Body:
 }
 ```
 
-### Request Example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl -X POST "/policies/policy-rules" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" \
--d '{"description": "PaymentAmountLimit", "name": "poliy rule no.1", "configuration": {"kind": "PaymentAmountLimit","limit": "0.0005","assetSymbol": "ETH",}}'
-
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 If successful, the response contains, among other things, a status indicating whether the rule has been enabled:
 
@@ -137,4 +131,3 @@ If successful, the response contains, among other things, a status indicating wh
    "status": "Enabled"
 }
 ```
-

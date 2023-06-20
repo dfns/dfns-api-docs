@@ -4,23 +4,20 @@
 
 Retrieves all `CallbackSubscriptions` in the org.
 
-### Required Permissions
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-CallbackSubscriptions:Read
+## Required Permissions
 
-### Request Example <a href="#request-example.1" id="request-example.1"></a>
+| Name                            | Conditions      |
+| ------------------------------- | --------------- |
+| `CallbackSubscriptions:Read`    | Always Required |
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
+## Response <a href="#response" id="response"></a>
 
-```shell
-curl "/callback-subscriptions/" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {

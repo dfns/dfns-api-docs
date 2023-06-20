@@ -4,39 +4,45 @@
 
 Request to generate a signature with the wallet key.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-Wallets:GenerateSignature
+## Required Permissions
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
+| Name                        | Conditions      |
+| --------------------------- | --------------- |
+| `Wallets:GenerateSignature` | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#parameters.1" id="parameters.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 | Path parameter | Description                                                              |
 | -------------- | ------------------------------------------------------------------------ |
 | `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-86l9l9n97hcos0ln` |
 
-### Hash Signature <a href="#hash-signature-request-body" id="hash-signature-request-body"></a>
+## Hash Signature <a href="#hash-signature-request-body" id="hash-signature-request-body"></a>
 
-#### Request body <a href="#hash-signature-request-body" id="hash-signature-request-body"></a>
+### Request body <a href="#hash-signature-request-body" id="hash-signature-request-body"></a>
 
 | Request body fields | Required/Optional | Description             | Type   |
 | ------------------- | ----------------- | ----------------------- | ------ |
 | `kind`              | Required          | `Hash`                  | String |
 | `hash`              | Required          | The hash digest in hex. | String |
 
-#### Sample request <a href="#sample-hash-request" id="sample-hash-request"></a>
+### Sample request body <a href="#sample-hash-request" id="sample-hash-request"></a>
 
 ```shell
-curl -X POST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/signatures" \
--H "Content-Type: application/json" \
--d '{
+{
   "kind": "Hash",
   "hash": "031edd7d41651593c5fe5c006fa5752b37fddff7bc4e843aa6af0c950f4b9406"
-}'
+}
 ```
 
-#### 200 response example <a href="#hash-response-example" id="hash-response-example"></a>
+### 200 response example <a href="#hash-response-example" id="hash-response-example"></a>
 
 ```json
 {
@@ -58,16 +64,16 @@ curl -X POST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/signatures" \
 }
 ```
 
-### EIP-712 TypedData Signature <a href="#eip712-signature-request-body" id="eip712-signature-request-body"></a>
+## EIP-712 TypedData Signature <a href="#eip712-signature-request-body" id="eip712-signature-request-body"></a>
 
-#### Request body <a href="#eip712-signature-request-body" id="eip712-signature-request-body"></a>
+### Request body <a href="#eip712-signature-request-body" id="eip712-signature-request-body"></a>
 
-| field     | Required/Optional | Description                 | Type                          |
-| --------- | ----------------- | --------------------------- | ----------------------------- |
-| `kind`    | Required          | `Eip712`                    | String                        |
-| `types`   | Required          | Type definitions.           | Map<String, TypedDataField[]> |
-| `domain`  | Required          | Domain separator.           | Eip712Domain                  |
-| `message` | Required          | Structured message to sign. | Object                        |
+| field     | Required/Optional | Description                 | Type                            |
+| --------- | ----------------- | --------------------------- | ------------------------------- |
+| `kind`    | Required          | `Eip712`                    | String                          |
+| `types`   | Required          | Type definitions.           | Map\<String, TypedDataField\[]> |
+| `domain`  | Required          | Domain separator.           | Eip712Domain                    |
+| `message` | Required          | Structured message to sign. | Object                          |
 
 **TypedDataField**
 
@@ -86,12 +92,10 @@ curl -X POST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/signatures" \
 | `verifyingContract` | Optional          | The address of the contract that will verify the signature. | String  |
 | `salt`              | Optional          | 32-byte value as a last-resort domain separator.            | String  |
 
-#### Sample request <a href="#sample-eip712-request" id="sample-eip712-request"></a>
+#### Sample request body <a href="#sample-eip712-request" id="sample-eip712-request"></a>
 
 ```shell
-curl -X POST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/signatures" \
--H "Content-Type: application/json" \
--d '{
+{
   "kind": "Eip712",
   "types": {
     "Person": [
@@ -122,10 +126,10 @@ curl -X POST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/signatures" \
     },
     "contents": "Hello, Bob!"
   }
-}'
+}
 ```
 
-#### Response example <a href="#eip712-response-example" id="eip712-response-example"></a>
+### Response example <a href="#eip712-response-example" id="eip712-response-example"></a>
 
 ```json
 {

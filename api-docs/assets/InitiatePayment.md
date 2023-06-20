@@ -1,12 +1,19 @@
 
 ## InitiatePayment
-`RESTful Endpoint: POST /assets/asset-accounts/{assetAccountId}/payments`
-
-Scopes:
- * as Employee Auth: Payments:InitiatePayment
- * as API Key: Payments:InitiatePayment
+`POST /assets/asset-accounts/{assetAccountId}/payments`
 
 Initiates payment in provided `AssetSymbol`, instructing funds to be transferred from one wallet to another within same network and same kind of asset (currency or otherwise). Response either confirms initiation of payment process (success) or gives reason why it’s not possible (failure).
+
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md "mention") for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
+
+### Required Permissions
+
+| Name                       | Conditions      |
+| -------------------------- | --------------- |
+| `Payments:InitiatePayment` | Always Required |
 
 ## Notes
 
