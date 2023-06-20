@@ -1,7 +1,7 @@
-# ListEmployees
+# List Employees
 
 {% hint style="danger" %}
-Endpoint deprecated.
+Warning: This API has been deprecated.  Please contact us to move to the latest Authentication system and transition to using [GET Users](../../../authentication/user-management/).&#x20;
 {% endhint %}
 
 `GET /employees`
@@ -10,9 +10,9 @@ Retrieves a list of employees (success) or gives a reason why it's not possible 
 
 ## Required Permissions
 
-| Name                           | Conditions      |
-| ------------------------------ | --------------- |
-| `Employees:Read`               | Always Required |
+| Name             | Conditions      |
+| ---------------- | --------------- |
+| `Employees:Read` | Always Required |
 
 ## Triggers <a href="#triggers.1" id="triggers.1"></a>
 

@@ -1,14 +1,18 @@
 # ApiKeys Overview
 
+{% hint style="danger" %}
+Warning: This API has been deprecated.  Please contact us to move to the latest Authentication system and transition to using [Service Accounts](../../../authentication/service-account-management/).&#x20;
+{% endhint %}
+
 `ApiKeys` allow Dfns customers to delegate and automate functionality by granting authorization tokens to service accounts to programmatically access the Dfns API. The functionality includes the ability to create, manage, revoke, and review authorization tokens.
 
 ## JWT token
 
-Our `CreateAPIKey` endpoint returns a JWT token which you can securely persist and then pass in the header of your requests as a bearer token as described on the [authentication page](../../../getting-started/authentication-authorization.md).
+Our `CreateAPIKey` endpoint returns a JWT token which you can securely persist and then pass in the header of your requests as a bearer token as described on the [authentication page](../../../../getting-started/authentication-authorization.md).
 
 ## Permissions
 
-Once an API key has been created, like users, it must be granted permissions to access various API endpoints. See the [permissions documentation](broken-reference) for more information.
+Once an API key has been created, like users, it must be granted permissions to access various API endpoints. See the [permissions documentation](../../apikeys/broken-reference/) for more information.
 
 ## Policy Engine and revoking API Key
 

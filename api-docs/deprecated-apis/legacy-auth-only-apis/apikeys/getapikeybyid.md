@@ -1,44 +1,46 @@
-# Revoke API Key
+# Get API Key By ID
 
 {% hint style="danger" %}
-Endpoint deprecated.
+Warning: This API has been deprecated.  Please contact us to move to the latest Authentication system and transition to using [Service Accounts](../../../authentication/service-account-management/).&#x20;
 {% endhint %}
 
-`DELETE /api-keys/{APIKeyId}/`
+`GET /api-keys/{APIKeyId}/`
 
-Revokes an `APIKey` by its `id`.
+Retrieves an `APIKey` by its `id`.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+### Required Permissions
 
-ApiKeys:Revoke
+ApiKeys:Read
 
-### Parameters <a href="#request-body" id="request-body"></a>
+### Parameters <a href="#parameters.1" id="parameters.1"></a>
 
 #### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 <table><thead><tr><th width="266">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>APIKeyId</code></td><td>Unique identifier of the <code>APIKey</code> like:<br><br><code>api-orange-magnesium-a0606d08b2</code></td></tr></tbody></table>
 
-### Request example <a href="#request-example.1" id="request-example.1"></a>
+### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
 #### Sample request <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl -X DELETE "/api-keys/api-orange-magnesium-a0606d08b2" \
+curl "/api-keys/api-orange-magnesium-a0606d08b2/" \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" \
+-H "Authorization: Bearer <TOKEN>"
 ```
 
 ### Response <a href="#response" id="response"></a>
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
+Note the token is only returned on the initial call to [CreateAPIKey](createapikey.md).
+
 ```json
 {
   "id": "api-cat-freddie-a150fe2ce0",
   "name": "My API Key",
   "orgId": "cu-purple-pip-1b417b958500",
-  "status": "Revoked",
+  "status": "Active",
   "authorId": "ce-finch-march-5b59fcbb571b",
-  "dateCreated": "2022-09-01T09:06:32.567Z",
+  "dateCreated": "2022-09-01T09:06:32.567Z"
 }
 ```

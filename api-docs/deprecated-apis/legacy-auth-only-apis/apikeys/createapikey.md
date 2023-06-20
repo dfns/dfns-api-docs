@@ -1,12 +1,12 @@
 # Create API Key
 
 {% hint style="danger" %}
-Endpoint deprecated.
+Warning: This API has been deprecated.  Please contact us to move to the latest Authentication system and transition to using [Service Accounts](../../../authentication/service-account-management/).&#x20;
 {% endhint %}
 
 `POST /api-keys/`
 
-Instantiates a JWT token for a machine/service account, which must be securely persisted and passed in the request headers as a bearer token. The token is subject to policy engine controls, but can not approve policy control executions.&#x20;
+Instantiates a JWT token for a machine/service account, which must be securely persisted and passed in the request headers as a bearer token. The token is subject to policy engine controls, but can not approve policy control executions.
 
 ### Required Permissions <a href="#scopes" id="scopes"></a>
 
@@ -16,7 +16,7 @@ ApiKeys:Create
 
 ### Request body <a href="#request-example.1" id="request-example.1"></a>
 
-<table><thead><tr><th width="173">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the API Key</td><td>String</td></tr><tr><td><code>scopes</code></td><td>Required</td><td>This field will soon be deprecated.  Please pass "{}".</td><td>Pass an empty object: {}</td></tr></tbody></table>
+<table><thead><tr><th width="173">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the API Key</td><td>String</td></tr><tr><td><code>scopes</code></td><td>Required</td><td>This field will soon be deprecated. Please pass "{}".</td><td>Pass an empty object: {}</td></tr></tbody></table>
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
@@ -33,7 +33,7 @@ curl -X POST "/api-keys/" \
 
 #### Response example <a href="#response-example" id="response-example"></a>
 
-The response returns a `token`.  Note Dfns does not persist the token you receive, so you must save it securely.  You will not be able to get this token again from the Dfns API.
+The response returns a `token`. Note Dfns does not persist the token you receive, so you must save it securely. You will not be able to get this token again from the Dfns API.
 
 ```json
 {
