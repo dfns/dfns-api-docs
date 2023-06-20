@@ -4,36 +4,34 @@
 
 Update the status of a policy control execution to approve or reject.  Like a multi-sig wallet, if multiple approvers are required based on `numApprovals` in the corresponding `PolicyControl`,  the execution status will not update until all required approvals are received.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-PolicyControlExecutions:Update, Signatures:Create, PublicKeys:Read
+## Required Permissions
 
-### Request body <a href="#request-body" id="request-body"></a>
+| Name                             | Conditions      |
+| -------------------------------- | --------------- |
+| `PolicyControlExecutions:Update` | Always Required |
+| `Signatures:Create`              | Always Required |
+| `PublicKeys:Read`                | Always Required |
+
+## Request body <a href="#request-body" id="request-body"></a>
 
 <table><thead><tr><th width="217">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the rule</td><td>String</td></tr><tr><td><code>status</code></td><td>Required</td><td>"Passed" OR "Failed"</td><td>Enumerated Type (String)</td></tr></tbody></table>
 
-Example Body:
-
+### Request Example <a href="#request-example.1" id="request-example.1"></a>
 ```json
 {
      "status": "Passed"
 }
 ```
 
-### Request Example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl -X PUT "/policies/policy-control-executions/pce-fanta-twelve-333cb3fe31" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" \
--d '{"status": "Passed"}'
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 If successful, the response contains a status indicating whether the policy control execution has Passed, Failed, or is still Awaiting approval.    `documentedActivity` contains an escaped JSON object of the transaction data which initiated the policy execution.&#x20;
 

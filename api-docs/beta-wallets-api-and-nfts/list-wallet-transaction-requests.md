@@ -4,36 +4,35 @@
 
 Retrieves a list of transactions requests for the specified wallet.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-Wallets:ReadTransaction
+## Required Permissions
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
+| Name                      | Conditions      |
+| ------------------------- | --------------- |
+| `Wallets:ReadTransaction` | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#parameters.1" id="parameters.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 | Path parameter | Description                                                             |
 | -------------- | ----------------------------------------------------------------------- |
 | `walletId`     | Unique identifier of the `Wallet`. ex.`wa-6lbvd-hjdu1-9rtppq7p4c87cns7` |
 
-#### Query parameters <a href="#request-example.1" id="request-example.1"></a>
+### Query parameters <a href="#request-example.1" id="request-example.1"></a>
 
 | Query string parameter | Required/Optional | Description                                                                                         | Type   |
 | ---------------------- | ----------------- | --------------------------------------------------------------------------------------------------- | ------ |
 | `limit`                | Optional          | Maximum number of items to return. Default to 50.                                                   | Number |
 | `paginationToken`      | Optional          | Opaque token used to retrieve the next page. Returned as `nextPageToken` from the previous request. | String |
 
-### Request example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl "/wallets/wa-6lbvd-hjdu1-9rtppq7p4c87cns7/transactions"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### 200 Response example <a href="#response-example" id="response-example"></a>
+### 200 Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {

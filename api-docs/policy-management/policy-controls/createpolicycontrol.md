@@ -7,26 +7,31 @@ Policy Controls determine how Policy Executions are handled.   The type of polic
 * `RequestApproval`: Require a specified number of approvals from a list of `Users`.
 * More control kinds coming soon...
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-PolicyControls:Create
+## Required Permissions
 
-### Request body <a href="#request-body" id="request-body"></a>
+| Name                           | Conditions      |
+| ------------------------------ | --------------- |
+| `PolicyControls:Create`        | Always Required |
+
+## Request body <a href="#request-body" id="request-body"></a>
 
 The following fields are common to all kinds of Policy Controls:
 
 <table><thead><tr><th width="217">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the rule</td><td>String</td></tr><tr><td><code>description</code></td><td>Required</td><td>A description for the rule</td><td>String</td></tr><tr><td><code>configuration</code></td><td>Required</td><td>A nested object specifying details of the Policy Rule</td><td>Object</td></tr></tbody></table>
 
-#### Approval Control
+### Approval Control
 
 Use the following fields in the nested `configuration` object to create a Policy Control which requires a specified number of approvals from a list of `Users:`
 
 <table data-header-hidden><thead><tr><th width="254">Request body fields</th><th width="113">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td>Request body fields</td><td>Required/Optional</td><td>Description</td><td>Type</td></tr><tr><td><code>kind</code></td><td>Required</td><td>Specify: "RequestApproval"</td><td>Enumerated Type </td></tr><tr><td><code>approverUsernames</code></td><td>Required</td><td>The email addresses of the designated approvers as specified in their User records.</td><td>Array of Strings</td></tr><tr><td><code>timeoutInMinutes</code></td><td>Required</td><td>The amount of time in minutes after which the policy execution can no longer be approved.</td><td>Integer</td></tr><tr><td><code>numApprovals</code></td><td>Required</td><td>The number of required approvals.  Must be less than or equal to the <code>approverUsernames array length.</code></td><td>Integer</td></tr></tbody></table>
 
-
-
-Example Body:
-
+### Request Example <a href="#request-example.1" id="request-example.1"></a>
 ```json
 {
     "description": "My policy control",
@@ -40,21 +45,9 @@ Example Body:
 }
 ```
 
-### Request Example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl -X POST "/policies/policy-controls" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" \
--d '{     "description": "My policy control",     "name": "policy-control-back-office-01",     "configuration": {  "kind": "RequestApproval",  "approverUsernames": ["bob@example.com", "dan@example.com"],  "timeoutInMinutes": 60,  "numApprovals": 1     } }'
-
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 If successful, the response contains, among other things, a status indicating whether the rule has been enabled:
 
@@ -78,4 +71,3 @@ If successful, the response contains, among other things, a status indicating wh
    "status": "Enabled"
 }
 ```
-

@@ -4,30 +4,29 @@
 
 Get a signature request of a wallet.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-Wallets:ReadSignature
+## Required Permissions
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
+| Name                    | Conditions      |
+| ----------------------- | --------------- |
+| `Wallets:ReadSignature` | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#parameters.1" id="parameters.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 | Path parameter | Description                                                                       |
 | -------------- | --------------------------------------------------------------------------------- |
 | `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-86l9l9n97hcos0ln`          |
 | `signatureId`  | Unique identifier of the signature request. ex. `sg-4tcfd-enph7-955qcvbki7vtaepl` |
 
-### Request example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/signatures/sg-4tcfd-enph7-955qcvbki7vtaepl"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {

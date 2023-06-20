@@ -1,12 +1,20 @@
 
 ## ListPayments
-`RESTful Endpoint: GET /assets/asset-accounts/{assetAccountId}/payments`
-
-Scopes:
- * as Employee Auth: Payments:ListPayments
- * as API Key: Payments:ListPayments
+`GET /assets/asset-accounts/{assetAccountId}/payments`
 
 Returns list of all `Payment` entities belonging to the same organization as the caller. Additional filters can be provided; see list of parameters for the operation.
+
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md "mention") for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
+
+### Required Permissions
+
+| Name                            | Conditions      |
+| ------------------------------- | --------------- |
+| `Payments:ListPayments`         | Always Required |
+
 ### Input Query Parameters
 * Path parameter `assetAccountId`: undefined
 

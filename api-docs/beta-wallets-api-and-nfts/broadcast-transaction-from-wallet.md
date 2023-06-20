@@ -4,19 +4,27 @@
 
 Broadcast transaction enables communication with any arbitrary smart contract by replicating the native transaction protocol fields in the body of the request. It can be used to make native payments, call smart contract functions, and even deploy new smart contracts. Note for reading from a "view" function on EVM chains, please use [Call Read Function](../blockchains/call-read-function.md).
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-Wallets:BroadcastTransaction
+## Required Permissions
 
-### Parameters <a href="#request-example.1" id="request-example.1"></a>
+| Name                           | Conditions      |
+| ------------------------------ | --------------- |
+| `Wallets:BroadcastTransaction` | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#request-example.1" id="request-example.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 | Path parameter | Description                                                              |
 | -------------- | ------------------------------------------------------------------------ |
 | `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-86l9l9n97hcos0ln` |
 
-### EVM Template <a href="#native-currency-request-body" id="native-currency-request-body"></a>
+## EVM Template <a href="#native-currency-request-body" id="native-currency-request-body"></a>
 
 | Request body fields    | Required/Optional            | Description                                                                                                                                                                                                                                                                                                                           | Type                                      |
 | ---------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
@@ -30,19 +38,17 @@ Wallets:BroadcastTransaction
 | `maxPriorityFeePerGas` | Optional                     | The maximum amount of gas to be included as a tip to the validator. If omitted, it will be calculated automatically.                                                                                                                                                                                                                  | String (of an Integer like "1000000" WEI) |
 | `maxFeePerGas`         | Optional                     | The maximum amount for gas willing to be paid for the transaction. If omitted, it will be calculated automatically.                                                                                                                                                                                                                   | String (of an Integer like "1000000" WEI) |
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
+### Sample request body <a href="#sample-request" id="sample-request"></a>
 
 ```shell
-curl -XPOST "/wallets/wa-1f04s-lqc9q-86l9l9n97hcos0ln/transfers" \
--H "Content-Type: application/json" \
--d '{
+{
     "kind": "Evm",
     "to": "0x00fb58432ef9d418bf6688bcf0a226d2fcaa18e2",
     "data": "0x40d097c3000000000000000000000000d2f77f85a50cdd650ca562f3a180284e1d5b4934"
-}'
+}
 ```
 
-#### 200 response example <a href="#response-example" id="response-example"></a>
+### 200 response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {

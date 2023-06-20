@@ -4,29 +4,26 @@
 
 Lists all `PolicyControlExecutions` belonging to an Org.  Can be filtered by the query string parameters listed below.&#x20;
 
-### Required Permissions
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-PolicyControlExecutions:Read
+## Required Permissions
 
-### Parameters <a href="#request-example.1" id="request-example.1"></a>
+| Name                             | Conditions      |
+| -------------------------------- | --------------- |
+| `PolicyControlExecutions:Read`   | Always Required |
 
-#### Query parameters <a href="#query-parameters" id="query-parameters"></a>
+## Parameters <a href="#request-example.1" id="request-example.1"></a>
+
+### Query parameters <a href="#query-parameters" id="query-parameters"></a>
 
 <table><thead><tr><th>Query string parameter</th><th width="108.33333333333331">Required/Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>onlyMyPendingApprovals=true</code></td><td>Optional</td><td>Returns only those policy control executions awaiting approval by the user sending the API request. </td></tr><tr><td><code>onlyInitiatedByMe=true</code></td><td>Optional</td><td>Returns only those policy control executions initiated by a transaction sent by the user sending the API request. </td></tr><tr><td><code>activityId=pa-oven-arn-4k08</code></td><td>Optional</td><td>Returns policy control executions triggered by the specified <code>activityId</code>. </td></tr></tbody></table>
 
-### Request Example <a href="#request-body" id="request-body"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl "/policies/policy-control-executions/?onlyMyPendingApprovals=true" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 If successful, the response contains a list of policy control executions:
 
@@ -53,4 +50,3 @@ If successful, the response contains a list of policy control executions:
    ]
 }
 ```
-

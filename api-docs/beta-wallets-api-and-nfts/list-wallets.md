@@ -4,30 +4,31 @@
 
 Retrieves a list of wallets.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
 
-Wallets:Read
 
-### Parameters <a href="#parameters.1" id="parameters.1"></a>
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-#### Query parameters <a href="#path-parameters" id="path-parameters"></a>
+## Required Permissions
+
+| Name           | Conditions      |
+| -------------- | --------------- |
+| `Wallets:Read` | Always Required |
+
+## Parameters <a href="#parameters.1" id="parameters.1"></a>
+
+### Query parameters <a href="#path-parameters" id="path-parameters"></a>
 
 | Query string parameter | Required/Optional | Description                                                                                         | Type   |
 | ---------------------- | ----------------- | --------------------------------------------------------------------------------------------------- | ------ |
 | `limit`                | Optional          | Maximum number of items to return. Default to 50.                                                   | Number |
 | `paginationToken`      | Optional          | Opaque token used to retrieve the next page. Returned as `nextPageToken` from the previous request. | String |
 
-### Request example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl "/wallets"
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### 200 Response example <a href="#response-example" id="response-example"></a>
+### 200 Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {

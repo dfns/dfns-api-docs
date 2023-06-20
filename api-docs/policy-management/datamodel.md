@@ -1,6 +1,6 @@
 # Policy Engine Overview
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-10-20 at 15.04.32.png" alt=""><figcaption><p>Policy Engine entities</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-20 at 15.04.32 (1).png" alt=""><figcaption><p>Policy Engine entities</p></figcaption></figure>
 
 A Policy entity holds two types of entities.
 
@@ -10,15 +10,13 @@ A Policy entity holds two types of entities.
 {% hint style="info" %}
 Syntax:
 
-* When a Policy gets "checked against" -> we say it's being  <mark style="background-color:purple;">evaluated</mark>
+* When a Policy gets "checked against" -> we say it's being <mark style="background-color:purple;">evaluated</mark>
 * When a Policy Rule being checked against “is transgressed” -> we say the Policy is <mark style="background-color:purple;">activated</mark>
 {% endhint %}
 
 A Policy is executed in reaction to a specific activity happening, such as a specific API request.
 
-The  `PolicyActivityKind` attached to the Policy on creation, defines which activity is going to trigger its evaluation. Eg. a policy of `activityKind`  `"PaymentInitiation"` will be evaluated when an `InitiatePayment` API request is received.
-
-
+The `PolicyActivityKind` attached to the Policy on creation, defines which activity is going to trigger its evaluation. Eg. a policy of `activityKind` `"PaymentInitiation"` will be evaluated when an `InitiatePayment` API request is received.
 
 ### Policy Rules
 

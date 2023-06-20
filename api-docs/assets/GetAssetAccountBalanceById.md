@@ -2,11 +2,18 @@
 ## GetAssetAccountBalanceById
 `RESTful Endpoint: GET /assets/asset-accounts/{assetAccountId}/balance`
 
-Scopes:
- * as API Key: AssetAccounts:GetBalance
- * as Employee Auth: AssetAccounts:GetBalance
-
 Retrieves the balance of the `AssetAccount` by its `id`. Returns an instance of `AssetAccountBalance`.
+
+{% hint style="info" %}
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md "mention") for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
+
+### Required Permissions
+
+| Name                       | Conditions      |
+| -------------------------- | --------------- |
+| `AssetAccounts:GetBalance` | Always Required |
 
 <!--  -->
 ### Input Query Parameters

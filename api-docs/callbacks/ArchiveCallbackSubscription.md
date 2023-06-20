@@ -4,29 +4,27 @@
 
 Archives a `CallbackSubscription` by its `id`.
 
-### Required Permissions <a href="#scopes" id="scopes"></a>
+{% hint style="info" %}
+* User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
-CallbackSubscriptions:Archive
+## Required Permissions
 
-### Parameters <a href="#request-body" id="request-body"></a>
+| Name                            | Conditions      |
+| ------------------------------- | --------------- |
+| `CallbackSubscriptions:Archive` | Always Required |
 
-#### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Parameters <a href="#request-body" id="request-body"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 <table><thead><tr><th width="283">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>callbackSubscriptionId</code></td><td>Unique identifier of the <code>CallbackSubscription</code> like:<br><br><code>cs-orange-magnesium-a0606d08b2</code></td></tr></tbody></table>
 
-### Request example <a href="#request-example.1" id="request-example.1"></a>
+## Response <a href="#response" id="response"></a>
 
-#### Sample request <a href="#sample-request" id="sample-request"></a>
-
-```shell
-curl -X DELETE "/callback-subscriptions/cs-orange-magnesium-a0606d08b2" \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <TOKEN>" 
-```
-
-### Response <a href="#response" id="response"></a>
-
-#### Response example <a href="#response-example" id="response-example"></a>
+### Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {
