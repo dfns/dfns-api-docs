@@ -117,7 +117,6 @@
     * [Create Policy](api-docs/policy-management/policies/createpolicy.md)
     * [Get Policy By ID](api-docs/policy-management/policies/getpolicybyid.md)
     * [List Policies](api-docs/policy-management/policies/listpolicies.md)
-    * [Update Policy](api-docs/policy-management/policies/updatepolicy.md)
     * [Archive Policy](api-docs/policy-management/policies/archivepolicy.md)
   * [Policy Control Executions](api-docs/policy-management/policyexecution/README.md)
     * [Policy Control Executions Overview](api-docs/policy-management/policyexecution/policyexecution-overview.md)

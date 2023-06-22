@@ -1,6 +1,6 @@
 # Get Policy By ID
 
-`GET /policies/policies/{policyId}`
+`GET /policies/{policyId}`
 
 Retrieves a `Policy` by its `id`.
 
@@ -11,9 +11,9 @@ Retrieves a `Policy` by its `id`.
 
 ## Required Permissions
 
-| Name                           | Conditions      |
-| ------------------------------ | --------------- |
-| `Policies:Read`                | Always Required |
+| Name            | Conditions      |
+| --------------- | --------------- |
+| `Policies:Read` | Always Required |
 
 ## Parameters <a href="#parameters.1" id="parameters.1"></a>
 

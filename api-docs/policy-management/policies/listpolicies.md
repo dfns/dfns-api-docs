@@ -1,6 +1,6 @@
-# ListPolicies
+# List Policies
 
-`GET /policies/policies/`
+`GET /policies`
 
 Lists all `Policies` belonging to an Org.
 
@@ -11,9 +11,9 @@ Lists all `Policies` belonging to an Org.
 
 ## Required Permissions
 
-| Name                           | Conditions      |
-| ------------------------------ | --------------- |
-| `Policies:Read`                | Always Required |
+| Name            | Conditions      |
+| --------------- | --------------- |
+| `Policies:Read` | Always Required |
 
 ## Response <a href="#response" id="response"></a>
 

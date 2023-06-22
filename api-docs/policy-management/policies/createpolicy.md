@@ -1,6 +1,6 @@
 # Create Policy
 
-`POST /policies/policies`
+`POST /policies`
 
 Policies join [Policy Rules](../policy-rules/createpolicyrule.md) and [Policy Controls ](../policy-controls/createpolicycontrol.md)with an `activityKind` that determines which actions on the API may trigger a Policy Execution. These are the supported `activityKinds`:
 
