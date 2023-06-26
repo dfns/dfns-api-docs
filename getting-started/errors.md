@@ -176,3 +176,6 @@ Errors specific to the [User Action Signing](../api-docs/authentication/user-act
 ## User Management Errors
 Errors specific to the [User Management](../api-docs/authentication/user-management/) endpoints.
 
+## User Recovery Errors
+Errors specific to the [User Recovery](../api-docs/authentication/user-recovery/) endpoints.
+
