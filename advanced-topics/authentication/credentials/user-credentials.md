@@ -65,3 +65,45 @@ When returning the credential to the server the `public key`, `signature`, and t
 | `publicKey` | string | PEM encoded public key that can be used to verify the signature for the credential |
 | `signature` | string | The signature produced by signing clientData with the credentials private key, using the algorithm specified in `algorithm`. Needs to be encoded as a hex string |
 | `algorithm` | string | `Optional` The algorithm/digest that the credential will use to sign data. If the algoritm is not specified the algorithm will be determined by the key. Can be one of the following choices:<br />`RSA-SHA256`<br />`SHA256`<br />`SHA512` |
+
+#### Recovery Client Data Format
+Before signing the recovery challenge, the user will format the challenge into an object which includes additional properties. This object contains the following fields:
+| Field | Type | Description |
+| - | - | - |
+| `type` | string | Will always be `key.get` when creating a new credential, which includes registering a user |
+| `challenge` | string | A base64url encoded JSON object containing the user new credentials |
+| `origin` | string | The origin in which the app is being executed |
+| `crossOrigin` | boolean | A flag indicating if the current call is running cross origin; in most cases this should be `false` |
+
+This object is then converted to a JSON string, and signed with the user's private key.
+
+#### Recovery Signing Example
+``` typescript
+recoveryClientData = {
+  type: 'key.get',
+  challenge: base64url(JSON.stringify({
+    "firstFactorCredential":{
+      "credentialKind":"Key",
+      "credentialInfo":{
+        "credId":"6Ca6tAOFTx2odyJBnCoRO-gPvfpfy0EOoOcEaxfxIOk",
+        "clientData":"eyJ0eXBlIjoia2V5LmNyZWF0ZSIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",
+        "attestationData":"WT-zFZUBbJHfBkmhzTlPf49LTn7asLeTQKhm_riCvFgFAAAAAA"
+      }
+    },
+    "recoveryCredential":{
+      "credentialKind":"RecoveryKey",
+      "credentialInfo":{
+        "credId":"GMkW0zlmcoMxI1OX0Z96LL_Mz7dgeu6vOH5_TOeGyNk",
+        "clientData":"eyJ0eXBlIjoia2V5LmNyZWF0ZSIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",
+        "attestationData":"Wsdz5810zjVJEyEtx9jYU0dizfhIkdu9AOGl2kYtcBusAPsfjdncE6zKW8ms_VkhJ6Hw4HDfcYj5FHcdM-C4CA"
+      },
+      "encryptedPrivateKey":"LsXVskHYqqrKKxBC9KvqStLEmxak5Y7NaboDDlRSIW7evUJpQTT1AYvx0EsFskmriaVb3AjTCGEv7gqUKokml1USL7+dVmrUVhV+cNWtS5AorvRuZr1FMGVKFkW1pKJhFNH2e2O661UhpyXsRXzcmksA7ZN/V37ZK7ITue0gs6I="
+    }
+  })),
+  origin: this.appOrigin,
+  crossOrigin: false,
+}
+
+const clientData = Buffer.from(JSON.stringify(recoveryClientData))
+const signature = crypto.sign(undefined, clientData, newKey.privateKey)
+```

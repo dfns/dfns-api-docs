@@ -83,6 +83,7 @@
     * [Activate User Credential](api-docs/authentication/credential-management/activateCredential.md)
     * [Deactivate User Credential](api-docs/authentication/credential-management/deactivateCredential.md)
     * [List User Credentials](api-docs/authentication/credential-management/listUserCredentials.md)
+  * [User Recovery](api-docs/authentication/user-recovery/README.md)
 * [🆕 Beta: Wallets & NFTs API](api-docs/beta-wallets-api-and-nfts/README.md)
   * [Create Wallet](api-docs/beta-wallets-api-and-nfts/create-wallet.md)
   * [Get Wallet by ID](api-docs/beta-wallets-api-and-nfts/get-wallet-by-id.md)
