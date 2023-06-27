@@ -26,6 +26,7 @@
       * [Create Asset Account Example](advanced-topics/request-signing/examples/dfns-http-client-examples/create-asset-account.md)
       * [Create User Example](advanced-topics/request-signing/examples/dfns-http-client-examples/create-user-and-creds.md)
       * [Create Wallet Example](advanced-topics/request-signing/examples/dfns-http-client-examples/create-wallet.md)
+  * [Postman integration](advanced-topics/authentication/postman-integration.md)
 
 ## API Docs
 
