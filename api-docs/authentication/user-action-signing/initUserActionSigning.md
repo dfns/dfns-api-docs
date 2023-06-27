@@ -33,7 +33,7 @@ Example:
 {
   "userActionPayload": "{\"name\": \"My PAT\",\"publicKey\": \"-----BEGIN PUBLIC KEY-----\\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZQt0YI2hdsFNmKJesSkAHldyPLIV\\nFLI/AhQ5eGasA7jU8tEXOb6nGvxRaTIXrgZ2NPdk78O8zMqz5u9AekH8jA==\\n-----END PUBLIC KEY-----\",\"daysValid\": 365,\"permissionId\": \"pm-delaw-avoca-v16r37fpp8koqebc\"}",
   "userActionHttpMethod": "POST",
-  "userActionHttpPath": "/auth/action/init"
+  "userActionHttpPath": "/auth/pats"
 }
 ```
 

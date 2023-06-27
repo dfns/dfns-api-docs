@@ -2,7 +2,7 @@
 
 All requests to the Dfns API need to include at least these headers:
 
-<table><thead><tr><th width="267.36734693877554">Header</th><th>Description</th></tr></thead><tbody><tr><td><code>X-DFNS-APPID: &#x3C;appid></code></td><td>ID of an Application created in your organization (see <a data-mention href="../api-docs/authentication/application-management/">application-management</a>)</td></tr><tr><td><code>X-DFNS-NONCE: &#x3C;nonce></code></td><td>Random value used to prevent replay attacks. Must be a JSON string with the following fields:<br>- <code>uuid</code> - Random value of at least 12 characters<br>- <code>date</code> - Current time of the request in ISO String format</td></tr></tbody></table>
+<table><thead><tr><th width="267.36734693877554">Header</th><th>Description</th></tr></thead><tbody><tr><td><code>X-DFNS-APPID: &#x3C;appid></code></td><td>ID of an Application created in your organization (see <a data-mention href="../api-docs/authentication/application-management/">application-management</a>)</td></tr><tr><td><code>X-DFNS-NONCE: &#x3C;nonce></code></td><td>Random value used to prevent replay attacks. Must be a JSON string with the following fields:<br>- <code>uuid</code> - Random value of at least 13 characters<br>- <code>date</code> - Current time of the request in ISO String format</td></tr></tbody></table>
 
 ## Authentication Headers
 
