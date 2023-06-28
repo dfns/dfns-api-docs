@@ -12,6 +12,7 @@
 * [Data Model Concepts](getting-started/DataModelConcepts.md)
 * [Policy Engine](getting-started/PolicyEngineIntro.md)
 * [Postman](getting-started/postman-integration.md)
+* [Typescript SDK](getting-started/typescript-sdk.md)
 * [Videos](getting-started/Videos.md)
 
 ## Advanced Topics
