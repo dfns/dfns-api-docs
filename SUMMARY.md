@@ -125,7 +125,6 @@
     * [List Policies](api-docs/policy-management/policies/listpolicies.md)
     * [Archive Policy](api-docs/policy-management/policies/archivepolicy.md)
   * [Policy Control Executions](api-docs/policy-management/policyexecution/README.md)
-    * [Policy Control Executions Overview](api-docs/policy-management/policyexecution/policyexecution-overview.md)
     * [Get Policy Control Execution By ID](api-docs/policy-management/policyexecution/getpolicycontrolexecutionbyid.md)
     * [List Policy Control Executions](api-docs/policy-management/policyexecution/listpolicycontrolexecutions.md)
     * [Approve / Reject Policy Control Execution](api-docs/policy-management/policyexecution/approve-reject-policy-execution.md)

@@ -2,7 +2,7 @@
 
 `PUT /policies/policy-control-executions/{policyControlExecutionId}`
 
-Update the status of a policy control execution to approve or reject.  Like a multi-sig wallet, if multiple approvers are required based on `numApprovals` in the corresponding `PolicyControl`,  the execution status will not update until all required approvals are received.
+Update the status of a policy control execution to approve or reject. Like a multi-sig wallet, if multiple approvers are required based on `numApprovals` in the corresponding `PolicyControl`, the execution status will not update until all required approvals are received.
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
@@ -15,14 +15,13 @@ Update the status of a policy control execution to approve or reject.  Like a mu
 | Name                             | Conditions      |
 | -------------------------------- | --------------- |
 | `PolicyControlExecutions:Update` | Always Required |
-| `Signatures:Create`              | Always Required |
-| `PublicKeys:Read`                | Always Required |
 
 ## Request body <a href="#request-body" id="request-body"></a>
 
 <table><thead><tr><th width="217">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the rule</td><td>String</td></tr><tr><td><code>status</code></td><td>Required</td><td>"Passed" OR "Failed"</td><td>Enumerated Type (String)</td></tr></tbody></table>
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
+
 ```json
 {
      "status": "Passed"
@@ -33,7 +32,7 @@ Update the status of a policy control execution to approve or reject.  Like a mu
 
 ### Response example <a href="#response-example" id="response-example"></a>
 
-If successful, the response contains a status indicating whether the policy control execution has Passed, Failed, or is still Awaiting approval.    `documentedActivity` contains an escaped JSON object of the transaction data which initiated the policy execution.&#x20;
+If successful, the response contains a status indicating whether the policy control execution has Passed, Failed, or is still Awaiting approval. `documentedActivity` contains an escaped JSON object of the transaction data which initiated the policy execution.
 
 ```json
 {
