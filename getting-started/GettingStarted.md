@@ -62,19 +62,21 @@ At this point, you can make server side API calls by signing requests with your 
 
 If you want to implement Delegated Signing in which your customer generates credentials to our API via WebAuthn, continue with these steps:&#x20;
 
-5. Create an Application running at localhost:3000. &#x20;
-6. Go to Org Settings => Applications
-7. Click New Application
-8. Give it a name and specify the following values:&#x20;
+1. Create an Application running at localhost:3000. &#x20;
+2. Go to Org Settings => Applications
+3. Click New Application
+4. Give it a name and specify the following values:&#x20;
 
 ![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.34.41 PM.png>)
 
-4. Click Create, then copy the App ID like “ap-2vemp-hl3c9-9j1rgcf9quurph” to paste into your .env file as described below
-5. Clone one of the two demo apps in the SDK
+
+
+5. Click Create, then copy the App ID like “ap-2vemp-hl3c9-9j1rgcf9quurph” to paste into your .env file as described below
+6. Clone one of the two demo apps in the SDK
    1. [NextJS config](https://github.com/dfnsext/typescript-sdk/tree/m/packages/examples/nextjs-delegated)
    2. [React & Express](https://github.com/dfnsext/typescript-sdk/tree/m/packages/examples/auth-delegated)
-6. Follow the steps in [the sample app Readme](https://github.com/dfnsext/typescript-sdk/tree/m/packages/examples/nextjs-delegated#readme)
-7. Populate your .env file based on [the .env.example](https://github.com/dfnsext/typescript-sdk/blob/m/packages/examples/nextjs-delegated/.env.example) (see[ this video](https://www.youtube.com/watch?v=uGVjRFeNmWU\&t=1012s) for the July 2023 EthParis event for a step by step walkthrough)
+7. Follow the steps in [the sample app Readme](https://github.com/dfnsext/typescript-sdk/tree/m/packages/examples/nextjs-delegated#readme)
+8. Populate your .env file based on [the .env.example](https://github.com/dfnsext/typescript-sdk/blob/m/packages/examples/nextjs-delegated/.env.example) (see[ this video](https://www.youtube.com/watch?v=uGVjRFeNmWU\&t=1012s) for the July 2023 EthParis event for a step by step walkthrough)
 
 ## All the docs!
 
