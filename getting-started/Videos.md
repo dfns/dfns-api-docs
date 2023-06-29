@@ -1,18 +1,10 @@
 # Videos
 
-## API
+## Getting Set Up on Dfns
 
-### **1. Create an Asset Account**
+We completed this video for EthParis July 2023 with full instruction to onboard onto our platform:&#x20;
 
-{% embed url="https://www.loom.com/share/cc9d7f305cda4054a975027a719d3bc4" %}
-
-### **2. Initiate a Payment**
-
-{% embed url="https://www.loom.com/share/48bd8720d4ea421fa9372eda4b3aa01e" %}
-
-### **3. Create a Policy: payment amount limit**
-
-{% embed url="https://www.loom.com/share/e5ec466b1f2f481ebda0155ccd150175" %}
+{% embed url="https://www.youtube.com/watch?v=uGVjRFeNmWU" %}
 
 ## Dashboard Overview
 

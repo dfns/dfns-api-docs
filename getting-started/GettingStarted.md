@@ -50,7 +50,7 @@ Once you register in your Dfns org and invite your Users, the next step is to cr
 2. Navigate to Settings. Service Accounts=>New Service Account. &#x20;
 3. Name the Service Account, copy in the public key (including begin/end lines like “-----BEGIN PUBLIC KEY-----”)  and click “Create”.&#x20;
 
-![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.32.21 PM.png>)
+![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.41.27 PM.png>)
 
 4. This will output a masked JWT one time.  Copy it to a secure location before leaving the page.&#x20;
 
