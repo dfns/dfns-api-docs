@@ -55,5 +55,6 @@ In the environment you need to set the following variables (fill the **`Current 
 * `credentialPrivateKey` - Private key of the credentials registered during PAT/Service Account creation. Copy the key including all newlines into the variable
 * `applicationId` - ID of the Dfns Application used
 * `applicationOrigin` - The `Expected Origin` from your Dfns Application. Also found on the Applications page on the Dfns Dashboard.
+* `useAuthV2`: true
 
 </details>
