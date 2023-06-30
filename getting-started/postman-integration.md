@@ -48,7 +48,7 @@ Be sure to copy the JWT, after the Personal Access Token is created, as you will
 
 <summary>3. Populate the environment in Postman</summary>
 
-In the environment you need to set the following variables:
+In the environment you need to set the following variables (fill the **`Current Value`** column):
 
 * `dfnsApiDomain` - Domain of Dfns API. `api.dfns.ninja` or `api.dfns.io`
 * `authToken` - User PAT (Personal Access Token), or Service Account token
