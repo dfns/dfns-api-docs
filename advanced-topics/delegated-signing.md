@@ -26,6 +26,8 @@ This architecture ensures that transactions can only be executed via the API. Th
 
 Dfns’ [Authentication](../api-docs/authentication/) requires that all requests to the API capable of changing state in the system or on chain (POST, PUT, and DELETE requests specifically) must be signed by a secret known only to the custodian of the assets. The authentication service validates the signature and writes an immutable log of the transaction, cryptographically proving the source of the API call.&#x20;
 
+### Delegated Signing User Experience
+
 In a Delegated Signing configuration, our client delegates custodianship to their end-user by building an onboarding flow in which the user generates and persists a signing secret on their device. In order to enable frictionless user experiences, we have integrated the [WebAuthn 3.0](http://webauthn.guide) passwordless open protocol. WebAuthn is natively integrated into all major browsers and mobile operating systems, exposing seamless access to biometrics, pin codes, and Yubikeys. This enables an onboarding flow such as the following:
 
 1. The user registers with your product using the credentials of their choice including social login.
