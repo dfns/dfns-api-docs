@@ -17,7 +17,7 @@
 
 ## Advanced Topics
 
-* [🆕 Authentication](advanced-topics/authentication/README.md)
+* [Authentication](advanced-topics/authentication/README.md)
   * [Credentials](advanced-topics/authentication/credentials/README.md)
     * [Generate a Key Pair](advanced-topics/authentication/credentials/generate-a-key-pair.md)
     * [User Credentials](advanced-topics/authentication/credentials/user-credentials.md)
@@ -28,6 +28,7 @@
       * [Create Asset Account Example](advanced-topics/request-signing/examples/dfns-http-client-examples/create-asset-account.md)
       * [Create User Example](advanced-topics/request-signing/examples/dfns-http-client-examples/create-user-and-creds.md)
       * [Create Wallet Example](advanced-topics/request-signing/examples/dfns-http-client-examples/create-wallet.md)
+* [Delegated Signing](advanced-topics/delegated-signing.md)
 
 ## API Docs
 
