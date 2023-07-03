@@ -32,7 +32,7 @@
 ## API Docs
 
 * [Introduction](api-docs/README.md)
-* [🆕 Beta: Authentication](api-docs/authentication/README.md)
+* [Authentication](api-docs/authentication/README.md)
   * [Delegated Authentication](api-docs/authentication/delegated-auth/README.md)
     * [Delegated Registration](api-docs/authentication/delegated-auth/delegatedregistration.md)
     * [Delegated Login](api-docs/authentication/delegated-auth/delegatedlogin.md)
