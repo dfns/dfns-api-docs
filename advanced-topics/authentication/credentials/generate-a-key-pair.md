@@ -21,16 +21,17 @@ Dfns recommends the following curves / modulus lengths:
 {% tabs %}
 {% tab title="OpenSSL CLI" %}
 ```shell
-# Generate a EDDSA Private Key
-openssl genpkey -algorithm Ed25519 -out ed25519key.pem
-# Generate the Public Key
-openssl pkey -in ed25519key.pem -pubout -out ed25519key.public.pem
-
-
 # Generate a ECDSA Private Key
 openssl ecparam -genkey -name prime256v1 -noout -out prime256v1.pem
 # Generate the Public Key
 openssl pkey -in prime256v1.pem -pubout -out prime256v1.public.pem
+
+
+# NOTE: EDDSA keys do not work in Postman!
+# Generate a EDDSA Private Key
+openssl genpkey -algorithm Ed25519 -out ed25519key.pem
+# Generate the Public Key
+openssl pkey -in ed25519key.pem -pubout -out ed25519key.public.pem
 
 
 # Generate RSA Private Key
