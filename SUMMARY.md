@@ -29,6 +29,7 @@
       * [Create User Example](advanced-topics/request-signing/examples/dfns-http-client-examples/create-user-and-creds.md)
       * [Create Wallet Example](advanced-topics/request-signing/examples/dfns-http-client-examples/create-wallet.md)
 * [Delegated Signing](advanced-topics/delegated-signing.md)
+* [FAQ](advanced-topics/faq.md)
 
 ## API Docs
 
