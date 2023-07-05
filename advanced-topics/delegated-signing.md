@@ -42,7 +42,7 @@ Most self-custodial wallets like Metamask or Ledger require users to indefinitel
 
 By leveraging an API signing secret as a proxy for the blockchain private key, the risks described above are substantially mitigated. Unlike a blockchain private key, the signing secret is not immutable. If it is stolen, it can be revoked. If it is lost, it can be re-established. See below a table comparing the properties between a blockchain-bound Private Key and an API Key.
 
-<figure><img src="https://lh3.googleusercontent.com/ldwFOuQLS8e9AbkV5THJQJMq-uHGrnA2tregAKj-2BtScV3JinYbJDDRAKOU5tlTbwI7-4tmVHCZVOo1stXfy9_w809N0xdIMg5XKOecFOLc3MxJubC49LSQKKw6mCzXKY3LM_-3TGLy5zbwCpd2Fw" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-07-05 at 3.17.57 PM.png" alt=""><figcaption></figcaption></figure>
 
 Of course, there are trade-offs. This architecture creates new potential attack vectors for bad actors. For instance, a hacker may impersonate a legitimate user in order to gain access to their wallet via the recovery process. In order to mitigate this risk, Dfns provides guidance on recovery mechanisms which our clients can implement.
 
