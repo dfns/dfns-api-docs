@@ -1,3 +1,7 @@
+---
+description: Change log detailing feature releases
+---
+
 # Dfns Change Log
 
 The Dfns change log documents changes to our product functionality made by our releases. This includes new features, breaking changes, bug fixes to known issues, deprecations, etc. Please bookmark this page and refresh frequently for the latest updates.
