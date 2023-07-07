@@ -6,6 +6,26 @@ description: Change log detailing feature releases
 
 The Dfns change log documents changes to our product functionality made by our releases. This includes new features, breaking changes, bug fixes to known issues, deprecations, etc. Please bookmark this page and refresh frequently for the latest updates.
 
+
+
+### July 11, 2023
+
+* Updated enumerated types for Wallets API network value
+
+### July 5, 2023
+
+* Relaxed CORS policy preventing API calls from the browser&#x20;
+
+### June 29, 2023
+
+* [Typescript SDK](../getting-started/typescript-sdk.md) released
+* Latency optimizations for Auth service
+* Fixes for Windows Hello usage with Webauthn&#x20;
+
+### June 7, 2023
+
+* Released CMP asset in the dashboard
+
 ### June 1, 2023
 
 * Released the new Wallets and NFTs API Beta
