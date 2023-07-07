@@ -2,11 +2,9 @@
 
 `POST /policies/policy-rules`
 
-Policy Rules determine when Policy Executions are created.   The type of policy rule applied is determined by the `kind` field in the nested `configuration` object.  These are the supported kinds:
+Policy Rules determine when Policy Executions are created. The type of policy rule applied is determined by the `kind` field in the nested `configuration` object. These are the supported kinds:
 
 * `PaymentAmountLimit`: Trigger the policy if the payment is over a given limit.
-* `PaymentAmountOutgoingVelocity`: Trigger the policy if more than a given limit of funds have been transferred within a given time window.
-* `Siphoning`: Trigger the policy if more than a given limit of transactions have been initiated within a given time window.
 * `AlwaysActivatedRule`: Always trigger the policy.
 
 {% hint style="info" %}
@@ -17,9 +15,9 @@ Policy Rules determine when Policy Executions are created.   The type of policy 
 
 ## Required Permissions
 
-| Name                           | Conditions      |
-| ------------------------------ | --------------- |
-| `PolicyRules:Create`           | Always Required |
+| Name                 | Conditions      |
+| -------------------- | --------------- |
+| `PolicyRules:Create` | Always Required |
 
 ## Request body <a href="#request-body" id="request-body"></a>
 
@@ -47,46 +45,7 @@ Example Body:
 }
 ```
 
-### Amount Velocity Rule
 
-Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of funds have been transferred within a given time window:
-
-<table><thead><tr><th width="220">Request body fields</th><th width="113">Required/Optional</th><th width="235">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "PaymentAmountOutgoingVelocity"</td><td>Enumerated Type</td></tr><tr><td><code>velocity</code></td><td>Required</td><td>The amount over which the policy should trigger - specified as a string</td><td>String</td></tr><tr><td><code>assetSymbol</code></td><td>Required</td><td>The currency used to denominate the limit field - one of "USD", "EUR", "ETH"</td><td>String</td></tr><tr><td><code>intervalInMinutes</code></td><td>Required</td><td>The time window in minutes in which to watch for outgoing payments</td><td>Integer</td></tr></tbody></table>
-
-Example Body:
-
-```json
-{
-    "description": "OutgoingPaymentVelocity testing", 
-    "name": "poliy rule no.1",
-    "configuration": {
-        "kind": "PaymentAmountOutgoingVelocity",
-        "velocity": "1",
-        "assetSymbol": "ETH",
-        "intervalInMinutes": 60
-    }
-}   
-```
-
-### Siphoning Rule
-
-Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if more than a given limit of transactions have been initiated within a given time window:
-
-<table><thead><tr><th width="220">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "Siphoning"</td><td>Enumerated Type </td></tr><tr><td><code>maxTxCount</code></td><td>Required</td><td>The amount of transactions over which the policy should trigger </td><td>Integer</td></tr><tr><td><code>intervalInMinutes</code></td><td>Required</td><td>The time window in minutes in which to watch for outgoing payments</td><td>Integer</td></tr></tbody></table>
-
-Example Body:
-
-```json
-{
-    "description": "Siphoning", 
-    "name": "poliy rule no.1",
-    "configuration": {
-        "kind": "Siphoning",
-        "maxTxCount": 10,
-        "intervalInMinutes": 60
-    }
-}
-```
 
 ### Always Activated Rule
 
