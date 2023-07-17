@@ -2,7 +2,7 @@
 
 `POST /wallets`
 
-Creates new `Wallet` associated with the given chain (such as `ETH or MATIC`). Returns a new wallet ID. Note the request is asynchronous - call Get Wallet to check status of creation and get the associated blockchain address once complete.
+Creates new `Wallet` associated with the given chain (such as `Ethereum or Polygon`). Returns a new wallet ID. Note the request is asynchronous - call Get Wallet to check status of creation and get the associated blockchain address once complete.
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
@@ -18,10 +18,10 @@ Creates new `Wallet` associated with the given chain (such as `ETH or MATIC`). R
 
 ## Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                                                                                                | Type   |
-| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
-| `network`           | Required          | Network name for the target chain. Accepted values are `BNB`, `BNB_TESTNET`, `ETH`, `ETH_GOERLI`, `ETH_SEPOLIA`, `MATIC` or `MATIC_MUMBAI` | String |
-| `name`              | Optional          | Human readable name for the wallet                                                                                                         | String |
+| Request body fields | Required/Optional | Description                                                                                                                                               | Type   |
+| ------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| `network`           | Required          | Network name for the target chain. Accepted values are `Bsc`, `BscTestnet`, `Ethereum`, `EthereumGoerli`, `EthereumSepolia`, `Polygon` or `PolygonMumbai` | String |
+| `name`              | Optional          | Human readable name for the wallet                                                                                                                        | String |
 
 ## Request example <a href="#request-example.1" id="request-example.1"></a>
 
@@ -29,7 +29,7 @@ Creates new `Wallet` associated with the given chain (such as `ETH or MATIC`). R
 
 ```shell
 {
-  "network": "MATIC",
+  "network": "PolygonMumbai",
   "name": "my-wallet"
 }
 ```
@@ -44,7 +44,7 @@ In most cases, the initial status should be set to "Creating". Call Get Wallet t
 {
   "id": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
   "status": "Creating",
-  "network": "MATIC",
+  "network": "PolygonMumbai",
   "name": "my-wallet",
   "tags": [],
   "dateCreated": "2023-04-14T20:41:28.715Z"
