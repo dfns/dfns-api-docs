@@ -48,9 +48,8 @@ Request to generate a signature with the wallet key.
 {
   "id": "sg-2ouaj-f4nq6-97q8m0736h09bhhv",
   "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
-  "network": "ETH_SEPOLIA",
+  "network": "EthereumSepolia",
   "requester": {
-    "kind": "CustomerEmployee",
     "userId": "us-3v1ag-v6b36-9r0pjasaiqt1d3q7",
     "tokenId": "to-7mkkj-c831n-9a7oj3kp8j5i5o9q",
     "appId": "ap-C3H2-H7-3c762njr9t96l9qto6snl5ca4r"
@@ -135,9 +134,8 @@ Request to generate a signature with the wallet key.
 {
   "id": "sg-4tcfd-enph7-955qcvbki7vtaepl",
   "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
-  "network": "ETH_SEPOLIA",
+  "network": "EthereumSepolia",
   "requester": {
-    "kind": "CustomerEmployee",
     "userId": "us-3v1ag-v6b36-9r0pjasaiqt1d3q7",
     "tokenId": "to-7mkkj-c831n-9a7oj3kp8j5i5o9q",
     "appId": "ap-C3H2-H7-3c762njr9t96l9qto6snl5ca4r"

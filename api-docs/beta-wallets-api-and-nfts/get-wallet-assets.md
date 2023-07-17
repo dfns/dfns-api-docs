@@ -30,7 +30,7 @@ Retrieves a list of assets owned by the specified Wallet.
 ```json
 {
   "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
-  "network": "ETH_SEPOLIA",
+  "network": "EthereumSepolia",
   "assets": [
     {
       "symbol": "SepoliaETH",

@@ -32,9 +32,8 @@ Get a signature request of a wallet.
 {
   "id": "sg-4tcfd-enph7-955qcvbki7vtaepl",
   "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
-  "network": "ETH_SEPOLIA",
+  "network": "EthereumSepolia",
   "requester": {
-    "kind": "CustomerEmployee",
     "userId": "us-3v1ag-v6b36-9r0pjasaiqt1d3q7",
     "tokenId": "to-7mkkj-c831n-9a7oj3kp8j5i5o9q",
     "appId": "ap-C3H2-H7-3c762njr9t96l9qto6snl5ca4r"
@@ -88,9 +87,10 @@ Get a signature request of a wallet.
   },
   "status": "Signed",
   "signature": {
-    "r": "0x0cfbc64dcad241df72f9b9cf5cec958eca8f9c7cb7aa146e57cc33d48574d181",
-    "s": "0x39d613e8d317e2ad5658e1f6ad9a686b9ba0ccc8e1a4662efe942fab1e21e54f",
-    "recid": 0
+    "r": "0xb23c2cfb6d409f5a55ced08f89ae70f3fe89403a5ba907c367545499874f1c7f",
+    "s": "0x49992f242a21ae0692c24b43393336744ddc08459d936b6a70542d79df4f66f0",
+    "recid": 1,
+    "encoded": "0xb23c2cfb6d409f5a55ced08f89ae70f3fe89403a5ba907c367545499874f1c7f49992f242a21ae0692c24b43393336744ddc08459d936b6a70542d79df4f66f01c"
   },
   "dateRequested": "2023-05-15T19:26:18.145Z",
   "dateSigned": "2023-05-15T19:26:20.517Z"

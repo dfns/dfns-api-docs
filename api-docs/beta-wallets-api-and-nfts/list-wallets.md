@@ -36,7 +36,7 @@ Retrieves a list of wallets.
     {
       "id": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
       "status": "Active",
-      "network": "ETH_SEPOLIA",
+      "network": "EthereumSepolia",
       "address": "0x00e3495cf6af59008f22ffaf32d4c92ac33dac47",
       "name": "my-wallet",
       "tags": [],
