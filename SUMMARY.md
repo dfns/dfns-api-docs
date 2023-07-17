@@ -91,7 +91,7 @@
     * [Send User Recovery Verification Email](api-docs/authentication/user-recovery/createUserRecoveryCode.md)
     * [Create User Recovery Challenge](api-docs/authentication/user-recovery/createUserRecoveryChallenge.md)
     * [Recover User](api-docs/authentication/user-recovery/createUserRecovery.md)
-* [🆕 Beta: Wallets & NFTs API](api-docs/beta-wallets-api-and-nfts/README.md)
+* [🆕 Wallets & NFTs API](api-docs/beta-wallets-api-and-nfts/README.md)
   * [Create Wallet](api-docs/beta-wallets-api-and-nfts/create-wallet.md)
   * [Get Wallet by ID](api-docs/beta-wallets-api-and-nfts/get-wallet-by-id.md)
   * [List Wallets](api-docs/beta-wallets-api-and-nfts/list-wallets.md)
