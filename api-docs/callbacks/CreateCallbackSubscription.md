@@ -2,14 +2,14 @@
 
 `POST /callback-subscriptions/`
 
-This creates a callback subscription for the specific `eventKind`.   `eventKind` takes the following enumerated type values:
+This creates a callback subscription for the specific `eventKind`. `eventKind` takes the following enumerated type values:
 
-* `PaymentInitiated`: A payment request has been made via the InitiatePayment endpoint.&#x20;
-* `PaymentExecuted`: A payment request has been successfully broadcasted to the target chain via the InitiatePayment endpoint.&#x20;
+* `PaymentInitiated`: A payment request has been made via the InitiatePayment endpoint.
+* `PaymentExecuted`: A payment request has been successfully broadcasted to the target chain via the InitiatePayment endpoint.
 * `PaymentConfirmed`: The payment was mined as part of a block.
 * `PaymentReceived`: An incoming payment was received in your wallet.
 * `TransactionBroadcasted`: A transaction has been successfully broadcasted to the target chain via the BroadcastTransaction endpoint.
-* `WalletCreated`: An AssetAccount or Wallet has been successfully created.
+* `WalletCreated`: An AssetAccount has been successfully created.
 * `PolicyActivated`: A new Policy has been successfully activated.
 
 {% hint style="info" %}
@@ -20,9 +20,9 @@ This creates a callback subscription for the specific `eventKind`.   `eventKind`
 
 ## Required Permissions
 
-| Name                            | Conditions      |
-| ------------------------------- | --------------- |
-| `CallbackSubscriptions:Create`  | Always Required |
+| Name                           | Conditions      |
+| ------------------------------ | --------------- |
+| `CallbackSubscriptions:Create` | Always Required |
 
 ## Request body <a href="#request-example.1" id="request-example.1"></a>
 
@@ -57,7 +57,7 @@ This creates a callback subscription for the specific `eventKind`.   `eventKind`
 
 ### `PaymentInitiated` example callback <a href="#response-example" id="response-example"></a>
 
-The following is an example body that will be posted to the endpoint specified in the callback `url`:&#x20;
+The following is an example body that will be posted to the endpoint specified in the callback `url`:
 
 ```json
 {
