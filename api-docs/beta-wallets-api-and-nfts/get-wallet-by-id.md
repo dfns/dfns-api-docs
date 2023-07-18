@@ -21,7 +21,7 @@ Retrieves a Wallet by its ID.
 
 | Path parameter | Description                                                              |
 | -------------- | ------------------------------------------------------------------------ |
-| `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-86l9l9n97hcos0ln` |
+| `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx` |
 
 ## Response <a href="#response" id="response"></a>
 
@@ -29,7 +29,7 @@ Retrieves a Wallet by its ID.
 
 ```json
 {
-  "id": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
+  "id": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
   "status": "Active",
   "network": "EthereumSepolia",
   "address": "0x00e3495cf6af59008f22ffaf32d4c92ac33dac47",

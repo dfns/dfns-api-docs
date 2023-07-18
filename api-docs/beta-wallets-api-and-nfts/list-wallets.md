@@ -34,7 +34,7 @@ Retrieves a list of wallets.
 {
   "items": [
     {
-      "id": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
+      "id": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
       "status": "Active",
       "network": "EthereumSepolia",
       "address": "0x00e3495cf6af59008f22ffaf32d4c92ac33dac47",

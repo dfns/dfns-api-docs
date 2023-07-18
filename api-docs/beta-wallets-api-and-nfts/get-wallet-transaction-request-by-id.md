@@ -21,8 +21,8 @@ Retrieves a Wallet Transaction Request by its ID.
 
 | Path parameter  | Description                                                                         |
 | --------------- | ----------------------------------------------------------------------------------- |
-| `walletId`      | Unique identifier of the `Wallet`. ex.`wa-6lbvd-hjdu1-9rtppq7p4c87cns7`             |
-| `transactionId` | Unique identifier of the transaction request. ex. `tx-1jbko-fmk8d-9iebm4la5m3c4j8v` |
+| `walletId`      | Unique identifier of the `Wallet`. ex.`wa-6lbvd-hjdu1-xxxxxxxxxxxxxxxx`             |
+| `transactionId` | Unique identifier of the transaction request. ex. `tx-1jbko-fmk8d-xxxxxxxxxxxxxxxx` |
 
 ## Response <a href="#response" id="response"></a>
 
@@ -30,13 +30,13 @@ Retrieves a Wallet Transaction Request by its ID.
 
 ```json
 {
-  "id": "tx-1jbko-fmk8d-9iebm4la5m3c4j8v",
-  "walletId": "wa-6lbvd-hjdu1-9rtppq7p4c87cns7",
+  "id": "tx-1jbko-fmk8d-xxxxxxxxxxxxxxxx",
+  "walletId": "wa-6lbvd-hjdu1-xxxxxxxxxxxxxxxx",
   "network": "EthereumSepolia",
   "requester": {
-    "userId": "us-3v1ag-v6b36-9r0pjasaiqt1d3q7",
-    "tokenId": "to-7mkkj-c831n-9a7oj3kp8j5i5o9q",
-    "appId": "ap-C3H2-H7-3c762njr9t96l9qto6snl5ca4r"
+    "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+    "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+    "appId": "ap-24vva-92s32-xxxxxxxxxxxxxxxx"
   },
   "requestBody": {
     "kind": "Evm",

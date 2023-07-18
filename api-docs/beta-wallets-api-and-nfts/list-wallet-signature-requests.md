@@ -21,7 +21,7 @@ List signature requests of a wallet.
 
 | Path parameter | Description                                                             |
 | -------------- | ----------------------------------------------------------------------- |
-| `walletId`     | Unique identifier of the `Wallet`. ex.`wa-1f04s-lqc9q-86l9l9n97hcos0ln` |
+| `walletId`     | Unique identifier of the `Wallet`. ex.`wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx` |
 
 ### Query parameters <a href="#query-parameters" id="query-parameters"></a>
 
@@ -36,16 +36,16 @@ List signature requests of a wallet.
 
 ```json
 {
-  "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
+  "walletId": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
   "items": [
     {
-      "id": "sg-2ouaj-f4nq6-97q8m0736h09bhhv",
-      "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
+      "id": "sig-2ouaj-f4nq6-xxxxxxxxxxxxxxxx",
+      "walletId": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
       "network": "EthereumSepolia",
       "requester": {
-        "userId": "us-3v1ag-v6b36-9r0pjasaiqt1d3q7",
-        "tokenId": "to-7mkkj-c831n-9a7oj3kp8j5i5o9q",
-        "appId": "ap-C3H2-H7-3c762njr9t96l9qto6snl5ca4r"
+        "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+        "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+        "appId": "ap-24vva-92s32-xxxxxxxxxxxxxxxx"
       },
       "requestBody": {
         "kind": "Hash",

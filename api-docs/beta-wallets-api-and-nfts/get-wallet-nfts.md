@@ -21,7 +21,7 @@ Retrieves a list of NFTs owned by the specified Wallet.
 
 | Path parameter | Description                                                              |
 | -------------- | ------------------------------------------------------------------------ |
-| `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-86l9l9n97hcos0ln` |
+| `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx` |
 
 ## Response <a href="#response" id="response"></a>
 
@@ -29,7 +29,7 @@ Retrieves a list of NFTs owned by the specified Wallet.
 
 ```json
 {
-  "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
+  "walletId": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
   "network": "EthereumSepolia",
   "nfts": [
     {
