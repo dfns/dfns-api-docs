@@ -29,7 +29,7 @@ Creates new `Wallet` associated with the given chain (such as `Ethereum or Polyg
 
 ```shell
 {
-  "network": "PolygonMumbai",
+  "network": "EthereumSepolia",
   "name": "my-wallet"
 }
 ```
@@ -42,9 +42,9 @@ In most cases, the initial status should be set to "Creating". Call Get Wallet t
 
 ```json
 {
-  "id": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
+  "id": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
   "status": "Creating",
-  "network": "PolygonMumbai",
+  "network": "EthereumSepolia",
   "name": "my-wallet",
   "tags": [],
   "dateCreated": "2023-04-14T20:41:28.715Z"

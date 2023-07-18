@@ -21,7 +21,7 @@ Retrieves a list of historical on chain activities for the specified wallet.
 
 | Path parameter | Description                                                              |
 | -------------- | ------------------------------------------------------------------------ |
-| `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-86l9l9n97hcos0ln` |
+| `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx` |
 
 ### Query parameters <a href="#request-example.1" id="request-example.1"></a>
 
@@ -38,7 +38,7 @@ Retrieves a list of historical on chain activities for the specified wallet.
 {
   "items": [
     {
-      "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
+      "walletId": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
       "network": "EthereumSepolia",
       "kind": "NativeTransfer",
       "direction": "Out",
@@ -53,7 +53,7 @@ Retrieves a list of historical on chain activities for the specified wallet.
       "fee": "105000000147000"
     },
     {
-      "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
+      "walletId": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
       "network": "EthereumSepolia",
       "kind": "Erc20Transfer",
       "direction": "In",
