@@ -41,9 +41,8 @@ List signature requests of a wallet.
     {
       "id": "sg-2ouaj-f4nq6-97q8m0736h09bhhv",
       "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
-      "network": "ETH_SEPOLIA",
+      "network": "EthereumSepolia",
       "requester": {
-        "kind": "CustomerEmployee",
         "userId": "us-3v1ag-v6b36-9r0pjasaiqt1d3q7",
         "tokenId": "to-7mkkj-c831n-9a7oj3kp8j5i5o9q",
         "appId": "ap-C3H2-H7-3c762njr9t96l9qto6snl5ca4r"
@@ -52,14 +51,17 @@ List signature requests of a wallet.
         "kind": "Hash",
         "hash": "031edd7d41651593c5fe5c006fa5752b37fddff7bc4e843aa6af0c950f4b9406"
       },
-      "status": "Signed",
+      "status": "Confirmed",
       "signature": {
-        "r": "0x4e3a0ee046e4cbaf7a6fca8c85363c337c73af53c32a0f6dd910ff38adf3cae9",
-        "s": "0x0762c26e8617baa2db3f203c4503ef483aa974e5c80a715ce57d7dd77d845bcd",
-        "recid": 0
+        "r": "0xb23c2cfb6d409f5a55ced08f89ae70f3fe89403a5ba907c367545499874f1c7f",
+        "s": "0x49992f242a21ae0692c24b43393336744ddc08459d936b6a70542d79df4f66f0",
+        "recid": 1,
+        "encoded": "0xb23c2cfb6d409f5a55ced08f89ae70f3fe89403a5ba907c367545499874f1c7f49992f242a21ae0692c24b43393336744ddc08459d936b6a70542d79df4f66f01c"
       },
+      "txHash": "0xf2e2ff61460ec26b0355c0186f17d9263c616d045e7ec3d2b13c18af80c856df",
       "dateRequested": "2023-05-15T20:21:11.576Z",
-      "dateSigned": "2023-05-15T20:21:16.564Z"
+      "dateSigned": "2023-05-15T20:21:16.564Z",
+      "dateConfirmed": "2023-05-15T20:28:36.000Z"
     },
     ...
   ],

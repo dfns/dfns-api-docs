@@ -39,7 +39,7 @@ Retrieves a list of historical on chain activities for the specified wallet.
   "items": [
     {
       "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
-      "network": "ETH_SEPOLIA",
+      "network": "EthereumSepolia",
       "kind": "NativeTransfer",
       "direction": "Out",
       "symbol": "SepoliaETH",
@@ -54,7 +54,7 @@ Retrieves a list of historical on chain activities for the specified wallet.
     },
     {
       "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
-      "network": "ETH_SEPOLIA",
+      "network": "EthereumSepolia",
       "kind": "Erc20Transfer",
       "direction": "In",
       "contract": "0x6f14c02fc1f78322cfd7d707ab90f18bad3b54f5",

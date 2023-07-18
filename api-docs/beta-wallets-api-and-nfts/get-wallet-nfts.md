@@ -30,7 +30,7 @@ Retrieves a list of NFTs owned by the specified Wallet.
 ```json
 {
   "walletId": "wa-1f04s-lqc9q-86l9l9n97hcos0ln",
-  "network": "ETH_SEPOLIA",
+  "network": "EthereumSepolia",
   "nfts": [
     {
       "contract": "0x00fb58432ef9d418bf6688bcf0a226d2fcaa18e2",
