@@ -1,6 +1,6 @@
 # ResendRegistrationEmail
 
-`PUT /auth/recover/code`
+`PUT /auth/recover/user/code`
 
 Sends the user a recovery verification code. This code is used as a second factor to verify the user initiated the recovery request.
 

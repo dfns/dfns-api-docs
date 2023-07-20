@@ -1,6 +1,6 @@
 # Create User Registration Challenge
 
-`POST /auth/recover/init`
+`POST /auth/recover/user/init`
 
 Starts a user recovery session, returning a challenge that will be used to verify the user's identity.
 

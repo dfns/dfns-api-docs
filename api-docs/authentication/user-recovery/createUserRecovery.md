@@ -1,6 +1,6 @@
 # Recover User
 
-`POST /auth/recover`
+`POST /auth/recover/user`
 
 Recovers a user, using a recovery credential. After successfully recovering the user, all of the user's previous credentials and personal access tokens will be invalidated.
 
