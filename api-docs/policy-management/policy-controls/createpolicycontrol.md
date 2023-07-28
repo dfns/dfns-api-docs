@@ -32,7 +32,7 @@ Use the following fields in the nested `configuration` object to create a Policy
 <table data-header-hidden><thead><tr><th width="254">Request body fields</th><th width="113">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td>Request body fields</td><td>Required/Optional</td><td>Description</td><td>Type</td></tr><tr><td><code>kind</code></td><td>Required</td><td>Specify: "RequestApproval"</td><td>Enumerated Type</td></tr><tr><td><code>approverUsernames</code></td><td>Required</td><td>The user IDs of the designated approvers. See <a href="../../authentication/user-management/listUsers.md">List Users</a> to get IDs. (See Note below re: legacy authentication)</td><td>Array of Strings</td></tr><tr><td><code>timeoutInMinutes</code></td><td>Required</td><td>The amount of time in minutes after which the policy execution can no longer be approved.</td><td>Integer</td></tr><tr><td><code>numApprovals</code></td><td>Required</td><td>The number of required approvals. Must be less than or equal to the <code>approverUsernames array length.</code></td><td>Integer</td></tr></tbody></table>
 
 {% hint style="warning" %}
-Note: For legacy authentication, please specify an array of email addresses in the `approverUsernames` field like \[bob@example.com", "dan@example.com"]
+Note: For legacy authentication, please specify an array of email addresses in the `approverUsernames` field like \["bob@example.com", "dan@example.com"]
 {% endhint %}
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
