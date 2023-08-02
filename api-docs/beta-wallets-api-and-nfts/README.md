@@ -8,14 +8,48 @@ Finally, Wallets will support Delegated Signing, enabling you to require your cu
 
 ### Caveats
 
-While we expect Wallets to eventually fully deprecate Asset Accounts, for the time being, the following chains are supported:
+While we expect Wallets to eventually fully deprecate Asset Accounts, for the time being, see the table below for the supported blockchain networks.
 
-* Ethereum
-* Polygon
-* Binance Smart Chain
+## Supported networks <a href="#supported-networks" id="supported-networks"></a>
 
-We plan to add support for more chains over time. Note we will not have full support for all chains as standards vary significantly between alternative L1s.
+| Network name | Mainnet | Testnet | Tier-1 Support | Tier-2 Support |
+| ------------ | :-----: | :-----: | :----: | :----: |
+| ArbitrumOne | :heavy_check_mark: | | | :heavy_check_mark: |
+| ArbitrumGoerli | | :heavy_check_mark: | | :heavy_check_mark: |
+| AvalancheC | :heavy_check_mark: | | | :heavy_check_mark: |
+| AvalancheCFuji | | :heavy_check_mark: | | :heavy_check_mark: |
+| Bsc | :heavy_check_mark: | | :heavy_check_mark: | |
+| BscTestnet | | :heavy_check_mark: | :heavy_check_mark: | |
+| Ethereum | :heavy_check_mark: | | :heavy_check_mark: | |
+| EthereumGoerli | | :heavy_check_mark: | :heavy_check_mark: | |
+| EthereumSepolia | | :heavy_check_mark: | :heavy_check_mark: | |
+| FantomOpera | :heavy_check_mark: | | | :heavy_check_mark: |
+| FantomTestnet | | :heavy_check_mark: | | :heavy_check_mark: |
+| Optimism | :heavy_check_mark: | | | :heavy_check_mark: |
+| OptimismGoerli | | :heavy_check_mark: | | :heavy_check_mark: |
+| Polygon | :heavy_check_mark: | | :heavy_check_mark: | |
+| PolygonMumbai | | :heavy_check_mark: | :heavy_check_mark: | |
 
-Additionally, **the Wallets API does not yet support Policy Engine**. We expect to add this support soon.
+## Tier-1 vs Tier-2 support
+
+We plan to add support for more blockchain networks over time. The supported features will vary depending on popularity and market demand.
+
+Tier 1 blockchain networks will support all wallet features, including automatic detection of wallet [asset](./get-wallet-assets.md) and [NFT](./get-wallet-nfts.md) balances if applicable, and on-chain asset transfer [history](./get-wallet-history.md). Tier-1 support also include [transfer asset](./transfer-asset-from-wallet.md), [broadcast transaction](./broadcast-transaction-from-wallet.md) and [generate signature](./generate-signature-from-wallet.md).
+
+Tier 2 blockchain networks do not track tokens or on-chain history. Only the [balance](./get-wallet-assets.md) of the native token, which is used to pay transaction fees, is returned.  Tier-2 support include [broadcast transaction](./broadcast-transaction-from-wallet.md) and [generate signature](./generate-signature-from-wallet.md); transfer asset is not supported.
+
+## Pseudo networks <a href="#pseudo-networks" id="pseudo-networks"></a>
+
+We also support wallets not tied to a blockchain network. You can create an unbound wallet by setting the `network` field to one of the supported signature schemes, currently either `KeyECDSA` or `KeyEdDSA`. You can use these wallets for more advanced use cases, for example
+
+* use Dfns wallets with private blockchains that Dfns can't access, such as Polygon supernets or Avalanche subnets.
+* use Dfns wallets with blockchains not on the supported network list, as long as they use either `ECDSA` or `EdDSA`.
+* use the same Dfns wallets across multiple blockchain networks.
+
+The unbound wallets only support [generate signature](./generate-signature-from-wallet.md). To help improve the developer experience with generate signature, our [TypeScript SDK](https://github.com/dfnsext/typescript-sdk) includes integrations with different blockchain SDKs, like [ethers.js 5](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-ethersjs5) and [6](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-ethersjs6) or [Solana web3.js](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-solana). Browse through the [included examples](https://github.com/dfnsext/typescript-sdk/tree/m/examples) to see how to develop dapps with Dfns wallets.
+
+## Other features
+
+Additionally, the Wallets API supports Policy Engine.
 
 Thanks in advance for testing the new Wallets API and please send any feedback to docs@dfns.co.
