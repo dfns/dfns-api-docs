@@ -56,7 +56,7 @@ Once you register in your Dfns org and invite your Users, the next step is to cr
 
 ![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.33.23 PM.png>)
 
-At this point, you can make server side API calls by signing requests with your secret key. Please see [our Typescript SDK](https://docs.dfns.co/dfns-docs/getting-started/typescript-sdk) and specifically [the Service Account sample app](https://github.com/dfnsext/typescript-sdk/tree/m/packages/examples/service-account).&#x20;
+At this point, you can make server side API calls by signing requests with your secret key. Please see [our Typescript SDK](https://docs.dfns.co/dfns-docs/getting-started/typescript-sdk) and specifically [the Service Account sample app](https://github.com/dfnsext/typescript-sdk/tree/m/examples/sdk/service-account).&#x20;
 
 ## Delegated Signing Configuration
 
