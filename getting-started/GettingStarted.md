@@ -1,4 +1,4 @@
-# Getting Started
+# Onboarding to Dfns
 
 ## Overview
 
@@ -42,7 +42,7 @@ We’ve also created a video walking through this setup for EthParis (July 2023)
 
 While we plan to build a fully functional permissions UI in the future, do note you can configure any permissions you want for any user [via the permissions API](https://dfns.gitbook.io/dfns-docs/api-docs/permissions/permissions-overview) using an Service Account to sign requests (as described below).   Check out our [postman collection](postman-integration.md) to make this easier!
 
-## Create an Service Account
+## Create a Service Account
 
 Once you register in your Dfns org and invite your Users, the next step is to create a Service Account which you can think of as a machine user.
 

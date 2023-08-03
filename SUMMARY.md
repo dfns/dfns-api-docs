@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-* [Getting Started](getting-started/GettingStarted.md)
+* [Onboarding to Dfns](getting-started/GettingStarted.md)
 * [Request Headers](getting-started/request-headers.md)
 * [API Errors](getting-started/errors.md)
 * [API Authentication](getting-started/authentication-authorization.md)
