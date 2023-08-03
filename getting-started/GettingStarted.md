@@ -76,11 +76,10 @@ If you want to implement Delegated Signing in which your customer generates cred
 
 
 5. Click Create, then copy the App ID like “ap-2vemp-hl3c9-9j1rgcf9quurph” to paste into your .env file as described below
-6. Clone one of the two demo apps in the SDK
-   1. [NextJS config](https://github.com/dfnsext/typescript-sdk/tree/m/packages/examples/nextjs-delegated)
-   2. [React & Express](https://github.com/dfnsext/typescript-sdk/tree/m/packages/examples/auth-delegated)
-7. Follow the steps in [the sample app Readme](https://github.com/dfnsext/typescript-sdk/tree/m/packages/examples/nextjs-delegated#readme)
-8. Populate your .env file based on [the .env.example](https://github.com/dfnsext/typescript-sdk/blob/m/packages/examples/nextjs-delegated/.env.example) (see[ this video](https://www.youtube.com/watch?v=uGVjRFeNmWU\&t=1012s) for the July 2023 EthParis event for a step by step walkthrough)
+6. Clone one of the two demo apps in the SDK & follow the steps in the Readme
+   1. [NextJS config](https://github.com/dfnsext/typescript-sdk/tree/m/examples/sdk/nextjs-delegated)
+   2. [React & Express](#user-content-fn-1)[^1]
+7. Populate your .env file based on the [.env.example ](https://github.com/dfnsext/typescript-sdk/blob/m/examples/sdk/nextjs-delegated/.env.example)(see[ this video](https://www.youtube.com/watch?v=uGVjRFeNmWU\&t=1012s) for the July 2023 EthParis event for a step by step walkthrough)
 
 ## All the docs!
 
@@ -90,3 +89,5 @@ Our documentation should have everything you need to get up and running on Dfns!
 * Our [API Authentication](authentication-authorization.md) page & [Advanced Topics](../advanced-topics/authentication/) around authentication to understand our signing requirements in detail
 * The [**API DOCS**](../api-docs/) reference section of all currently supported endpoints and their operations
 * [Integrations](../integrations/fiat-on-offboarding.md) to learn about how to integrate with Fiat on/offboarding providers
+
+[^1]: 
