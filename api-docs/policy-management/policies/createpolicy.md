@@ -4,10 +4,9 @@
 
 Policies join [Policy Rules](../policy-rules/createpolicyrule.md) and [Policy Controls ](../policy-controls/createpolicycontrol.md)with an `activityKind` that determines which actions on the API may trigger a Policy Execution. These are the supported `activityKinds`:
 
-* `PaymentInitiation`: Examine Policy Rules when the [InitiatePayment](../../deprecated-apis/high-level-api-asset-accounts-and-payments/payments/initiatepayment.md) API is called.
-* `CreatingSignature`: Examine Policy Rules when the [CreateSignature](../../deprecated-apis/low-level-api-keys-and-transactions/transaction-execution/createsignature.md) API is called.
-* `TransactionInitiation`: Examine Policy Rules when [BroadcastTransaction](../../deprecated-apis/low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction/) API is called.
-* More policy kinds coming soon...
+* `PaymentInitiation`: Examine Policy Rules when the [Transfer Assets from Wallet](../../beta-wallets-api-and-nfts/transfer-asset-from-wallet.md) (or legacy [InitiatePayment](../../deprecated-apis/high-level-api-asset-accounts-and-payments/payments/initiatepayment.md)) API is called.
+* `TransactionInitiation`: Examine Policy Rules when the [Broadcast Transaction from Wallet ](../../beta-wallets-api-and-nfts/broadcast-transaction-from-wallet.md)(or legacy [BroadcastTransaction](../../deprecated-apis/low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction/)) API is called.
+* `CreatingSignature`: Examine Policy Rules when the [Generate Signature from Wallet](../../beta-wallets-api-and-nfts/generate-signature-from-wallet.md) (or legacy [CreateSignature](../../deprecated-apis/low-level-api-keys-and-transactions/transaction-execution/createsignature.md)) API is called.
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
