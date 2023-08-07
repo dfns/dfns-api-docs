@@ -22,7 +22,7 @@ A: Think of Applications as the website or mobile app that will be calling Dfns 
 
 #### _**Q: Under “New Application”, what is the difference between a Client Side and a Server Side application type?**_&#x20;
 
-A: Server Side Applications require an application key pair to validate that all transactions are sent from the server side. This is only required if you want to ensure it is not possible to send any transaction from a client side application.  We generally recommend using a Client Side application type for simplicity. \
+A: Server Side Applications require an application key pair to validate that all transactions are sent from the server side. This is only required if you want to ensure it is not possible to send any arbitrary transaction from a client side application.  We generally recommend using a Client Side application type for simplicity. \
 
 
 #### _**Q: I'm coding native mobile apps (Swift/Kotlin). What should I specify for expected origin and relying party?**_&#x20;
