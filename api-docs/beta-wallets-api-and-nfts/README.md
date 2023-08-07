@@ -34,6 +34,6 @@ The unbound wallets only support [generate signature](generate-signature-from-wa
 
 ### Other features
 
-Additionally, the Wallets API supports Policy Engine `AlwaysActive` rules.  Dashboard support for wallets will be available in a future release.&#x20;
+Additionally, the Wallets API supports Policy Engine `AlwaysActive` rules.  Additional policy rules as well as full dashboard support for wallets will be available in future releases.&#x20;
 
 Thanks in advance for testing the new Wallets API and please send any feedback to docs@dfns.co.
