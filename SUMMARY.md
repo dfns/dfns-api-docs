@@ -194,3 +194,4 @@
 ## Integrations
 
 * [Fiat On/Offboarding](integrations/fiat-on-offboarding.md)
+* [Gasless Transactions](integrations/gasless-transactions.md)
