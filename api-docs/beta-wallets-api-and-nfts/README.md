@@ -6,15 +6,15 @@ In addition to tracking multiple assets, the new Wallets API also natively suppo
 
 Finally, Wallets will support Delegated Signing, enabling you to require your customers to sign API requests into Dfns using our new Authentication system. Please contact us for additional resources related to Delegated Signing.
 
-### Caveats
+## Caveats
 
 While we expect Wallets to eventually fully deprecate Asset Accounts, for the time being, see the table below for the supported blockchain networks.
 
-## Supported networks <a href="#supported-networks" id="supported-networks"></a>
+### Supported networks <a href="#supported-networks" id="supported-networks"></a>
 
 <table><thead><tr><th width="178">Network name</th><th align="center">Mainnet</th><th align="center">Testnet</th><th align="center">Tier-1 Support</th><th align="center">Tier-2 Support</th></tr></thead><tbody><tr><td>ArbitrumOne</td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td></tr><tr><td>ArbitrumGoerli</td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td></tr><tr><td>AvalancheC</td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td></tr><tr><td>AvalancheCFuji</td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td></tr><tr><td>Bsc</td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td></tr><tr><td>BscTestnet</td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td></tr><tr><td>Ethereum</td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td></tr><tr><td>EthereumGoerli</td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td></tr><tr><td>EthereumSepolia</td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td></tr><tr><td>FantomOpera</td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td></tr><tr><td>FantomTestnet</td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td></tr><tr><td>Optimism</td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td></tr><tr><td>OptimismGoerli</td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td></tr><tr><td>Polygon</td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td></tr><tr><td>PolygonMumbai</td><td align="center"></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"><span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td align="center"></td></tr></tbody></table>
 
-## Tier-1 vs Tier-2 support
+### Tier-1 vs Tier-2 support
 
 We plan to add support for more blockchain networks over time. The supported features will vary depending on popularity and market demand.
 
@@ -22,7 +22,7 @@ Tier 1 blockchain networks will support all wallet features, including automatic
 
 Tier 2 blockchain networks do not track tokens or on-chain history. Only the [balance](get-wallet-assets.md) of the native token, which is used to pay transaction fees, is returned. Tier-2 support include [broadcast transaction](broadcast-transaction-from-wallet.md) and [generate signature](generate-signature-from-wallet.md); transfer asset is not supported.
 
-## Pseudo networks <a href="#pseudo-networks" id="pseudo-networks"></a>
+### Pseudo networks <a href="#pseudo-networks" id="pseudo-networks"></a>
 
 We also support wallets not tied to a blockchain network. You can create an unbound wallet by setting the `network` field to one of the supported signature schemes, currently either `KeyECDSA` or `KeyEdDSA`. You can use these wallets for more advanced use cases, for example
 
@@ -32,7 +32,7 @@ We also support wallets not tied to a blockchain network. You can create an unbo
 
 The unbound wallets only support [generate signature](generate-signature-from-wallet.md). To help improve the developer experience with generate signature, our [TypeScript SDK](https://github.com/dfnsext/typescript-sdk) includes integrations with different blockchain SDKs, like [ethers.js 5](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-ethersjs5) and [6](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-ethersjs6) or [Solana web3.js](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-solana). Browse through the [included examples](https://github.com/dfnsext/typescript-sdk/tree/m/examples) to see how to develop dapps with Dfns wallets.
 
-## Other features
+### Other features
 
 Additionally, the Wallets API supports Policy Engine `AlwaysActive` rules.  Dashboard support for wallets will be available in a future release.&#x20;
 
