@@ -34,23 +34,23 @@ For legacy Asset Accounts, use the following:&#x20;
 
 ### Filter Object
 
-Use the following fields in the nested `filter` object to scope the policy to a specific entity`:`
+Use the following fields in the nested `filter` object to scope the policy to a specific entity:
 
-<table><thead><tr><th width="254">Request body fields</th><th width="113">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "PublicKey"</td><td>Enumerated Type</td></tr><tr><td><code>publicKeyIds</code></td><td>Required</td><td>IDs of public keys (wallets) the policy should apply to.</td><td>Array of Strings</td></tr></tbody></table>
+<table><thead><tr><th width="254">Request body fields</th><th width="113">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "Wallet"</td><td>Enumerated Type</td></tr><tr><td><code>walletIds</code></td><td>Required</td><td>IDs of wallets the policy should apply to.</td><td>Array of Strings</td></tr></tbody></table>
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 
 ```json
 {
-  "activityKind": "PaymentInitiation",
+  "activityKind": "WalletsTransferAsset",
   "description": "Preventing theft",
   "name": "Anti Theft Policy",
   "ruleIds": ["pr-edward-shade-d887751054"],
   "controlIds": ["pc-music-william-failed-54497df60b"],
   "status": "Enabled",
   "filter": {
-    "kind": "PublicKey",
-    "publicKeyIds": ["pk-...", "pk-..."]
+    "kind": "Wallet",
+    "walletIds": ["wa-...", "wa-..."]
   }
 }
 ```
@@ -63,7 +63,7 @@ If successful, the response contains, among other things, a status indicating wh
 
 ```json
 {
-  "activityKind": "CreatingSignature",
+  "activityKind": "WalletsGenerateSignature",
   "description": "Test AlwaysActive",
   "name": "Anti Theft Policy",
   "ruleIds": [

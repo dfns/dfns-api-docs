@@ -2,7 +2,7 @@
 
 `DELETE /policies/policy-rules/{policyRuleId}`
 
-Archives a `PolicyRule` its `id`.  Archived policy rules will no longer be enforced.
+Archives a `PolicyRule` its `id`. Archived policy rules will no longer be enforced.
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
@@ -12,9 +12,9 @@ Archives a `PolicyRule` its `id`.  Archived policy rules will no longer be enfor
 
 ## Required Permissions
 
-| Name                           | Conditions      |
-| ------------------------------ | --------------- |
-| `PolicyRules:Archive`          | Always Required |
+| Name                  | Conditions      |
+| --------------------- | --------------- |
+| `PolicyRules:Archive` | Always Required |
 
 ## Parameters <a href="#parameters.1" id="parameters.1"></a>
 
@@ -32,15 +32,15 @@ Note the status is now set to `Archived`:
 {
    "id": "pr-tennessee-artist-f2078ea085",
    "version": "f1b1me4kd",
-   "kind": "PaymentAmountLimit",
+   "kind": "TransferAmountLimit",
    "orgId": "cu-purple-pip-1b417b958500",
    "author": "oe-nine-artist-9de60fef6963",
    "description": "Test Rule 1 PaymentAmountLimit",
    "name": "Test Rule 1",
    "configuration": {
-       "kind": "PaymentAmountLimit",
-       "limit": "0.5",
-       "assetSymbol": "ETH"
+       "kind": "TransferAmountLimit",
+       "limit": "10",
+       "currency": "USD"
    },
    "tags": [],
    "dateCreated": "2022-07-14T21:22:54.829Z",

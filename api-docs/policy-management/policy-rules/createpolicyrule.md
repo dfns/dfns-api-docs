@@ -4,8 +4,9 @@
 
 Policy Rules determine when Policy Executions are created. The type of policy rule applied is determined by the `kind` field in the nested `configuration` object. These are the supported kinds:
 
-* `PaymentAmountLimit`: Trigger the policy if the payment is over a given limit.
 * `AlwaysActivatedRule`: Always trigger the policy.
+* `TransferAmountLimit`: Trigger the policy if the transfer is over a given limit. (Wallets only.)
+* `PaymentAmountLimit`: Trigger the policy if the payment is over a given limit. (Asset accounts only. Deprecated)
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
@@ -27,20 +28,20 @@ The following fields are common to all kinds of Policy Rules:
 
 ### Amount Limit Rule
 
-Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if the Payment amount is over the specified amount:
+Use the following fields in the nested `configuration` object to create a Policy Rule which triggers a Policy Execution if the Transfer amount is over the specified amount:
 
-<table><thead><tr><th width="238">Request body fields</th><th width="113">Required/Optional</th><th width="240">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "PaymentAmountLimit"</td><td>Enumerated Type</td></tr><tr><td><code>limit</code></td><td>Required</td><td>The amount over which the policy should trigger - specified as a string</td><td>String</td></tr><tr><td><code>assetSymbol</code></td><td>Required</td><td>The currency used to denominate the limit field - one of "USD", "EUR", "ETH"</td><td>String</td></tr></tbody></table>
+<table><thead><tr><th width="238">Request body fields</th><th width="113">Required/Optional</th><th width="240">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "TransferAmountLimit"</td><td>Enumerated Type</td></tr><tr><td><code>limit</code></td><td>Required</td><td>The amount over which the policy should trigger - specified as a string</td><td>String</td></tr><tr><td><code>currency</code></td><td>Required</td><td>The currency used to denominate the limit field - one of "USD", "EUR"</td><td>String</td></tr></tbody></table>
 
 Example Body:
 
 ```json
 {
-    "description": "PaymentAmountLimit", 
+    "description": "TransferAmountLimit", 
     "name": "poliy rule no.1",
     "configuration": {
-        "kind": "PaymentAmountLimit",
-        "limit": "0.0005",
-        "assetSymbol": "ETH",
+        "kind": "TransferAmountLimit",
+        "limit": "10",
+        "currency": "USD",
     }
 }
 ```
@@ -75,15 +76,15 @@ If successful, the response contains, among other things, a status indicating wh
 {
    "id": "pr-tennessee-artist-f2078ea085",
    "version": "f1b1me4kd",
-   "kind": "PaymentAmountLimit",
+   "kind": "TransferAmountLimit",
    "orgId": "cu-purple-pip-1b417b958500",
    "author": "oe-nine-artist-9de60fef6963",
    "description": "Test Rule 1 PaymentAmountLimit",
    "name": "Test Rule 1",
    "configuration": {
-       "kind": "PaymentAmountLimit",
-       "limit": "0.5",
-       "assetSymbol": "ETH"
+       "kind": "TransferAmountLimit",
+       "limit": "10",
+       "currency": "USD"
    },
    "tags": [],
    "dateCreated": "2022-07-14T21:22:54.829Z",

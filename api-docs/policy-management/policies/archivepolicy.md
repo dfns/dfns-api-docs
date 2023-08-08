@@ -2,7 +2,7 @@
 
 `DELETE /policies/{policyId}`
 
-Archives a `Policy` by its `id`.  Archived policies will no longer be enforced.
+Archives a `Policy` by its `id`. Archived policies will no longer be enforced.
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
@@ -12,9 +12,9 @@ Archives a `Policy` by its `id`.  Archived policies will no longer be enforced.
 
 ## Required Permissions
 
-| Name                           | Conditions      |
-| ------------------------------ | --------------- |
-| `Policies:Archive`             | Always Required |
+| Name               | Conditions      |
+| ------------------ | --------------- |
+| `Policies:Archive` | Always Required |
 
 ## Parameters <a href="#parameters.1" id="parameters.1"></a>
 
@@ -30,7 +30,7 @@ Note the status is now set to `Archived`:
 
 ```json
 {
-    "activityKind": "CreatingSignature",
+    "activityKind": "WalletsGenerateSignature",
     "archivedDate": "2022-10-18T20:05:55.270Z",
     "author": "oe-nine-artist-9de60fef6963",
     "controlIds": [
@@ -49,6 +49,3 @@ Note the status is now set to `Archived`:
     "versionedId": "pl-seven-nuts-66fda0f94a@f36b0dnb2"
 }
 ```
-
-
-

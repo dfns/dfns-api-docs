@@ -16,7 +16,7 @@ Syntax:
 
 A Policy is executed in reaction to a specific activity happening, such as a specific API request.
 
-The `PolicyActivityKind` attached to the Policy on creation, defines which activity is going to trigger its evaluation. Eg. a policy of `activityKind` `"PaymentInitiation"` will be evaluated when an `InitiatePayment` API request is received.
+The `PolicyActivityKind` attached to the Policy on creation, defines which activity is going to trigger its evaluation. Eg. a policy of `activityKind` `"WalletsTransferAsset"` will be evaluated when an `TransferAsset` API request is received.
 
 ### Policy Rules
 
