@@ -8,9 +8,9 @@ Initiates a payment in the provided `AssetSymbol`, instructing funds to be trans
 * `BlockchainWalletAddress` - A payment to any address supported by the target chain.
 
 {% hint style="info" %}
-* User action signature required. See [User Action Signing](../../../authentication/user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more information.
+* User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -23,7 +23,7 @@ Initiates a payment in the provided `AssetSymbol`, instructing funds to be trans
 
 ## Triggers
 
-Policy Engine for [Policies](../../../policy-management/policies/createpolicy.md) with a `PaymentInitiation` `activityKind`.
+Policy Engine for [Policies](../../policy-management/policies/createpolicy.md) with a `PaymentInitiation` `activityKind`.
 
 ## Parameters <a href="#request-example.1" id="request-example.1"></a>
 
@@ -33,7 +33,7 @@ Policy Engine for [Policies](../../../policy-management/policies/createpolicy.md
 
 ## Request body <a href="#request-example.1" id="request-example.1"></a>
 
-<table><thead><tr><th width="173">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>assetSymbol</code></td><td>Required</td><td>Currency symbol and network. Format is &#x3C;SYMBOL>[.&#x3C;NETWORK>]. See <a href="../../../dfns-api-enumerated-types.md">Enumerated Types</a> for a full list of valid values.</td><td>String</td></tr><tr><td><code>amount</code></td><td>Required</td><td>Amount to transfer specified in the largest denomination - eg. the native token for "ETH" or "SOL"</td><td>String (often specified as a float, eg. "0.0005")</td></tr><tr><td><code>receiver</code></td><td>Required</td><td>An object detailing the kind of the recipient (see below)</td><td>Object</td></tr><tr><td><code>note</code></td><td>Optional</td><td>A short payment description</td><td>String</td></tr><tr><td><code>narrative</code></td><td>Optional</td><td>Broader context on the payment for customer use</td><td>String</td></tr></tbody></table>
+<table><thead><tr><th width="173">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>assetSymbol</code></td><td>Required</td><td>Currency symbol and network. Format is &#x3C;SYMBOL>[.&#x3C;NETWORK>]. See <a href="../../dfns-api-enumerated-types.md">Enumerated Types</a> for a full list of valid values.</td><td>String</td></tr><tr><td><code>amount</code></td><td>Required</td><td>Amount to transfer specified in the largest denomination - eg. the native token for "ETH" or "SOL"</td><td>String (often specified as a float, eg. "0.0005")</td></tr><tr><td><code>receiver</code></td><td>Required</td><td>An object detailing the kind of the recipient (see below)</td><td>Object</td></tr><tr><td><code>note</code></td><td>Optional</td><td>A short payment description</td><td>String</td></tr><tr><td><code>narrative</code></td><td>Optional</td><td>Broader context on the payment for customer use</td><td>String</td></tr></tbody></table>
 
 ### Dfns Asset Account Payment
 

@@ -5,9 +5,9 @@
 Creates new `AssetAccount` entity associated with a specific `assetSymbol` (such as `ETH`). Returns a new asset account ID. Note the request is asynchronous - call [GetAssetAccountById](getassetaccountbyid.md) to check status of creation and get the associated blockchain address once complete.
 
 {% hint style="info" %}
-* User action signature required. See [User Action Signing](../../../authentication/user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more
+* User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more
 {% endhint %}
 
 ## Required Permissions
@@ -19,7 +19,7 @@ Creates new `AssetAccount` entity associated with a specific `assetSymbol` (such
 
 ## Request body <a href="#request-body" id="request-body"></a>
 
-<table><thead><tr><th width="211">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>assetSymbol</code></td><td>Required</td><td>Currency symbol and network. Format is &#x3C;SYMBOL>[.&#x3C;NETWORK>]. See <a href="../../../dfns-api-enumerated-types.md">Enumerated Types</a> for a full list of valid values.</td><td>String</td></tr><tr><td><code>name</code></td><td>Optional</td><td>Human readable name for the asset account</td><td>String</td></tr><tr><td><code>publicKey</code></td><td>Optional</td><td>You can associate more than one asset account with the same public key by passing the public key ID (starting with "pk-...") into this optional body parameter.</td><td>String</td></tr></tbody></table>
+<table><thead><tr><th width="211">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>assetSymbol</code></td><td>Required</td><td>Currency symbol and network. Format is &#x3C;SYMBOL>[.&#x3C;NETWORK>]. See <a href="../../dfns-api-enumerated-types.md">Enumerated Types</a> for a full list of valid values.</td><td>String</td></tr><tr><td><code>name</code></td><td>Optional</td><td>Human readable name for the asset account</td><td>String</td></tr><tr><td><code>publicKey</code></td><td>Optional</td><td>You can associate more than one asset account with the same public key by passing the public key ID (starting with "pk-...") into this optional body parameter.</td><td>String</td></tr></tbody></table>
 
 ## Request example <a href="#request-example.1" id="request-example.1"></a>
 

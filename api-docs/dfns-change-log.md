@@ -104,7 +104,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Dec 15, 2022
 
-* Launched new `direction` and `status` query parameters on [ListPayments](deprecated-apis/high-level-api-asset-accounts-and-payments/payments/listpayments.md)
+* Launched new `direction` and `status` query parameters on [ListPayments](high-level-api-asset-accounts-and-payments/payments/listpayments.md)
 * Fixed a bug in the `timeoutInMinutes` implementation in [PolicyControls](policy-management/policy-controls/createpolicycontrol.md)
 
 ### Dec 7, 2022
@@ -115,7 +115,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Nov 30, 2022
 
-* Launched our new blockchain indexing microservice for Ethereum mainnet exposed via the new `direction` field on [payments](deprecated-apis/high-level-api-asset-accounts-and-payments/payments/listpayments.md) and the new `PaymentReceived and PaymentConfirmed` [callback eventKinds](callbacks/CreateCallbackSubscription.md).
+* Launched our new blockchain indexing microservice for Ethereum mainnet exposed via the new `direction` field on [payments](high-level-api-asset-accounts-and-payments/payments/listpayments.md) and the new `PaymentReceived and PaymentConfirmed` [callback eventKinds](callbacks/CreateCallbackSubscription.md).
 * Enabled [Permissions](permissions/) on [callbacks](<callbacks/README (1).md>) and [pubic keys](deprecated-apis/low-level-api-keys-and-transactions/public-keys-1/)
 * Internal bug fixes wrt database pagination
 
@@ -131,7 +131,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Nov 8, 2022
 
-* Added a `maxUnitBalance` property to the response from the [GetBalance endpoint](deprecated-apis/high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbalancebyid.md) representing the largest possible unit for the given asset.
+* Added a `maxUnitBalance` property to the response from the [GetBalance endpoint](high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbalancebyid.md) representing the largest possible unit for the given asset.
 * IP Whitelisting fixes: API Gateway redirect aliases, extra NAT Gateway IPs whitelisted
 * Integrated Fantom, Optimism, and SKALE blockchains
 

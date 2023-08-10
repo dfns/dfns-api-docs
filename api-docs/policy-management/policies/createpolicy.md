@@ -12,7 +12,7 @@ Policies join [Policy Rules](../policy-rules/createpolicyrule.md) and [Policy Co
 
 For legacy Asset Accounts, use the following:&#x20;
 
-* `PaymentInitiation`: Examine Policy Rules when the [Initiate Payment](../../deprecated-apis/high-level-api-asset-accounts-and-payments/payments/initiatepayment.md) API is called.
+* `PaymentInitiation`: Examine Policy Rules when the [Initiate Payment](../../high-level-api-asset-accounts-and-payments/payments/initiatepayment.md) API is called.
 * `TransactionInitiation`: Examine Policy Rules when the [Broadcast Transaction](../../deprecated-apis/low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction/) API is called.
 * `CreatingSignature`: Examine Policy Rules when the [Create Signature](../../deprecated-apis/low-level-api-keys-and-transactions/transaction-execution/createsignature.md) API is called.
 
