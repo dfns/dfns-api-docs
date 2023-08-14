@@ -1,13 +1,8 @@
-# Delegated Registration
+# Delegated Registration Restart
 
-`POST /auth/registration/delegated`
+`POST /auth/registration/delegated/restart`
 
-If you want to use your own authentication system, while still using `Delegated Signing`, you can use this endpoint to register a User in your organization, without your user needing to receive an email from Dfns.
-
-This endpoint will:
-
-1. Create a new User attached to your organization
-2. Initiates a User Registration Challenge and returns the registration challenge.
+Occasionally a user may begin registration but not complete the process.  In this case, you can use this method to restart the user's registration where they left off so they can use the same username they originally specified. &#x20;
 
 On successful creation, the user's registration challenge will be returned. You will then need to call [completeUserRegistration.md](../registration/completeUserRegistration.md "mention") to complete the user's registration.
 
