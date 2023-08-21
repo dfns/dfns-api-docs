@@ -4,7 +4,7 @@
 
 Policy Rules determine when Policy Executions are created. The type of policy rule applied is determined by the `kind` field in the nested `configuration` object. These are the supported kinds:
 
-* `AlwaysActivatedRule`: Always trigger the policy.
+* `AlwaysActivated`: Always trigger the policy.
 * `TransferAmountLimit`: Trigger the policy if the transfer is over a given limit. (Wallets only.)
 * `PaymentAmountLimit`: Trigger the policy if the payment is over a given limit. (Asset accounts only. Deprecated)
 
@@ -52,13 +52,13 @@ Example Body:
 
 Use the following fields in the nested `configuration` object to create a Policy Rule which always triggers:
 
-<table><thead><tr><th width="220">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "AlwaysActivatedRule"</td><td>Enumerated Type</td></tr></tbody></table>
+<table><thead><tr><th width="220">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>Specify: "AlwaysActivated"</td><td>Enumerated Type</td></tr></tbody></table>
 
 Example Body:
 
 ```json
 {
-    "description": "AlwaysActivatedRule", 
+    "description": "AlwaysActivated", 
     "name": "poliy rule no.1",
     "configuration": {
         "kind": "AlwaysActivated"
