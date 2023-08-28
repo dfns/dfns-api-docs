@@ -27,7 +27,7 @@ We’ve also created a video walking through this setup for EthParis (July 2023)
 
 ![](https://lh5.googleusercontent.com/4NRh8sMOQvumXpXwjXxXPa\_iL1bjspD9LBkCsfVz7DVl8-Si6PBVW5NpQ8QlL6z0Bt5eq8OE7UXwj2\_XnRJg1aSxlzmNvohuGGE\_2VOHuEhr-y1d2aSxpbglf6\_x4-AcPmgVTGpofPkqFn1O0UmSonc)
 
-3. Now click “Users” in the left navigation
+4. Now click “Users” in the left navigation
 
 ![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.29.37 PM.png>)
 
