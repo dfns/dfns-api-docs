@@ -46,7 +46,13 @@ While we plan to build a fully functional permissions UI in the future, do note 
 
 Once you register in your Dfns org and invite your Users, the next step is to create a Service Account which you can think of as a machine user.
 
-1. Create a Public / Private Key pair that you will use for API signing from the terminal command.  See our [documentation on key generation](https://docs.dfns.co/dfns-docs/advanced-topics/authentication/credentials/generate-a-key-pair)
+1. Create a Public / Private Key pair that you will use for API signing from the terminal command.  You can use the commands shown below or see our [documentation on key generation](https://docs.dfns.co/dfns-docs/advanced-topics/authentication/credentials/generate-a-key-pair):&#x20;
+   * ```sh
+     # Generate a ECDSA Private Key
+     openssl ecparam -genkey -name prime256v1 -noout -out prime256v1.pem
+     # Generate the Public Key
+     openssl pkey -in prime256v1.pem -pubout -out prime256v1.public.pem
+     ```
 2. Navigate to Settings. Service Accounts=>New Service Account. &#x20;
 3. Name the Service Account, copy in the public key (including begin/end lines like “-----BEGIN PUBLIC KEY-----”)  and click “Create”.&#x20;
 
