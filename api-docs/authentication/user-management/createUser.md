@@ -20,7 +20,7 @@ Create a new user in the caller's org. The user is created without any permissio
 
 ## Request Body
 
-<table><thead><tr><th width="296.3333333333333"></th><th width="121"></th><th></th></tr></thead><tbody><tr><td><code>email</code> <mark style="color:red;">*</mark></td><td>String</td><td>the email address of the new user</td></tr><tr><td><code>kind</code> <mark style="color:red;">*</mark></td><td>Integer</td><td>the kind of user being created. Can be one of the following values:<br><code>CustomerEmployee</code><br><code>EndUser</code></td></tr><tr><td><code>publicKey</code></td><td>String</td><td><code>Optional</code> a PGP public key that is used to encrypt emails going to the new user</td></tr><tr><td><code>externalId</code></td><td>String</td><td><code>Optional</code> a user defined value that can be used to correlate the entity with an external system</td></tr></tbody></table>
+<table><thead><tr><th width="296.3333333333333"></th><th width="121"></th><th></th></tr></thead><tbody><tr><td><code>email</code> <mark style="color:red;">*</mark></td><td>String</td><td>the email address of the new user</td></tr><tr><td><code>kind</code> <mark style="color:red;">*</mark></td><td>Enumerated Type (String)</td><td>the kind of user being created. Can be one of the following values:<br><code>CustomerEmployee</code><br><code>EndUser</code></td></tr><tr><td><code>externalId</code></td><td>String</td><td><code>Optional</code> a user defined value that can be used to correlate the entity with an external system</td></tr></tbody></table>
 
 Example:
 
@@ -62,4 +62,6 @@ Example:
 
 ## Examples
 
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/user-management/create-user.ts" %} Typescript Example {% endembed %}
+{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/user-management/create-user.ts" %}
+Typescript Example
+{% endembed %}
