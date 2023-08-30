@@ -36,11 +36,17 @@ We’ve also created a video walking through this setup for EthParis (July 2023)
 ![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.30.57 PM.png>)
 
 6. Employees receive an email and follow the same registration flow.
-7. The Org Owner creates and assigns the necessary permissions to allow users to  access the parts of the system required for their job responsibilities.  For the time being, we've exposed a control on the user list page to give a user all access to the system here:
+7. The Org Owner creates and assigns the necessary permissions to allow users to  access the parts of the system required for their job responsibilities.  For convenience, we've exposed a control on the user list page to give a user all access to the system here:
 
 ![](https://lh6.googleusercontent.com/b1Yq7btcMdliZmKDXY4H9MCXnB6sFFIePnWRKyAMwoclW1mu-cUHaPedL3J2z4FO1VJgjZXtdRQBCzN68t4riCnvLcpZFeIXX1ZNGWiVfH-eESejYr-qwNf1QPL7O1UfRFUKncC56IDkCvxU39jTC8s)
 
-While we plan to build a fully functional permissions UI in the future, do note you can configure any permissions you want for any user [via the permissions API](https://dfns.gitbook.io/dfns-docs/api-docs/permissions/permissions-overview) using an Service Account to sign requests (as described below).   Check out our [postman collection](postman-integration.md) to make this easier!
+That said, we strongly encourage implementing the principle of least privilege by setting up your own permissions in the dashboard under Settings=>Permissions:&#x20;
+
+![](../.gitbook/assets/image.png)
+
+You can then assign permissions to Users, Service Account, and Applications by clicking the target card in the list to go to the detail page:&#x20;
+
+![](<../.gitbook/assets/image (1).png>)
 
 ## Create a Service Account
 
