@@ -28,11 +28,11 @@ Transfer an asset out of the specified wallet to a destination address.
 
 ### Request body <a href="#native-currency-request-body" id="native-currency-request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                     | Type   |
-| ------------------- | ----------------- | --------------------------------------------------------------- | ------ |
-| `kind`              | Required          | `Native`                                                        | String |
-| `to`                | Required          | The destination address.                                        | String |
-| `amount`            | Required          | The amount of native token to transfer in minimum denomination. | String |
+| Request body fields | Required/Optional | Description                                                                                                                                                                                        | Type   |
+| ------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Native`                                                                                                                                                                                           | String |
+| `to`                | Required          | The destination address.                                                                                                                                                                           | String |
+| `amount`            | Required          | The amount of native token to transfer **in minimum denomination** (eg. passing the value in `WEI` unit, not in `ETH` unit, so passing `1000000000000000000` in order to do a `1 ETH` transaction) | String |
 
 ### Sample request body <a href="#sample-native-currency-request" id="sample-native-currency-request"></a>
 
