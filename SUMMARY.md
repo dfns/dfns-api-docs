@@ -39,6 +39,7 @@
     * [Delegated Registration](api-docs/authentication/delegated-auth/delegatedregistration.md)
     * [Delegated Registration Restart](api-docs/authentication/delegated-auth/delegatedregistration-1.md)
     * [Delegated Login](api-docs/authentication/delegated-auth/delegatedlogin.md)
+    * [Delegated User Recovery](api-docs/authentication/delegated-auth/delegatedRecovery.md)
   * [User Action Signing](api-docs/authentication/user-action-signing/README.md)
     * [Create User Action Signature Challenge](api-docs/authentication/user-action-signing/initUserActionSigning.md)
     * [Create User Action Signature](api-docs/authentication/user-action-signing/completeUserActionSigning.md)
