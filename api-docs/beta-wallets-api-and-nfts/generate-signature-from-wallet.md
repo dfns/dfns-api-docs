@@ -2,7 +2,7 @@
 
 `POST /wallets/{walletId}/signatures`
 
-Request to generate a signature with the wallet key.
+Request to generate a signature with the wallet key. **This process does not broadcast anything on-chain**, this is just an off-chain signature request.
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
@@ -71,10 +71,10 @@ Generates the signature for the original message, applicable for blockchain netw
 
 ### Request body <a href="#message-signature-request-body" id="message-signature-request-body"></a>
 
-| Request body fields | Required/Optional | Description             | Type   |
-| ------------------- | ----------------- | ----------------------- | ------ |
-| `kind`              | Required          | `Message`                  | String |
-| `message`              | Required          | The original message hex encoded. | String |
+| Request body fields | Required/Optional | Description                       | Type   |
+| ------------------- | ----------------- | --------------------------------- | ------ |
+| `kind`              | Required          | `Message`                         | String |
+| `message`           | Required          | The original message hex encoded. | String |
 
 ### Sample request body <a href="#sample-message-request" id="sample-message-request"></a>
 
