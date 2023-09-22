@@ -1,15 +1,8 @@
-# Delegated Recovery
+# Delegated User Recovery
 
 `POST /auth/recover/user/delegated`
 
-If you want to use your own authentication system, while still using `Delegated Signing`, you can use this endpoint to register a User in your organization, without your user needing to receive an email from Dfns.
-
-This endpoint will:
-
-1. Create a new User attached to your organization
-2. Initiates a User Registration Challenge and returns the registration challenge.
-
-On successful creation, the user's registration challenge will be returned. You will then need to call [completeUserRegistration.md](../registration/completeUserRegistration.md "mention") to complete the user's registration.
+This endpoint enables setting up a recovery workflow for Delegated Signing.  Via this configuration, the end user will not receive an email from Dfns but instead can establish recovery credentials that leverage the customer's brand for the recovery workflow.&#x20;
 
 {% hint style="info" %}
 * Service account required. See [Service Accounts](../service-account-management/) for more information.
@@ -29,9 +22,9 @@ On successful creation, the user's registration challenge will be returned. You 
 
 ## Request body
 
-|                                            |          |                                                                                                                          |
-| ------------------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `username` <mark style="color:red;">\*</mark> | `String` | Email address of the user |
+|                                                   |          |                                                    |
+| ------------------------------------------------- | -------- | -------------------------------------------------- |
+| `username` <mark style="color:red;">\*</mark>     | `String` | Email address of the user                          |
 | `credentialId` <mark style="color:red;">\*</mark> | `String` | The crdential ID of the user's recovery credential |
 
 Example:
