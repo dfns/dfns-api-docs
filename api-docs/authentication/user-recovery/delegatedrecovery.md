@@ -4,6 +4,8 @@
 
 This endpoint enables setting up a recovery workflow for Delegated Signing.  Via this configuration, the end user will not receive an email from Dfns but instead can establish recovery credentials that leverage the customer's brand for the recovery workflow.&#x20;
 
+Once the user has been verified by your auth system and this API has been called, you can call [Recover User](createUserRecovery.md) to complete the recovery process.&#x20;
+
 {% hint style="info" %}
 * Service account required. See [Service Accounts](../service-account-management/) for more information.
 * User action signature required. See [User Action Signing](../user-action-signing/) for more information.
