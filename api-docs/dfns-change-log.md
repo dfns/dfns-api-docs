@@ -19,10 +19,12 @@ The Dfns change log documents changes to our product functionality made by our r
 ### Aug 29, 2023
 
 * Enabled PaymentVelocity rules on Asset Accounts
+* Released permissions and policy engine in the dashboard
 
 ### Aug 9, 2023
 
 * Released Policy Engine support for Wallet TransferAmountLimit rules
+* Released Wallets in the dashboard
 
 ### Aug 1, 2023
 
