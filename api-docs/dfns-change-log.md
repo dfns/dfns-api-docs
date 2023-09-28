@@ -8,6 +8,32 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Oct 1, 2023
+
+* Released CGGMP pre-signatures to accelerate signing request times
+
+### Sep 14, 2023
+
+* Enabled CGGMP signers in production environments
+
+### Aug 29, 2023
+
+* Enabled PaymentVelocity rules on Asset Accounts
+
+### Aug 9, 2023
+
+* Released Policy Engine support for Wallet TransferAmountLimit rules
+
+### Aug 1, 2023
+
+* Released Policy Engine support for Wallet AlwaysActivated rules
+* Added Generate Signature support for Pseudo Network Wallets
+
+### July 17, 2023
+
+* Updated network names for wallet blockchains
+* Returning complete signature encoding from Get Signature calls.&#x20;
+
 ### July 11, 2023
 
 * Updated enumerated types for Wallets API network value
