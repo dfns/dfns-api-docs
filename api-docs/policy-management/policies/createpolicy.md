@@ -4,9 +4,9 @@
 
 Policies join [Policy Rules](../policy-rules/createpolicyrule.md) and [Policy Controls ](../policy-controls/createpolicycontrol.md)with an `activityKind` that determines which actions on the API may trigger a Policy Execution. These are the supported `activityKinds`:
 
-* `WalletsTransferAsset`: Examine Policy Rules when the [Transfer Assets from Wallet](../../beta-wallets-api-and-nfts/transfer-asset-from-wallet.md) API is called
-* `WalletsBroadcastTransaction`: Examine Policy Rules when the [Broadcast Transaction from Wallet ](../../beta-wallets-api-and-nfts/broadcast-transaction-from-wallet.md)API is called.
-* `WalletsGenerateSignature`: Examine Policy Rules when the [Generate Signature from Wallet](../../beta-wallets-api-and-nfts/generate-signature-from-wallet.md) API is called.
+* `WalletsTransferAsset`: Examine Policy Rules when the [Transfer Assets from Wallet](../../wallets-api-and-nfts/transfer-asset-from-wallet.md) API is called
+* `WalletsBroadcastTransaction`: Examine Policy Rules when the [Broadcast Transaction from Wallet ](../../wallets-api-and-nfts/broadcast-transaction-from-wallet.md)API is called.
+* `WalletsGenerateSignature`: Examine Policy Rules when the [Generate Signature from Wallet](../../wallets-api-and-nfts/generate-signature-from-wallet.md) API is called.
 
 
 

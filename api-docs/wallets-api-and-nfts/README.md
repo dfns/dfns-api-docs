@@ -1,4 +1,4 @@
-# 🆕 Wallets & NFTs API
+# Wallets & NFTs API
 
 Welcome to the new Wallets API! We've received feedback that our original notion of [Asset Accounts](../high-level-api-asset-accounts-and-payments/asset-accounts/) is too granular. Any given Asset Account represents at most one contract on one chain. With Wallets, we're expanding this to any number of assets on a single chain, which we believe is more consistent with the standard mental model of wallets in web3.
 
