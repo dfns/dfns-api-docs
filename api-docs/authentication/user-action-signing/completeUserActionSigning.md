@@ -1,4 +1,4 @@
-# Complete User Action Signing
+# Create User Action Signature
 
 `POST /auth/action`
 
@@ -20,31 +20,32 @@ The type of credentials used to sign the action is determined by the `kind` fiel
 The permissions apply to the application only.
 {% endhint %}
 
-| Name                  | Conditions                        |
-| --------------------- | --------------------------------- |
-| `Auth:Action:Sign`    | Always Required                   |
+| Name               | Conditions      |
+| ------------------ | --------------- |
+| `Auth:Action:Sign` | Always Required |
 
 ## Request body
 
-| | | |
-| - | - | - |
-| `challengeIdentifier` <mark style="color:red;">\*</mark> | `String` | temporary authentication token returned by the [Create User Action Signature Challenge](./initUserActionSigning.md) |
-| `firstFactor` <mark style="color:red;">\*</mark> | `Object` | first factor credential used to sign the user action |
-| `secondFactor` | `Object` | `Optional` second factor credential used to authenticate a user |
+|                                                          |          |                                                                                                                   |
+| -------------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `challengeIdentifier` <mark style="color:red;">\*</mark> | `String` | temporary authentication token returned by the [Create User Action Signature Challenge](initUserActionSigning.md) |
+| `firstFactor` <mark style="color:red;">\*</mark>         | `Object` | first factor credential used to sign the user action                                                              |
+| `secondFactor`                                           | `Object` | `Optional` second factor credential used to authenticate a user                                                   |
 
 ### Fido2 Credential
 
-| | | |
-| ------ | ----------------- | ----------- |
-| `kind` <mark style="color:red;">\*</mark> | `String` | will always be `Fido2` |
-| `credentialAssertion` <mark style="color:red;">\*</mark> | `Object` | |
-| `credentialAssertion.credId` <mark style="color:red;">\*</mark> | `String` | base64url encoded id of the credential returned by the user's WebAuthn client |
-| `credentialAssertion.clientData` <mark style="color:red;">\*</mark> | `String` | base64url encoded client data object returned by the user's WebAuthn client |
+|                                                                            |          |                                                                                    |
+| -------------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------- |
+| `kind` <mark style="color:red;">\*</mark>                                  | `String` | will always be `Fido2`                                                             |
+| `credentialAssertion` <mark style="color:red;">\*</mark>                   | `Object` |                                                                                    |
+| `credentialAssertion.credId` <mark style="color:red;">\*</mark>            | `String` | base64url encoded id of the credential returned by the user's WebAuthn client      |
+| `credentialAssertion.clientData` <mark style="color:red;">\*</mark>        | `String` | base64url encoded client data object returned by the user's WebAuthn client        |
 | `credentialAssertion.authenticatorData` <mark style="color:red;">\*</mark> | `String` | base64url encoded authenticator data object returned by the user's WebAuthn client |
-| `credentialAssertion.signature` <mark style="color:red;">\*</mark> | `String` | base64url encoded signature returned by the user's WebAuthn client |
-| `credentialAssertion.userHandle` <mark style="color:red;">\*</mark> | `String` | base64url encoded userHandle returned by the user's WebAuthn client |
+| `credentialAssertion.signature` <mark style="color:red;">\*</mark>         | `String` | base64url encoded signature returned by the user's WebAuthn client                 |
+| `credentialAssertion.userHandle` <mark style="color:red;">\*</mark>        | `String` | base64url encoded userHandle returned by the user's WebAuthn client                |
 
 Example:
+
 ```JSON
 {
   "challengeIdentifier":"eyJ0e...fQNA",
@@ -63,15 +64,16 @@ Example:
 
 ### Key Credential
 
-| | | |
-| ------ | ----------------- | ----------- |
-| `kind` <mark style="color:red;">\*</mark> | `String` | will always be `Key` |
-| `credentialAssertion` <mark style="color:red;">\*</mark> | `Object` | |
-| `credentialAssertion.credId` <mark style="color:red;">\*</mark> | `String` | base64url encoded id of the credential |
-| `credentialAssertion.clientData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Client Data](../../../advanced-topics/request-signing/#key-client-data) JSON string object that was signed with the user's private key |
-| `credentialAssertion.signature` <mark style="color:red;">\*</mark> | `String` | base64url encoded signature generated by signing the clientData JSON string object |
+|                                                                     |          |                                                                                                                                                              |
+| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `kind` <mark style="color:red;">\*</mark>                           | `String` | will always be `Key`                                                                                                                                         |
+| `credentialAssertion` <mark style="color:red;">\*</mark>            | `Object` |                                                                                                                                                              |
+| `credentialAssertion.credId` <mark style="color:red;">\*</mark>     | `String` | base64url encoded id of the credential                                                                                                                       |
+| `credentialAssertion.clientData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Client Data](../../../advanced-topics/request-signing/#client-data-format) JSON string object that was signed with the user's private key |
+| `credentialAssertion.signature` <mark style="color:red;">\*</mark>  | `String` | base64url encoded signature generated by signing the clientData JSON string object                                                                           |
 
 Example:
+
 ```JSON
 {
   "challengeIdentifier":"eyJ0e...fQNA",
