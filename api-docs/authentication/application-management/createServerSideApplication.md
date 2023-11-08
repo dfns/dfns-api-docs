@@ -1,8 +1,8 @@
-# Create Server-Side Application
+# Create Server-Signed Application
 
 `POST /auth/apps`
 
-Create a new Server-Side application in the caller's org
+Create a new Server-Signed application in the caller's org.  This is only required when you must add additional authentication to the request from the server side.  We strongly recommend [creating a default application](createClientSideApplication.md) unless you have an explicit need for server authentication as this adds additional complexity to the configuration.&#x20;
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../user-action-signing/) for more information.
@@ -88,4 +88,6 @@ Example:
 
 ## Examples
 
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/application-management/create-server-side-application.ts" %} Typescript Example {% endembed %}
+{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/application-management/create-server-side-application.ts" %}
+Typescript Example
+{% endembed %}

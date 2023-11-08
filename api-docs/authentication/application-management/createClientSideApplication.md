@@ -1,8 +1,8 @@
-# Create Client-Side Application
+# Create Application
 
 `POST /auth/apps`
 
-Create a new Client-Side application in the caller's org
+Create a new application in the caller's org.  This is the default application type and should be used for most customer applications.&#x20;
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../user-action-signing/) for more information.
@@ -24,7 +24,7 @@ Create a new Client-Side application in the caller's org
 | `name` <mark style="color:red;">\*</mark>           | String | the name of the application, must be unique within the caller's org                                                                                                         |
 | `relyingPartyId` <mark style="color:red;">\*</mark> | String | the top level domain where the application will be hosted, for example: `dfns.io`                                                                                           |
 | `origin` <mark style="color:red;">\*</mark>         | String | the url of the application, for example: `https://api.dfns.io`                                                                                                              |
-| `kind` <mark style="color:red;">\*</mark>           | String | the kind of application being created, must be `ClientSideApplication`                                                                                                      |
+| `kind` <mark style="color:red;">\*</mark>           | String | the kind of application being created, must be `ClientSideApplication` (Note: This can be used client or server side so disregard naming)                                   |
 | `permissionId`                                      | String | `Optional` ID of the permission that will be assigned to the application. If no permission ID is given, the application will be assigned the same permissions as the caller |
 | `externalId`                                        | String | `Optional` user defined value that can be used to correlate the entity with an external system                                                                              |
 
@@ -80,4 +80,6 @@ Example:
 
 ## Examples
 
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/application-management/create-client-side-application.ts" %} Typescript Example {% endembed %}
+{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/application-management/create-client-side-application.ts" %}
+Typescript Example
+{% endembed %}
