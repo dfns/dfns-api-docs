@@ -8,6 +8,18 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Nov 1, 2023
+
+* Released new WalletConnect integration in the dashboard using WebAuthn to sign transactions&#x20;
+
+### Oct 18, 2023
+
+* Released first version of wallet export for Enterprise plan customers.
+
+### Oct 10, 2023
+
+* Released first version of wallet import for Enterprise plan customers.
+
 ### Oct 1, 2023
 
 * Released CGGMP pre-signatures to accelerate signing request times
