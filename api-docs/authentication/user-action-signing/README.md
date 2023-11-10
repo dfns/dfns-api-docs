@@ -1,15 +1,17 @@
 # User Action Signing
+
 All API calls that make a change within the Dfns system need to be signed by a user. This ensures that only authorized users are able to make changes within the system, and the signature can be used to audit changes at a later time.
 
 Signing is a three step process:
+
 1. Get a challenge from the Dfns system.
-1. Sign the challenge, and return to the Dfns system.
-1. Get back a User Action Signature, and include it with your original API call.
+2. Sign the challenge, and return to the Dfns system.
+3. Get back a User Action Signature, and include it with your original API call.
 
 ## Signing examples using an API key
 
 ### Typescript
-The [full example](/advanced-topics/request-signing/examples/key-signing-typescript.md) includes the code for the helper functions.
+
 ```typescript
 const signChallenge = async (challenge: UserActionSignatureChallenge) : Promise<SignedChallenge> => {
 
@@ -38,4 +40,3 @@ const signChallenge = async (challenge: UserActionSignatureChallenge) : Promise<
   }
 }
 ```
-

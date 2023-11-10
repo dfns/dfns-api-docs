@@ -8,7 +8,7 @@
 
 <summary>Nonce header is missing or invalid</summary>
 
-All requests need to include an `X-DFNS-NONCE` header. See [Request Headers](./request-headers.md) for more information.
+All requests need to include an `X-DFNS-NONCE` header. See [Request Headers](request-headers.md) for more information.
 
 ```JSON
 {
@@ -17,6 +17,7 @@ All requests need to include an `X-DFNS-NONCE` header. See [Request Headers](./r
   }
 }
 ```
+
 </details>
 
 <details>
@@ -32,6 +33,7 @@ The nonce specified in `X-DFNS-NONCE` was already used. The nonce should be uniq
   }
 }
 ```
+
 </details>
 
 <details>
@@ -47,6 +49,7 @@ The User Action Signature specified in `X-DFNS-USERACTION` was already used. Use
   }
 }
 ```
+
 </details>
 
 ### 401 - Unauthorized
@@ -55,7 +58,7 @@ The User Action Signature specified in `X-DFNS-USERACTION` was already used. Use
 
 <summary>Caller not authenticated</summary>
 
-All requests to an authenticated endpoint need to include a JWT in the `Authentication` header. See [Request Headers](./request-headers.md) for more information.
+All requests to an authenticated endpoint need to include a JWT in the `Authentication` header. See [Request Headers](request-headers.md) for more information.
 
 ```JSON
 {
@@ -64,6 +67,7 @@ All requests to an authenticated endpoint need to include a JWT in the `Authenti
   }
 }
 ```
+
 </details>
 
 ### 403 - Forbidden
@@ -81,13 +85,14 @@ All requests to an authenticated endpoint need to include a JWT in the `Authenti
   }
 }
 ```
+
 </details>
 
 <details>
 
 <summary>User Action Signature missing or invalid</summary>
 
-Mutating requests need to include a valid User Action Signature in the `X-DFNS-USERACTION` header. See [User Action Signing](../advanced-topics/request-signing/) for more information.
+Mutating requests need to include a valid User Action Signature in the `X-DFNS-USERACTION` header. See [User Action Signing](../advanced-topics/authentication/request-signing.md) for more information.
 
 ```JSON
 {
@@ -96,6 +101,7 @@ Mutating requests need to include a valid User Action Signature in the `X-DFNS-U
   }
 }
 ```
+
 </details>
 
 ### 500 - Internal Server Error
@@ -113,9 +119,11 @@ This is an unexpected error. Please try your request again. If the call continue
   }
 }
 ```
+
 </details>
 
 ## Application Management Errors
+
 Errors specific to the [Application Management](../api-docs/authentication/application-management/) endpoints.
 
 ### 400 - Bad Request
@@ -133,6 +141,7 @@ The application being deactivated needs to be different then the application spe
   }
 }
 ```
+
 </details>
 
 ### 404 - Not Found
@@ -150,32 +159,41 @@ The specified application does not exist in the database.
   }
 }
 ```
+
 </details>
 
 ## Credential Management Errors
+
 Errors specific to the [Credential Management](../api-docs/authentication/credential-management/) endpoints.
 
 ## Delegated Authentication Errors
+
 Errors specific to the [Delegated Authentication](../api-docs/authentication/delegated-auth/) endpoints.
 
 ## User Login Errors
+
 Errors specific to the [User Login](../api-docs/authentication/login/) endpoints.
 
 ## Personal Access Token Management Errors
+
 Errors specific to the [Personal Access Token Management](../api-docs/authentication/personal-access-token-management/) endpoints.
 
 ## User Registration Errors
+
 Errors specific to the [User Registration](../api-docs/authentication/registration/) endpoints.
 
 ## Service Account Management Errors
+
 Errors specific to the [Service Account Management](../api-docs/authentication/service-account-management/) endpoints.
 
 ## User Action Signing Errors
+
 Errors specific to the [User Action Signing](../api-docs/authentication/user-action-signing/) endpoints.
 
 ## User Management Errors
+
 Errors specific to the [User Management](../api-docs/authentication/user-management/) endpoints.
 
 ## User Recovery Errors
-Errors specific to the [User Recovery](../api-docs/authentication/user-recovery/) endpoints.
 
+Errors specific to the [User Recovery](../api-docs/authentication/user-recovery/) endpoints.

@@ -1,6 +1,6 @@
 # Typescript SDK
 
-Dfns offers a [Typescript SDK](https://github.com/dfnsext/typescript-sdk#dfns-typescript-sdk) to help simplify the developer experience.  This SDK wraps our API, and offers utilities to help out Typescript developers get started more quickly.  It automatically populates all the [required headers](request-headers.md) and implements the cryptography for [request signing](../advanced-topics/request-signing/).&#x20;
+Dfns offers a [Typescript SDK](https://github.com/dfnsext/typescript-sdk#dfns-typescript-sdk) to help simplify the developer experience.  This SDK wraps our API, and offers utilities to help out Typescript developers get started more quickly.  It automatically populates all the [required headers](request-headers.md) and implements the cryptography for request signing.&#x20;
 
 You can check out:
 
