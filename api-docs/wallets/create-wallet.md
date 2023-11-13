@@ -18,10 +18,10 @@ Creates new `Wallet` associated with the given chain (such as `Ethereum or Polyg
 
 ## Request body <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                                                                                                               | Type   |
-| ------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| `network`           | Required          | Network name for the target chain. See [supported networks](README.md#supported-networks) and [pseudo networks](README.md#pseudo-networks) for the list of accepted values. | String |
-| `name`              | Optional          | Human readable name for the wallet                                                                                                                        | String |
+| Request body fields | Required/Optional | Description                                                                                                                                                   | Type   |
+| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| `network`           | **Required**      | Network name for the target chain. See [supported networks](./#supported-networks) and [pseudo networks](./#pseudo-networks) for the list of accepted values. | String |
+| `name`              | Optional          | Human readable name for the wallet                                                                                                                            | String |
 
 ## Request example <a href="#request-example.1" id="request-example.1"></a>
 
@@ -43,7 +43,7 @@ In most cases, the initial status should be set to "Creating". Call Get Wallet t
 ```json
 {
   "id": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
-  "status": "Creating",
+  "status": "Active",
   "network": "EthereumSepolia",
   "name": "my-wallet",
   "tags": [],
