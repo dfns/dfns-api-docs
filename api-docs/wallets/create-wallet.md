@@ -70,7 +70,3 @@ The response body is the created Wallet. The Wallet object has those fields:
   }
 }
 ```
-
-## Notes <a href="#notes" id="notes"></a>
-
-Distributed key generation (DKG) is computationally heavy for [ECDSA](https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm) keys. When clusters are first deployed, this process can take around 30 seconds. Signers build a pool of primes over time to mitigate API latency. That said, please do not create keys in bulk using a script without talking to us first. Thanks!
