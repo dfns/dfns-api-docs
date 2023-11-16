@@ -16,16 +16,12 @@ Creates new `Wallet` associated with the given chain (such as `Ethereum or Polyg
 | ---------------- | --------------- |
 | `Wallets:Create` | Always Required |
 
-## Request body <a href="#request-body" id="request-body"></a>
+## Request <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                                                                                                                   | Type   |
-| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| `network`           | **Required**      | Network name for the target chain. See [supported networks](./#supported-networks) and [pseudo networks](./#pseudo-networks) for the list of accepted values. | String |
-| `name`              | Optional          | Human readable name for the wallet                                                                                                                            | String |
+* `network` - _string_ - Network used for the wallet (See [Supported Networks](./#supported-networks) +  [Pseudo Network](./#pseudo-networks) for possible values)
+* `name` - _(Optional) string_ - Name given to the wallet
 
-## Request example <a href="#request-example.1" id="request-example.1"></a>
-
-### Sample request body <a href="#sample-request" id="sample-request"></a>
+#### Example
 
 ```shell
 {
@@ -40,7 +36,7 @@ The response body is the created Wallet. The Wallet object has those fields:
 
 * `id` - _string_ - ID of the wallet
 * `network` - _string_ - Network used for the wallet (See [Supported Networks](./#supported-networks) for possible values)
-* `name` - _(Optional) string_ - Name of the wallet
+* `name` - _(Optional) string_ - Name given to the wallet
 * `address` - _(Optional) string_ - Wallet address on its corresponding network. If using a [Pseudo Network](./#pseudo-networks), this field will not be set.
 * `status` - _string_ - Status of the wallet, can be one of `Active`, `Archived`.
 * `signingKey` - _object_ - Info about the signing key corresponding to that wallet
@@ -50,11 +46,9 @@ The response body is the created Wallet. The Wallet object has those fields:
 * `dateCreated` - _string_ - [ISO 8601](https://en.wikipedia.org/wiki/ISO\_8601) date string when wallet was created
 * `imported` - _(Optional) boolean_ - is `true` if the wallet is an imported wallet.
 * `exported` - _(Optional) boolean_ - is `true` if the wallet was already exported at least once.
-*   `dateExported` - _(Optional) string_ - [ISO 8601](https://en.wikipedia.org/wiki/ISO\_8601) date string when wallet was first exported.&#x20;
+* `dateExported` - _(Optional) string_ - [ISO 8601](https://en.wikipedia.org/wiki/ISO\_8601) date string when wallet was first exported.&#x20;
 
-
-
-### 200 Response example <a href="#response-example" id="response-example"></a>
+#### 200 Response example <a href="#response-example" id="response-example"></a>
 
 ```json
 {
