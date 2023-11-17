@@ -8,6 +8,15 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Nov 15, 2023
+
+* Launched new .env file generation utility in the dashboard
+
+### Nov 8, 2023
+
+* Moved all EVM chains to Tier 1 support in Wallets API.&#x20;
+* Added Base L2 support and ArbitrumSepolia testnet
+
 ### Nov 1, 2023
 
 * Released new WalletConnect integration in the dashboard using WebAuthn to sign transactions&#x20;
