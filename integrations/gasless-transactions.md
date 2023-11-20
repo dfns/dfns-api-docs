@@ -16,7 +16,7 @@ Various approaches to achieving sponsored transactions are outlined below.
 
 One of the newest approaches to enabling sponsored transactions on EVM chains is to use paymasters as specified in [ERC-4337](https://www.erc4337.io/), Account Abstraction (AA).  AA separates (or abstracts) authentication against smart contract wallets from the requirements of the underlying protocol (specifically ECDSA/secp256k1 signatures).  Additionally, it specifies standards for executing sponsored transactions using smart contracts called paymasters.&#x20;
 
-Transactions in AA are encapsulated in a higher level format called user operations and submitted to an off chain of bundlers which batch and send them to the chain through a singleton entry point contract.  Every user operation must be signed before it can be submitted to the chain. Increasingly, Dfns customers are relying on our advanced MPC solution to ensure secure and highly available signing of user operations.&#x20;
+Transactions in AA are encapsulated in a higher level format called user operations and submitted to an off chain network of bundlers which batch and send them to the chain through a singleton entry point contract.  Every user operation must be signed before it can be submitted to the chain. Increasingly, Dfns customers are relying on our advanced MPC solution to ensure secure and highly available signing of user operations.&#x20;
 
 The Dfns engineering team has built proofs of concept (POCs) to demonstrate how to integrate our MPC signing with various partners offering AA platforms.&#x20;
 
@@ -46,5 +46,21 @@ Biconomy is one of the longest standing players in the relayer market.  They off
 
 Gelato describes themselves as "web3’s decentralized backend" and provides a number of services to enhance smart contracts, including 2771 compatible relayers.  They expose a centralized funding service called [1 Balance](https://docs.gelato.network/developer-services/1balance).  Once an account is funded, it can be used to sponsor transactions on behalf of users by implementing [sponsoredCallERC2771](https://docs.gelato.network/developer-services/relay/erc-2771-recommended/sponsoredcallerc2771) as detailed in their documentation.  Please contact Gelato directly with questions pertaining to their specific configuration.&#x20;
 
-##
+## Automated "Gas Tanks"
+
+The final approach to enabling gasless transactions is simply to transfer the required amount of the  native cryptocurrency into each end users' wallet, relieving them from the responsibility of acquiring it themselves.  In most cases, implementations of this approach specify a "gas tank" wallet which automatically sends cryptocurrency to other wallets when they fall below a given threshold.
+
+The primary problem with this approach is the cost of sending each individual "refuel" transaction on chain.  Looking at the economics on the Ethereum L1, it does not scale well as demonstrated in the calculations below:
+
+<img src="../.gitbook/assets/image (3).png" alt="" data-size="original">&#x20;
+
+## Next Steps
+
+If you're interested in implementing sponsored transactions or have a novel approach to the problem, don't hesitate to reach out to us as this is one of our favorite topics of discussion.  As always, feel free to send us feedback at [docs@dfns.co](mailto:docs@dfns.co).&#x20;
+
+
+
+
+
+
 
