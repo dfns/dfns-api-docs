@@ -5,4 +5,4 @@ Dfns offers a [Typescript SDK](https://github.com/dfns/dfns-sdk-ts) to help simp
 You can check out:
 
 * The SDK [repository](https://github.com/dfns/dfns-sdk-ts) which holds some docs and high level overview of it, with detailed examples.&#x20;
-* More [precise SDK docs](https://dfnsext.github.io/typescript-sdk/) detailing each class, methods and types available in it.
+* More [precise SDK docs](https://dfns.github.io/dfns-sdk-ts/) detailing each class, methods and types available in it.
