@@ -100,6 +100,7 @@
     * [List Payments](api-docs/high-level-api-asset-accounts-and-payments/payments/listpayments.md)
 * [Wallets](api-docs/wallets/README.md)
   * [Create Wallet](api-docs/wallets/create-wallet.md)
+  * [Delegate Wallet](api-docs/wallets/create-wallet-1.md)
   * [Get Wallet by ID](api-docs/wallets/get-wallet-by-id.md)
   * [List Wallets](api-docs/wallets/list-wallets.md)
   * [Get Wallet Assets](api-docs/wallets/get-wallet-assets.md)

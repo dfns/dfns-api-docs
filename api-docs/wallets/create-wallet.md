@@ -18,8 +18,11 @@ Creates new `Wallet` associated with the given chain (such as `Ethereum or Polyg
 
 ## Request <a href="#request-body" id="request-body"></a>
 
-* `network` - _string_ - Network used for the wallet (See [Supported Networks](./#supported-networks) +  [Pseudo Network](./#pseudo-networks) for possible values)
-* `name` - _(Optional) string_ - Name given to the wallet
+| Request body fields | Required/Optional | Description                                                                                                                                            | Type    |
+| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| `network`           | Required          |  Network used for the wallet (See [Supported Networks](./#supported-networks) +  [Pseudo Network](./#pseudo-networks) for possible values)             | String  |
+| `name`              | Optional          | Name given to the wallet                                                                                                                               | String  |
+| `delayDelegation`   | Optional          | Specify this if you want to create the wallet from a service account and [later delegate it to an end user](create-wallet-1.md).  Defaults to `false`. | Boolean |
 
 #### Example
 
