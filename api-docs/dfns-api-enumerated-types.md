@@ -83,7 +83,7 @@ The Dfns Permissions model relies on the following operation enums:
 ## Network
 
 {% hint style="danger" %}
-Note these network enums are only for Asset Accounts which have been deprecated.  Please see the network values supported by the [Wallets API here](wallets/create-wallet.md).
+Note these network enums are only for Asset Accounts which have been deprecated.  Please see the network values supported by the [Wallets API here](wallets/create-wallet/).
 {% endhint %}
 
 Dfns supports 24 Blockchains today and we are adding more constantly. Here is the valid list of values for `network` parameters:&#x20;

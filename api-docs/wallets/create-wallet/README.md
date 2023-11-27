@@ -5,9 +5,9 @@
 Creates new `Wallet` associated with the given chain (such as `Ethereum or Polygon`). Returns a new wallet ID. Note the request is asynchronous - call Get Wallet to check status of creation and get the associated blockchain address once complete.
 
 {% hint style="info" %}
-* User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+* User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -20,7 +20,7 @@ Creates new `Wallet` associated with the given chain (such as `Ethereum or Polyg
 
 | Request body fields | Required/Optional | Description                                                                                                                                            | Type    |
 | ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| `network`           | Required          |  Network used for the wallet (See [Supported Networks](./#supported-networks) +  [Pseudo Network](./#pseudo-networks) for possible values)             | String  |
+| `network`           | Required          |  Network used for the wallet (See [Supported Networks](../#supported-networks) +  [Pseudo Network](../#pseudo-networks) for possible values)           | String  |
 | `name`              | Optional          | Name given to the wallet                                                                                                                               | String  |
 | `delayDelegation`   | Optional          | Specify this if you want to create the wallet from a service account and [later delegate it to an end user](delegate-wallet.md).  Defaults to `false`. | Boolean |
 
@@ -38,9 +38,9 @@ Creates new `Wallet` associated with the given chain (such as `Ethereum or Polyg
 The response body is the created Wallet. The Wallet object has those fields:
 
 * `id` - _string_ - ID of the wallet
-* `network` - _string_ - Network used for the wallet (See [Supported Networks](./#supported-networks) for possible values)
+* `network` - _string_ - Network used for the wallet (See [Supported Networks](../#supported-networks) for possible values)
 * `name` - _(Optional) string_ - Name given to the wallet
-* `address` - _(Optional) string_ - Wallet address on its corresponding network. If using a [Pseudo Network](./#pseudo-networks), this field will not be set.
+* `address` - _(Optional) string_ - Wallet address on its corresponding network. If using a [Pseudo Network](../#pseudo-networks), this field will not be set.
 * `status` - _string_ - Status of the wallet, can be one of `Active`, `Archived`.
 * `signingKey` - _object_ - Info about the signing key corresponding to that wallet
   * `scheme` - _string_ - Supported schemes are `ECDSA` or `EdDSA`
