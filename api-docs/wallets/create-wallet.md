@@ -22,7 +22,7 @@ Creates new `Wallet` associated with the given chain (such as `Ethereum or Polyg
 | ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
 | `network`           | Required          |  Network used for the wallet (See [Supported Networks](./#supported-networks) +  [Pseudo Network](./#pseudo-networks) for possible values)             | String  |
 | `name`              | Optional          | Name given to the wallet                                                                                                                               | String  |
-| `delayDelegation`   | Optional          | Specify this if you want to create the wallet from a service account and [later delegate it to an end user](create-wallet-1.md).  Defaults to `false`. | Boolean |
+| `delayDelegation`   | Optional          | Specify this if you want to create the wallet from a service account and [later delegate it to an end user](delegate-wallet.md).  Defaults to `false`. | Boolean |
 
 #### Example
 
