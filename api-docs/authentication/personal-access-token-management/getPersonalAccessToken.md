@@ -11,10 +11,10 @@ Get a specific personal access token
 
 ## Required Permissions
 
-| Name             | Conditions      |
-| ---------------- | --------------- |
-| `Auth:Apps:Read` | Always Required |
-| `Auth:Types:Pat` | Always Required |
+| Name              | Conditions      |
+| ----------------- | --------------- |
+| `Auth:Users:Read` | Always Required |
+| `Auth:Types:Pat`  | Always Required |
 
 ## Parameters
 
@@ -88,4 +88,6 @@ Example:
 
 ## Examples
 
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/get-personal-access-token.ts" %} Typescript Example {% endembed %}
+{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/get-personal-access-token.ts" %}
+Typescript Example
+{% endembed %}

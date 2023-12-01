@@ -12,10 +12,10 @@ Deactivate a specific personal access token
 
 ## Required Permissions
 
-| Name               | Conditions      |
-| ------------------ | --------------- |
-| `Auth:Apps:Update` | Always Required |
-| `Auth:Types:Pat`   | Always Required |
+| Name                | Conditions      |
+| ------------------- | --------------- |
+| `Auth:Users:Update` | Always Required |
+| `Auth:Types:Pat`    | Always Required |
 
 ## Parameters
 
@@ -89,4 +89,6 @@ Example:
 
 ## Examples
 
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/deactivate-personal-access-token.ts" %} Typescript Example {% endembed %}
+{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/deactivate-personal-access-token.ts" %}
+Typescript Example
+{% endembed %}

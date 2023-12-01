@@ -11,10 +11,10 @@ Returns a list of personal access tokens
 
 ## Required Permissions
 
-| Name             | Conditions      |
-| ---------------- | --------------- |
-| `Auth:Apps:Read` | Always Required |
-| `Auth:Types:Pat` | Always Required |
+| Name              | Conditions      |
+| ----------------- | --------------- |
+| `Auth:Users:Read` | Always Required |
+| `Auth:Types:Pat`  | Always Required |
 
 ## Responses
 
@@ -80,4 +80,6 @@ Returns a list of personal access tokens
 
 ## Examples
 
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/list-personal-access-tokens.ts" %} Typescript Example {% endembed %}
+{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/list-personal-access-tokens.ts" %}
+Typescript Example
+{% endembed %}

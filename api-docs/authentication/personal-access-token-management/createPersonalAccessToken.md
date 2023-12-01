@@ -12,10 +12,10 @@ Create a new personal access token for the caller
 
 ## Required Permissions
 
-| Name               | Conditions      |
-| ------------------ | --------------- |
-| `Auth:Apps:Create` | Always Required |
-| `Auth:Types:Pat`   | Always Required |
+| Name                | Conditions      |
+| ------------------- | --------------- |
+| `Auth:Users:Create` | Always Required |
+| `Auth:Types:Pat`    | Always Required |
 
 ## Request Body
 
@@ -99,4 +99,6 @@ Example:
 
 ## Examples
 
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/create-personal-access-token.ts" %} Typescript Example {% endembed %}
+{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/create-personal-access-token.ts" %}
+Typescript Example
+{% endembed %}
