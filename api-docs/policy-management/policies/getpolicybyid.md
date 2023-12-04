@@ -37,7 +37,7 @@ If successful, the response contains, among other things, a status indicating wh
    "description": "Test AlwaysActive",
    "version": "f1d7d94gm",
    "orgId": "cu-purple-pip-1b417b958500",
-   "activityKind": "WalletsGenerateSignature",
+   "activityKind": "WalletsTransferAsset",
    "ruleIds": [
        "pr-nebraska-november-finch-4e10e32a0d"
    ],

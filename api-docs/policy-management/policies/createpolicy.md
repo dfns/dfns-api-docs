@@ -5,10 +5,6 @@
 Policies join [Policy Rules](../policy-rules/createpolicyrule.md) and [Policy Controls ](../policy-controls/createpolicycontrol.md)with an `activityKind` that determines which actions on the API may trigger a Policy Execution. These are the supported `activityKinds`:
 
 * `WalletsTransferAsset`: Examine Policy Rules when the [Transfer Assets from Wallet](../../wallets/transfer-asset-from-wallet.md) API is called
-* `WalletsBroadcastTransaction`: Examine Policy Rules when the [Broadcast Transaction from Wallet ](../../wallets/broadcast-transaction-from-wallet.md)API is called.
-* `WalletsGenerateSignature`: Examine Policy Rules when the [Generate Signature from Wallet](../../wallets/generate-signature-from-wallet.md) API is called.
-
-
 
 For legacy Asset Accounts, use the following:&#x20;
 

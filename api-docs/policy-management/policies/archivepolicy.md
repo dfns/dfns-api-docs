@@ -30,7 +30,7 @@ Note the status is now set to `Archived`:
 
 ```json
 {
-    "activityKind": "WalletsGenerateSignature",
+    "activityKind": "WalletsTransferAsset",
     "archivedDate": "2022-10-18T20:05:55.270Z",
     "author": "oe-nine-artist-9de60fef6963",
     "controlIds": [
