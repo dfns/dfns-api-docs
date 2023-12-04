@@ -5,15 +5,15 @@
 Retrieves a `CallbackSubscription` by its `id`.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
 
-| Name                            | Conditions      |
-| ------------------------------- | --------------- |
-| `CallbackSubscriptions:Read`    | Always Required |
+| Name                         | Conditions      |
+| ---------------------------- | --------------- |
+| `CallbackSubscriptions:Read` | Always Required |
 
 ## Parameters <a href="#parameters.1" id="parameters.1"></a>
 

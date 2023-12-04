@@ -164,8 +164,8 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Nov 30, 2022
 
-* Launched our new blockchain indexing microservice for Ethereum mainnet exposed via the new `direction` field on [payments](high-level-api-asset-accounts-and-payments/payments/listpayments.md) and the new `PaymentReceived and PaymentConfirmed` [callback eventKinds](callbacks/CreateCallbackSubscription.md).
-* Enabled [Permissions](permissions/) on [callbacks](<callbacks/README (1).md>) and [pubic keys](deprecated-apis/low-level-api-keys-and-transactions/public-keys-1/)
+* Launched our new blockchain indexing microservice for Ethereum mainnet exposed via the new `direction` field on [payments](high-level-api-asset-accounts-and-payments/payments/listpayments.md) and the new `PaymentReceived and PaymentConfirmed` [callback eventKinds](deprecated-apis/readme-1/callback-subscriptions/createcallbacksubscription.md).
+* Enabled [Permissions](permissions/) on [callbacks](deprecated-apis/readme-1/) and [pubic keys](deprecated-apis/low-level-api-keys-and-transactions/public-keys-1/)
 * Internal bug fixes wrt database pagination
 
 ### Nov 22, 2022
@@ -186,7 +186,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Oct 27, 2022
 
-* Added `PolicyActivated` and `WalletCreated` [callback subscription topics](callbacks/CreateCallbackSubscription.md)
+* Added `PolicyActivated` and `WalletCreated` [callback subscription topics](deprecated-apis/readme-1/callback-subscriptions/createcallbacksubscription.md)
 * Integrated TRON blockchain
 
 ### Oct 16, 2022

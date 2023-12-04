@@ -2,18 +2,18 @@
 
 `GET /callback-events/{callbackEventId}`
 
-Retrieves a `CallbackEvent` by it `id`.  A callback event is a record of a specific callback that was triggered.&#x20;
+Retrieves a `CallbackEvent` by it `id`. A callback event is a record of a specific callback that was triggered.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
 
-| Name                            | Conditions      |
-| ------------------------------- | --------------- |
-| `CallbackEvents:Read`           | Always Required |
+| Name                  | Conditions      |
+| --------------------- | --------------- |
+| `CallbackEvents:Read` | Always Required |
 
 ## Parameters <a href="#parameters.1" id="parameters.1"></a>
 
@@ -25,7 +25,7 @@ Retrieves a `CallbackEvent` by it `id`.  A callback event is a record of a speci
 
 ### Response example <a href="#response-example" id="response-example"></a>
 
-The `documentSnapshot` contains an escaped JSON object of callback event data.&#x20;
+The `documentSnapshot` contains an escaped JSON object of callback event data.
 
 ```json
  {

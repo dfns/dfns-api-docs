@@ -13,9 +13,9 @@ This creates a callback subscription for the specific `eventKind`. `eventKind` t
 * `PolicyActivated`: A new Policy has been successfully activated.
 
 {% hint style="info" %}
-* User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+* User action signature required. See [User Action Signing](../../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
