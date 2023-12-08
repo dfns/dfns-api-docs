@@ -8,8 +8,22 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Dec 6, 2023
+
+* Launched Solana and Tezos Tier2 wallets support
+* Launched support for the Starkware ecosystem with KeyECDSAStark Pseudo Networks
+
+### Nov 29, 2023
+
+* Launched [Wallet webhooks](webhooks/)
+
+### Nov 22, 2023
+
+* Launched Tier2 wallets support for Bitcoin and Tron
+
 ### Nov 15, 2023
 
+* Launched SDK support for Viem
 * Launched new .env file generation utility in the dashboard
 
 ### Nov 8, 2023
