@@ -24,20 +24,14 @@ We plan to add support for more blockchain networks over time. The supported fea
 
 Tier 1 blockchain networks will support all wallet features, including automatic detection of wallet [asset](get-wallet-assets.md) and [NFT](get-wallet-nfts.md) balances if applicable, and on-chain asset transfer [history](get-wallet-history.md). Tier-1 support also include [transfer asset](transfer-asset-from-wallet.md), [broadcast transaction](broadcast-transaction-from-wallet.md) and [generate signature](generate-signature-from-wallet.md).
 
-Tier 2 blockchain networks do not track tokens or on-chain history. Only the [balance](get-wallet-assets.md) of the native token, which is used to pay transaction fees, is returned. Tier-2 support include [broadcast transaction](broadcast-transaction-from-wallet.md) and [generate signature](generate-signature-from-wallet.md); transfer asset is not supported.
+Tier 2 blockchain networks do not track tokens or on-chain history. Only the [balance](get-wallet-assets.md) of the native token, which is used to pay transaction fees, is returned. Tier-2 support includes [Broadcast Transaction](broadcast-transaction-from-wallet.md), [Generate Signature](generate-signature-from-wallet.md),  and Transfer Asset for native chain cryptocurrency only.
 
-### Pseudo networks <a href="#pseudo-networks" id="pseudo-networks"></a>
+### Pseudo Networks <a href="#pseudo-networks" id="pseudo-networks"></a>
 
-We also support wallets not tied to a blockchain network. You can create an unbound wallet by setting the `network` field to one of the supported signature schemes, currently either `KeyECDSA` or `KeyEdDSA`. You can use these wallets for more advanced use cases, for example
+We also support wallets not tied to a blockchain network.  You can create an unbound wallet by setting the `network` field to one of the supported signature schemes, currently `KeyECDSA, KeyECDSAStark, or` `KeyEdDSA`. You can use these wallets for more advanced use cases, for example:
 
-* use Dfns wallets with private blockchains that Dfns can't access, such as Polygon supernets or Avalanche subnets.
-* use Dfns wallets with blockchains not on the supported network list, as long as they use either `ECDSA` or `EdDSA`.
-* use the same Dfns wallets across multiple blockchain networks.
+* Use Dfns wallets with blockchains Dfns doesn't natively support, as long as they use either `ECDSA, ECDSAStark` or `EdDSA`.
+* Use Dfns wallets with private blockchains that Dfns have access to, such as Polygon Supernets or Avalanche Subnets.
+* Use the same Dfns wallets across multiple blockchain networks.
 
-The unbound wallets only support [generate signature](generate-signature-from-wallet.md). To help improve the developer experience with generate signature, our [TypeScript SDK](https://github.com/dfnsext/typescript-sdk) includes integrations with different blockchain SDKs, like [ethers.js 5](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-ethersjs5) and [6](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-ethersjs6) or [Solana web3.js](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-solana). Browse through the [included examples](https://github.com/dfnsext/typescript-sdk/tree/m/examples) to see how to develop dapps with Dfns wallets.
-
-### Other features
-
-Additionally, the Wallets API is fully integrated with [Policy Engine](https://docs.dfns.co/dfns-docs/api-docs/policy-management/datamodel) with support for the `TransferAmountLimit` and `AlwaysActivatedRule` rules.  Additional blockchain integrations as well as full dashboard support for wallets will be available in future releases.&#x20;
-
-Thanks in advance for testing the new Wallets API and please send any feedback to docs@dfns.co.
+The unbound wallets only support [Generate Signature](generate-signature-from-wallet.md). To help improve the developer experience with generate signature, our [TypeScript SDK](https://github.com/dfnsext/typescript-sdk) includes integrations with different blockchain SDKs, like [ethers.js 5](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-ethersjs5) and [6](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-ethersjs6) or [Solana web3.js](https://github.com/dfnsext/typescript-sdk/tree/m/packages/lib-solana). Browse through the [included examples](https://github.com/dfnsext/typescript-sdk/tree/m/examples) to see how to develop Dapps with Dfns wallets.
