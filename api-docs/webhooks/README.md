@@ -145,6 +145,23 @@ Depending on its kind, every event holds `data` that corresponds to this kind. H
 
 
 
+#### Webhook Event Ordering <a href="#best-practices" id="best-practices"></a>
+
+Dfns doesn’t guarantee delivery of events in the order in which they’re generated. For example, when a wallet [Transfer](../wallets/transfer-asset-from-wallet.md) is picked up on-chain by our blockchain indexers, we might generate the following events:
+
+* `wallet.transfer.confirmed` - this event notifies you that the [Transfer Request](../wallets/transfer-asset-from-wallet.md) that you made has been confirmed on chain
+* `wallet.blockchainevent.detected`- this event notifies you of the new Blockchain Event detected and added to your [Wallet History](../wallets/get-wallet-history.md) blockchain events
+
+Your endpoint shouldn’t expect delivery of these events in this order, and needs to handle delivery accordingly.
+
+
+
+#### Webhook Event Delivery & Retries
+
+As of now, if an event fails to be properly delivered to a webhook, we will not retry delivering it. That means that if your http server is not setup properly, of for some reason fails to properly receive an event, we won't retry to send the event.
+
+It is in our plans to add a retry mechanism, though please be aware that this is not implemented yet.
+
 
 
 ## Webhooks best practices <a href="#best-practices" id="best-practices"></a>
@@ -300,14 +317,4 @@ If you use a free Ngrok account, every time you re-launch the tunnel you'll get 
 {% endhint %}
 
 
-
-
-
-## Limitations / Disclaimers
-
-#### Retries
-
-As of now, if an event fails to be properly delivered to a webhook, we will not retry delivering it. That means that if your http server is not setup properly, of for some reason fails to properly receive an event, we won't retry to send the event.
-
-It is in our plans to add a retry mechanism, though please be aware that this is not implemented yet.
 
