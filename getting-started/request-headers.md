@@ -22,10 +22,10 @@ Similar to authenticated endpoints, the `Complete User Registration` endpoint ne
 
 <table><thead><tr><th width="267.36734693877554">Header</th><th>Description</th></tr></thead><tbody><tr><td><code>Authorization: Bearer &#x3C;token></code></td><td>The temporary authentication token returned from <a data-mention href="../api-docs/authentication/registration/initUserRegistration.md#responses">#responses</a></td></tr></tbody></table>
 
-## Server-Side Application Headers
+## Server-Signed Application Headers
 
 {% hint style="warning" %}
-This is not a common scenario. Dfns recommends using a [Client-Side Application](../api-docs/authentication/application-management/#application-types) for most use cases
+This is not a common scenario. Dfns recommends using a default[ Application](../api-docs/authentication/application-management/#application-types) for most use cases
 {% endhint %}
 
 {% hint style="info" %}
@@ -34,11 +34,11 @@ This is not a common scenario. Dfns recommends using a [Client-Side Application]
 Application tokens do not grant access to the Dfns API, they are just used to enforce how the API is called
 {% endhint %}
 
-Server-side applications can be used to ensure that all requests going to the Dfns API must originate from your servers. This is enforced by the caller providing an additional signature and an application secret (token) for the request, using the following additional headers:
+Server-signed applications can be used to ensure that all requests going to the Dfns API must originate from your servers. This is enforced by the caller providing an additional signature and an application secret (token) for the request, using the following additional headers:
 
 <table><thead><tr><th width="343.36734693877554">Header</th><th>Description</th></tr></thead><tbody><tr><td><code>X-DFNS-APPSECRET: &#x3C;app-token></code></td><td>A secret token that identifies the application that is calling the API</td></tr><tr><td><code>X-DFNS-APISIGNATURE: &#x3C;api-signature></code></td><td>The signature of the normalized request being made to the Dfns API</td></tr><tr><td><code>X-DFNS-NONCE: &#x3C;nonce></code></td><td>Random value used to prevent replay attacks. It must be a base64url-encoded JSON string with the following fields:<br>- <code>uuid</code> - Random value of at least 13 characters<br>- <code>date</code> - Current time of the request in ISO String format<br><br>See below for a code example</td></tr></tbody></table>
 
-The following Typescript code can be used to generate the nonce:&#x20;
+The following Typescript code can be used to generate the nonce:
 
 ```typescript
 Buffer.from(
