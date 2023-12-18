@@ -21,30 +21,31 @@ The type of credentials being registered is determined by the `credentialKind` f
 The permissions apply to the application only.
 {% endhint %}
 
-| Name                  | Conditions                        |
-| --------------------- | --------------------------------- |
-| `Auth:Creds:Create`   | Always Required                   |
+| Name                | Conditions      |
+| ------------------- | --------------- |
+| `Auth:Creds:Create` | Always Required |
 
 ## Request body
 
-| | | |
-| - | - | - |
-| `challengeIdentifier` <mark style="color:red;">\*</mark> | `String` | temporary authentication token returned by the [Create User Credential Challenge](./createUserCredentialChallenge.md) call |
-| `credentialName` <mark style="color:red;">\*</mark> | `String` | name the user is assigning to this credential |
-| `credentialKind` <mark style="color:red;">\*</mark> | `String` | kind of credential being registered |
-| `credentialInfo` <mark style="color:red;">\*</mark> | `Object` | An object containing information about the credential being registered |
+|                                                          |          |                                                                                                                          |
+| -------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `challengeIdentifier` <mark style="color:red;">\*</mark> | `String` | temporary authentication token returned by the [Create User Credential Challenge](createUserCredentialChallenge.md) call |
+| `credentialName` <mark style="color:red;">\*</mark>      | `String` | name the user is assigning to this credential                                                                            |
+| `credentialKind` <mark style="color:red;">\*</mark>      | `String` | kind of credential being registered                                                                                      |
+| `credentialInfo` <mark style="color:red;">\*</mark>      | `Object` | An object containing information about the credential being registered                                                   |
 
 ### Fido2 Credential
 
-| | | |
-| ------ | ----------------- | ----------- |
-| `credentialKind` <mark style="color:red;">\*</mark> | `String` | will always be `Fido2` |
-| `credentialInfo` <mark style="color:red;">\*</mark> | `Object` | |
-| `credentialInfo.credId` <mark style="color:red;">\*</mark> | `String` | base64url encoded id of the credential |
-| `credentialInfo.clientData` <mark style="color:red;">\*</mark> | `String` | base64url encoded client data object. The underlying object is the clientData object returned by the user's WebAuthn client |
+|                                                                     |          |                                                                                                                                       |
+| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `Fido2`                                                                                                                |
+| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                       |
+| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential                                                                                                |
+| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | base64url encoded client data object. The underlying object is the clientData object returned by the user's WebAuthn client           |
 | `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded attestation data object. The underlying object is the attestationData object returned by the user's WebAuthn client |
 
 Example:
+
 ```JSON
 {
   "challengeIdentifier":"eyJ0e...fQNA",
@@ -60,15 +61,16 @@ Example:
 
 ### Key Credential
 
-| | | |
-| ------ | ----------------- | ----------- |
-| `credentialKind` <mark style="color:red;">\*</mark> | `String` | will always be `Key` |
-| `credentialInfo` <mark style="color:red;">\*</mark> | `Object` | |
-| `credentialInfo.credId` <mark style="color:red;">\*</mark> | `String` | base64url encoded id of the credential |
-| `credentialInfo.clientData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Client Data](../../../advanced-topics/authentication/credentials/user-credentials.md#client-data-format) JSON string object that was signed with the user's private key |
+|                                                                     |          |                                                                                                                                                                                                   |
+| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `Key`                                                                                                                                                                              |
+| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                                                                                   |
+| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential.  Note: This can be any unique value that identifies the credential (eg. account+key ID on AWS, the key's database ID, or the path to the key on disk)     |
+| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | base64url encoded [Client Data](../../../advanced-topics/authentication/credentials/user-credentials.md#client-data-format) JSON string object that was signed with the user's private key        |
 | `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Credential Assertion](../../../advanced-topics/authentication/credentials/user-credentials.md#credential-assertion) JSON string object with the users signature and public key |
 
 Example:
+
 ```JSON
 {
   "challengeIdentifier":"eyJ0e...fQNA",
@@ -84,16 +86,17 @@ Example:
 
 ### Recovery Credential
 
-| | | |
-| ------ | ----------------- | ----------- |
-| `credentialKind` <mark style="color:red;">\*</mark> | `String` | will always be `RecoveryKey` |
-| `credentialInfo` <mark style="color:red;">\*</mark> | `Object` | |
-| `credentialInfo.credId` <mark style="color:red;">\*</mark> | `String` | base64url encoded id of the credential |
-| `credentialInfo.clientData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Client Data](../../../advanced-topics/authentication/credentials/user-credentials.md#client-data-format) JSON string object that was signed with the user's private key |
+|                                                                     |          |                                                                                                                                                                                                   |
+| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `RecoveryKey`                                                                                                                                                                      |
+| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                                                                                   |
+| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential                                                                                                                                                            |
+| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | base64url encoded [Client Data](../../../advanced-topics/authentication/credentials/user-credentials.md#client-data-format) JSON string object that was signed with the user's private key        |
 | `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Credential Assertion](../../../advanced-topics/authentication/credentials/user-credentials.md#credential-assertion) JSON string object with the users signature and public key |
-| `encryptedPrivateKey` | `String` | `Optional` encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns |
+| `encryptedPrivateKey`                                               | `String` | `Optional` encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns                                                   |
 
 Example:
+
 ```JSON
 {
   "challengeIdentifier":"eyJ0e...fQNA",
