@@ -26,7 +26,7 @@ Biconomy is a web3 infrastructure provider offering a full stack solution for AA
 
 ### Alchemy
 
-Alchemy provides a wide variety of web3 infrastructure services, including their [Account Kit AA service](https://www.alchemy.com/account-kit).  Dfns has built a sample integration demonstrating a sponsored transaction on Sepolia using our viem wrapper which is available [here](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/viem/alchemy-aa-gasless). &#x20;
+Alchemy provides a wide variety of web3 infrastructure services, including their [Account Kit AA service](https://www.alchemy.com/account-kit).  Dfns has built a sample integration demonstrating a sponsored transaction on Sepolia using our viem wrapper which is available [here](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/libs/viem/alchemy-aa-gasless).   The Alchemy documentation for Dfns is also available [here](https://accountkit.alchemy.com/smart-accounts/signers/guides/dfns.html).&#x20;
 
 ## Meta-Transactions (ERC-2771)
 
