@@ -22,7 +22,7 @@ The Dfns engineering team has built proofs of concept (POCs) to demonstrate how 
 
 ### Biconomy
 
-Biconomy is a web3 infrastructure provider offering a full stack solution for AA.  You can read about their solution [here](https://www.biconomy.io/smart-accounts).   Dfns has built a sample integration which processes a gasless transaction on the Mumbai testnet.  You can find a Readme and the full code [here](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/ethersjs/v5/biconomy-aa-gasless) as well as in the Biconomy documentation [here](https://docs.biconomy.io/Account/signers/dfns).&#x20;
+Biconomy is a web3 infrastructure provider offering a full stack solution for AA.  You can read about their solution [here](https://www.biconomy.io/smart-accounts).   Dfns has built a sample integration which processes a gasless transaction on the Mumbai testnet.  You can find a Readme and the full code [here](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/libs/ethersjs/v5/biconomy-aa-gasless) as well as in the Biconomy documentation [here](https://docs.biconomy.io/Account/signers/dfns).&#x20;
 
 ### Alchemy
 
