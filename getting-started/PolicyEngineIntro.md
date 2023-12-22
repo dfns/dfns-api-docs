@@ -1,6 +1,6 @@
 # Policy Engine
 
-Policies are used as part of risk management, information security, or other compliance functions. They intercept activities and execute controls to reduce the risk or to cancel activity altogether.
+Policies are used as part of risk management, information security, or other compliance functions. They intercept activities and require approvals to reduce the risk or to cancel activity altogether.
 
 The policy Engine allows you to create a policy, specifying the conditions that will result in an approval being triggered, as well as the approval groups whose approval will be required.
 
