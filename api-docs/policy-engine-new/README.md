@@ -2,7 +2,7 @@
 
 Policies enable businesses to enforce rules and request approvals on top of actions taken using the Dfns API.
 
-Until the old policy engine is removed, the following logic will be applied for asset transfer from wallets:
+Until the old policy engine is removed, the following logic will be applied to asset transfer from wallets:
 
 * The new policy engine will be triggered only if:
   * No relevant policies from the old policy engine exist.
