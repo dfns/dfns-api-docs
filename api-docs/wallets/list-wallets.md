@@ -4,8 +4,6 @@
 
 Retrieves a list of wallets.
 
-
-
 {% hint style="info" %}
 * Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
 * Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
@@ -21,10 +19,7 @@ Retrieves a list of wallets.
 
 ### Query parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Query string parameter | Required/Optional | Description                                                                                         | Type   |
-| ---------------------- | ----------------- | --------------------------------------------------------------------------------------------------- | ------ |
-| `limit`                | Optional          | Maximum number of items to return. Default to 50.                                                   | Number |
-| `paginationToken`      | Optional          | Opaque token used to retrieve the next page. Returned as `nextPageToken` from the previous request. | String |
+<table><thead><tr><th>Query string parameter</th><th width="196">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>limit</code></td><td>Optional</td><td>Maximum number of items to return. Default to 50.</td><td>Number</td></tr><tr><td><code>paginationToken</code></td><td>Optional</td><td>Opaque token used to retrieve the next page. Returned as <code>nextPageToken</code> from the previous request.</td><td>String</td></tr></tbody></table>
 
 ## Response <a href="#response" id="response"></a>
 
