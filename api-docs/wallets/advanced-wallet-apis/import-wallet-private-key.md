@@ -30,7 +30,7 @@ Dfns can not guarantee the security of imported keys as we have no way to contro
 
 #### Encrypted Keyshare Object
 
-<table><thead><tr><th width="232">Request body fields</th><th width="172.786301369863">Required/Optional</th><th width="225">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>signerId</code></td><td>Required</td><td>ID of the signer returned from List Signers.</td><td>String</td></tr><tr><td><code>encryptedKeyshare</code></td><td>Required</td><td>The key share encrypted with the private key created for the import operation</td><td>String</td></tr></tbody></table>
+<table><thead><tr><th width="232">Request body fields</th><th width="172.786301369863">Required/Optional</th><th width="225">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>signerId</code></td><td>Required</td><td>ID of the signer returned from <code>GET /signers</code></td><td>String</td></tr><tr><td><code>encryptedKeyshare</code></td><td>Required</td><td>The key share encrypted with the private key created for the import operation</td><td>String</td></tr></tbody></table>
 
 #### Example JSON
 
