@@ -18,7 +18,7 @@ Signs the message in the `hash` field corresponding to the specified `PublicKey`
 
 ## Triggers <a href="#request-body" id="request-body"></a>
 
-Policy Engine for [Policies](../../policy-management/policies/createpolicy.md) with a `CreatingSignature` `activityKind`.
+Policy Engine for [Policies](../../../policy-management/policies/createpolicy.md) with a `CreatingSignature` `activityKind`.
 
 ## Parameters
 

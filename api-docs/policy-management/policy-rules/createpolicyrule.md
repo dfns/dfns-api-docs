@@ -9,9 +9,9 @@ Policy Rules determine when Policy Executions are created. The type of policy ru
 * `PaymentAmountLimit`: Trigger the policy if the payment is over a given limit. (Asset accounts only. Deprecated)
 
 {% hint style="info" %}
-* User action signature required. See [User Action Signing](../../../authentication/user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more information.
+* User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -24,7 +24,7 @@ Policy Rules determine when Policy Executions are created. The type of policy ru
 
 The following fields are common to all kinds of Policy Rules:
 
-<table><thead><tr><th width="217">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the rule</td><td>String</td></tr><tr><td><code>description</code></td><td>Required</td><td>A description for the rule</td><td>String</td></tr><tr><td><code>configuration</code></td><td>Required</td><td>A nested object specifying details of the Policy Rule</td><td>Object</td></tr></tbody></table>
+<table><thead><tr><th width="217">Request body fields</th><th width="158.786301369863">Required/Optional</th><th width="134">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Required</td><td>A name for the rule</td><td>String</td></tr><tr><td><code>description</code></td><td>Required</td><td>A description for the rule</td><td>String</td></tr><tr><td><code>configuration</code></td><td>Required</td><td>A nested object specifying details of the Policy Rule</td><td>Object</td></tr></tbody></table>
 
 ### Amount Limit Rule
 
