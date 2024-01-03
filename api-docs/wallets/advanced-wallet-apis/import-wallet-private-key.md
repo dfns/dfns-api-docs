@@ -18,8 +18,6 @@ Dfns can not guarantee the security of imported keys as we have no way to contro
 
 ## Required Permissions
 
-## Required Permissions
-
 | Name             | Conditions      |
 | ---------------- | --------------- |
 | `Wallets:Import` | Always Required |
@@ -63,5 +61,22 @@ Dfns can not guarantee the security of imported keys as we have no way to contro
             "encryptedKeyshare": "R9p9N+nXc24eq8osgI2KAQq8OeFXk3OLAxH30oieUfgLEFPcF81eZ89XSKS65axBK6U6DqlZhVW1u2adigJSaVYqHaqDT0xycFL+FCX9Mdd9MgNCoNUorkog7EfYK+It44RZTPP3A8X7CWIsl/GqCX1jH9DFKTYapbbfRsxKr50PyYVyQ4qNH5SypGhtXe10poclbRgYbsroRfclDoCZCaBbkCuSIQvTSb/V2pskv/nw2kbzbGp1WC3POaO0gMHzUnEFc+Zc8kI4XcnsviG2qsdw6GoTzVjNpRSEJf9jpL+DoCplmNufOMKyDqEDwWdgiQwx/Y4ZW3F3tDRZ694lAU4S71ACN3+MwfVy46WJHMW+E6x/OTXvVJUuAAHL4b3C8NcbQS4Z7CP51B6rX6Hl50yUZl6Xev1G2WFrYWLzc02fjdNJHXJtsxeTPZNG4QX91hUkuGVIlbgyJa7m/pb0iTIU9TYEvsdiUKERw/vPv50rXebyDFRy4woQYgfxurafw2zQg6GG9pTbkra7+5Ibuypzu6kggnBNGqHA/Wp52TkOMvkRovtROrt9Nf+F4dsLX9KrqNY06x1HGf97BC8aCp8MMGt995J7kOWcBKH5PbsGyGp1scEuWeWRpFRxaQSB0fAQvWR1DUJawXTcIENWNHOFFtoJiliG9xawcGgRWWHvsiB7QrjfrPRqPrkmw6GDId5wMj1Ln/A6EenuhDrZjRGL1olm3IrC42YV0/o1a0uwuTHmjyOwk7mkIfZeXsGwmF9ydGtdCB/9wDIGgjJOEGL2ZGfiUb8TwlvtiJ4QSaB/k6cTL/JL50NITlYu5BRqJWEqm1NHd5aH67BCPRCklYh/jK+Y8gTE3W4GRXRAt8pAa1E7dgLaQaA5FcB+GtkI7S8ZZ80dr2W2rZfk09oGCY3y8c0cUs+SHnbhtbEeJIuQ9yUqS5I/pWx4CULmImOTvWwBWJ9KgKeCCNgxCLx/xKikC4w/slO3uZyuKEsmsQNWPnAsEvhgQ8mK4IvXVAXYj0qPYGVyRsm6FGb01BuxvHlS5AYrS4p4aXLSelFJ1IOxjJEuKbdaHvnAvXBd5/GHSy1h5I4gBYEZbmlKnYncu3yTXM5PSey0+1a9uHvaB5Asn2Wl9Kuj2BItvGGVl+rewYWisDbi0nMNRGLnfh3Yum+K54jtGkc+ooJ4yOq7OnYbjpZDERMGvcXl6oVBx+eZBMolh1YwuNGrRfvhnaHDg/f4Z8TkedD+kbZ40/Ws/yzfTOLS1F5+odYDYxxxsVIZ4q3w5Xjq5ce7zin3WCRdA7zuuJX9n1Lv+wRYRGi8cSE2YCFUVOzguX/XE7Xmxbsk"
         }
     ]
+}
+```
+
+## 200 Response example <a href="#response-example" id="response-example"></a>
+
+```json
+{
+  "id": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
+  "network": "EthereumSepolia",
+  "status": "Active",
+  "name": "My awesome wallet",
+  "dateCreated": "2023-04-14T20:41:28.715Z",
+  "signingKey": {
+    "curve": "secp256k1",
+    "scheme": "ECDSA",
+    "publicKey": "e2375c8c9e87bfcd0be8f29d76c818cabacd51584f72cb2222d49a13b036d84d3d"
+  }
 }
 ```
