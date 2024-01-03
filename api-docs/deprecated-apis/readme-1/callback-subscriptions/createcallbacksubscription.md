@@ -1,5 +1,13 @@
 # Create Callback Subscription
 
+&#x20;&#x20;
+
+{% hint style="danger" %}
+Warning: This API has been deprecated.  Please use [Webhooks](../../../webhooks/).  Contact your sales representative if you require additional blockchain support. &#x20;
+{% endhint %}
+
+&#x20;
+
 `POST /callback-subscriptions/`
 
 This creates a callback subscription for the specific `eventKind`. `eventKind` takes the following enumerated type values:

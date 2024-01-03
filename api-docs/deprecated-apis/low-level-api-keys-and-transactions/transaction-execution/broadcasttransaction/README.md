@@ -1,5 +1,13 @@
 # Broadcast Transaction
 
+&#x20;
+
+{% hint style="danger" %}
+Warning: This API has been deprecated.  Please use [Wallets](../../../../wallets/).  Contact your sales representative if you require additional blockchain support. &#x20;
+{% endhint %}
+
+
+
 `POST /public-keys/transactions`
 
 Broadcast transaction enables communication with any arbitrary smart contract by replicating the native transaction protocol fields in the body of the request. It can be used to make native payments, call smart contract functions, and even deploy new smart contracts. Note for reading from a "view" function on EVM chains, please use [Call Read Function](../../../../blockchains/call-read-function.md).

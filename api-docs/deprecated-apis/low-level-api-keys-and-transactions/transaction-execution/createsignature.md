@@ -1,5 +1,11 @@
 # Create Signature
 
+{% hint style="danger" %}
+Warning: This API has been deprecated.  Please use [Wallets](../../../wallets/).  Contact your sales representative if you require additional blockchain support. &#x20;
+{% endhint %}
+
+
+
 `POST /public-keys/{PublicKeyId}/signatures`
 
 Signs the message in the `hash` field corresponding to the specified `PublicKey`. Note the request may be asynchronous - call [GetSignatureById](getsignaturebyid.md) to check status and get the associated signature components once complete.

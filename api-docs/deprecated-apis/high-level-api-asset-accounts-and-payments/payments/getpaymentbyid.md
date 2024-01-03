@@ -1,6 +1,12 @@
 # Get Payment By ID
 
-`GET /assets/asset-accounts/{AssetAccountId}/payments/{PaymentID}`
+{% hint style="danger" %}
+Warning: This API has been deprecated.  Please use [Wallets](../../../wallets/).  Contact your sales representative if you require additional blockchain support. &#x20;
+{% endhint %}
+
+
+
+A`GET /assets/asset-accounts/{AssetAccountId}/payments/{PaymentID}`
 
 Retrieves a `Payment` by its `id`.
 

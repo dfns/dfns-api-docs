@@ -1,5 +1,13 @@
 # Get Transaction By ID
 
+&#x20;
+
+{% hint style="danger" %}
+Warning: This API has been deprecated.  Please use [Wallets](../../../wallets/).  Contact your sales representative if you require additional blockchain support. &#x20;
+{% endhint %}
+
+
+
 `GET /public-keys/transactions/{TransactionId}`
 
 Retrieves a `Transaction` by its `id`.

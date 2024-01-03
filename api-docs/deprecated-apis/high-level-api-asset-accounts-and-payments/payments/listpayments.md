@@ -1,5 +1,11 @@
 # List Payments
 
+{% hint style="danger" %}
+Warning: This API has been deprecated.  Please use [Wallets](../../../wallets/).  Contact your sales representative if you require additional blockchain support. &#x20;
+{% endhint %}
+
+
+
 `GET /assets/asset-accounts/{AssetAccountId}/payments`
 
 Retrieves all outbound`Payments` for the specified `AssetAccount`.

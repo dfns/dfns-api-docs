@@ -1,5 +1,13 @@
 # EVMGenericTx Template
 
+&#x20;
+
+{% hint style="danger" %}
+Warning: This API has been deprecated.  Please use [Wallets](../../../../wallets/).  Contact your sales representative if you require additional blockchain support. &#x20;
+{% endhint %}
+
+
+
 Use this template to broadcast to EVM chains like Ethereum, Polygon, BSC, etc. For more on these fields, see the [official Ethereum documentation](https://ethereum.org/en/developers/docs/transactions/#prerequisites).
 
 {% hint style="info" %}
