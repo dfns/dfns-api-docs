@@ -21,23 +21,27 @@ Dfns recommends the following curves / modulus lengths:
 {% tabs %}
 {% tab title="OpenSSL CLI" %}
 ```shell
+# Recommended: Generate RSA Private Key
+openssl genrsa -out rsa2048.pem 2048
+# Generate the Public Key
+openssl pkey -in rsa2048.pem -pubout -out rsa2048.public.pem
+
+#OR 
+
 # Generate a ECDSA Private Key
+# NOTE: This is not the key for the blockchain, only for the API.
 openssl ecparam -genkey -name prime256v1 -noout -out prime256v1.pem
 # Generate the Public Key
 openssl pkey -in prime256v1.pem -pubout -out prime256v1.public.pem
 
+#OR 
 
-# NOTE: EDDSA keys do not work in Postman!
 # Generate a EDDSA Private Key
+# NOTE: This is not the key for the blockchain, only for the API.
+# NOTE: EDDSA keys do not work in Postman!
 openssl genpkey -algorithm Ed25519 -out ed25519key.pem
 # Generate the Public Key
 openssl pkey -in ed25519key.pem -pubout -out ed25519key.public.pem
-
-
-# Generate RSA Private Key
-openssl genrsa -out rsa2048.pem 2048
-# Generate the Public Key
-openssl pkey -in rsa2048.pem -pubout -out rsa2048.public.pem
 ```
 
 On MacOS you may need to update your openssl version to add support for EDDSA keys
