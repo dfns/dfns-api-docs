@@ -117,6 +117,7 @@
   * [List Wallet Signature Requests](api-docs/wallets/list-wallet-signature-requests.md)
   * [Advanced Wallet APIs](api-docs/wallets/advanced-wallet-apis/README.md)
     * [Import Wallet Private Key](api-docs/wallets/advanced-wallet-apis/import-wallet-private-key.md)
+    * [Export Wallet Private Key](api-docs/wallets/advanced-wallet-apis/export-wallet-private-key.md)
 * [Blockchains](api-docs/blockchains/README.md)
   * [Call Read Function](api-docs/blockchains/call-read-function.md)
 * [Policy Engine](api-docs/policy-management/README.md)
