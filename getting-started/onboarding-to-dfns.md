@@ -73,7 +73,7 @@ At this point, you can make server side API calls by signing requests with your 
 ## Delegated Signing Configuration
 
 {% hint style="info" %}
-For a full overview of Delegated Signing, please see the [Delegated Signing page](../advanced-topics/delegated-signing.md) under Advanced Topics.&#x20;
+For a full overview of Delegated Signing, please see the [Delegated Signing page](../advanced-topics/delegated-signing/) under Advanced Topics.&#x20;
 {% endhint %}
 
 If you want to implement Delegated Signing in which your customer generates credentials to our API via WebAuthn, continue with these steps:&#x20;

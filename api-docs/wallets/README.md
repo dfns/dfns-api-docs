@@ -2,7 +2,7 @@
 
 The Dfns Wallets API enables you to create wallets across a wide variety of chains using 3 different underlying signature schemes and curves (ECDSA, ECDSAStark, and EdDSA).  APIs are exposed at a high level to view and transfer native cryptocurrencies, ERC20 tokens and ERC721 NFTs.  Additionally we've exposed low-level transaction broadcast and raw signing APIs enabling integrations with hundreds of chains and ecosystems.  All the Tier-1 chains listed below are fully indexed to provide accurate asset reporting and transaction history.&#x20;
 
-Wallets also support [Delegated Signing](../../advanced-topics/delegated-signing.md), enabling a non-custodial configuration and an "Apple Pay for Crypto" UX via our WebAuthn/Passkeys integrations.   If you have feedback on the Wallets API, please send it to [docs@dfns.co](mailto:docs@dfns.co).&#x20;
+Wallets also support [Delegated Signing](../../advanced-topics/delegated-signing/), enabling a non-custodial configuration and an "Apple Pay for Crypto" UX via our WebAuthn/Passkeys integrations.   If you have feedback on the Wallets API, please send it to [docs@dfns.co](mailto:docs@dfns.co).&#x20;
 
 ### Supported networks <a href="#supported-networks" id="supported-networks"></a>
 

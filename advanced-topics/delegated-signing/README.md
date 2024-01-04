@@ -20,11 +20,11 @@ The key shares (labeled 1 through 5 above on the right side) are encrypted and s
 
 Our decentralized custody network will be extended to include permissioned partners who are compensated for generating keys and signing transactions. No single entity will hold a threshold of key shares for any given wallet (i.e., the total number of key shares required to move assets on-chain). Hence, Dfns can guarantee high levels of governance neutrality, demonstrate that the private key does not exist in its full format, and ensure that no single party can move assets unilaterally.&#x20;
 
-Instead, our design scheme suggests that control of the API is the new proof of custodianship.  This control is dictated by the combination of an access token and a signing secret as described above in [Authentication](authentication/). Using Dfns, platforms can decide whether they want to keep the API control on-premise (custodial mode) or delegate it to their end-users’ devices exempting themselves from any custodial responsibility (end-user-custodial mode, or self-custodial mode).
+Instead, our design scheme suggests that control of the API is the new proof of custodianship.  This control is dictated by the combination of an access token and a signing secret as described above in [Authentication](../authentication/). Using Dfns, platforms can decide whether they want to keep the API control on-premise (custodial mode) or delegate it to their end-users’ devices exempting themselves from any custodial responsibility (end-user-custodial mode, or self-custodial mode).
 
 This architecture ensures that transactions can only be executed via the API. Therefore, API security becomes paramount. The Dfns security team has built a multi-level authentication, authorization, and governance architecture to ensure full accountability of API usage. At the heart of this architecture are the signing secrets (illustrated with the key icons on the left side of the diagram above).
 
-Dfns’ [Authentication](../api-docs/authentication/) requires that all requests to the API capable of changing state in the system or on chain (POST, PUT, and DELETE requests specifically) must be signed by a secret known only to the custodian of the assets. The authentication service validates the signature and writes an immutable log of the transaction, cryptographically proving the source of the API call.&#x20;
+Dfns’ [Authentication](../../api-docs/authentication/) requires that all requests to the API capable of changing state in the system or on chain (POST, PUT, and DELETE requests specifically) must be signed by a secret known only to the custodian of the assets. The authentication service validates the signature and writes an immutable log of the transaction, cryptographically proving the source of the API call.&#x20;
 
 ### Delegated Signing User Experience
 
@@ -42,11 +42,11 @@ Most self-custodial wallets like Metamask or Ledger require users to indefinitel
 
 By leveraging an API signing secret as a proxy for the blockchain private key, the risks described above are substantially mitigated. Unlike a blockchain private key, the signing secret is not immutable. If it is stolen, it can be revoked. If it is lost, it can be re-established. See below a table comparing the properties between a blockchain-bound Private Key and an API Key.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-07-05 at 3.17.57 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-07-05 at 3.17.57 PM.png" alt=""><figcaption></figcaption></figure>
 
 Of course, there are trade-offs. This architecture creates new potential attack vectors for bad actors. For instance, a hacker may impersonate a legitimate user in order to gain access to their wallet via the recovery process. In order to mitigate this risk, Dfns provides guidance on recovery mechanisms which our clients can implement.
 
-For example, Dfns clients can implement "biometric recovery" by encouraging users to [create secondary credentials](../api-docs/authentication/credential-management/createUserCredential.md) on alternate devices. In this way, if a user lose access to their primary device (for example, their phone), they can still access their wallet via a secondary device like their laptop.&#x20;
+For example, Dfns clients can implement "biometric recovery" by encouraging users to [create secondary credentials](../../api-docs/authentication/credential-management/createUserCredential.md) on alternate devices. In this way, if a user lose access to their primary device (for example, their phone), they can still access their wallet via a secondary device like their laptop.&#x20;
 
 Additionally, similar to password manager solutions like 1Password, end-users can receive a recovery code which they are instructed to keep securely offline. Should the user lose their device, this code can be provided via the Dfns client’s application in order to re-establish access to their wallet.
 
