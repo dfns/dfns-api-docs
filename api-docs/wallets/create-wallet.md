@@ -2,7 +2,7 @@
 
 `POST /wallets`
 
-Creates new `Wallet` associated with the given chain (such as `Ethereum or Polygon`). Returns a new wallet ID. Note the request is asynchronous - call Get Wallet to check status of creation and get the associated blockchain address once complete.
+Creates new `Wallet` associated with the given chain (such as `Ethereum or Polygon`). Returns a new wallet entity.&#x20;
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
@@ -59,6 +59,7 @@ The response body is the created Wallet. The Wallet object has those fields:
   "network": "EthereumSepolia",
   "status": "Active",
   "name": "My awesome wallet",
+  "address": "0x00e3495cf6af59008f22ffaf32d4c92ac33dac47",
   "dateCreated": "2023-04-14T20:41:28.715Z",
   "signingKey": {
     "curve": "secp256k1",
