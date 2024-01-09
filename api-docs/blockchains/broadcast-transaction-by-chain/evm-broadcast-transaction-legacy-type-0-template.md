@@ -1,8 +1,8 @@
-# EVM: Legacy Type-0 Template
+# EVM: Broadcast Transaction Legacy Type-0 Template
 
 **See:** [**Broadcast Transaction from Wallet**](../../wallets/broadcast-transaction-from-wallet.md)
 
-Use this template to adjust the `gasPrice` of a legacy type-0 transaction. This will force the transaction to be broadcasted as type-0 on chains that do not support [EIP-1559](evm-eip-1559-template.md).
+Use this template to adjust the `gasPrice` of a legacy type-0 transaction. This will force the transaction to be broadcasted as type-0 on chains that do not support [EIP-1559](evm-broadcast-transaction-eip-1559-template.md).
 
 | Request body fields | Required/Optional            | Description                                                                                                                                                                                                                       | Type                                      |
 | ------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
