@@ -111,6 +111,7 @@
     * [Export Wallet](api-docs/wallets/advanced-wallet-apis/export-wallet.md)
 * [Blockchains](api-docs/blockchains/README.md)
   * [Broadcast Transaction by Chain](api-docs/blockchains/broadcast-transaction-by-chain/README.md)
+    * [Bitcoin: Broadcast Transaction](api-docs/blockchains/broadcast-transaction-by-chain/bitcoin-broadcast-transaction.md)
     * [EVM: Broadcast Transaction EIP-1559 Template](api-docs/blockchains/broadcast-transaction-by-chain/evm-broadcast-transaction-eip-1559-template.md)
     * [EVM: Broadcast Transaction Legacy Type-0 Template](api-docs/blockchains/broadcast-transaction-by-chain/evm-broadcast-transaction-legacy-type-0-template.md)
     * [Ripple: Broadcast Transaction](api-docs/blockchains/broadcast-transaction-by-chain/ripple-broadcast-transaction.md)
