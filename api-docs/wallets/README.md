@@ -18,9 +18,9 @@ You can use any of the follow enumerated types in the `network` field of [Create
 
 We plan to add support for more blockchain networks over time. The supported features will vary depending on popularity and market demand.
 
-Tier 1 blockchain networks will support all wallet features, including automatic detection of wallet [asset](get-wallet-assets.md) and [NFT](get-wallet-nfts.md) balances if applicable, and on-chain asset transfer [history](get-wallet-history.md). Tier-1 support also include [transfer asset](transfer-asset-from-wallet.md), [broadcast transaction](broadcast-transaction-from-wallet.md) and [generate signature](generate-signature-from-wallet.md).
+Tier 1 blockchain networks will support all wallet features, including automatic detection of wallet [asset](get-wallet-assets.md) and [NFT](get-wallet-nfts.md) balances if applicable, and on-chain asset transfer [history](get-wallet-history.md). Tier-1 support also include [transfer asset](transfer-asset-from-wallet.md), [broadcast transaction](broadcast-transaction-from-wallet/) and [generate signature](generate-signature-from-wallet.md).
 
-Tier 2 blockchain networks do not track tokens or on-chain history. Only the [balance](get-wallet-assets.md) of the native token, which is used to pay transaction fees, is returned. Tier-2 support includes [Broadcast Transaction](broadcast-transaction-from-wallet.md), [Generate Signature](generate-signature-from-wallet.md),  and Transfer Asset for native chain cryptocurrency only.
+Tier 2 blockchain networks do not track tokens or on-chain history. Only the [balance](get-wallet-assets.md) of the native token, which is used to pay transaction fees, is returned. Tier-2 support includes [Broadcast Transaction](broadcast-transaction-from-wallet/), [Generate Signature](generate-signature-from-wallet.md),  and Transfer Asset for native chain cryptocurrency only.
 
 ### Pseudo Networks <a href="#pseudo-networks" id="pseudo-networks"></a>
 

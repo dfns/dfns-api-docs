@@ -7,7 +7,7 @@ A policy contains a rule against which an activity will be evaluated and a set o
 * `Permissions:Assign` For [permission assignments](../../../../permissions/permission-assignments/createassignment.md) and [assignment revocation](../../../../permissions/permission-assignments/revokeassignment.md). (Coming soon)
 * `Permissions:Modify` For [permission updates](../../../../permissions/permissions/updatepermission.md) and [permission archival](../../../../permissions/permissions/archivepermission.md). (Coming soon)
 * `Policies:Modify` For [policy updates](../update-policy.md) and [policy archival](../archive-policy.md).
-* `Wallets:Sign` For [asset transfers](../../../../wallets/transfer-asset-from-wallet.md), [signature generation](../../../../wallets/generate-signature-from-wallet.md) and [transaction broadcasts](../../../../wallets/broadcast-transaction-from-wallet.md).
+* `Wallets:Sign` For [asset transfers](../../../../wallets/transfer-asset-from-wallet.md), [signature generation](../../../../wallets/generate-signature-from-wallet.md) and [transaction broadcasts](../../../../wallets/broadcast-transaction-from-wallet/).
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../../../../authentication/user-action-signing/) for more information.
