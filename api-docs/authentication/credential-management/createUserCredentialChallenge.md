@@ -16,17 +16,18 @@ Starts a create user credential session, returning a challenge that will be used
 The permissions apply to the application only.
 {% endhint %}
 
-| Name                  | Conditions                        |
-| --------------------- | --------------------------------- |
-| `Auth:Creds:Create`   | Always Required                   |
+| Name                | Conditions      |
+| ------------------- | --------------- |
+| `Auth:Creds:Create` | Always Required |
 
 ## Request body
 
-| | | |
-| - | - | - |
-| `kind` <mark style="color:red;">\*</mark> | `String` | The kind of credential being added to the user's account; can be `Fido2` or `Key` |
+|                                           |          |                                                                                                   |
+| ----------------------------------------- | -------- | ------------------------------------------------------------------------------------------------- |
+| `kind` <mark style="color:red;">\*</mark> | `String` | The kind of credential being added to the user's account; can be `Fido2`, `Key`, or `RecoveryKey` |
 
 Example:
+
 ```JSON
 {
   "kind": "Fido2"
@@ -45,6 +46,7 @@ Example:
 **Success** - an object containing the user's authentication options
 
 Format:
+
 ```JSON
 {
   // Relying Party information that identifies the application to the user
@@ -123,6 +125,7 @@ Format:
 ```
 
 Example:
+
 ```JSON
 {
   "rp": {

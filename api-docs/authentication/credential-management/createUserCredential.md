@@ -8,6 +8,7 @@ The type of credentials being registered is determined by the `credentialKind` f
 
 * `Fido2`: New credential is a credential registered with `WebAuthn`.
 * `Key`: New credential is a private key.
+* `RecoveryKey`:  A credential used for recovery&#x20;
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../user-action-signing/) for more information.

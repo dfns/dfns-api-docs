@@ -49,7 +49,7 @@ Example:
 ```JSON
 {
   "firstFactorCredential":{
-    "kind":"Fido2",
+    "credentialKind":"Fido2",
     "credentialInfo":{
       "credId":"c1QEdgnPLJargwzy3cbYKny4Q18u0hr97unXsF3DiE8",
       "clientData":"eyJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIiwiY2hhbGxlbmdlIjoiTVdNME1tWTVZVFEwTURSaU56ZGhOVEZoTnpZNU9EUXdOV0k1WlRRNFkyUmhPRFppTkRrM1pUWXpPVEU1T0dZeU1EY3haakJqWXprNE1tUTVZelkxTUEiLCJvcmlnaW4iOiJodHRwczovL2FwcC5kZm5zLm5pbmphIiwiY3Jvc3NPcmlnaW4iOmZhbHNlfQ",
@@ -74,7 +74,7 @@ Example:
 ```JSON
 {
   "firstFactorCredential":{
-    "kind":"Key",
+    "credentialKind":"Key",
     "credentialInfo":{
       "credId":"6Ca6tAOFTx2odyJBnCoRO-gPvfpfy0EOoOcEaxfxIOk",
       "clientData":"eyJ0eXBlIjoia2V5LmNyZWF0ZSIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",
@@ -100,7 +100,7 @@ Example:
 ```JSON
 {
   "firstFactorCredential":{
-    "kind":"Fido2",
+    "credentialKind":"Fido2",
     "credentialInfo":{
       "credId":"c1QEdgnPLJargwzy3cbYKny4Q18u0hr97unXsF3DiE8",
       "clientData":"eyJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIiwiY2hhbGxlbmdlIjoiTVdNME1tWTVZVFEwTURSaU56ZGhOVEZoTnpZNU9EUXdOV0k1WlRRNFkyUmhPRFppTkRrM1pUWXpPVEU1T0dZeU1EY3haakJqWXprNE1tUTVZelkxTUEiLCJvcmlnaW4iOiJodHRwczovL2FwcC5kZm5zLm5pbmphIiwiY3Jvc3NPcmlnaW4iOmZhbHNlfQ",
@@ -134,7 +134,7 @@ Example:
 {
   "credential": {
     "uuid": "cr-34514-nip9c-8bppvgqgj28dbodrc",
-    "kind": "Fido2",
+    "credentialKind": "Fido2",
     "name": "Default Credential"
   },
   "user": {
@@ -147,4 +147,3 @@ Example:
 {% endtab %}
 {% endtabs %}
 
-## Examples
