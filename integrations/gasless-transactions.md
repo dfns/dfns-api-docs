@@ -52,7 +52,7 @@ The final approach to enabling gasless transactions is simply to transfer the re
 
 The primary problem with this approach is the cost of sending each individual "refuel" transaction on chain.  Looking at the economics on the Ethereum L1, it does not scale well as demonstrated in the calculations below:
 
-<img src="../.gitbook/assets/image (3).png" alt="" data-size="original">&#x20;
+<img src="../.gitbook/assets/image (3) (1).png" alt="" data-size="original">&#x20;
 
 ## Next Steps
 

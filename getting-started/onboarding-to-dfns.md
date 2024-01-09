@@ -42,11 +42,11 @@ We’ve also created a video walking through this setup for EthParis (July 2023)
 
 That said, we strongly encourage implementing the principle of least privilege by setting up your own permissions in the dashboard under Settings=>Permissions:&#x20;
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 You can then assign permissions to Users, Service Account, and Applications by clicking the target card in the list to go to the detail page:&#x20;
 
-![](<../.gitbook/assets/image (1) (1).png>)
+![](<../.gitbook/assets/image (1) (1) (1).png>)
 
 ## Create a Service Account
 

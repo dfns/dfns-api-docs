@@ -26,5 +26,7 @@ Broadcast transaction enables communication with any arbitrary smart contract by
 
 ## Request Body
 
-The body of the request will depend on the chain you are targeting.   Please find the chain in question by expanding this section in the left hand navigation.
+The body of the request will depend on the chain you are targeting.   Please find the chain in question by expanding this section in the left hand navigation:
+
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
