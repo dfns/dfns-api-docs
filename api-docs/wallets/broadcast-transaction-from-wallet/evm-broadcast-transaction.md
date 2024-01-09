@@ -85,4 +85,28 @@ Use this template to adjust the `maxFeePerGas` and `maxPriorityFeePerGas` of an 
 }
 ```
 
-## &#x20; <a href="#evm-legacy-request-body" id="evm-legacy-request-body"></a>
+## &#x20;Using the Dfns SDK <a href="#evm-legacy-request-body" id="evm-legacy-request-body"></a>
+
+You can also format the transaction using Ethers JS and the Dfns SDK:&#x20;
+
+```typescript
+import { parseUnits, Transaction } from 'ethers'
+
+const walletId = 'wa-6lbfv-9esgj-88s80c0qsih0a393'
+
+const transaction = Transaction.from({
+  to: '0xa238b6008Bc2FBd9E386A5d4784511980cE504Cd',
+  value: '1',
+  gasLimit: '21000',
+  maxPriorityFeePerGas: parseUnits('5', 'gwei'),
+  maxFeePerGas: parseUnits('20', 'gwei'),
+  nonce: 3,
+  type: 2,
+  chainId: 11155111,
+})
+
+const res = await dfnsClient.wallets.broadcastTransaction({
+  walletId,
+  body: { kind: 'Transaction', transaction: transaction.unsignedSerialized },
+})
+```
