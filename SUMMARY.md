@@ -116,7 +116,7 @@
     * [Ripple: Broadcast Transaction](api-docs/blockchains/broadcast-transaction-by-chain/ripple-broadcast-transaction.md)
     * [Solana: Broadcast Transaction](api-docs/blockchains/broadcast-transaction-by-chain/solana-broadcast-transaction.md)
     * [Tezos: Broadcast Transaction](api-docs/blockchains/broadcast-transaction-by-chain/tezos-broadcast-transaction.md)
-    * [Copy of Tezos: Broadcast Transaction](api-docs/blockchains/broadcast-transaction-by-chain/copy-of-tezos-broadcast-transaction.md)
+    * [Tron: Broadcast Transaction](api-docs/blockchains/broadcast-transaction-by-chain/tron-broadcast-transaction.md)
   * [Call Read Function](api-docs/blockchains/call-read-function.md)
 * [Policy Engine](api-docs/policy-management/README.md)
   * [Policy Engine Overview](api-docs/policy-management/datamodel.md)
