@@ -5,7 +5,6 @@
 Starts a create user credential session, returning a challenge that will be used to verify the user's identity.
 
 {% hint style="info" %}
-* User action signature required. See [User Action Signing](../user-action-signing/) for more information.
 * Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
 * Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
