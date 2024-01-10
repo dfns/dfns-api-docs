@@ -4,15 +4,15 @@
 
 | Request body fields | Required/Optional | Description                                                 | Type   |
 | ------------------- | ----------------- | ----------------------------------------------------------- | ------ |
-| kind                | Required          | For Bitcoin, always "Psbt"                                  | String |
-| `transaction`       | Required          | The transaction encoded by the BitcoinJS SDK as shown below | String |
+| `kind`              | Required          | For Bitcoin, always "Psbt"                                  | String |
+| `psbt`              | Required          | The transaction encoded by the BitcoinJS SDK as shown below | String |
 
 #### Example
 
 ```json
 {
-  "kind": "Transaction",
-  "Psbt": "0x70736274ff0100710200000001ca17431a33a13d3ef8bfb041c8546071f9d3a609abe3c91efbed83265e1426730100000000ffffffff02e803000000000000160014a40a65b46ff36c53f1afb8e35e25a4c0bcfc9979d6d1150000000000160014237ad8ba2ffd992f6ebc7ab388e77f00fc87d1c9000000000001011f54d6150000000000160014237ad8ba2ffd992f6ebc7ab388e77f00fc87d1c9000000"
+  "kind": "Psbt",
+  "psbt": "0x70736274ff0100710200000001ca17431a33a13d3ef8bfb041c8546071f9d3a609abe3c91efbed83265e1426730100000000ffffffff02e803000000000000160014a40a65b46ff36c53f1afb8e35e25a4c0bcfc9979d6d1150000000000160014237ad8ba2ffd992f6ebc7ab388e77f00fc87d1c9000000000001011f54d6150000000000160014237ad8ba2ffd992f6ebc7ab388e77f00fc87d1c9000000"
 }
 ```
 
