@@ -20,13 +20,13 @@
 
 ```json
 {
-    "id": "tx-2jfp6-db4jc-8kf9gk6nmh0k6rb6",
-    "walletId": "wa-36a0p-pdil7-8appbso9075t0nn0",
+    "id": "tx-2jfp6-db4jc-xxxxxxxxxxxxxxxx",
+    "walletId": "wa-36a0p-pdil7-xxxxxxxxxxxxxxxx",
     "network": "BitcoinTestnet3",
     "requester": {
-        "userId": "us-3v1ag-v6b36-9r0pjasaiqt1d3q7",
-        "tokenId": "to-7mkkj-c831n-9a7oj3kp8j5i5o9q",
-        "appId": "ap-C3H2-H7-3c762njr9t96l9qto6snl5ca4r"
+        "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+        "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+        "appId": "ap-C3H2-H7-xxxxxxxxxxxxxxxx"
     },
     "requestBody": {
         "kind": "Psbt",

@@ -20,13 +20,13 @@
 
 ```json
 {
-    "id": "tx-golst-ftnp9-ksplbv7okfulkp1",
-    "walletId": "wa-3i0nv-fa4e7-84uoi1jcapvitic9",
+    "id": "tx-golst-ftnp9-xxxxxxxxxxxxxxxx",
+    "walletId": "wa-3i0nv-fa4e7-xxxxxxxxxxxxxxxx",
     "network": "SolanaDevnet",
     "requester": {
-        "userId": "us-3v1ag-v6b36-9r0pjasaiqt1d3q7",
-        "tokenId": "to-7mkkj-c831n-9a7oj3kp8j5i5o9q",
-        "appId": "ap-C3H2-H7-3c762njr9t96l9qto6snl5ca4r"
+        "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+        "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+        "appId": "ap-C3H2-H7-xxxxxxxxxxxxxxxx"
     },
     "requestBody": {
         "kind": "Transaction",
