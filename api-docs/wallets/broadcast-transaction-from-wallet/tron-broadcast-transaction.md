@@ -1,5 +1,26 @@
 # Tron: Broadcast Transaction
 
+## Request <a href="#request-body" id="request-body"></a>
+
+| Request body fields | Required/Optional | Description                                               | Type   |
+| ------------------- | ----------------- | --------------------------------------------------------- | ------ |
+| kind                | Required          | For Tron, always "Transaction"                            | String |
+| `transaction`       | Required          | The transaction encoded by the Tronweb SDK as shown below | String |
+
+#### Example
+
+```json
+{
+  "kind": "Transaction",
+  "transaction": "0x..."
+}
+```
+
+## Response <a href="#response" id="response"></a>
+
+```json
+```
+
 ## Tronweb SDK
 
 In order to broadcast a transaction on Tron, first install the Tronweb library.  You can find the full documentation here: [https://tronweb.network/docu/docs/intro/](https://tronweb.network/docu/docs/intro/)

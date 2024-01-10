@@ -1,10 +1,49 @@
 # Solana: Broadcast Transaction
 
+## Request <a href="#request-body" id="request-body"></a>
+
+| Request body fields | Required/Optional | Description                                              | Type   |
+| ------------------- | ----------------- | -------------------------------------------------------- | ------ |
+| kind                | Required          | For Solana, always "Transaction"                         | String |
+| `transaction`       | Required          | The transaction encoded by the Solana SDK as shown below | String |
+
+#### Example
+
+```json
+{
+  "kind": "Transaction",
+  "transaction": "0x01000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008001000103b25c8c464080ab2835a166d2b3f13195c2ff3c8f281c7ebe492f0d45d830ff4824a8b38a94b73d2756f2be68655a49706be9b1dc900978984d6eeaf65ab62e900000000000000000000000000000000000000000000000000000000000000000280c73cfb9caeb41b8508d20057917b568ac1f5a4175b5befa94532b3fd0b92e01020200010c02000000010000000000000000"
+}
+```
+
+## Response <a href="#response" id="response"></a>
+
+```json
+{
+    "id": "tx-golst-ftnp9-ksplbv7okfulkp1",
+    "walletId": "wa-3i0nv-fa4e7-84uoi1jcapvitic9",
+    "network": "SolanaDevnet",
+    "requester": {
+        "userId": "us-3v1ag-v6b36-9r0pjasaiqt1d3q7",
+        "tokenId": "to-7mkkj-c831n-9a7oj3kp8j5i5o9q",
+        "appId": "ap-C3H2-H7-3c762njr9t96l9qto6snl5ca4r"
+    },
+    "requestBody": {
+        "kind": "Transaction",
+        "transaction": "0x01000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008001000103b25c8c464080ab2835a166d2b3f13195c2ff3c8f281c7ebe492f0d45d830ff4824a8b38a94b73d2756f2be68655a49706be9b1dc900978984d6eeaf65ab62e900000000000000000000000000000000000000000000000000000000000000000280c73cfb9caeb41b8508d20057917b568ac1f5a4175b5befa94532b3fd0b92e01020200010c02000000010000000000000000"
+    },
+    "status": "Broadcasted",
+    "txHash": "2VPvA6ekyrHT9TiH6YtcsjA5peXtSx8Er6q1yAUihBk2yimnjnU5CuBJLHsTXZxZV7JWSSffvaJ9uX8BB4ugconq",
+    "dateRequested": "2024-01-10T19:46:30.879Z",
+    "dateBroadcasted": "2024-01-10T19:46:31.399Z"
+}
+```
+
 ## Solana Web3.js SDK
 
 In order to broadcast a transaction on Solana, first install the @solana/web3.js SDK.  You can find the full documentation here: [https://docs.solana.com/developing/clients/javascript-api](https://docs.solana.com/developing/clients/javascript-api)
 
-Use the entities exposed in the SDK to create a transaction message, compile it, and generate a versioned transaction.  Then encode it as shown below to pass to transaction broadcast via [the Dfns TypeScript SDK](https://github.com/dfns/dfns-sdk-ts):
+Here a code sample to encode a transaction to pass to Transaction Broadcast via [the Dfns TypeScript SDK](https://github.com/dfns/dfns-sdk-ts):
 
 ```typescript
 import {
