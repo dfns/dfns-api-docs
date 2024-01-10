@@ -53,7 +53,7 @@ The first time you registered with Dfns, you had to create a Credential (if you 
 Different kind of Credentials will be created, depending on your use case, and how you prefer to manage those credentials:
 
 * WebAuthn Credentials -> Use WebAuthn standard to create/manage those keys for you on your device (see more about that below). You can use WebAuthn Credentials if you need a User signature in-browser for example.
-* Key Credentials -> "manually" generate keypairs yourself, and store them however you see fit (see [How to generate a keypair](broken-reference/)). You can use Key Credential if you need a Service Account sitting in your server to also be the signer for example.
+* Key Credentials -> "manually" generate keypairs yourself, and store them however you see fit (see [How to generate a keypair](../advanced-topics/authentication/credentials/generate-a-key-pair.md)). You can use Key Credential if you need a Service Account sitting in your server to also be the signer for example.
 
 Depending on the Identity you are using, the Credentials supported are such:
 
@@ -71,23 +71,3 @@ Essentially, WebAuthn allows you to create cryptographic keys stored on one of y
 You can read more about WebAuthn on [webauthn.guide](https://webauthn.guide/), and if you want you can test a WebAuthn demo on [webauthn.io](https://webauthn.io/)
 {% endhint %}
 
-\\
-
-## Auth V1 (deprecated)
-
-{% hint style="info" %}
-"Auth V1" is the former (deprecated) authentication method that Dfns API used. You can safely disregard this section if you just onboarded with Dfns API.
-{% endhint %}
-
-Auth v1 uses industry standard [JWT tokens](https://www.rfc-editor.org/rfc/rfc7519) to control API access. JWT tokens are created both for human users and for [API Keys ](../api-docs/deprecated-apis/legacy-auth-only-apis/apikeys/)(machine or service accounts):
-
-* **Users** can retrieve their JWT token from Settings in the [Dfns Dashboard](https://dashboard.dfns.io)
-* **API Key** JWT tokens are returned from the [Create API Key endpoint](../api-docs/deprecated-apis/legacy-auth-only-apis/apikeys/createapikey.md) and should be securely persisted
-
-To call any API endpoint, simply pass the JWT as a Bearer token in your request header:
-
-```bash
-curl https://api.dfns.io/{endpoint}
-   -H "Accept: application/json"
-   -H "Authorization: Bearer {JWT}"bash
-```
