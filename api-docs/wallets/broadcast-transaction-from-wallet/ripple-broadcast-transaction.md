@@ -12,13 +12,31 @@
 ```json
 {
   "kind": "Transaction",
-  "transaction": "0x..."
+  "transaction": "0x120000220000000024029a62a82e0001e240201b02a6243661400000000000000168400000000000000c8114860184b4f4c6cc17ae9c2a77cfcd328b43ec2aac8314543aba55a3bede29c5d512ff0cb17db626b9ed9a"
 }
 ```
 
 ## Response <a href="#response" id="response"></a>
 
 ```json
+{
+    "id": "tx-60es5-5sc68-xxxxxxxxxxxxxxxx",
+    "walletId": "wa-4ih27-hei2f-xxxxxxxxxxxxxxxx",
+    "network": "RippleTestnet",
+    "requester": {
+        "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+        "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+        "appId": "ap-C3H2-H7-xxxxxxxxxxxxxxxx"
+    },
+    "requestBody": {
+        "kind": "Transaction",
+        "transaction": "0x120000220000000024029a62a82e0001e240201b02a6243661400000000000000168400000000000000c8114860184b4f4c6cc17ae9c2a77cfcd328b43ec2aac8314543aba55a3bede29c5d512ff0cb17db626b9ed9a"
+    },
+    "status": "Broadcasted",
+    "txHash": "7C3668AB82CC55648F784E9C782B6FFA65D0B37C8D2D57B821D505C0DAF27197",
+    "dateRequested": "2024-01-10T21:19:57.605Z",
+    "dateBroadcasted": "2024-01-10T21:19:58.225Z"
+}
 ```
 
 ## Xrpl SDK
