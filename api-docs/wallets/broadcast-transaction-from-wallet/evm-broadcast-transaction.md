@@ -39,7 +39,8 @@ EVM chains like Ethereum, Polygon, BSC, Arbitrum, etc support the use of templat
     "maxPriorityFeePerGas": "1332000000000"
   },
   "dateRequested": "2023-05-08T19:27:04.680Z",
-  "status": "Pending"
+  "dateBroadcasted": "2024-01-10T21:19:58.225Z",
+  "status": "Broadcasted"
 }
 ```
 
@@ -81,13 +82,55 @@ Use this template to adjust the `maxFeePerGas` and `maxPriorityFeePerGas` of an 
     "maxPriorityFeePerGas": "1332000000000"
   },
   "dateRequested": "2023-05-08T19:27:04.680Z",
-  "status": "Pending"
+  "dateBroadcasted": "2024-01-10T21:19:58.225Z",
+  "status": "Broadcasted"
 }
 ```
 
-## &#x20;Using the Dfns SDK <a href="#evm-legacy-request-body" id="evm-legacy-request-body"></a>
+## Raw Transaction with EthersJS <a href="#evm-legacy-request-body" id="evm-legacy-request-body"></a>
 
 You can also format the transaction using Ethers JS and the Dfns SDK:&#x20;
+
+| Request body fields | Required/Optional | Description                                        | Type   |
+| ------------------- | ----------------- | -------------------------------------------------- | ------ |
+| kind                | Required          | For EVM, always "Transaction"                      | String |
+| `transaction`       | Required          | The transaction encoded by EthersJS as shown below | String |
+
+### Sample request body <a href="#response" id="response"></a>
+
+```json
+{
+  "kind": "Transaction",
+  "transaction": "0x02e783aa36a71503850d40e49def82520894e5a2ebc128e262ab1e3bd02bffbe16911adfbffb0180c0"
+}
+```
+
+### 200 Response Example <a href="#response" id="response"></a>
+
+```json
+{
+    "id": "tx-3p6n9-tdrn2-xxxxxxxxxxxxxxxx",
+    "walletId": "wa-19lns-o74qn-xxxxxxxxxxxxxxxx",
+    "network": "EthereumSepolia",
+    "requester": {
+        "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+        "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+        "appId": "ap-C3H2-H7-xxxxxxxxxxxxxxxx"
+    },
+    "requestBody": {
+        "kind": "Transaction",
+        "transaction": "0x02e783aa36a71503850d40e49def82520894e5a2ebc128e262ab1e3bd02bffbe16911adfbffb0180c0"
+    },
+    "status": "Broadcasted",
+    "txHash": "0x86b092a7fde26cca7fa49350d6d9244fb1f772d30c15aed48decea11fa68531f",
+    "dateRequested": "2024-01-10T19:02:11.615Z",
+    "dateBroadcasted": "2024-01-10T19:02:12.873Z"
+}
+```
+
+### EthersJS SDK Sample:
+
+See the full EthersJS docs here: [https://docs.ethers.org/v6/](https://docs.ethers.org/v6/)
 
 ```typescript
 import { parseUnits, Transaction } from 'ethers'
