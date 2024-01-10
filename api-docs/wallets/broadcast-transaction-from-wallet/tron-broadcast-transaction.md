@@ -12,13 +12,31 @@
 ```json
 {
   "kind": "Transaction",
-  "transaction": "0x..."
+  "transaction": "0x0a83010a0228222208b142ad939b228d784090a7eaa9cf315a65080112610a2d747970652e676f6f676c65617069732e636f6d2f70726f746f636f6c2e5472616e73666572436f6e747261637412300a15419d31b91d72b58d7c8c02a7124410e168989f372d12154102a69d5d85c05864dc6fd74f57db3fa37aff7b94180170b0d2e6a9cf31"
 }
 ```
 
 ## Response <a href="#response" id="response"></a>
 
 ```json
+{
+    "id": "tx-19u01-g60tf-xxxxxxxxxxxxxxxx",
+    "walletId": "wa-174tk-m918i-xxxxxxxxxxxxxxxx",
+    "network": "TronNile",
+    "requester": {
+        "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+        "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+        "appId": "ap-C3H2-H7-xxxxxxxxxxxxxxxx"
+    },
+    "requestBody": {
+        "kind": "Transaction",
+        "transaction": "0x0a83010a0228222208b142ad939b228d784090a7eaa9cf315a65080112610a2d747970652e676f6f676c65617069732e636f6d2f70726f746f636f6c2e5472616e73666572436f6e747261637412300a15419d31b91d72b58d7c8c02a7124410e168989f372d12154102a69d5d85c05864dc6fd74f57db3fa37aff7b94180170b0d2e6a9cf31"
+    },
+    "status": "Broadcasted",
+    "txHash": "ecd735b16e4b77b3b791071a4df8645c503b846afec3888cca33c777e78ad3a4",
+    "dateRequested": "2024-01-10T21:14:17.979Z",
+    "dateBroadcasted": "2024-01-10T21:14:18.166Z"
+}
 ```
 
 ## Tronweb SDK
