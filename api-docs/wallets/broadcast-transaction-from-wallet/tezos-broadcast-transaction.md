@@ -43,32 +43,70 @@
 
 In order to broadcast a transaction on Tezos, first install the Taquito SDK.  You can find the full documentation here: [https://tezostaquito.io/docs/quick\_start](https://tezostaquito.io/docs/quick\_start)
 
-Create an RPCClient and TezosToolkit then forge a transaction.  Finally encode it as shown below to pass to transaction broadcast via [the Dfns TypeScript SDK](https://github.com/dfns/dfns-sdk-ts):
+Taquito is a little special in that it requires a `signer` to forge an operation. In fact, we only need the signer to return the wallet address and the (encoded) public key. We'll initialize a Taquito RPC instance using our fake signer and a local forger (see below). After forging the operation, we can distribute it via [the Dfns TypeScript SDK](https://github.com/dfns/dfns-sdk-ts).
 
-```typescript
+<pre class="language-typescript"><code class="lang-typescript">import { RpcClient} from '@taquito/rpc'
+import { Signer, TezosToolkit } from '@taquito/taquito'
 import { LocalForger } from '@taquito/local-forging'
-import { RpcClient} from '@taquito/rpc'
-import { TezosToolkit } from '@taquito/taquito'
+import { Prefix, b58cencode, prefix } from '@taquito/utils'
 
-const walletId = 'wa-6lbfv-9esgj-xxxxxxxxxxxxxxxx'
+const walletId = 'wa-6lbfv-9esgj-88s80c0qsih0a393'
+const wallet = await dfnsClient.wallets.getWallet({ walletId })
 
-const client = new RpcClient(TEZOS_NODE_URL)
+// Tezos requires a signer to forge a transaction. When forging, we only
+// need 'publicKeyHash' (address) and 'publicKey' (encoded)
+<strong>class TezosToolkitSigner implements Signer {
+</strong>  sign(): Promise&#x3C;{ bytes: string; sig: string; prefixSig: string; sbytes: string }> {
+    throw new Error('Method not implemented.')
+  }
+  async publicKey(): Promise&#x3C;string> {
+    const prefix = wallet.signingKey.scheme === "EdDSA" ? Prefix.EDPK : Prefix.SPPK
+    return b58cencode(wallet.signingKey.publicKey, prefix)
+  }
+    
+  async publicKeyHash(): Promise&#x3C;string> {
+    return wallet.address
+  }
+    
+  secretKey(): Promise&#x3C;string | undefined> {
+    throw new Error('Method not implemented.')
+  }
+}
+
+const client = new RpcClient("TEZOS_NODE_URL") 
 const Tezos = new TezosToolkit(client)
+const forger = new LocalForger()
+
+Tezos.setForgerProvider(forger)
+Tezos.setSignerProvider(new TezosToolkitSigner())
+
+const receiver = "tz1...."
+
+// estimate fees
+const estimate = await Tezos.estimate.transfer({
+  source: wallet.address,
+  to: receiver,
+  amount: 1,
+})
 
 const prepared = await Tezos.prepare.transaction({
+  source: wallet.address,
+  to: receiver,
   amount: 1,
-  to: 'tz1ifJaJ46sqXxfFsQ5MWuVB96q3K1sFmoJA'
+  fee: estimate.suggestedFeeMutez,
+  gasLimit: estimate.gasLimit,
+  storageLimit: estimate.storageLimit,
 })
-const forgeParams = await Tezos.prepare.toForge(prepared);
 
-const forger = new LocalForger();
-const forgedTransaction = await forger.forge(forgeParams);
+const forgeable = await Tezos.prepare.toForge(prepared)
+const forgedBytes = await forger.forge(forgeable)
 
 const res = await dfnsClient.wallets.broadcastTransaction({
   walletId,
   body: {
     kind: 'Transaction',
-    transaction: `0x${forgedTransaction}`,
+    transaction: `0x${forgedBytes}`,
   },
 })
-```
+</code></pre>
+
