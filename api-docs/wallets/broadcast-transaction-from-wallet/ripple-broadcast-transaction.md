@@ -2,10 +2,7 @@
 
 ## Request <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                            | Type   |
-| ------------------- | ----------------- | ------------------------------------------------------ | ------ |
-| kind                | Required          | For Ripple, always "Transaction"                       | String |
-| `transaction`       | Required          | The transaction encoded by the Xrpl SDK as shown below | String |
+<table data-full-width="true"><thead><tr><th width="204">Request fields</th><th width="187">Required - Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required - String</td><td>For Ripple, always "Transaction"</td></tr><tr><td><code>transaction</code></td><td>Required - String</td><td>The transaction encoded by the Xrpl SDK as shown below</td></tr></tbody></table>
 
 #### Example
 
@@ -18,6 +15,7 @@
 
 ## Response <a href="#response" id="response"></a>
 
+{% code fullWidth="false" %}
 ```json
 {
     "id": "tx-60es5-5sc68-xxxxxxxxxxxxxxxx",
@@ -38,6 +36,7 @@
     "dateBroadcasted": "2024-01-10T21:19:58.225Z"
 }
 ```
+{% endcode %}
 
 ## Xrpl SDK
 
