@@ -16,7 +16,7 @@ Here are the general steps required to perform an end-user recovery:&#x20;
 * Call the [delegated recovery](delegatedrecovery.md) endpoint from a service account (`DfnsApiClient.auth.createDelegatedUserRecovery` in the SDK).&#x20;
 * Dfns generates a new registration context, so that you can create the user’s new credentials.  Forward this to your user.&#x20;
 * The user creates a new credential (and optional new recovery credential)&#x20;
-* The user signs the new credential(s) with their existing recovery credential, and sends the new credential(s) + signature to Dfns via [Create User Recovery](createUserRecoveryChallenge.md) endpoint (`DfnsDelegatedApiClient.auth.createUserRecovery` in the SDK)
+* The user signs the new credential(s) with their existing recovery credential, and sends the new credential(s) + signature to Dfns to [Recover User](createUserRecovery.md) endpoint (`DfnsDelegatedApiClient.auth.createUserRecovery` in the SDK)
 * Dfns verifies the signature is valid&#x20;
 * Dfns archives all of the user’s current credentials (regular + recovery)
 * Dfns adds the user’s new credentials
