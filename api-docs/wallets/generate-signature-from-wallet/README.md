@@ -26,4 +26,6 @@ Request to generate a signature with the wallet key. **This process does not bro
 
 ## Request Body
 
-The body of the request will depend on the chain you are targeting.   Please find the chain in question by expanding this section in the left hand navigation.
+The body of the request will depend on the chain you are targeting.   Please find the chain in question by expanding this section in the left hand navigation:
+
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>

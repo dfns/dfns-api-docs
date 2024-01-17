@@ -3,8 +3,8 @@
 EVM chains like Ethereum, Polygon, BSC, Arbitrum, etc support the following signature `kinds`:&#x20;
 
 * `Transaction`: Generates a fully signed transaction ready for broadcasting yourself.&#x20;
-* `EIP712`: Generates the signature for typed structured data defined in [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
 * `Message`: Generates a signature for an arbitrary message.&#x20;
+* `EIP712`: Generates the signature for typed structured data defined in [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
 * `Hash`: Generates the signature for the hash digest of the original message.
 
 ## Transaction Signature <a href="#eip712-signature-request-body" id="eip712-signature-request-body"></a>
