@@ -66,7 +66,7 @@ Updates a policy.
   ],
   "filters": {
     "id": {
-      "oneOf": ["wa-..."],
+      "in": ["wa-..."],
     }
   },
   "autoRejectTimeout": 60,

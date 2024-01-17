@@ -52,7 +52,7 @@ Archives a policy.
         "status": "Archived",
         "filters": {
           "id": {
-            "oneOf": ["wa-..."]
+            "in": ["wa-..."]
           }
         },
         "activityKind": "Wallets:Sign",
@@ -62,7 +62,7 @@ Archives a policy.
               "quorum": 1,
               "approvers": {
                 "userId": {
-                  "oneOf": ["us-..."],
+                  "in": ["us-..."],
                 },
               },
            }

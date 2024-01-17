@@ -56,14 +56,14 @@ A policy contains a rule against which an activity will be evaluated and a set o
       "quorum": 1,
       "approvers": {
         "userId": {
-          "oneOf": ["us-..."],
+          "in": ["us-..."],
         },
       },
     },
   ],
   "filters": {
     "id": {
-      "oneOf": ["wa-..."],
+      "in": ["wa-..."],
     }
   },
   "autoRejectTimeout": 60,
@@ -100,7 +100,7 @@ A policy contains a rule against which an activity will be evaluated and a set o
         "status": "Active",
         "filters": {
           "id": {
-            "oneOf": ["wa-..."]
+            "in": ["wa-..."]
           }
         },
         "activityKind": "Wallets:Sign",
@@ -110,7 +110,7 @@ A policy contains a rule against which an activity will be evaluated and a set o
               "quorum": 1,
               "approvers": {
                 "userId": {
-                  "oneOf": ["us-..."],
+                  "in": ["us-..."],
                 },
               },
            }

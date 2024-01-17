@@ -34,7 +34,7 @@ Retrieves a list of policies.
   "status": "Active",
   "filters": {
     "id": {
-      "oneOf": ["wa-..."]
+      "in": ["wa-..."]
     }
   },
   "activityKind": "Wallets:Sign",
@@ -44,7 +44,7 @@ Retrieves a list of policies.
       "quorum": 1,
       "approvers": {
         "userId": {
-          "oneOf": ["us-..."],
+          "in": ["us-..."],
         },
       },
     }

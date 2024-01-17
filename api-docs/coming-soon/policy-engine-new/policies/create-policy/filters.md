@@ -11,7 +11,7 @@ Filters are a list of objects that specify the entities to which the policy will
 ```json
 {
   "id": {
-    "oneOf": ["wal-...", "wal-..."],
+    "in": ["wal-...", "wal-..."],
   },
 }
 ```

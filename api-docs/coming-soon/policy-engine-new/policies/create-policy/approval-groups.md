@@ -14,7 +14,7 @@ Approval groups are a list of objects that specify the approvers whose decision 
   "quorum": 2,
   "approvers": {
     "userId": {
-      "oneOf": ["us-...", "us-..."],
+      "in": ["us-...", "us-..."],
     },
   },
 }
