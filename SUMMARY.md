@@ -113,6 +113,8 @@
     * [Bitcoin: Generate Signature](api-docs/wallets/generate-signature-from-wallet/bitcoin-generate-signature.md)
     * [EVM: Generate Signature](api-docs/wallets/generate-signature-from-wallet/evm-generate-signature.md)
     * [Solana: Generate Signature](api-docs/wallets/generate-signature-from-wallet/solana-generate-signature.md)
+    * [Tezos: Generate Signature](api-docs/wallets/generate-signature-from-wallet/tezos-generate-signature.md)
+    * [Tron: Generate Signature](api-docs/wallets/generate-signature-from-wallet/tron-generate-signature.md)
     * [XRPLedger (aka Ripple): Generate Signature](api-docs/wallets/generate-signature-from-wallet/xrpledger-aka-ripple-generate-signature.md)
   * [Get Wallet Signature Request by ID](api-docs/wallets/get-wallet-signature-request-by-id.md)
   * [List Wallet Signature Requests](api-docs/wallets/list-wallet-signature-requests.md)

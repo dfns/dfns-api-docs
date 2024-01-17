@@ -2,7 +2,7 @@
 
 ## Request <a href="#request-body" id="request-body"></a>
 
-<table data-full-width="true"><thead><tr><th width="165">Request  fields</th><th width="180">Required - Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required - String</td><td>For Bitcoin, always "Psbt"</td></tr><tr><td><code>psbt</code></td><td>Required - String</td><td>The transaction encoded by the BitcoinJS SDK as shown below</td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="165">Request  fields</th><th width="180">Required - Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required - String</td><td>For Bitcoin, always "Psbt"</td></tr><tr><td><code>psbt</code></td><td>Required - String</td><td>The transaction encoded by the BitcoinJS SDK as shown below</td></tr></tbody></table>
 
 #### Example
 
