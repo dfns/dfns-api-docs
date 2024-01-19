@@ -22,9 +22,9 @@
     * [Generate a Key Pair](advanced-topics/authentication/credentials/generate-a-key-pair.md)
     * [User Credentials](advanced-topics/authentication/credentials/user-credentials.md)
     * [Access Token Credentials](advanced-topics/authentication/credentials/access-token-credentials.md)
+    * [Storing WebAuthn Credentials in Password Managers](advanced-topics/authentication/credentials/storing-webauthn-credentials-in-password-managers.md)
   * [Request Signing](advanced-topics/authentication/request-signing.md)
-* [Delegated Signing](advanced-topics/delegated-signing/README.md)
-  * [Storing WebAuthn Credentials in Password Managers](advanced-topics/delegated-signing/storing-webauthn-credentials-in-password-managers.md)
+* [Delegated Signing](advanced-topics/delegated-signing.md)
 * [FAQ](advanced-topics/faq.md)
 
 ## API Docs
