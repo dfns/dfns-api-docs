@@ -8,6 +8,24 @@ The Dfns change log documents changes to our product functionality made by our r
 
 
 
+### Jan 17, 2024
+
+* Exposed verified contracts in the API metadata for EVM chains
+* Renamed Ripple to XrpLedger for accuracy&#x20;
+
+### Jan 10, 2024
+
+* Launched Bitcoin indexing for Wallets bringing the chain to Tier1 support
+* Fixed a bug preventing users from reading end user wallet metadata
+
+### Dec 20, 2023
+
+* Backend changes to cluster load balancing
+
+### Dec 12, 2023
+
+* Added `secondsValid` to PAT expiration config
+
 ### Dec 6, 2023
 
 * Launched Solana and Tezos Tier2 wallets support
