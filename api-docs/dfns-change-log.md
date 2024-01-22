@@ -17,6 +17,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 * Launched Bitcoin indexing for Wallets bringing the chain to Tier1 support
 * Fixed a bug preventing users from reading end user wallet metadata
+* Released AWS KMS Signer in the SDK
 
 ### Dec 20, 2023
 
