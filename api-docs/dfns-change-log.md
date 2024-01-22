@@ -10,6 +10,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Jan 17, 2024
 
+* Added send button in dashboard for tier2 chains
 * Exposed verified contracts in the API metadata for EVM chains
 * Renamed Ripple to XrpLedger for accuracy&#x20;
 
