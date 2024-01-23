@@ -38,36 +38,29 @@ Retrieves a list of historical on chain activities for the specified wallet.
 {
   "items": [
     {
-      "walletId": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
-      "network": "EthereumSepolia",
-      "kind": "NativeTransfer",
-      "direction": "Out",
-      "symbol": "SepoliaETH",
-      "decimals": 18,
-      "blockNumber": 3308284,
-      "timestamp": "2023-04-17T15:41:00.000Z",
-      "txHash": "0x93a7d6e97ffe87503fa3888e2457fa6668dc7887f23d4a454c89cb98f475463f",
-      "to": "0xa238b6008bc2fbd9e386a5d4784511980ce504cd",
-      "from": "0x00e3495cf6af59008f22ffaf32d4c92ac33dac47",
-      "value": "1000000000000000",
-      "fee": "105000000147000"
-    },
-    {
-      "walletId": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
-      "network": "EthereumSepolia",
+      "index": "134",
+      "fee": "1542993669053672",
+      "txHash": "0x8e88793607610a83798eb5ec6dde861f3e459c7e4a22e78b0d2e675b86d0d1e7",
+      "blockNumber": 19036906,
+      "timestamp": "2024-01-18T23:03:59.000Z",
+      "contract": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "walletId": "wa-40f4f-51gpm-xxxxxxxxxxxxxxxx",
+      "network": "Ethereum",
+      "value": "1000000",
       "kind": "Erc20Transfer",
-      "direction": "In",
-      "contract": "0x6f14c02fc1f78322cfd7d707ab90f18bad3b54f5",
+      "from": "0xea09cf8a006493566f8a8fd3d0b32ebff5939d6a",
+      "direction": "Out",
+      "to": "0xc42754e6f79f15082613b2b4ebead83dcf8116b6",
+      "metadata": {
+          "asset": {
+              "symbol": "USDC",
+              "decimals": 6,
+              "verified": true
+          }
+      },
       "symbol": "USDC",
-      "name": "USDC Token",
-      "decimals": 18,
-      "blockNumber": 3291042,
-      "timestamp": "2023-04-14T22:07:00.000Z",
-      "txHash": "0xc1a000d375e571a6b1af865bbdddcac7ae455fad9f36061e5e3b60dafd4e6355",
-      "index": "30",
-      "from": "0xe2a3422f3168149ad2d11b4de2b97b05f1ebf76e",
-      "to": "0x00e3495cf6af59008f22ffaf32d4c92ac33dac47",
-      "value": "100000000000000000000"
+      "decimals": 6,
+      "verified": true
     },
     ...
   ],

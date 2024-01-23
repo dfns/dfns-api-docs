@@ -92,22 +92,36 @@ Transfer an asset out of the specified wallet to a destination address.
 
 ```json
 {
-  "id": "xfr-719uh-d0t8g-xxxxxxxxxxxxxxxx",
-  "walletId": "wa-39abb-e9kpk-xxxxxxxxxxxxxxxx",
-  "network": "EthereumSepolia",
-  "requester": {
-    "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
-    "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
-    "appId": "ap-24vva-92s32-xxxxxxxxxxxxxxxx"
-  },
-  "requestBody": {
-    "kind": "Erc20",
-    "contract": "0x779877a7b0d9e8603169ddbd7836e478b4624789",
-    "to": "0xb282dc7cde21717f18337a596e91ded00b79b25f",
-    "amount": "1000000000"
-  },
-  "dateRequested": "2023-05-08T19:12:27.943Z",
-  "status": "Pending"
+    "id": "xfr-6ulmv-sa183-xxxxxxxxxxxxxxxx",
+    "walletId": "wa-40f4f-51gpm-xxxxxxxxxxxxxxxx",
+    "network": "Ethereum",
+    "requester": {
+        "userId": "us-4vu4v-kud3l-xxxxxxxxxxxxxxxx",
+        "appId": "ap-7c2pm-avfsr-xxxxxxxxxxxxxxxx"
+    },
+    "requestBody": {
+        "amount": "1000000",
+        "to": "0xc42754e6f79f15082613b2b4ebead83dcf8116b6",
+        "kind": "Erc20",
+        "contract": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    },
+    "metadata": {
+        "asset": {
+            "symbol": "USDC",
+            "decimals": 6,
+            "verified": true,
+            "quotes": {
+                "USD": 1.000804849917271,
+                "EUR": 0.9201529894769885
+            }
+        }
+    },
+    "status": "Confirmed",
+    "fee": "1542993669053672",
+    "txHash": "0x8e88793607610a83798eb5ec6dde861f3e459c7e4a22e78b0d2e675b86d0d1e7",
+    "dateRequested": "2024-01-18T23:03:53.739Z",
+    "dateBroadcasted": "2024-01-18T23:03:55.685Z",
+    "dateConfirmed": "2024-01-18T23:03:59.000Z"
 }
 ```
 

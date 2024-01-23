@@ -27,6 +27,8 @@ Retrieves a list of assets owned by the specified Wallet.
 
 ### 200 Response example <a href="#response-example" id="response-example"></a>
 
+`verified` contracts have been certified authentic by CoinMarketCap.&#x20;
+
 ```json
 {
   "walletId": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
@@ -42,14 +44,16 @@ Retrieves a list of assets owned by the specified Wallet.
       "name": "USDC Token",
       "symbol": "USDC",
       "decimals": 18,
-      "balance": "100000000000000000000"
+      "balance": "100000000000000000000",
+      "verified": true
     },
     {
       "contract": "0x779877a7b0d9e8603169ddbd7836e478b4624789",
       "name": "ChainLink Token",
       "symbol": "LINK",
       "decimals": 18,
-      "balance": "20000000000000000000"
+      "balance": "20000000000000000000",
+      "verified": true
     }
   ]
 }
