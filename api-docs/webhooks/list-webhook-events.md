@@ -9,6 +9,10 @@ Lists all events for a given webhook.&#x20;
 * Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
+{% hint style="warning" %}
+We only keep a trace of those Webhook Events in our system for a **retention period of 31 days**. Past that, they are discarded, so you cannot see them using [List Webhook Events](list-webhook-events.md) or [Get Webhook Event](get-webhook-event.md) endpoints.
+{% endhint %}
+
 ### Permissions Required
 
 * `Webhooks:Events:Read`

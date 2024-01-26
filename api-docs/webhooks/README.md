@@ -14,7 +14,16 @@ Receiving webhook events are particularly useful for listening to asynchronous e
 
 ## Webhook Events
 
-When an event happen in the system, which a webhook subscribed to, we build a Webhook Event with the following shape, containing some data around the event that happened. This is an example of a transfer request event payload delivered:
+When an event happen in the system, which a Webhook subscribed to, we create a Webhook Event object, containing some data around the event that happened, which we:&#x20;
+
+1. send to your Webhook endoint
+2. keep a trace of so you can later check all Webhook Events sent to your webhooks (through [List Webhook Events](list-webhooks.md) or [Get Webhook Event](get-webhook-event.md) endpoints)
+
+{% hint style="warning" %}
+We only keep a trace of those Webhook Events in our system for a **retention period of 31 days**. Past that, they are discarded, so you cannot see them using [List Webhook Events](list-webhook-events.md) or [Get Webhook Event](get-webhook-event.md) endpoints.
+{% endhint %}
+
+Here's an example of a Webhook Event of kind "`wallet.transfer.requested`" delivered to your webhook:
 
 ```json
 {
