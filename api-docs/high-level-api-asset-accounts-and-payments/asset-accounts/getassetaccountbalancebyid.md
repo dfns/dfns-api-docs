@@ -1,7 +1,7 @@
 # Get Balance
 
 {% hint style="danger" %}
-Warning: This API has been deprecated.  Please use [Wallets](../../../wallets/).  Contact your sales representative if you require additional blockchain support. &#x20;
+Warning: This API has been deprecated.  Please use [Wallets](../../wallets/).  Contact your sales representative if you require additional blockchain support. &#x20;
 {% endhint %}
 
 
@@ -11,8 +11,8 @@ Warning: This API has been deprecated.  Please use [Wallets](../../../wallets/).
 Gets the on chain balance of the assets associated with the specified `AssetAccount id`.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more
 {% endhint %}
 
 ## Required Permissions

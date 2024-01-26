@@ -9,7 +9,7 @@
 * Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
-Dfns secures private keys by generating them as MPC key shares in our decentralized key management network.  This happens by default when you [create a wallet](../create-wallet.md).&#x20;
+Dfns secures private keys by generating them as MPC key shares in our decentralized key management network.  This happens by default when you [create a wallet](../create-wallet/).&#x20;
 
 In some circumstances, however, you may need to import an existing wallet (an existing private key) into Dfns infrastructure, instead of creating a brand new wallet with Dfns and transfer funds to it. As an example, you might wanna keep an existing wallet, if its address is tied to a smart contract which you don't wanna re-deploy. In that case, keeping the same wallet (so same address) will be important to you.
 

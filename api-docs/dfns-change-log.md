@@ -214,7 +214,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Nov 8, 2022
 
-* Added a `maxUnitBalance` property to the response from the [GetBalance endpoint](deprecated-apis/high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbalancebyid.md) representing the largest possible unit for the given asset.
+* Added a `maxUnitBalance` property to the response from the [GetBalance endpoint](high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbalancebyid.md) representing the largest possible unit for the given asset.
 * IP Whitelisting fixes: API Gateway redirect aliases, extra NAT Gateway IPs whitelisted
 * Integrated Fantom, Optimism, and SKALE blockchains
 

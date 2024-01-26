@@ -1,7 +1,7 @@
 # List Asset Accounts
 
 {% hint style="danger" %}
-Warning: This API has been deprecated.  Please use [Wallets](../../../wallets/).  Contact your sales representative if you require additional blockchain support. &#x20;
+Warning: This API has been deprecated.  Please use [Wallets](../../wallets/).  Contact your sales representative if you require additional blockchain support. &#x20;
 {% endhint %}
 
 
@@ -11,8 +11,8 @@ A`GET /assets/asset-accounts/`
 Retrieves all `AssetAccounts` belonging to the Org.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more
 {% endhint %}
 
 ## Required Permissions
