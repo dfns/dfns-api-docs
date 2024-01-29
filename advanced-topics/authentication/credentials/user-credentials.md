@@ -56,7 +56,7 @@ This object is then converted to a JSON string, and signed with the user's priva
 ```typescript
 keyOrPasswordClientData: {
   type: 'key.create',
-  challenge: base64url(challenge),
+  challenge: challenge,
   origin: this.appOrigin,
   crossOrigin: false,
 }
