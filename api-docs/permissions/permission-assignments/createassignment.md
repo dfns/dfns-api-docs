@@ -1,6 +1,6 @@
-# CreateAssignment
+# Create Assignment
 
-`POST /permissions/assignments`
+`POST /permissions/{permissionId}/assignments`
 
 Creates a permission assignment, effectively granting a permission to a specific Identity. Response confirms the assignment (success) or gives the reason why it's not possible (failure).
 
@@ -22,21 +22,17 @@ Creates a permission assignment, effectively granting a permission to a specific
 
 ## Request body <a href="#request-body" id="request-body"></a>
 
-In the **request body** specify the **permission ID** and **identity ID.**
+In the **request body** specify the **identity ID.**
 
-| Request body fields | Required/Optional | Description                                                 | Type             |
-| ------------------- | ----------------- | ----------------------------------------------------------- | ---------------- |
-| `permissionId`      | Required          | The ID of the permission to be assigned.                    | String           |
-| `identityId`        | Required          | The ID of the identity the permission is being assigned to. | String           |
-| `identityKind`      | Required          | Either CustomerEmployee, Application or EndUser.            | Enumerated Type  |
+| Request body fields | Required/Optional | Description                                                 | Type   |
+| ------------------- | ----------------- | ----------------------------------------------------------- | ------ |
+| `identityId`        | Required          | The ID of the identity the permission is being assigned to. | String |
 
 ## Request example <a href="#request-example.1" id="request-example.1"></a>
 
 ```JSON
 {
-  "permissionId": "pm-orange-apple-2b17a80613",
   "identityId": "some-identity-id",
-  "identityKind": "CustomerEmployee"
 }
 ```
 
@@ -51,7 +47,6 @@ If successful, the response will contain an assignment object similar to the one
     "id": "as-stream-pizza-08edcfff93",
     "permissionId": "pm-orange-apple-2b17a80613",
     "identityId": "oe-louisiana-one-6cf5e80c205c",
-    "identityKind": "Employee",
     "isImmutable": false,
     "dateCreated": "2022-10-26T09:48:31.247Z",
     "dateUpdated": "2022-10-26T09:48:31.247Z"

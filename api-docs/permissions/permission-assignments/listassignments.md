@@ -1,6 +1,6 @@
-# ListAssignments
+# List Assignments
 
-`GET /permissions/assignments`
+`GET /permissions/{permissionId}/assignments`
 
 Retrieves a list of permission assignments (success) or gives a reason why it's not possible (failure).
 
@@ -11,22 +11,13 @@ Retrieves a list of permission assignments (success) or gives a reason why it's 
 
 ## Required Permissions
 
-| Name                           | Conditions      |
-| ------------------------------ | --------------- |
-| `PermissionAssignments:Read`   | Always Required |
+| Name                         | Conditions      |
+| ---------------------------- | --------------- |
+| `PermissionAssignments:Read` | Always Required |
 
 ## Triggers <a href="#triggers.1" id="triggers.1"></a>
 
 `PermissionManagement`
-
-## Parameters <a href="#parameters.1" id="parameters.1"></a>
-
-### Query parameters <a href="#query-parameters" id="query-parameters"></a>
-
-| Query string parameter | Required/Optional | Description                                               | Type   |
-| ---------------------- | ----------------- | --------------------------------------------------------- | ------ |
-| permissionId           | Optional          | The ID of the permission that has been assigned.          | String |
-| identityId             | Optional          | The ID of the identity to whom a permission was assigned. | String |
 
 ## Response <a href="#response" id="response"></a>
 
@@ -40,7 +31,6 @@ If successful, the response will contain a list of assignment objects similar to
         "id": "as-stream-pizza-08edcfff93",
         "permissionId": "pm-orange-apple-2b17a80613",
         "identityId": "oe-louisiana-one-6cf5e80c205c",
-        "identityKind": "Employee",
         "isImmutable": false,
         "dateCreated": "2022-10-26T09:48:31.247Z",
         "dateUpdated": "2022-10-26T09:48:31.247Z"

@@ -1,6 +1,6 @@
 # Revoke Assignment
 
-`DELETE /permissions/assignments/{assignmentId}`
+`DELETE /permissions/{permissionId}/assignments/{assignmentId}`
 
 Revokes a permission assignment (success) or gives reason why it’s not possible (failure).
 
@@ -24,20 +24,12 @@ Revokes a permission assignment (success) or gives reason why it’s not possibl
 
 ### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-<table><thead><tr><th width="424">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>assignmentId</code></td><td>Unique identifier of the permission assignment.<br><br>Permission Assignment IDs look like this:<br><code>as-stream-pizza-08edcfff93</code><br><br>They follow this format:<br><code>as-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr></tbody></table>
+<table><thead><tr><th width="424">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>permissionId</code></td><td>Unique identifier of the permission.<br><br>Permission IDs look like this:<br><code>pm-stream-pizza-08edcfff93</code><br><br>They follow this format:<br><code>pm-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr><tr><td><code>assignmentId</code></td><td>Unique identifier of the permission assignment.<br><br>Permission Assignment IDs look like this:<br><code>as-stream-pizza-08edcfff93</code><br><br>They follow this format:<br><code>as-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr></tbody></table>
 
 ## Response <a href="#response" id="response"></a>
 
 ### Response example <a href="#response-example" id="response-example"></a>
 
-If successful, the response will contain the ID of the deleted permission assignment:
-
-```json
-{
-    "id": "as-stream-pizza-08edcfff93"
-}
-```
-
-## Notes <a href="#notes" id="notes"></a>
+If successful, the response will be a 204 status code.
 
 This is a hard deletion, not an archival. However, the deletion will be registered in the audit logs.
