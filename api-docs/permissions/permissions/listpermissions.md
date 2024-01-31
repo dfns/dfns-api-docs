@@ -1,4 +1,4 @@
-# ListPermissions
+# List Permissions
 
 `GET /permissions`
 
@@ -11,9 +11,9 @@ Retrieves a list of permissions (success) or gives a reason why it's not possibl
 
 ## Required Permissions
 
-| Name                           | Conditions      |
-| ------------------------------ | --------------- |
-| `Permissions:Read`             | Always Required |
+| Name               | Conditions      |
+| ------------------ | --------------- |
+| `Permissions:Read` | Always Required |
 
 ## Triggers <a href="#triggers.1" id="triggers.1"></a>
 
@@ -25,21 +25,22 @@ Retrieves a list of permissions (success) or gives a reason why it's not possibl
 
 If successful, the response contains a list of permission objects:
 
-```json
-[
-    {
-        "id": "pm-orange-apple-2b17a80613",
-        "orgId": "organization-id",
-        "name": "US",
-        "operations": [
-            "AssetAccounts:Read"
-        ],
-        "status": "Active",
-        "predicateIds": [],
-        "isImmutable": false,
-        "dateCreated": "2022-10-26T08:30:25.348Z",
-        "dateUpdated": "2022-10-26T08:30:25.348Z",
-        "isArchived": false
-    }
-]
-```
+<pre class="language-json"><code class="lang-json"><strong>{    
+</strong><strong>    items: [
+</strong>        {
+            "id": "pm-orange-apple-2b17a80613",
+            "orgId": "organization-id",
+            "name": "US",
+            "operations": [
+                "AssetAccounts:Read"
+            ],
+            "status": "Active",
+            "predicateIds": [],
+            "isImmutable": false,
+            "dateCreated": "2022-10-26T08:30:25.348Z",
+            "dateUpdated": "2022-10-26T08:30:25.348Z",
+            "isArchived": false
+        }
+    ]
+}
+</code></pre>
