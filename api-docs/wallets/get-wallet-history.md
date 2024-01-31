@@ -32,8 +32,6 @@ Retrieves a list of historical on chain activities for the specified wallet.
 
 ## Response <a href="#response" id="response"></a>
 
-### 200 Response example <a href="#response-example" id="response-example"></a>
-
 ```json
 {
   "items": [
@@ -56,11 +54,13 @@ Retrieves a list of historical on chain activities for the specified wallet.
               "symbol": "USDC",
               "decimals": 6,
               "verified": true
+          },
+          "fee": {
+              "symbol": "ETH",
+              "decimals": 18,
+              "verified": true
           }
-      },
-      "symbol": "USDC",
-      "decimals": 6,
-      "verified": true
+      }
     },
     ...
   ],
