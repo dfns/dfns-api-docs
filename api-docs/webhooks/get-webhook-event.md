@@ -19,6 +19,8 @@ We only keep a trace of those Webhook Events in our system for a **retention per
 
 ## Response
 
+See [Webhook Event Data](https://docs.dfns.co/d/api-docs/webhooks#event-data) for more details on potential response formats by webhook event kind.
+
 ```json
 {
   "id": "wh-xxx-xxxxxxx",

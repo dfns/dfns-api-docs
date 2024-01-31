@@ -25,6 +25,8 @@ The following query parameters can be appended to the url
 
 ## Response
 
+See [Webhook Event Data](https://docs.dfns.co/d/api-docs/webhooks#event-data) for more details on potential response formats by webhook event kind.
+
 ```json
 {
   "items": [

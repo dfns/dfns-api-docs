@@ -83,7 +83,7 @@ wallet.blockchainevent.detected
 
 Depending on its kind, every event holds `data` that corresponds to this kind. Here's an overview of what kind of `data` each event kind
 
-* For `wallet.created`, `wallet.exported`, `wallet.delegated`:
+* For `wallet.created`, `wallet.exported`, `wallet.delegated` see the [Get Wallet response](https://docs.dfns.co/d/api-docs/wallets/get-wallet-by-id#response):
 
 {% code title="data" %}
 ```json
@@ -96,7 +96,7 @@ Depending on its kind, every event holds `data` that corresponds to this kind. H
 ```
 {% endcode %}
 
-* For `wallet.transfer.requested`, `wallet.transfer.failed`, `wallet.transfer.rejected`, `wallet.transfer.broadcasted`, `wallet.transfer.confirmed`:
+* For `wallet.transfer.requested`, `wallet.transfer.failed`, `wallet.transfer.rejected`, `wallet.transfer.broadcasted`, `wallet.transfer.confirmed` see the [Get Transfer response](https://docs.dfns.co/d/api-docs/wallets/get-wallet-transfer-request-by-id#response-example):
 
 {% code title="data:" %}
 ```json
@@ -110,7 +110,7 @@ Depending on its kind, every event holds `data` that corresponds to this kind. H
 ```
 {% endcode %}
 
-* For `wallet.transaction.requested`, `wallet.transaction.failed`, `wallet.transaction.rejected`, `wallet.transaction.broadcasted`, `wallet.transaction.confirmed`:
+* For `wallet.transaction.requested`, `wallet.transaction.failed`, `wallet.transaction.rejected`, `wallet.transaction.broadcasted`, `wallet.transaction.confirmed` see the [Get Transaction response](https://docs.dfns.co/d/api-docs/wallets/get-wallet-transaction-request-by-id#response) :
 
 {% code title="data" %}
 ```json
@@ -124,7 +124,7 @@ Depending on its kind, every event holds `data` that corresponds to this kind. H
 ```
 {% endcode %}
 
-* For `wallet.signature.requested`, `wallet.signature.failed`, `wallet.signature.rejected`, `wallet.signature.signed`:
+* For `wallet.signature.requested`, `wallet.signature.failed`, `wallet.signature.rejected`, `wallet.signature.signed` see the [Get Signature response](https://docs.dfns.co/d/api-docs/wallets/get-wallet-signature-request-by-id#response):
 
 {% code title="data" %}
 ```json
@@ -138,7 +138,7 @@ Depending on its kind, every event holds `data` that corresponds to this kind. H
 ```
 {% endcode %}
 
-* For `wallet.blockchainevent.detected`:
+* For `wallet.blockchainevent.detected` see the [Get History response](https://docs.dfns.co/d/api-docs/wallets/get-wallet-history#response):
 
 {% code title="data" %}
 ```json
