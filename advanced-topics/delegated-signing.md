@@ -50,7 +50,7 @@ For example, Dfns clients can implement "biometric recovery" by encouraging user
 
 Additionally, similar to password manager solutions like 1Password, end-users can receive a recovery code which they are instructed to keep securely offline. Should the user lose their device, this code can be provided via the Dfns client’s application in order to re-establish access to their wallet.
 
-Alternatively, some Dfns clients require their end-users to go through a KYC process. This process can be re-initiated for users who have lost access to their devices in order to validate their identities and re-establish credentials.
+Alternatively, some Dfns clients require their end-users to go through a KYC process. This process can be re-initiated for users who have lost access to their devices in order to validate their identities and re-establish credentials.  The KYC vendor in this case serves as a gate to a recovery secret the user can access once checks are passed that can be used to sign a recovery challenge.&#x20;
 
 ### Questions on Delegated Signing
 
