@@ -15,9 +15,9 @@ We’ve also created a video walking through this setup for EthParis (July 2023)
 
 ## Create your Credentials and Login
 
-1. Click the link to be directed to the registration page with the username prepopulated.  Copy and paste the registration code from the email. Click the register button.   Note: Registration codes only last 4 hours so if yours is expired, just click "Email Me a New Registration Code".
+1. Click the link to be directed to the registration page with the username prepopulated.  Copy and paste the registration code from the email. Click the register button.   Note: Registration codes only last 4 hours so if yours is expired, just click "Send New Code To My Email”.&#x20;
 
-![](https://lh6.googleusercontent.com/mEzEUMi\_47rNbFdHzyh3Wp9TdBsAEnHzblj-N7abbGw-J2DufmwcPSepe7QWvNzwSdkpZv4ewgkJOjHnuPfs9UZIPLz-DWn5qdKWVxE2ZvVMg4OK9GIylyhVUpfQSE2ZNWGEUbNlQehA54glNwpsRIc)
+![](<../.gitbook/assets/Screenshot 2024-02-06 at 3.57.50 PM.png>)
 
 2. Create credentials and submit.  Login in using the new credentials.&#x20;
 
