@@ -24,7 +24,7 @@ Archives a policy.
 
 ## Response <a href="#response" id="response"></a>
 
-### Response example <a href="#response-example" id="response-example"></a>
+### Response example 200 - no approval required <a href="#response-example" id="response-example"></a>
 
 ```json
 {
@@ -67,9 +67,44 @@ Archives a policy.
               },
            }
         ],
-        "autoRejectTimeout": 60
+        "autoRejectTimeout": 60,
   },
   "dateCreated": "2023-12-22T20:57:55.814Z",
   "dateResolved": "2023-12-22T20:57:55.814Z"
+}
+```
+
+### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
+
+```json
+{
+  "id": "plc-...",
+  "name": "Transfer Limit",
+  "rule": {
+    "kind": "TransactionAmountLimit",
+    "configuration": {
+      "currency": "EUR",
+      "limit": "1000",
+    },
+  },
+  "status": "Archived",
+  "filters": {
+    "id": {
+      "in": ["wa-..."]
+    }
+  },
+  "activityKind": "Wallets:Sign",
+  "approvalGroups": [
+    {
+      "name": "Admins",
+      "quorum": 1,
+      "approvers": {
+        "userId": {
+          "in": ["us-..."],
+        },
+      },
+    }
+  ],
+  "autoRejectTimeout": 60,
 }
 ```

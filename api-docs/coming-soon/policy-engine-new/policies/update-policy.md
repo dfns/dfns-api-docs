@@ -75,7 +75,41 @@ Updates a policy.
 
 ## Response <a href="#response" id="response"></a>
 
-### Response example <a href="#response-example" id="response-example"></a>
+### Response example 200 - no approval required <a href="#response-example" id="response-example"></a>
+
+<pre class="language-json"><code class="lang-json"><strong>{
+</strong><strong>  "id": "plc-...",
+</strong>  "name": "Transfer Limit",
+  "rule": {
+    "kind": "TransactionAmountLimit",
+    "configuration": {
+      "currency": "EUR",
+      "limit": "1000",
+    },
+  },
+  "status": "Active",
+  "filters": {
+    "id": {
+      "oneOf": ["wa-..."]
+    }
+  },
+  "activityKind": "Wallets:Sign",
+  "approvalGroups": [
+    {
+      "name": "Admins",
+      "quorum": 1,
+      "approvers": {
+        "userId": {
+          "oneOf": ["us-..."],
+        },
+      },
+    }
+  ],
+  "autoRejectTimeout": 60
+}
+</code></pre>
+
+### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
 
 ```json
 {
@@ -123,5 +157,4 @@ Updates a policy.
   "dateCreated": "2023-12-22T20:57:55.814Z",
   "dateResolved": "2023-12-22T20:57:55.814Z"
 }
-
 ```

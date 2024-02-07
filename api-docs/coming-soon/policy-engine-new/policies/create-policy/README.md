@@ -31,7 +31,7 @@ A policy contains a rule against which an activity will be evaluated and a set o
 
 ### Approval Groups Object (see [approval groups](approval-groups.md))
 
-<table><thead><tr><th width="254">Request body fields</th><th width="113">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Optional</td><td>Name of the approval group.</td><td>String</td></tr><tr><td><code>quorum</code></td><td>Required</td><td>Quorum required for approval of activity.</td><td>Number</td></tr><tr><td><code>approvers</code></td><td>Optional</td><td>Finer-grained approval group configuration.</td><td>Object</td></tr></tbody></table>
+<table><thead><tr><th width="254">Request body fields</th><th width="113">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Optional</td><td>Name of the approval group.</td><td>String</td></tr><tr><td><code>quorum</code></td><td>Required</td><td>Quorum required for approval of activity.</td><td>Number</td></tr><tr><td><code>approvers</code></td><td>Required</td><td>Finer-grained approval group configuration.</td><td>Object</td></tr></tbody></table>
 
 ### Filter Object (see [filters](filters.md))
 
@@ -76,49 +76,33 @@ A policy contains a rule against which an activity will be evaluated and a set o
 
 ```json
 {
-  "id": "cr-...",
-  "orgId": "or-...",
-  "requester": {
-    "appId": "ap-...",
-    "userId": "us-...",
-    "tokenId": "to-..."
+  "id": "plc-...",
+  "name": "Transfer Limit",
+  "rule": {
+    "kind": "TransactionAmountLimit",
+    "configuration": {
+      "currency": "EUR",
+      "limit": "1000",
+    },
   },
-    "kind": "Policy",
-    "operationKind": "Create",
-    "status": "Applied",
-    "entityId": "plc-...",
-    "body": {
-        "id": "plc-...",
-        "name": "Transfer Limit",
-        "rule": {
-          "kind": "TransactionAmountLimit",
-          "configuration": {
-            "currency": "EUR",
-            "limit": "1000",
-          },
-        },
-        "status": "Active",
-        "filters": {
-          "id": {
-            "in": ["wa-..."]
-          }
-        },
-        "activityKind": "Wallets:Sign",
-        "approvalGroups": [
-            {
-              "name": "Admins",
-              "quorum": 1,
-              "approvers": {
-                "userId": {
-                  "in": ["us-..."],
-                },
-              },
-           }
-        ],
-        "autoRejectTimeout": 60
+  "status": "Active",
+  "filters": {
+    "id": {
+      "in": ["wa-..."]
+    }
   },
-  "dateCreated": "2023-12-22T20:57:55.814Z",
-  "dateResolved": "2023-12-22T20:57:55.814Z"
+  "activityKind": "Wallets:Sign",
+  "approvalGroups": [
+    {
+      "name": "Admins",
+      "quorum": 1,
+      "approvers": {
+        "userId": {
+          "in": ["us-..."],
+        },
+      },
+    }
+  ],
+  "autoRejectTimeout": 60
 }
-
 ```
