@@ -12,9 +12,9 @@ Archives or unarchives a permission, depending on the body of the request. Respo
 
 ## Required Permissions
 
-| Name                           | Conditions      |
-| ------------------------------ | --------------- |
-| `Permissions:Archive`          | Always Required |
+| Name                  | Conditions      |
+| --------------------- | --------------- |
+| `Permissions:Archive` | Always Required |
 
 ## Triggers <a href="#triggers.1" id="triggers.1"></a>
 
@@ -44,7 +44,7 @@ In the **request body** specify wheter the permission is to be **archived** or *
 
 ## Response <a href="#response" id="response"></a>
 
-### Response example <a href="#response-example" id="response-example"></a>
+### Response example 200 - no approval required <a href="#response-example" id="response-example"></a>
 
 If successful, a response object of the update permission will be returned:
 
@@ -62,6 +62,40 @@ If successful, a response object of the update permission will be returned:
     "dateCreated": "2022-10-26T08:30:25.348Z",
     "dateUpdated": "2022-10-26T08:30:25.348Z",
     "isArchived": true
+}
+```
+
+### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
+
+```json
+{
+   "id":"cr-...",
+   "orgId":"or-...",
+   "requester":{
+      "appId":"ap-...",
+      "userId":"us-...",
+      "tokenId":"to-..."
+   },
+   "kind":"Permission",
+   "operationKind":"Update",
+   "status":"Pending",
+   "entityId":"pm-...",
+   "body":{
+      "id":"pm-orange-apple-2b17a80613",
+      "orgId":"organization-id",
+      "name":"US",
+      "operations":[
+         "AssetAccounts:Read"
+      ],
+      "status":"Active",
+      "predicateIds":[],
+      "isImmutable":false,
+      "dateCreated":"2022-10-26T08:30:25.348Z",
+      "dateUpdated":"2022-10-26T08:30:25.348Z",
+      "isArchived":true
+   },
+   "dateCreated":"2023-12-22T20:57:55.814Z",
+   "dateResolved":"2023-12-22T20:57:55.814Z"
 }
 ```
 

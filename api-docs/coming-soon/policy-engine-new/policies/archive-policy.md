@@ -28,6 +28,41 @@ Archives a policy.
 
 ```json
 {
+  "id": "plc-...",
+  "name": "Transfer Limit",
+  "rule": {
+    "kind": "TransactionAmountLimit",
+    "configuration": {
+      "currency": "EUR",
+      "limit": "1000",
+    },
+  },
+  "status": "Archived",
+  "filters": {
+    "id": {
+      "in": ["wa-..."]
+    }
+  },
+  "activityKind": "Wallets:Sign",
+  "approvalGroups": [
+    {
+      "name": "Admins",
+      "quorum": 1,
+      "approvers": {
+        "userId": {
+          "in": ["us-..."],
+        },
+      },
+    }
+  ],
+  "autoRejectTimeout": 60,
+}
+```
+
+### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
+
+```json
+{
   "id": "cr-...",
   "orgId": "or-...",
   "requester": {
@@ -37,7 +72,7 @@ Archives a policy.
   },
     "kind": "Policy",
     "operationKind": "Update",
-    "status": "Applied",
+    "status": "Pending",
     "entityId": "plc-...",
     "body": {
         "id": "plc-...",
@@ -71,40 +106,5 @@ Archives a policy.
   },
   "dateCreated": "2023-12-22T20:57:55.814Z",
   "dateResolved": "2023-12-22T20:57:55.814Z"
-}
-```
-
-### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
-
-```json
-{
-  "id": "plc-...",
-  "name": "Transfer Limit",
-  "rule": {
-    "kind": "TransactionAmountLimit",
-    "configuration": {
-      "currency": "EUR",
-      "limit": "1000",
-    },
-  },
-  "status": "Archived",
-  "filters": {
-    "id": {
-      "in": ["wa-..."]
-    }
-  },
-  "activityKind": "Wallets:Sign",
-  "approvalGroups": [
-    {
-      "name": "Admins",
-      "quorum": 1,
-      "approvers": {
-        "userId": {
-          "in": ["us-..."],
-        },
-      },
-    }
-  ],
-  "autoRejectTimeout": 60,
 }
 ```

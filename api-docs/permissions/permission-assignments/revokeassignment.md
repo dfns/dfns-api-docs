@@ -28,8 +28,36 @@ Revokes a permission assignment (success) or gives reason why it’s not possibl
 
 ## Response <a href="#response" id="response"></a>
 
-### Response example <a href="#response-example" id="response-example"></a>
+### Response example 204 - no approval required <a href="#response-example" id="response-example"></a>
 
 If successful, the response will be a 204 status code.
 
-This is a hard deletion, not an archival. However, the deletion will be registered in the audit logs.
+### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
+
+```json
+{
+   "id":"cr-...",
+   "orgId":"or-...",
+   "requester":{
+      "appId":"ap-...",
+      "userId":"us-...",
+      "tokenId":"to-..."
+   },
+   "kind":"Assignment",
+   "operationKind":"Delete",
+   "status":"Pending",
+   "entityId":"plc-...",
+   "body":{
+      "id":"as-stream-pizza-08edcfff93",
+      "permissionId":"pm-orange-apple-2b17a80613",
+      "identityId":"oe-louisiana-one-6cf5e80c205c",
+      "isImmutable":false,
+      "dateCreated":"2022-10-26T09:48:31.247Z",
+      "dateUpdated":"2022-10-26T09:48:31.247Z"
+   },
+   "dateCreated":"2023-12-22T20:57:55.814Z",
+   "dateResolved":"2023-12-22T20:57:55.814Z"
+}
+```
+
+This is a hard deletion, not an archival.

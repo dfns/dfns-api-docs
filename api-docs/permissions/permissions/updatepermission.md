@@ -12,9 +12,9 @@ Updates an existing permission. Response either returns the updated permission (
 
 ## Required Permissions
 
-| Name                           | Conditions      |
-| ------------------------------ | --------------- |
-| `Permissions:Update`           | Always Required |
+| Name                 | Conditions      |
+| -------------------- | --------------- |
+| `Permissions:Update` | Always Required |
 
 ## Triggers <a href="#triggers.1" id="triggers.1"></a>
 
@@ -46,7 +46,7 @@ In the **request body** specify the **permisison name** and/or a list of **opera
 
 ## Response <a href="#response" id="response"></a>
 
-### Response example <a href="#response-example" id="response-example"></a>
+### Response example 200 - no approval required <a href="#response-example" id="response-example"></a>
 
 If successful, a response object of the updated permission will be returned:
 
@@ -65,6 +65,41 @@ If successful, a response object of the updated permission will be returned:
     "dateCreated": "2022-10-26T08:30:25.348Z",
     "dateUpdated": "2022-10-26T08:30:25.348Z",
     "isArchived": false
+}
+```
+
+### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
+
+```json
+{
+   "id":"cr-...",
+   "orgId":"or-...",
+   "requester":{
+      "appId":"ap-...",
+      "userId":"us-...",
+      "tokenId":"to-..."
+   },
+   "kind":"Permission",
+   "operationKind":"Update",
+   "status":"Pending",
+   "entityId":"pm-...",
+   "body":{
+      "id":"pm-orange-apple-2b17a80613",
+      "orgId":"organization-id",
+      "name":"US",
+      "operations":[
+         "AssetAccounts:Read",
+         "AssetAccounts:Create"
+      ],
+      "status":"Active",
+      "predicateIds":[],
+      "isImmutable":false,
+      "dateCreated":"2022-10-26T08:30:25.348Z",
+      "dateUpdated":"2022-10-26T08:30:25.348Z",
+      "isArchived":false
+   },
+   "dateCreated":"2023-12-22T20:57:55.814Z",
+   "dateResolved":"2023-12-22T20:57:55.814Z"
 }
 ```
 

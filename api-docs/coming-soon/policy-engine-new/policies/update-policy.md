@@ -122,7 +122,7 @@ Updates a policy.
   },
     "kind": "Policy",
     "operationKind": "Update",
-    "status": "Applied",
+    "status": "Pending",
     "entityId": "plc-...",
     "body": {
         "id": "plc-...",

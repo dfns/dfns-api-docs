@@ -38,7 +38,7 @@ In the **request body** specify the **identity ID.**
 
 ## Response <a href="#response" id="response"></a>
 
-### Response example <a href="#response-example" id="response-example"></a>
+### Response example 200 - no approval required <a href="#response-example" id="response-example"></a>
 
 If successful, the response will contain an assignment object similar to the one below:
 
@@ -50,6 +50,34 @@ If successful, the response will contain an assignment object similar to the one
     "isImmutable": false,
     "dateCreated": "2022-10-26T09:48:31.247Z",
     "dateUpdated": "2022-10-26T09:48:31.247Z"
+}
+```
+
+### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
+
+```json
+{
+   "id":"cr-...",
+   "orgId":"or-...",
+   "requester":{
+      "appId":"ap-...",
+      "userId":"us-...",
+      "tokenId":"to-..."
+   },
+   "kind":"Assignment",
+   "operationKind":"Create",
+   "status":"Pending",
+   "entityId":"as-...",
+   "body":{
+      "id":"as-stream-pizza-08edcfff93",
+      "permissionId":"pm-orange-apple-2b17a80613",
+      "identityId":"oe-louisiana-one-6cf5e80c205c",
+      "isImmutable":false,
+      "dateCreated":"2022-10-26T09:48:31.247Z",
+      "dateUpdated":"2022-10-26T09:48:31.247Z"
+   },
+   "dateCreated":"2023-12-22T20:57:55.814Z",
+   "dateResolved":"2023-12-22T20:57:55.814Z"
 }
 ```
 
