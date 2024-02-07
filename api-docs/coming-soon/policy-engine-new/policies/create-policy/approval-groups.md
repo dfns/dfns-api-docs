@@ -19,3 +19,5 @@ Approval groups are a list of objects that specify the approvers whose decision 
   },
 }
 ```
+
+Note: `in` is the only list modifier currently supported.&#x20;

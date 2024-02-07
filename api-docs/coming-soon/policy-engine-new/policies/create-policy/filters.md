@@ -1,6 +1,11 @@
 # Filters
 
-Filters are a list of objects that specify the entities to which the policy will apply.
+Filters are a list of objects that specify the entities to which the policy will apply.  Entity IDs to pass differ by the policy `ActivityKind:`
+
+* `Permissions:Assign:` Pass only permission IDs
+* `Permissions:Modify:` Pass only permission IDs
+* `Policies:Modify:` Pass only policy IDs
+* `Wallets:Sign:` Pass only wallet IDs
 
 ### Filters Object
 
@@ -15,3 +20,5 @@ Filters are a list of objects that specify the entities to which the policy will
   },
 }
 ```
+
+Note: `in` is the only list modifier currently supported.&#x20;

@@ -24,7 +24,7 @@ Creates an approval decision.
 
 ## Request body <a href="#request-body" id="request-body"></a>
 
-<table><thead><tr><th width="217">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>value</code></td><td>Required</td><td>Approved or Denied.</td><td>Enumerated Type</td></tr><tr><td><code>reason</code></td><td>Optional</td><td>Reason for decision.</td><td>String</td></tr></tbody></table>
+<table><thead><tr><th width="217">Request body fields</th><th width="113">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>value</code></td><td>Required</td><td><code>Approved</code> or <code>Denied</code>.</td><td>Enumerated Type</td></tr><tr><td><code>reason</code></td><td>Optional</td><td>Reason for decision.</td><td>String</td></tr></tbody></table>
 
 ### Request Example <a href="#request-example.1" id="request-example.1"></a>
 

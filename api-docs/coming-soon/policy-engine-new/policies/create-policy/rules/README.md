@@ -1,6 +1,6 @@
 # Rules
 
-Every policy requires a rule to be specified. Upon every policy evaluation, the configuration specified in the rule will be used to determine whether the activity requires approval. Supported rules include:
+Every policy requires a rule to be specified. Upon policy evaluation, the configuration specified in the rule will be used to determine whether the activity requires approval. Supported rules include:
 
 * `AlwaysRequireApproval:` Always trigger policy approval.
 * `TransactionAmountLimit:` Trigger if transaction amount is greater than limit.
