@@ -162,7 +162,6 @@
   * [Get Webhook Event](api-docs/webhooks/get-webhook-event.md)
   * [List Webhook Events](api-docs/webhooks/list-webhook-events.md)
 * [Dfns Change Log](api-docs/dfns-change-log.md)
-* [Coming Soon](api-docs/coming-soon.md)
 * [Deprecated APIs](api-docs/deprecated-apis/README.md)
   * [Deprecated - Asset Accounts & Payments](api-docs/high-level-api-asset-accounts-and-payments/README.md)
     * [Asset Accounts](api-docs/deprecated-apis/high-level-api-asset-accounts-and-payments/asset-accounts/README.md)
