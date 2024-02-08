@@ -4,18 +4,18 @@
 
 Policies join [Policy Rules](../policy-rules/createpolicyrule.md) and [Policy Controls ](../policy-controls/createpolicycontrol.md)with an `activityKind` that determines which actions on the API may trigger a Policy Execution. These are the supported `activityKinds`:
 
-* `WalletsTransferAsset`: Examine Policy Rules when the [Transfer Assets from Wallet](../../wallets/transfer-asset-from-wallet.md) API is called
+* `WalletsTransferAsset`: Examine Policy Rules when the [Transfer Assets from Wallet](../../../wallets/transfer-asset-from-wallet.md) API is called
 
 For legacy Asset Accounts, use the following:&#x20;
 
-* `PaymentInitiation`: Examine Policy Rules when the [Initiate Payment](../../deprecated-apis/high-level-api-asset-accounts-and-payments/payments/initiatepayment.md) API is called.
-* `TransactionInitiation`: Examine Policy Rules when the [Broadcast Transaction](../../deprecated-apis/low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction/) API is called.
-* `CreatingSignature`: Examine Policy Rules when the [Create Signature](../../deprecated-apis/low-level-api-keys-and-transactions/transaction-execution/createsignature.md) API is called.
+* `PaymentInitiation`: Examine Policy Rules when the [Initiate Payment](../../high-level-api-asset-accounts-and-payments/payments/initiatepayment.md) API is called.
+* `TransactionInitiation`: Examine Policy Rules when the [Broadcast Transaction](../../low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction/) API is called.
+* `CreatingSignature`: Examine Policy Rules when the [Create Signature](../../low-level-api-keys-and-transactions/transaction-execution/createsignature.md) API is called.
 
 {% hint style="info" %}
-* User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+* User action signature required. See [User Action Signing](../../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions

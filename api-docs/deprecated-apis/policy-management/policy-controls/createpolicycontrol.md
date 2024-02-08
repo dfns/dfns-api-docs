@@ -8,9 +8,9 @@ Policy Controls determine how Policy Executions are handled. The type of policy 
 * More control kinds coming soon...
 
 {% hint style="info" %}
-* User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+* User action signature required. See [User Action Signing](../../../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -29,7 +29,7 @@ The following fields are common to all kinds of Policy Controls:
 
 Use the following fields in the nested `configuration` object to create a Policy Control which requires a specified number of approvals from a list of `Users:`
 
-<table data-header-hidden><thead><tr><th width="254">Request body fields</th><th width="113">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td>Request body fields</td><td>Required/Optional</td><td>Description</td><td>Type</td></tr><tr><td><code>kind</code></td><td>Required</td><td>Specify: "RequestApproval"</td><td>Enumerated Type</td></tr><tr><td><code>approverUsernames</code></td><td>Required</td><td>The user IDs of the designated approvers. See <a href="../../authentication/user-management/listUsers.md">List Users</a> to get IDs. (See Note below re: legacy authentication)</td><td>Array of Strings</td></tr><tr><td><code>timeoutInMinutes</code></td><td>Required</td><td>The amount of time in minutes after which the policy execution can no longer be approved.</td><td>Integer</td></tr><tr><td><code>numApprovals</code></td><td>Required</td><td>The number of required approvals. Must be less than or equal to the <code>approverUsernames array length.</code></td><td>Integer</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="254">Request body fields</th><th width="113">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td>Request body fields</td><td>Required/Optional</td><td>Description</td><td>Type</td></tr><tr><td><code>kind</code></td><td>Required</td><td>Specify: "RequestApproval"</td><td>Enumerated Type</td></tr><tr><td><code>approverUsernames</code></td><td>Required</td><td>The user IDs of the designated approvers. See <a href="../../../authentication/user-management/listUsers.md">List Users</a> to get IDs. (See Note below re: legacy authentication)</td><td>Array of Strings</td></tr><tr><td><code>timeoutInMinutes</code></td><td>Required</td><td>The amount of time in minutes after which the policy execution can no longer be approved.</td><td>Integer</td></tr><tr><td><code>numApprovals</code></td><td>Required</td><td>The number of required approvals. Must be less than or equal to the <code>approverUsernames array length.</code></td><td>Integer</td></tr></tbody></table>
 
 {% hint style="warning" %}
 Note: For legacy authentication, please specify an array of email addresses in the `approverUsernames` field like \["bob@example.com", "dan@example.com"]

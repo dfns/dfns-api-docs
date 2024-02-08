@@ -29,7 +29,7 @@ Initiates a payment in the provided `AssetSymbol`, instructing funds to be trans
 
 ## Triggers
 
-Policy Engine for [Policies](../../../policy-management/policies/createpolicy.md) with a `PaymentInitiation` `activityKind`.
+Policy Engine for [Policies](../../policy-management/policies/createpolicy.md) with a `PaymentInitiation` `activityKind`.
 
 ## Parameters <a href="#request-example.1" id="request-example.1"></a>
 

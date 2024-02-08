@@ -145,7 +145,7 @@ The Dfns change log documents changes to our product functionality made by our r
 ### Mar 14, 2023
 
 * Added blockchain indexing for SOL and XRP
-* Added `activityId` query string param to [List policy control executions](policy-management/policyexecution/listpolicycontrolexecutions.md)
+* Added `activityId` query string param to [List policy control executions](deprecated-apis/policy-management/policyexecution/listpolicycontrolexecutions.md)
 
 ### Mar 8, 2023
 
@@ -188,7 +188,7 @@ The Dfns change log documents changes to our product functionality made by our r
 ### Dec 15, 2022
 
 * Launched new `direction` and `status` query parameters on [ListPayments](deprecated-apis/high-level-api-asset-accounts-and-payments/payments/listpayments.md)
-* Fixed a bug in the `timeoutInMinutes` implementation in [PolicyControls](policy-management/policy-controls/createpolicycontrol.md)
+* Fixed a bug in the `timeoutInMinutes` implementation in [PolicyControls](deprecated-apis/policy-management/policy-controls/createpolicycontrol.md)
 
 ### Dec 7, 2022
 
@@ -237,5 +237,5 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Aug 30, 2022
 
-* Deployed filtering [policies](policy-management/policies/createpolicy.md) by public keys of wallets
+* Deployed filtering [policies](deprecated-apis/policy-management/policies/createpolicy.md) by public keys of wallets
 * Bug fix for Policy Control Execution bad activity types
