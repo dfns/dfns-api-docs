@@ -178,20 +178,37 @@ All chains support the `Native` transfer kind for their native cryptocurrency.  
 
 ### Tron <a href="#erc721-request-body" id="erc721-request-body"></a>
 
-Tron supports Trc10, Trc20, and Trc721 transfers using the following JSON body structure:&#x20;
+Tron supports `Trc10`, `Trc20`, and `Trc721` transfers using the following JSON body structures:&#x20;
 
 ```json
+// Trc10
 {
     "kind": "Trc10",
     "tokenId": "1005273",
     "to": "TADDx31pdCFfp3XrYxp6fQGbRxriYFLTrx",
     "amount": "1"
 }
+
+// Trc20
+{
+    "kind": "Trc20",
+    "contract": "TXLAQ63Xg1NAzckPwKHvzw7CSEmLMEqcdj",
+    "to": "TQJNezrbfJ3akrGgR7eM2fWyFpsKeM8wzN",
+    "amount": "1000"
+}
+
+// Trc721
+{
+    "kind": "Trc721",
+    "contract": "TKgnDMWHYmwH24REe9XnrnwcNCvtb53n8Q",
+    "to": "TQJNezrbfJ3akrGgR7eM2fWyFpsKeM8wzN",
+    "tokenId": "1"
+}
 ```
 
 ### Algorand
 
-Algorand supports Asa transfers using the following JSON body structure:&#x20;
+Algorand supports `Asa` transfers using the following JSON body structure:&#x20;
 
 ```json
 {
