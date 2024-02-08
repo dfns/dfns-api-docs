@@ -169,3 +169,36 @@ Transfer an asset out of the specified wallet to a destination address.
   "status": "Pending"
 }
 ```
+
+
+
+## Non-EVM Chain Transfers
+
+All chains support the `Native` transfer kind for their native cryptocurrency.  Chain specific standards are outlined below by chain.
+
+### Tron <a href="#erc721-request-body" id="erc721-request-body"></a>
+
+Tron supports Trc10, Trc20, and Trc721 transfers using the following JSON body structure:&#x20;
+
+```json
+{
+    "kind": "Trc10",
+    "tokenId": "1005273",
+    "to": "TADDx31pdCFfp3XrYxp6fQGbRxriYFLTrx",
+    "amount": "1"
+}
+```
+
+### Algorand
+
+Algorand supports Asa transfers using the following JSON body structure:&#x20;
+
+```json
+{
+    "kind": "Asa",
+    "assetId": "10458941",
+    "to": "FRZP423Y7MNMTG4OOLESESTPCFGGHZMY7QN462YEQAJK5H6EOMFHZG73UA",
+    "amount": "1"
+}
+```
+
