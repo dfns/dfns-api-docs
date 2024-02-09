@@ -28,6 +28,10 @@ Biconomy is a web3 infrastructure provider offering a full stack solution for AA
 
 Alchemy provides a wide variety of web3 infrastructure services, including their [Account Kit AA service](https://www.alchemy.com/account-kit).  Dfns has built a sample integration demonstrating a sponsored transaction on Sepolia using our viem wrapper which is available [here](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/libs/viem/alchemy-aa-gasless).   The Alchemy documentation for Dfns is also available [here](https://accountkit.alchemy.com/smart-accounts/signers/guides/dfns.html).&#x20;
 
+### ZeroDev
+
+ZeroDev is a 4337 provider offering Bundler and Paymaster services as described in [their docs](https://docs.zerodev.app/).  Dfns has built a sample integration demonstrating a sponsored transaction using our viem wrapper which is available [here](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/libs/viem/zerodev-aa-gasless).   Follow [their quickstart](https://docs.zerodev.app/sdk/getting-started/quickstart) to begin an integration.&#x20;
+
 ## Meta-Transactions (ERC-2771)
 
 Meta-transactions are an earlier attempt to enable sponsored transactions as specified in [ERC-2771](https://eips.ethereum.org/EIPS/eip-2771).  In this approach, end user transactions are forwarded off-chain to relayers that fund gas cost in exchange for a fee. The primary caveat is the target contract must support the standard by implementing the [ERC2771Context](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/metatx/ERC2771Context.sol) interface which replaces the built in msg.sender variable with a \_MsgSender() function.  This implementation extracts the original sender from the call data to prevent the relayer address from being used in its place.&#x20;
