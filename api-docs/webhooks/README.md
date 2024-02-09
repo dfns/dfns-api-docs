@@ -54,7 +54,7 @@ Here's an example of a Webhook Event of kind "`wallet.transfer.requested`" deliv
 }
 ```
 
-#### Supported Webhook Events
+### Supported Webhook Events
 
 Currently, here are the event kinds which webhooks can subscribe to ⬇️
 
@@ -79,7 +79,7 @@ wallet.transfer.confirmed
 wallet.blockchainevent.detected
 ```
 
-#### Event Data
+### Webhook Event Data
 
 Depending on its kind, every event holds `data` that corresponds to this kind. Here's an overview of what kind of `data` each event kind
 
@@ -154,7 +154,7 @@ Depending on its kind, every event holds `data` that corresponds to this kind. H
 
 
 
-#### Webhook Event Ordering <a href="#best-practices" id="best-practices"></a>
+### Webhook Event Ordering <a href="#best-practices" id="best-practices"></a>
 
 Dfns doesn’t guarantee delivery of events in the order in which they’re generated. For example, when a wallet [Transfer](../wallets/transfer-asset-from-wallet.md) is picked up on-chain by our blockchain indexers, we might generate the following events:
 
@@ -165,17 +165,31 @@ Your endpoint shouldn’t expect delivery of these events in this order, and nee
 
 
 
-#### Webhook Event Delivery & Retries
+### Webhook Event Deliveries & Retries
 
-As of now, if an event fails to be properly delivered to a webhook, we will not retry delivering it. That means that if your http server is not setup properly, of for some reason fails to properly receive an event, we won't retry to send the event.
+During an webhook event delivery attempt, if we cannot reach your webhook endpoint, or if your endpoint **returns anything else than a 200** status code in the response, we consider the delivery of this event has failed.
 
-It is in our plans to add a retry mechanism, though please be aware that this is not implemented yet.
+In such a case, Dfns is going to retry delivering it to your webhook, up to 5 total attempts over 24 hours, with an exponential backoff (delays from first attempt: 1m, 12min, 2h, 1d).
+
+Every event delivery attempt will create a new Webhook Event, with its own unique ID, containing the same `data` than the previous event which failed delivering. So in the [List Webhook Events](list-webhook-events.md) endpoint, every Webhook Event you will see is a unique delivery attempt (potentially of the same original event).
+
+The event that your webhook handler will receive (in your server), will include the attempt number in the payload (`deliveryAttempt: 1` for the first attempt). Also, if it includes the field `retryOf: "whe-xxxxxxx"` , it indicates that this event you are receiving, is a "retry of" a previous Webhook Event which failed delivering.
+
+Additionally, if you fetch Webhook Events we tried delivering, using the [List Webhook Events](list-webhook-events.md) or [Get Webhook ](get-webhook-event.md), you will be able to see the `deliveryFailed` boolean field indicating if delivery succeeded or not, as well as the `nextAttemptDate: "2024-01-24-xxxxxx"` date showing you around which time the next delivery attempt to your webhook will occur (if delivery failed).
+
+If you want to fetch all Webhook Events which failed delivering to your webhook, you can use the [List Webhook Events](list-webhook-events.md) with the query parameter `deliveryFailed=true`. And amongst all those returned, you can see those which failed delivering, and will not retry in future (because reached maximum retry attempt), by filtering those which have no `nextAttemptDate` .
 
 
 
 ## Webhooks best practices <a href="#best-practices" id="best-practices"></a>
 
-Review these best practices to make sure your webhooks remain secure and function well.
+Review these best practices to make sure your Webhooks remain secure and work properly.
+
+#### Respond quickly with a 200 <a href="#verify-events" id="verify-events"></a>
+
+The webhook event handler defined on your server, when it receives a new event from Dfns, should be quick to handle it, and return quickly a `200` status code to indicate that the event was indeed delivered. If your handler expects to do some processing taking longer than a few seconds, you should consider adding this to a queue for processing on your side. Otherwise the request delivering the event might timeout.
+
+Also, your handler should catch any error that happens on your side, so it still respond with a `200` response to Dfns, indicating that you received it already, otherwise the same event might be retried a few times and fail all the same.
 
 #### Verify events are sent from Dfns <a href="#verify-events" id="verify-events"></a>
 
