@@ -179,6 +179,8 @@ Additionally, if you fetch Webhook Events we tried delivering, using the [List W
 
 If you want to fetch all Webhook Events which failed delivering to your webhook, you can use the [List Webhook Events](list-webhook-events.md) with the query parameter `deliveryFailed=true`. And amongst all those returned, you can see those which failed delivering, and will not retry in future (because reached maximum retry attempt), by filtering those which have no `nextAttemptDate` .
 
+If your webhook has been disabled or deleted when Dfns attempts a retry, future retries of that event are prevented. However, if you disable and then re-enable a webhook endpoint before Dfns can retry, you can still expect to see future retry attempts.
+
 
 
 ## Webhooks best practices <a href="#best-practices" id="best-practices"></a>
