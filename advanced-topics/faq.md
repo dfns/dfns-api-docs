@@ -50,7 +50,7 @@ So the more practical approach, is rather to have this flow be orchestrated by y
 6. App B creates a new passkey (Credential B) on device B, and signs `challenge-1` with it. It sends the signed attestation and data to your server.
 7. Your server initiates the user action flow, to sign the credential addition with the existing Credential A (using the Delegated API Client of the SDK, the method `createUserCredentialInit`, the endpoint reached is `POST /auth/action/init` ). The Dfns Application used for this call should be App A (`appId` passed to the Delegated API Client should be the ID of App A).
 8. Dfns responds with a User Action Challenge (`challenge-2`). Your server forwards it to app A on device A, to be signed by credential A (eg if app A is a mobile app, you can show a push notification saying “do you confirm creation of new credential for device B ?“)
-9. on Devide A, user signs user action challenge (`challenge-2`) with fingerprint/face ID/ whatever webauthN supports there, and then sends it to your server.
+9. on Device A, user signs user action challenge (`challenge-2`) with fingerprint/face ID/ whatever webauthN supports there, and then sends it to your server.
 10. Your server forwards this user action signature to Dfns, using the Delegated Api Client, calling the method `createUserCredentialComplete` (which calls both the `POST /auth/action` followed by the final `POST /auth/credentials` ). The Dfns Application used for this call should still be App A (`appId` passed to the Delegated API Client should be the ID of App A). This completes credential B creation.
 11. From this point on, the user ends up with two devices, and one passkey credential on each phone&#x20;
 
