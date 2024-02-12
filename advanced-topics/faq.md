@@ -54,7 +54,9 @@ So the more practical approach, is rather to have this flow be orchestrated by y
 10. Your server forwards this user action signature to Dfns, using the Delegated Api Client, calling the method `createUserCredentialComplete` (which calls both the `POST /auth/action` followed by the final `POST /auth/credentials` ). The Dfns Application used for this call should still be App A (`appId` passed to the Delegated API Client should be the ID of App A). This completes credential B creation.
 11. From this point on, the user ends up with two devices, and one passkey credential on each phone&#x20;
 
+This sequence diagram illustrates this flow:
 
+<figure><img src="../.gitbook/assets/Register Cred other App.png" alt=""><figcaption><p>Multi-App credential creation flow</p></figcaption></figure>
 
 ## Delegated Signing
 
