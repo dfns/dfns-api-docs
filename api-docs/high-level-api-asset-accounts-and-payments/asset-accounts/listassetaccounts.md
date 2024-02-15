@@ -35,7 +35,7 @@ Retrieves all `AssetAccounts` belonging to the Org.
          "dateUpdate": "2022-07-13T17:32:56.106Z",
          "name": "Test account",
          "id": "aa-iowa-washington-7a99aa2fd5",
-         "publicKey": "xkeypub1addwnpepq2pqd7ethr4kn7yuj0z4ul80q0ml5jv6y8lgfzheltllu6y3e93j25we5nk",
+         "publicKey": "pk-alask-fille-xxxxxxxxxxxxxxxx",
          "orgId": "cu-purple-pip-1b417b958500",
          "status": "Enabled"
       }, 
