@@ -25,7 +25,7 @@ Creates new `AssetAccount` entity associated with a specific `assetSymbol` (such
 
 ## Request body <a href="#request-body" id="request-body"></a>
 
-<table><thead><tr><th width="211">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>assetSymbol</code></td><td>Required</td><td>Currency symbol and network. Format is &#x3C;SYMBOL>[.&#x3C;NETWORK>]. See <a href="../../deprecated-apis/high-level-api-asset-accounts-and-payments/dfns-api-enumerated-types.md">Enumerated Types</a> for a full list of valid values.</td><td>String</td></tr><tr><td><code>name</code></td><td>Optional</td><td>Human readable name for the asset account</td><td>String</td></tr><tr><td><code>publicKey</code></td><td>Optional</td><td>You can associate more than one asset account with the same public key by passing the public key ID (starting with "pk-...") into this optional body parameter.</td><td>String</td></tr></tbody></table>
+<table><thead><tr><th width="211">Request body fields</th><th width="111">Required/Optional</th><th width="268">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>assetSymbol</code></td><td>Required</td><td>Currency symbol and network. Format is &#x3C;SYMBOL>[.&#x3C;NETWORK>]. See <a href="../../deprecated-apis/high-level-api-asset-accounts-and-payments/dfns-api-enumerated-types.md">Enumerated Types</a> for a full list of valid values.</td><td>String</td></tr><tr><td><code>name</code></td><td>Optional</td><td>Human readable name for the asset account</td><td>String</td></tr></tbody></table>
 
 ## Request example <a href="#request-example.1" id="request-example.1"></a>
 
@@ -53,6 +53,3 @@ In most cases, the initial status should be set to "Creating". Call [GetAssetAcc
 }
 ```
 
-## Notes <a href="#notes" id="notes"></a>
-
-Distributed key generation (DKG) is computationally heavy for [ECDSA](https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm) keys. When clusters are first deployed, this process can take around 30 seconds. Signers build a pool of primes over time to mitigate API latency. That said, please do not create keys in bulk using a script without talking to us first. Thanks!
