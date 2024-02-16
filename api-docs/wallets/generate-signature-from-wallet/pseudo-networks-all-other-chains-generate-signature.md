@@ -21,7 +21,7 @@ All cryptographic scheme support hash signing.  Note ECDSA with secp256k1 or Sta
 ```shell
 {
   "kind": "Hash",
-  "hash": "031edd7d41651593c5fe5c006fa5752b37fddff7bc4e843aa6af0c950f4b9406"
+  "hash": "0x031edd7d41651593c5fe5c006fa5752b37fddff7bc4e843aa6af0c950f4b9406"
 }
 ```
 
@@ -39,14 +39,13 @@ All cryptographic scheme support hash signing.  Note ECDSA with secp256k1 or Sta
   },
   "requestBody": {
     "kind": "Hash",
-    "hash": "031edd7d41651593c5fe5c006fa5752b37fddff7bc4e843aa6af0c950f4b9406"
+    "hash": "0x031edd7d41651593c5fe5c006fa5752b37fddff7bc4e843aa6af0c950f4b9406"
   },
   "status": "Signed",
     "signature": {
         "r": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c",
         "s": "0x47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f14a63da7ce5a1fe",
         "recid": 0,
-        "encoded": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f10000000000000000"
     },
   "dateRequested": "2023-05-15T20:21:11.576Z",
   "dateSigned": "2024-01-10T19:07:40.533Z"
@@ -92,9 +91,7 @@ In addition to the `Hash` method shown above, EdDSA also supports signing `Messa
   "status": "Signed",
     "signature": {
         "r": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c",
-        "s": "0x47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f14a63da7ce5a1fe",
-        "recid": 0,
-        "encoded": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f10000000000000000"
+        "s": "0x47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f14a63da7ce5a1fe"
     },
   "dateRequested": "2023-05-15T20:21:11.576Z",
   "dateSigned": "2024-01-10T19:07:40.533Z"
