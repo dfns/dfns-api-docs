@@ -61,13 +61,13 @@ Example:
 
 ### Key Credential
 
-|                                                                     |          |                                                                                                                                                                                                   |
-| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `Key`                                                                                                                                                                              |
-| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                                                                                   |
-| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential                                                                                                                                                            |
-| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | [Client Data](../../../advanced-topics/authentication/request-signing.md#client-data-format) JSON object, stringified and base64url-encoded                                                       |
-| `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Credential Assertion](../../../advanced-topics/authentication/credentials/user-credentials.md#credential-assertion) JSON string object with the users signature and public key |
+|                                                                     |          |                                                                                                                                                                          |
+| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `Key`                                                                                                                                                     |
+| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                                                          |
+| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential                                                                                                                                   |
+| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | [Client Data](../../../advanced-topics/authentication/api-objects.md#key-credential) JSON object, stringified and base64url-encoded                                      |
+| `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Attestation Data ](../../../advanced-topics/authentication/api-objects.md#key-credential-1)JSON string object with the users signature and public key |
 
 Example:
 
@@ -76,9 +76,9 @@ Example:
   "firstFactorCredential":{
     "credentialKind":"Key",
     "credentialInfo":{
-      "credId":"6Ca6tAOFTx2odyJBnCoRO-gPvfpfy0EOoOcEaxfxIOk",
-      "clientData":"eyJ0eXBlIjoia2V5LmNyZWF0ZSIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",
-      "attestationData":"WT-zFZUBbJHfBkmhzTlPf49LTn7asLeTQKhm_riCvFgFAAAAAA"
+      "credId":"b215MVzsyKahdGIvTQm3kQhzxB_sN5sFPLdPBRocxOA=",
+      "clientData":"eyJjaGFsbGVuZ2UiOiJZMmd0Tm1Oc2RHTXRiV05sWTNZdE9XRTRPV2QxYnpKd1lqYzBOVEp4Y2ciLCJjcm9zc09yaWdpbiI6ZmFsc2UsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLmRmbnMud3RmIiwidHlwZSI6ImtleS5jcmVhdGUifQ==",
+      "attestationData":"eyJjaGFsbGVuZ2UiOiJZMmd0Tm1Oc2RHTXRiV05sWTNZdE9XRTRPV2QxYnpKd1lqYzBOVEp4Y2ciLCJjcm9zc09yaWdpbiI6ZmFsc2UsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLmRmbnMud3RmIiwidHlwZSI6ImtleS5jcmVhdGUifQ=="
     }
   }
 }
@@ -86,14 +86,14 @@ Example:
 
 ### Recovery Credential
 
-|                                                                     |          |                                                                                                                                                                                                    |
-| ------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `RecoveryKey`                                                                                                                                                                       |
-| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                                                                                    |
-| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential                                                                                                                                                             |
-| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | [Client Data](../../../advanced-topics/authentication/request-signing.md#client-data-format) JSON object, stringified and base64url-encoded                                                        |
-| `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Credential Assertion](../../../advanced-topics/authentication/credentials/user-credentials.md#credential-assertion) JSON string object with the user's signature and public key |
-| `encryptedPrivateKey`                                               | `String` | `Optional` encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns                                                    |
+|                                                                     |          |                                                                                                                                                                           |
+| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `RecoveryKey`                                                                                                                                              |
+| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                                                           |
+| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential                                                                                                                                    |
+| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | [Client Data](../../../advanced-topics/authentication/api-objects.md#key-credential) JSON object, stringified and base64url-encoded                                       |
+| `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Attestation Data](../../../advanced-topics/authentication/api-objects.md#key-credential-1) JSON string object with the user's signature and public key |
+| `encryptedPrivateKey`                                               | `String` | `Optional` encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns                           |
 
 Example:
 
@@ -104,7 +104,7 @@ Example:
     "credentialInfo":{
       "credId":"c1QEdgnPLJargwzy3cbYKny4Q18u0hr97unXsF3DiE8",
       "clientData":"eyJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIiwiY2hhbGxlbmdlIjoiTVdNME1tWTVZVFEwTURSaU56ZGhOVEZoTnpZNU9EUXdOV0k1WlRRNFkyUmhPRFppTkRrM1pUWXpPVEU1T0dZeU1EY3haakJqWXprNE1tUTVZelkxTUEiLCJvcmlnaW4iOiJodHRwczovL2FwcC5kZm5zLm5pbmphIiwiY3Jvc3NPcmlnaW4iOmZhbHNlfQ",
-      "attestationData":"WT-zFZUBbJHfBkmhzTlPf49LTn7asLeTQKhm_riCvFgFAAAAAA"
+      "attestationData":"eyJjaGFsbGVuZ2UiOiJZMmd0Tm1Oc2RHTXRiV05sWTNZdE9XRTRPV2QxYnpKd1lqYzBOVEp4Y2ciLCJjcm9zc09yaWdpbiI6ZmFsc2UsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLmRmbnMud3RmIiwidHlwZSI6ImtleS5jcmVhdGUifQ"
     }
   },
   "recoveryCredential":{
@@ -112,7 +112,7 @@ Example:
     "credentialInfo":{
       "credId":"GMkW0zlmcoMxI1OX0Z96LL_Mz7dgeu6vOH5_TOeGyNk",
       "clientData":"eyJ0eXBlIjoia2V5LmNyZWF0ZSIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",
-      "attestationData":"Wsdz5810zjVJEyEtx9jYU0dizfhIkdu9AOGl2kYtcBusAPsfjdncE6zKW8ms_VkhJ6Hw4HDfcYj5FHcdM-C4CA"
+      "attestationData":"eyJwdWJsaWNLZXkiOiItLS0tLUJFR0lOIFBVQkxJQyBLRVktLS0tLVxuTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFOWNHMm1FNERXSGJ3d2xMUlNLQkxaOW02K1FzQ1xuZU9xV0poMXg1VnZSSFpNYVBMUWxScmhoZ2JIbTh1bmE0aDhTK0w1bzhzVjhIdnVqYmwzTXJBVGozUT09XG4tLS0tLUVORCBQVUJMSUMgS0VZLS0tLS1cbiIsInNpZ25hdHVyZSI6IjMwNDYwMjIxMDBiZjBjZGU3ZGIyODQ0ZDhmOTIyZWQyOTNmN2E4NTVjM2U1Y2YzMjUxZjFhY2Q3M2I4MjNiNWZiOTIzZDNiY2FiMDIyMTAwY2YxM2U2ZDliY2ZiMjc3M2Q5ZDkyMDU4M2YwMWE0ODAyYmI4OTg5Y2NmZjMzNjJkYzJmN2U1ZjRmMTQzZjA2ZiJ9"
     },
     "encryptedPrivateKey":"LsXVskHYqqrKKxBC9KvqStLEmxak5Y7NaboDDlRSIW7evUJpQTT1AYvx0EsFskmriaVb3AjTCGEv7gqUKokml1USL7+dVmrUVhV+cNWtS5AorvRuZr1FMGVKFkW1pKJhFNH2e2O661UhpyXsRXzcmksA7ZN/V37ZK7ITue0gs6I="
   }

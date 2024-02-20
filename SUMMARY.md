@@ -24,6 +24,7 @@
     * [Access Token Credentials](advanced-topics/authentication/credentials/access-token-credentials.md)
     * [Storing WebAuthn Credentials in Password Managers](advanced-topics/authentication/credentials/storing-webauthn-credentials-in-password-managers.md)
   * [Request Signing](advanced-topics/authentication/request-signing.md)
+  * [API objects](advanced-topics/authentication/api-objects.md)
 * [Delegated Signing](advanced-topics/delegated-signing.md)
 * [FAQ](advanced-topics/faq.md)
 

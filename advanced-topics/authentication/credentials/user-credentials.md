@@ -4,7 +4,7 @@ Users can register with a WebAuthn Credential (aka "Passkey") or with a raw Publ
 
 ## Private Key Credentials
 
-When reigstering a user with a private key, you need to:
+When registering a user with a private key, you need to:
 
 1. Get a registration challenge from the Dfns API
 2. Create the key pair locally
@@ -31,68 +31,15 @@ In all cases the challenge format is the same. You will recieve an object with t
 
 The user signs the challenge to prove they are in possession of the key being registered. The user will also sign the public key to ensure the key is not replaced when transmitted to Dfns.
 
-#### Client Data Format
+#### Client Data
 
-Before signing the challenge, the user will format the challenge into an object which includes additional properties. This object contains the following fields:
+The user needs to format the challenge into a [Client Data object](../api-objects.md#key-credential).
 
-| Field         | Type    | Description                                                                                         |
-| ------------- | ------- | --------------------------------------------------------------------------------------------------- |
-| `type`        | string  | Will always be `key.create` when creating a new credential, which includes registering a user       |
-| `challenge`   | string  | A base64url encoded version of the challenge                                                        |
-| `origin`      | string  | The origin in which the app is being executed                                                       |
-| `crossOrigin` | boolean | A flag indicating if the current call is running cross origin; in most cases this should be `false` |
+#### Attestation Data
 
-After creating this object, the user will convert the object to a JSON string, hash the string, and create another structure with the following fields:
+The client data object is then used to build the [Attestation Data object](../api-objects.md#key-credential-1).
 
-| Field            | Type   | Description                                                                       |
-| ---------------- | ------ | --------------------------------------------------------------------------------- |
-| `clientDataHash` | string | The hex encoded SHA-256 hash of the clientData object                             |
-| `publicKey`      | string | The PEM formatted public key that corresponds to the private key being registered |
-
-This object is then converted to a JSON string, and signed with the user's private key.
-
-#### Signing Example
-
-```typescript
-keyOrPasswordClientData: {
-  type: 'key.create',
-  challenge: challenge,
-  origin: this.appOrigin,
-  crossOrigin: false,
-}
-
-const clientData = Buffer.from(JSON.stringify(supportedCredentials.credentialData.keyOrPasswordClientData))
-const signaturePayload = Buffer.from(JSON.stringify({
-  clientDataHash: crypto.createHash('sha256').update(clientData).digest('hex'),
-  publicKey: newKey.publicKey,
-}))
-const signature = crypto.sign(undefined, signaturePayload, newKey.privateKey)
-```
-
-#### Credential Assertion
-
-When returning the credential to the server the `public key`, `signature`, and the `signing algorithm` will be returned to the server. This object contains the following fields:
-
-| Field       | Type   | Description                                                                                                                                                                                                                                                                              |
-| ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `publicKey` | string | PEM encoded public key that can be used to verify the signature for the credential                                                                                                                                                                                                       |
-| `signature` | string | The signature produced by signing clientData with the credentials private key, using the algorithm specified in `algorithm`. Needs to be encoded as a hex string                                                                                                                         |
-| `algorithm` | string | <p><code>Optional</code> The algorithm/digest that the credential will use to sign data. If the algoritm is not specified the algorithm will be determined by the key. Can be one of the following choices:<br><code>RSA-SHA256</code><br><code>SHA256</code><br><code>SHA512</code></p> |
-
-#### Recovery Client Data Format
-
-Before signing the recovery challenge, the user will format the challenge into an object which includes additional properties. This object contains the following fields:
-
-| Field         | Type    | Description                                                                                         |
-| ------------- | ------- | --------------------------------------------------------------------------------------------------- |
-| `type`        | string  | Will always be `key.get` when creating a new credential, which includes registering a user          |
-| `challenge`   | string  | A base64url encoded JSON object containing the user new credentials                                 |
-| `origin`      | string  | The origin in which the app is being executed                                                       |
-| `crossOrigin` | boolean | A flag indicating if the current call is running cross origin; in most cases this should be `false` |
-
-This object is then converted to a JSON string, and signed with the user's private key.
-
-#### Recovery Signing Example
+#### Signing Example: First factor and Recovery credentials:
 
 ```typescript
 recoveryClientData = {
@@ -103,7 +50,7 @@ recoveryClientData = {
       "credentialInfo":{
         "credId":"6Ca6tAOFTx2odyJBnCoRO-gPvfpfy0EOoOcEaxfxIOk",
         "clientData":"eyJ0eXBlIjoia2V5LmNyZWF0ZSIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",
-        "attestationData":"WT-zFZUBbJHfBkmhzTlPf49LTn7asLeTQKhm_riCvFgFAAAAAA"
+        "attestationData":"eyJwdWJsaWNLZXkiOiAiLS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS1cbk1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRTljRzJtRTREV0hid3dsTFJTS0JMWjltNitRc0NcbmVPcVdKaDF4NVZ2UkhaTWFQTFFsUnJoaGdiSG04dW5hNGg4UytMNW84c1Y4SHZ1amJsM01yQVRqM1E9PVxuLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tXG4iLCJzaWduYXR1cmUiOiIzMDQ2MDIyMTAwOGUwMTA5ODQ4YzZmYzgzMDA0ZDBlNmM3ZmRhYzcxZGFlODUyNGZjNWEyOTA4MWQwMTJmODY1NDE2OTg2Y2UyOTAyMjEwMGY0N2UxYmVlNmM1MTc1YzQ0ODhiMTQzYzkzNmM2OGZhYzFhZTdlNzkzMWU3NmM2NzdkNDYzMzFlZDE0OWQxN2QifQ"
       }
     },
     "recoveryCredential":{
@@ -111,7 +58,7 @@ recoveryClientData = {
       "credentialInfo":{
         "credId":"GMkW0zlmcoMxI1OX0Z96LL_Mz7dgeu6vOH5_TOeGyNk",
         "clientData":"eyJ0eXBlIjoia2V5LmNyZWF0ZSIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",
-        "attestationData":"Wsdz5810zjVJEyEtx9jYU0dizfhIkdu9AOGl2kYtcBusAPsfjdncE6zKW8ms_VkhJ6Hw4HDfcYj5FHcdM-C4CA"
+        "attestationData":"eyJwdWJsaWNLZXkiOiItLS0tLUJFR0lOIFBVQkxJQyBLRVktLS0tLVxuTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFOWNHMm1FNERXSGJ3d2xMUlNLQkxaOW02K1FzQ1xuZU9xV0poMXg1VnZSSFpNYVBMUWxScmhoZ2JIbTh1bmE0aDhTK0w1bzhzVjhIdnVqYmwzTXJBVGozUT09XG4tLS0tLUVORCBQVUJMSUMgS0VZLS0tLS1cbiIsInNpZ25hdHVyZSI6IjMwNDYwMjIxMDBiZjBjZGU3ZGIyODQ0ZDhmOTIyZWQyOTNmN2E4NTVjM2U1Y2YzMjUxZjFhY2Q3M2I4MjNiNWZiOTIzZDNiY2FiMDIyMTAwY2YxM2U2ZDliY2ZiMjc3M2Q5ZDkyMDU4M2YwMWE0ODAyYmI4OTg5Y2NmZjMzNjJkYzJmN2U1ZjRmMTQzZjA2ZiJ9"
       },
       "encryptedPrivateKey":"LsXVskHYqqrKKxBC9KvqStLEmxak5Y7NaboDDlRSIW7evUJpQTT1AYvx0EsFskmriaVb3AjTCGEv7gqUKokml1USL7+dVmrUVhV+cNWtS5AorvRuZr1FMGVKFkW1pKJhFNH2e2O661UhpyXsRXzcmksA7ZN/V37ZK7ITue0gs6I="
     }
