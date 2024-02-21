@@ -154,13 +154,7 @@ Generates the signature for typed structured data defined in [EIP-712](https://e
 
 **Eip712Domain**
 
-| field               | Required/Optional | Description                                                 | Type    |
-| ------------------- | ----------------- | ----------------------------------------------------------- | ------- |
-| `name`              | Optional          | Name of the signing domain.                                 | String  |
-| `version`           | Optional          | Current major version of the signing domain.                | String  |
-| `chainId`           | Optional          | Chain ID.                                                   | Integer |
-| `verifyingContract` | Optional          | The address of the contract that will verify the signature. | String  |
-| `salt`              | Optional          | 32-byte value as a last-resort domain separator.            | String  |
+<table><thead><tr><th width="222">field</th><th>Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Optional</td><td>Name of the signing domain.</td><td>String</td></tr><tr><td><code>version</code></td><td>Optional</td><td>Current major version of the signing domain.</td><td>String</td></tr><tr><td><code>chainId</code></td><td>Optional</td><td>Chain ID.</td><td>Integer</td></tr><tr><td><code>verifyingContract</code></td><td>Optional</td><td>The address of the contract that will verify the signature.</td><td>String</td></tr><tr><td><code>salt</code></td><td>Optional</td><td>32-byte value as a last-resort domain separator.</td><td>String</td></tr></tbody></table>
 
 #### Sample request body <a href="#sample-eip712-request" id="sample-eip712-request"></a>
 
