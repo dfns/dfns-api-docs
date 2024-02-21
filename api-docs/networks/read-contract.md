@@ -1,6 +1,6 @@
 # Read Contract
 
-`POST /networks/`read-contract
+`POST /networks/read-contract`
 
 Calls a read-only function on a smart contract. In Solidity, these use the `view` keyword.  Note: Currently only works on EVM compatible chains.&#x20;
 
