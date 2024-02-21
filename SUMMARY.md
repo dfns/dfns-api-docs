@@ -127,6 +127,7 @@
     * [Export Wallet](api-docs/wallets/advanced-wallet-apis/export-wallet.md)
 * [Networks](api-docs/networks/README.md)
   * [Estimate fees](api-docs/networks/estimate-fees.md)
+  * [Read Contract](api-docs/networks/call-read-function.md)
 * [Policy Engine](api-docs/policy-engine/README.md)
   * [Policies](api-docs/policy-engine/policies/README.md)
     * [Create Policy](api-docs/policy-engine/policies/create-policy/README.md)
