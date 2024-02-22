@@ -2,7 +2,11 @@
 
 `POST /auth/users`
 
-Create a new user in the caller's org. The user is created without any permissions.
+Create a new user in the caller's org. This will also send an registration email to the created User's email, with a registration code, and pointing him to complete his registration on Dfns Dashboard. The user is created without any permissions.
+
+{% hint style="warning" %}
+If you want the created User to not know about about Dfns, and don't want him to receive the registration email from Dfns, you should rather use the [Delegated Registration](../delegated-auth/delegatedregistration.md) endpoint.
+{% endhint %}
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../user-action-signing/) for more information.
