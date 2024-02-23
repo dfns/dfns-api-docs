@@ -1,4 +1,4 @@
-# Bitcoin: Generate Signature
+# Bitcoin/Litecoin: Generate Signature
 
 ## Request <a href="#request-body" id="request-body"></a>
 

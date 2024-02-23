@@ -1,4 +1,4 @@
-# Bitcoin: Broadcast Transaction
+# Bitcoin/Litecoin: Broadcast Transaction
 
 ## Request <a href="#request-body" id="request-body"></a>
 
