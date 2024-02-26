@@ -1,4 +1,8 @@
-# Deprecated - Policy Engine
+# Deprecated - Policy Engine v1
+
+{% hint style="danger" %}
+Please use our latest [Policy Engine](../../policy-engine/)
+{% endhint %}
 
 Policies enable businesses to enforce rules and controls on top of actions taken using the Dfns API.
 
