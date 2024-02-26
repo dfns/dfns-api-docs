@@ -14,13 +14,13 @@ Receiving webhook events are particularly useful for listening to asynchronous e
 
 ## Webhook Events
 
-When an event happen in the system, which a Webhook subscribed to, we create a Webhook Event object, containing some data around the event that happened, which we:&#x20;
+When an event occurs in the system which a Webhook is subscribed to, we create a Webhook Event object containing data around the event that happened.  We then:&#x20;
 
-1. send to your Webhook endoint
-2. keep a trace of so you can later check all Webhook Events sent to your webhooks (through [List Webhook Events](list-webhooks.md) or [Get Webhook Event](get-webhook-event.md) endpoints)
+1. Send the event to your Webhook endpoint
+2. Capture a trace of the event so you can later check all Webhook Events sent to your webhooks (through [List Webhook Events](list-webhooks.md) or [Get Webhook Event](get-webhook-event.md) endpoints)
 
 {% hint style="warning" %}
-We only keep a trace of those Webhook Events in our system for a **retention period of 31 days**. Past that, they are discarded, so you cannot see them using [List Webhook Events](list-webhook-events.md) or [Get Webhook Event](get-webhook-event.md) endpoints.
+We only keep a trace of Webhook Events in our system for a **retention period of 31 days**. Past that, they are discarded, so you cannot see them using [List Webhook Events](list-webhook-events.md) or [Get Webhook Event](get-webhook-event.md) endpoints.
 {% endhint %}
 
 Here's an example of a Webhook Event of kind "`wallet.transfer.requested`" delivered to your webhook:
@@ -58,26 +58,7 @@ Here's an example of a Webhook Event of kind "`wallet.transfer.requested`" deliv
 
 Currently, here are the event kinds which webhooks can subscribe to ⬇️
 
-```
-wallet.created
-wallet.exported
-wallet.delegated
-wallet.signature.requested
-wallet.signature.failed
-wallet.signature.rejected
-wallet.signature.signed
-wallet.transaction.requested
-wallet.transaction.failed
-wallet.transaction.rejected
-wallet.transaction.broadcasted
-wallet.transaction.confirmed
-wallet.transfer.requested
-wallet.transfer.failed
-wallet.transfer.rejected
-wallet.transfer.broadcasted
-wallet.transfer.confirmed
-wallet.blockchainevent.detected
-```
+<table><thead><tr><th width="357">Event Enum</th><th>Description</th></tr></thead><tbody><tr><td><code>policy.approval.pending</code></td><td>A <a href="../policy-engine/approvals/">policy approval request</a> has been triggered</td></tr><tr><td><code>policy.approval.resolved</code></td><td>A <a href="../policy-engine/approvals/">policy approval request</a> has been approved or rejected</td></tr><tr><td><code>wallet.blockchainevent.detected</code></td><td>A wallet event has been detected on chain (eg. a deposit).  Note: This is only available for <a href="https://docs.dfns.co/d/api-docs/wallets#tier-1-vs-tier-2-support">Tier-1 chains</a>. </td></tr><tr><td><code>wallet.created</code></td><td>A wallet has been <a href="../wallets/create-wallet/">created</a>. </td></tr><tr><td><code>wallet.exported</code></td><td>A wallet has been <a href="../wallets/advanced-wallet-apis/export-wallet.md">exported</a>. </td></tr><tr><td><code>wallet.delegated</code></td><td>A wallet has been <a href="../wallets/delegate-wallet.md">delegated</a>. </td></tr><tr><td><code>wallet.signature.requested</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request has been created.</td></tr><tr><td><code>wallet.signature.failed</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request has failed to process.</td></tr><tr><td><code>wallet.signature.rejected</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request with a policy approval has been rejected.</td></tr><tr><td><code>wallet.signature.signed</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request has completed.</td></tr><tr><td><code>wallet.transaction.requested</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet.md">broadcast transaction</a> request has been created.</td></tr><tr><td><code>wallet.transaction.failed</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet.md">broadcast transaction</a> request has failed to process.</td></tr><tr><td><code>wallet.transaction.rejected</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet.md">broadcast transaction</a> request with a policy approval has been rejected.</td></tr><tr><td><code>wallet.transaction.broadcasted</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet.md">broadcast transaction</a> request has been submitted to the mempool.</td></tr><tr><td><code>wallet.transaction.confirmed</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet.md">broadcast transaction</a> request has been confirmed on chain.  Note: This is only available for <a href="https://docs.dfns.co/d/api-docs/wallets#tier-1-vs-tier-2-support">Tier-1 chains</a>. </td></tr><tr><td><code>wallet.transfer.requested</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has been created.</td></tr><tr><td><code>wallet.transfer.failed</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has failed to process.</td></tr><tr><td><code>wallet.transfer.rejected</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request with a policy approval has been rejected.</td></tr><tr><td><code>wallet.transfer.broadcasted</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has been submitted to the mempool.</td></tr><tr><td><code>wallet.transfer.confirmed</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has been confirmed on chain.  Note: This is only available for <a href="https://docs.dfns.co/d/api-docs/wallets#tier-1-vs-tier-2-support">Tier-1 chains</a>. </td></tr></tbody></table>
 
 ### Webhook Event Data
 
