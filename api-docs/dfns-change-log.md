@@ -6,7 +6,25 @@ description: Change log detailing feature releases
 
 The Dfns change log documents changes to our product functionality made by our releases. This includes new features, breaking changes, bug fixes to known issues, deprecations, etc. Please bookmark this page and refresh frequently for the latest updates.
 
+### Feb 21, 2024
 
+* Launched new [Read Contract endpoint](https://docs.dfns.co/d/api-docs/networks/read-contract) for FIL
+* Launched Litecoin Tier1&#x20;
+
+### Feb 14, 2024
+
+* New support for WebAuthn across subdomains
+
+### Feb 7, 2024
+
+* [Policy Engine v2](https://docs.dfns.co/d/api-docs/policy-engine) released
+* [Tron and Algorand T1 wallets support](https://docs.dfns.co/d/api-docs/wallets#supported-networks)
+* [Retries on webhooks](https://docs.dfns.co/d/api-docs/webhooks#webhook-event-deliveries-and-retries) live&#x20;
+
+### Jan 24, 2024
+
+* New [network fees](networks/estimate-fees.md) API released
+* Renamed Ripple to XrpLedger
 
 ### Jan 17, 2024
 
