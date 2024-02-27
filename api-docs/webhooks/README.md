@@ -64,6 +64,21 @@ Currently, here are the event kinds which webhooks can subscribe to ⬇️
 
 Depending on its kind, every event holds `data` that corresponds to this kind. Here's an overview of what kind of `data` each event kind
 
+* For `policy.approval.pending` and `policy.approval.resolved`, see the [List Approvals response](https://docs.dfns.co/d/api-docs/policy-engine/approvals/list-approvals#response-example):
+
+{% code title="data" %}
+```json
+{ // Approval object
+  "approval": {      
+    "activityId": "cr-2100g-xxxxxxxxx",
+    ...
+  }
+}
+```
+{% endcode %}
+
+
+
 * For `wallet.created`, `wallet.exported`, `wallet.delegated` see the [Get Wallet response](https://docs.dfns.co/d/api-docs/wallets/get-wallet-by-id#response):
 
 {% code title="data" %}
