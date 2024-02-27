@@ -15,21 +15,22 @@ Starts a user action signing session, returning a challenge that will be used to
 The permissions apply to the application only.
 {% endhint %}
 
-| Name                  | Conditions                        |
-| --------------------- | --------------------------------- |
-| `Auth:Action:Sign`    | Always Required                   |
+| Name               | Conditions      |
+| ------------------ | --------------- |
+| `Auth:Action:Sign` | Always Required |
 
 ## Request body
 
-| | | |
-| - | - | - |
-| `userActionPayload` <mark style="color:red;">\*</mark> | `String` | The JSON encoded body of the request that is being signed |
-| `userActionHttpMethod` <mark style="color:red;">\*</mark> | `String` | The HTTP method that will be used to make the request that is being signed. Can be one of the following:<br />`POST`<br />`PUT`<br />`DELETE`<br />`GET` |
-| `userActionHttpPath` <mark style="color:red;">\*</mark> | `String` | The path of the request that is being signed |
-| `userActionServerKind` | `String` | `Optional` indicator of which Dfns service being called. Currently, this can only be `Api` |
+|                                                           |          |                                                                                                                                                                                                     |
+| --------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `userActionPayload` <mark style="color:red;">\*</mark>    | `String` | The JSON encoded body of the request that is being signed                                                                                                                                           |
+| `userActionHttpMethod` <mark style="color:red;">\*</mark> | `String` | <p>The HTTP method that will be used to make the request that is being signed. Can be one of the following:<br><code>POST</code><br><code>PUT</code><br><code>DELETE</code><br><code>GET</code></p> |
+| `userActionHttpPath` <mark style="color:red;">\*</mark>   | `String` | The path of the request that is being signed                                                                                                                                                        |
+| `userActionServerKind`                                    | `String` | `Optional` indicator of which Dfns service being called. Currently, this can only be `Api`                                                                                                          |
 
-Example:
-```JSON
+### Example:
+
+```json
 {
   "userActionPayload": "{\"name\": \"My PAT\",\"publicKey\": \"-----BEGIN PUBLIC KEY-----\\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZQt0YI2hdsFNmKJesSkAHldyPLIV\\nFLI/AhQ5eGasA7jU8tEXOb6nGvxRaTIXrgZ2NPdk78O8zMqz5u9AekH8jA==\\n-----END PUBLIC KEY-----\",\"daysValid\": 365,\"permissionId\": \"pm-delaw-avoca-v16r37fpp8koqebc\"}",
   "userActionHttpMethod": "POST",
@@ -49,7 +50,8 @@ Example:
 **Success** - an object containing the user's authentication options
 
 Format:
-```JSON
+
+```json
 {
   // identifies the kind of credentials that can be used to sign the user action
   "supportedCredentialKinds": [
@@ -93,9 +95,12 @@ Format:
   }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-Example:
-```JSON
+### Examples
+
+```json
 {
   "supportedCredentialKinds": [
     {
@@ -117,7 +122,3 @@ Example:
   }
 }
 ```
-{% endtab %}
-{% endtabs %}
-
-## Examples

@@ -1,4 +1,4 @@
-# ResendRegistrationEmail
+# Resend Registration Email
 
 `PUT /auth/manage/users/send-registration-email`
 
@@ -22,13 +22,14 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 
 ## Request body <a href="#request-body" id="request-body"></a>
 
-| | | |
-| - | - | - |
-| `username` <mark style="color:red;">\*</mark> | `String` | email of the user |
-| `orgId` <mark style="color:red;">\*</mark> | `String` | globally unique ID of the organization of the user |
+|                                               |          |                                                    |
+| --------------------------------------------- | -------- | -------------------------------------------------- |
+| `username` <mark style="color:red;">\*</mark> | `String` | email of the user                                  |
+| `orgId` <mark style="color:red;">\*</mark>    | `String` | globally unique ID of the organization of the user |
 
-Example:
-```JSON
+### Example
+
+```json
 {
   "username": "jdoe@example.co",
   "orgId": "or-34513-nip9c-8bppvgqgj28dbodrc"
@@ -53,5 +54,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples

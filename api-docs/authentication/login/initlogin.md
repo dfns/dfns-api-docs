@@ -14,19 +14,20 @@ Starts a user login session, returning a challenge that will be used to verify t
 Since this endpoint is not authentication, the permissions apply to the application only.
 {% endhint %}
 
-| Name                  | Conditions                        |
-| --------------------- | --------------------------------- |
-| `Auth:Users:Read`     | Always Required                   |
+| Name              | Conditions      |
+| ----------------- | --------------- |
+| `Auth:Users:Read` | Always Required |
 
 ## Request body
 
-| | | |
-| - | - | - |
+|                                               |          |                           |
+| --------------------------------------------- | -------- | ------------------------- |
 | `username` <mark style="color:red;">\*</mark> | `String` | Email address of the user |
-| `orgId` <mark style="color:red;">\*</mark> | `String` | ID of the target Org |
+| `orgId` <mark style="color:red;">\*</mark>    | `String` | ID of the target Org      |
 
-Example:
-```JSON
+### Example
+
+```json
 {
   "username": "jdoe@example.co",
   "orgId": "or-34513-nip9c-8bppvgqgj28dbodrc"
@@ -45,7 +46,8 @@ Example:
 **Success** - an object containing the user's authentication options
 
 Format:
-```JSON
+
+```json
 {
   // identifies the kind of credentials that can be used to sign the login challenge
   "supportedCredentialKinds": [
@@ -89,9 +91,12 @@ Format:
   }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-Example:
-```JSON
+### Example
+
+```json
 {
   "supportedCredentialKinds": [
     {
@@ -113,7 +118,3 @@ Example:
   }
 }
 ```
-{% endtab %}
-{% endtabs %}
-
-## Examples

@@ -19,15 +19,15 @@ Update a specific personal access token
 
 ## Parameters
 
-### Path
-
 |                                              |                                               |
 | -------------------------------------------- | --------------------------------------------- |
 | `tokenId` <mark style="color:red;">\*</mark> | the ID of the personal access token to update |
 
-Example:
+### Example
 
-`/auth/pats/to-em7bu-m6c48-hdqoobj7dj24pko`
+```
+/auth/pats/to-em7bu-m6c48-hdqoobj7dj24pko
+```
 
 ## Request Body
 
@@ -36,9 +36,9 @@ Example:
 | `name`       | String | `Optional` new name of the application, must be unique for the caller                               |
 | `externalId` | String | `Optional` new user defined value, that can be used to correlate the entity with an external system |
 
-Example:
+### Example
 
-```JSON
+```json
 {
   "name": "My new PAT name",
   "externalId": "my_internal_id",
@@ -56,7 +56,7 @@ Example:
 {% tab title="200" %}
 **Success** - The personal access token that was updated
 
-```JSON
+```json
 {
   "dateCreated": "2023-04-12T03:38:05.595Z",
   "credId": "",
@@ -102,9 +102,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/update-personal-access-token.ts" %}
-Typescript Example
-{% endembed %}

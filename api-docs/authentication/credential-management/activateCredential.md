@@ -12,18 +12,19 @@ Activates a credential that was previously deactivated. If the credential is alr
 
 ## Required Permissions
 
-| Name                  | Conditions                        |
-| --------------------- | --------------------------------- |
-| `Auth:Creds:Update`   | Always Required                   |
+| Name                | Conditions      |
+| ------------------- | --------------- |
+| `Auth:Creds:Update` | Always Required |
 
 ## Request body
 
-| | | |
-| - | - | - |
+|                                                     |          |                                                    |
+| --------------------------------------------------- | -------- | -------------------------------------------------- |
 | `credentialUuid` <mark style="color:red;">\*</mark> | `String` | The UUID of the credential that is being activated |
 
-Example:
-```JSON
+### Example
+
+```json
 {
   "credentialUuid": "cr-4uc9u-12ij1-9s08327e73jqqcnr"
 }
@@ -47,5 +48,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples

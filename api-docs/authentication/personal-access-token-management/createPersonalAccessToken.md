@@ -28,9 +28,9 @@ Create a new personal access token for the caller
 | `permissionId`                                 | String  | `Optional` ID of the permission that will be assigned to the personal access token. If no permission ID is given, the personal access token will be assigned the same permissions as the caller |
 | `externalId`                                   | String  | `Optional` user defined value that can be used to correlate the entity with an external system                                                                                                  |
 
-Example:
+### Example
 
-```JSON
+```json
 {
   "name": "My PAT",
   "publicKey": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZQt0YI2hdsFNmKJesSkAHldyPLIV\nFLI/AhQ5eGasA7jU8tEXOb6nGvxRaTIXrgZ2NPdk78O8zMqz5u9AekH8jA==\n-----END PUBLIC KEY-----",
@@ -50,7 +50,7 @@ Example:
 {% tab title="200" %}
 **Success** - The created personal access token
 
-```JSON
+```json
 {
   "accessToken": "eyJ0eXAi...ulSXs3-5_NFOyFXJUSyUOQ",
   "dateCreated": "2023-04-12T03:38:05.595Z",
@@ -97,9 +97,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/create-personal-access-token.ts" %}
-Typescript Example
-{% endembed %}

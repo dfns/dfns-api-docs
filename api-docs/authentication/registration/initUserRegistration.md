@@ -14,20 +14,21 @@ Starts a user registration session, returning a challenge that will be used to v
 Since this endpoint is not authentication, the permissions apply to the application only.
 {% endhint %}
 
-| Name                  | Conditions                        |
-| --------------------- | --------------------------------- |
-| `Auth:Users:Read`     | Always Required                   |
+| Name              | Conditions      |
+| ----------------- | --------------- |
+| `Auth:Users:Read` | Always Required |
 
 ## Request body
 
-| | | |
-| - | - | - |
-| `username` <mark style="color:red;">\*</mark> | `String` | Email address of the user |
+|                                                       |          |                                                                     |
+| ----------------------------------------------------- | -------- | ------------------------------------------------------------------- |
+| `username` <mark style="color:red;">\*</mark>         | `String` | Email address of the user                                           |
 | `registrationCode` <mark style="color:red;">\*</mark> | `String` | The secret value that the user received in their registration email |
-| `orgId` <mark style="color:red;">\*</mark> | `String` | ID of the target Org |
+| `orgId` <mark style="color:red;">\*</mark>            | `String` | ID of the target Org                                                |
 
-Example:
-```JSON
+### Example:
+
+```json
 {
   "username": "jdoe@example.co",
   "registrationCode": "1234-1234-1234-1234",
@@ -47,7 +48,8 @@ Example:
 **Success** - an object containing the user's authentication options
 
 Format:
-```JSON
+
+```json
 {
   // Relying Party information that identifies the application to the user
   "rp": {
@@ -128,9 +130,12 @@ Format:
   }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-Example:
-```JSON
+### Examples
+
+```json
 {
   "rp": {
     "id": "dfns.io",
@@ -166,7 +171,3 @@ Example:
   }
 }
 ```
-{% endtab %}
-{% endtabs %}
-
-## Examples

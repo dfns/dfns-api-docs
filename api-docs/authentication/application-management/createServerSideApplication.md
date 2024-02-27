@@ -30,9 +30,9 @@ Create a new Server-Signed application in the caller's org.  This is only requir
 | `permissionId`                                      | String  | `Optional` ID of the permission that will be assigned to the application. If no permission ID is given, the application will be assigned the same permissions as the caller |
 | `externalId`                                        | String  | `Optional` user defined value that can be used to correlate the entity with an external system                                                                              |
 
-Example:
+### Example
 
-```JSON
+```json
 {
   "name": "MyApp Production",
   "relyingPartyId": "https://myapp.example.co",
@@ -55,7 +55,7 @@ Example:
 {% tab title="200" %}
 **Success** - The newly created application
 
-```JSON
+```json
 {
   "appId": "ap-4s6se-e2t7n-89gfg50iaos73pm6",
   "kind": "ServerSideApplication",
@@ -85,9 +85,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/application-management/create-server-side-application.ts" %}
-Typescript Example
-{% endembed %}

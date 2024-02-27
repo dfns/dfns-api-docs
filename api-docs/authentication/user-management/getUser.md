@@ -17,15 +17,15 @@ Get a specific user from the caller's org
 
 ## Parameters
 
-### Path
-
 |                                             |                           |
 | ------------------------------------------- | ------------------------- |
 | `userId` <mark style="color:red;">\*</mark> | the ID of the user to get |
 
-Example:
+### Example
 
-`/auth/users/us-em7bu-m6c48-hdqoobj7dj24pko`
+```url
+auth/users/us-em7bu-m6c48-hdqoobj7dj24pko
+```
 
 ## Responses
 
@@ -38,7 +38,7 @@ Example:
 {% tab title="200" %}
 **Success** - The requested user
 
-```JSON
+```json
 {
   "username": "MyNewUser@example.co",
   "userId": "us-2mhcm-9r90a-92ran47bjpl60hmv",
@@ -55,7 +55,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/user-management/get-user.ts" %} Typescript Example {% endembed %}

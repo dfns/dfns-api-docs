@@ -26,12 +26,13 @@ The user authentication token can be used for read operations within the Dfns AP
 
 ## Request body
 
-| | | |
-| - | - | - |
+|                                               |          |                                                  |
+| --------------------------------------------- | -------- | ------------------------------------------------ |
 | `username` <mark style="color:red;">\*</mark> | `String` | The username that identifies the user in the org |
 
-Example:
-```JSON
+### Example:
+
+```json
 {
   "username": "jdoe@example.co"
 }
@@ -48,12 +49,10 @@ Example:
 {% tab title="200" %}
 **Success** - the user's authentication token
 
-```JSON
+```json
 {
   "token": "eyJ0eX...bzrQakA"
 }
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples

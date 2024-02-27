@@ -19,15 +19,15 @@ Update a specific service account
 
 ## Parameters
 
-### Path
-
 |                                                       |                                         |
 | ----------------------------------------------------- | --------------------------------------- |
 | `serviceAccountId` <mark style="color:red;">\*</mark> | the ID of the service account to update |
 
-Example:
+### Example
 
-`/auth/service-accounts/us-em7bu-m6c48-hdqoobj7dj25pko`
+```
+/auth/service-accounts/us-em7bu-m6c48-hdqoobj7dj25pko
+```
 
 ## Request Body
 
@@ -36,9 +36,9 @@ Example:
 | `name`       | String | `Optional` new name of the application, must be unique within the caller's org                      |
 | `externalId` | String | `Optional` new user defined value, that can be used to correlate the entity with an external system |
 
-Example:
+### Example
 
-```JSON
+```json
 {
   "name": "My new Service Account name",
   "externalId": "my_internal_id",
@@ -56,7 +56,7 @@ Example:
 {% tab title="200" %}
 **Success** - The service account that was updated
 
-```JSON
+```json
 {
   "userInfo": {
     "username": "My New Name",
@@ -236,7 +236,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/service-account-management/update-service-account.ts" %} Typescript Example {% endembed %}

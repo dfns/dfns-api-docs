@@ -45,9 +45,9 @@ The permissions apply to the application only.
 | `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | base64url encoded client data object. The underlying object is the clientData object returned by the user's WebAuthn client           |
 | `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded attestation data object. The underlying object is the attestationData object returned by the user's WebAuthn client |
 
-Example:
+#### Example
 
-```JSON
+```json
 {
   "challengeIdentifier":"eyJ0e...fQNA",
   "credentialName": "My Credential",
@@ -70,9 +70,9 @@ Example:
 | `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | base64url encoded [Client Data](../../../advanced-topics/authentication/api-objects.md#key-credential) JSON string object that was signed with the user's private key                         |
 | `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Attestation Data](../../../advanced-topics/authentication/api-objects.md#key-credential-1) JSON string object with the users signature and public key                      |
 
-Example:
+#### Example
 
-```JSON
+```json
 {
   "challengeIdentifier":"eyJ0e...fQNA",
   "credentialName": "My Credential",
@@ -96,9 +96,9 @@ Example:
 | `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Credential Assertion](../../../advanced-topics/authentication/credentials/user-credentials.md#credential-assertion) JSON string object with the users signature and public key |
 | `encryptedPrivateKey`                                               | `String` | Encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns                                                              |
 
-Example:
+#### Example
 
-```JSON
+```json
 {
   "challengeIdentifier":"eyJ0e...fQNA",
   "credentialName": "My Recovery Credential",
@@ -123,7 +123,7 @@ Example:
 {% tab title="200" %}
 **Success** - an object describing the new credential
 
-```JSON
+```json
 {
   "credentialId": "c1QEdgnPLJargwzy3cbYKny4Q18u0hr97unXsF3DiE8",
   "credentialUuid": "cr-34514-nip9c-8bppvgqgj28dbodrc",
@@ -138,5 +138,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples

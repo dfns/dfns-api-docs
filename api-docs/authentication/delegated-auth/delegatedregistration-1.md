@@ -29,9 +29,9 @@ On successful creation, the user's registration challenge will be returned. You 
 | `email` <mark style="color:red;">\*</mark> | `String` | email of the user being created                                                                                          |
 | `kind` <mark style="color:red;">\*</mark>  | `String` | <p>kind of user being created. Can be one of the following:<br><code>EndUser</code><br><code>CustomerEmployee</code></p> |
 
-Example:
+### Example:
 
-```JSON
+```json
 {
   "email": "jdoe@example.co",
   "kind": "EndUser"
@@ -51,7 +51,7 @@ Example:
 
 Format:
 
-```JSON
+```json
 {
   // Relying Party information that identifies the application to the user
   "rp": {
@@ -132,10 +132,14 @@ Format:
   }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-Example:
+### Examples
 
-```JSON
+{% tabs %}
+{% tab title="API" %}
+```json
 {
   "rp": {
     "id": "dfns.io",
@@ -164,7 +168,7 @@ Example:
   ],
   "attestation": "direct",
   "excludeCredentials": [],
-  "authenticatorSelection": "",{
+  "authenticatorSelection": {
     "residentKey": "required",
     "requireResidentKey": true,
     "userVerification": "required"
@@ -173,5 +177,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples

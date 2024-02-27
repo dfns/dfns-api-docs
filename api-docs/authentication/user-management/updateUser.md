@@ -20,23 +20,23 @@ Update a specific userId in the caller's org
 
 ## Parameters
 
-### Path
-
 |                                             |                              |
 | ------------------------------------------- | ---------------------------- |
 | `userId` <mark style="color:red;">\*</mark> | the ID of the user to update |
 
-Example:
+### Example
 
-`/auth/users/us-em7bu-m6c48-hdqoobj7dj24pko`
+```
+/auth/users/us-em7bu-m6c48-hdqoobj7dj24pko
+```
 
 ## Request Body
 
 <table><thead><tr><th width="247.33333333333331"></th><th></th><th></th></tr></thead><tbody><tr><td><code>publicKey</code></td><td>String</td><td><code>Optional</code> a PGP public key that is used to encrypt emails going to the new user</td></tr><tr><td><code>externalId</code></td><td>String</td><td><code>Optional</code> a user defined value that can be used to correlate the entity with an external system</td></tr></tbody></table>
 
-Example:
+### Example
 
-```JSON
+```json
 {
   "external": "my_internal_id"
 }
@@ -70,7 +70,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/user-management/update-user.ts" %} Typescript Example {% endembed %}

@@ -44,9 +44,9 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 | `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | base64url encoded client data object. The underlying object is the clientData object returned by the user's WebAuthn client           |
 | `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded attestation data object. The underlying object is the attestationData object returned by the user's WebAuthn client |
 
-Example:
+#### Example
 
-```JSON
+```json
 {
   "firstFactorCredential":{
     "credentialKind":"Fido2",
@@ -69,9 +69,9 @@ Example:
 | `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | [Client Data](../../../advanced-topics/authentication/api-objects.md#key-credential) JSON object, stringified and base64url-encoded                                      |
 | `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Attestation Data ](../../../advanced-topics/authentication/api-objects.md#key-credential-1)JSON string object with the users signature and public key |
 
-Example:
+#### Example
 
-```JSON
+```json
 {
   "firstFactorCredential":{
     "credentialKind":"Key",
@@ -95,9 +95,9 @@ Example:
 | `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Attestation Data](../../../advanced-topics/authentication/api-objects.md#key-credential-1) JSON string object with the user's signature and public key |
 | `encryptedPrivateKey`                                               | `String` | `Optional` encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns                           |
 
-Example:
+#### Example
 
-```JSON
+```json
 {
   "firstFactorCredential":{
     "credentialKind":"Fido2",
@@ -130,7 +130,7 @@ Example:
 {% tab title="200" %}
 **Success** - an object describing the user
 
-```JSON
+```json
 {
   "credential": {
     "uuid": "cr-34514-nip9c-8bppvgqgj28dbodrc",

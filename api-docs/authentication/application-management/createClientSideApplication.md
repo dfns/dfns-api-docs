@@ -51,7 +51,7 @@ Example:
 {% tab title="200" %}
 **Success** - The newly created application
 
-```JSON
+```json
 {
   "appId": "ap-24vwa-92s32-8tvqi1dg0a95megt",
   "kind": "ClientSideApplication",
@@ -77,9 +77,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/application-management/create-client-side-application.ts" %}
-Typescript Example
-{% endembed %}

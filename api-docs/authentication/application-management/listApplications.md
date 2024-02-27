@@ -27,7 +27,7 @@ Returns a list of applications in the caller's organization.
 {% tab title="200" %}
 **Success** - A list of the applications in the caller's org
 
-```JSON
+```json
 {
   "items": [
     {
@@ -140,7 +140,3 @@ Returns a list of applications in the caller's organization.
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/application-management/list-applications.ts" %} Typescript Example {% endembed %}

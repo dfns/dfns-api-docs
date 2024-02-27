@@ -29,9 +29,9 @@ Once the user has been verified by your auth system and this API has been called
 | `username` <mark style="color:red;">\*</mark>     | `String` | Email address of the user                          |
 | `credentialId` <mark style="color:red;">\*</mark> | `String` | The crdential ID of the user's recovery credential |
 
-Example:
+### Example
 
-```JSON
+```json
 {
   "username": "jdoe@example.co",
   "credentialId": "Y3ItMTIzNDUtNjc4OTAtYWJjZGVmMDEyMzQ1Njc4OQ"
@@ -51,7 +51,7 @@ Example:
 
 Format:
 
-```JSON
+```json
 {
   // Relying Party information that identifies the application to the user
   "rp": {
@@ -141,10 +141,12 @@ Format:
   ]
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-Example:
+### Example
 
-```JSON
+```json
 {
   "rp": {
     "id": "dfns.io",
@@ -186,7 +188,3 @@ Example:
   ]
 }
 ```
-{% endtab %}
-{% endtabs %}
-
-## Examples

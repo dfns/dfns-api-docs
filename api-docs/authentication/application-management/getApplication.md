@@ -18,15 +18,15 @@ Get a specific application
 
 ## Parameters
 
-### Path
-
 |                                            |                                       |
 | ------------------------------------------ | ------------------------------------- |
 | `appId` <mark style="color:red;">\*</mark> | the ID of the application to activate |
 
-Example:
+### Example
 
-`/auth/apps/ap-7pdin-482de-87l94d8909f9lve0`
+```
+/auth/apps/ap-7pdin-482de-87l94d8909f9lve0
+```
 
 ## Responses
 
@@ -39,7 +39,7 @@ Example:
 {% tab title="200" %}
 **Success** - The application being requested
 
-```JSON
+```json
 {
   "appId": "ap-4s6se-e2t7n-89gfg50iaos73pm6",
   "kind": "ServerSideApplication",
@@ -97,7 +97,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/application-management/get-application.ts" %} Typescript Example {% endembed %}

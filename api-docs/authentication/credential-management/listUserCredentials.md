@@ -15,9 +15,9 @@ Lists all credentials for a user.
 The permissions apply to the application only.
 {% endhint %}
 
-| Name                  | Conditions                        |
-| --------------------- | --------------------------------- |
-| `Auth:Creds:Read`     | Always Required                   |
+| Name              | Conditions      |
+| ----------------- | --------------- |
+| `Auth:Creds:Read` | Always Required |
 
 ## Responses
 
@@ -30,7 +30,7 @@ The permissions apply to the application only.
 {% tab title="200" %}
 **Success** - a list of the user's credentials
 
-```JSON
+```json
 {
   "items": [
     {
@@ -49,5 +49,3 @@ The permissions apply to the application only.
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples

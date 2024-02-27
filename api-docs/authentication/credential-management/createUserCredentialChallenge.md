@@ -122,10 +122,12 @@ Format:
   }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-Example:
+### Examples
 
-```JSON
+```json
 {
   "rp": {
     "id": "dfns.io",
@@ -158,7 +160,3 @@ Example:
   }
 }
 ```
-{% endtab %}
-{% endtabs %}
-
-## Examples

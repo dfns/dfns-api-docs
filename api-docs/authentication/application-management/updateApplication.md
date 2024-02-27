@@ -19,15 +19,15 @@ Update a specific application
 
 ## Parameters
 
-### Path
-
 |                                            |                                       |
 | ------------------------------------------ | ------------------------------------- |
 | `appId` <mark style="color:red;">\*</mark> | the ID of the application to activate |
 
-Example:
+### Example
 
-`/auth/apps/ap-7pdin-482de-87l94d8909f9lve0`
+```
+/auth/apps/ap-7pdin-482de-87l94d8909f9lve0
+```
 
 ## Request Body
 
@@ -36,9 +36,9 @@ Example:
 | `name`       | String | `Optional` new name of the application, must be unique for the caller                               |
 | `externalId` | String | `Optional` new user defined value, that can be used to correlate the entity with an external system |
 
-Example:
+### Example
 
-```JSON
+```json
 {
   "name": "My new Application name",
   "externalId": "my_internal_id",
@@ -51,7 +51,7 @@ Example:
 {% tab title="200" %}
 **Success**
 
-```JSON
+```json
 {
   "appId": "ap-4s6se-e2t7n-89gfg50iaos73pm6",
   "kind": "ServerSideApplication",
@@ -112,7 +112,7 @@ Example:
 {% tab title="400" %}
 **`X-DFNS-NONCE` header is missing or invalid**
 
-```JSON
+```json
 {
   "error": {
     "message": "request nonce is missing or invalid",
@@ -122,7 +122,7 @@ Example:
 
 **`X-DFNS-NONCE` already used**
 
-```JSON
+```json
 {
   "error": {
     "message": "request nonce has already been used"
@@ -132,7 +132,7 @@ Example:
 
 **`X-DFNS-USERACTION` already used**
 
-```JSON
+```json
 {
   "error": {
     "message": "user action has already been used"
@@ -144,7 +144,7 @@ Example:
 {% tab title="401" %}
 **Caller not authenticated**
 
-```JSON
+```json
 {
   "error": {
     "message": "Not Authorized."
@@ -156,7 +156,7 @@ Example:
 {% tab title="403" %}
 **Caller does not have access to the resource or endpoint**
 
-```JSON
+```json
 {
   "error": {
     "message": "CustomerEmployee us-24vwa-92s33-8tvqi1dg0a95megt is not authorized to perform operation (/auth/apps)"
@@ -178,7 +178,7 @@ Example:
 {% tab title="500" %}
 **An error occurred on the server**
 
-```JSON
+```json
 {
   "error": {
     "message": "Internal Server Error"
@@ -187,7 +187,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/application-management/update-application.ts" %} Typescript Example {% endembed %}

@@ -27,9 +27,9 @@ Create a new service account in the caller's org
 | `permissionId`                                 | String  | `Optional` ID of the permission that will be assigned to the service account. If no permission ID is given, the service account will be assigned the same permissions as the caller |
 | `externalId`                                   | String  | `Optional` user defined value that can be used to correlate the entity with an external system                                                                                      |
 
-Example:
+### Example
 
-```JSON
+```json
 {
   "name": "My Service Account name",
   "publicKey": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZQt0YI2hdsFNmKJesSkAHldyPLIV\nFLI/AhQ5eGasA7jU8tEXOb6nGvxRaTIXrgZ2NPdk78O8zMqz5u9AekH8jA==\n-----END PUBLIC KEY-----",
@@ -49,7 +49,7 @@ Example:
 {% tab title="200" %}
 **Success** - The created service account
 
-```JSON
+```json
 {
   "userInfo": {
     "username": "My new service account",
@@ -230,7 +230,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/service-account-management/create-service-account.ts" %} Typescript Example {% endembed %}

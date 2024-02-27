@@ -18,15 +18,15 @@ Get a specific personal access token
 
 ## Parameters
 
-### Path
-
 |                                              |                                            |
 | -------------------------------------------- | ------------------------------------------ |
 | `tokenId` <mark style="color:red;">\*</mark> | the ID of the personal access token to get |
 
-Example:
+### Example
 
-`/auth/pats/to-em7bu-m6c48-hdqoobj7dj24pko`
+```
+/auth/pats/to-em7bu-m6c48-hdqoobj7dj24pko
+```
 
 ## Responses
 
@@ -39,7 +39,7 @@ Example:
 {% tab title="200" %}
 **Success** - The requested personal access token
 
-```JSON
+```json
 {
   "dateCreated": "2023-03-16T20:17:35.291Z",
   "credId": "Y2ktMWYxcTWtN3ZzbSAtODVhcZ5kY2lwZTY3ZTgwMg",
@@ -85,9 +85,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/get-personal-access-token.ts" %}
-Typescript Example
-{% endembed %}

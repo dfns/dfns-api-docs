@@ -27,7 +27,7 @@ Returns a list of personal access tokens
 {% tab title="200" %}
 **Success** - A list of personal access tokens registered to the calling user
 
-```JSON
+```json
 {
   "items": [
     {
@@ -77,9 +77,3 @@ Returns a list of personal access tokens
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/list-personal-access-tokens.ts" %}
-Typescript Example
-{% endembed %}

@@ -1,4 +1,4 @@
-# Create User Registration Challenge
+# Create User Recovery Challenge
 
 `POST /auth/recover/user/init`
 
@@ -14,21 +14,22 @@ Starts a user recovery session, returning a challenge that will be used to verif
 Since this endpoint is not authentication, the permissions apply to the application only.
 {% endhint %}
 
-| Name                  | Conditions                        |
-| --------------------- | --------------------------------- |
-| `Auth:Users:Read`     | Always Required                   |
+| Name              | Conditions      |
+| ----------------- | --------------- |
+| `Auth:Users:Read` | Always Required |
 
 ## Request body
 
-| | | |
-| - | - | - |
-| `username` <mark style="color:red;">\*</mark> | `String` | Email address of the user |
+|                                                       |          |                                                                 |
+| ----------------------------------------------------- | -------- | --------------------------------------------------------------- |
+| `username` <mark style="color:red;">\*</mark>         | `String` | Email address of the user                                       |
 | `verificationCode` <mark style="color:red;">\*</mark> | `String` | The secret value that the user received in their recovery email |
-| `orgId` <mark style="color:red;">\*</mark> | `String` | ID of the target Org |
-| `credentialId` <mark style="color:red;">\*</mark> | `String` | The crdential ID of the user's recovery credential |
+| `orgId` <mark style="color:red;">\*</mark>            | `String` | ID of the target Org                                            |
+| `credentialId` <mark style="color:red;">\*</mark>     | `String` | The crdential ID of the user's recovery credential              |
 
-Example:
-```JSON
+### Example
+
+```json
 {
   "username": "jdoe@example.co",
   "verificationCode": "1234-1234-1234-1234",
@@ -49,7 +50,8 @@ Example:
 **Success** - an object containing the user's authentication options
 
 Format:
-```JSON
+
+```json
 {
   // Relying Party information that identifies the application to the user
   "rp": {
@@ -139,9 +141,12 @@ Format:
   ]
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-Example:
-```JSON
+### Examples
+
+```json
 {
   "rp": {
     "id": "dfns.io",
@@ -183,7 +188,3 @@ Example:
   ]
 }
 ```
-{% endtab %}
-{% endtabs %}
-
-## Examples

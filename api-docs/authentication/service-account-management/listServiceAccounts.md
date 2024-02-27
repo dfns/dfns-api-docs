@@ -27,7 +27,7 @@ Returns a list of service accounts
 {% tab title="200" %}
 **Success** - A list of service accounts registered in the organization
 
-```JSON
+```json
 {
   "items": [
     {
@@ -241,7 +241,3 @@ Returns a list of service accounts
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/service-account-management/list-service-accounts.ts" %} Typescript Example {% endembed %}

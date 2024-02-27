@@ -16,13 +16,13 @@ Activate a specific user in the caller's org
 
 ## Parameters
 
-### Path
-
 <table><thead><tr><th width="192"></th><th></th></tr></thead><tbody><tr><td><code>userId</code> <mark style="color:red;">*</mark></td><td>the ID of the user to activate</td></tr></tbody></table>
 
-Example:
+### Example
 
-`/auth/users/us-em7bu-m6c48-hdqoobj7dj24pko/activate`
+```
+/auth/users/us-em7bu-m6c48-hdqoobj7dj24pko/activate
+```
 
 ## Responses
 
@@ -35,7 +35,7 @@ Example:
 {% tab title="200" %}
 **Success** - The user that was updated
 
-```JSON
+```json
 {
   "username": "MyNewUser@example.co",
   "userId": "us-2mhcm-9r90a-92ran47bjpl60hmv",
@@ -52,7 +52,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/user-management/activate-user.ts" %} Typescript Example {% endembed %}

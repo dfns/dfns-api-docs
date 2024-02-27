@@ -19,15 +19,15 @@ Deactivate a specific personal access token
 
 ## Parameters
 
-### Path
-
 |                                              |                                                   |
 | -------------------------------------------- | ------------------------------------------------- |
 | `tokenId` <mark style="color:red;">\*</mark> | the ID of the personal access token to deactivate |
 
-Example:
+### Example
 
-`/auth/pats/to-em7bu-m6c48-hdqoobj7dj24pko/deactivate`
+```
+/auth/pats/to-em7bu-m6c48-hdqoobj7dj24pko/deactivate
+```
 
 ## Responses
 
@@ -40,7 +40,7 @@ Example:
 {% tab title="200" %}
 **Success** - The personal access token that was updated
 
-```JSON
+```json
 {
   "dateCreated": "2023-04-12T03:38:05.595Z",
   "credId": "",
@@ -86,9 +86,3 @@ Example:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Examples
-
-{% embed url="https://github.com/dfnsext/dfns-api-docs/blob/canary/examples/typescript/src/api/authentication/personal-access-token-management/deactivate-personal-access-token.ts" %}
-Typescript Example
-{% endembed %}
