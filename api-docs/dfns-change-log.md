@@ -8,7 +8,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Feb 21, 2024
 
-* Launched new [Read Contract endpoint](https://docs.dfns.co/d/api-docs/networks/read-contract) for FIL
+* Launched new [Read Contract endpoint](https://docs.dfns.co/d/api-docs/networks/read-contract)&#x20;
 * Launched Litecoin Tier1&#x20;
 
 ### Feb 14, 2024
