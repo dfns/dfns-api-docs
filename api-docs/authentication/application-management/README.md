@@ -4,11 +4,11 @@ Applications are used by the Dfns API to identify the customer and organization 
 
 ## Application Types
 
-There are two types of applications; `Applications` and `Server-Signed Applications`.
+There are two types of applications;  `Applications` and `Server-Signed Applications`.
 
-In most cases, you will want to use a default`Application`, however, `Server-Signed Applications` can be used when you want to ensure your customers need to use your server to call the Dfns API. When using a `Server-Signed Application` you will send the `App Secret`, `App ID`, and a sign every request with the applications `private key`.
+In most cases, you will want to use a default`Application`, however, `Server-Signed Applications` can be used when you want to ensure your customers need to use your server to call the Dfns API. When using a `Server-Signed Application` you will send the `App Secret`, `App ID`, and sign every request with the applications `private key`.
 
-Default `Applications` can be used in your client application or the your server application. To use an `Application` you only need to pass the `App ID`.
+Default `Applications` can be used in your client application or your server application. To use an `Application` you only need to pass the `App ID`.
 
 ## App Permissions
 
