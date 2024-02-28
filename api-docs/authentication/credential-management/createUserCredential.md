@@ -87,14 +87,14 @@ The permissions apply to the application only.
 
 ### Recovery Credential
 
-|                                                                     |          |                                                                                                                                                                                                   |
-| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `RecoveryKey`                                                                                                                                                                      |
-| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                                                                                   |
-| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential                                                                                                                                                            |
-| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | base64url encoded [Client Data](../../../advanced-topics/authentication/credentials/user-credentials.md#client-data-format) JSON string object that was signed with the user's private key        |
-| `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Credential Assertion](../../../advanced-topics/authentication/credentials/user-credentials.md#credential-assertion) JSON string object with the users signature and public key |
-| `encryptedPrivateKey`                                               | `String` | Encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns                                                              |
+|                                                                     |          |                                                                                                                                                                          |
+| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `RecoveryKey`                                                                                                                                             |
+| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                                                          |
+| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential                                                                                                                                   |
+| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | base64url encoded [Client Data](../../../advanced-topics/authentication/api-objects.md#key-credential) JSON string object that was signed with the user's private key    |
+| `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Attestation Data](../../../advanced-topics/authentication/api-objects.md#key-credential-1) JSON string object with the users signature and public key |
+| `encryptedPrivateKey`                                               | `String` | Encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns                                     |
 
 #### Example
 
