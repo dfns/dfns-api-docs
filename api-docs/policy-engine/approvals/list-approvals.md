@@ -20,7 +20,7 @@ Retrieves a list of approvals.
 
 ### Query parameters <a href="#path-parameters" id="path-parameters"></a>
 
-<table><thead><tr><th width="215">Query string parameter</th><th width="179">Required/Optional</th><th width="216">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>limit</code></td><td>Optional</td><td>Maximum number of items to return. Default to 20.</td><td>Positive Integer</td></tr><tr><td><code>paginationToken</code></td><td>Optional</td><td>Opaque token used to retrieve the next page. Returned as <code>nextPageToken</code> from the previous request.</td><td>String</td></tr><tr><td><code>status</code></td><td>Optional</td><td>Either <code>Pending</code>, <code>Approved</code>, <code>Denied, AutoApproved</code> or <code>Expired</code> (defaults to <code>Pending</code>).</td><td>Enumerated Type</td></tr><tr><td><code>triggerStatus</code></td><td>Optional</td><td><code>Triggered</code> or <code>Skipped</code> (defaults to Triggered only).</td><td>Enumerated Type</td></tr><tr><td><code>initiatorId</code></td><td>Optional</td><td>The user ID of the activity initiator.</td><td>String</td></tr><tr><td><code>approverId</code></td><td>Optional</td><td>The user ID of a potential approver.</td><td>String</td></tr></tbody></table>
+<table><thead><tr><th width="215">Query string parameter</th><th width="179">Required/Optional</th><th width="216">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>limit</code></td><td>Optional</td><td>Maximum number of items to return. Default to 20.</td><td>Positive Integer</td></tr><tr><td><code>paginationToken</code></td><td>Optional</td><td>Opaque token used to retrieve the next page. Returned as <code>nextPageToken</code> from the previous request.</td><td>String</td></tr><tr><td><code>status</code></td><td>Optional</td><td>Either <code>Pending</code>, <code>Approved</code>, <code>Denied, AutoApproved</code> or <code>Expired</code>.</td><td>Enumerated Type</td></tr><tr><td><code>triggerStatus</code></td><td>Optional</td><td><code>Triggered</code> or <code>Skipped</code>.</td><td>Enumerated Type</td></tr><tr><td><code>initiatorId</code></td><td>Optional</td><td>The user ID of the activity initiator.</td><td>String</td></tr><tr><td><code>approverId</code></td><td>Optional</td><td>The user ID of a potential approver.</td><td>String</td></tr></tbody></table>
 
 ## Response <a href="#response" id="response"></a>
 
@@ -30,39 +30,41 @@ Note: `TriggerStatus` of `Skipped` means the rule did not trigger for the given 
 
 ```json
 {
-  [
+  "items":[
     {
-      "id": "evl-...",
-      "orgId": "or-...",
-      "initiatorId": "us-...",
-      "activityId": "xfr-...",
-      "activityKind": "Wallets:Sign",
-      "activity": {...},
-      "status": "Pending",
-      "expirationDate": "2023-12-22T21:16:16.659Z",
-      "dateCreated": "2023-12-22T20:56:16.662Z",
-      "dateUpdated": "2023-12-22T20:56:16.662Z",
-      "decisions": [
+      "id":"evl-...",
+      "orgId":"or-...",
+      "initiatorId":"us-...",
+      "activityId":"xfr-...",
+      "activityKind":"Wallets:Sign",
+      "activity":{
+        ...
+      },
+      "status":"Pending",
+      "expirationDate":"2023-12-22T21:16:16.659Z",
+      "dateCreated":"2023-12-22T20:56:16.662Z",
+      "dateUpdated":"2023-12-22T20:56:16.662Z",
+      "decisions":[
         {
-          "userId": "us-...",
-          "dateActioned": "2023-12-22T20:56:16.662Z",
-          "value": "Approved",
-        },
+          "userId":"us-...",
+          "dateActioned":"2023-12-22T20:56:16.662Z",
+          "value":"Approved"
+        }
       ],
-      "evaluatedPolicies": [
+      "evaluatedPolicies":[
         {
-          "policyId": "plc-...",
-          "triggerStatus": "Triggered",
-          "reason": "Number of transactions (2) is above limit (2)."
+          "policyId":"plc-...",
+          "triggerStatus":"Triggered",
+          "reason":"Number of transactions (2) is above limit (2)."
         },
         {
-          "policyId": "plc-...",
-          "triggerStatus": "Triggered",
-          "reason": "Cumulative transfer amount (EUR 20) is above limit (EUR 2)."
+          "policyId":"plc-...",
+          "triggerStatus":"Triggered",
+          "reason":"Cumulative transfer amount (EUR 20) is above limit (EUR 2)."
         }
       ]
     }
-  ]
-  "nextPageToken": "ZxZ...",
+  ],
+  "nextPageToken":"ZxZ..."
 }
 ```
