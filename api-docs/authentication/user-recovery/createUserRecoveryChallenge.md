@@ -144,7 +144,7 @@ Format:
 {% endtab %}
 {% endtabs %}
 
-### Examples
+### Example
 
 ```json
 {
