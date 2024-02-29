@@ -54,6 +54,8 @@ On successful creation, the user's registration challenge will be returned. You 
 {% tab title="200" %}
 **Success** - an object containing the user's authentication options
 
+The `"challenge"` is the value that needs to be sent to the user to be signed in order to [completeUserRegistration.md](../registration/completeUserRegistration.md "mention")
+
 Format:
 
 ```json
@@ -143,6 +145,8 @@ Format:
 ### Examples
 
 ```json
+// In this example the challenge "MmE5YzRmMzMwY2NlNGUyMjhjZWYzMzlhZDBhZmIxNzk"
+// needs to be sent to the user for signature to complete the registration
 {
   "rp": {
     "id": "dfns.io",
