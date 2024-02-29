@@ -6,6 +6,12 @@ description: Change log detailing feature releases
 
 The Dfns change log documents changes to our product functionality made by our releases. This includes new features, breaking changes, bug fixes to known issues, deprecations, etc. Please bookmark this page and refresh frequently for the latest updates.
 
+### Feb 29, 2024
+
+* Added `custodial` field to [ListWallets](wallets/list-wallets.md).  False implies an end user wallet
+* Removed Policy Engine v1 create endpoints from dashboard and SDK
+* Fixed a bug in which Policy Engine [List Approvals](policy-engine/approvals/list-approvals.md) was filtering by default
+
 ### Feb 21, 2024
 
 * Launched new [Read Contract endpoint](https://docs.dfns.co/d/api-docs/networks/read-contract)&#x20;
