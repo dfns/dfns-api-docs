@@ -46,8 +46,14 @@ Example:
 
 Format:
 
-```JSON
+```json
 {
+  // the kind of credential being created
+  "kind": "string",
+  // Challenge Identifier
+  "challengeIdentifier": "string",
+  // random value used to uniquely identify the request. This value will be included in the data that is signed
+  "challenge": "string",
   // Relying Party information that identifies the application to the user
   "rp": {
     // the domain of the server that is requesting the credential. This must match the effective domain of the application communicating with the user's WebAuthn client
@@ -64,12 +70,6 @@ Format:
     // name that will be displayed to the user on the WebAuthn client's display
     "displayName": "string"
   },
-  // temporary authentication token that is used to identify the create credential session with the matching call to Create User Credential
-  "temporaryAuthenticationToken": "string",
-  // the kind of credential being created
-  "kind": "string",
-  // random value used to uniquely identify the request. This value will be included in the data that is signed
-  "challenge": "string",
   // list of objects that identify the signing algorithms that are supported
   "pubKeyCredParam": [
     {
@@ -129,6 +129,9 @@ Format:
 
 ```json
 {
+  "kind": "Fido2",
+  "challengeIdentifier": "eyJ0eXAiOiJKV1Q...X1bwCg35kbzsjA",
+  "challenge": "MmE5YzRmMzMwY2NlNGUyMjhjZWYzMzlhZDBhZmIxNzk",
   "rp": {
     "id": "dfns.io",
     "name": "Dfns",
@@ -138,9 +141,6 @@ Format:
     "name": "jane@example.co",
     "displayName": "jane@example.co"
   },
-  "temporaryAuthenticationToken": "eyJ0eXAiOiJKV1Q...X1bwCg35kbzsjA",
-  "kind": "Fido2",
-  "challenge": "MmE5YzRmMzMwY2NlNGUyMjhjZWYzMzlhZDBhZmIxNzk",
   "pubKeyCredParam": [
     {
       "type": "public-key",
