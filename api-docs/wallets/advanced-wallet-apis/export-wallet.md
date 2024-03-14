@@ -5,8 +5,8 @@
 {% hint style="info" %}
 * This endpoint is not enabled by default. Contact Dfns to have it activated.
 * User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../../advanced-topics/authentication/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../advanced-topics/authentication/request-headers.md#authentication-headers) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 Dfns secures private keys by generating them as MPC key shares in our decentralized key management network.  Our goal is to eliminate all single points of failure (SPOFs) associated with blockchain private keys.

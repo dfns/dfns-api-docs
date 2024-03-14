@@ -10,8 +10,8 @@ The type of credentials used to sign the action is determined by the `kind` fiel
 * `Key`: User action is signed by a user's, or token's, private key.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../../advanced-topics/authentication/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../advanced-topics/authentication/request-headers.md#authentication-headers) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -91,8 +91,8 @@ The permissions apply to the application only.
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../errors.md#common-errors) for common errors.
-* See [User Action Signing Errors](../../errors.md#user-action-signing-errors) for user action signing specific errors.
+* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
+* See [User Action Signing Errors](../../../getting-started/errors.md#user-action-signing-errors) for user action signing specific errors.
 {% endhint %}
 
 {% tabs %}

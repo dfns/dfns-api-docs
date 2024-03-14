@@ -5,7 +5,7 @@
 Starts a user recovery session, returning a challenge that will be used to verify the user's identity.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../../advanced-topics/authentication/request-headers.md) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -41,8 +41,8 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../errors.md#common-errors) for common errors.
-* See [User Recovery Errors](../../errors.md#user-recovery-errors) for user recovery specific errors.
+* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
+* See [User Recovery Errors](../../../getting-started/errors.md#user-recovery-errors) for user recovery specific errors.
 {% endhint %}
 
 {% tabs %}

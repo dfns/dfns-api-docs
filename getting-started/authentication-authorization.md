@@ -18,10 +18,10 @@ There are several ways to get an authentication token, depending on what kind of
 
 As a User, there are two ways to get an authentication token:
 
-* Follow the [Login](../../api-docs/authentication/login/) flow. You'll get a authentication token at the end of this flow, which expires after a relatively short period of time.
-* Or create a [Personal Access Token](../../api-docs/authentication/personal-access-token-management/) (PAT), which basically is a long-lived authentication token which is tied to the User and represents them. This PAT will never have more permissions than the User itself. Once you have created a PAT, you can use it as an authentication token directly.
+* Follow the [Login](../api-docs/authentication/login/) flow. You'll get a authentication token at the end of this flow, which expires after a relatively short period of time.
+* Or create a [Personal Access Token](../api-docs/authentication/personal-access-token-management/) (PAT), which basically is a long-lived authentication token which is tied to the User and represents them. This PAT will never have more permissions than the User itself. Once you have created a PAT, you can use it as an authentication token directly.
 
-A [Service Account Token](../../api-docs/authentication/service-account-management/) (or "Service Account") is not tied to one User, it's existence is visible across all your organisation. It is a long-lived token, and any permission can be granted to it, beyond the scope of one particular user. Once created, this Service Account can be used as an authentication token directly.
+A [Service Account Token](../api-docs/authentication/service-account-management/) (or "Service Account") is not tied to one User, it's existence is visible across all your organisation. It is a long-lived token, and any permission can be granted to it, beyond the scope of one particular user. Once created, this Service Account can be used as an authentication token directly.
 
 {% hint style="info" %}
 Once generated, Dfns system do not keep a trace of your long-lived authentication tokens (Personal Access Token, or Service Account Token), only you will hold on to those. If you lose them, you'll just need to create a new one.
@@ -33,7 +33,7 @@ Once you have an authentication token, you can add it in the headers of your API
 
 Most endpoints which induce some state change in Dfns (everything that is not a GET essentially), will require you to sign the actual request, before being able to execute it. We call that "User Action Signing".
 
-We provide a couple of [User Action Signing](../../api-docs/authentication/user-action-signing/) endpoints which handle this flow:
+We provide a couple of [User Action Signing](../api-docs/authentication/user-action-signing/) endpoints which handle this flow:
 
 * You tell Dfns "I want to perform this exact request"
 * Dfns sends you back a challenge to be signed with your Credential .
@@ -44,7 +44,7 @@ The credential -- essentially being a cryptographic key -- you'll need to use to
 
 ## Credentials
 
-In order to complete the [login](../../api-docs/authentication/login/ "mention") flow, or to sign User Action Challenges, you'll need to sign challenges using Credentials.
+In order to complete the [login](../api-docs/authentication/login/ "mention") flow, or to sign User Action Challenges, you'll need to sign challenges using Credentials.
 
 A Credential is essentially a Public/Private keypair. The Private key is only known by you, while the Public key is provided to Dfns, so that Dfns system can be aware that you own this key, and can register it as being yours.
 
@@ -53,7 +53,7 @@ The first time you registered with Dfns, you had to create a Credential (if you 
 Different kind of Credentials will be created, depending on your use case, and how you prefer to manage those credentials:
 
 * WebAuthn Credentials -> Use WebAuthn standard to create/manage those keys for you on your device (see more about that below). You can use WebAuthn Credentials if you need a User signature in-browser for example.
-* Key Credentials -> "manually" generate keypairs yourself, and store them however you see fit (see [How to generate a keypair](credentials/generate-a-key-pair.md)). You can use Key Credential if you need a Service Account sitting in your server to also be the signer for example.
+* Key Credentials -> "manually" generate keypairs yourself, and store them however you see fit (see [How to generate a keypair](../advanced-topics/authentication/credentials/generate-a-key-pair.md)). You can use Key Credential if you need a Service Account sitting in your server to also be the signer for example.
 
 Depending on the Identity you are using, the Credentials supported are such:
 
@@ -65,7 +65,7 @@ WebAuthn is a web authentication standard supported by most modern browsers, whi
 
 Essentially, WebAuthn allows you to create cryptographic keys stored on one of your device (your device enclave), and use them to sign payloads when needed using touch ID (or else). Here's some screenshots with some examples of WebAuthn prompts shown in your browser during Credential creation, or during Signing using those Credentials.
 
-![](<../../.gitbook/assets/image (1) (1) (1) (1).png>) ![](<../../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (1) (1) (1) (1).png>) ![](<../.gitbook/assets/image (2).png>)
 
 {% hint style="info" %}
 You can read more about WebAuthn on [webauthn.guide](https://webauthn.guide/), and if you want you can test a WebAuthn demo on [webauthn.io](https://webauthn.io/)

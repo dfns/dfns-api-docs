@@ -150,7 +150,7 @@
   * [Get Webhook Event](api-docs/webhooks/get-webhook-event.md)
   * [List Webhook Events](api-docs/webhooks/list-webhook-events.md)
 * [Dfns Change Log](api-docs/dfns-change-log.md)
-* [API Errors](api-docs/errors.md)
+* [API Errors](getting-started/errors.md)
 * [Deprecated APIs](api-docs/deprecated-apis/README.md)
   * [Deprecated - Asset Accounts & Payments](api-docs/high-level-api-asset-accounts-and-payments/README.md)
     * [Asset Accounts](api-docs/deprecated-apis/high-level-api-asset-accounts-and-payments/asset-accounts/README.md)
@@ -223,8 +223,8 @@
 ## Advanced Topics
 
 * [Authentication](advanced-topics/authentication/README.md)
-  * [API Authentication](advanced-topics/authentication/authentication-authorization.md)
-  * [Request Headers](advanced-topics/authentication/request-headers.md)
+  * [API Authentication](getting-started/authentication-authorization.md)
+  * [Request Headers](getting-started/request-headers.md)
   * [Credentials](advanced-topics/authentication/credentials/README.md)
     * [Generate a Key Pair](advanced-topics/authentication/credentials/generate-a-key-pair.md)
     * [User Credentials](advanced-topics/authentication/credentials/user-credentials.md)

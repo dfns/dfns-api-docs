@@ -8,9 +8,9 @@ This collection includes:
 
 * Dfns api endpoints
 * An environment to fill out
-* A pre-request script that handles [User Action Signing](../advanced-topics/authentication/authentication-authorization.md#sign-api-requests-user-action-signing) for you for every POST requests.
+* A pre-request script that handles [User Action Signing](authentication-authorization.md#sign-api-requests-user-action-signing) for you for every POST requests.
 
-The purpose of the pre-request script is to populate some of the [required headers](../advanced-topics/authentication/request-headers.md) for authentication. If you're interested in what it does and how it works, you can check the detail of the pre-request script in the collection itself, here:
+The purpose of the pre-request script is to populate some of the [required headers](request-headers.md) for authentication. If you're interested in what it does and how it works, you can check the detail of the pre-request script in the collection itself, here:
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-06-27 at 20.22.29.png" alt=""><figcaption></figcaption></figure>
 

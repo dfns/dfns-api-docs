@@ -1,6 +1,6 @@
 # Dfns Environments
 
-Dfns supports a production environment (api.dfns.io) and a staging environment (api.dfns.ninja). Production always interacts with mainnet chains, while staging always interacts with testnet chains. _Staging is for use only with test funds_ - the environment does not have the same availability guarantees as production.
+Dfns supports a production environment (api.dfns.io) and a staging environment (api.dfns.ninja). Production interacts with both mainnet and testnet chains, while staging only interacts with testnet chains. _Staging is for use only with test funds_ - the environment does not have the same availability guarantees as production.
 
 {% hint style="danger" %}
 _Staging environment (api.dfns.ninja) is for use only with test funds_

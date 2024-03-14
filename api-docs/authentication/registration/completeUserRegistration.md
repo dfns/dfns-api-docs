@@ -10,8 +10,8 @@ The type of credentials being registered is determined by the `credentialKind` f
 * `Key`: User action is signed by a user's, or token's, private key.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../../advanced-topics/authentication/request-headers.md) for more information.
-* Temporary authentication token required. See [Registration Headers](../../../advanced-topics/authentication/request-headers.md#registration-headers) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Temporary authentication token required. See [Registration Headers](../../../getting-started/request-headers.md#registration-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -122,8 +122,8 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../errors.md#common-errors) for common errors.
-* See [User Registration Errors](../../errors.md#user-registration-errors) for user registration specific errors.
+* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
+* See [User Registration Errors](../../../getting-started/errors.md#user-registration-errors) for user registration specific errors.
 {% endhint %}
 
 {% tabs %}

@@ -5,8 +5,8 @@
 Recovers a user, using a recovery credential. After successfully recovering the user, all of the user's previous credentials and personal access tokens will be invalidated.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../../advanced-topics/authentication/request-headers.md) for more information.
-* Temporary authentication token required. See [Registration Headers](../../../advanced-topics/authentication/request-headers.md#registration-headers) for more information.
+* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Temporary authentication token required. See [Registration Headers](../../../getting-started/request-headers.md#registration-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -172,8 +172,8 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../errors.md#common-errors) for common errors.
-* See [User Recovery Errors](../../errors.md#user-recovery-errors) for user recovery specific errors.
+* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
+* See [User Recovery Errors](../../../getting-started/errors.md#user-recovery-errors) for user recovery specific errors.
 {% endhint %}
 
 {% tabs %}
