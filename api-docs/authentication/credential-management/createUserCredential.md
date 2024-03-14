@@ -12,8 +12,8 @@ The type of credentials being registered is determined by the `credentialKind` f
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+* Request headers required. See [Request Headers](../../../advanced-topics/authentication/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../advanced-topics/authentication/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -115,8 +115,8 @@ The permissions apply to the application only.
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
-* See [Credential Management Errors](../../../getting-started/errors.md#credential-management-errors) for credential management specific errors.
+* See [Common Errors](../../errors.md#common-errors) for common errors.
+* See [Credential Management Errors](../../errors.md#credential-management-errors) for credential management specific errors.
 {% endhint %}
 
 {% tabs %}

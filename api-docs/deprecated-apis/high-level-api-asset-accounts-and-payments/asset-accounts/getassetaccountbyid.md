@@ -11,8 +11,8 @@ Warning: This API has been deprecated.  Please use [Wallets](../../../wallets/).
 Retrieves an `AssetAccount` by its `id`.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more
+* Request headers required. See [Request Headers](../../../../advanced-topics/authentication/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../../advanced-topics/authentication/request-headers.md#authentication-headers) for more
 {% endhint %}
 
 ## Required Permissions

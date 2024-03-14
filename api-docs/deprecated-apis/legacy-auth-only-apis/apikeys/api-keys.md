@@ -8,7 +8,7 @@ Warning: This API has been deprecated.  Please contact us to move to the latest 
 
 ## JWT token
 
-Our `CreateAPIKey` endpoint returns a JWT token which you can securely persist and then pass in the header of your requests as a bearer token as described on the [authentication page](../../../../getting-started/authentication-authorization.md).
+Our `CreateAPIKey` endpoint returns a JWT token which you can securely persist and then pass in the header of your requests as a bearer token as described on the [authentication page](../../../../advanced-topics/authentication/authentication-authorization.md).
 
 ## Permissions
 

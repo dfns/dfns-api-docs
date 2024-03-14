@@ -97,7 +97,7 @@ If you want to implement Delegated Signing in which your customer generates cred
 
 Our documentation should have everything you need to get up and running on Dfns!  Here's an overview of some of the key sections:
 
-* Overviews of Dfns's [policy engine](PolicyEngineIntro.md) and [data model concepts](DataModelConcepts.md)
-* Our [API Authentication](authentication-authorization.md) page & [Advanced Topics](../advanced-topics/authentication/) around authentication to understand our signing requirements in detail
+* Overviews of Dfns's [policy engine](../api-docs/policy-engine/) and [data model concepts](DataModelConcepts.md)
+* Our [API Authentication](../advanced-topics/authentication/authentication-authorization.md) page & [Advanced Topics](../advanced-topics/authentication/) around authentication to understand our signing requirements in detail
 * The [**API DOCS**](../api-docs/) reference section of all currently supported endpoints and their operations
 * [Integrations](../integrations/fiat-on-offboarding.md) to learn about how to integrate with Fiat on/offboarding providers

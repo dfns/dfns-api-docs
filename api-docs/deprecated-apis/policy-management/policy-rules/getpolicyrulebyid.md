@@ -5,8 +5,8 @@
 Retrieves a `PolicyRule` by its `id`.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more information.
+* Request headers required. See [Request Headers](../../../../advanced-topics/authentication/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../../advanced-topics/authentication/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions

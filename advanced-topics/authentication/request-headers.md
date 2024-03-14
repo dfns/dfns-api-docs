@@ -2,7 +2,7 @@
 
 All requests to the Dfns API need to include at least these headers:
 
-<table><thead><tr><th width="267.36734693877554">Header</th><th>Description</th></tr></thead><tbody><tr><td><code>X-DFNS-APPID: &#x3C;appid></code></td><td>ID of an Application created in your organization (see <a data-mention href="../api-docs/authentication/application-management/">application-management</a>)</td></tr></tbody></table>
+<table><thead><tr><th width="267.36734693877554">Header</th><th>Description</th></tr></thead><tbody><tr><td><code>X-DFNS-APPID: &#x3C;appid></code></td><td>ID of an Application created in your organization (see <a data-mention href="../../api-docs/authentication/application-management/">application-management</a>)</td></tr></tbody></table>
 
 ## Authentication Headers
 
@@ -12,20 +12,20 @@ Most requests to the Dfns API need to be authenticated, and will need to include
 
 ## User Action Signing Header
 
-Most requests that change the state within the Dfns system need to be signed (see [user-action-signing](../api-docs/authentication/user-action-signing/ "mention")), and require the following additional header:
+Most requests that change the state within the Dfns system need to be signed (see [user-action-signing](../../api-docs/authentication/user-action-signing/ "mention")), and require the following additional header:
 
-<table><thead><tr><th width="289">Header</th><th>Description</th></tr></thead><tbody><tr><td><code>X-DFNS-USERACTION: &#x3C;user-action-signature></code></td><td>A one time token you got after the <a data-mention href="../api-docs/authentication/user-action-signing/">user-action-signing</a> flow</td></tr></tbody></table>
+<table><thead><tr><th width="289">Header</th><th>Description</th></tr></thead><tbody><tr><td><code>X-DFNS-USERACTION: &#x3C;user-action-signature></code></td><td>A one time token you got after the <a data-mention href="../../api-docs/authentication/user-action-signing/">user-action-signing</a> flow</td></tr></tbody></table>
 
 ## Registration Headers
 
 Similar to authenticated endpoints, the `Complete User Registration` endpoint needs an authentication token. This token is passed in the `Authentication` header:
 
-<table><thead><tr><th width="267.36734693877554">Header</th><th>Description</th></tr></thead><tbody><tr><td><code>Authorization: Bearer &#x3C;token></code></td><td>The temporary authentication token returned from <a data-mention href="../api-docs/authentication/registration/initUserRegistration.md#responses">#responses</a></td></tr></tbody></table>
+<table><thead><tr><th width="267.36734693877554">Header</th><th>Description</th></tr></thead><tbody><tr><td><code>Authorization: Bearer &#x3C;token></code></td><td>The temporary authentication token returned from <a data-mention href="../../api-docs/authentication/registration/initUserRegistration.md#responses">#responses</a></td></tr></tbody></table>
 
 ## Server-Signed Application Headers
 
 {% hint style="warning" %}
-This is not a common scenario. Dfns recommends using a default[ Application](../api-docs/authentication/application-management/#application-types) for most use cases
+This is not a common scenario. Dfns recommends using a default[ Application](../../api-docs/authentication/application-management/#application-types) for most use cases
 {% endhint %}
 
 {% hint style="info" %}

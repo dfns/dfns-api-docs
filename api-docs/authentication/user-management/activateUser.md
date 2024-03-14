@@ -6,8 +6,8 @@ Activate a specific user in the caller's org
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+* Request headers required. See [Request Headers](../../../advanced-topics/authentication/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../advanced-topics/authentication/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions <a href="#permissions" id="permissions"></a>
@@ -27,8 +27,8 @@ Activate a specific user in the caller's org
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
-* See [User Management Errors](../../../getting-started/errors.md#user-management-errors) for user management specific errors.
+* See [Common Errors](../../errors.md#common-errors) for common errors.
+* See [User Management Errors](../../errors.md#user-management-errors) for user management specific errors.
 {% endhint %}
 
 {% tabs %}

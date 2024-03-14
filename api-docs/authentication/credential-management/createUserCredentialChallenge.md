@@ -5,8 +5,8 @@
 Starts a create user credential session, returning a challenge that will be used to verify the user's identity.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+* Request headers required. See [Request Headers](../../../advanced-topics/authentication/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../advanced-topics/authentication/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -36,8 +36,8 @@ Example:
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
-* See [Credential Management Errors](../../../getting-started/errors.md#credential-management-errors) for credential management specific errors.
+* See [Common Errors](../../errors.md#common-errors) for common errors.
+* See [Credential Management Errors](../../errors.md#credential-management-errors) for credential management specific errors.
 {% endhint %}
 
 {% tabs %}

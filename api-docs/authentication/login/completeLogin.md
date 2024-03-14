@@ -10,7 +10,7 @@ The type of credentials used to login is determined by the `kind` field in the n
 * `Key`: Login challenge is signed by a user's private key.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
+* Request headers required. See [Request Headers](../../../advanced-topics/authentication/request-headers.md) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -90,8 +90,8 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
-* See [User Login Errors](../../../getting-started/errors.md#user-login-errors) for user login errors.
+* See [Common Errors](../../errors.md#common-errors) for common errors.
+* See [User Login Errors](../../errors.md#user-login-errors) for user login errors.
 {% endhint %}
 
 {% tabs %}

@@ -14,8 +14,8 @@ On successful creation, the user's registration challenge will be returned. You 
 {% hint style="info" %}
 * Service account required. See [Service Accounts](../service-account-management/) for more information.
 * User action signature required. See [User Action Signing](../user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+* Request headers required. See [Request Headers](../../../advanced-topics/authentication/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../advanced-topics/authentication/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -46,8 +46,8 @@ On successful creation, the user's registration challenge will be returned. You 
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
-* See [Delegated Authentication Errors](../../../getting-started/errors.md#delegated-authentication-errors) for delegated authentication specific errors.
+* See [Common Errors](../../errors.md#common-errors) for common errors.
+* See [Delegated Authentication Errors](../../errors.md#delegated-authentication-errors) for delegated authentication specific errors.
 {% endhint %}
 
 {% tabs %}

@@ -5,28 +5,11 @@
 ## Getting Started
 
 * [Onboarding to Dfns](getting-started/onboarding-to-dfns.md)
-* [Request Headers](getting-started/request-headers.md)
-* [API Errors](getting-started/errors.md)
-* [API Authentication](getting-started/authentication-authorization.md)
 * [Dfns Environments](getting-started/dfns-environments.md)
 * [Data Model Concepts](getting-started/DataModelConcepts.md)
-* [Policy Engine](getting-started/PolicyEngineIntro.md)
 * [Postman](getting-started/postman-integration.md)
 * [Typescript SDK](getting-started/typescript-sdk.md)
 * [Videos](getting-started/Videos.md)
-
-## Advanced Topics
-
-* [Authentication](advanced-topics/authentication/README.md)
-  * [Credentials](advanced-topics/authentication/credentials/README.md)
-    * [Generate a Key Pair](advanced-topics/authentication/credentials/generate-a-key-pair.md)
-    * [User Credentials](advanced-topics/authentication/credentials/user-credentials.md)
-    * [Access Token Credentials](advanced-topics/authentication/credentials/access-token-credentials.md)
-    * [Storing WebAuthn Credentials in Password Managers](advanced-topics/authentication/credentials/storing-webauthn-credentials-in-password-managers.md)
-  * [Request Signing](advanced-topics/authentication/request-signing.md)
-  * [API objects](advanced-topics/authentication/api-objects.md)
-* [Delegated Signing](advanced-topics/delegated-signing.md)
-* [FAQ](advanced-topics/faq.md)
 
 ## API Docs
 
@@ -167,6 +150,7 @@
   * [Get Webhook Event](api-docs/webhooks/get-webhook-event.md)
   * [List Webhook Events](api-docs/webhooks/list-webhook-events.md)
 * [Dfns Change Log](api-docs/dfns-change-log.md)
+* [API Errors](api-docs/errors.md)
 * [Deprecated APIs](api-docs/deprecated-apis/README.md)
   * [Deprecated - Asset Accounts & Payments](api-docs/high-level-api-asset-accounts-and-payments/README.md)
     * [Asset Accounts](api-docs/deprecated-apis/high-level-api-asset-accounts-and-payments/asset-accounts/README.md)
@@ -235,6 +219,21 @@
     * [Deprecated - Callback Events](api-docs/deprecated-apis/readme-1/callback-events/README.md)
       * [List Callback Events](api-docs/deprecated-apis/readme-1/callback-events/listcallbackevents.md)
       * [Get Callback Event By ID](api-docs/deprecated-apis/readme-1/callback-events/getcallbackeventbyid.md)
+
+## Advanced Topics
+
+* [Authentication](advanced-topics/authentication/README.md)
+  * [API Authentication](advanced-topics/authentication/authentication-authorization.md)
+  * [Request Headers](advanced-topics/authentication/request-headers.md)
+  * [Credentials](advanced-topics/authentication/credentials/README.md)
+    * [Generate a Key Pair](advanced-topics/authentication/credentials/generate-a-key-pair.md)
+    * [User Credentials](advanced-topics/authentication/credentials/user-credentials.md)
+    * [Access Token Credentials](advanced-topics/authentication/credentials/access-token-credentials.md)
+    * [Storing WebAuthn Credentials in Password Managers](advanced-topics/authentication/credentials/storing-webauthn-credentials-in-password-managers.md)
+  * [Request Signing](advanced-topics/authentication/request-signing.md)
+  * [API objects](advanced-topics/authentication/api-objects.md)
+* [Delegated Signing](advanced-topics/delegated-signing.md)
+* [FAQ](advanced-topics/faq.md)
 
 ## Integrations
 

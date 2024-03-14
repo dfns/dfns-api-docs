@@ -6,8 +6,8 @@ Create a new application in the caller's org.  This is the default application t
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+* Request headers required. See [Request Headers](../../../advanced-topics/authentication/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../advanced-topics/authentication/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -43,8 +43,8 @@ Example:
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
-* See [Application Management Errors](../../../getting-started/errors.md#application-management-errors) for application management specific errors.
+* See [Common Errors](../../errors.md#common-errors) for common errors.
+* See [Application Management Errors](../../errors.md#application-management-errors) for application management specific errors.
 {% endhint %}
 
 {% tabs %}
