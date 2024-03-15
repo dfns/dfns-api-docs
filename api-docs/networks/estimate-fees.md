@@ -13,6 +13,10 @@ Note: Get Fee only works on EVM chains currently.  We will add support for addit
 * Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
+{% hint style="warning" %}
+**only supported for EVM chains are supported, for now**
+{% endhint %}
+
 ## Required Permissions
 
 No permission is required for this call
@@ -21,7 +25,7 @@ No permission is required for this call
 
 ### Query parameters <a href="#path-parameters" id="path-parameters"></a>
 
-<table><thead><tr><th width="248">Query parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>network</code></td><td>Enumerated type representing the Blockchain network from the list found <a href="https://docs.dfns.co/dfns-docs/api-docs/wallets#supported-networks">here</a>.  Note: only EVM chains are currently supported.</td></tr></tbody></table>
+<table><thead><tr><th width="248">Query parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>network</code></td><td>Enumerated type representing the Blockchain network from the list found <a href="https://docs.dfns.co/dfns-docs/api-docs/wallets#supported-networks">here</a>.  <strong>⚠️ only EVM chains are supported for now</strong>.</td></tr></tbody></table>
 
 ## Response <a href="#response" id="response"></a>
 
