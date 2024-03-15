@@ -38,11 +38,11 @@ The wallet private key which you need to export, will never be transmitted throu
 
 
 
-<table data-full-width="true"><thead><tr><th width="218">Property</th><th width="223">Type - Required/Optional</th><th>Description</th></tr></thead><tbody><tr><td>encryptionKey</td><td>String - Required</td><td>The public key of an asymmetric key pair used to encrypt the key shares prior to transmission.</td></tr><tr><td>supportedSchemes</td><td>Object Array - Required</td><td>An object with the format shown below. </td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="196">Property</th><th width="223">Type - Required/Optional</th><th>Description</th></tr></thead><tbody><tr><td>encryptionKey</td><td>String - Required</td><td>The public key of an asymmetric key pair used to encrypt the key shares prior to transmission.</td></tr><tr><td>supportedSchemes</td><td>Object Array - Required</td><td>An object with the format shown below. </td></tr></tbody></table>
 
 #### supportedSchemes
 
-<table data-full-width="true"><thead><tr><th width="128">Property</th><th width="231">Type - Required/Optional</th><th>Description</th></tr></thead><tbody><tr><td>protocol</td><td>String - Required</td><td>Always "CGGMP21" for now.  Additional signature schemes will be added in the future. </td></tr><tr><td>curve</td><td>String - Required</td><td>Always "secp256k1" per above.</td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="128">Property</th><th width="169">Type - Required/Optional</th><th>Description</th></tr></thead><tbody><tr><td>protocol</td><td>String - Required</td><td>Always "CGGMP21" for now.  Additional signature schemes will be added in the future. </td></tr><tr><td>curve</td><td>String - Required</td><td>Always "secp256k1" per above.</td></tr></tbody></table>
 
 #### Example JSON
 
