@@ -106,7 +106,7 @@
   * [Get Wallet Signature Request by ID](api-docs/wallets/get-wallet-signature-request-by-id.md)
   * [List Wallet Signature Requests](api-docs/wallets/list-wallet-signature-requests.md)
   * [Advanced Wallet APIs](api-docs/wallets/advanced-wallet-apis/README.md)
-    * [Wallet Migration](api-docs/wallets/advanced-wallet-apis/wallet-migration.md)
+    * [Wallet Import](api-docs/wallets/advanced-wallet-apis/wallet-import.md)
     * [Export Wallet](api-docs/wallets/advanced-wallet-apis/export-wallet.md)
 * [Networks](api-docs/networks/README.md)
   * [Estimate fees](api-docs/networks/estimate-fees.md)

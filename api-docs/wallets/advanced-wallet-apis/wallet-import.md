@@ -1,4 +1,4 @@
-# Wallet Migration
+# Wallet Import
 
 `POST /wallets/import`
 
@@ -13,7 +13,7 @@ Dfns secures private keys by generating them as MPC key shares in our decentrali
 
 In some circumstances, however, you may need to import an existing wallet (an existing private key) into Dfns infrastructure, instead of creating a brand new wallet with Dfns and transfer funds to it. As an example, you might want to keep an existing wallet if its address is tied to a smart contract which you don't want to re-deploy.
 
-In such a case, Dfns exposes this wallet migration API endpoint, which can be used in conjunction with our [import SDK](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/sdk/import-wallet).   Note this is intended to be used only to migrate wallets when first onboarding onto the Dfns platform.&#x20;
+In such a case, Dfns exposes this wallet import API endpoint, which can be used in conjunction with our [import SDK](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/sdk/import-wallet).   Note this is intended to be used only to migrate wallets when first onboarding onto the Dfns platform.&#x20;
 
 {% hint style="danger" %}
 Dfns can not guarantee the security of imported wallets, as we have no way to control who had access to the private key prior to import.  For this reason, this feature is restricted to Enterprise customers who have signed a contractual addendum limiting our liability for imported keys.  Please contact your sales representative for more information.&#x20;
@@ -26,7 +26,7 @@ Dfns can not guarantee the security of imported wallets, as we have no way to co
 | `Signers:ListSigners` | Always Required |
 | `Wallets:Import`      | Always Required |
 
-## Wallet Migration Flow
+## Wallet Import Flow
 
 The wallet private key which you need to import will never be transmitted to Dfns API in one piece or in the clear (un-encrypted). The process is:
 
