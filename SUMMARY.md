@@ -29,7 +29,7 @@
   * [Login](api-docs/authentication/login/README.md)
     * [Create User Login Challenge](api-docs/authentication/login/initlogin.md)
     * [Complete User Login](api-docs/authentication/login/completeLogin.md)
-  * [User Accounts](api-docs/authentication/user-management/README.md)
+  * [Users](api-docs/authentication/user-management/README.md)
     * [List Users](api-docs/authentication/user-management/listUsers.md)
     * [Create User](api-docs/authentication/user-management/createUser.md)
     * [Get User](api-docs/authentication/user-management/getUser.md)

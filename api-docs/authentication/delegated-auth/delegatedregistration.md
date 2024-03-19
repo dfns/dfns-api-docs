@@ -2,7 +2,7 @@
 
 `POST /auth/registration/delegated`
 
-If you want to use your own authentication system, while still using `Delegated Signing`, you can use this endpoint to register a User in your organization, without your user needing to receive an email from Dfns.
+If you want to use your own authentication system, while still using `Delegated Signing`, you can use this endpoint to register a new User in your organization, without your user needing to receive an email from Dfns.
 
 This endpoint will:
 
