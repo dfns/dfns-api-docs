@@ -62,7 +62,7 @@
     * [Activate Personal Access Token](api-docs/authentication/personal-access-token-management/activatePersonalAccessToken.md)
     * [Deactivate Personal Access Token](api-docs/authentication/personal-access-token-management/deactivatePersonalAccessToken.md)
     * [Archive Personal Access Token](api-docs/authentication/personal-access-token-management/archivePersonalAccessToken.md)
-  * [User Credentials](api-docs/authentication/credential-management/README.md)
+  * [Credentials](api-docs/authentication/credential-management/README.md)
     * [Create User Credential Challenge](api-docs/authentication/credential-management/createUserCredentialChallenge.md)
     * [Create User Credential](api-docs/authentication/credential-management/createUserCredential.md)
     * [Activate User Credential](api-docs/authentication/credential-management/activateCredential.md)
