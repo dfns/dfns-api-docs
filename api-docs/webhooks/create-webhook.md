@@ -2,7 +2,7 @@
 
 **`POST /webhooks`**
 
-Registers a new webhook.
+Registers a new webhook.  By default, organizations are limited to creating 5 webhooks.
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
