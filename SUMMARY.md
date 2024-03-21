@@ -140,6 +140,7 @@
     * [Create Assignment](api-docs/permissions/permission-assignments/createassignment.md)
     * [List Assignments](api-docs/permissions/permission-assignments/listassignments.md)
     * [Revoke Assignment](api-docs/permissions/permission-assignments/revokeassignment.md)
+  * [List of operations](api-docs/permissions/list-of-operations.md)
 * [Webhooks](api-docs/webhooks/README.md)
   * [Create Webhook](api-docs/webhooks/create-webhook.md)
   * [Get Webhook](api-docs/webhooks/get-webhook.md)

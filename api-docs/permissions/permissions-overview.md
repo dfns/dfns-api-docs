@@ -10,3 +10,5 @@ Permissions rely on a list of enumerated types that take the form:
 
 You can find the permission enum you need at the top of the relevant API docs page (eg. see [Create Wallet Permissions](https://docs.dfns.co/d/api-docs/wallets/create-wallet#required-permissions)).  To use Permissions, [create a permission](permissions/createpermission.md) with the associated operations, give it a name, and then [create an assignment](permission-assignments/createassignment.md) to a user.&#x20;
 
+You can see the list of all the operations in the [List of operations](list-of-operations.md) page.
+
