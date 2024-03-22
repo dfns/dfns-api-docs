@@ -4,7 +4,7 @@
 
 A policy contains a rule against which an activity will be evaluated and a set of approval groups from which an approval will be required in case the rule is triggered. These are the supported `activityKinds`:
 
-* `Permissions:Assign` For [permission assignments](../../../permissions/permission-assignments/createassignment.md) and [assignment revocation](../../../permissions/permission-assignments/revokeassignment.md).&#x20;
+* `Permissions:Assign` For [permission assignments](../../../permissions/permissions/createassignment.md) and [assignment revocation](../../../permissions/permissions/revokeassignment.md).&#x20;
 * `Permissions:Modify` For [permission updates](../../../permissions/permissions/updatepermission.md) and [permission archival](../../../permissions/permissions/archivepermission.md).&#x20;
 * `Policies:Modify` For [policy updates](../update-policy.md) and [policy archival](../archive-policy.md).
 * `Wallets:Sign` For [asset transfers](../../../wallets/transfer-asset-from-wallet.md), [signature generation](../../../wallets/generate-signature-from-wallet/) and [transaction broadcasts](../../../wallets/broadcast-transaction-from-wallet.md).

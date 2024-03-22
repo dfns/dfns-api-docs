@@ -30,10 +30,10 @@ Updates an existing permission. Response either returns the updated permission (
 
 In the **request body** specify the **permisison name** and/or a list of **operations** that this permission will allow.
 
-| Request body fields | Required/Optional | Description                                                                                                                    | Type          |
-| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------- |
-| `name`              | Optional          | Name of the permission.                                                                                                        | String        |
-| `operations`        | Optional          | <p>List of allowed operations. <br>This <a href="../list-of-operations.md">this list</a> for all the available operations.</p> | String (List) |
+| Request body fields | Required/Optional | Description                                                                                                                                           | Type          |
+| ------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `name`              | Optional          | Name of the permission.                                                                                                                               | String        |
+| `operations`        | Optional          | <p>List of allowed operations. <br>This <a href="../permissions-overview.md#available-operations">this list</a> for all the available operations.</p> | String (List) |
 
 ## Request example <a href="#request-example.1" id="request-example.1"></a>
 
