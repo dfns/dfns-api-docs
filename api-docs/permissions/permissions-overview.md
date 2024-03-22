@@ -51,7 +51,6 @@ CallbackEvents:Read
 CallbackSubscriptions:Archive
 CallbackSubscriptions:Create
 CallbackSubscriptions:Read
-Employees:Read
 Payments:Create
 Payments:Read
 PermissionAssignments:Create
