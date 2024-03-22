@@ -2,13 +2,15 @@
 
 `POST /wallets/:walletId/delegate`
 
-In most cases, when you want to implement [Delegated Signing](../../advanced-topics/delegated-signing.md), simply have the end-user create the wallet, in which case it will the noncustodial from the start.  There are some rare cases, however, where the wallet must be created before the user has accessed the system.  To accommodate this, we've added the ability to create a wallet from a service account, and then later delegate it (ie. transfer ownership of it) to an end user via this endpoint.
-
-Note: Only wallets initially created with the `delayDelegation: true` optional body parameter can be delegated using this API call. This is to prevent, for example, a treasury wallet from being unintentionally delegated to an end-user.&#x20;
-
 {% hint style="warning" %}
-Warning: This operation can not be reversed.&#x20;
+Only wallets created with "`delayDelegation: true`" can then be delegated to an end-user. It means you need to know ahead of time that you're creating a wallet meant to be delegated to an end-user later. This is a safety to prevent, for example, a treasury wallet from being unintentionally delegated to an end-user.&#x20;
 {% endhint %}
+
+{% hint style="danger" %}
+This operation is irreversible. The wallet ownership will be transferred to the end-user
+{% endhint %}
+
+In most cases, when you want to implement [Delegated Signing](../../advanced-topics/delegated-signing.md), simply have the end-user create the wallet, in which case it will the noncustodial from the start.  There are some rare cases, however, where the wallet must be created before the user has accessed the system.  To accommodate this, we've added the ability to create a wallet from a service account, and then later delegate it (ie. transfer ownership of it) to an end user via this endpoint.
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
