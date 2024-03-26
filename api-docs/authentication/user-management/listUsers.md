@@ -15,6 +15,12 @@ Returns a list of users
 | ----------------- | --------------- |
 | `Auth:Users:Read` | Always Required |
 
+## Request Params
+
+The following query parameters can be appended to the url
+
+<table data-full-width="true"><thead><tr><th width="169.33333333333331">Property</th><th width="193">Type</th><th>Description</th></tr></thead><tbody><tr><td>limit</td><td>Number - Optional</td><td>Maximum number of items included in response</td></tr><tr><td>paginationToken</td><td>String - Optional</td><td>Page cursor used (taken from the previous response <code>nextPageToken</code>).</td></tr></tbody></table>
+
 ## Responses
 
 {% hint style="info" %}
@@ -128,7 +134,8 @@ Returns a list of users
       "isRegistered": true,
       "permissionAssignments": []
     }
-  ]
+  ],
+  "nextPageToken": "eJxNy8...." // optional
 }
 ```
 {% endtab %}
