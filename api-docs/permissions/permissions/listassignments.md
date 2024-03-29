@@ -1,4 +1,4 @@
-# List Assignments
+# List Permission Assignments
 
 `GET /permissions/{permissionId}/assignments`
 
@@ -14,10 +14,6 @@ Retrieves a list of permission assignments (success) or gives a reason why it's 
 | Name                         | Conditions      |
 | ---------------------------- | --------------- |
 | `PermissionAssignments:Read` | Always Required |
-
-## Triggers <a href="#triggers.1" id="triggers.1"></a>
-
-`PermissionManagement`
 
 ## Response <a href="#response" id="response"></a>
 

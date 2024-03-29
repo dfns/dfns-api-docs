@@ -16,18 +16,11 @@ Creates a permission that allows certain specified operations to be executed. Re
 | -------------------- | --------------- |
 | `Permissions:Create` | Always Required |
 
-## Triggers <a href="#triggers.1" id="triggers.1"></a>
-
-`PermissionManagement`
-
 ## Request body <a href="#request-body" id="request-body"></a>
 
 In the **request body** specify the **permisison name**, as well as a list of **operations** that this permission will allow.
 
-| Request body fields | Required/Optional | Description                                                                                                                                          | Type          |
-| ------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `name`              | Required          | Name of the permission.                                                                                                                              | String        |
-| `operations`        | Required          | <p>List of allowed operations.<br>This <a href="../permissions-overview.md#available-operations">this list</a> for all the available operations.</p> | List (String) |
+<table><thead><tr><th width="183">property</th><th width="219">Type - Required</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>String -Required</td><td>Name of the permission.</td></tr><tr><td><code>operations</code></td><td>String Array - Required</td><td>List of allowed operations.<br>This <a href="../permissions-overview.md#list-of-operations">this list</a> for all the available operations.</td></tr></tbody></table>
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 

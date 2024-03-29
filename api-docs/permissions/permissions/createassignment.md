@@ -1,4 +1,4 @@
-# Create Assignment
+# Assign Permission
 
 `POST /permissions/{permissionId}/assignments`
 
@@ -16,17 +16,11 @@ Creates a permission assignment, effectively granting a permission to a specific
 | ------------------------------ | --------------- |
 | `PermissionAssignments:Create` | Always Required |
 
-## Triggers <a href="#triggers.1" id="triggers.1"></a>
-
-`PermissionManagement`
-
 ## Request body <a href="#request-body" id="request-body"></a>
 
 In the **request body** specify the **identity ID.**
 
-| Request body fields | Required/Optional | Description                                                 | Type   |
-| ------------------- | ----------------- | ----------------------------------------------------------- | ------ |
-| `identityId`        | Required          | The ID of the identity the permission is being assigned to. | String |
+<table><thead><tr><th>Request body fields</th><th width="168.33333333333331">Type - Required</th><th>Description</th></tr></thead><tbody><tr><td><code>identityId</code></td><td>String - Required</td><td>The ID of the identity the permission is being assigned to.</td></tr></tbody></table>
 
 ## Request example <a href="#request-example.1" id="request-example.1"></a>
 

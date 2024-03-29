@@ -16,23 +16,17 @@ Archives or unarchives a permission, depending on the body of the request. Respo
 | --------------------- | --------------- |
 | `Permissions:Archive` | Always Required |
 
-## Triggers <a href="#triggers.1" id="triggers.1"></a>
-
-`PermissionEngine`
-
 ## Parameters <a href="#parameters.1" id="parameters.1"></a>
 
 ### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-<table><thead><tr><th width="434">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>permissionId</code></td><td>Unique identifier of the permission.<br><br>Permission IDs look like this:<br><code>pm-orange-apple-2b17a80613</code><br><br>They follow this format:<br><code>pb-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr></tbody></table>
+<table><thead><tr><th width="213.03785488958988">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>permissionId</code></td><td>Unique identifier of the permission.<br><br>Permission IDs look like this:<br><code>pm-orange-apple-2b17a80613</code><br><br>They follow this format:<br><code>pb-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr></tbody></table>
 
 ## Request body <a href="#request-body" id="request-body"></a>
 
 In the **request body** specify wheter the permission is to be **archived** or **unarchived**.
 
-| Request body fields | Required/Optional | Description                                         | Type    |
-| ------------------- | ----------------- | --------------------------------------------------- | ------- |
-| `isArchived`        | Required          | Specify whether to archive or unarchive permission. | Boolean |
+<table><thead><tr><th width="187">property</th><th width="188">Type - Required</th><th>Description</th></tr></thead><tbody><tr><td><code>isArchived</code></td><td>Boolean - Required</td><td>Specify whether to archive or unarchive permission.</td></tr></tbody></table>
 
 ### Request example <a href="#request-example.1" id="request-example.1"></a>
 
