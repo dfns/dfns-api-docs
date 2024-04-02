@@ -80,7 +80,7 @@ A: No. A seed phrase directly recovers the private key, granting immediate and c
 
 ### _**Q: Can end-users export their private keys?**_
 
-A: Users of Dfns wallets are never locked into the platform. They have the freedom to create a wallet using any other product or service and effortlessly transfer their assets out of Dfns using the API whenever they want. We are planning to introduce a private key export feature in Q3 2023. It's important to note that once the keys are exported, Dfns can no longer ensure the security of the wallet. Hence, the wallet will no longer be accessible within the Dfns platform post-export.
+A: Users of Dfns wallets are never locked into the platform. They have the freedom to create a wallet using any other product or service and effortlessly transfer their assets out of Dfns using the API whenever they want. We also launched a [private key export feature](../api-docs/wallets/advanced-wallet-apis/export-wallet.md) in 2023 which enables our Enterprise plan customers to export private keys to their users.
 
 
 
