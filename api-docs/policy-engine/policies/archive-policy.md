@@ -30,32 +30,39 @@ Archives a policy.
 {
   "id": "plc-...",
   "name": "Transfer Limit",
-  "rule": {
+  "rule":{
     "kind": "TransactionAmountLimit",
     "configuration": {
       "currency": "EUR",
-      "limit": "1000",
-    },
+      "limit": "1000"
+    }
   },
   "status": "Archived",
   "filters": {
     "id": {
-      "in": ["wa-..."]
+      "in": [
+        "wa-..."
+      ]
     }
   },
   "activityKind": "Wallets:Sign",
-  "approvalGroups": [
-    {
-      "name": "Admins",
-      "quorum": 1,
-      "approvers": {
-        "userId": {
-          "in": ["us-..."],
-        },
-      },
-    }
-  ],
-  "autoRejectTimeout": 60,
+  "action":{
+    "kind": "RequireApproval",
+    "approvalGroups": [
+      {
+        "name": "Admins",
+        "quorum": 1,
+        "approvers": {
+          "userId": {
+            "in": [
+              "us-..."
+            ]
+          }
+        }
+      }
+    ],
+    "autoRejectTimeout": 60
+  }
 }
 ```
 
@@ -70,39 +77,46 @@ Archives a policy.
     "userId": "us-...",
     "tokenId": "to-..."
   },
-    "kind": "Policy",
-    "operationKind": "Update",
-    "status": "Pending",
-    "entityId": "plc-...",
-    "body": {
-        "id": "plc-...",
-        "name": "Transfer Limit",
-        "rule": {
-          "kind": "TransactionAmountLimit",
-          "configuration": {
-            "currency": "EUR",
-            "limit": "1000",
-          },
-        },
-        "status": "Archived",
-        "filters": {
-          "id": {
-            "in": ["wa-..."]
+  "kind": "Policy",
+  "operationKind": "Update",
+  "status": "Pending",
+  "entityId": "plc-...",
+  "body": {
+    "id": "plc-...",
+    "name": "Transfer Limit",
+    "rule": {
+      "kind": "TransactionAmountLimit",
+      "configuration": {
+        "currency": "EUR",
+        "limit": "1000"
+      }
+    },
+    "status": "Archived",
+    "filters": {
+      "id": {
+        "in": [
+          "wa-..."
+        ]
+      }
+    },
+    "activityKind": "Wallets:Sign",
+    "action": {
+      "kind": "RequestApproval",
+      "approvalGroups": [
+        {
+          "name": "Admins",
+          "quorum": 1,
+          "approvers": {
+            "userId": {
+              "in": [
+                "us-..."
+              ]
+            }
           }
-        },
-        "activityKind": "Wallets:Sign",
-        "approvalGroups": [
-            {
-              "name": "Admins",
-              "quorum": 1,
-              "approvers": {
-                "userId": {
-                  "in": ["us-..."],
-                },
-              },
-           }
-        ],
-        "autoRejectTimeout": 60,
+        }
+      ],
+      "autoRejectTimeout": 60
+    }
   },
   "dateCreated": "2023-12-22T20:57:55.814Z",
   "dateResolved": "2023-12-22T20:57:55.814Z"

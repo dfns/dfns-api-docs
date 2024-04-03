@@ -1,23 +1,44 @@
-# Approval Groups
+# Action
 
-Approval groups are a list of objects that specify the approvers whose decision is required for an activity to be approved.
+An action specifies the logic in case a policy is triggered. For `RequestApproval` actions, approval groups are a list of objects that specify the approvers whose decision is required for an activity to be approved.
 
-### Approvers Object
+### Action Object
 
-<table><thead><tr><th width="199">Request body fields</th><th width="185">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>userId</code></td><td>Required</td><td>The IDs of users who are allowed to make a decision.  Note: Only <code>Employee</code> users are currently supported.  Neither <code>EndUsers</code> nor Service Accounts can approve policies. </td><td>Object</td></tr></tbody></table>
+<table><thead><tr><th width="254">Request body fields</th><th width="113">Required/Optional</th><th width="218">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td>RequestApproval or Blocked.</td><td>Enumerated Type</td></tr><tr><td><code>approvalGroups</code></td><td>Required / Optional</td><td>Quorum required for approval of activity.</td><td>Object</td></tr><tr><td><code>autoRejectTimeout</code></td><td>Required / Optional</td><td>Fine-grained approval group configuration.</td><td>Object</td></tr></tbody></table>
 
-### Example Approval group <a href="#request-example.1" id="request-example.1"></a>
+### Example action (RequestApproval) <a href="#request-example.1" id="request-example.1"></a>
 
 ```json
 {
-  "name": "Admins",
-  "quorum": 2,
-  "approvers": {
-    "userId": {
-      "in": ["us-...", "us-..."],
-    },
-  },
+  "action": {
+    "kind": "RequestApproval",
+    "approvalGroups": [
+      {
+        "name": "Admins",
+        "quorum": 1,
+        "approvers": {
+          "userId": {
+            "in": [
+              "us-..."
+            ]
+          }
+        }
+      }
+    ],
+    "autoRejectTimeout": 60
+  }
 }
 ```
 
-Note: `in` is the only list modifier currently supported.&#x20;
+The `quorum` is the number of approvals required for the activity to be approved.
+
+### Example action (Block) <a href="#request-example.1" id="request-example.1"></a>
+
+```json
+{
+  "action": {
+    "kind": "Block"
+  }
+}
+```
+

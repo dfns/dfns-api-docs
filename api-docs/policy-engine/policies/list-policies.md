@@ -28,44 +28,47 @@ Retrieves a list of policies.
 
 ```json
 {
-  "items":[
+  "items": [
     {
-      "id":"plc-...",
-      "name":"Transfer Limit",
-      "rule":{
-        "kind":"TransactionAmountLimit",
-        "configuration":{
-          "currency":"EUR",
-          "limit":"1000"
+      "id": "plc-...",
+      "name": "Transfer Limit",
+      "rule": {
+        "kind": "TransactionAmountLimit",
+        "configuration": {
+          "currency": "EUR",
+          "limit": "1000"
         }
       },
-      "status":"Active",
-      "filters":{
-        "id":{
-          "in":[
+      "status": "Active",
+      "filters": {
+        "id": {
+          "in": [
             "wa-..."
           ]
         }
       },
-      "activityKind":"Wallets:Sign",
-      "approvalGroups":[
-        {
-          "name":"Admins",
-          "quorum":1,
-          "approvers":{
-            "userId":{
-              "in":[
-                "us-..."
-              ]
+      "activityKind": "Wallets:Sign",
+      "action": {
+        "kind": "RequestApproval",
+        "approvalGroups": [
+          {
+            "name": "Admins",
+            "quorum": 1,
+            "approvers": {
+              "userId": {
+                "in": [
+                  "us-..."
+                ]
+              }
             }
           }
-        }
-      ],
-      "autoRejectTimeout":60,
-      "dateCreated":"2023-12-22T20:57:55.814Z",
-      "dateResolved":"2023-12-22T20:57:55.814Z"
+        ],
+        "autoRejectTimeout": 60
+      },
+      "dateCreated": "2023-12-22T20:57:55.814Z",
+      "dateResolved": "2023-12-22T20:57:55.814Z"
     }
   ],
-  "nextPageToken":"ZxZ..."
+  "nextPageToken": "ZxZ..."
 }
 ```

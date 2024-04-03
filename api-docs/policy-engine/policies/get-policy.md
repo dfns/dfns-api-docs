@@ -34,28 +34,35 @@ Retrieves a policy.
     "kind": "TransactionAmountLimit",
     "configuration": {
       "currency": "EUR",
-      "limit": "1000",
-    },
+      "limit": "1000"
+    }
   },
   "status": "Active",
   "filters": {
     "id": {
-      "in": ["wa-..."]
+      "in": [
+        "wa-..."
+      ]
     }
   },
   "activityKind": "Wallets:Sign",
-  "approvalGroups": [
-    {
-      "name": "Admins",
-      "quorum": 1,
-      "approvers": {
-        "userId": {
-          "in": ["us-..."],
-        },
-      },
-    }
-  ],
-  "autoRejectTimeout": 60
+  "action": {
+    "kind": "RequestApproval",
+    "approvalGroups": [
+      {
+        "name": "Admins",
+        "quorum": 1,
+        "approvers": {
+          "userId": {
+            "in": [
+              "us-..."
+            ]
+          }
+        }
+      }
+    ],
+    "autoRejectTimeout": 60
+  },
   "dateCreated": "2023-12-22T20:57:55.814Z",
   "dateResolved": "2023-12-22T20:57:55.814Z"
 }
