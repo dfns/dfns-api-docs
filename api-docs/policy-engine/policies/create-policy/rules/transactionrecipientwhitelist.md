@@ -1,6 +1,10 @@
 # TransactionRecipientWhitelist
 
-The TransactionRecipientWhitelist rule validates whether the destination address is in the list of whitelisted addresses.
+The `TransactionRecipientWhitelist` rule validates whether the destination address is in the list of whitelisted addresses.  This rule will trigger if the recipient is NOT on the specified whitelist.&#x20;
+
+{% hint style="warning" %}
+Note for [Broadcast Transaction](../../../../wallets/broadcast-transaction-from-wallet.md) and [Generate Signature](../../../../wallets/generate-signature-from-wallet/) methods, Dfns can not reliably determine the recipient of the transaction.  Therefore this rule will "fail closed" by always triggering in response to these API calls.&#x20;
+{% endhint %}
 
 ### Configuration Object
 
@@ -12,7 +16,7 @@ The TransactionRecipientWhitelist rule validates whether the destination address
 {
   "kind": "TransactionRecipientWhitelist",
   "configuration": {
-    "addresses": ["0x...0"],
+    "addresses": ["0x...0", "0x...1"],
   },
 }
 ```
