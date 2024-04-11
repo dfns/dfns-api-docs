@@ -27,7 +27,7 @@ In the **request body** specify the **permisison name**, as well as a list of **
 ```JSON
 {
   "name": "US Perms",
-  "operations": ["AssetAccounts:Read", "AssetAccounts:Create"]
+  "operations": ["Wallets:Read", "Wallets:Create"]
 }
 ```
 
@@ -35,19 +35,13 @@ In the **request body** specify the **permisison name**, as well as a list of **
 
 ### Response example <a href="#response-example" id="response-example"></a>
 
-If successful, a reponse object similar to the following will be returned:
-
 ```json
+// permission
 {
     "id": "pm-orange-apple-2b17a80613",
-    "orgId": "organization-id",
     "name": "US Perms",
-    "operations": [
-        "AssetAccounts:Read",
-        "AssetAccounts:Create"
-    ],
+    "operations": ["Wallets:Read", "Wallets:Create"],
     "status": "Active",
-    "predicateIds": [],
     "isImmutable": false,
     "dateCreated": "2022-10-26T08:30:25.348Z",
     "dateUpdated": "2022-10-26T08:30:25.348Z",

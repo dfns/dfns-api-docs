@@ -22,15 +22,15 @@ Retrieves a list of permission assignments (success) or gives a reason why it's 
 If successful, the response will contain a list of assignment objects similar to the ones below:
 
 <pre class="language-json"><code class="lang-json"><strong>{
-</strong><strong>    items: [
-</strong>        {
-            "id": "as-stream-pizza-08edcfff93",
-            "permissionId": "pm-orange-apple-2b17a80613",
-            "identityId": "oe-louisiana-one-6cf5e80c205c",
-            "isImmutable": false,
-            "dateCreated": "2022-10-26T09:48:31.247Z",
-            "dateUpdated": "2022-10-26T09:48:31.247Z"
-        }
-    ]
+</strong><strong>  items: [
+</strong>    {
+      "id": "as-stream-pizza-08edcfff93",
+      "permissionId": "pm-orange-apple-2b17a80613",
+      "identityId": "oe-louisiana-one-6cf5e80c205c",
+      "isImmutable": false,
+      "dateCreated": "2022-10-26T09:48:31.247Z",
+      "dateUpdated": "2022-10-26T09:48:31.247Z"
+    }
+  ]
 }
 </code></pre>

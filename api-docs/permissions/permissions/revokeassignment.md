@@ -20,7 +20,7 @@ Revokes a permission assignment (success) or gives reason why it’s not possibl
 
 ### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-<table><thead><tr><th width="200.25641025641022">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>permissionId</code></td><td>Unique identifier of the permission.<br><br>Permission IDs look like this:<br><code>pm-stream-pizza-08edcfff93</code><br><br>They follow this format:<br><code>pm-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr><tr><td><code>assignmentId</code></td><td>Unique identifier of the permission assignment.<br><br>Permission Assignment IDs look like this:<br><code>as-stream-pizza-08edcfff93</code><br><br>They follow this format:<br><code>as-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr></tbody></table>
+<table><thead><tr><th width="200.25641025641022">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>permissionId</code></td><td>Unique identifier of the permission. Permission IDs look like this:<br><code>pm-stream-pizza-08edcfff93</code></td></tr><tr><td><code>assignmentId</code></td><td>Unique identifier of the permission assignment. Permission Assignment IDs look like this:<br><code>as-stream-pizza-08edcfff93</code></td></tr></tbody></table>
 
 ## Response <a href="#response" id="response"></a>
 
@@ -31,18 +31,20 @@ If successful, the response will be a 204 status code.
 ### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
 
 ```json
+// permission assignment change request
 {
    "id":"cr-...",
-   "orgId":"or-...",
+   "kind":"Assignment",
+   "operationKind":"Delete",
+   "status":"Pending",
+   "dateCreated":"2023-12-22T20:57:55.814Z",
+   "dateResolved":"2023-12-22T20:57:55.814Z",
+   "entityId":"plc-...",
    "requester":{
       "appId":"ap-...",
       "userId":"us-...",
       "tokenId":"to-..."
    },
-   "kind":"Assignment",
-   "operationKind":"Delete",
-   "status":"Pending",
-   "entityId":"plc-...",
    "body":{
       "id":"as-stream-pizza-08edcfff93",
       "permissionId":"pm-orange-apple-2b17a80613",
@@ -51,8 +53,6 @@ If successful, the response will be a 204 status code.
       "dateCreated":"2022-10-26T09:48:31.247Z",
       "dateUpdated":"2022-10-26T09:48:31.247Z"
    },
-   "dateCreated":"2023-12-22T20:57:55.814Z",
-   "dateResolved":"2023-12-22T20:57:55.814Z"
 }
 ```
 

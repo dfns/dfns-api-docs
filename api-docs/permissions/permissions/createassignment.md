@@ -34,9 +34,8 @@ In the **request body** specify the **identity ID.**
 
 ### Response example 200 - no approval required <a href="#response-example" id="response-example"></a>
 
-If successful, the response will contain an assignment object similar to the one below:
-
 ```json
+// permission assignment
 {
     "id": "as-stream-pizza-08edcfff93",
     "permissionId": "pm-orange-apple-2b17a80613",
@@ -50,18 +49,20 @@ If successful, the response will contain an assignment object similar to the one
 ### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
 
 ```json
+// permission assignment change request
 {
    "id":"cr-...",
-   "orgId":"or-...",
+   "kind":"Assignment",
+   "operationKind":"Create",
+   "status":"Pending",
+   "entityId":"as-...",
+   "dateCreated":"2023-12-22T20:57:55.814Z",
+   "dateResolved":"2023-12-22T20:57:55.814Z",
    "requester":{
       "appId":"ap-...",
       "userId":"us-...",
       "tokenId":"to-..."
    },
-   "kind":"Assignment",
-   "operationKind":"Create",
-   "status":"Pending",
-   "entityId":"as-...",
    "body":{
       "id":"as-stream-pizza-08edcfff93",
       "permissionId":"pm-orange-apple-2b17a80613",
@@ -70,8 +71,6 @@ If successful, the response will contain an assignment object similar to the one
       "dateCreated":"2022-10-26T09:48:31.247Z",
       "dateUpdated":"2022-10-26T09:48:31.247Z"
    },
-   "dateCreated":"2023-12-22T20:57:55.814Z",
-   "dateResolved":"2023-12-22T20:57:55.814Z"
 }
 ```
 

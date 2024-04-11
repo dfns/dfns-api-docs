@@ -20,7 +20,7 @@ Archives or unarchives a permission, depending on the body of the request. Respo
 
 ### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-<table><thead><tr><th width="213.03785488958988">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>permissionId</code></td><td>Unique identifier of the permission.<br><br>Permission IDs look like this:<br><code>pm-orange-apple-2b17a80613</code><br><br>They follow this format:<br><code>pb-&#x3C;random-words>-&#x3C;random-alphanumeric-string></code></td></tr></tbody></table>
+<table><thead><tr><th width="213.03785488958988">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>permissionId</code></td><td>Unique identifier of the permission. Permission IDs look like this:<br><code>pm-orange-apple-2b17a80613</code></td></tr></tbody></table>
 
 ## Request body <a href="#request-body" id="request-body"></a>
 
@@ -43,15 +43,12 @@ In the **request body** specify wheter the permission is to be **archived** or *
 If successful, a response object of the update permission will be returned:
 
 ```json
+// permission
 {
     "id": "pm-orange-apple-2b17a80613",
-    "orgId": "organization-id",
     "name": "US",
-    "operations": [
-        "AssetAccounts:Read"
-    ],
+    "operations": ["Wallets:Read"],
     "status": "Active",
-    "predicateIds": [],
     "isImmutable": false,
     "dateCreated": "2022-10-26T08:30:25.348Z",
     "dateUpdated": "2022-10-26T08:30:25.348Z",
@@ -62,34 +59,30 @@ If successful, a response object of the update permission will be returned:
 ### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
 
 ```json
+// change request
 {
    "id":"cr-...",
-   "orgId":"or-...",
-   "requester":{
-      "appId":"ap-...",
-      "userId":"us-...",
-      "tokenId":"to-..."
-   },
    "kind":"Permission",
    "operationKind":"Update",
    "status":"Pending",
    "entityId":"pm-...",
+   "dateCreated":"2023-12-22T20:57:55.814Z",
+   "dateResolved":"2023-12-22T20:57:55.814Z",
+   "requester":{
+     "appId":"ap-...",
+     "userId":"us-...",
+     "tokenId":"to-..."
+   },
    "body":{
       "id":"pm-orange-apple-2b17a80613",
-      "orgId":"organization-id",
       "name":"US",
-      "operations":[
-         "AssetAccounts:Read"
-      ],
+      "operations":["Wallets:Read"],
       "status":"Active",
-      "predicateIds":[],
       "isImmutable":false,
       "dateCreated":"2022-10-26T08:30:25.348Z",
       "dateUpdated":"2022-10-26T08:30:25.348Z",
       "isArchived":true
    },
-   "dateCreated":"2023-12-22T20:57:55.814Z",
-   "dateResolved":"2023-12-22T20:57:55.814Z"
 }
 ```
 
