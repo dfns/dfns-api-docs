@@ -60,7 +60,7 @@ If successful, a response object of the updated permission will be returned:
 ### Response example 202 - approval required <a href="#response-example" id="response-example"></a>
 
 ```json
-// change request
+// permission change request
 {
    "id":"cr-...",
    "kind":"Permission",
@@ -80,8 +80,6 @@ If successful, a response object of the updated permission will be returned:
       "operations":["Wallets:Read", "Wallets:Create"],
       "status":"Active",
       "isImmutable":false,
-      "dateCreated":"2022-10-26T08:30:25.348Z",
-      "dateUpdated":"2022-10-26T08:30:25.348Z",
       "isArchived":false
    },
 }

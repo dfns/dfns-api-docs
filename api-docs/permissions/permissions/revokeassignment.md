@@ -50,8 +50,6 @@ If successful, the response will be a 204 status code.
       "permissionId":"pm-orange-apple-2b17a80613",
       "identityId":"oe-louisiana-one-6cf5e80c205c",
       "isImmutable":false,
-      "dateCreated":"2022-10-26T09:48:31.247Z",
-      "dateUpdated":"2022-10-26T09:48:31.247Z"
    },
 }
 ```
