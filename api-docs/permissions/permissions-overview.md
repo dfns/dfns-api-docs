@@ -20,7 +20,7 @@ When your Dfns organisation is created, some Permissions already exist in it. Th
 
 This Permission is automatically assigned to the first User of the Organisation. It includes all existing (and future) operations available in Dfns API. It's immutable, so you cannot update it or archive it. You can only assign it or revoke it.
 
-### **`DfnsDefaultEndUserAccess`** _-  Coming Soon_ :star2:
+### **`DfnsDefaultEndUserAccess`**&#x20;
 
 This  unique Permission **is assigned by default to any new EndUser** in your organisation, and comes with an initial set of operations (which you can update at any time) allowing any `EndUser` to "do stuff with the wallet he owns" by default. Here are the initial set of operations in this permission:
 

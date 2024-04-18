@@ -1,12 +1,14 @@
-# Create User Credential Challenge
+# Create Credential Challenge
 
 `POST /auth/credentials/init`
+
+Part of the flow [Create Credential Regular flow](../../../../advanced-topics/authentication/credentials/#regular-flow).
 
 Starts a create user credential session, returning a challenge that will be used to verify the user's identity.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -21,13 +23,9 @@ The permissions apply to the application only.
 
 ## Request body
 
-|                                           |          |                                                                                                   |
-| ----------------------------------------- | -------- | ------------------------------------------------------------------------------------------------- |
-| `kind` <mark style="color:red;">\*</mark> | `String` | The kind of credential being added to the user's account; can be `Fido2`, `Key`, or `RecoveryKey` |
+<table><thead><tr><th width="127.33333333333331"></th><th width="124"></th><th></th></tr></thead><tbody><tr><td><code>kind</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>The kind of credential being added to the user's account; can be <code>Fido2</code>, <code>Key</code>, or <code>RecoveryKey</code> (see <a href="../#credential-kinds">Credential Kind</a>)</td></tr></tbody></table>
 
-Example:
-
-```JSON
+```json
 {
   "kind": "Fido2"
 }
@@ -36,8 +34,8 @@ Example:
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
-* See [Credential Management Errors](../../../getting-started/errors.md#credential-management-errors) for credential management specific errors.
+* See [Common Errors](../../../../getting-started/errors.md#common-errors) for common errors.
+* See [Credential Management Errors](../../../../getting-started/errors.md#credential-management-errors) for credential management specific errors.
 {% endhint %}
 
 {% tabs %}

@@ -46,7 +46,7 @@ By leveraging an API signing secret as a proxy for the blockchain private key, t
 
 Of course, there are trade-offs. This architecture creates new potential attack vectors for bad actors. For instance, a hacker may impersonate a legitimate user in order to gain access to their wallet via the recovery process. In order to mitigate this risk, Dfns provides guidance on recovery mechanisms which our clients can implement.
 
-For example, Dfns clients can implement "biometric recovery" by encouraging users to [create secondary credentials](../api-docs/authentication/credential-management/createUserCredential.md) on alternate devices. In this way, if a user lose access to their primary device (for example, their phone), they can still access their wallet via a secondary device like their laptop.&#x20;
+For example, Dfns clients can implement "biometric recovery" by encouraging users to [create secondary credentials](../api-docs/authentication/credential-management/api-reference/createusercredential-1.md) on alternate devices. In this way, if a user lose access to their primary device (for example, their phone), they can still access their wallet via a secondary device like their laptop.&#x20;
 
 Additionally, similar to password manager solutions like 1Password, end-users can receive a recovery code which they are instructed to keep securely offline. Should the user lose their device, this code can be provided via the Dfns client’s application in order to re-establish access to their wallet.
 

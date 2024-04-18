@@ -1,13 +1,13 @@
-# Activate User Credential
+# Activate Credential
 
 `PUT /auth/credentials/activate`
 
 Activates a credential that was previously deactivated. If the credential is already activated no action is taken
 
 {% hint style="info" %}
-* User action signature required. See [User Action Signing](../user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
+* User action signature required. See [User Action Signing](../../user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
 
 ## Required Permissions
@@ -33,8 +33,8 @@ Activates a credential that was previously deactivated. If the credential is alr
 ## Responses
 
 {% hint style="info" %}
-* See [Common Errors](../../../getting-started/errors.md#common-errors) for common errors.
-* See [Credential Management Errors](../../../getting-started/errors.md#credential-management-errors) for credential management specific errors.
+* See [Common Errors](../../../../getting-started/errors.md#common-errors) for common errors.
+* See [Credential Management Errors](../../../../getting-started/errors.md#credential-management-errors) for credential management specific errors.
 {% endhint %}
 
 {% tabs %}
