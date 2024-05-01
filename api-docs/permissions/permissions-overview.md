@@ -122,6 +122,8 @@ Wallets:ReadTransaction
 Wallets:ReadTransfer
 Wallets:TransferAsset
 Wallets:Update
+Wallets:Tags:Create
+Wallets:Tags:Delete
 Webhooks:Create
 Webhooks:Read
 Webhooks:Update
