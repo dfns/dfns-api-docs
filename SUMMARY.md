@@ -8,7 +8,7 @@
 * [Dfns Environments](getting-started/dfns-environments.md)
 * [Data Model Concepts](getting-started/DataModelConcepts.md)
 * [Postman](getting-started/postman-integration.md)
-* [Dfns SDKs](getting-started/typescript-sdk.md)
+* [Dfns SDKs](getting-started/dfns-sdks.md)
 * [Videos](getting-started/Videos.md)
 
 ## API Docs

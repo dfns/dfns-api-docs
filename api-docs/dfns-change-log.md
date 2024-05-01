@@ -125,7 +125,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### June 29, 2023
 
-* [Typescript SDK](../getting-started/typescript-sdk.md) released
+* [Typescript SDK](../getting-started/dfns-sdks.md) released
 * Latency optimizations for Auth service
 * Fixes for Windows Hello usage with Webauthn&#x20;
 
