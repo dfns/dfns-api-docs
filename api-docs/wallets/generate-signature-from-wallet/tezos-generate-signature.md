@@ -37,7 +37,8 @@
     },
     "signedData": "0x82e386190d4d05ffe57db31467a83ccd6308f4eee59dff9319f2c60cf8a1f3db6c0060f4b0700cb1b73bff168a6221c6a033de12953ebc029d82d50a8d02000100008017ed86b1bbb1c6a9399fc47b83fb8a919e013400487430064a2449da0fde2e89009f4a0d8270f252bfffbe5ed3ae7239953330bc1d98659c776dcfc1e0c12b93a309f23932de021572c41dfdd0b44e10b273830f",
     "dateRequested": "2024-01-10T20:06:08.607Z",
-    "dateSigned": "2024-01-10T20:06:08.804Z"
+    "dateSigned": "2024-01-10T20:06:08.804Z",
+    "approvalId": "ap-...", // defined only if an approval process was triggered as the result of a policy ("status" will be "Pending" then)
 }
 ```
 

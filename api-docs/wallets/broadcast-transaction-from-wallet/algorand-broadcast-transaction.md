@@ -35,7 +35,8 @@
   "status": "Broadcasted",
   "txHash": "RYMBSTJPYM5KTADZ3GHOSHMTEH5DHEWEFKNG6PWPMT44GHLSUDDA",
   "dateRequested": "2024-02-08T20:19:38.428Z",
-  "dateBroadcasted": "2024-02-08T20:19:38.990Z"
+  "dateBroadcasted": "2024-02-08T20:19:38.990Z",
+  "approvalId": "ap-...", // defined only if an approval process was triggered as the result of a policy ("status" will be "Pending" then)
 }
 ```
 

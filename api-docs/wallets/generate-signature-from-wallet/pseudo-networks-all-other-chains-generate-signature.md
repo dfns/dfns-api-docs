@@ -48,7 +48,8 @@ All cryptographic scheme support hash signing.  Note ECDSA with secp256k1 or Sta
         "recid": 0,
     },
   "dateRequested": "2023-05-15T20:21:11.576Z",
-  "dateSigned": "2024-01-10T19:07:40.533Z"
+  "dateSigned": "2024-01-10T19:07:40.533Z",
+  "approvalId": "ap-...", // defined only if an approval process was triggered as the result of a policy ("status" will be "Pending" then)
 }
 ```
 

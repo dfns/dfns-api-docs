@@ -166,7 +166,8 @@ Transfer an asset out of the specified wallet to a destination address.
     "tokenId": "1"
   },
   "dateRequested": "2023-05-08T18:10:43.521Z",
-  "status": "Pending"
+  "status": "Pending", // "Pending" if an approval process was triggered as the result of a policy
+  "approvalId": "ap-...", // defined if an approval process was triggered as the result of a policy
 }
 ```
 

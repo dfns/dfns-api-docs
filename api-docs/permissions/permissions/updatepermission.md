@@ -67,6 +67,7 @@ If successful, a response object of the updated permission will be returned:
    "operationKind":"Update",
    "status":"Pending",
    "entityId":"pm-...",
+   "approvalId": "ap-...",
    "dateCreated":"2023-12-22T20:57:55.814Z",
    "dateResolved":"2023-12-22T20:57:55.814Z",
    "requester":{

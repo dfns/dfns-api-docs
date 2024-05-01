@@ -52,7 +52,8 @@ Generates a fully signed transaction ready for broadcasting yourself.&#x20;
     },
     "signedData": "0x02f86a83aa36a71603850cbab1770382520894e5a2ebc128e262ab1e3bd02bffbe16911adfbffb0180c080a005e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6ca047e0765c439fb42d57767910865d240964b7b09f2b2f74d80000000000000000",
     "dateRequested": "2024-01-10T19:07:39.277Z",
-    "dateSigned": "2024-01-10T19:07:40.533Z"
+    "dateSigned": "2024-01-10T19:07:40.533Z",
+    "approvalId": "ap-...", // defined only if an approval process was triggered as the result of a policy ("status" will be "Pending" then)
 }
 ```
 

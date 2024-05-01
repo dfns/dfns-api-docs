@@ -41,7 +41,8 @@ EVM chains like Ethereum, Polygon, BSC, Arbitrum, etc support the use of templat
   },
   "dateRequested": "2023-05-08T19:27:04.680Z",
   "dateBroadcasted": "2024-01-10T21:19:58.225Z",
-  "status": "Broadcasted"
+  "status": "Broadcasted",
+  "approvalId": "ap-...", // defined only if an approval process was triggered as the result of a policy ("status" will be "Pending" then)
 }
 ```
 

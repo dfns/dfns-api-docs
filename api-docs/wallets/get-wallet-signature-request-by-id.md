@@ -93,6 +93,7 @@ Get a signature request of a wallet.
     "encoded": "0xb23c2cfb6d409f5a55ced08f89ae70f3fe89403a5ba907c367545499874f1c7f49992f242a21ae0692c24b43393336744ddc08459d936b6a70542d79df4f66f01c"
   },
   "dateRequested": "2023-05-15T19:26:18.145Z",
-  "dateSigned": "2023-05-15T19:26:20.517Z"
+  "dateSigned": "2023-05-15T19:26:20.517Z",
+  "approvalId": "ap-...", // defined only if an approval process was triggered as the result of a policy ("status" will be "Pending" then)
 }
 ```

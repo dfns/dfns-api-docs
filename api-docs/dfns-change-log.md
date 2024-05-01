@@ -10,7 +10,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 * Added `custodial` field to [ListWallets](wallets/list-wallets.md).  False implies an end user wallet
 * Removed Policy Engine v1 create endpoints from dashboard and SDK
-* Fixed a bug in which Policy Engine [List Approvals](policy-engine/approvals/list-approvals.md) was filtering by default
+* Fixed a bug in which Policy Engine [List Approvals](policy-engine/api-reference/list-approvals-1.md) was filtering by default
 
 ### Feb 21, 2024
 

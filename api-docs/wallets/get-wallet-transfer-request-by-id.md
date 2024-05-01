@@ -49,6 +49,7 @@ Retrieves a Wallet Transfer Request by its ID.
   "fee": "77433000412976",
   "dateRequested": "2023-05-08T17:30:52.882Z",
   "dateBroadcasted": "2023-05-08T17:30:59.815Z",
-  "dateConfirmed": "2023-05-08T17:31:12.000Z"
+  "dateConfirmed": "2023-05-08T17:31:12.000Z",
+  "approvalId": "ap-...", // defined only if an approval process was triggered as the result of a policy ("status" will be "Pending" then)
 }
 ```

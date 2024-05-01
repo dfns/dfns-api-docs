@@ -2,10 +2,7 @@
 
 `GET /v2/policies/{policyId}`
 
-Retrieves a policy.
-
 {% hint style="info" %}
-* User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
 * Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
 * Authentication required. See [Authentication Headers](../../../getting-started/request-headers.md#authentication-headers) for more information.
 {% endhint %}
@@ -16,20 +13,16 @@ Retrieves a policy.
 | --------------- | --------------- |
 | `Policies:Read` | Always Required |
 
-## Parameters <a href="#parameters.1" id="parameters.1"></a>
-
-### Path parameters <a href="#path-parameters" id="path-parameters"></a>
-
-<table><thead><tr><th width="248">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>policyId</code></td><td>Unique identifier of the policy</td></tr></tbody></table>
-
 ## Response <a href="#response" id="response"></a>
 
-### Response example <a href="#response-example" id="response-example"></a>
+### 200 - Policy object <a href="#response-example" id="response-example"></a>
 
 ```json
 {
   "id": "plc-...",
   "name": "Transfer Limit",
+  "status": "Active",
+  "activityKind": "Wallets:Sign",
   "rule": {
     "kind": "TransactionAmountLimit",
     "configuration": {
@@ -37,33 +30,25 @@ Retrieves a policy.
       "limit": "1000"
     }
   },
-  "status": "Active",
-  "filters": {
-    "id": {
-      "in": [
-        "wa-..."
-      ]
-    }
-  },
-  "activityKind": "Wallets:Sign",
   "action": {
     "kind": "RequestApproval",
+    "autoRejectTimeout": 60,
     "approvalGroups": [
       {
         "name": "Admins",
-        "quorum": 1,
+        "quorum": 2,
         "approvers": {
           "userId": {
-            "in": [
-              "us-..."
-            ]
+            "in": ["us-...1", "us-...2", "us-...3"]
           }
         }
       }
     ],
-    "autoRejectTimeout": 60
   },
-  "dateCreated": "2023-12-22T20:57:55.814Z",
-  "dateResolved": "2023-12-22T20:57:55.814Z"
+  "filters": {
+    "walletId": {
+      "in": ["wa-...1", "wa-...2"]
+    }
+  },
 }
 ```
