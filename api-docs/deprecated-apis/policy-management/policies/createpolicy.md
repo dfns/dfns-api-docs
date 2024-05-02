@@ -4,7 +4,7 @@
 
 Policies join [Policy Rules](../policy-rules/createpolicyrule.md) and [Policy Controls ](../policy-controls/createpolicycontrol.md)with an `activityKind` that determines which actions on the API may trigger a Policy Execution. These are the supported `activityKinds`:
 
-* `WalletsTransferAsset`: Examine Policy Rules when the [Transfer Assets from Wallet](../../../wallets/transfer-asset-from-wallet.md) API is called
+* `WalletsTransferAsset`: Examine Policy Rules when the [Transfer Assets from Wallet](../../../wallets/transfer-asset-from-wallet-2.md) API is called
 
 For legacy Asset Accounts, use the following:&#x20;
 

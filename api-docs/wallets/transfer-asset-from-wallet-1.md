@@ -1,8 +1,8 @@
-# Update Wallet Tags
+# Delete Wallet Tags
 
-`PUT /wallets/{walletId}/tags`
+`DEL /wallets/{walletId}/tags`
 
-Tags are a way to add arbitrary metadata to wallets which can be used to [filter them in policy engine](https://docs.dfns.co/d/api-docs/policy-engine/policies#filters-for-wallets-sign-activity).  For example, you may want to create deposit wallets which are whitelisted to only send to an omnibus account.  In this case, you could add a "DepositWallet" tag to each new wallet and then filter a whitelisting policy to just those wallets.
+Removes the specified tags from a wallet.&#x20;
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
@@ -12,9 +12,9 @@ Tags are a way to add arbitrary metadata to wallets which can be used to [filter
 
 ## Required Permissions
 
-| Name               | Conditions      |
-| ------------------ | --------------- |
-| `Wallets:Tags:Add` | Always Required |
+| Name                  | Conditions      |
+| --------------------- | --------------- |
+| `Wallets:Tags:Delete` | Always Required |
 
 ## Parameters <a href="#request-example.1" id="request-example.1"></a>
 
@@ -26,15 +26,15 @@ Tags are a way to add arbitrary metadata to wallets which can be used to [filter
 
 ### Request body <a href="#native-currency-request-body" id="native-currency-request-body"></a>
 
-| Request body fields | Required/Optional | Description                     | Type             |
-| ------------------- | ----------------- | ------------------------------- | ---------------- |
-| `tags`              | Required          | The tags to apply to the wallet | Array of Strings |
+| Request body fields | Required/Optional | Description                        | Type             |
+| ------------------- | ----------------- | ---------------------------------- | ---------------- |
+| `tags`              | Required          | The tags to remove from the wallet | Array of Strings |
 
 ### Sample request body <a href="#sample-native-currency-request" id="sample-native-currency-request"></a>
 
 ```shell
 {
-  "tags": ["DepositWallet", "CustomerXYZ"]
+  "tags": ["DepositWallet"]
 }
 ```
 

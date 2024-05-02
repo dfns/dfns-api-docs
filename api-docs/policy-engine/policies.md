@@ -23,7 +23,7 @@ Once evaluated for a given activity, a policy is either `Skipped` if the rule di
 
 A "`Wallets:Sign`" activity represents any activity which involves signing with a wallet. Currently, in our API, these can be:
 
-* a Transfer Request (created using the endpoint [Transfer Asset from Wallet](../wallets/transfer-asset-from-wallet.md))
+* a Transfer Request (created using the endpoint [Transfer Asset from Wallet](../wallets/transfer-asset-from-wallet-2.md))
 * a Transaction Request (created using the endpoint [Broadcast Transaction from Wallet](../wallets/broadcast-transaction-from-wallet.md))
 * a Signature Request (created using the endpoint [Generate Signature from Wallet](../wallets/generate-signature-from-wallet/))
 
