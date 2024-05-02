@@ -1,6 +1,6 @@
 # Policies Overview
 
-A Policy acts as a "gate" for a given activity in Dfns system, which enforces a set of rules before the activity is actually executed. If triggered, a policy can either block the activity, or launch an approval process before finalizing the activity.
+A Policy acts as a "gate" for a given activity in Dfns system, which enforces a set of rules before the activity is executed. If triggered, a policy can either block the activity or launch an approval process before finalizing the activity.
 
 A Policy is defined by:
 
@@ -9,7 +9,7 @@ A Policy is defined by:
 * an [**Action**](policies.md#policy-action): after rule was evaluated, if the policy is triggered, the action defines what action is taken as a consequence.
 * optional [**Filters**](policies.md#policy-filters)**:** these can be used to reduce the scope upon which the policy applies.
 
-Once evaluated for a given activity, a policy is either `Skipped` if the rule did not trigger, or triggers the action defined. If the action is `RequestApproval`, an [**Approval**](policies.md#approval) process is initiated.
+Once evaluated for a given activity, a policy is either `Skipped` if the rule did not apply or is triggered executing the associated action. If the action is `RequestApproval`, an [**Approval**](policies.md#approval) process is initiated.
 
 
 
@@ -17,13 +17,11 @@ Once evaluated for a given activity, a policy is either `Skipped` if the rule di
 
 ## Activities
 
-
-
-"Activity" is a generic term describing some activity in Dfns system. Supported activity kinds are: [`Wallets:Sign`](policies.md#wallets-sign-activity), [`Permissions:Assign`](policies.md#permissions-assign-activity), [`Permissions:Modify`](policies.md#permissions-modify-activity) , [`Policies:Modify`](policies.md#policies-modify-activity).&#x20;
+"Activity" is a generic term describing some activity in the Dfns system. Supported activity kinds are: [`Wallets:Sign`](policies.md#wallets-sign-activity), [`Permissions:Assign`](policies.md#permissions-assign-activity), [`Permissions:Modify`](policies.md#permissions-modify-activity) , [`Policies:Modify`](policies.md#policies-modify-activity).&#x20;
 
 ### `Wallets:Sign` activity
 
-A "`Wallets:Sign`" activity represents any activity which involves signing with a wallet. Currently, in our API, these kind of activities can be either
+A "`Wallets:Sign`" activity represents any activity which involves signing with a wallet. Currently, in our API, these can be:
 
 * a Transfer Request (created using the endpoint [Transfer Asset from Wallet](../wallets/transfer-asset-from-wallet.md))
 * a Transaction Request (created using the endpoint [Broadcast Transaction from Wallet](../wallets/broadcast-transaction-from-wallet.md))
@@ -31,28 +29,28 @@ A "`Wallets:Sign`" activity represents any activity which involves signing with 
 
 ### `Permissions:Modify` activity
 
-A "`Permissions:Modify`" activity represents any activity which involves updating or archiving a permission. These activities are Permission change requests, created as a result of calling either
+A "`Permissions:Modify`" activity represents any activity which involves updating or archiving a permission. These activities are Permission change requests, created as a result of calling either:
 
 * the endpoint [Update Permission](../permissions/permissions/updatepermission.md)
 * the endpoint [Archive Permission](../permissions/permissions/archivepermission.md)
 
 ### `Permissions:Assign` activity
 
-A "`Permissions:Assign`" activity represents any activity which involves assigning a permission (or revoking it, aka "deleting a permission assignment"). These activities are Assignment change requests, created as a result of calling either
+A "`Permissions:Assign`" activity represents any activity which involves assigning a permission (or revoking it, aka "deleting a permission assignment"). These activities are Assignment change requests, created as a result of calling either:
 
 * the endpoint [Assign Permission](../permissions/permissions/createassignment.md)
 * the endpoint [Revoke Permission](../permissions/permissions/revokeassignment.md)
 
 ### `Policies:Modify` activity
 
-A "`Policies:Modify`" activity represents any activity which involves updating or archiving a policy. These activities are Policy change requests, created as a result of calling either
+A "`Policies:Modify`" activity represents any activity which involves updating or archiving a policy. These activities are Policy change requests, created as a result of calling either:
 
 * the endpoint [Update Policy](api-reference/update-policy.md)
 * the endpoint [Archive Policy](api-reference/archive-policy.md)
 
+Every policy requires a rule to be specified. Upon policy evaluation, the configuration specified in the rule will be used to determine whether the policy should trigger or not for a given activity. &#x20;
 
-
-Every policy requires a rule to be specified. Upon policy evaluation, the configuration specified in the rule will be used to determine whether the policy should trigger or not for a given activity.
+By exposing controls on permissions and policies, Dfns enables the specification of an admin quorum to approve sensitive actions which could change system governance.   Note Dfns does not expose a separate "admin quorum" concept like some of our competitors - we simply enable this use case as another configuration of the policy engine itself.   This was chosen to promote flexibility as not every customer will have the same requirements around creating and managing admin quorums.&#x20;
 
 
 
@@ -85,7 +83,7 @@ This rule can be used on a policy of any `activityKind`. It will always be trigg
 This rule can be used on a policy of `activityKind` = `Wallets:Sign`. It will trigger if the wallet activity detected is transferring some value which amount is greater than a given limit.
 
 {% hint style="info" %}
-If the fiat amount of the wallet activity cannot be evaluated for any reason (eg. market prices are not available, or eg. the amount cannot be inferred from a wallet signature request, etc.), by default the rule will trigger the policy (more secured).
+If the fiat amount of the wallet activity cannot be evaluated for any reason (eg. market prices are not available, or eg. the amount cannot be inferred from a wallet signature request, etc.), by default the rule will trigger the policy (this is called "failing closed" and is generally considered a security best practice).
 {% endhint %}
 
 ```json
@@ -108,10 +106,10 @@ If the fiat amount of the wallet activity cannot be evaluated for any reason (eg
 
 ### `TransactionAmountVelocity` policy rule
 
-This rule can be used on a policy of `activityKind` = `Wallets:Sign`. It will trigger if the cumulative amount transferred from a given wallet within a given timeframe, is greater than a specified limit.
+This rule can be used on a policy of `activityKind` = `Wallets:Sign`. It will trigger if the cumulative amount transferred from a given wallet within a given timeframe is greater than a specified limit.  The aggregate amount evaluated is based only on the wallet that triggered the policy.&#x20;
 
 {% hint style="info" %}
-If the fiat amount of any wallet activity in the given timeframe cannot be evaluated for any reason (eg. market prices are not available, or eg. the amount cannot be inferred from a wallet signature request, etc.), by default the rule will trigger the policy (more secured).
+If the fiat amount of any wallet activity in the given timeframe cannot be evaluated for any reason (eg. market prices are not available, or eg. the amount cannot be inferred from a wallet signature request, etc.), by default the rule will trigger the policy (ie. will fail closed).
 {% endhint %}
 
 ```json
@@ -135,7 +133,7 @@ If the fiat amount of any wallet activity in the given timeframe cannot be evalu
 
 ### `TransactionCountVelocity` policy rule
 
-This rule can be used on a policy of `activityKind` = `Wallets:Sign`. It will trigger if the number of wallet activities for a given wallet within a given timeframe, is greater than a specified limit .
+This rule can be used on a policy of `activityKind` = `Wallets:Sign`. It will trigger if the number of wallet activities for a given wallet within a given timeframe, is greater than a specified limit.  The aggregate number of transactions evaluated is based only on the wallet that triggered the policy.&#x20;
 
 ```json
 {
@@ -157,10 +155,10 @@ This rule can be used on a policy of `activityKind` = `Wallets:Sign`. It will tr
 
 ### `TransactionRecipientWhitelist` policy rule
 
-This rule can be used on a policy of `activityKind` = `Wallets:Sign`. It will trigger if the wallet activity transfers some value to a recipient, and the destination address is NOT whitelisted.
+This rule can be used on a policy of `activityKind` = `Wallets:Sign`. It will trigger if the wallet activity transfers some value to a recipient _and the destination address is NOT whitelisted_.
 
 {% hint style="info" %}
-If the wallet activity is not a value transfer, or the transaction recipient cannot be inferred from the wallet activity (eg if you use [Generate Signature](../wallets/generate-signature-from-wallet/)), by default the rule will trigger the policy (more secured).
+If the wallet activity is not a value transfer, or the transaction recipient cannot be inferred from the wallet activity (eg if you use [Generate Signature](../wallets/generate-signature-from-wallet/)), by default the rule will trigger the policy (ie. fail closed).
 {% endhint %}
 
 If the specified whitelisted address list is empty, it basically means "no addresses are whitelisted", so the rule will trigger for any wallet activities.
@@ -186,9 +184,7 @@ If the specified whitelisted address list is empty, it basically means "no addre
 
 ## Policy Action
 
-
-
-An action specifies what should happen if a policy rule is triggered. Supported action kinds are: [`Block`](policies.md#block-policy-action), [`RequestApproval`](policies.md#requestapproval-policy-action).
+An action specifies what should happen if a policy rule is triggered. Supported action kinds are: [`Block`](policies.md#block-policy-action)`and`[`RequestApproval`](policies.md#requestapproval-policy-action).
 
 
 
@@ -208,11 +204,11 @@ This action means that the activity will be blocked if the policy is triggered.
 
 ### `RequestApproval` policy action
 
-This action means that activity will first require an Approval process to be completed, before it can actually be executed (or be aborted if someone rejects it during the approval process)
+This action means that activity will first require an Approval process to be completed before it can  be executed (or be aborted if someone rejects it during the approval process).
 
-One (or several) group of approvers need to be specified. These groups define who is allowed to approve / reject an activity.
+One or several groups of approvers need to be specified. These groups define who is allowed to approve / reject an activity.
 
-The activity will only be executed if all approver groups reached their "quorum" of approvals. Otherwise, if one user within any approver group rejects, then the activity is aborted, and won't be executed.
+The activity will only be executed if all approver groups reach their "quorum" of approvals. Otherwise, if any one user within any approver group rejects, then the activity is aborted and the call is not executed.
 
 The example below shows a `RequestApproval` action, configured with one approval group requiring 2 approvals amongst three specific users.&#x20;
 
@@ -245,17 +241,15 @@ The example below shows a `RequestApproval` action, configured with one approval
 
 ## Policy Filters
 
-
-
 Policy filters can reduce the scope on which the policy applies. If no filters are specifies, the policy applies to all activities happening in your organisation (all activities of the kind defined by the policy `activityKind`).
 
-For example, you can use filters to setup a policy for activities happening on specific wallets, or groups of wallets. Some random examples are:
+For example, you can use filters to setup a policy for activities happening on specific wallets or on groups of wallets. Some examples include:
 
 * "All activities from wallets tagged '`group:treasury`' must first be approved by the CEO
 * "All transfers from wallet ID 1 larger than $1k must first be approved by the CEO & the CFO"
 * "All transfers from wallets tagged '`accounting:freeze`' must be blocked"
 
-The filters that you can specify depend on the kind of activity of your policy (`activityKind`)
+The filters that you can specify depend on the `activityKind` of your policy (`activityKind`)
 
 
 
@@ -314,7 +308,7 @@ Some examples:
 }
 ```
 
-
+Note the relationship between inclusion operators is always AND, not OR.&#x20;
 
 ### Filters for `"Policies:Modify"` activity
 
@@ -380,23 +374,21 @@ Some examples:
 
 ## Approval
 
-
-
-When a policy is triggered, and the action defined is `RequestApproval`, an Approval object is created, containing
+When a policy is triggered and the action defined is `RequestApproval`, an Approval object is created containing:
 
 * details about the activity that triggered this approval flow
-* details on the different policy evaluations that happened for that activity, and their result
+* details on the different policy evaluations that happened for that activity and their result
 * details about the decisions given by each approvers
 
-When a new Approval object is created, and an approval process is required, the [webhook event](../webhooks/#webhook-events) is emitted (event kind "`policy.approval.pending`"). You can leverage it in your server to react to this event, eg. send notifications to the users that need to give their approval.
+When a new Approval object is created and an approval process is required, a [webhook event](../webhooks/#webhook-events) is emitted (event kind "`policy.approval.pending`"). You can subscribe to it to react to this event, eg. send notifications to the users that need to give their approval.
 
 The Approval object can be queried using the `approvalId` returned from the endpoint that triggered the approval process, using the [Get Approval](api-reference/list-approvals.md) / [List Approvals](api-reference/list-approvals-1.md) endpoints.
 
-Users can then [Create Approval Decision](api-reference/create-approval-decision.md) endpoint to either approve / reject this activity.
+Users can then call the [Create Approval Decision](api-reference/create-approval-decision.md) endpoint to either approve / reject this activity.  Of course this can also be done via the Dfns dashboard.&#x20;
 
 A user can only give his approval / rejection if he is defined inside one of the approval groups defined on the policies that triggered.
 
-A given user can only approve / reject once, obviously. If multiple approval groups exist, an decision from a single user will count as a decision for any of the group this user belongs to.
+A given user can only approve or reject once. If multiple approval groups exist, a decision from a single user will count as a decision for any of the groups this user belongs to.
 
 A rejection from any user of any groups immediately rejects an activity.
 
