@@ -1,6 +1,6 @@
 # Delete Wallet Tags
 
-`DEL /wallets/{walletId}/tags`
+`DELETE /wallets/{walletId}/tags`
 
 Removes the specified tags from a wallet.&#x20;
 
