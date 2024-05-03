@@ -6,6 +6,39 @@ description: Change log detailing feature releases
 
 The Dfns change log documents changes to our product functionality made by our releases. This includes new features, breaking changes, bug fixes to known issues, deprecations, etc. Please bookmark this page and refresh frequently for the latest updates.
 
+### May 3, 2024
+
+* Launched [new endpoints](wallets/update-wallet-tags.md) for tagging wallets for Policy Engine filters
+* Launched cross platform registration with a one-time code
+* Upgraded ZeroDev SDK version
+
+### April 19, 2024
+
+* Laucnhed [iOS Swift SDK](../getting-started/dfns-sdks.md)
+* Launched new endpoint to [create user & wallet simultaneously](https://docs.dfns.co/d/api-docs/authentication/registration/completeenduserregistration)
+* Upgraded Viem SDK integration to 2.X
+
+### April 12, 2024
+
+* Launched recipient whitelisting in Policy Engine
+* Executed Asset Account and Public Key to Wallet migration script
+* Retired legacy authentication service
+
+### March 29, 2024
+
+* Launched Cardano Tier2 support and Polygon Amoy Tier1  (retired Mumbai)
+* Laucnhed Solana fee estimation API
+
+### March 15, 2024
+
+* Launched [GoLang SDK](../getting-started/dfns-sdks.md)
+* Launched Tier2 support for PolkaDot and Kusama
+
+### March 8, 2024
+
+* Launched Tier1 support for Algorand
+* Removed legacy dashboard access in production
+
 ### Feb 29, 2024
 
 * Added `custodial` field to [ListWallets](wallets/list-wallets.md).  False implies an end user wallet
