@@ -12,17 +12,14 @@ Creates new `Wallet` associated with the given chain (such as `Ethereum or Polyg
 
 ## Required Permissions
 
-| Name             | Conditions      |
-| ---------------- | --------------- |
-| `Wallets:Create` | Always Required |
+| Name                                               | Conditions                                                    |
+| -------------------------------------------------- | ------------------------------------------------------------- |
+| `Wallets:Create`<mark style="color:red;">\*</mark> | Always Required                                               |
+| `Wallets:Tags:Add`                                 | only required if `tags` are specified during wallet creation. |
 
 ## Request <a href="#request-body" id="request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                                                                                                               | Type    |
-| ------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| `network`           | Required          |  Network used for the wallet (See [Supported Networks](../#supported-networks) +  [Pseudo Network](../#pseudo-networks) for possible values)              | String  |
-| `name`              | Optional          | Name given to the wallet                                                                                                                                  | String  |
-| `delayDelegation`   | Optional          | Specify this if you want to create the wallet from a service account and [later delegate it to an end user](../delegate-wallet.md).  Defaults to `false`. | Boolean |
+<table><thead><tr><th width="203">Property</th><th width="184">Type - Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>network</code><mark style="color:red;">*</mark></td><td>String</td><td> Network used for the wallet (See <a href="../#supported-networks">Supported Networks</a> +  <a href="../#pseudo-networks">Pseudo Network</a> for possible values)</td></tr><tr><td><code>name</code></td><td>String - Optional</td><td>Name given to the wallet</td></tr><tr><td><code>tags</code></td><td>String List - Optional</td><td>List of tags to be created for this wallet. If specified, requires the <code>Wallets:Tags:Add</code> permission, like the <a href="../update-wallet-tags.md">Tag Wallet</a> endpoint.</td></tr><tr><td><code>delayDelegation</code></td><td>Boolean  - Optional</td><td>Specify this if you want to create the wallet from a service account and <a href="../delegate-wallet.md">later delegate it to an end user</a>.  Defaults to <code>false</code>.</td></tr><tr><td><code>delegateTo</code></td><td>String - Optional</td><td>ID of the end-user you wish to delegate this wallet to. This End User will then own this wallet, and the wallet will only be able to be used with an End-User's signature.</td></tr></tbody></table>
 
 #### Example
 
@@ -50,6 +47,8 @@ The response body is the created Wallet. The Wallet object has those fields:
 * `imported` - _(Optional) boolean_ - is `true` if the wallet is an imported wallet.
 * `exported` - _(Optional) boolean_ - is `true` if the wallet was already exported at least once.
 * `dateExported` - _(Optional) string_ - [ISO 8601](https://en.wikipedia.org/wiki/ISO\_8601) date string when wallet was first exported.&#x20;
+* `tags` - _(Optional) string list_ - List of tags on that wallet
+* `custodial` - Boolean - Specifies whether the wallet is onwed by and EndUser (non-custodial), or by your organisation (custodial)
 
 #### 200 Response example <a href="#response-example" id="response-example"></a>
 

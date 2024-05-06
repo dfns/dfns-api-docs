@@ -1,4 +1,4 @@
-# Delete Wallet Tags
+# Untag Wallet
 
 `DELETE /wallets/{walletId}/tags`
 
@@ -16,21 +16,15 @@ Removes the specified tags from a wallet.&#x20;
 | --------------------- | --------------- |
 | `Wallets:Tags:Delete` | Always Required |
 
-## Parameters <a href="#request-example.1" id="request-example.1"></a>
-
-### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+## Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
 | Path parameter | Description                                                              |
 | -------------- | ------------------------------------------------------------------------ |
 | `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx` |
 
-### Request body <a href="#native-currency-request-body" id="native-currency-request-body"></a>
+## Request body <a href="#native-currency-request-body" id="native-currency-request-body"></a>
 
-| Request body fields | Required/Optional | Description                        | Type             |
-| ------------------- | ----------------- | ---------------------------------- | ---------------- |
-| `tags`              | Required          | The tags to remove from the wallet | Array of Strings |
-
-### Sample request body <a href="#sample-native-currency-request" id="sample-native-currency-request"></a>
+<table><thead><tr><th width="143.33333333333331">Property</th><th width="194">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tags</code><mark style="color:red;">*</mark></td><td>List of String</td><td>The tags to remove from the wallet</td></tr></tbody></table>
 
 ```shell
 {
@@ -38,9 +32,7 @@ Removes the specified tags from a wallet.&#x20;
 }
 ```
 
-### 200 response example <a href="#native-currency-response-example" id="native-currency-response-example"></a>
-
-The response should be an empty JSON object:
+### 200 Response <a href="#native-currency-response-example" id="native-currency-response-example"></a>
 
 ```json
 {}
