@@ -1,6 +1,6 @@
-# Resend Registration Email
+# Resend Registration Code
 
-`PUT /auth/manage/users/send-registration-email`
+`PUT /auth/registration/code`
 
 Sends the user a new registration code. The previous registration code will be marked invalid. If the user has already completed their registration no action will be taken
 

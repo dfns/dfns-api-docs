@@ -26,7 +26,7 @@
     * [Create User Registration Challenge](api-docs/authentication/registration/initUserRegistration.md)
     * [Complete User Registration](api-docs/authentication/registration/completeUserRegistration.md)
     * [Complete End User Registration with Wallets](api-docs/authentication/registration/completeEndUserRegistration.md)
-    * [Resend Registration Email](api-docs/authentication/registration/resendRegistrationEmail.md)
+    * [Resend Registration Code](api-docs/authentication/registration/resendRegistrationEmail.md)
   * [Login](api-docs/authentication/login/README.md)
     * [Create User Login Challenge](api-docs/authentication/login/initlogin.md)
     * [Complete User Login](api-docs/authentication/login/completeLogin.md)
