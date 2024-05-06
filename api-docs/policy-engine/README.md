@@ -20,7 +20,7 @@ To do that Clare will have to create two `Policies`:
 
 When a policy is triggered, it generates and approval which must be either approved or rejected by members of the corresponding approval group.  Here's a schematic of the Policy Engine entity model:&#x20;
 
-<figure><img src="../../.gitbook/assets/our policy engine diagram.png" alt=""><figcaption><p>Policy Engine Schematic</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Policy Engine Schematic</p></figcaption></figure>
 
 For questions on the Policy Engine as well as feature requests, please email [docs@dfns.co](mailto:docs@dfns.co).&#x20;
 
