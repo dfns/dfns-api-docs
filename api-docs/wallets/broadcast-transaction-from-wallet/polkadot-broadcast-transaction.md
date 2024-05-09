@@ -2,10 +2,10 @@
 
 ## Request body <a href="#transaction-request-body" id="transaction-request-body"></a>
 
-| Request body fields | Required/Optional | Description                                         | Type   |
+| Request body fields | Required - Type   | Description                                         | Type   |
 | ------------------- | ----------------- | --------------------------------------------------- | ------ |
-| `kind`              | Required          | `Transaction`                                       | String |
-| `transaction`       | Required          | The unsigned hex encoded transaction as shown below | String |
+| `kind`              | Required - String | For Polkadot, always `Transaction`                  | String |
+| `transaction`       | Required - Hex    | The unsigned hex encoded transaction as shown below | String |
 
 ### Sample request body <a href="#sample-transaction-request" id="sample-transaction-request"></a>
 

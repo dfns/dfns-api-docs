@@ -1,8 +1,11 @@
-# XRPLedger (aka Ripple): Broadcast Transaction
+# XRP Ledger (aka Ripple): Broadcast Transaction
 
 ## Request body <a href="#transaction-request-body" id="transaction-request-body"></a>
 
-<table data-full-width="false"><thead><tr><th width="204">Request fields</th><th width="187">Required - Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required - String</td><td>For Ripple, always "Transaction"</td></tr><tr><td><code>transaction</code></td><td>Required - String</td><td>The unsigned hex encoded transaction as shown below</td></tr></tbody></table>
+| Request body fields | Required - Type   | Description                                         | Type   |
+| ------------------- | ----------------- | --------------------------------------------------- | ------ |
+| `kind`              | Required - String | For XRP Ledger, always `Transaction`                | String |
+| `transaction`       | Required - Hex    | The unsigned hex encoded transaction as shown below | String |
 
 ### Sample request body <a href="#sample-transaction-request" id="sample-transaction-request"></a>
 
