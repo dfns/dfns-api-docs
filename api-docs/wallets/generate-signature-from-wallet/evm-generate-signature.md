@@ -11,10 +11,10 @@ EVM chains like Ethereum, Polygon, BSC, Arbitrum, etc support the following sign
 
 Generates a fully signed transaction ready for broadcasting yourself.&#x20;
 
-| Request body fields | Required/Optional | Description                                         | Type   |
+| Request body fields | Required - Type   | Description                                         | Type   |
 | ------------------- | ----------------- | --------------------------------------------------- | ------ |
-| `kind`              | Required          | `Transaction`                                       | String |
-| `transaction`       | Required          | The unsigned hex encoded transaction as shown below | String |
+| `kind`              | Required - String | `Transaction`                                       | String |
+| `transaction`       | Required - Hex    | The unsigned hex encoded transaction as shown below | String |
 
 ### Sample request body <a href="#sample-transaction-request" id="sample-transaction-request"></a>
 

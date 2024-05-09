@@ -2,10 +2,10 @@
 
 ## Request body <a href="#message-request-body" id="message-request-body"></a>
 
-| Request body fields | Required/Optional | Description                                            | Type   |
+| Request body fields | Required - Type   | Description                                            | Type   |
 | ------------------- | ----------------- | ------------------------------------------------------ | ------ |
-| `kind`              | Required          | `Transaction`                                          | String |
-| `transaction`       | Required          | The unsigned hex encoded signer payload as shown below | String |
+| `kind`              | Required - String | For Polkadot, always `Message`                         | String |
+| `message`           | Required - Hex    | The unsigned hex encoded signer payload as shown below | String |
 
 ### Sample request body <a href="#sample-message-request" id="sample-message-request"></a>
 

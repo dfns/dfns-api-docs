@@ -88,11 +88,14 @@ Use this template to adjust the `maxFeePerGas` and `maxPriorityFeePerGas` of an 
 }
 ```
 
-## Raw Transaction with EthersJS <a href="#transaction-request-body" id="transaction-request-body"></a>
+## Raw Transaction <a href="#transaction-request-body" id="transaction-request-body"></a>
 
 You can also format the transaction using Ethers JS and the Dfns SDK:&#x20;
 
-<table data-full-width="false"><thead><tr><th width="220">Request fields</th><th width="189">Required - Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required - String</td><td>For EVM, always "Transaction"</td></tr><tr><td><code>transaction</code></td><td>Required - String</td><td>The unsigned hex encoded transaction as shown below</td></tr></tbody></table>
+| Request body fields | Required - Type   | Description                                         | Type   |
+| ------------------- | ----------------- | --------------------------------------------------- | ------ |
+| `kind`              | Required - String | `Transaction`                                       | String |
+| `transaction`       | Required - Hex    | The unsigned hex encoded transaction as shown below | String |
 
 ### Sample request body <a href="#sample-transaction-request" id="sample-transaction-request"></a>
 

@@ -2,7 +2,10 @@
 
 ## Request body <a href="#psbt-request-body" id="psbt-request-body"></a>
 
-<table data-full-width="false"><thead><tr><th width="165">Request  fields</th><th width="180">Required - Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required - String</td><td>For Bitcoin, always "Psbt"</td></tr><tr><td><code>psbt</code></td><td>Required - String</td><td>The hex encoded psbt as shown below</td></tr></tbody></table>
+| Request body fields | Required - Type   | Description                         | Type   |
+| ------------------- | ----------------- | ----------------------------------- | ------ |
+| `kind`              | Required - String | For Bitcoin, always `Psbt`          | String |
+| `psbt`              | Required - Hex    | The hex encoded psbt as shown below | String |
 
 ### Sample request body <a href="#sample-psbt-request" id="sample-psbt-request"></a>
 
