@@ -2,23 +2,21 @@
 
 EVM chains like Ethereum, Polygon, BSC, Arbitrum, etc support the following signature `kinds`:&#x20;
 
-* `Transaction`: Generates a fully signed transaction ready for broadcasting yourself.&#x20;
-* `Message`: Generates a signature for an arbitrary message.&#x20;
-* `EIP712`: Generates the signature for typed structured data defined in [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
-* `Hash`: Generates the signature for the hash digest of the original message.
+- `Transaction`: Generates a fully signed transaction ready for broadcasting yourself.&#x20;
+- `Message`: Generates a signature for an arbitrary message.&#x20;
+- `EIP712`: Generates the signature for typed structured data defined in [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
+- `Hash`: Generates the signature for the hash digest of the original message.
 
-## Transaction Signature <a href="#eip712-signature-request-body" id="eip712-signature-request-body"></a>
+## Transaction Signature <a href="#transaction-request-body" id="transaction-request-body"></a>
 
 Generates a fully signed transaction ready for broadcasting yourself.&#x20;
 
-### Request body <a href="#message-signature-request-body" id="message-signature-request-body"></a>
+| Request body fields | Required/Optional | Description                                         | Type   |
+| ------------------- | ----------------- | --------------------------------------------------- | ------ |
+| `kind`              | Required          | `Transaction`                                       | String |
+| `transaction`       | Required          | The unsigned hex encoded transaction as shown below | String |
 
-| Request body fields | Required/Optional | Description                           | Type   |
-| ------------------- | ----------------- | ------------------------------------- | ------ |
-| `kind`              | Required          | `Transaction`                         | String |
-| `transaction`       | Required          | The unsigned hex encoded transaction. | String |
-
-### Sample request body <a href="#sample-message-request" id="sample-message-request"></a>
+### Sample request body <a href="#sample-transaction-request" id="sample-transaction-request"></a>
 
 ```shell
 {
@@ -27,39 +25,40 @@ Generates a fully signed transaction ready for broadcasting yourself.&#x20;
 }
 ```
 
-### 200 response example <a href="#message-response-example" id="message-response-example"></a>
+### 200 response example <a href="#transaction-response-example" id="transaction-response-example"></a>
 
 ```json
 {
-    "id": "sig-39l22-xxxxx-xxxxxxxxxxxxxxxx",
-    "walletId": "wa-19lns-xxxxx-xxxxxxxxxxxxxxxx",
-    "network": "EthereumSepolia",
-    "requester": {
-        "userId": "us-3v1ag-xxxxx-xxxxxxxxxxxxxxxx",
-        "tokenId": "to-7mkkj-xxxxx-xxxxxxxxxxxxxxxx",
-        "appId": "ap-c831n-xxxxx-xxxxxxxxxxxxxxxx"
-    },
-    "requestBody": {
-        "kind": "Transaction",
-        "transaction": "0x02e783aa36a71603850cbab1770382520894e5a2ebc128e262ab1e3bd02bffbe16911adfbffb0180c0"
-    },
-    "status": "Signed",
-    "signature": {
-        "r": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c",
-        "s": "0x47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f14a63da7ce5a1fe",
-        "recid": 0,
-        "encoded": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f10000000000000000"
-    },
-    "signedData": "0x02f86a83aa36a71603850cbab1770382520894e5a2ebc128e262ab1e3bd02bffbe16911adfbffb0180c080a005e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6ca047e0765c439fb42d57767910865d240964b7b09f2b2f74d80000000000000000",
-    "dateRequested": "2024-01-10T19:07:39.277Z",
-    "dateSigned": "2024-01-10T19:07:40.533Z",
-    "approvalId": "ap-...", // defined only if an approval process was triggered as the result of a policy ("status" will be "Pending" then)
+  "id": "sig-39l22-xxxxx-xxxxxxxxxxxxxxxx",
+  "walletId": "wa-19lns-xxxxx-xxxxxxxxxxxxxxxx",
+  "network": "EthereumSepolia",
+  "requester": {
+    "userId": "us-3v1ag-xxxxx-xxxxxxxxxxxxxxxx",
+    "tokenId": "to-7mkkj-xxxxx-xxxxxxxxxxxxxxxx",
+    "appId": "ap-c831n-xxxxx-xxxxxxxxxxxxxxxx"
+  },
+  "requestBody": {
+    "kind": "Transaction",
+    "transaction": "0x02e783aa36a71603850cbab1770382520894e5a2ebc128e262ab1e3bd02bffbe16911adfbffb0180c0"
+  },
+  "status": "Signed",
+  "signature": {
+    "r": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c",
+    "s": "0x47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f14a63da7ce5a1fe",
+    "recid": 0,
+    "encoded": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f10000000000000000"
+  },
+  "signedData": "0x02f86a83aa36a71603850cbab1770382520894e5a2ebc128e262ab1e3bd02bffbe16911adfbffb0180c080a005e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6ca047e0765c439fb42d57767910865d240964b7b09f2b2f74d80000000000000000",
+  "dateRequested": "2024-01-10T19:07:39.277Z",
+  "dateSigned": "2024-01-10T19:07:40.533Z"
 }
 ```
 
-### EthersJS SDK Sample:
+### Typescript Example with Ethers
 
-See the full EthersJS docs here: [https://docs.ethers.org/v6/](https://docs.ethers.org/v6/)
+First install the Ethers JS. You can find the full documentation here: [https://docs.ethers.org/v6/](https://docs.ethers.org/v6/)
+
+Here a code sample to generate a signature via [the Dfns TypeScript SDK](https://github.com/dfns/dfns-sdk-ts):
 
 ```typescript
 import { parseUnits, Transaction } from 'ethers'
@@ -83,11 +82,9 @@ const res = await dfnsClient.wallets.generateSignature({
 })
 ```
 
-## Message Signature <a href="#message-signature-request-body" id="message-signature-request-body"></a>
+## Message Signature <a href="#message-request-body" id="message-request-body"></a>
 
 Generates a signature for an arbitrary message.&#x20;
-
-### Request body <a href="#message-signature-request-body" id="message-signature-request-body"></a>
 
 | Request body fields | Required/Optional | Description                       | Type   |
 | ------------------- | ----------------- | --------------------------------- | ------ |
@@ -99,7 +96,7 @@ Generates a signature for an arbitrary message.&#x20;
 ```shell
 {
   "kind": "Message",
-  "message": "0x01000507a824baef8cad745bb58148551728d245d6fc21679d1b8f3bbf6abed957f614719dca9b4fcc2b6a68aab9ef37b4db8dc5e99d2d803b577cc61c042453ddd525a6d215d4421860fc0e4a48255b2a6781a494e7ee3f055eeeda2233b590a07b6a2806a1d8179137542a983437bdfe2a7ab2557f535c8a78722b68a49dc00000000006a1d817a502050b680791e6ce6db88e1e5b7150f61fc6790a4eb4d10000000006a7d51718c774c928566398691d5eb68b5eb8a39b4b6d5c73555b210000000006a7d517193584d0feed9bb3431d13206be544281b57b8566cc5375ff40000001abbca65c30117367204561151b7660a672b5fc9fe3d2780d130ea30be604eea0103060102050604000402000000"
+  "message": "0x49206c6f76652044666e73"
 }
 ```
 
@@ -117,27 +114,23 @@ Generates a signature for an arbitrary message.&#x20;
   },
   "requestBody": {
     "kind": "Message",
-    "message": "0x01000507a824baef8cad745bb58148551728d245d6fc21679d1b8f3bbf6abed957f614719dca9b4fcc2b6a68aab9ef37b4db8dc5e99d2d803b577cc61c042453ddd525a6d215d4421860fc0e4a48255b2a6781a494e7ee3f055eeeda2233b590a07b6a2806a1d8179137542a983437bdfe2a7ab2557f535c8a78722b68a49dc00000000006a1d817a502050b680791e6ce6db88e1e5b7150f61fc6790a4eb4d10000000006a7d51718c774c928566398691d5eb68b5eb8a39b4b6d5c73555b210000000006a7d517193584d0feed9bb3431d13206be544281b57b8566cc5375ff40000001abbca65c30117367204561151b7660a672b5fc9fe3d2780d130ea30be604eea0103060102050604000402000000"
+    "message": "0x49206c6f76652044666e73"
   },
   "status": "Signed",
-    "signature": {
-        "r": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c",
-        "s": "0x47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f14a63da7ce5a1fe",
-        "recid": 0,
-        "encoded": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f10000000000000000"
-    },
+  "signature": {
+    "r": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c",
+    "s": "0x47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f14a63da7ce5a1fe",
+    "recid": 0,
+    "encoded": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f10000000000000000"
+  },
   "dateRequested": "2023-05-15T20:21:11.576Z",
   "dateSigned": "2024-01-10T19:07:40.533Z"
 }
 ```
 
-
-
-## EIP-712 TypedData Signature <a href="#eip712-signature-request-body" id="eip712-signature-request-body"></a>
+## EIP-712 TypedData Signature <a href="#eip712-request-body" id="eip712-request-body"></a>
 
 Generates the signature for typed structured data defined in [EIP-712](https://eips.ethereum.org/EIPS/eip-712), only applicable for EVM compatible blockchain networks.
-
-### Request body <a href="#eip712-signature-request-body" id="eip712-signature-request-body"></a>
 
 | field     | Required/Optional | Description                 | Type                            |
 | --------- | ----------------- | --------------------------- | ------------------------------- |
@@ -157,7 +150,7 @@ Generates the signature for typed structured data defined in [EIP-712](https://e
 
 <table><thead><tr><th width="222">field</th><th>Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Optional</td><td>Name of the signing domain.</td><td>String</td></tr><tr><td><code>version</code></td><td>Optional</td><td>Current major version of the signing domain.</td><td>String</td></tr><tr><td><code>chainId</code></td><td>Optional</td><td>Chain ID.</td><td>Integer</td></tr><tr><td><code>verifyingContract</code></td><td>Optional</td><td>The address of the contract that will verify the signature.</td><td>String</td></tr><tr><td><code>salt</code></td><td>Optional</td><td>32-byte value as a last-resort domain separator.</td><td>String</td></tr></tbody></table>
 
-#### Sample request body <a href="#sample-eip712-request" id="sample-eip712-request"></a>
+### Sample request body <a href="#sample-eip712-request" id="sample-eip712-request"></a>
 
 ```shell
 {
@@ -194,7 +187,7 @@ Generates the signature for typed structured data defined in [EIP-712](https://e
 }
 ```
 
-### Response example <a href="#eip712-response-example" id="eip712-response-example"></a>
+### 200 response example <a href="#eip712-response-example" id="eip712-response-example"></a>
 
 ```json
 {
@@ -301,14 +294,13 @@ Generates the signature for the hash digest of the original message.
     "hash": "031edd7d41651593c5fe5c006fa5752b37fddff7bc4e843aa6af0c950f4b9406"
   },
   "status": "Signed",
-    "signature": {
-        "r": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c",
-        "s": "0x47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f14a63da7ce5a1fe",
-        "recid": 0,
-        "encoded": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f10000000000000000"
-    },
+  "signature": {
+    "r": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c",
+    "s": "0x47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f14a63da7ce5a1fe",
+    "recid": 0,
+    "encoded": "0x05e365d4304eaa78516eb309bff91f8c12e5445a431e3f2428239678d0150c6c47e0765c439fb42d57767910865d240964b7b09f2b2f74d8f10000000000000000"
+  },
   "dateRequested": "2023-05-15T20:21:11.576Z",
   "dateSigned": "2024-01-10T19:07:40.533Z"
 }
 ```
-
