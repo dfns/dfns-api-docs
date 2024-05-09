@@ -1,22 +1,22 @@
 # Algorand: Broadcast Transaction
 
-### Request body <a href="#message-signature-request-body" id="message-signature-request-body"></a>
+## Request body <a href="#transaction-request-body" id="transaction-request-body"></a>
 
-| Request body fields | Required/Optional | Description                                 | Type   |
-| ------------------- | ----------------- | ------------------------------------------- | ------ |
-| `kind`              | Required          | `Transaction`                               | String |
-| `transaction`       | Required          | The original tx hex encoded as shown below. | String |
+| Request body fields | Required/Optional | Description                                         | Type   |
+| ------------------- | ----------------- | --------------------------------------------------- | ------ |
+| `kind`              | Required          | `Transaction`                                       | String |
+| `transaction`       | Required          | The unsigned hex encoded transaction as shown below | String |
 
-### Sample request body <a href="#sample-message-request" id="sample-message-request"></a>
+### Sample request body <a href="#sample-transaction-request" id="sample-transaction-request"></a>
 
 ```shell
 {
   "kind": "Transaction",
-  "message": "0x81a374786e89a3616d74cd2710a3666565cd03e8a26676ce02340f13a367656eac746573746e65742d76312e30a26768c4204863b518a4b3c84ec810f22d4f1081cb0f71f059a7ac20dec62f7f70e5093a22a26c76ce023412fba3726376c4201256a859b39429ee178e0a65056fb33d51c5139044f6a2603c144278010c7684a3736e64c4201256a859b39429ee178e0a65056fb33d51c5139044f6a2603c144278010c7684a474797065a3706179"
+  "transaction": "0x81a374786e89a3616d74cd2710a3666565cd03e8a26676ce02340f13a367656eac746573746e65742d76312e30a26768c4204863b518a4b3c84ec810f22d4f1081cb0f71f059a7ac20dec62f7f70e5093a22a26c76ce023412fba3726376c4201256a859b39429ee178e0a65056fb33d51c5139044f6a2603c144278010c7684a3736e64c4201256a859b39429ee178e0a65056fb33d51c5139044f6a2603c144278010c7684a474797065a3706179"
 }
 ```
 
-### 200 response example <a href="#message-response-example" id="message-response-example"></a>
+### 200 response example <a href="#transaction-response-example" id="transaction-response-example"></a>
 
 ```json
 {
@@ -35,16 +35,15 @@
   "status": "Broadcasted",
   "txHash": "RYMBSTJPYM5KTADZ3GHOSHMTEH5DHEWEFKNG6PWPMT44GHLSUDDA",
   "dateRequested": "2024-02-08T20:19:38.428Z",
-  "dateBroadcasted": "2024-02-08T20:19:38.990Z",
-  "approvalId": "ap-...", // defined only if an approval process was triggered as the result of a policy ("status" will be "Pending" then)
+  "dateBroadcasted": "2024-02-08T20:19:38.990Z"
 }
 ```
 
-## Algorand SDK
+## Typescript Example with AlgoSDK
 
-First install the AlgoSDK.  You can find the full documentation here: [https://github.com/algorand/js-algorand-sdk](https://github.com/algorand/js-algorand-sdk)
+First install the AlgoSDK. You can find the full documentation here: [https://github.com/algorand/js-algorand-sdk](https://github.com/algorand/js-algorand-sdk)
 
-Here a code sample to encode a transaction via [the Dfns TypeScript SDK](https://github.com/dfns/dfns-sdk-ts):
+Here a code sample to broadcast a transaction via [the Dfns TypeScript SDK](https://github.com/dfns/dfns-sdk-ts):
 
 ```typescript
 import { Algodv2, encodeObj, makePaymentTxnWithSuggestedParamsFromObject } from 'algosdk'
