@@ -2,13 +2,14 @@
 
 `POST /wallets/{walletId}/transfers`
 
-Transfer an asset out of the specified wallet to a destination address.
+Transfer an asset out of the specified wallet to a destination address. For all fungible token transfers, the transfer amount must be specified in the minimum denomination of that token. For example, use the amount in `Satoshi` for a Bitcoin transfer, or the amount in `Wei` for an Ethereum transfer etc.
 
 {% hint style="info" %}
-* User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
-* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
-{% endhint %}
+
+- User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
+- Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+- Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+  {% endhint %}
 
 ## Required Permissions
 
@@ -16,7 +17,7 @@ Transfer an asset out of the specified wallet to a destination address.
 | ----------------------- | --------------- |
 | `Wallets:TransferAsset` | Always Required |
 
-## Parameters <a href="#request-example.1" id="request-example.1"></a>
+## Parameters <a href="#parameters" id="parameters"></a>
 
 ### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
@@ -24,19 +25,26 @@ Transfer an asset out of the specified wallet to a destination address.
 | -------------- | ------------------------------------------------------------------------ |
 | `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx` |
 
-## Native Cryptocurrencies <a href="#native-currency-request-body" id="native-currency-request-body"></a>
+## Native Token <a href="#native-token" id="native-token"></a>
 
-### Request body <a href="#native-currency-request-body" id="native-currency-request-body"></a>
+Transfer the native token of the network. All networks support the native token type.
 
-| Request body fields | Required/Optional | Description                                                                                                                                                                                        | Type   |
-| ------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| `kind`              | Required          | `Native`                                                                                                                                                                                           | String |
-| `to`                | Required          | The destination address.                                                                                                                                                                           | String |
-| `amount`            | Required          | The amount of native token to transfer **in minimum denomination** (eg. passing the value in `WEI` unit, not in `ETH` unit, so passing `1000000000000000000` in order to do a `1 ETH` transaction) | String |
+### Request body <a href="#native-token-request-body" id="native-token-request-body"></a>
 
-### Sample request body <a href="#sample-native-currency-request" id="sample-native-currency-request"></a>
+| Request body fields | Required/Optional | Description                                                             | Type   |
+| ------------------- | ----------------- | ----------------------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Native`                                                                | String |
+| `to`                | Required          | The destination address                                                 | String |
+| `amount`            | Required          | The amount of native tokens to transfer in minimum denomination         | String |
+| `priority`          | Optional          | The priority that determines the fees paid for the transfer<sup>1</sup> | String |
+| `memo`              | Optional          | The memo or destination tag<sup>2</sup>                                 | String |
 
-```shell
+1. All EVM networks, Bitcoin and Solana support this option. Not valid for other networks. The accepted values are `Slow`, `Standard` and `Fast`. When specified, it uses the [estimate fees](../networks/estimate-fees.md) API to calculate the transfer fees. When not specified, the transfer will use the fees return from our node provider.
+2. Stellar and XrpLedger support this option. Not valid for other networks.
+
+### Sample request body <a href="#sample-native-token-request" id="sample-native-token-request"></a>
+
+```json
 {
   "kind": "Native",
   "to": "0xb282dc7cde21717f18337a596e91ded00b79b25f",
@@ -44,13 +52,13 @@ Transfer an asset out of the specified wallet to a destination address.
 }
 ```
 
-### 200 response example <a href="#native-currency-response-example" id="native-currency-response-example"></a>
+### 200 response example <a href="#native-token-response-example" id="native-token-response-example"></a>
 
 ```json
 {
   "id": "xfr-1vs8g-c1ub1-xxxxxxxxxxxxxxxx",
   "walletId": "wa-39abb-e9kpk-xxxxxxxxxxxxxxxx",
-  "network": "EthereumSepolia",
+  "network": "Ethereum",
   "requester": {
     "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
     "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
@@ -61,82 +69,157 @@ Transfer an asset out of the specified wallet to a destination address.
     "to": "0xb282dc7cde21717f18337a596e91ded00b79b25f",
     "amount": "1000000000"
   },
+  "metadata": {
+    "asset": {
+      "symbol": "ETH",
+      "decimals": 18,
+      "verified": true,
+      "quotes": {
+        "EUR": 2802.867647101728,
+        "USD": 3020.82462287215
+      }
+    }
+  },
   "dateRequested": "2023-05-08T19:14:25.568Z",
   "status": "Pending"
 }
 ```
 
-## ERC-20 Transfers <a href="#notes" id="notes"></a>
+## Algorand <a href="#algorand" id="algorand"></a>
 
-### Request body <a href="#erc20-request-body" id="erc20-request-body"></a>
+### Algorand Standard Assets <a href="#alogrand-asa" id="alogrand-asa"></a>
 
-| Request body fields | Required/Optional | Description                                               | Type   |
-| ------------------- | ----------------- | --------------------------------------------------------- | ------ |
-| `kind`              | Required          | `Erc20`                                                   | String |
-| `contract`          | Required          | The ERC20 contract address.                               | String |
-| `to`                | Required          | The destination address.                                  | String |
-| `amount`            | Required          | The amount of tokens to transfer in minimum denomination. | String |
+Transfer Algorand standard assets, or [ASAs](https://developer.algorand.org/docs/get-details/asa/).
 
-### Sample request body <a href="#sample-erc20-request" id="sample-erc20-request"></a>
+#### Request body <a href="#asa-request-body" id="asa-request-body"></a>
 
-```shell
-{
-  "kind": "Erc20",
-  "contract": "0x779877a7b0d9e8603169ddbd7836e478b4624789",
-  "to": "0xb282dc7cde21717f18337a596e91ded00b79b25f",
-  "amount": "1000000000"
-}
-```
+| Request body fields | Required/Optional | Description                                              | Type   |
+| ------------------- | ----------------- | -------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Asa`                                                    | String |
+| `assetId`           | Required          | The asset ID of the token                                | String |
+| `to`                | Required          | The destination address                                  | String |
+| `amount`            | Required          | The amount of tokens to transfer in minimum denomination | String |
 
-### 200 response example <a href="#erc20-response-example" id="erc20-response-example"></a>
+#### Sample request body <a href="#asa-token-request" id="asa-token-request"></a>
 
 ```json
 {
-    "id": "xfr-6ulmv-sa183-xxxxxxxxxxxxxxxx",
-    "walletId": "wa-40f4f-51gpm-xxxxxxxxxxxxxxxx",
-    "network": "Ethereum",
-    "requester": {
-        "userId": "us-4vu4v-kud3l-xxxxxxxxxxxxxxxx",
-        "appId": "ap-7c2pm-avfsr-xxxxxxxxxxxxxxxx"
-    },
-    "requestBody": {
-        "amount": "1000000",
-        "to": "0xc42754e6f79f15082613b2b4ebead83dcf8116b6",
-        "kind": "Erc20",
-        "contract": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
-    },
-    "metadata": {
-        "asset": {
-            "symbol": "USDC",
-            "decimals": 6,
-            "verified": true,
-            "quotes": {
-                "USD": 1.000804849917271,
-                "EUR": 0.9201529894769885
-            }
-        }
-    },
-    "status": "Confirmed",
-    "fee": "1542993669053672",
-    "txHash": "0x8e88793607610a83798eb5ec6dde861f3e459c7e4a22e78b0d2e675b86d0d1e7",
-    "dateRequested": "2024-01-18T23:03:53.739Z",
-    "dateBroadcasted": "2024-01-18T23:03:55.685Z",
-    "dateConfirmed": "2024-01-18T23:03:59.000Z"
+  "kind": "Asa",
+  "assetId": "31566704",
+  "to": "FRZP423Y7MNMTG4OOLESESTPCFGGHZMY7QN462YEQAJK5H6EOMFHZG73UA",
+  "amount": "1000000"
 }
 ```
 
-## ERC-721 NFT Transfers
+#### 200 response example <a href="#asa-response-example" id="asa-response-example"></a>
 
-### Request body <a href="#erc721-request-body" id="erc721-request-body"></a>
+```json
+{
+  "id": "xfr-22e36-7p55v-xxxxxxxxxxxxxxxx",
+  "walletId": "wa-39abb-e9kpk-xxxxxxxxxxxxxxxx",
+  "network": "Algorand",
+  "requester": {
+    "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+    "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+    "appId": "ap-24vva-92s32-xxxxxxxxxxxxxxxx"
+  },
+  "requestBody": {
+    "kind": "Asa",
+    "assetId": "31566704",
+    "to": "FRZP423Y7MNMTG4OOLESESTPCFGGHZMY7QN462YEQAJK5H6EOMFHZG73UA",
+    "amount": "1000000"
+  },
+  "metadata": {
+    "asset": {
+      "symbol": "USDC",
+      "decimals": 6,
+      "verified": true
+    }
+  },
+  "dateRequested": "2024-05-10T14:35:55.768Z",
+  "status": "Pending"
+}
+```
 
-| Request body fields | Required/Optional | Description                  | Type   |
-| ------------------- | ----------------- | ---------------------------- | ------ |
-| `kind`              | Required          | `Erc721`                     | String |
-| `contract`          | Required          | The ERC721 contract address. | String |
-| `to`                | Required          | The destination address.     | String |
-| `tokenId`           | Required          | The token to transfer.       | String |
+## EVM Compatible Networks <a href="#evm" id="evm"></a>
 
-### Sample request body <a href="#sample-erc721-request" id="sample-erc721-request"></a>
+### ERC-20 <a href="#evm-erc20" id="evm-erc20"></a>
+
+Transfer fungible tokens that implement the [ERC-20 specification](https://eips.ethereum.org/EIPS/eip-20).
+
+#### Request body <a href="#erc20-request-body" id="erc20-request-body"></a>
+
+| Request body fields | Required/Optional | Description                                                 | Type   |
+| ------------------- | ----------------- | ----------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Erc20`                                                     | String |
+| `contract`          | Required          | The ERC20 contract address                                  | String |
+| `to`                | Required          | The destination address                                     | String |
+| `amount`            | Required          | The amount of tokens to transfer in minimum denomination    | String |
+| `priority`          | Optional          | The priority that determines the fees paid for the transfer | String |
+
+#### Sample request body <a href="#sample-erc20-request" id="sample-erc20-request"></a>
+
+```json
+{
+  "kind": "Erc20",
+  "contract": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+  "to": "0xb282dc7cde21717f18337a596e91ded00b79b25f",
+  "amount": "1000000"
+}
+```
+
+#### 200 response example <a href="#erc20-response-example" id="erc20-response-example"></a>
+
+```json
+{
+  "id": "xfr-6ulmv-sa183-xxxxxxxxxxxxxxxx",
+  "walletId": "wa-40f4f-51gpm-xxxxxxxxxxxxxxxx",
+  "network": "Ethereum",
+  "requester": {
+    "userId": "us-4vu4v-kud3l-xxxxxxxxxxxxxxxx",
+    "appId": "ap-7c2pm-avfsr-xxxxxxxxxxxxxxxx"
+  },
+  "requestBody": {
+    "kind": "Erc20",
+    "contract": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "amount": "1000000",
+    "to": "0xb282dc7cde21717f18337a596e91ded00b79b25f"
+  },
+  "metadata": {
+    "asset": {
+      "symbol": "USDC",
+      "decimals": 6,
+      "verified": true,
+      "quotes": {
+        "USD": 1.000804849917271,
+        "EUR": 0.9201529894769885
+      }
+    }
+  },
+  "status": "Confirmed",
+  "fee": "1542993669053672",
+  "txHash": "0x8e88793607610a83798eb5ec6dde861f3e459c7e4a22e78b0d2e675b86d0d1e7",
+  "dateRequested": "2024-01-18T23:03:53.739Z",
+  "dateBroadcasted": "2024-01-18T23:03:55.685Z",
+  "dateConfirmed": "2024-01-18T23:03:59.000Z"
+}
+```
+
+### ERC-721 <a href="#evm-erc721" id="evm-erc721"></a>
+
+Transfer non-fungible tokens that implement the [ERC-721 specification](https://eips.ethereum.org/EIPS/eip-721)
+
+#### Request body <a href="#erc721-request-body" id="erc721-request-body"></a>
+
+| Request body fields | Required/Optional | Description                                                 | Type   |
+| ------------------- | ----------------- | ----------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Erc721`                                                    | String |
+| `contract`          | Required          | The ERC721 contract address                                 | String |
+| `to`                | Required          | The destination address                                     | String |
+| `tokenId`           | Required          | The token to transfer                                       | String |
+| `priority`          | Optional          | The priority that determines the fees paid for the transfer | String |
+
+#### Sample request body <a href="#sample-erc721-request" id="sample-erc721-request"></a>
 
 ```shell
 {
@@ -147,7 +230,7 @@ Transfer an asset out of the specified wallet to a destination address.
 }
 ```
 
-### 200 response example <a href="#erc721-response-example" id="erc721-response-example"></a>
+#### 200 response example <a href="#erc721-response-example" id="erc721-response-example"></a>
 
 ```json
 {
@@ -166,57 +249,140 @@ Transfer an asset out of the specified wallet to a destination address.
     "tokenId": "1"
   },
   "dateRequested": "2023-05-08T18:10:43.521Z",
-  "status": "Pending", // "Pending" if an approval process was triggered as the result of a policy
-  "approvalId": "ap-...", // defined if an approval process was triggered as the result of a policy
+  "status": "Pending"
 }
 ```
 
+## Stellar <a href="#stellar" id="stellar"></a>
 
+### Classic Stellar Assets (SEP41) <a href="#stellar-sep41" id="stellar-sep41"></a>
 
-## Non-EVM Chain Transfers
+Transfer classic [Stellar Assets](https://developers.stellar.org/docs/issuing-assets/anatomy-of-an-asset). They all implement the [SEP-41 token interface](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0041.md).
 
-All chains support the `Native` transfer kind for their native cryptocurrency.  Chain specific standards are outlined below by chain.
+#### Request body <a href="#sep41-request-body" id="sep41-request-body"></a>
 
-### Tron <a href="#erc721-request-body" id="erc721-request-body"></a>
+| Request body fields | Required/Optional | Description                                              | Type   |
+| ------------------- | ----------------- | -------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Sep41`                                                  | String |
+| `issuer`            | Required          | The asset issuer address                                 | String |
+| `assetCode`         | Required          | The asset code                                           | String |
+| `to`                | Required          | The destination address                                  | String |
+| `amount`            | Required          | The amount of tokens to transfer in minimum denomination | String |
+| `memo`              | Optional          | The memo                                                 | String |
 
-Tron supports `Trc10`, `Trc20`, and `Trc721` transfers using the following JSON body structures:&#x20;
-
-```json
-// Trc10
-{
-    "kind": "Trc10",
-    "tokenId": "1005273",
-    "to": "TADDx31pdCFfp3XrYxp6fQGbRxriYFLTrx",
-    "amount": "1"
-}
-
-// Trc20
-{
-    "kind": "Trc20",
-    "contract": "TXLAQ63Xg1NAzckPwKHvzw7CSEmLMEqcdj",
-    "to": "TQJNezrbfJ3akrGgR7eM2fWyFpsKeM8wzN",
-    "amount": "1000"
-}
-
-// Trc721
-{
-    "kind": "Trc721",
-    "contract": "TKgnDMWHYmwH24REe9XnrnwcNCvtb53n8Q",
-    "to": "TQJNezrbfJ3akrGgR7eM2fWyFpsKeM8wzN",
-    "tokenId": "1"
-}
-```
-
-### Algorand
-
-Algorand supports `Asa` transfers using the following JSON body structure:&#x20;
+#### Sample request body <a href="#sample-sep41-request" id="sample-sep41-request"></a>
 
 ```json
 {
-    "kind": "Asa",
-    "assetId": "10458941",
-    "to": "FRZP423Y7MNMTG4OOLESESTPCFGGHZMY7QN462YEQAJK5H6EOMFHZG73UA",
-    "amount": "1"
+  "kind": "Sep41",
+  "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+  "assetCode": "USDC",
+  "to": "GAZWLHTNAOJWW52GZCUJAS5MSXK7LAWCUC5TFOFFVDQ7CDTNFODJ37GB",
+  "amount": "1000000"
 }
 ```
 
+#### 200 response example <a href="#sep41-response-example" id="sep41-response-example"></a>
+
+```json
+{
+  "id": "xfr-gbasv-hssu9-xxxxxxxxxxxxxxxx",
+  "walletId": "wa-46sdf-a9stj-xxxxxxxxxxxxxxxx",
+  "network": "Stellar",
+  "requester": {
+    "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+    "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+    "appId": "ap-24vva-92s32-xxxxxxxxxxxxxxxx"
+  },
+  "requestBody": {
+    "kind": "Sep41",
+    "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+    "assetCode": "USDC",
+    "to": "GAZWLHTNAOJWW52GZCUJAS5MSXK7LAWCUC5TFOFFVDQ7CDTNFODJ37GB",
+    "amount": "1000000"
+  },
+  "metadata": {
+    "asset": {
+      "symbol": "USDC",
+      "decimals": 7,
+      "verified": true
+    }
+  },
+  "dateRequested": "2024-05-08T14:34:04.446Z",
+  "status": "Pending"
+}
+```
+
+## TRON <a href="#tron" id="tron"></a>
+
+### TRC-10 <a href="#tron-trc10" id="tron-trc10"></a>
+
+Transfer TRON's TRC-10 fungible tokens
+
+#### Request body <a href="#trc10-request-body" id="trc10-request-body"></a>
+
+| Request body fields | Required/Optional | Description                                              | Type   |
+| ------------------- | ----------------- | -------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Trc10`                                                  | String |
+| `tokenId`           | Required          | The token ID                                             | String |
+| `to`                | Required          | The destination address                                  | String |
+| `amount`            | Required          | The amount of tokens to transfer in minimum denomination | String |
+
+#### Sample request body <a href="#trc10-request-body" id="trc10-request-body"></a>
+
+```json
+{
+  "kind": "Trc10",
+  "tokenId": "1005273",
+  "to": "TADDx31pdCFfp3XrYxp6fQGbRxriYFLTrx",
+  "amount": "10000"
+}
+```
+
+### TRC-20 <a href="#tron-trc20" id="tron-trc20"></a>
+
+Transfer fungible tokens that implement the TRC-20 smart contract specification.
+
+#### Request body <a href="#trc20-request-body" id="trc20-request-body"></a>
+
+| Request body fields | Required/Optional | Description                                              | Type   |
+| ------------------- | ----------------- | -------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Trc20`                                                  | String |
+| `contract`          | Required          | The smart contract address                               | String |
+| `to`                | Required          | The destination address                                  | String |
+| `amount`            | Required          | The amount of tokens to transfer in minimum denomination | String |
+
+#### Sample request body <a href="#trc20-request-body" id="trc20-request-body"></a>
+
+```json
+{
+  "kind": "Trc20",
+  "contract": "TXLAQ63Xg1NAzckPwKHvzw7CSEmLMEqcdj",
+  "to": "TQJNezrbfJ3akrGgR7eM2fWyFpsKeM8wzN",
+  "amount": "1000000"
+}
+```
+
+### TRC-721 <a href="#tron-trc721" id="tron-trc721"></a>
+
+Transfer non-fungible tokens that implement the TRC-721 smart contract specification.
+
+#### Request body <a href="#trc721-request-body" id="trc721-request-body"></a>
+
+| Request body fields | Required/Optional | Description                | Type   |
+| ------------------- | ----------------- | -------------------------- | ------ |
+| `kind`              | Required          | `Trc721`                   | String |
+| `contract`          | Required          | The smart contract address | String |
+| `to`                | Required          | The destination address    | String |
+| `tokenId`           | Required          | The token to transfer      | String |
+
+#### Sample request body <a href="#trc721-request-body" id="trc721-request-body"></a>
+
+```json
+{
+  "kind": "Trc721",
+  "contract": "TKgnDMWHYmwH24REe9XnrnwcNCvtb53n8Q",
+  "to": "TQJNezrbfJ3akrGgR7eM2fWyFpsKeM8wzN",
+  "tokenId": "1"
+}
+```
