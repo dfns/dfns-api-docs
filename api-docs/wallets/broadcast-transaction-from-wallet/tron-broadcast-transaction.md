@@ -1,4 +1,4 @@
-# Tron: Broadcast Transaction
+# TRON: Broadcast Transaction
 
 ## Request body <a href="#transaction-request-body" id="transaction-request-body"></a>
 

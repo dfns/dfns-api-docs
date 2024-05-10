@@ -31,16 +31,16 @@ Transfer the native token of the network. All networks support the native token 
 
 ### Request body <a href="#native-token-request-body" id="native-token-request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                             | Type   |
-| ------------------- | ----------------- | ----------------------------------------------------------------------- | ------ |
-| `kind`              | Required          | `Native`                                                                | String |
-| `to`                | Required          | The destination address                                                 | String |
-| `amount`            | Required          | The amount of native tokens to transfer in minimum denomination         | String |
-| `priority`          | Optional          | The priority that determines the fees paid for the transfer<sup>1</sup> | String |
-| `memo`              | Optional          | The memo or destination tag<sup>2</sup>                                 | String |
+| Request body fields | Required/Optional | Description                                                     | Type   |
+| ------------------- | ----------------- | --------------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Native`                                                        | String |
+| `to`                | Required          | The destination address                                         | String |
+| `amount`            | Required          | The amount of native tokens to transfer in minimum denomination | String |
+| `priority`          | Optional          | The priority that determines the fees paid for the transfer [1] | String |
+| `memo`              | Optional          | The memo or destination tag [2]                                 | String |
 
-1. All EVM networks, Bitcoin and Solana support this option. Not valid for other networks. The accepted values are `Slow`, `Standard` and `Fast`. When specified, it uses the [estimate fees](../networks/estimate-fees.md) API to calculate the transfer fees. When not specified, the transfer will use the fees return from our node provider.
-2. Stellar and XrpLedger support this option. Not valid for other networks.
+1. All EVM compatible networks, Bitcoin and Solana support `priority`. Not supported for other networks. The accepted values are `Slow`, `Standard` and `Fast`. When specified, it uses the [estimate fees](../networks/estimate-fees.md) API to calculate the transfer fees. When not specified, the transfer will use the fees returned from the blockchain node providers.
+2. Stellar and XrpLedger support `memo`. Not valid for other networks.
 
 ### Sample request body <a href="#sample-native-token-request" id="sample-native-token-request"></a>
 
