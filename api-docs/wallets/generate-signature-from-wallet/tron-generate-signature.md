@@ -1,4 +1,4 @@
-# Tron: Generate Signature
+# TRON: Generate Signature
 
 ## Request body <a href="#transaction-request-body" id="transaction-request-body"></a>
 
