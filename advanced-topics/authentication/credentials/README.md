@@ -62,9 +62,7 @@ This flow is useful when you want a user to create a new Credential from an app 
 3. In App 2, create a new credential locally, sign the above challenge with it.
 4. In App 2, call [Create Credential With Code](../../../api-docs/authentication/credential-management/api-reference/createusercredential-2.md) to complete (passing the code from step 1). This endpoint does not require a user-action-signature required, so no credential signature involved here
 
-
-
-The Credential APIs are used to manage User Credentials.
+This [demo video](https://www.loom.com/share/a8b3cbca4b934f659e2e37e676762b87?sid=6aa89bfa-ac59-4c87-897e-79085d916aa0) showcases this flow and how you could implement it in your product.
 
 
 
