@@ -64,6 +64,10 @@ This flow is useful when you want a user to create a new Credential from an app 
 
 This [demo video](https://www.loom.com/share/a8b3cbca4b934f659e2e37e676762b87?sid=6aa89bfa-ac59-4c87-897e-79085d916aa0) showcases this flow and how you could implement it in your product.
 
+{% embed url="https://www.loom.com/share/a8b3cbca4b934f659e2e37e676762b87?sid=6aa89bfa-ac59-4c87-897e-79085d916aa0" %}
+Create Credential with Code flow demo
+{% endembed %}
+
 
 
 ## Key Creds vs WebauthN creds
