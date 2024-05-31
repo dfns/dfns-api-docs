@@ -6,6 +6,23 @@ description: Change log detailing feature releases
 
 The Dfns change log documents changes to our product functionality made by our releases. This includes new features, breaking changes, bug fixes to known issues, deprecations, etc. Please bookmark this page and refresh frequently for the latest updates.
 
+### May 31, 2024
+
+* Launched internal indexing for EVM chains
+* Launched Algorand NFT indexing
+
+### May 24, 2024
+
+* Launched Android Kotlin SDK
+
+### May 17, 2024
+
+* Launched create credential w/ code in dashboard
+
+### May 10, 2024
+
+* Launched Stellar Tier 1
+
 ### May 3, 2024
 
 * Launched [new endpoints](wallets/update-wallet-tags.md) for tagging wallets for Policy Engine filters
