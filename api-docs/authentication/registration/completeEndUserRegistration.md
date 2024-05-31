@@ -130,6 +130,9 @@ Since this endpoint is not authentication, the permissions apply to the applicat
     "username": "jdoe@example.co",
     "orgId": "or-5ls29-8kduj-xxxxxxxxxxxxxxxx"
   },
+  "authentication": {
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOixxxxxxxx"
+  },
   "wallets": [
     {
       "id": "wa-72qpd-et2jo-xxxxxxxxxxxxxxxx",
