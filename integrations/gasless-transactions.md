@@ -26,7 +26,7 @@ Biconomy is a web3 infrastructure provider offering a full stack solution for AA
 
 ### Safe
 
-In addition to being the industry leading Smart Contract Wallet, Safe also provides a 4337 implementation which is documented [here](https://docs.safe.global/home/4337-safe).    They have exposed a [Safe4337Module contract](https://github.com/safe-global/safe-modules/blob/main/modules/4337/contracts/Safe4337Module.sol) which extends their SCW to enable 4337 compliant transactions which are received via a proxy contract.  To use Dfns with Safe AA, simply use our [GenerateSignature API](../api-docs/wallets/generate-signature-from-wallet/) to sign User Operations sent through your bundler to the Safe proxy. &#x20;
+In addition to being the industry-leading Smart Account, Safe also supports ERC-4337 via Modules and the FallbackHandler with a flow documented [here](https://docs.safe.global/home/4337-safe). The [Safe4337Module](https://github.com/safe-global/safe-modules/blob/main/modules/4337/contracts/Safe4337Module.sol) extends the Safe Smart Account to enable ERC-4337 compliant transactions, received via the proxy contract. This functionality is exposed via the Relay Kit in the Safe{Core} SDK - check [this guide](https://docs.safe.global/home/4337-guides/safe-sdk) on how to integrate it. To use Dfns with Safe AA, simply use our [GenerateSignature API](https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet) to sign User Operations sent through your bundler to the Safe proxy.
 
 ### Alchemy
 
