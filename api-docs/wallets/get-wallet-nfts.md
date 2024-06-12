@@ -5,9 +5,10 @@
 Retrieves a list of NFTs owned by the specified Wallet.
 
 {% hint style="info" %}
-* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
-* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
-{% endhint %}
+
+- Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+- Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+  {% endhint %}
 
 ## Required Permissions
 
@@ -30,14 +31,21 @@ Retrieves a list of NFTs owned by the specified Wallet.
 ```json
 {
   "walletId": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
-  "network": "EthereumSepolia",
+  "network": "Ethereum",
   "nfts": [
     {
-      "contract": "0x00fb58432ef9d418bf6688bcf0a226d2fcaa18e2",
-      "name": "Muppets",
-      "symbol": "MUPPETS",
-      "tokenIds": ["0", "1"],
-      "count": 2
+      "kind": "Erc721",
+      "contract": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+      "symbol": "BAYC",
+      "tokenId": "8500",
+      "tokenUri": "ipfs://QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq/8500"
+    },
+    {
+      "kind": "Erc721",
+      "contract": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+      "symbol": "BAYC",
+      "tokenId": "2944",
+      "tokenUri": "ipfs://QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq/2944"
     }
   ]
 }
