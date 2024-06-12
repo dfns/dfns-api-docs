@@ -253,9 +253,118 @@ Transfer non-fungible tokens that implement the [ERC-721 specification](https://
 }
 ```
 
+## Solana <a href="#solana" id="solana"></a>
+
+### Solana Program Library Token (SPL) <a href="#solana-spl" id="solana-spl"></a>
+
+Transfer [SPL tokens](https://spl.solana.com/token).
+
+#### Request body <a href="#spl-request-body" id="spl-request-body"></a>
+
+| Request body fields | Required/Optional | Description                                              | Type   |
+| ------------------- | ----------------- | -------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Spl`                                                    | String |
+| `mint`              | Required          | The mint account address                                 | String |
+| `to`                | Required          | The destination address                                  | String |
+| `amount`            | Required          | The amount of tokens to transfer in minimum denomination | String |
+
+#### Sample request body <a href="#sample-spl-request" id="sample-spl-request"></a>
+
+```json
+{
+  "kind": "Spl",
+  "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+  "to": "3U6stgsD1FmA7o3omUguritCU8iWmUM7Rs6KqAHHxHVZ",
+  "amount": "1000000"
+}
+```
+
+#### 200 response example <a href="#spl-response-example" id="spl-response-example"></a>
+
+```json
+{
+  "id": "xfr-4qc73-2kr4s-xxxxxxxxxxxxxxxx",
+  "walletId": "wa-3i0nv-fa4e7-xxxxxxxxxxxxxxxx",
+  "network": "Solana",
+  "requester": {
+    "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+    "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+    "appId": "ap-24vva-92s32-xxxxxxxxxxxxxxxx"
+  },
+  "requestBody": {
+    "kind": "Spl",
+    "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "to": "3U6stgsD1FmA7o3omUguritCU8iWmUM7Rs6KqAHHxHVZ",
+    "amount": "1000000"
+  },
+  "metadata": {
+    "asset": {
+      "symbol": "USDC",
+      "decimals": 6,
+      "verified": true
+    }
+  },
+  "dateRequested": "2024-06-11T13:46:55.175Z",
+  "status": "Pending"
+}
+```
+
+### Solana Program Library Token 2022 (SPL-2022) <a href="#solana-spl2022" id="solana-spl2022"></a>
+
+Transfer [SPL 2022 tokens](https://spl.solana.com/token-2022).
+
+#### Request body <a href="#spl2022-request-body" id="spl2022-request-body"></a>
+
+| Request body fields | Required/Optional | Description                                              | Type   |
+| ------------------- | ----------------- | -------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Spl2022`                                                | String |
+| `mint`              | Required          | The mint account address                                 | String |
+| `to`                | Required          | The destination address                                  | String |
+| `amount`            | Required          | The amount of tokens to transfer in minimum denomination | String |
+
+#### Sample request body <a href="#sample-spl2022-request" id="sample-spl2022-request"></a>
+
+```json
+{
+  "kind": "Spl2022",
+  "mint": "DnECowYZoUEyqfntQmeLPPH5s1TLR7P5v4iyToZxFjDZ",
+  "to": "3U6stgsD1FmA7o3omUguritCU8iWmUM7Rs6KqAHHxHVZ",
+  "amount": "1000000"
+}
+```
+
+#### 200 response example <a href="#spl2022-response-example" id="spl2022-response-example"></a>
+
+```json
+{
+  "id": "xfr-2kmot-fk31j-xxxxxxxxxxxxxxxx",
+  "walletId": "wa-3i0nv-fa4e7-xxxxxxxxxxxxxxxx",
+  "network": "Solana",
+  "requester": {
+    "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+    "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+    "appId": "ap-24vva-92s32-xxxxxxxxxxxxxxxx"
+  },
+  "requestBody": {
+    "kind": "Spl2022",
+    "mint": "DnECowYZoUEyqfntQmeLPPH5s1TLR7P5v4iyToZxFjDZ",
+    "to": "3U6stgsD1FmA7o3omUguritCU8iWmUM7Rs6KqAHHxHVZ",
+    "amount": "1000000"
+  },
+  "metadata": {
+    "asset": {
+      "symbol": "Dfns22",
+      "decimals": 8
+    }
+  },
+  "dateRequested": "2024-06-05T17:02:43.295Z",
+  "status": "Pending"
+}
+```
+
 ## Stellar <a href="#stellar" id="stellar"></a>
 
-### Classic Stellar Assets (SEP41) <a href="#stellar-sep41" id="stellar-sep41"></a>
+### Classic Stellar Assets (SEP-41) <a href="#stellar-sep41" id="stellar-sep41"></a>
 
 Transfer classic [Stellar Assets](https://developers.stellar.org/docs/issuing-assets/anatomy-of-an-asset). They all implement the [SEP-41 token interface](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0041.md).
 
