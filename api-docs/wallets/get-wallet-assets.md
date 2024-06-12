@@ -32,24 +32,25 @@ Retrieves a list of assets owned by the specified Wallet.
 ```json
 {
   "walletId": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
-  "network": "EthereumSepolia",
+  "network": "Ethereum",
   "assets": [
     {
-      "symbol": "SepoliaETH",
+      "symbol": "ETH",
       "decimals": 18,
-      "balance": "1000000000000000000"
+      "balance": "1000000000000000000",
+      "verified": true
     },
     {
-      "contract": "0x6f14c02fc1f78322cfd7d707ab90f18bad3b54f5",
-      "name": "USDC Token",
+      "contract": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "name": "USD Coin",
       "symbol": "USDC",
-      "decimals": 18,
+      "decimals": 6,
       "balance": "100000000000000000000",
       "verified": true
     },
     {
-      "contract": "0x779877a7b0d9e8603169ddbd7836e478b4624789",
-      "name": "ChainLink Token",
+      "contract": "0x514910771af9ca656af840dff83e8264ecf986ca",
+      "name": "Chainlink Token",
       "symbol": "LINK",
       "decimals": 18,
       "balance": "20000000000000000000",
