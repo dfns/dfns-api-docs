@@ -29,3 +29,8 @@ Request to generate a signature with the wallet key. **This process does not bro
 The body of the request will depend on the chain you are targeting.   Please find the chain in question by expanding this section in the left hand navigation:
 
 <figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+## Response Statuses
+
+<table><thead><tr><th width="191">Status</th><th>Definition</th></tr></thead><tbody><tr><td><code>pending</code></td><td>The request is pending approval due to a <a href="https://docs.dfns.co/d/api-docs/policy-engine/policies#wallets-sign-activity">policy applied</a> to the wallet</td></tr><tr><td><code>executing</code></td><td>The request is approved and is in the process of being signed (note this status is only set for a short time between pending and signed)</td></tr><tr><td><code>signed</code></td><td>The signature is complete and available in the response body</td></tr><tr><td><code>confirmed</code></td><td>The signature has been confirmed on-chain by our indexing pipeline</td></tr><tr><td><code>failed</code></td><td>Indicates an internal system failure to complete the request</td></tr><tr><td><code>rejected</code></td><td>The request has been rejected by a policy approval action</td></tr></tbody></table>
+

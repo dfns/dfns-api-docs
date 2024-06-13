@@ -19,15 +19,11 @@ We've built specific bindings for React Native into the Typescript SDK to help a
 
 We've wrapped the native HTTP libs in Go to handle our request signing.  You can find the repo [here](https://github.com/dfns/dfns-sdk-go).  Note this is an MVP implementation which does not include full function typing like the Typescript SDK.
 
-## iOS Swift SDK
+## iOS Swift & Android Kotlin SDKs
 
-For native platform developers, we've created a Swift SDK to accelerate the iOS development process.  You can find it [here](https://github.com/dfns/dfns-sdk-swift).   Similar to GoLang, this does not include strong function typing.
+For native platform developers, we've created an [iOS Swift SDK](https://github.com/dfns/dfns-sdk-swift) and an [Android Kotlin SDK](https://github.com/dfns/dfns-sdk-kotlin) to accelerate the iOS development process.  Similar to GoLang, this does not include strong function typing.
 
-## Android Kotlin SDK
-
-Coming soon.&#x20;
-
-## Python SDK
+## Flutter SDK
 
 Coming soon.&#x20;
 

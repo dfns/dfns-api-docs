@@ -5,11 +5,10 @@
 Transfer an asset out of the specified wallet to a destination address. For all fungible token transfers, the transfer amount must be specified in the minimum denomination of that token. For example, use the amount in `Satoshi` for a Bitcoin transfer, or the amount in `Wei` for an Ethereum transfer etc.
 
 {% hint style="info" %}
-
-- User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
-- Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
-- Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
-  {% endhint %}
+* User action signature required. See [User Action Signing](../authentication/user-action-signing/) for more information.
+* Request headers required. See [Request Headers](../../getting-started/request-headers.md) for more information.
+* Authentication required. See [Authentication Headers](../../getting-started/request-headers.md#authentication-headers) for more information.
+{% endhint %}
 
 ## Required Permissions
 
@@ -31,13 +30,13 @@ Transfer the native token of the network. All networks support the native token 
 
 ### Request body <a href="#native-token-request-body" id="native-token-request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                     | Type   |
-| ------------------- | ----------------- | --------------------------------------------------------------- | ------ |
-| `kind`              | Required          | `Native`                                                        | String |
-| `to`                | Required          | The destination address                                         | String |
-| `amount`            | Required          | The amount of native tokens to transfer in minimum denomination | String |
-| `priority`          | Optional          | The priority that determines the fees paid for the transfer [1] | String |
-| `memo`              | Optional          | The memo or destination tag [2]                                 | String |
+| Request body fields | Required/Optional | Description                                                      | Type   |
+| ------------------- | ----------------- | ---------------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Native`                                                         | String |
+| `to`                | Required          | The destination address                                          | String |
+| `amount`            | Required          | The amount of native tokens to transfer in minimum denomination  | String |
+| `priority`          | Optional          | The priority that determines the fees paid for the transfer \[1] | String |
+| `memo`              | Optional          | The memo or destination tag \[2]                                 | String |
 
 1. All EVM compatible networks, Bitcoin and Solana support `priority`. Not supported for other networks. The accepted values are `Slow`, `Standard` and `Fast`. When specified, it uses the [estimate fees](../networks/estimate-fees.md) API to calculate the transfer fees. When not specified, the transfer will use the fees returned from the blockchain node providers.
 2. Stellar and XrpLedger support `memo`. Not valid for other networks.
@@ -495,3 +494,7 @@ Transfer non-fungible tokens that implement the TRC-721 smart contract specifica
   "tokenId": "1"
 }
 ```
+
+## Response Statuses
+
+<table><thead><tr><th width="167">Status</th><th>Definition</th></tr></thead><tbody><tr><td><code>pending</code></td><td>The request is pending approval due to a <a href="https://docs.dfns.co/d/api-docs/policy-engine/policies#wallets-sign-activity">policy applied</a> to the wallet</td></tr><tr><td><code>executing</code></td><td>The request is approved and is in the process of being executed (note this status is only set for a short time between pending and broadcasted)</td></tr><tr><td><code>broadcasted</code></td><td>The transaction has been successfully written to the mempool</td></tr><tr><td><code>confirmed</code></td><td>The transaction has been confirmed on-chain by our indexing pipeline</td></tr><tr><td><code>failed</code></td><td>Indicates a system failure to complete the request</td></tr><tr><td><code>rejected</code></td><td>The request has been rejected by a policy approval action</td></tr></tbody></table>

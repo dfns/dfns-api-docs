@@ -6,6 +6,14 @@ description: Change log detailing feature releases
 
 The Dfns change log documents changes to our product functionality made by our releases. This includes new features, breaking changes, bug fixes to known issues, deprecations, etc. Please bookmark this page and refresh frequently for the latest updates.
 
+### June 14, 2024
+
+* Launched key export for EdDSA keys
+
+### June 7, 2024
+
+* Launched Solana Tier 1&#x20;
+
 ### May 31, 2024
 
 * Launched internal indexing for EVM chains
