@@ -93,7 +93,7 @@
   * [Transfer Asset from Wallet](api-docs/wallets/transfer-asset-from-wallet.md)
   * [Get Wallet Transfer Request by ID](api-docs/wallets/get-wallet-transfer-request-by-id.md)
   * [List Wallet Transfer Requests](api-docs/wallets/list-wallet-transfer-requests.md)
-  * [Broadcast Transaction from Wallet](api-docs/wallets/broadcast-transaction-from-wallet/README.md)
+  * [Sign and Broadcast Transaction from Wallet](api-docs/wallets/broadcast-transaction-from-wallet/README.md)
     * [Algorand: Broadcast Transaction](api-docs/wallets/broadcast-transaction-from-wallet/algorand-broadcast-transaction.md)
     * [Bitcoin/Litecoin: Broadcast Transaction](api-docs/wallets/broadcast-transaction-from-wallet/bitcoin-broadcast-transaction.md)
     * [Cardano: Broadcast Transaction](api-docs/wallets/broadcast-transaction-from-wallet/cardano-broadcast-transaction.md)

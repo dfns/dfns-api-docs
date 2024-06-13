@@ -1,8 +1,8 @@
-# Broadcast Transaction from Wallet
+# Sign and Broadcast Transaction from Wallet
 
 `POST /wallets/{walletId}/transactions`
 
-Broadcast transaction enables communication with any arbitrary smart contract by replicating the native transaction protocol fields in the body of the request. It can be used to make native payments, call smart contract functions, and even deploy new smart contracts. Note for reading from a "view" function on EVM chains, please use [Call Read Function](../../deprecated-apis/blockchains/call-read-function.md).
+Sign & Broadcast transaction enables communication with any arbitrary smart contract by replicating the native transaction protocol fields in the body of the request.  It executes a signature, constructs the transaction for the target chain, and then broadcasts the transaction.  It can be used to make native payments, call smart contract functions, and even deploy new smart contracts. Note for reading from a "view" function on EVM chains, please use [Call Read Function](../../deprecated-apis/blockchains/call-read-function.md).
 
 {% hint style="info" %}
 * User action signature required. See [User Action Signing](../../authentication/user-action-signing/) for more information.
