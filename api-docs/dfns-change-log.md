@@ -227,7 +227,7 @@ The Dfns change log documents changes to our product functionality made by our r
 ### Mar 14, 2023
 
 * Added blockchain indexing for SOL and XRP
-* Added `activityId` query string param to [List policy control executions](deprecated-apis/policy-management/policyexecution/listpolicycontrolexecutions.md)
+* Added `activityId` query string param to [List policy control executions](broken-reference)
 
 ### Mar 8, 2023
 
@@ -236,7 +236,7 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Feb 28, 2023
 
-* Added new [ListTransactions endpoint](deprecated-apis/low-level-api-keys-and-transactions/transaction-execution/list-transactions.md)
+* Added new [ListTransactions endpoint](broken-reference)
 * Throughput enhancements to our indexing pipeline
 
 ### Feb 17, 2023
@@ -264,13 +264,13 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Dec 19, 2022
 
-* Fixed a bug in [BroadcastTransaction](deprecated-apis/low-level-api-keys-and-transactions/transaction-execution/broadcasttransaction/) where the `value` parameter was being interpreted in ETH instead of WEI.
+* Fixed a bug in [BroadcastTransaction](broken-reference) where the `value` parameter was being interpreted in ETH instead of WEI.
 * Last push of the year!
 
 ### Dec 15, 2022
 
-* Launched new `direction` and `status` query parameters on [ListPayments](deprecated-apis/high-level-api-asset-accounts-and-payments/payments/listpayments.md)
-* Fixed a bug in the `timeoutInMinutes` implementation in [PolicyControls](deprecated-apis/policy-management/policy-controls/createpolicycontrol.md)
+* Launched new `direction` and `status` query parameters on [ListPayments](broken-reference)
+* Fixed a bug in the `timeoutInMinutes` implementation in [PolicyControls](broken-reference)
 
 ### Dec 7, 2022
 
@@ -280,8 +280,8 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Nov 30, 2022
 
-* Launched our new blockchain indexing microservice for Ethereum mainnet exposed via the new `direction` field on [payments](deprecated-apis/high-level-api-asset-accounts-and-payments/payments/listpayments.md) and the new `PaymentReceived and PaymentConfirmed` [callback eventKinds](deprecated-apis/readme-1/callback-subscriptions/createcallbacksubscription.md).
-* Enabled [Permissions](permissions/) on [callbacks](deprecated-apis/readme-1/) and [pubic keys](deprecated-apis/low-level-api-keys-and-transactions/public-keys-1/)
+* Launched our new blockchain indexing microservice for Ethereum mainnet exposed via the new `direction` field on [payments](broken-reference) and the new `PaymentReceived and PaymentConfirmed` [callback eventKinds](broken-reference).
+* Enabled [Permissions](permissions/) on [callbacks](broken-reference) and [pubic keys](broken-reference)
 * Internal bug fixes wrt database pagination
 
 ### Nov 22, 2022
@@ -296,13 +296,13 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Nov 8, 2022
 
-* Added a `maxUnitBalance` property to the response from the [GetBalance endpoint](high-level-api-asset-accounts-and-payments/asset-accounts/getassetaccountbalancebyid.md) representing the largest possible unit for the given asset.
+* Added a `maxUnitBalance` property to the response from the [GetBalance endpoint](broken-reference) representing the largest possible unit for the given asset.
 * IP Whitelisting fixes: API Gateway redirect aliases, extra NAT Gateway IPs whitelisted
 * Integrated Fantom, Optimism, and SKALE blockchains
 
 ### Oct 27, 2022
 
-* Added `PolicyActivated` and `WalletCreated` [callback subscription topics](deprecated-apis/readme-1/callback-subscriptions/createcallbacksubscription.md)
+* Added `PolicyActivated` and `WalletCreated` [callback subscription topics](broken-reference)
 * Integrated TRON blockchain
 
 ### Oct 16, 2022
@@ -312,12 +312,12 @@ The Dfns change log documents changes to our product functionality made by our r
 
 ### Sep 27, 2022
 
-* Added [GetAddressForNetwork endpoint](deprecated-apis/low-level-api-keys-and-transactions/public-keys-1/getaddressfornetwork.md)
+* Added [GetAddressForNetwork endpoint](broken-reference)
 * Deployed internal changes around zero trust service to service communication
 * Fixed testnet erc20 tokens with Goerli addresses
 * Bug fix adding asset symbol to chain validation
 
 ### Aug 30, 2022
 
-* Deployed filtering [policies](deprecated-apis/policy-management/policies/createpolicy.md) by public keys of wallets
+* Deployed filtering [policies](broken-reference) by public keys of wallets
 * Bug fix for Policy Control Execution bad activity types

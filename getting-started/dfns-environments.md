@@ -6,7 +6,7 @@ Dfns supports a production environment (api.dfns.io) and a staging environment (
 _Staging environment (api.dfns.ninja) is for use only with test funds_
 {% endhint %}
 
-This constraint exists to prevent customers from accidentally moving real funds into the staging environment. Note Dfns can not prevent customers from using [CreateSignature](../api-docs/deprecated-apis/low-level-api-keys-and-transactions/transaction-execution/createsignature.md) in a staging environment and sending funds to a mainnet chain. This is however against our terms of use, so please don't do it - thanks!
+This constraint exists to prevent customers from accidentally moving real funds into the staging environment. Note Dfns can not prevent customers from using [CreateSignature](broken-reference) in a staging environment and sending funds to a mainnet chain. This is however against our terms of use, so please don't do it - thanks!
 
 Throughout our documentation, assume that you should prepend the environment you want to interact with in front of the API paths given. For example:
 
