@@ -1,6 +1,6 @@
 # List Wallets
 
-`GET /wallets/?paginationToken={token}`
+`GET /wallets/?ownerId={userId}&paginationToken={token}`
 
 Retrieves a list of wallets.
 
@@ -19,7 +19,7 @@ Retrieves a list of wallets.
 
 ### Query parameters <a href="#path-parameters" id="path-parameters"></a>
 
-<table><thead><tr><th>Query string parameter</th><th width="196">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>limit</code></td><td>Optional</td><td>Maximum number of items to return. Default to 50.</td><td>Number</td></tr><tr><td><code>paginationToken</code></td><td>Optional</td><td>Opaque token used to retrieve the next page. Returned as <code>nextPageToken</code> from the previous request.</td><td>String</td></tr></tbody></table>
+<table><thead><tr><th>Query string parameter</th><th width="196">Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>ownerId</code></td><td>Optional</td><td>Filters the wallets returned to the  userId of the owner of the wallets.  Can be used to get all wallets belonging to a specific end user. </td><td>String</td></tr><tr><td><code>limit</code></td><td>Optional</td><td>Maximum number of items to return. Default to 50.</td><td>Number</td></tr><tr><td><code>paginationToken</code></td><td>Optional</td><td>Opaque token used to retrieve the next page. Returned as <code>nextPageToken</code> from the previous request.</td><td>String</td></tr></tbody></table>
 
 ## Response <a href="#response" id="response"></a>
 
