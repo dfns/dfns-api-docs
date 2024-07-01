@@ -29,7 +29,7 @@ A "`Wallets:Sign`" activity represents any activity which involves signing with 
 
 ### `Wallets:IncomingTransaction` activity
 
-A "`Wallets:IncomingTransaction`" activity represents when our indexers detected an incoming transaction into a wallet. Since that's an on-chain event detected, we don't support taking any policy action as a result (to be used with action kind "`NoAction`"), but it can be used with an AML/KYT policy rule ("`ChainalysisTransactionScreening`") in order to run a KYT check, and send a `policy.triggered` [Webhook Event](../webhooks/#webhook-events) in case the kyt analysis detected something.
+A "`Wallets:IncomingTransaction`" activity represents when our indexers detected an incoming transaction into a wallet. This activity kind has to be used with the rule kind "`ChainalysisTransactionScreening`" (see more on [Chainalysis](../../integrations/chainalysis.md) integration page), and the action kind "`NoAction`", meaning that no actual action will be taken as a result of the Chainalysis screening, other than notifying you through a webhook event if the policy is triggered. The reason for that, is that the incoming transaction is already on-chain, so the funds are already in the wallet, we cannot block that transfer on chain.
 
 ### `Permissions:Modify` activity
 
@@ -187,10 +187,10 @@ If the specified whitelisted address list is empty, it basically means "no addre
 ### `ChainalysisTransactionPrescreening`   policy rule
 
 {% hint style="info" %}
-This rule can only be used once the Chainalysis integration is activated from the Dfns dashboard settings.
+This rule can only be used once the Chainalysis integration is activated from the Dfns dashboard settings. (see more on [Chainalysis](../../integrations/chainalysis.md) integration page)
 {% endhint %}
 
-This rule can be used on a policy of `activityKind` = `Wallets:Sign`. It's a rule based on Chainalysis KYT integration (Know-Your-Transaction). Upon transfer, we will first register the transfer with Chainalysis (as a ["withdrawal attempt"](https://docs.chainalysis.com/api/kyt/#registration-register-a-withdrawal-attempt)), and fetch the results of the analysis (alerts, exposures, addresses detected). Based on the results, and the configuration of this rule, the policy will be triggered.&#x20;
+This rule can be used on a policy of `activityKind` = `Wallets:Sign`. It's a rule based on [Chainalysis](../../integrations/chainalysis.md) KYT integration (Know-Your-Transaction). Upon transfer attempt, we will first register the transfer with Chainalysis (as a ["withdrawal attempt"](https://docs.chainalysis.com/api/kyt/#registration-register-a-withdrawal-attempt)), and fetch the screening results (alerts, exposures, addresses detected). Based on the results, and the configuration of this rule, the policy will be triggered.&#x20;
 
 It's called "Pre"-screening, because the scanned transaction is not on chain yet, it's still a transaction attempt (before the transaction actually make it on chain).
 
@@ -231,7 +231,7 @@ It's called "Pre"-screening, because the scanned transaction is not on chain yet
 ### `ChainalysisTransactionScreening`   policy rule
 
 {% hint style="info" %}
-This rule can only be used once the Chainalysis integration is activated from the Dfns dashboard settings.
+This rule can only be used once the Chainalysis integration is activated from the Dfns dashboard settings (see more on [Chainalysis](../../integrations/chainalysis.md) integration page)
 {% endhint %}
 
 This rule can be used on a policy of `activityKind` = `Wallets:IncomingTransaction`, and with the action kind `NoAction`. It's a rule based on Chainalysis KYT integration (Know-Your-Transaction). Upon an incoming transaction detectedby our indexers, we will [register the transfer with Chainalysis](https://docs.chainalysis.com/api/kyt/#registration-register-a-transfer), and fetch the results of the analysis (alerts & exposures detected). Based on the results, and the configuration of this rule, the policy will be triggered.
