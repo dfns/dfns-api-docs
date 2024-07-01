@@ -179,3 +179,4 @@
 
 * [Fiat On/Offboarding](integrations/fiat-on-offboarding.md)
 * [Gasless Transactions & Account Abstraction](integrations/gasless-transactions.md)
+* [Chainalysis](integrations/chainalysis.md)

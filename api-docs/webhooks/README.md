@@ -56,28 +56,13 @@ Here's an example of a Webhook Event of kind "`wallet.transfer.requested`" deliv
 
 ### Supported Webhook Events
 
-Currently, here are the event kinds which webhooks can subscribe to ⬇️
+The list below shows which event kinds webhooks can subscribe to ⬇️ (see [Webhook Event Data](./#webhook-event-data) section for details on each event kind)
 
-<table><thead><tr><th width="357">Event Enum</th><th>Description</th></tr></thead><tbody><tr><td><code>policy.approval.pending</code></td><td>A new<a href="../policy-engine/policies.md#approval"> Approval</a> process has been created and is pending.</td></tr><tr><td><code>policy.approval.resolved</code></td><td>A new<a href="../policy-engine/policies.md#approval"> Approval</a> process is finalized: it's either approved or rejected.</td></tr><tr><td><code>wallet.blockchainevent.detected</code></td><td>A wallet event has been detected on chain (eg. a deposit).  Note: This is only available for <a href="https://docs.dfns.co/d/api-docs/wallets#tier-1-vs-tier-2-support">Tier-1 chains</a>. </td></tr><tr><td><code>wallet.created</code></td><td>A wallet has been <a href="../wallets/create-wallet/">created</a>. </td></tr><tr><td><code>wallet.exported</code></td><td>A wallet has been <a href="../wallets/advanced-wallet-apis/export-wallet.md">exported</a>. </td></tr><tr><td><code>wallet.delegated</code></td><td>A wallet has been <a href="../wallets/delegate-wallet.md">delegated</a>. </td></tr><tr><td><code>wallet.signature.requested</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request has been created.</td></tr><tr><td><code>wallet.signature.failed</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request has failed to process.</td></tr><tr><td><code>wallet.signature.rejected</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request with a policy approval has been rejected.</td></tr><tr><td><code>wallet.signature.signed</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request has completed.</td></tr><tr><td><code>wallet.transaction.requested</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet/">broadcast transaction</a> request has been created.</td></tr><tr><td><code>wallet.transaction.failed</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet/">broadcast transaction</a> request has failed to process.</td></tr><tr><td><code>wallet.transaction.rejected</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet/">broadcast transaction</a> request with a policy approval has been rejected.</td></tr><tr><td><code>wallet.transaction.broadcasted</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet/">broadcast transaction</a> request has been submitted to the mempool.</td></tr><tr><td><code>wallet.transaction.confirmed</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet/">broadcast transaction</a> request has been confirmed on chain.  Note: This is only available for <a href="https://docs.dfns.co/d/api-docs/wallets#tier-1-vs-tier-2-support">Tier-1 chains</a>. </td></tr><tr><td><code>wallet.transfer.requested</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has been created.</td></tr><tr><td><code>wallet.transfer.failed</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has failed to process.</td></tr><tr><td><code>wallet.transfer.rejected</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request with a policy approval has been rejected.</td></tr><tr><td><code>wallet.transfer.broadcasted</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has been submitted to the mempool.</td></tr><tr><td><code>wallet.transfer.confirmed</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has been confirmed on chain.  Note: This is only available for <a href="https://docs.dfns.co/d/api-docs/wallets#tier-1-vs-tier-2-support">Tier-1 chains</a>. </td></tr></tbody></table>
+<table><thead><tr><th width="357">Event Enum</th><th>Description</th></tr></thead><tbody><tr><td><code>wallet.blockchainevent.detected</code></td><td>A wallet event has been detected on chain (eg. a deposit).  Note: This is only available for <a href="https://docs.dfns.co/d/api-docs/wallets#tier-1-vs-tier-2-support">Tier-1 chains</a>. </td></tr><tr><td><code>wallet.created</code></td><td>A wallet has been <a href="../wallets/create-wallet/">created</a>. </td></tr><tr><td><code>wallet.exported</code></td><td>A wallet has been <a href="../wallets/advanced-wallet-apis/export-wallet.md">exported</a>. </td></tr><tr><td><code>wallet.delegated</code></td><td>A wallet has been <a href="../wallets/delegate-wallet.md">delegated</a>. </td></tr><tr><td><code>wallet.signature.requested</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request has been created.</td></tr><tr><td><code>wallet.signature.failed</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request has failed to process.</td></tr><tr><td><code>wallet.signature.rejected</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request with a policy approval has been rejected.</td></tr><tr><td><code>wallet.signature.signed</code></td><td>A <a href="https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet">generate signature</a> request has completed.</td></tr><tr><td><code>wallet.transaction.requested</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet/">broadcast transaction</a> request has been created.</td></tr><tr><td><code>wallet.transaction.failed</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet/">broadcast transaction</a> request has failed to process.</td></tr><tr><td><code>wallet.transaction.rejected</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet/">broadcast transaction</a> request with a policy approval has been rejected.</td></tr><tr><td><code>wallet.transaction.broadcasted</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet/">broadcast transaction</a> request has been submitted to the mempool.</td></tr><tr><td><code>wallet.transaction.confirmed</code></td><td>A <a href="../wallets/broadcast-transaction-from-wallet/">broadcast transaction</a> request has been confirmed on chain.  Note: This is only available for <a href="https://docs.dfns.co/d/api-docs/wallets#tier-1-vs-tier-2-support">Tier-1 chains</a>. </td></tr><tr><td><code>wallet.transfer.requested</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has been created.</td></tr><tr><td><code>wallet.transfer.failed</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has failed to process.</td></tr><tr><td><code>wallet.transfer.rejected</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request with a policy approval has been rejected.</td></tr><tr><td><code>wallet.transfer.broadcasted</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has been submitted to the mempool.</td></tr><tr><td><code>wallet.transfer.confirmed</code></td><td>A <a href="../wallets/transfer-asset-from-wallet.md">wallet transfer</a> request has been confirmed on chain.  Note: This is only available for <a href="https://docs.dfns.co/d/api-docs/wallets#tier-1-vs-tier-2-support">Tier-1 chains</a>. </td></tr><tr><td><code>policy.triggered</code></td><td>A policy got triggered upon some activity (the policy rule got evaluated, and it triggered)</td></tr><tr><td><code>policy.approval.pending</code></td><td>A new<a href="../policy-engine/policies.md#approval"> Approval</a> process has been created and is pending.</td></tr><tr><td><code>policy.approval.resolved</code></td><td>A new<a href="../policy-engine/policies.md#approval"> Approval</a> process is finalized: it's either approved or rejected.</td></tr></tbody></table>
 
 ### Webhook Event Data
 
-Depending on its kind, every event holds `data` that corresponds to this kind. Here's an overview of what kind of `data` each event kind
-
-* For `policy.approval.pending` and `policy.approval.resolved`, see the [List Approvals response](https://docs.dfns.co/d/api-docs/policy-engine/approvals/list-approvals#response-example):
-
-{% code title="data" %}
-```json
-{ // Approval object
-  "approval": {      
-    "activityId": "cr-2100g-xxxxxxxxx",
-    ...
-  }
-}
-```
-{% endcode %}
-
-
+Each webhook event has a "`data`" property, which shape depends on its kind. Here's an overview of the shape of the data for each kind:
 
 * For `wallet.created`, `wallet.exported`, `wallet.delegated` see the [Get Wallet response](https://docs.dfns.co/d/api-docs/wallets/get-wallet-by-id#response):
 
@@ -139,16 +124,65 @@ Depending on its kind, every event holds `data` that corresponds to this kind. H
 {% code title="data" %}
 ```json
 { // Blockchain Event object as in "Wallet Get Wallet History" endpoint
-  "kind": "Erc20Transfer",
-  "contract": "0x......",
-  "from": "0x......",
-  "to": "0x......",
-  ...
+  "blockchainEvent": {
+    "kind": "Erc20Transfer",
+    "contract": "0x......",
+    "from": "0x......",
+    "to": "0x......",
+    ...
+  }
 }
 ```
 {% endcode %}
 
+* For `policy.triggered`
 
+{% code title="data" %}
+```json
+{
+  "policyEvaluation": {
+    "id": "plce-xxxxxxx",
+    "triggered": true,
+    "reason": "Transfer amount (USD 10000) is above limit (USD 5000). ",
+    "date": "2024-06-28T09:09:54.437Z",
+
+    "policy": { // policy object as in "Get Policy" endpoint
+      "id": "plc-xxxxxxx",
+      "name": "Accounting wallet transfer limit",
+      ...,
+    },
+
+    "activity": {
+      "kind": "Wallets:Sign"
+      "transferRequest": { // transfer request object as in "Get Transfer" endpoint
+        "id": "xfr-xxxxxxx",
+        ...
+      }
+    },
+
+    "context": { // its content depends on the kind of the policy rule
+      "transactionAmount": {
+        "value": "10000,
+        "currency": "USD",
+      },
+    },
+  }
+}
+```
+{% endcode %}
+
+* For `policy.approval.pending` and `policy.approval.resolved`, see the [List Approvals response](https://docs.dfns.co/d/api-docs/policy-engine/approvals/list-approvals#response-example):
+
+{% code title="data" %}
+```json
+{ // Approval object
+  "approval": {      
+    "activityId": "cr-2100g-xxxxxxxxx",
+    ...
+  }
+}
+```
+{% endcode %}
 
 ### Webhook Event Ordering <a href="#best-practices" id="best-practices"></a>
 

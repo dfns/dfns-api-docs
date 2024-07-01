@@ -24,12 +24,3 @@ When a policy is triggered, it generates and approval which must be either appro
 
 For questions on the Policy Engine as well as feature requests, please email [docs@dfns.co](mailto:docs@dfns.co).&#x20;
 
-{% hint style="warning" %}
-Policy engine has recently been updated to simplify the model. Until the old policy engine is removed, the following logic will be applied to asset transfers from wallets:
-
-* The new policy engine will be triggered only if:
-  * No relevant policies from the old policy engine exist.
-  * No policies from the old policy engine are triggered.
-* If a policy from the new engine is triggered, then the new approval flow will be started. Otherwise, the old approval flow will be triggered.
-{% endhint %}
-

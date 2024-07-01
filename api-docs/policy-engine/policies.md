@@ -27,6 +27,10 @@ A "`Wallets:Sign`" activity represents any activity which involves signing with 
 * a Transaction Request (created using the endpoint [Broadcast Transaction from Wallet](../wallets/broadcast-transaction-from-wallet/))
 * a Signature Request (created using the endpoint [Generate Signature from Wallet](../wallets/generate-signature-from-wallet/))
 
+### `Wallets:IncomingTransaction` activity
+
+A "`Wallets:IncomingTransaction`" activity represents when our indexers detected an incoming transaction into a wallet. Since that's an on-chain event detected, we don't support taking any policy action as a result (to be used with action kind "`NoAction`"), but it can be used with an AML/KYT policy rule ("`ChainalysisTransactionScreening`") in order to run a KYT check, and send a `policy.triggered` [Webhook Event](../webhooks/#webhook-events) in case the kyt analysis detected something.
+
 ### `Permissions:Modify` activity
 
 A "`Permissions:Modify`" activity represents any activity which involves updating or archiving a permission. These activities are Permission change requests, created as a result of calling either:
@@ -180,6 +184,89 @@ If the specified whitelisted address list is empty, it basically means "no addre
 
 
 
+### `ChainalysisTransactionPrescreening`   policy rule
+
+{% hint style="info" %}
+This rule can only be used once the Chainalysis integration is activated from the Dfns dashboard settings.
+{% endhint %}
+
+This rule can be used on a policy of `activityKind` = `Wallets:Sign`. It's a rule based on Chainalysis KYT integration (Know-Your-Transaction). Upon transfer, we will first register the transfer with Chainalysis (as a ["withdrawal attempt"](https://docs.chainalysis.com/api/kyt/#registration-register-a-withdrawal-attempt)), and fetch the results of the analysis (alerts, exposures, addresses detected). Based on the results, and the configuration of this rule, the policy will be triggered.&#x20;
+
+It's called "Pre"-screening, because the scanned transaction is not on chain yet, it's still a transaction attempt (before the transaction actually make it on chain).
+
+```json
+{
+  "rule": {
+    "kind": "ChainalysisTransactionPrescreening",
+    "configuration": {
+      "alerts": {
+        "alertLevel": "LOW",
+        "categoryIds": []
+      },
+      "exposures": {
+        "direct": {
+          "categoryIds": []
+        }
+      },
+      "addresses": {
+        "categoryIds": []
+      },
+      "fallbackBehaviours": {
+        "skipUnscreenableTransaction": false,
+        "skipUnsupportedNetwork": false,
+        "skipUnsupportedAsset": false,
+        "skipChainalysisFailure": false
+      }
+    }
+  }
+}
+```
+
+**Configuration**
+
+<table><thead><tr><th width="229">Property</th><th width="154">Type</th><th>Description</th></tr></thead><tbody><tr><td><p><code>alerts</code></p><p> <code>.alertLevel</code><mark style="color:red;">*</mark></p></td><td><code>string</code></td><td>Minimum alert level above which the rule should trigger, if any <a href="https://docs.chainalysis.com/api/kyt/#withdrawal-attempts-get-alerts">alert is returned in Chainalysis results</a>. Can be <code>LOW</code>, <code>MEDIUM</code>, <code>HIGH</code>, or <code>SEVERE</code></td></tr><tr><td><p><code>alerts</code></p><p> <code>.categoryIds</code><mark style="color:red;">*</mark></p></td><td>list of integers</td><td>List of Chainalysis category IDs (see <a href="https://docs.chainalysis.com/api/kyt/#categories">here</a>). If you leave this list empty, alerts of any category will trigger the rule. Otherwise, if you only want the rule to trigger on specific categories, you can specify some in the list.</td></tr><tr><td><p><code>exposures</code></p><p> <code>.direct</code></p><p>  <code>.categoryIds</code><mark style="color:red;">*</mark></p></td><td>list of integers</td><td>List of Chainalysis category IDs (see <a href="https://docs.chainalysis.com/api/kyt/#categories">here</a>). If you leave this list empty, a <a href="https://docs.chainalysis.com/api/kyt/#withdrawal-attempts-get-direct-exposure">direct exposure</a> of any category detected by chainalysis will trigger the rule. Otherwise, if you only want the rule to trigger on specific categories, you can specify some in the list.</td></tr><tr><td><p><code>addresses</code></p><p> <code>.categoryIds</code><mark style="color:red;">*</mark></p></td><td>list of integers</td><td>List of Chainalysis category IDs (see <a href="https://docs.chainalysis.com/api/kyt/#categories">here</a>). If you leave this list empty, an <a href="https://docs.chainalysis.com/api/kyt/#withdrawal-attempts-get-address-identifications">address</a> of any category identified by chainalysis will trigger the rule. Otherwise, if you only want the rule to trigger on specific categories, you can specify some in the list.</td></tr><tr><td><p><code>fallbackBehaviours</code></p><p><code>.skipUnscreenableTransaction</code><mark style="color:red;">*</mark></p></td><td>boolean</td><td>Behaviour if the wallet activity is not screenable (eg. if it's a signature request of a hash). If true, a transaction which is "unscreenable" will just be skipped, and policy will not trigger</td></tr><tr><td><code>fallbackBehaviours.skipUnsupportedNetwork</code><mark style="color:red;">*</mark></td><td>boolean</td><td>Behaviour if the wallet activity is on a network not supported by chainalysis, or not yet supported in the dfns-chainalysis integration. If true, an unsupported network will just be skipped, and policy will not trigger</td></tr><tr><td><code>fallbackBehaviours.skipUnsupportedAsset</code><mark style="color:red;">*</mark></td><td>boolean</td><td>Behaviour if the wallet activity is with a asset not supported by chainalysis, or not yet supported in the dfns-chainalysis integration. If true, an unsupported asset will just be skipped, and policy will not trigger</td></tr><tr><td><code>fallbackBehaviours.skipChainalysisFailure</code><mark style="color:red;">*</mark></td><td>boolean</td><td>Behaviour if any issue with Chainalysis calls (timeout, results took too long, rate limiting errors, any error). If true, will skip if any error happens </td></tr></tbody></table>
+
+
+
+### `ChainalysisTransactionScreening`   policy rule
+
+{% hint style="info" %}
+This rule can only be used once the Chainalysis integration is activated from the Dfns dashboard settings.
+{% endhint %}
+
+This rule can be used on a policy of `activityKind` = `Wallets:IncomingTransaction`, and with the action kind `NoAction`. It's a rule based on Chainalysis KYT integration (Know-Your-Transaction). Upon an incoming transaction detectedby our indexers, we will [register the transfer with Chainalysis](https://docs.chainalysis.com/api/kyt/#registration-register-a-transfer), and fetch the results of the analysis (alerts & exposures detected). Based on the results, and the configuration of this rule, the policy will be triggered.
+
+The shape of the rule is almost like the `ChainalysisTransactionPrescreening` rule, expect the the `address` property is not supported.
+
+```json
+{
+  "rule": {
+    "kind": "ChainalysisTransactionPrescreening",
+    "configuration": {
+      "alerts": {
+        "alertLevel": "LOW",
+        "categoryIds": []
+      },
+      "exposures": {
+        "direct": {
+          "categoryIds": []
+        }
+      },
+      "fallbackBehaviours": {
+        "skipUnscreenableTransaction": false,
+        "skipUnsupportedNetwork": false,
+        "skipUnsupportedAsset": false,
+        "skipChainalysisFailure": false
+      }
+    }
+  }
+}
+```
+
+**Configuration**
+
+See the above configuration for rule `ChainalysisTransactionPrescreening`
+
 ***
 
 ## Policy Action
@@ -237,7 +324,21 @@ The example below shows a `RequestApproval` action, configured with one approval
 
 
 
+### `NoAction` policy action
+
+This action kind means that nothing will happen after policy rule evaluation. It's meant to be used with policy rules "`ChainalysisTransactionPrescreening`" or "`ChainalysisTransactionScreening`". This action is for when you just want the KYT analysis rule to be run, and then if triggered, those result returned in a `policy.triggered` [Webhook Event](../webhooks/#webhook-events).
+
+```json
+{
+  "action": {
+    "kind": "NoAction"
+  }
+}
+```
+
 ***
+
+
 
 ## Policy Filters
 
