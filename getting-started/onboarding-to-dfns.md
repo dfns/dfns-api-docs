@@ -68,7 +68,7 @@ Once you register in your Dfns org and invite your Users, the next step is to cr
 
 ![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.33.23 PM.png>)
 
-At this point, you can make server side API calls by signing requests with your secret key. Please see [our Typescript SDK](https://docs.dfns.co/dfns-docs/getting-started/typescript-sdk) and specifically [the Service Account sample app](https://github.com/dfnsext/typescript-sdk/tree/m/examples/sdk/service-account).&#x20;
+At this point, you can make server side API calls by signing requests with your secret key. Please see [our Typescript SDK](https://docs.dfns.co/dfns-docs/getting-started/typescript-sdk) and specifically [the Service Account sample app](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/sdk/service-account).&#x20;
 
 ## Delegated Signing Configuration
 
@@ -89,9 +89,9 @@ If you want to implement Delegated Signing in which your customer generates cred
 
 5. Click Create, then copy the App ID like “ap-2vemp-hl3c9-9j1rgcf9quurph” to paste into your .env file as described below
 6. Clone one of the two demo apps in the SDK & follow the steps in the Readme
-   1. [NextJS config](https://github.com/dfnsext/typescript-sdk/tree/m/examples/sdk/nextjs-delegated)
-   2. [React & Express](https://github.com/dfnsext/typescript-sdk/tree/m/examples/sdk/auth-delegated)
-7. Populate your .env file based on the [.env.example ](https://github.com/dfnsext/typescript-sdk/blob/m/examples/sdk/nextjs-delegated/.env.example)(see[ this video](https://www.youtube.com/watch?v=uGVjRFeNmWU\&t=1012s) for the July 2023 EthParis event for a step by step walkthrough)
+   1. [NextJS config](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/sdk/nextjs-delegated)
+   2. [React & Express](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/sdk/auth-delegated)
+7. Populate your .env file based on the [.env.example](https://github.com/dfns/dfns-sdk-ts/blob/m/examples/sdk/nextjs-delegated/.env.example) (see[ this video](https://www.youtube.com/watch?v=uGVjRFeNmWU\&t=1012s) for the July 2023 EthParis event for a step by step walkthrough)
 
 ## All the docs!
 
