@@ -31,6 +31,7 @@
     * [Create User Login Challenge](api-docs/authentication/login/initlogin.md)
     * [Complete User Login](api-docs/authentication/login/completeLogin.md)
     * [Social Login](api-docs/authentication/login/socialLogin.md)
+    * [Logout](api-docs/authentication/login/sociallogin-1.md)
   * [Users](api-docs/authentication/user-management/README.md)
     * [List Users](api-docs/authentication/user-management/listUsers.md)
     * [Create User](api-docs/authentication/user-management/createUser.md)
