@@ -4,10 +4,12 @@
 
 Completes the user registration process and creates the user's initial credentials.
 
-The type of credentials being registered is determined by the `credentialKind` field in the nested objects (`firstFactorCredential` and `secondFactorCredential`). Supported credential kinds are:
+The type of credentials being registered is determined by the `credentialKind` field in the nested objects (`firstFactorCredential` , `secondFactorCredential` and `RecoveryCredential`). Supported credential kinds are:
 
 * `Fido2`: User action is signed by a user's signing device using `WebAuthn`.
 * `Key`: User action is signed by a user's, or token's, private key.
+* `PasswordProtectedKey`: User action is signed by a user's, or token's, private key. The encrypted version of the private key is stored by Dfns and returns during the signing flow for the user to decrypt it.
+* `RecoveryKey` : Similar to `PasswordProtectedKey`, but this credential can only be used to recover an account not to sign an action or login. Once this credential is used all the other user's credentials are invalidated.&#x20;
 
 {% hint style="info" %}
 * Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
@@ -61,13 +63,7 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 
 ### Key Credential
 
-|                                                                     |          |                                                                                                                                                                          |
-| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `Key`                                                                                                                                                     |
-| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                                                          |
-| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential                                                                                                                                   |
-| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | [Client Data](../../../advanced-topics/authentication/api-objects.md#key-credential) JSON object, stringified and base64url-encoded                                      |
-| `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Attestation Data ](../../../advanced-topics/authentication/api-objects.md#key-credential-1)JSON string object with the users signature and public key |
+<table><thead><tr><th width="258.3333333333333"></th><th></th><th></th></tr></thead><tbody><tr><td><code>credentialKind</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>will always be <code>Key</code></td></tr><tr><td><code>credentialInfo</code> <mark style="color:red;">*</mark></td><td><code>Object</code></td><td></td></tr><tr><td><code>credentialInfo.credId</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>base64url encoded id of the credential</td></tr><tr><td><code>credentialInfo.clientData</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td><a href="../../../advanced-topics/authentication/api-objects.md#key-credential">Client Data</a> JSON object, stringified and base64url-encoded</td></tr><tr><td><code>credentialInfo.attestationData</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>base64url encoded <a href="../../../advanced-topics/authentication/api-objects.md#key-credential-1">Attestation Data </a>JSON string object with the users signature and public key</td></tr></tbody></table>
 
 #### Example
 
@@ -80,6 +76,33 @@ Since this endpoint is not authentication, the permissions apply to the applicat
       "clientData":"eyJjaGFsbGVuZ2UiOiJZMmd0Tm1Oc2RHTXRiV05sWTNZdE9XRTRPV2QxYnpKd1lqYzBOVEp4Y2ciLCJjcm9zc09yaWdpbiI6ZmFsc2UsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLmRmbnMud3RmIiwidHlwZSI6ImtleS5jcmVhdGUifQ==",
       "attestationData":"eyJjaGFsbGVuZ2UiOiJZMmd0Tm1Oc2RHTXRiV05sWTNZdE9XRTRPV2QxYnpKd1lqYzBOVEp4Y2ciLCJjcm9zc09yaWdpbiI6ZmFsc2UsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLmRmbnMud3RmIiwidHlwZSI6ImtleS5jcmVhdGUifQ=="
     }
+  }
+}
+```
+
+### Password Protected Key Credential
+
+|                                                                     |          |                                                                                                                                                                           |
+| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `PasswordProtectedKey`                                                                                                                                     |
+| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                                                           |
+| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential                                                                                                                                    |
+| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | [Client Data](../../../advanced-topics/authentication/api-objects.md#key-credential) JSON object, stringified and base64url-encoded                                       |
+| `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Attestation Data](../../../advanced-topics/authentication/api-objects.md#key-credential-1) JSON string object with the user's signature and public key |
+| `encryptedPrivateKey`                                               | `String` | Encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns                                      |
+
+#### Example
+
+```json
+{
+  "firstFactorCredential":{
+    "credentialKind":"PasswordProtectedKey",
+    "credentialInfo":{
+      "credId":"b215MVzsyKahdGIvTQm3kQhzxB_sN5sFPLdPBRocxOA=",
+      "clientData":"eyJjaGFsbGVuZ2UiOiJZMmd0Tm1Oc2RHTXRiV05sWTNZdE9XRTRPV2QxYnpKd1lqYzBOVEp4Y2ciLCJjcm9zc09yaWdpbiI6ZmFsc2UsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLmRmbnMud3RmIiwidHlwZSI6ImtleS5jcmVhdGUifQ==",
+      "attestationData":"eyJjaGFsbGVuZ2UiOiJZMmd0Tm1Oc2RHTXRiV05sWTNZdE9XRTRPV2QxYnpKd1lqYzBOVEp4Y2ciLCJjcm9zc09yaWdpbiI6ZmFsc2UsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLmRmbnMud3RmIiwidHlwZSI6ImtleS5jcmVhdGUifQ=="
+    },
+    "encryptedPrivateKey":"LsXVskHYqqrKKxBC9KvqStLEmxak5Y7NaboDDlRSIW7evUJpQTT1AYvx0EsFskmriaVb3AjTCGEv7gqUKokml1USL7+dVmrUVhV+cNWtS5AorvRuZr1FMGVKFkW1pKJhFNH2e2O661UhpyXsRXzcmksA7ZN/V37ZK7ITue0gs6I="
   }
 }
 ```

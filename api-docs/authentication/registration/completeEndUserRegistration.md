@@ -4,10 +4,11 @@
 
 Completes the end user registration process and creates the user's initial credentials along with delegated wallets for the new end user.
 
-The type of credentials being registered is determined by the `credentialKind` field in the nested objects (`firstFactorCredential` and `secondFactorCredential`). Supported credential kinds are:
+The type of credentials being registered is determined by the `credentialKind` field in the nested objects (`firstFactorCredential` , `secondFactorCredential` and `RecoveryCredential`). Supported credential kinds are:
 
 * `Fido2`: User action is signed by a user's signing device using `WebAuthn`.
 * `Key`: User action is signed by a user's, or token's, private key.
+* `PasswordProtectedKey`: User action is signed by a user's, or token's, private key. The encrypted version of the private key is stored by Dfns and returns during the signing flow for the user to decrypt it.
 
 The number of delegated wallets created and the wallet types are determined by the `wallets` specifications. The end user is automatically assigned `DfnsDefaultEndUserAccess` managed permission that grants the end user full access to the wallets.
 
@@ -22,21 +23,21 @@ The number of delegated wallets created and the wallet types are determined by t
 Since this endpoint is not authentication, the permissions apply to the application only.
 {% endhint %}
 
-| Name                  | Conditions                        |
-| --------------------- | --------------------------------- |
-| `Auth:Users:Create`   | Always Required                   |
-| `Auth:Types:EndUser`  | Always Required                   |
-| `Wallets:Create`      | Always Required                   |
-| `Wallets:Delegate`    | Always Required                   |
+| Name                 | Conditions      |
+| -------------------- | --------------- |
+| `Auth:Users:Create`  | Always Required |
+| `Auth:Types:EndUser` | Always Required |
+| `Wallets:Create`     | Always Required |
+| `Wallets:Delegate`   | Always Required |
 
 ## Request body
 
-|                                                            |          |                                                                               |
-| ---------------------------------------------------------- | -------- | ----------------------------------------------------------------------------- |
+|                                                            |          |                                                                                   |
+| ---------------------------------------------------------- | -------- | --------------------------------------------------------------------------------- |
 | `firstFactorCredential` <mark style="color:red;">\*</mark> | `Object` | first factor credential that the end user is registering                          |
 | `secondFactorCredential`                                   | `Object` | `Optional` second factor credential that the end user is registering              |
 | `recoveryCredential`                                       | `Object` | `Optional` recovery credential that can be used to recover the end user's account |
-| `wallets`                                                  | `Array` | delegated wallets that the end user should have
+| `wallets`                                                  | `Array`  | delegated wallets that the end user should have                                   |
 
 ### Fido2 Credential
 
@@ -48,7 +49,6 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 | `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | base64url encoded client data object. The underlying object is the clientData object returned by the user's WebAuthn client           |
 | `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded attestation data object. The underlying object is the attestationData object returned by the user's WebAuthn client |
 
-
 ### Key Credential
 
 |                                                                     |          |                                                                                                                                                                          |
@@ -59,6 +59,16 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 | `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | [Client Data](../../../advanced-topics/authentication/api-objects.md#key-credential) JSON object, stringified and base64url-encoded                                      |
 | `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Attestation Data ](../../../advanced-topics/authentication/api-objects.md#key-credential-1)JSON string object with the users signature and public key |
 
+### Password Protected Key Credential
+
+|                                                                     |          |                                                                                                                                                                           |
+| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `credentialKind` <mark style="color:red;">\*</mark>                 | `String` | will always be `PasswordProtectedKey`                                                                                                                                     |
+| `credentialInfo` <mark style="color:red;">\*</mark>                 | `Object` |                                                                                                                                                                           |
+| `credentialInfo.credId` <mark style="color:red;">\*</mark>          | `String` | base64url encoded id of the credential                                                                                                                                    |
+| `credentialInfo.clientData` <mark style="color:red;">\*</mark>      | `String` | [Client Data](../../../advanced-topics/authentication/api-objects.md#key-credential) JSON object, stringified and base64url-encoded                                       |
+| `credentialInfo.attestationData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Attestation Data](../../../advanced-topics/authentication/api-objects.md#key-credential-1) JSON string object with the user's signature and public key |
+| `encryptedPrivateKey`                                               | `String` | Encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns                                      |
 
 ### Recovery Credential
 
@@ -73,10 +83,10 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 
 ### Wallets
 
-|                                                                     |          |                                                                                                                                                                          |
-| ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `network`                                                           | `String` | Network used for the wallet (See [Supported Networks](../../wallets/#supported-networks) +  [Pseudo Network](../../wallets/#pseudo-networks) for possible values) |
-| `name`                                                              |`Object`  | Optional name given to the wallet |
+|           |          |                                                                                                                                                                  |
+| --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `network` | `String` | Network used for the wallet (See [Supported Networks](../../wallets/#supported-networks) + [Pseudo Network](../../wallets/#pseudo-networks) for possible values) |
+| `name`    | `Object` | Optional name given to the wallet                                                                                                                                |
 
 ### Example
 

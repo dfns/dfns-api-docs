@@ -23,7 +23,7 @@ The permissions apply to the application only.
 
 ## Request body
 
-<table><thead><tr><th width="127.33333333333331"></th><th width="124"></th><th></th></tr></thead><tbody><tr><td><code>kind</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>The kind of credential being added to the user's account; can be <code>Fido2</code>, <code>Key</code>, or <code>RecoveryKey</code> (see <a href="../#credential-kinds">Credential Kind</a>)</td></tr></tbody></table>
+<table><thead><tr><th width="127.33333333333331"></th><th width="124"></th><th></th></tr></thead><tbody><tr><td><code>kind</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>The kind of credential being added to the user's account; can be <code>Fido2</code>, <code>Key</code>, <code>PasswordProtectedKey</code> or <code>RecoveryKey</code> (see <a href="../#credential-kinds">Credential Kind</a>)</td></tr></tbody></table>
 
 ```json
 {

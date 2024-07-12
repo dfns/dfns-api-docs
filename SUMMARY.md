@@ -32,6 +32,7 @@
     * [Complete User Login](api-docs/authentication/login/completeLogin.md)
     * [Social Login](api-docs/authentication/login/socialLogin.md)
     * [Logout](api-docs/authentication/login/logout.md)
+    * [Send Login Code](api-docs/authentication/login/send-login-code.md)
   * [Users](api-docs/authentication/user-management/README.md)
     * [List Users](api-docs/authentication/user-management/listUsers.md)
     * [Create User](api-docs/authentication/user-management/createUser.md)

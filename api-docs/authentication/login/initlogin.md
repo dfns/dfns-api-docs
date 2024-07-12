@@ -4,6 +4,8 @@
 
 Starts a user login session, returning a challenge that will be used to verify the user's identity.
 
+If the user has a credential of kind `PasswordProtectedKey` a temporary one time code needs to be passed in the `loginCode` field. &#x20;
+
 {% hint style="info" %}
 * Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
 {% endhint %}
@@ -20,17 +22,21 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 
 ## Request body
 
-|                                               |          |                           |
-| --------------------------------------------- | -------- | ------------------------- |
-| `username` <mark style="color:red;">\*</mark> | `String` | Email address of the user |
-| `orgId` <mark style="color:red;">\*</mark>    | `String` | ID of the target Org      |
+|                                               |          |                                                                                       |
+| --------------------------------------------- | -------- | ------------------------------------------------------------------------------------- |
+| `username` <mark style="color:red;">\*</mark> | `String` | Email address of the user                                                             |
+| `orgId` <mark style="color:red;">\*</mark>    | `String` | ID of the target Org                                                                  |
+| `loginCode`                                   | `String` | `Optional` OTP that the user received following [Send Login Code](send-login-code.md) |
 
 ### Example
 
 ```json
 {
   "username": "jdoe@example.co",
-  "orgId": "or-34513-nip9c-8bppvgqgj28dbodrc"
+  "orgId": "or-34513-nip9c-8bppvgqgj28dbodrc",
+  // Optional
+  // Without it the credentials with Password Protected Key credentials won't be returned
+  "loginCode": "1234-1234-1234-1234"
 }
 ```
 
@@ -77,6 +83,18 @@ Format:
         "id": "string",
       }
     ],
+    // list of password protected keys that the user can use to sign the login challenge.
+    // this field is returned only if the loginCode is passed to the request
+    "passwordProtectedKey":[
+      {
+        // is always `public-key`
+        "type": "string",
+        // ID that identifies the credential
+        "id": "string",
+        // Encrypted Private Key. Only the user knows the password to decrypt it and have access to the private key
+        "encryptedPrivateKey": "string"
+      }
+    ],
     // list of WebAuthn credentials that the user can use to sign the login challenge
     "webauthn": [
       {
@@ -113,6 +131,13 @@ Format:
       {
         "type": "public-key",
         "id": "c1QEdgnPLJargwzy3cbYKny4Q18u0hr97unXsF3DiE8"
+      }
+    ],
+    "passwordProtectedKey": [
+      {
+        "type": "public-key",
+        "id": "hIjkx5PqVxz8wbtuvOh2UYHEY1QXS8mMfKeEDGt-0Fo=",
+        "encryptedPrivateKey": "LsXVskHYqqrKKxBC9KvqStLEmxak5Y7NaboDDlRSIW7evUJpQTT1AYvx0EsFskmriaVb3AjTCGEv7gqUKokml1USL7+dVmrUVhV+cNWtS5AorvRuZr1FMGVKFkW1pKJhFNH2e2O661UhpyXsRXzcmksA7ZN/V37ZK7ITue0gs6I="
       }
     ]
   }

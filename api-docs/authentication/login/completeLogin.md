@@ -8,6 +8,7 @@ The type of credentials used to login is determined by the `kind` field in the n
 
 * `Fido2`: Login challenge is signed by a user's signing device using `WebAuthn`.
 * `Key`: Login challenge is signed by a user's private key.
+* `PasswordProtectedKey`: Login challenge is signed by the decrypted user's private key that was sent during [Create User Login Challenge](../registration/initUserRegistration.md) step.
 
 {% hint style="info" %}
 * Request headers required. See [Request Headers](../../../getting-started/request-headers.md) for more information.
@@ -61,11 +62,11 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 }
 ```
 
-### Key Credential
+### Key Credential and Password Protected Key Credential
 
 |                                                                     |          |                                                                                                                                                                       |
 | ------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `kind` <mark style="color:red;">\*</mark>                           | `String` | will always be `Key`                                                                                                                                                  |
+| `kind` <mark style="color:red;">\*</mark>                           | `String` | `Key` or `PasswordProtectedKey`                                                                                                                                       |
 | `credentialAssertion` <mark style="color:red;">\*</mark>            | `Object` |                                                                                                                                                                       |
 | `credentialAssertion.credId` <mark style="color:red;">\*</mark>     | `String` | base64url encoded id of the credential                                                                                                                                |
 | `credentialAssertion.clientData` <mark style="color:red;">\*</mark> | `String` | base64url encoded [Client Data](../../../advanced-topics/authentication/api-objects.md#key-credential) JSON string object that was signed with the user's private key |
@@ -77,7 +78,7 @@ Since this endpoint is not authentication, the permissions apply to the applicat
 {
   "challengeIdentifier":"eyJ0e...fQNA",
   "firstFactor":{
-    "kind":"Key",
+    "kind":"Key", // can be PasswordProtectedKey as well
     "credentialAssertion":{
       "credId":"6Ca6tAOFTx2odyJBnCoRO-gPvfpfy0EOoOcEaxfxIOk",
       "clientData":"eyJ0eXBlIjoia2V5LmdldCIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",

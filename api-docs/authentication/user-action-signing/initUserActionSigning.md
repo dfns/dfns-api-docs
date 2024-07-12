@@ -81,6 +81,17 @@ Format:
         "id": "string",
       }
     ],
+    // list of password protected keys that the user can use to sign the login challenge.
+    "passwordProtectedKey": [
+      {
+        // is always `public-key`
+        "type": "string",
+        // ID that identifies the credential
+        "id": "string",
+        // Encrypted Private Key. Only the user knows the password to decrypt it and have access to the private key
+        "encryptedPrivateKey": "string"
+      }
+    ],
     // list of WebAuthn credentials that the user can use to sign the user action
     "webauthn": [
       {
@@ -113,6 +124,13 @@ Format:
   "challengeIdentifier": "eyJ0e...fQNA",
   "allowCredentials": {
     "key":[],
+    "passwordProtectedKey": [
+      {
+        "type": "public-key",
+        "id": "hIjkx5PqVxz8wbtuvOh2UYHEY1QXS8mMfKeEDGt-0Fo=",
+        "encryptedPrivateKey": "LsXVskHYqqrKKxBC9KvqStLEmxak5Y7NaboDDlRSIW7evUJpQTT1AYvx0EsFskmriaVb3AjTCGEv7gqUKokml1USL7+dVmrUVhV+cNWtS5AorvRuZr1FMGVKFkW1pKJhFNH2e2O661UhpyXsRXzcmksA7ZN/V37ZK7ITue0gs6I="
+      }
+    ],
     "webauthn": [
       {
         "type": "public-key",

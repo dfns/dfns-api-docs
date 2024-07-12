@@ -64,6 +64,26 @@ The permissions apply to the application only.
 }
 ```
 
+### Password Protected Key Credential
+
+<table><thead><tr><th></th><th width="120.33333333333331"></th><th></th></tr></thead><tbody><tr><td><code>credentialKind</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>will always be <code>PasswordProtectedKey</code></td></tr><tr><td><code>credentialInfo</code> <mark style="color:red;">*</mark></td><td><code>Object</code></td><td>See fields below</td></tr><tr><td><code>credentialInfo.credId</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>base64url encoded id of the credential.  Note: This can be any unique value that identifies the credential (eg. account+key ID on AWS, the key's database ID, or the path to the key on disk)</td></tr><tr><td><code>credentialInfo.clientData</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>base64url encoded <a href="../../../../advanced-topics/authentication/api-objects.md#key-credential">Client Data</a> JSON string object that was signed with the user's private key</td></tr><tr><td><code>credentialInfo.attestationData</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>base64url encoded <a href="../../../../advanced-topics/authentication/api-objects.md#key-credential-1">Attestation Data</a> JSON string object with the users signature and public key</td></tr><tr><td><code>encryptedPrivateKey</code></td><td><code>String</code></td><td>Encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns</td></tr></tbody></table>
+
+#### Example
+
+```json
+{
+  "challengeIdentifier":"eyJ0e...fQNA",
+  "credentialName": "My Recovery Credential",
+  "kind":"PasswordProtectedKey",
+  "credentialInfo":{
+    "credId":"GMkW0zlmcoMxI1OX0Z96LL_Mz7dgeu6vOH5_TOeGyNk",
+    "clientData":"eyJ0eXBlIjoia2V5LmNyZWF0ZSIsImNoYWxsZW5nZSI6Ik1XTTBNbVk1WVRRME1EUmlOemRoTlRGaE56WTVPRFF3TldJNVpUUTRZMlJoT0RaaU5EazNaVFl6T1RFNU9HWXlNRGN4WmpCall6azRNbVE1WXpZMU1BIiwib3JpZ2luIjoiaHR0cHM6Ly9hcHAuZGZucy5uaW5qYSIsImNyb3NzT3JpZ2luIjpmYWxzZX0",
+    "attestationData":"eyJjaGFsbGVuZ2UiOiJZMmd0Tm1Oc2RHTXRiV05sWTNZdE9XRTRPV2QxYnpKd1lqYzBOVEp4Y2ciLCJjcm9zc09yaWdpbiI6ZmFsc2UsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLmRmbnMud3RmIiwidHlwZSI6ImtleS5jcmVhdGUifQ"
+  },
+  "encryptedPrivateKey":"LsXVskHYqqrKKxBC9KvqStLEmxak5Y7NaboDDlRSIW7evUJpQTT1AYvx0EsFskmriaVb3AjTCGEv7gqUKokml1USL7+dVmrUVhV+cNWtS5AorvRuZr1FMGVKFkW1pKJhFNH2e2O661UhpyXsRXzcmksA7ZN/V37ZK7ITue0gs6I="
+}
+```
+
 ### Recovery Credential
 
 <table><thead><tr><th></th><th width="106.33333333333331"></th><th></th></tr></thead><tbody><tr><td><code>credentialKind</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>will always be <code>RecoveryKey</code></td></tr><tr><td><code>credentialInfo</code> <mark style="color:red;">*</mark></td><td><code>Object</code></td><td>See fields below</td></tr><tr><td><code>credentialInfo.credId</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>base64url encoded id of the credential</td></tr><tr><td><code>credentialInfo.clientData</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>base64url encoded <a href="../../../../advanced-topics/authentication/api-objects.md#key-credential">Client Data</a> JSON string object that was signed with the user's private key</td></tr><tr><td><code>credentialInfo.attestationData</code> <mark style="color:red;">*</mark></td><td><code>String</code></td><td>base64url encoded <a href="../../../../advanced-topics/authentication/api-objects.md#key-credential-1">Attestation Data</a> JSON string object with the users signature and public key</td></tr><tr><td><code>encryptedPrivateKey</code></td><td><code>String</code></td><td>Encrypted private key. The user should hold the secret to decrypting this value, and that secret should never be transmitted to Dfns</td></tr></tbody></table>

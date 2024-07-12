@@ -32,7 +32,7 @@ eyJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIiwiY2hhbGxlbmdlIjoiWTJndE16bGxORFl0YUdKdGRtMHRP
 }
 ```
 
-### Key credential
+### Key, Password Protected Key and Recovery credential
 
 Unlike when using `Fido2 credential`, the client data object needs to be created manually for `Key credential`. Once created the object needs to be "stringified" and base64url encoded.
 

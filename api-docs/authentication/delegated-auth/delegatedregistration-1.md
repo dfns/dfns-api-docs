@@ -152,8 +152,8 @@ Format:
   },
   "temporaryAuthenticationToken": "eyJ0eXAiOiJKV1Q...X1bwCg35kbzsjA",
   "supportedCredentialKinds": {
-    "firstFactor": ["Fido2","Key"],
-    "secondFactor": ["Fido2","Key"]
+    "firstFactor": ["Fido2","Key", "PasswordProtectedKey"],
+    "secondFactor": ["Fido2","Key", "PasswordProtectedKey"]
   },
   "challenge": "MmE5YzRmMzMwY2NlNGUyMjhjZWYzMzlhZDBhZmIxNzk",
   "pubKeyCredParam": [
