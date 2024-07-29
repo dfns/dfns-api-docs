@@ -1,4 +1,4 @@
-# Create User Recovery Challenge
+# Create Recovery Challenge
 
 `POST /auth/recover/user/init`
 
@@ -11,7 +11,7 @@ Starts a user recovery session, returning a challenge that will be used to verif
 ## Required Permissions
 
 {% hint style="info" %}
-Since this endpoint is not authentication, the permissions apply to the application only.
+Since this endpoint is not authenticated, the permissions apply to the application only.
 {% endhint %}
 
 | Name              | Conditions      |

@@ -1,4 +1,4 @@
-# Send User Recovery Verification Email
+# Send Recovery Code Email
 
 `PUT /auth/recover/user/code`
 
@@ -11,7 +11,7 @@ Sends the user a recovery verification code. This code is used as a second facto
 ## Required Permissions
 
 {% hint style="info" %}
-Since this endpoint is not authentication, the permissions apply to the application only.
+Since this endpoint is not authenticated, the permissions apply to the application only.
 {% endhint %}
 
 | Name                  | Conditions                        |

@@ -13,7 +13,7 @@ If the user has a credential of kind `PasswordProtectedKey` a temporary one time
 ## Required Permissions
 
 {% hint style="info" %}
-Since this endpoint is not authentication, the permissions apply to the application only.
+Since this endpoint is not authenticated, the permissions apply to the application only.
 {% endhint %}
 
 | Name              | Conditions      |

@@ -12,7 +12,7 @@ Recovers a user, using a recovery credential. After successfully recovering the 
 ## Required Permissions
 
 {% hint style="info" %}
-Since this endpoint is not authentication, the permissions apply to the application only.
+Since this endpoint is not authenticated, the permissions apply to the application only.
 {% endhint %}
 
 | Name                  | Conditions                        |

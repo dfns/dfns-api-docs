@@ -11,7 +11,7 @@ Sends the user a new registration code. The previous registration code will be m
 ## Required Permissions
 
 {% hint style="info" %}
-Since this endpoint is not authentication, the permissions apply to the application only.
+Since this endpoint is not authenticated, the permissions apply to the application only.
 {% endhint %}
 
 | Name                  | Conditions                        |

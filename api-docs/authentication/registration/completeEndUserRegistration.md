@@ -20,7 +20,7 @@ The number of delegated wallets created and the wallet types are determined by t
 ## Required Permissions
 
 {% hint style="info" %}
-Since this endpoint is not authentication, the permissions apply to the application only.
+Since this endpoint is not authenticated, the permissions apply to the application only.
 {% endhint %}
 
 | Name                 | Conditions      |
