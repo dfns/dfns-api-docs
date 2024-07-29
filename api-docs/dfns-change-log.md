@@ -6,6 +6,29 @@ description: Change log detailing feature releases
 
 The Dfns change log documents changes to our product functionality made by our releases. This includes new features, breaking changes, bug fixes to known issues, deprecations, etc. Please bookmark this page and refresh frequently for the latest updates.
 
+### July 26, 2024
+
+* Launched TON in SDK and Dashboard UI
+
+### July 19, 2024
+
+* Launched TON blockchain support
+* Fixed bug in Solana transaction management
+
+### July 12, 2024
+
+* Launched new filter on List Wallets to retrieve wallets by userID/username
+
+### July 5, 2024
+
+* Launched Flutter SDK
+* Launched Dashboard visual redesign
+
+### June 28, 2024
+
+* Chainalysis integration for KYT/AML
+* Support for Holesky testnet
+
 ### June 14, 2024
 
 * Launched key export for EdDSA keys
