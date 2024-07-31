@@ -28,15 +28,20 @@ Retrieves a list of wallets.
 ```json
 {
   "items": [
-    {
-      "id": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
-      "status": "Active",
-      "network": "EthereumSepolia",
-      "address": "0x00e3495cf6af59008f22ffaf32d4c92ac33dac47",
-      "name": "my-wallet",
-      "tags": [],
-      "dateCreated": "2023-04-14T20:41:28.715Z"
-    },
+  {
+    "id": "pk-september-sad-3...18",
+    "network": "EthereumGoerli",
+    "status": "Active",
+    "signingKey": {
+        "scheme": "ECDSA",
+        "curve": "secp256k1",
+        "publicKey": "03e849e03fa8b962...cc6e3"
+     },
+     "address": "0xf42d9f717e0223a70ae195d1d31b798dc8a8b1d2",
+     "dateCreated": "2021-01-01T00:00:00.000Z",
+     "custodial": true,
+     "tags": []
+   },
     ...
   ],
   "nextPageToken": "WszQXoENUIYyoBQjJm4DE6QhCk2sB7WAh9kykUMaTQcD25SToKbuXkgf3td8ZYb2LrtopPLo35u407gwwA1Sug=="

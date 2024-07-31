@@ -45,16 +45,17 @@ The response body is the Wallet. The Wallet object has those fields:
 
 ```json
 {
-  "id": "wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx",
-  "network": "EthereumSepolia",
-  "status": "Active",
-  "name": "My awesome wallet",
-  "address": "0x00e3495cf6af59008f22ffaf32d4c92ac33dac47",
-  "dateCreated": "2023-04-14T20:41:28.715Z",
-  "signingKey": {
-    "curve": "secp256k1",
-    "scheme": "ECDSA",
-    "publicKey": "e2375c8c9e87bfcd0be8f29d76c818cabacd51584f72cb2222d49a13b036d84d3d"
-  }
+    "id": "pk-september-sad-3...18",
+    "network": "EthereumGoerli",
+    "status": "Active",
+    "signingKey": {
+        "scheme": "ECDSA",
+        "curve": "secp256k1",
+        "publicKey": "03e849e03fa8b962...cc6e3"
+     },
+     "address": "0xf42d9f717e0223a70ae195d1d31b798dc8a8b1d2",
+     "dateCreated": "2021-01-01T00:00:00.000Z",
+     "custodial": true,
+     "tags": []
 }
 ```
