@@ -421,6 +421,61 @@ Transfer classic [Stellar Assets](https://developers.stellar.org/docs/issuing-as
 }
 ```
 
+## TON <a href="#solana" id="solana"></a>
+
+### TON TEP74 Jetton <a href="#solana-spl" id="solana-spl"></a>
+
+Transfer [Jetton](https://github.com/ton-blockchain/TEPs/blob/master/text/0074-jettons-standard.md).
+
+#### Request body <a href="#spl-request-body" id="spl-request-body"></a>
+
+| Request body fields | Required/Optional | Description                                              | Type   |
+| ------------------- | ----------------- | -------------------------------------------------------- | ------ |
+| `kind`              | Required          | `Tep74`                                                  | String |
+| `master`            | Required          | The jetton master address                                | String |
+| `to`                | Required          | The destination address                                  | String |
+| `amount`            | Required          | The amount of tokens to transfer in minimum denomination | String |
+
+#### Sample request body <a href="#sample-spl-request" id="sample-spl-request"></a>
+
+```json
+{
+  "kind": "Tep74",
+  "master": "EQAIZUJZxUgjovq8C6P5tRGwSsydiCtKiwRnycPnN1k4WpFo",
+  "to": "EQBfYLuQwjbBd-LAZ6eNC26XmVVxEl86MQPKG981hdTSicL_",
+  "amount": "1000000"
+}
+```
+
+#### 200 response example <a href="#spl-response-example" id="spl-response-example"></a>
+
+<pre class="language-json"><code class="lang-json">{
+  "id": "xfr-4qc73-2kr4s-xxxxxxxxxxxxxxxx",
+  "walletId": "wa-3i0nv-fa4e7-xxxxxxxxxxxxxxxx",
+  "network": "Solana",
+  "requester": {
+    "userId": "us-3v1ag-v6b36-xxxxxxxxxxxxxxxx",
+    "tokenId": "to-7mkkj-c831n-xxxxxxxxxxxxxxxx",
+    "appId": "ap-24vva-92s32-xxxxxxxxxxxxxxxx"
+  },
+  "requestBody": {
+    "kind": "Tep74",
+    "master": "EQAIZUJZxUgjovq8C6P5tRGwSsydiCtKiwRnycPnN1k4WpFo",
+    "to": "EQBfYLuQwjbBd-LAZ6eNC26XmVVxEl86MQPKG981hdTSicL_",
+    "amount": "1000000"
+<strong>  }
+</strong>  "metadata": {
+    "asset": {
+      "symbol": "jUSDC",
+      "decimals": 6,
+      "verified": true
+    }
+  },
+  "dateRequested": "2024-06-11T13:46:55.175Z",
+  "status": "Pending"
+}
+</code></pre>
+
 ## TRON <a href="#tron" id="tron"></a>
 
 ### TRC-10 <a href="#tron-trc10" id="tron-trc10"></a>
