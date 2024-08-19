@@ -10,7 +10,7 @@
 
 All requests need to include an `X-DFNS-NONCE` header. See [Request Headers](request-headers.md) for more information.
 
-```JSON
+```json
 {
   "error": {
     "message": "request nonce is missing or invalid",
@@ -26,7 +26,7 @@ All requests need to include an `X-DFNS-NONCE` header. See [Request Headers](req
 
 The nonce specified in `X-DFNS-NONCE` was already used. The nonce should be uniquely generated for every request.
 
-```JSON
+```json
 {
   "error": {
     "message": "request nonce has already been used"
@@ -42,7 +42,7 @@ The nonce specified in `X-DFNS-NONCE` was already used. The nonce should be uniq
 
 The User Action Signature specified in `X-DFNS-USERACTION` was already used. User action signatures can only be used once.
 
-```JSON
+```json
 {
   "error": {
     "message": "user action has already been used"
@@ -60,7 +60,7 @@ The User Action Signature specified in `X-DFNS-USERACTION` was already used. Use
 
 All requests to an authenticated endpoint need to include a JWT in the `Authentication` header. See [Request Headers](request-headers.md) for more information.
 
-```JSON
+```json
 {
   "error": {
     "message": "Not Authorized."
@@ -78,7 +78,7 @@ All requests to an authenticated endpoint need to include a JWT in the `Authenti
 
 **Caller does not have access to the resource or endpoint**
 
-```JSON
+```json
 {
   "error": {
     "message": "CustomerEmployee us-24vwa-92s33-8tvqi1dg0a95megt is not authorized to perform operation (Auth:Apps:Update)"
@@ -94,7 +94,7 @@ All requests to an authenticated endpoint need to include a JWT in the `Authenti
 
 Mutating requests need to include a valid User Action Signature in the `X-DFNS-USERACTION` header. See [User Action Signing](../advanced-topics/authentication/request-signing.md) for more information.
 
-```JSON
+```json
 {
   "error": {
     "message": "user action signature is missing or invalid"
@@ -112,7 +112,7 @@ Mutating requests need to include a valid User Action Signature in the `X-DFNS-U
 
 This is an unexpected error. Please try your request again. If the call continues to fail, please contact [support](mailto:support@dfns.co).
 
-```JSON
+```json
 {
   "error": {
     "message": "Internal Server Error"
@@ -134,7 +134,7 @@ Errors specific to the [Application Management](../api-docs/authentication/appli
 
 The application being deactivated needs to be different then the application specified in `X-DFNS-APPID`.
 
-```JSON
+```json
 {
   "error": {
     "message": "application cannot modify its own state"
@@ -152,7 +152,7 @@ The application being deactivated needs to be different then the application spe
 
 The specified application does not exist in the database.
 
-```JSON
+```json
 {
   "error": {
     "message": "application not found"
@@ -170,9 +170,115 @@ Errors specific to the [Credential Management](../api-docs/authentication/creden
 
 Errors specific to the [Delegated Authentication](../api-docs/authentication/delegated-auth/) endpoints.
 
+### 400 - Bad Request
+
+<details>
+
+<summary>User account has been deactivated</summary>
+
+The user is deactivated
+
+```json
+{
+  "error": {
+    "message": "User account has been deactivated."
+  }
+}
+```
+
+</details>
+
+### 401 - Unauthorized
+
+<details>
+
+<summary>User not found</summary>
+
+The user cannot be found in the system
+
+```json
+{
+  "error": {
+    "message": "User not found"
+  }
+}
+```
+
+</details>
+
 ## User Login Errors
 
 Errors specific to the [User Login](../api-docs/authentication/login/) endpoints.
+
+### 400 - Bad Request
+
+<details>
+
+<summary>User account has been deactivated</summary>
+
+The user is deactivated
+
+```json
+{
+  "error": {
+    "message": "User account has been deactivated."
+  }
+}
+```
+
+</details>
+
+### 401 - Unauthorized
+
+<details>
+
+<summary>User not found</summary>
+
+The user cannot be found in the system
+
+```json
+{
+  "error": {
+    "message": "User not found"
+  }
+}
+```
+
+</details>
+
+<details>
+
+<summary>User does not have a credential that can be used for the application</summary>
+
+There is no valid credential for the user for this application
+
+```json
+{
+  "error": {
+    "message": "User does not have a credential that can be used for the application."
+  }
+}
+```
+
+</details>
+
+### 403 - Forbidden
+
+<details>
+
+<summary>Invalid code</summary>
+
+The One Time Code provided is invalid
+
+```json
+{
+  "error": {
+    "message": "Invalid code"
+  }
+}
+```
+
+</details>
 
 ## Personal Access Token Management Errors
 
@@ -190,7 +296,7 @@ Errors specific to the [User Registration](../api-docs/authentication/registrati
 
 The registration code being used is expired.
 
-```JSON
+```json
 {
   "error": {
     "message": "Registration code expired"
@@ -208,7 +314,7 @@ The registration code being used is expired.
 
 The username used already exists in the system.
 
-```JSON
+```json
 {
   "error": {
     "message": "User already exists."
@@ -226,6 +332,74 @@ Errors specific to the [Service Account Management](../api-docs/authentication/s
 
 Errors specific to the [User Action Signing](../api-docs/authentication/user-action-signing/) endpoints.
 
+### 400 - Bad Request
+
+<details>
+
+<summary>User account has been deactivated</summary>
+
+The user is deactivated
+
+```json
+{
+  "error": {
+    "message": "User account has been deactivated."
+  }
+}
+```
+
+</details>
+
+<details>
+
+<summary>Challenge token is not valid</summary>
+
+The token being used is not valid
+
+```json
+{
+  "error": {
+    "message": "Challenge token is not valid."
+  }
+}
+```
+
+</details>
+
+### 401 - Unauthorized
+
+<details>
+
+<summary>User not found</summary>
+
+The user cannot be found in the system
+
+```json
+{
+  "error": {
+    "message": "User not found"
+  }
+}
+```
+
+</details>
+
+<details>
+
+<summary>User does not have a credential that can be used for the application</summary>
+
+There is no valid credential for the user for this application
+
+```json
+{
+  "error": {
+    "message": "User does not have a credential that can be used for the application."
+  }
+}
+```
+
+</details>
+
 ## User Management Errors
 
 Errors specific to the [User Management](../api-docs/authentication/user-management/) endpoints.
@@ -233,3 +407,21 @@ Errors specific to the [User Management](../api-docs/authentication/user-managem
 ## User Recovery Errors
 
 Errors specific to the [User Recovery](../api-docs/authentication/user-recovery/) endpoints.
+
+### 401 - Unauthorized
+
+<details>
+
+<summary>Credential cannot be used as a recovery factor</summary>
+
+The credential being used is not a recovery credential
+
+```json
+{
+  "error": {
+    "message": "Credential cannot be used as a recovery factor."
+  }
+}
+```
+
+</details>
