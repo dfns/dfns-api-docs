@@ -174,6 +174,14 @@ Errors specific to the [Delegated Authentication](../api-docs/authentication/del
 
 Errors specific to the [User Login](../api-docs/authentication/login/) endpoints.
 
+## Personal Access Token Management Errors
+
+Errors specific to the [Personal Access Token Management](../api-docs/authentication/personal-access-token-management/) endpoints.
+
+## User Registration Errors
+
+Errors specific to the [User Registration](../api-docs/authentication/registration/) endpoints.
+
 ### 400 - Bad Request
 
 <details>
@@ -209,14 +217,6 @@ The username used already exists in the system.
 ```
 
 </details>
-
-## Personal Access Token Management Errors
-
-Errors specific to the [Personal Access Token Management](../api-docs/authentication/personal-access-token-management/) endpoints.
-
-## User Registration Errors
-
-Errors specific to the [User Registration](../api-docs/authentication/registration/) endpoints.
 
 ## Service Account Management Errors
 
