@@ -174,6 +174,42 @@ Errors specific to the [Delegated Authentication](../api-docs/authentication/del
 
 Errors specific to the [User Login](../api-docs/authentication/login/) endpoints.
 
+### 400 - Bad Request
+
+<details>
+
+<summary>Registration code expired</summary>
+
+The registration code being used is expired.
+
+```JSON
+{
+  "error": {
+    "message": "Registration code expired"
+  }
+}
+```
+
+</details>
+
+### 401 - Unauthorized
+
+<details>
+
+<summary>User already exists</summary>
+
+The username used already exists in the system.
+
+```JSON
+{
+  "error": {
+    "message": "User already exists."
+  }
+}
+```
+
+</details>
+
 ## Personal Access Token Management Errors
 
 Errors specific to the [Personal Access Token Management](../api-docs/authentication/personal-access-token-management/) endpoints.
