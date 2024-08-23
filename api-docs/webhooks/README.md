@@ -217,6 +217,13 @@ If your webhook has been disabled or deleted when Dfns attempts a retry, future 
 
 Review these best practices to make sure your Webhooks remain secure and work properly.
 
+#### Whitelist inbound IP addresses <a href="#verify-events" id="verify-events"></a>
+
+As a defense in depth best practice, we recommend whitelisting the IP addresses corresponding to our NAT gateways.  These are the only addresses you should receive traffic from.  Note there is currently one address per environment:&#x20;
+
+* Ninja: 52.47.197.63
+* Prod: 35.181.116.68
+
 #### Respond quickly with a 200 <a href="#verify-events" id="verify-events"></a>
 
 The webhook event handler defined on your server, when it receives a new event from Dfns, should be quick to handle it, and return quickly a `200` status code to indicate that the event was indeed delivered. If your handler expects to do some processing taking longer than a few seconds, you should consider adding this to a queue for processing on your side. Otherwise the request delivering the event might timeout.

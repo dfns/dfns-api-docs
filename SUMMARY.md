@@ -9,7 +9,7 @@
 * [Core API Objects](getting-started/core-api-objects.md)
 * [Postman](getting-started/postman-integration.md)
 * [Dfns SDKs](getting-started/dfns-sdks.md)
-* [Videos](getting-started/Videos.md)
+* [Dashboard Videos](getting-started/Videos.md)
 
 ## API Docs
 
