@@ -11,42 +11,42 @@ We’ve also created a video walking through this setup for EthParis (July 2023)
 1. Dfns staff provisions your new org and creates the first Employee in the organization, called the Org Owner. &#x20;
 2. Org Owner receives an email with a link to register in our system.
 
-![](https://lh5.googleusercontent.com/0E8Iihc2SAZcOLb3nPW\_A5eu1pVFQqdKp5DEU2J2ZXTGzNI6BY4pxXhjPQ2X2YQufl7E4q2-3tjF6m\_OIyUinsaRBg-ZnCzXxpA-2xhTAbH0DdEcEmyG0fLRQEoNZ9ziGehMGHEyMEsFm5\_L2mvvl0M)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.45.41 PM.png>)
 
 ## Create your Credentials and Login
 
 1. Click the link to be directed to the registration page with the username prepopulated.  Copy and paste the registration code from the email. Click the register button.   Note: Registration codes only last 4 hours so if yours is expired, just click "Send New Code To My Email”.&#x20;
 
-![](<../.gitbook/assets/Screenshot 2024-02-06 at 3.57.50 PM.png>)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.46.34 PM.png>)
 
 2. Create credentials and submit.  Login in using the new credentials.&#x20;
 
-![](https://lh3.googleusercontent.com/\_mh2NClFnmFofnIAM8acW-H\_PSwrC2Eoe7mA0tgKHCC2zxDnaj7\_5yur8ijom8MDTtlEH3uPanbuUDZf1Kuky1Ws6zvhcoLWfukfCxiSS29U7O6FbKEMyhx6gzhymb3TmJYprXc\_sxyBgpb3m49s\_bM)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.46.45 PM.png>)
 
-3. &#x20;Click your user icon in the top right and then click Settings
+3. &#x20;Click Settings in the left nav
 
-![](https://lh5.googleusercontent.com/4NRh8sMOQvumXpXwjXxXPa\_iL1bjspD9LBkCsfVz7DVl8-Si6PBVW5NpQ8QlL6z0Bt5eq8OE7UXwj2\_XnRJg1aSxlzmNvohuGGE\_2VOHuEhr-y1d2aSxpbglf6\_x4-AcPmgVTGpofPkqFn1O0UmSonc)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.57.10 PM.png>)
 
-4. Now click “Users” in the left navigation
+4. This should take you to the Users screen
 
-![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.29.37 PM.png>)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.48.01 PM (1).png>)
 
 5. Add Users to the organization by clicking “New User”.  (Note ExternalID is optional)
 
-![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.30.57 PM.png>)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.48.11 PM.png>)
 
 6. Employees receive an email and follow the same registration flow.
-7. The Org Owner creates and assigns the necessary permissions to allow users to  access the parts of the system required for their job responsibilities.  For convenience, we've exposed a control on the user list page to give a user all access to the system here:
+7. The Org Owner creates and assigns the necessary permissions to allow users access the parts of the system required for their job responsibilities.  For convenience, we've exposed a control on the user list page to give a user all access to the system here:
 
-![](https://lh6.googleusercontent.com/b1Yq7btcMdliZmKDXY4H9MCXnB6sFFIePnWRKyAMwoclW1mu-cUHaPedL3J2z4FO1VJgjZXtdRQBCzN68t4riCnvLcpZFeIXX1ZNGWiVfH-eESejYr-qwNf1QPL7O1UfRFUKncC56IDkCvxU39jTC8s)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.48.50 PM.png>)
 
 That said, we strongly encourage implementing the principle of least privilege by setting up your own permissions in the dashboard under Settings=>Permissions:&#x20;
 
-![](<../.gitbook/assets/image (1) (1).png>)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.49.11 PM.png>)
 
 You can then assign permissions to Users, Service Account, and Applications by clicking the target card in the list to go to the detail page:&#x20;
 
-![](<../.gitbook/assets/image (1) (1) (1).png>)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.49.36 PM.png>)
 
 ## Create a Service Account
 
@@ -62,11 +62,11 @@ Once you register in your Dfns org and invite your Users, the next step is to cr
 2. Navigate to Settings. Service Accounts=>New Service Account. &#x20;
 3. Name the Service Account, copy in the public key (including begin/end lines like “-----BEGIN PUBLIC KEY-----”)  and click “Create”.&#x20;
 
-![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.41.27 PM.png>)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.50.51 PM.png>)
 
 4. This will output a masked JWT one time.  Copy it to a secure location before leaving the page.&#x20;
 
-![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.33.23 PM.png>)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.51.16 PM.png>)
 
 At this point, you can make server side API calls by signing requests with your secret key. Please see [our Typescript SDK](https://docs.dfns.co/dfns-docs/getting-started/typescript-sdk) and specifically [the Service Account sample app](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/sdk/service-account).&#x20;
 
@@ -83,7 +83,7 @@ If you want to implement Delegated Signing in which your customer generates cred
 3. Click New Application
 4. Give it a name and specify the following values:&#x20;
 
-![](<../.gitbook/assets/Screenshot 2023-06-29 at 5.34.41 PM.png>)
+![](<../.gitbook/assets/Screenshot 2024-08-28 at 1.52.13 PM.png>)
 
 
 
