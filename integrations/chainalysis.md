@@ -20,7 +20,7 @@ Outgoing transfer attempts from a given wallet can be screened by Chainalysis be
 * [rule kind `ChainalysisTransactionPrescreening`](../api-docs/policy-engine/policies.md#chainalysistransactionprescreening-policy-rule)
 * action kind [`Block`](../api-docs/policy-engine/policies.md#block-policy-action) or [`RequestApproval`](../api-docs/policy-engine/policies.md#requestapproval-policy-action) or [`NoAction`](../api-docs/policy-engine/policies.md#noaction-policy-action)
 
-When using policy rule `ChainalysisTransactionPrescreening`, the transfer attempt will be sent to Chainalysis for a KYT screening. If the screening result triggers the rule (based on the criterias you defined inthe rule), then the details of the Chainalysis pre-screening results will be published in the   [Webhook Event](../api-docs/webhooks/#webhook-events)  "`policy.triggered`", which is published for any policy which triggers.
+When using policy rule `ChainalysisTransactionPrescreening`, the transfer attempt will be sent to Chainalysis for a KYT screening. If the screening result triggers the rule (based on the criterias you defined in the rule), then the details of the Chainalysis pre-screening results will be published in the   [Webhook Event](../api-docs/webhooks/#webhook-events) `policy.triggered`, which is published for any policy which triggers.
 
 
 
@@ -32,7 +32,7 @@ When an incoming transfers in a wallet is picked ou by our indexer, it can be sc
 * [rule kind `ChainalysisTransactionScreening`](../api-docs/policy-engine/policies.md#chainalysistransactionscreening-policy-rule)
 * action kind [`NoAction`](../api-docs/policy-engine/policies.md#noaction-policy-action)
 
-When using policy rule `ChainalysisTransactionScreening`, the transfer attempt will be sent to Chainalysis for a KYT screening. If the screening result triggers the rule (based on the criterias you defined inthe rule), then the details of the Chainalysis screening results will be published in the   [Webhook Event](../api-docs/webhooks/#webhook-events)  "`policy.triggered`", which is published for any policy which triggers.
+When using policy rule `ChainalysisTransactionScreening`, the transfer attempt will be sent to Chainalysis for a KYT screening. If the screening result triggers the rule (based on the criterias you defined inthe rule), then the details of the Chainalysis screening results will be published in the   [Webhook Event](../api-docs/webhooks/#webhook-events) `policy.triggered`, which is published for any policy which triggers.
 
 
 
