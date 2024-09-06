@@ -271,7 +271,11 @@ Configure your webhook endpoints to receive only the types of events required by
 
 #### Handle duplicate events <a href="#handle-duplicate-events" id="handle-duplicate-events"></a>
 
-Webhook endpoints might occasionally receive the same event more than once. You can guard against duplicated event receipts by making sure your your event processing is idempotent.
+{% hint style="warning" %}
+Webhook endpoints might occasionally receive the same event more than once
+{% endhint %}
+
+We don't guarantee webhook event uniqueness. You should guard against duplicate event by making sure your your event processing is idempotent.
 
 #### Receive events with an HTTPS server <a href="#receive-events-with-an-https-server" id="receive-events-with-an-https-server"></a>
 
