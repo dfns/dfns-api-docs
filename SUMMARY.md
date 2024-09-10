@@ -7,6 +7,7 @@
 * [Onboarding to Dfns](getting-started/onboarding-to-dfns.md)
 * [Dfns Environments](getting-started/dfns-environments.md)
 * [Core API Objects](getting-started/core-api-objects.md)
+* [Supported Assets](getting-started/supported-assets.md)
 * [Postman](getting-started/postman-integration.md)
 * [Dfns SDKs](getting-started/dfns-sdks.md)
 * [Dashboard Videos](getting-started/Videos.md)
