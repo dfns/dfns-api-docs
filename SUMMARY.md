@@ -181,6 +181,7 @@
 
 ## Integrations
 
-* [Fiat On/Offboarding](integrations/fiat-on-offboarding.md)
-* [Gasless Transactions & Account Abstraction](integrations/gasless-transactions.md)
-* [Chainalysis](integrations/chainalysis.md)
+* [Fiat On/Off-Ramps](integrations/fiat-on-offboarding.md)
+* [Account Abstraction on EVMs](integrations/gasless-transactions.md)
+* [AML / KYT](integrations/aml-kyt/README.md)
+  * [Chainalysis](integrations/aml-kyt/chainalysis.md)
