@@ -129,6 +129,7 @@ Each webhook event has a "`data`" property, which shape depends on its kind. Her
     "contract": "0x......",
     "from": "0x......",
     "to": "0x......",
+    "direction": "In",
     ...
   }
 }
