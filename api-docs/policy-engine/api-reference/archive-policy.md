@@ -16,7 +16,13 @@ Archives a policy.
 | ------------------ | --------------- |
 | `Policies:Archive` | Always Required |
 
-## Response <a href="#response" id="response"></a>
+## Path parameters <a href="#response" id="response"></a>
+
+| Path parameter | Description                                                               |
+| -------------- | ------------------------------------------------------------------------- |
+| `policyID`     | Unique identifier of the `Policy`. ex. plc`-1f04s-lqc9q-xxxxxxxxxxxxxxxx` |
+
+## RResponse <a href="#native-currency-request-body" id="native-currency-request-body"></a>
 
 ### 200 - no approval required <a href="#response-example" id="response-example"></a>
 
