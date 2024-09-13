@@ -164,21 +164,6 @@
 * [Dfns Change Log](api-docs/dfns-change-log.md)
 * [API Errors](getting-started/errors.md)
 
-## Advanced Topics
-
-* [Authentication](advanced-topics/authentication/README.md)
-  * [API Authentication](getting-started/authentication-authorization.md)
-  * [Request Headers](getting-started/request-headers.md)
-  * [Credentials](advanced-topics/authentication/credentials/README.md)
-    * [Generate a Key Pair](advanced-topics/authentication/credentials/generate-a-key-pair.md)
-    * [User Credentials](advanced-topics/authentication/credentials/user-credentials.md)
-    * [Access Token Credentials](advanced-topics/authentication/credentials/access-token-credentials.md)
-    * [Storing WebAuthn Credentials in Password Managers](advanced-topics/authentication/credentials/storing-webauthn-credentials-in-password-managers.md)
-  * [Request Signing](advanced-topics/authentication/request-signing.md)
-  * [API objects](advanced-topics/authentication/api-objects.md)
-* [Delegated Signing](advanced-topics/delegated-signing.md)
-* [FAQ](advanced-topics/faq.md)
-
 ## Integrations
 
 * [Exchanges](integrations/exchanges/README.md)
@@ -197,3 +182,18 @@
   * [Chainalysis](integrations/aml-kyt/chainalysis.md)
 * [Fiat On/Off-Ramps](integrations/fiat-on-offboarding.md)
 * [Account Abstraction on EVMs](integrations/gasless-transactions.md)
+
+## Advanced Topics
+
+* [Authentication](advanced-topics/authentication/README.md)
+  * [API Authentication](getting-started/authentication-authorization.md)
+  * [Request Headers](getting-started/request-headers.md)
+  * [Credentials](advanced-topics/authentication/credentials/README.md)
+    * [Generate a Key Pair](advanced-topics/authentication/credentials/generate-a-key-pair.md)
+    * [User Credentials](advanced-topics/authentication/credentials/user-credentials.md)
+    * [Access Token Credentials](advanced-topics/authentication/credentials/access-token-credentials.md)
+    * [Storing WebAuthn Credentials in Password Managers](advanced-topics/authentication/credentials/storing-webauthn-credentials-in-password-managers.md)
+  * [Request Signing](advanced-topics/authentication/request-signing.md)
+  * [API objects](advanced-topics/authentication/api-objects.md)
+* [Delegated Signing](advanced-topics/delegated-signing.md)
+* [FAQ](advanced-topics/faq.md)
