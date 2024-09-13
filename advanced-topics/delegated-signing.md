@@ -6,7 +6,7 @@
 Delegated Signing is an innovative approach to non-custodial wallet deployments leveraging Dfns' industry-leading authentication to create seamless user experiences enabled by familiar technologies [like biometrics](https://www.coindesk.com/tech/2023/05/09/crypto-security-firm-dfns-adds-biometric-support-to-wallet-development-toolkit/).  The goal of Delegated Signing is to optimize both user experience and security to onboard the next billion users to web3.&#x20;
 {% endhint %}
 
-As we have engaged with market segments such as DeFi, gaming, and other NFT-related projects, we have seen significant demand for a solution which can delegate custodial responsibility to the end-user while preserving a seamless, Web2-like onboarding experience to ensure high conversion rates.  In response, we have designed a configuration we call Delegated Signing, which gives end-users all the benefits of a self-custodial wallet like Metamask without forcing them to securely persist a 24-word seed phrase (or any other mnemonic secret).
+As we have engaged with market segments such as DeFi, tokenization, and payments, we have seen significant demand for a solution which can delegate custodial responsibility to the end-user while preserving a seamless, Web2-like onboarding experience to ensure high conversion rates.  In response, we have designed a configuration we call Delegated Signing, which gives end-users all the benefits of a self-custodial wallet like Metamask without forcing them to securely persist a 24-word seed phrase (or any other mnemonic secret).
 
 This page describes the architecture behind our Delegated Signing solution, how custody is delegated via an API signing secret, and how wallets can be recovered in the case of lost devices.&#x20;
 
