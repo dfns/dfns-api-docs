@@ -17,15 +17,24 @@ Creates a new exchange deposit transaction.&#x20;
 | `Exchanges:Deposit:Create` | Always Required |
 | `Wallets:TransferAsset`    | Always Required |
 
+## Parameters <a href="#parameters.1" id="parameters.1"></a>
+
+### Path parameters <a href="#path-parameters" id="path-parameters"></a>
+
+| Path parameter | Description                                                                |
+| -------------- | -------------------------------------------------------------------------- |
+| `exchangeID`   | Unique identifier of the `Exchange`. ex. ex`-1f04s-lqc9q-xxxxxxxxxxxxxxxx` |
+| `accountID`    | Unique ENUM identified for the account like "spot"                         |
+
 ## Body <a href="#request-body" id="request-body"></a>
 
 <table>
    <thead>
       <tr>
-         <th width="252">Property</th>
-         <th width="165">Required/Optional</th>
+         <th width="80">Property</th>
+         <th width="80">Required/Optional</th>
          <th>Description</th>
-         <th width="165">Type</th>
+         <th width="80">Type</th>
       </tr>
    </thead>
    <tbody>
@@ -48,13 +57,15 @@ Creates a new exchange deposit transaction.&#x20;
          <td>String</td>
       </tr>
       <tr>
-         <td><code>otp</code><mark style="color:red;">*</mark></td>
+         <td><code>otp</code></td>
          <td>Optional</td>
          <td>OTP code if configured</td>
          <td>String</td>
       </tr>
    </tbody>
 </table>
+
+Depending on the asset kind, the body must be completed with some extra parameter identical to the [Transfer Asset from Wallet](api-docs/wallets/transfer-asset-from-wallet.md)
 
 **Example**
 
