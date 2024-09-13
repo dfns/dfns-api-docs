@@ -15,18 +15,53 @@ Creates a new exchange deposit transaction.&#x20;
 | Name                       | Conditions      |
 | -------------------------- | --------------- |
 | `Exchanges:Deposit:Create` | Always Required |
+| `Wallets:TransferAsset`    | Always Required |
 
 ## Body <a href="#request-body" id="request-body"></a>
 
-<table><thead><tr><th width="252">Property</th><th width="165">Type / Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>network</code><mark style="color:red;">*</mark></td><td>String</td><td>Enum for the target Chain.</td></tr><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td>Enum for the type of asset.  Eg "Native" or "ERC20".</td></tr><tr><td><code>from</code></td><td>String</td><td>Address of the Dfns wallet</td></tr><tr><td><code>amount</code><mark style="color:red;">*</mark></td><td>String</td><td>Transaction amount denominated in min units</td></tr></tbody></table>
+<table>
+   <thead>
+      <tr>
+         <th width="252">Property</th>
+         <th width="165">Required/Optional</th>
+         <th>Description</th>
+         <th width="165">Type</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>walletId</code><mark style="color:red;">*</mark></td>
+         <td>Required</td>
+         <td>Id of the Dfns wallet making the deposit.</td>
+         <td>String</td>
+      </tr>
+      <tr>
+         <td><code>kind</code><mark style="color:red;">*</mark></td>
+         <td>Required</td>
+         <td>Enum for the type of asset.  Eg "Native" or "ERC20".</td>
+         <td>String</td>
+      </tr>
+      <tr>
+         <td><code>amount</code><mark style="color:red;">*</mark></td>
+         <td>Required</td>
+         <td>Transaction amount denominated in min units</td>
+         <td>String</td>
+      </tr>
+      <tr>
+         <td><code>otp</code><mark style="color:red;">*</mark></td>
+         <td>Optional</td>
+         <td>OTP code if configured</td>
+         <td>String</td>
+      </tr>
+   </tbody>
+</table>
 
 **Example**
 
 ```json
 {
-    "network": "Polygon",
+    "walletId": "wa-19lns-o74qn-xxxxxxxxxxxxxx",
     "kind": "Erc20",
-    "from": "0x0239baf37ae69ab3f25b65677b482a5e9a040198",
     "amount": "2000000",
     "contract": "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359",
     "otp": "258988"
