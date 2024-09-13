@@ -22,7 +22,7 @@ Retrieves a list of assets for the specified exchange account
 | Path parameter | Description                                                                |
 | -------------- | -------------------------------------------------------------------------- |
 | `exchangeID`   | Unique identifier of the `Exchange`. ex. ex`-1f04s-lqc9q-xxxxxxxxxxxxxxxx` |
-| accountID      | Unique ENUM identified for the account like "spot"                         |
+| `accountID`    | Unique ENUM identified for the account like "spot"                         |
 
 ## Response <a href="#native-currency-request-body" id="native-currency-request-body"></a>
 
