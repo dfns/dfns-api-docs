@@ -65,7 +65,7 @@ Creates a new exchange deposit transaction.&#x20;
    </tbody>
 </table>
 
-Depending on the asset kind, the body must be completed with some extra parameter identical to the [Transfer Asset from Wallet](api-docs/wallets/transfer-asset-from-wallet.md)
+Depending on the asset kind, the body must be completed with some extra parameter identical to the [Transfer Asset from Wallet](../../wallets/transfer-asset-from-wallet.md)
 
 **Example**
 
