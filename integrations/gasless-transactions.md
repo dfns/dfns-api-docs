@@ -1,4 +1,4 @@
-# Gasless Transactions & Account Abstraction
+# Account Abstraction on EVMs
 
 {% hint style="info" %}
 The following article is relevant primarily for EVM compatible networks.&#x20;
@@ -22,15 +22,11 @@ The Dfns engineering team has built proofs of concept (POCs) to demonstrate how 
 
 ### Biconomy
 
-Biconomy is a web3 infrastructure provider offering a full stack solution for AA.  You can read about their solution [here](https://www.biconomy.io/smart-accounts).   Dfns has built a sample integration which processes a gasless transaction on the Mumbai testnet.  You can find a Readme and the full code [here](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/libs/ethersjs/v5/biconomy-aa-gasless) as well as in the Biconomy documentation [here](https://docs.biconomy.io/Account/signers/dfns).&#x20;
+Biconomy is a web3 infrastructure provider offering a full stack solution for AA.  You can read about their solution [here](https://www.biconomy.io/smart-accounts).   Dfns has built a sample integration which processes a gasless transaction on the Mumbai testnet.  You can find a Readme and the full code [here](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/libs/viem/biconomy-aa-gasless) as well as in the Biconomy documentation [here](https://docs.biconomy.io/account/signers/dfns).&#x20;
 
 ### Safe
 
 In addition to being the industry-leading Smart Account, Safe also supports ERC-4337 via Modules and the FallbackHandler with a flow documented [here](https://docs.safe.global/home/4337-safe). The [Safe4337Module](https://github.com/safe-global/safe-modules/blob/main/modules/4337/contracts/Safe4337Module.sol) extends the Safe Smart Account to enable ERC-4337 compliant transactions, received via the proxy contract. This functionality is exposed via the Relay Kit in the Safe{Core} SDK - check [this guide](https://docs.safe.global/home/4337-guides/safe-sdk) on how to integrate it. To use Dfns with Safe AA, simply use our [GenerateSignature API](https://docs.dfns.co/d/api-docs/wallets/generate-signature-from-wallet) to sign User Operations sent through your bundler to the Safe proxy.
-
-### Alchemy
-
-Alchemy provides a wide variety of web3 infrastructure services, including their [Account Kit AA service](https://www.alchemy.com/account-kit).  Dfns has built a sample integration demonstrating a sponsored transaction on Sepolia using our viem wrapper which is available [here](https://github.com/dfns/dfns-sdk-ts/tree/m/examples/libs/viem/alchemy-aa-gasless).   The Alchemy documentation for Dfns is also available [here](https://accountkit.alchemy.com/smart-accounts/signers/guides/dfns.html).&#x20;
 
 ### ZeroDev
 
