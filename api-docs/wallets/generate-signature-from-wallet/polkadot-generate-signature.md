@@ -2,10 +2,7 @@
 
 ## Request body <a href="#message-request-body" id="message-request-body"></a>
 
-| Request body fields | Required - Type   | Description                                            | Type   |
-| ------------------- | ----------------- | ------------------------------------------------------ | ------ |
-| `kind`              | Required - String | For Polkadot, always `Message`                         | String |
-| `message`           | Required - Hex    | The unsigned hex encoded signer payload as shown below | String |
+<table><thead><tr><th width="210">Property</th><th width="180">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td>For Polkadot, always <code>Message</code></td></tr><tr><td><code>message</code><mark style="color:red;">*</mark></td><td>Hex String</td><td>The unsigned hex encoded signer payload as shown below</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
 
 ### Sample request body <a href="#sample-message-request" id="sample-message-request"></a>
 

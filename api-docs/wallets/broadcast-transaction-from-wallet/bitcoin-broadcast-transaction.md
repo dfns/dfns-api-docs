@@ -2,10 +2,7 @@
 
 ## Request body <a href="#psbt-request-body" id="psbt-request-body"></a>
 
-| Request body fields | Required - Type   | Description                         | Type   |
-| ------------------- | ----------------- | ----------------------------------- | ------ |
-| `kind`              | Required - String | For Bitcoin, always `Psbt`          | String |
-| `transaction`       | Required - Hex    | The hex encoded PSBT as shown below | String |
+<table><thead><tr><th width="194">Property</th><th width="183">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td>For Bitcoin, always <code>Psbt</code></td></tr><tr><td><code>transaction</code><mark style="color:red;">*</mark></td><td>Hex String</td><td>The hex encoded PSBT as shown below</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
 
 ### Sample request body <a href="#sample-psbt-request" id="sample-psbt-request"></a>
 

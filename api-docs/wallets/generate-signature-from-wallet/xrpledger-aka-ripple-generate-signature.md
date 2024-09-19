@@ -2,10 +2,7 @@
 
 ## Request body <a href="#transaction-request-body" id="transaction-request-body"></a>
 
-| Request body fields | Required - Type   | Description                                         | Type   |
-| ------------------- | ----------------- | --------------------------------------------------- | ------ |
-| `kind`              | Required - String | For XRP Ledger, always `Transaction`                | String |
-| `transaction`       | Required - Hex    | The unsigned hex encoded transaction as shown below | String |
+<table><thead><tr><th width="181">Property</th><th width="189">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td>For XRP Ledger, always <code>Transaction</code></td></tr><tr><td><code>transaction</code><mark style="color:red;">*</mark></td><td>Hex String</td><td>The unsigned hex encoded transaction as shown below</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
 
 ### Sample request body <a href="#sample-transaction-request" id="sample-transaction-request"></a>
 

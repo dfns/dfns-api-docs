@@ -30,13 +30,9 @@ Transfer the native token of the network. All networks support the native token 
 
 ### Request body <a href="#native-token-request-body" id="native-token-request-body"></a>
 
-| Request body fields | Required/Optional | Description                                                      | Type   |
-| ------------------- | ----------------- | ---------------------------------------------------------------- | ------ |
-| `kind`              | Required          | `Native`                                                         | String |
-| `to`                | Required          | The destination address                                          | String |
-| `amount`            | Required          | The amount of native tokens to transfer in minimum denomination  | String |
-| `priority`          | Optional          | The priority that determines the fees paid for the transfer \[1] | String |
-| `memo`              | Optional          | The memo or destination tag \[2]                                 | String |
+<table><thead><tr><th width="174">Property</th><th width="186">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td><code>Native</code></td></tr><tr><td><code>to</code><mark style="color:red;">*</mark></td><td>String</td><td>The destination address</td></tr><tr><td><code>amount</code><mark style="color:red;">*</mark></td><td>String</td><td>The amount of native tokens to transfer in minimum denomination</td></tr><tr><td><code>priority</code></td><td>(Optional) String</td><td>The priority that determines the fees paid for the transfer [1]</td></tr><tr><td><code>memo</code></td><td>(Optional) String</td><td>The memo or destination tag [2]</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
+
+
 
 1. All EVM compatible networks, Bitcoin and Solana support `priority`. Not supported for other networks. The accepted values are `Slow`, `Standard` and `Fast`. When specified, it uses the [estimate fees](../networks/estimate-fees.md) API to calculate the transfer fees. When not specified, the transfer will use the fees returned from the blockchain node providers.
 2. Stellar and XrpLedger support `memo`. Not valid for other networks.

@@ -20,9 +20,7 @@ Sign & Broadcast transaction enables communication with any arbitrary smart cont
 
 ### Path parameters <a href="#path-parameters" id="path-parameters"></a>
 
-| Path parameter | Description                                                              |
-| -------------- | ------------------------------------------------------------------------ |
-| `walletId`     | Unique identifier of the `Wallet`. ex. `wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx` |
+<table><thead><tr><th width="250">Path parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>walletId</code></td><td>Unique identifier of the <code>Wallet</code>. ex. <code>wa-1f04s-lqc9q-xxxxxxxxxxxxxxxx</code></td></tr></tbody></table>
 
 ## Request Body
 

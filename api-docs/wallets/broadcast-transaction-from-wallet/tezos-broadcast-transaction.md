@@ -2,10 +2,7 @@
 
 ## Request body <a href="#transaction-request-body" id="transaction-request-body"></a>
 
-| Request body fields | Required - Type   | Description                                         | Type   |
-| ------------------- | ----------------- | --------------------------------------------------- | ------ |
-| `kind`              | Required - String | For Tezos, always `Transaction`                     | String |
-| `transaction`       | Required - Hex    | The unsigned hex encoded transaction as shown below | String |
+<table><thead><tr><th width="190">Property</th><th width="175">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td>For Tezos, always <code>Transaction</code></td></tr><tr><td><code>transaction</code><mark style="color:red;">*</mark></td><td>Hex String</td><td>The unsigned hex encoded transaction as shown below</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
 
 ### Sample request body <a href="#sample-transaction-request" id="sample-transaction-request"></a>
 
@@ -41,7 +38,7 @@
 
 ## Typescript Example with Taquito
 
-First install the Taquito SDK. You can find the full documentation here: [https://taquito.io/docs/quick_start/](https://taquito.io/docs/quick_start/)
+First install the Taquito SDK. You can find the full documentation here: [https://taquito.io/docs/quick\_start/](https://taquito.io/docs/quick\_start/)
 
 Taquito is a little special in that it requires a `signer` to forge an operation. In fact, we only need the signer to return the wallet address and the encoded public key. We'll initialize a Taquito RPC instance using our fake signer and a local forger (see below). After forging the operation, we can distribute it via [the Dfns TypeScript SDK](https://github.com/dfns/dfns-sdk-ts).
 

@@ -196,4 +196,5 @@
   * [Request Signing](advanced-topics/authentication/request-signing.md)
   * [API objects](advanced-topics/authentication/api-objects.md)
 * [Delegated Signing](advanced-topics/delegated-signing.md)
+* [API Idempotency](advanced-topics/api-idempotency.md)
 * [FAQ](advanced-topics/faq.md)

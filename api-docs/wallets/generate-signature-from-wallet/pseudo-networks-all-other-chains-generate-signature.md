@@ -1,18 +1,18 @@
 # Pseudo Networks (All other chains): Generate Signature
 
-Dfns is compatible with any blockchain that supports our underlying MPC cryptographic schemes and elliptical curves:&#x20;
+Dfns is compatible with any blockchain that supports our underlying MPC cryptographic schemes and elliptical curves:
 
-- ECDSA over secp256k1
-- ECDSA over Stark curve
-- EdDSA over Ed25519
+* ECDSA over secp256k1
+* ECDSA over Stark curve
+* EdDSA over Ed25519
 
-You can use Generate Signature to interact with any chain supporting these schemes by using [Pseudo Network enumerated types](https://docs.dfns.co/d/api-docs/wallets#pseudo-networks) when you create a wallet. &#x20;
+You can use Generate Signature to interact with any chain supporting these schemes by using [Pseudo Network enumerated types](https://docs.dfns.co/d/api-docs/wallets#pseudo-networks) when you create a wallet.
 
 ## Hash Signing Support - All Schemes <a href="#hash-request-body" id="hash-request-body"></a>
 
-All cryptographic scheme support hash signing. Note ECDSA with secp256k1 or Stark curve only support this kind. Use the target chain's native SDK to hash your message before sending to Dfns.&#x20;
+All cryptographic scheme support hash signing. Note ECDSA with secp256k1 or Stark curve only support this kind. Use the target chain's native SDK to hash your message before sending to Dfns.
 
-<table><thead><tr><th width="298">Request body fields</th><th>Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td><code>Hash</code></td><td>String</td></tr><tr><td><code>hash</code></td><td>Required</td><td>The hash digest in hex.</td><td>String</td></tr></tbody></table>
+<table><thead><tr><th width="170">Property</th><th width="173">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td><code>Hash</code></td></tr><tr><td><code>hash</code><mark style="color:red;">*</mark></td><td>Hex String</td><td>The hash digest in hex.</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
 
 ### Sample request body <a href="#sample-hash-request" id="sample-hash-request"></a>
 
@@ -52,12 +52,9 @@ All cryptographic scheme support hash signing. Note ECDSA with secp256k1 or Star
 
 ## EdDSA Message Signing <a href="#message-request-body" id="message-request-body"></a>
 
-In addition to the `Hash` method shown above, EdDSA also supports signing `Messages` as shown below. For message encoding standards, see the documentation of the chain you are targeting.&#x20;
+In addition to the `Hash` method shown above, EdDSA also supports signing `Messages` as shown below. For message encoding standards, see the documentation of the chain you are targeting.
 
-| Request body fields | Required/Optional | Description                       | Type   |
-| ------------------- | ----------------- | --------------------------------- | ------ |
-| `kind`              | Required          | `Message`                         | String |
-| `message`           | Required          | The original message hex encoded. | String |
+<table><thead><tr><th width="158">Property</th><th width="173">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>Required</td><td><code>Message</code></td></tr><tr><td><code>message</code><mark style="color:red;">*</mark></td><td>Required</td><td>The original message hex encoded.</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more here)</td></tr></tbody></table>
 
 ### Sample request body <a href="#sample-message-request" id="sample-message-request"></a>
 

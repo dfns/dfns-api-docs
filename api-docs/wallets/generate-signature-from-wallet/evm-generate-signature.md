@@ -1,20 +1,17 @@
 # EVM: Generate Signature
 
-EVM chains like Ethereum, Polygon, BSC, Arbitrum, etc support the following signature `kinds`:&#x20;
+EVM chains like Ethereum, Polygon, BSC, Arbitrum, etc support the following signature `kinds`:
 
-- `Transaction`: Generates a fully signed transaction ready for broadcasting yourself.&#x20;
-- `Message`: Generates a signature for an arbitrary message.&#x20;
-- `EIP712`: Generates the signature for typed structured data defined in [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
-- `Hash`: Generates the signature for the hash digest of the original message.
+* `Transaction`: Generates a fully signed transaction ready for broadcasting yourself.
+* `Message`: Generates a signature for an arbitrary message.
+* `EIP712`: Generates the signature for typed structured data defined in [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
+* `Hash`: Generates the signature for the hash digest of the original message.
 
 ## Transaction Signature <a href="#transaction-request-body" id="transaction-request-body"></a>
 
-Generates a fully signed transaction ready for broadcasting yourself.&#x20;
+Generates a fully signed transaction ready for broadcasting yourself.
 
-| Request body fields | Required - Type   | Description                                         | Type   |
-| ------------------- | ----------------- | --------------------------------------------------- | ------ |
-| `kind`              | Required - String | `Transaction`                                       | String |
-| `transaction`       | Required - Hex    | The unsigned hex encoded transaction as shown below | String |
+<table><thead><tr><th width="183">Property</th><th width="197"> Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td><code>Transaction</code></td></tr><tr><td><code>transaction</code><mark style="color:red;">*</mark></td><td>Hex String</td><td>The unsigned hex encoded transaction as shown below</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
 
 ### Sample request body <a href="#sample-transaction-request" id="sample-transaction-request"></a>
 
@@ -84,12 +81,9 @@ const res = await dfnsClient.wallets.generateSignature({
 
 ## Message Signature <a href="#message-request-body" id="message-request-body"></a>
 
-Generates a signature for an arbitrary message.&#x20;
+Generates a signature for an arbitrary message.
 
-| Request body fields | Required/Optional | Description                       | Type   |
-| ------------------- | ----------------- | --------------------------------- | ------ |
-| `kind`              | Required          | `Message`                         | String |
-| `message`           | Required          | The original message hex encoded. | String |
+<table><thead><tr><th width="202">Property</th><th width="204">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td><code>Message</code></td></tr><tr><td><code>message</code><mark style="color:red;">*</mark></td><td>String</td><td>The original message hex encoded.</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
 
 ### Sample request body <a href="#sample-message-request" id="sample-message-request"></a>
 
@@ -132,23 +126,15 @@ Generates a signature for an arbitrary message.&#x20;
 
 Generates the signature for typed structured data defined in [EIP-712](https://eips.ethereum.org/EIPS/eip-712), only applicable for EVM compatible blockchain networks.
 
-| field     | Required/Optional | Description                 | Type                            |
-| --------- | ----------------- | --------------------------- | ------------------------------- |
-| `kind`    | Required          | `Eip712`                    | String                          |
-| `types`   | Required          | Type definitions.           | Map\<String, TypedDataField\[]> |
-| `domain`  | Required          | Domain separator.           | Eip712Domain                    |
-| `message` | Required          | Structured message to sign. | Object                          |
+<table><thead><tr><th width="163">field</th><th width="227">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td><code>Eip712</code></td></tr><tr><td><code>types</code><mark style="color:red;">*</mark></td><td>Map&#x3C;String, TypedDataField[]></td><td>Type definitions.</td></tr><tr><td><code>domain</code><mark style="color:red;">*</mark></td><td>Eip712Domain</td><td>Domain separator.</td></tr><tr><td><code>message</code><mark style="color:red;">*</mark></td><td>Object</td><td>Structured message to sign.</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
 
 **TypedDataField**
 
-| field  | Required/Optional | Description | Type   |
-| ------ | ----------------- | ----------- | ------ |
-| `name` | Required          | Field name. | String |
-| `type` | Required          | Field type. | String |
+<table><thead><tr><th width="166">field</th><th width="214">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code><mark style="color:red;">*</mark></td><td>String</td><td>Field name.</td></tr><tr><td><code>type</code><mark style="color:red;">*</mark></td><td>String</td><td>Field type.</td></tr></tbody></table>
 
 **Eip712Domain**
 
-<table><thead><tr><th width="222">field</th><th>Required/Optional</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>Optional</td><td>Name of the signing domain.</td><td>String</td></tr><tr><td><code>version</code></td><td>Optional</td><td>Current major version of the signing domain.</td><td>String</td></tr><tr><td><code>chainId</code></td><td>Optional</td><td>Chain ID.</td><td>Integer</td></tr><tr><td><code>verifyingContract</code></td><td>Optional</td><td>The address of the contract that will verify the signature.</td><td>String</td></tr><tr><td><code>salt</code></td><td>Optional</td><td>32-byte value as a last-resort domain separator.</td><td>String</td></tr></tbody></table>
+<table><thead><tr><th width="222">field</th><th width="154">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>String</td><td>Name of the signing domain.</td></tr><tr><td><code>version</code></td><td>String</td><td>Current major version of the signing domain.</td></tr><tr><td><code>chainId</code></td><td>Integer</td><td>Chain ID.</td></tr><tr><td><code>verifyingContract</code></td><td>String</td><td>The address of the contract that will verify the signature.</td></tr><tr><td><code>salt</code></td><td>String</td><td>32-byte value as a last-resort domain separator.</td></tr></tbody></table>
 
 ### Sample request body <a href="#sample-eip712-request" id="sample-eip712-request"></a>
 
@@ -263,10 +249,7 @@ Generates the signature for the hash digest of the original message.
 
 ### Request body <a href="#hash-signature-request-body" id="hash-signature-request-body"></a>
 
-| Request body fields | Required/Optional | Description             | Type   |
-| ------------------- | ----------------- | ----------------------- | ------ |
-| `kind`              | Required          | `Hash`                  | String |
-| `hash`              | Required          | The hash digest in hex. | String |
+<table><thead><tr><th width="193">Property</th><th width="170">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>String</td><td><code>Hash</code></td></tr><tr><td><code>hash</code><mark style="color:red;">*</mark></td><td>String</td><td>The hash digest in hex.</td></tr><tr><td><code>externalId</code></td><td>(Optional) String</td><td>A unique ID from your system. It can be leveraged to be used as an idempotency key (read more <a href="../../../advanced-topics/api-idempotency.md">here</a>)</td></tr></tbody></table>
 
 ### Sample request body <a href="#sample-hash-request" id="sample-hash-request"></a>
 
