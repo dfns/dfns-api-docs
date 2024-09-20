@@ -22,7 +22,7 @@ The behaviour is as follow:
     "status": 409,
     "message": "Conflicting transfer with same externalId",
     "details": {
-    "duplicate": { "id": "...", "externalId": "..." }
+      "duplicate": { "id": "...", "externalId": "..." }
   }
 }
 ```
