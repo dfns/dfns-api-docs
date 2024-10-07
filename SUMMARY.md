@@ -120,6 +120,7 @@
     * [Stellar: Generate Signature](api-docs/wallets/generate-signature-from-wallet/stellar-generate-signature.md)
     * [Tezos: Generate Signature](api-docs/wallets/generate-signature-from-wallet/tezos-generate-signature.md)
     * [TRON: Generate Signature](api-docs/wallets/generate-signature-from-wallet/tron-generate-signature.md)
+    * [TON: Generate Signature](api-docs/wallets/generate-signature-from-wallet/ton-generate-signature.md)
     * [XRP Ledger (aka Ripple): Generate Signature](api-docs/wallets/generate-signature-from-wallet/xrpledger-aka-ripple-generate-signature.md)
     * [Pseudo Networks (All other chains): Generate Signature](api-docs/wallets/generate-signature-from-wallet/pseudo-networks-all-other-chains-generate-signature.md)
   * [Get Wallet Signature Request by ID](api-docs/wallets/get-wallet-signature-request-by-id.md)
