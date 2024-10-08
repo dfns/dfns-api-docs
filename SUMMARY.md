@@ -39,7 +39,6 @@
     * [List Users](api-docs/authentication/user-management/listUsers.md)
     * [Create User](api-docs/authentication/user-management/createUser.md)
     * [Get User](api-docs/authentication/user-management/getUser.md)
-    * [Update User](api-docs/authentication/user-management/updateUser.md)
     * [Activate User](api-docs/authentication/user-management/activateUser.md)
     * [Deactivate User](api-docs/authentication/user-management/deactivateUser.md)
     * [Archive User](api-docs/authentication/user-management/archiveUser.md)
