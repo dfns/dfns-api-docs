@@ -6,9 +6,38 @@ description: Change log detailing feature releases
 
 The Dfns change log documents changes to our product functionality made by our releases. This includes new features, breaking changes, bug fixes to known issues, deprecations, etc. Please bookmark this page and refresh frequently for the latest updates.
 
+
+
+### October 4, 2024
+
+* Launched Dfns Connect improvements
+
+### September 20, 2024
+
+* Launched Wallet Transfer idempotency
+* Launched Kaspa chain as Tier 1
+
+### September 13, 2024
+
+* Launched Race Chain as Tier 1
+* Upgraded MATIC to POL
+
+### August 30, 2024
+
+* Deployed fix for Polygon gas fee estimation
+
+### August 16, 2024
+
+* Launched Kraken CEX integration
+
+### August 9, 2024
+
+* Launched ICP and OGY support as Tier 1
+
 ### July 26, 2024
 
 * Launched TON in SDK and Dashboard UI
+* Enabled feature flags for KU23 ECDSA signing
 
 ### July 19, 2024
 
@@ -18,6 +47,7 @@ The Dfns change log documents changes to our product functionality made by our r
 ### July 12, 2024
 
 * Launched new filter on List Wallets to retrieve wallets by userID/username
+* Password encryption based Webauthn alternative
 
 ### July 5, 2024
 
