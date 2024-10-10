@@ -27,6 +27,7 @@ Here is a summary of the assets currently supported by the Dfns Transfer API:&#x
 | Kusama                    | KSM                       | N/A                                      |
 | Litecoin                  | LTC                       | N/A                                      |
 | Optimism                  | ETH                       | ERC-20, ERC-721                          |
+| Origyn                    | OGY                       | N/A                                      |
 | Polkadot                  | DOT                       | N/A                                      |
 | Polygon                   | POL (fka MATIC)           | ERC-20, ERC-721                          |
 | Solana                    | SOL                       | SPL, SPL 2022                            |
