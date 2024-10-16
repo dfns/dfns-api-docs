@@ -256,12 +256,7 @@ Transfer [SPL tokens](https://spl.solana.com/token).
 
 #### Request body <a href="#spl-request-body" id="spl-request-body"></a>
 
-| Request body fields | Required/Optional | Description                                              | Type   |
-| ------------------- | ----------------- | -------------------------------------------------------- | ------ |
-| `kind`              | Required          | `Spl`                                                    | String |
-| `mint`              | Required          | The mint account address                                 | String |
-| `to`                | Required          | The destination address                                  | String |
-| `amount`            | Required          | The amount of tokens to transfer in minimum denomination | String |
+<table><thead><tr><th width="292">Request body fields</th><th width="132">Required/Optional</th><th width="202">Description</th><th>Type</th></tr></thead><tbody><tr><td><code>kind</code></td><td>Required</td><td><code>Spl</code></td><td>String</td></tr><tr><td><code>mint</code></td><td>Required</td><td>The mint account address</td><td>String</td></tr><tr><td><code>to</code></td><td>Required</td><td>The destination address</td><td>String</td></tr><tr><td><code>amount</code></td><td>Required</td><td>The amount of tokens to transfer in minimum denomination</td><td>String</td></tr><tr><td><code>createDestinationAccount</code></td><td>Optional</td><td>If True, pay to create the associated token account of the recipient if it doesn't exist. Defaults to False.</td><td>Boolean</td></tr></tbody></table>
 
 #### Sample request body <a href="#sample-spl-request" id="sample-spl-request"></a>
 
@@ -310,12 +305,13 @@ Transfer [SPL 2022 tokens](https://spl.solana.com/token-2022).
 
 #### Request body <a href="#spl2022-request-body" id="spl2022-request-body"></a>
 
-| Request body fields | Required/Optional | Description                                              | Type   |
-| ------------------- | ----------------- | -------------------------------------------------------- | ------ |
-| `kind`              | Required          | `Spl2022`                                                | String |
-| `mint`              | Required          | The mint account address                                 | String |
-| `to`                | Required          | The destination address                                  | String |
-| `amount`            | Required          | The amount of tokens to transfer in minimum denomination | String |
+| Request body fields        | Required/Optional | Description                                                                                                  | Type    |
+| -------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------ | ------- |
+| `kind`                     | Required          | `Spl2022`                                                                                                    | String  |
+| `mint`                     | Required          | The mint account address                                                                                     | String  |
+| `to`                       | Required          | The destination address                                                                                      | String  |
+| `amount`                   | Required          | The amount of tokens to transfer in minimum denomination                                                     | String  |
+| `createDestinationAccount` | Optional          | If True, pay to create the associated token account of the recipient if it doesn't exist. Defaults to False. | Boolean |
 
 #### Sample request body <a href="#sample-spl2022-request" id="sample-spl2022-request"></a>
 
