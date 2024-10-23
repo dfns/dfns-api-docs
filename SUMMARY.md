@@ -169,6 +169,7 @@
 * [Exchanges](integrations/exchanges/README.md)
   * [Exchange Configuration](integrations/exchanges/exchange-configuration/README.md)
     * [Kraken Setup](integrations/exchanges/exchange-configuration/kraken-setup.md)
+    * [Binance Setup](integrations/exchanges/exchange-configuration/kraken-setup-1.md)
   * [API Reference](integrations/exchanges/api-reference/README.md)
     * [Create Exchange](integrations/exchanges/api-reference/create-exchange.md)
     * [List Exchanges](integrations/exchanges/api-reference/list-exchanges.md)

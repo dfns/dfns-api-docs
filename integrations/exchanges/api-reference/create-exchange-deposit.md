@@ -28,7 +28,7 @@ Creates a new exchange deposit transaction.
 
 ## Body <a href="#request-body" id="request-body"></a>
 
-<table><thead><tr><th width="80">Property</th><th width="80">Required/Optional</th><th>Description</th><th width="80">Type</th></tr></thead><tbody><tr><td><code>walletId</code><mark style="color:red;">*</mark></td><td>Required</td><td>Id of the Dfns wallet making the deposit.</td><td>String</td></tr><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>Required</td><td>Enum for the type of asset. Eg "Native" or "ERC20".</td><td>String</td></tr><tr><td><code>amount</code><mark style="color:red;">*</mark></td><td>Required</td><td>Transaction amount denominated in min units</td><td>String</td></tr><tr><td><code>otp</code></td><td>Optional</td><td>OTP code if configured</td><td>String</td></tr></tbody></table>
+<table><thead><tr><th width="141">Property</th><th width="121">Required/Optional</th><th>Description</th><th width="80">Type</th></tr></thead><tbody><tr><td><code>walletId</code><mark style="color:red;">*</mark></td><td>Required</td><td>Id of the Dfns wallet making the deposit.</td><td>String</td></tr><tr><td><code>kind</code><mark style="color:red;">*</mark></td><td>Required</td><td>Enum for the type of asset. Eg "Native" or "ERC20".</td><td>String</td></tr><tr><td><code>amount</code><mark style="color:red;">*</mark></td><td>Required</td><td>Transaction amount denominated in min units</td><td>String</td></tr><tr><td><code>otp</code></td><td>Optional</td><td>OTP code if configured</td><td>String</td></tr></tbody></table>
 
 Depending on the asset kind, the body must be completed with some extra parameter identical to the [Transfer Asset from Wallet](../../../api-docs/wallets/transfer-asset-from-wallet.md)
 
